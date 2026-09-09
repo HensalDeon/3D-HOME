@@ -1,0 +1,10 @@
+import {build} from 'esbuild';
+import {readFile,writeFile} from 'node:fs/promises';
+const result=await build({entryPoints:['src/main.js'],bundle:true,format:'iife',minify:true,write:false,target:'es2022'});
+const css=await readFile('src/style.css','utf8');
+let html=await readFile('index.html','utf8');
+const license=await readFile('THIRD_PARTY_LICENSE.txt','utf8');
+html=html.replace('<head>',`<head><!-- Three.js license\n${license.replaceAll('--','—')}-->`);
+html=html.replace('<link rel="stylesheet" href="/src/style.css">',`<style>${css}</style>`).replace('<script type="module" src="/src/main.js"></script>',()=>`<script>${result.outputFiles[0].text.replaceAll('</script','<\\/script')}</script>`);
+await writeFile('../drawings/compact-v4/interactive-3d.html',html);
+console.log('Standalone model: drawings/compact-v4/interactive-3d.html');

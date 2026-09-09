@@ -1,0 +1,46 @@
+{
+  "width_m": 6.0,
+  "depth_m": 9.7,
+  "gross_envelope_m2_per_floor": 58.199999999999996,
+  "gross_envelope_sqft_per_floor": 626.4595862525058,
+  "both_floors_m2": 116.39999999999999,
+  "bedroom_sw_clear_m2": 9.715,
+  "child_clear_m2": 9.72,
+  "front_sitout_balcony_clear_m2": 3.24,
+  "rear_work_drying_clear_m2": 3.78,
+  "ensuite_count": 3,
+  "ensuite_clear_m": [
+    1.3,
+    2.0
+  ],
+  "ensuite_clear_m2_each": 2.6,
+  "bedroom_bathroom_pairs": {
+    "GF_Bed1": "GF_Ensuite1",
+    "FF_Master": "FF_Ensuite2",
+    "FF_Bed3": "FF_Ensuite3"
+  },
+  "rear_balcony_access": "private side door from master",
+  "rear_work_access": "independent north passage",
+  "stair_risers": 17,
+  "stair_riser_mm": 176.47058823529412,
+  "stair_tread_mm": 250,
+  "stair_clear_width_mm": 900,
+  "assumed_car_body_m": [
+    1.75,
+    4.2
+  ],
+  "parking_stall_m": [
+    2.5,
+    5.0
+  ],
+  "parking_access_verified": false,
+  "survey_setout_verified": false,
+  "vastu_certified": false,
+  "roof_enclosure_m2": 9.02,
+  "total_including_roof_m2": 125.41999999999999,
+  "roof_landing_m": 6.45,
+  "roof_cover_top_m": 9.0,
+  "roof_clear_landing_height_m": 2.4,
+  "roof_access": "full south stair from first floor",
+  "drawing_count": 11
+}

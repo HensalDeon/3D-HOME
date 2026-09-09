@@ -1,0 +1,27 @@
+{
+  "archive": "/Users/hensaldeon/.Trash/dream-home-superseded-20260908-192209",
+  "superseded_paths": [
+    "drawings/roof-integrated",
+    "drawings/roof-study",
+    "drawings/Hensal_Plan_Set_v2.pdf",
+    "drawings/make_compact_plans.py",
+    "drawings/make_ensuite_plans.py",
+    "drawings/make_roof_study.py",
+    "drawings/make_integrated_roof.py",
+    "drawings/make_plans.py",
+    "drawings/__pycache__",
+    "Hensal_House_Plan_Updated_No_Terrace_Stair.pdf",
+    "PLOT SKETCH 4.00 CENT HENSAL.pdf",
+    "HENSAL PLAN 1 SITE PLAN.pdf",
+    "HENSAL PLAN 1.pdf",
+    "frontview.jpeg",
+    "rearview.png",
+    "rearview-updated.png",
+    "drawings/compact-v4/Hensal_Compact_630_v4.pdf",
+    "drawings/compact-v4/exterior-concept-before-upper-revision.png",
+    "drawings/compact-v4/exterior-concept-draft.png",
+    "drawings/compact-v4/exterior-render-prompt.txt",
+    "drawings/compact-v4/upper-rear-edit-prompts.txt"
+  ],
+  "original_inputs_preserved": "inputs/"
+}

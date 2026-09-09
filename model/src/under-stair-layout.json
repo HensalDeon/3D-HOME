@@ -1,0 +1,79 @@
+{
+  "revision": "R5",
+  "stair": {
+    "frontLandingY": 2.3,
+    "starterRisers": 2,
+    "westRisers": 7,
+    "landingExtension": [0.15, 4.7, 1.05, 5.2],
+    "route": "SOUTH → WEST → EAST",
+    "kitchenDepth": 2.05
+  },
+  "bedroomWallFace": 6.1,
+  "storage": [
+    {
+      "box": [0.47, 4.2, 1.02, 4.7],
+      "height": 1.08,
+      "access": "N",
+      "type": "rectangular cabinet",
+      "doorLeaves": 2,
+      "doorSweep": [1.02, 4.2, 1.27, 4.7],
+      "standing": [1.15, 4.2, 1.55, 4.7],
+      "approach": [[2.6, 2.75], [1.65, 2.75], [1.65, 3.5], [1.35, 3.5], [1.35, 4.45]]
+    }
+  ],
+  "store": {
+    "box": [0.15, 4.75, 2.05, 6.1],
+    "zones": [
+      {"box": [0.15, 5.2, 2.05, 6.1], "top": 1.42, "clear": 1.47, "over": "intermediate landing"},
+      {"box": [0.15, 4.75, 1.15, 5.2], "top": 1.42, "clear": 1.47, "over": "landing extension and central well"},
+      {"box": [1.15, 4.95, 2.05, 5.2], "top": 1.59, "clear": 1.64, "over": "riser 10 tread"},
+      {"box": [1.15, 4.75, 2.05, 4.95], "top": 1.77, "clear": 1.82, "over": "riser 11 tread"}
+    ],
+    "crouchPocket": [0.15, 4.75, 1.15, 6.1],
+    "door": {
+      "box": [2.05, 5.2, 2.15, 6.1],
+      "leaves": 2,
+      "leafWidth": 0.45,
+      "height": 1.4,
+      "type": "bifold pair",
+      "face": "N / passage beside the bedroom door",
+      "sweep": [2.15, 5.2, 2.4, 6.1]
+    },
+    "wallCut": "900 x 1400 mm opening in the retained 100 mm stair-side partition at y = 5.20-6.10 m; structural engineer to confirm the intermediate landing does not bear on it",
+    "fallback": "mirror-fronted door on the partition and crouch-in access from the wash side; no wall change"
+  },
+  "partition": {
+    "box": [1.15, 4.7, 2.05, 4.75],
+    "height": 1.75,
+    "mirror": {"x": [1.6, 2.0], "z": [1.0, 1.65]},
+    "finish": "oak slats on the wash face, mirror centred over the basin"
+  },
+  "wash": {
+    "box": [1.55, 4.35, 2.05, 4.7],
+    "height": 0.86,
+    "front": "E",
+    "userFaces": "W",
+    "counter": {"top": 0.86, "drawerBottom": 0.5},
+    "standing": [1.3, 3.75, 2.05, 4.35],
+    "leanStrip": [1.3, 4.2, 2.05, 4.35],
+    "bodyLine": [1.3, 3.75, 2.05, 4.2],
+    "bedroomDoorLanding": [2.2, 5.2, 3.05, 6.1],
+    "approach": [[2.6, 2.75], [1.65, 2.75], [1.65, 4.05]],
+    "fromBedroomWall": {"basinBack": 1.4, "basinFront": 1.75, "standingRear": 2.35},
+    "fallbackFront": 2.0
+  },
+  "closingPanel": {
+    "box": [2.05, 4.6, 2.1, 5.2],
+    "height": 1.7
+  },
+  "tv": {
+    "box": [2.1, 3.7, 2.14, 4.55],
+    "screenBottom": 0.785,
+    "screenTop": 1.415,
+    "face": "N",
+    "oldStorageCenter": 4.125,
+    "panel": [2.05, 3.65, 2.1, 4.6],
+    "panelHeight": 1.7
+  },
+  "oldSlopedStorageFootprint": [0.2, 3.6, 1.02, 4.65]
+}

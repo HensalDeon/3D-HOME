@@ -1,0 +1,21 @@
+import {chromium} from 'playwright';
+import {existsSync} from 'node:fs';
+import {homedir} from 'node:os';
+import {join} from 'node:path';
+import {readdir} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+let executablePath=process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE;
+if(!executablePath&&!existsSync(chromium.executablePath())&&process.platform==='darwin')for(const folder of(await readdir(join(homedir(),'Library/Caches/ms-playwright'))).filter(n=>/^chromium-/.test(n)).sort().reverse()){const p=join(homedir(),'Library/Caches/ms-playwright',folder,'chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing');if(existsSync(p)){executablePath=p;break;}}
+const browser=await chromium.launch({headless:true,...(executablePath?{executablePath}:{})});
+const page=await browser.newPage({viewport:{width:1440,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto(new URL('../../drawings/compact-v4/interactive-3d.html',import.meta.url).href);await page.waitForFunction(()=>window.houseExplorer?.audit.renderer.calls>0);
+assert.equal(await page.evaluate(()=>window.houseExplorer.audit.revision.startsWith('One built-in unit')),true);
+await page.locator('[data-view="front"]').click();await page.mouse.move(900,500);await page.mouse.wheel(0,-650);await page.waitForTimeout(400);await page.locator('#viewport').screenshot({path:'qa/R5-front-detail.png'});
+await page.locator('[data-mode="ground"]').click();await page.waitForTimeout(900);await page.locator('#labels').uncheck();await page.mouse.move(950,500);await page.mouse.wheel(0,-350);await page.waitForTimeout(400);await page.locator('#viewport').screenshot({path:'qa/R5-interior.png'});
+await page.getByLabel('Select a room',{exact:true}).selectOption('g-wash');await page.waitForTimeout(400);await page.locator('#viewport').screenshot({path:'qa/R5-wash.png'});assert.match(await page.locator('#detail-description').textContent(),/user faces WEST/);assert.match(await page.locator('#detail-description').textContent(),/2\.17 m/);
+await page.getByLabel('Select a room',{exact:true}).selectOption('g-storage');assert.match(await page.locator('#detail-description').textContent(),/structural review/);
+await page.getByLabel('Select a room',{exact:true}).selectOption('g-store');await page.waitForTimeout(300);await page.locator('#viewport').screenshot({path:'qa/R5-store.png'});assert.match(await page.locator('#detail-description').textContent(),/structural engineer/);assert.match(await page.locator('#detail-dimension').textContent(),/1\.90 × 1\.35 m/);
+await page.locator('#revision-button').click();await page.waitForFunction(()=>[...document.querySelectorAll('#revision-dialog img')].every(i=>i.complete&&i.naturalWidth>0));
+const dialog=await page.locator('#revision-dialog').textContent();for(const re of [/2\.17 m/,/2\.35 m/,/2\.53 m/,/1\.40 m/,/2\.05/,/SOUTH → WEST → EAST/,/bifold/,/engineer/])assert.match(dialog,re);
+await page.locator('#stair-review').scrollIntoViewIfNeeded();await page.locator('#stair-review').screenshot({path:'qa/R5-stair-options.png'});await page.getByRole('button',{name:'Close revision review'}).click();
+await page.setViewportSize({width:390,height:844});await page.locator('#revision-button').click();assert.ok(await page.getByRole('button',{name:'Close revision review'}).isVisible());assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.keyboard.press('Escape');assert.deepEqual(errors,[]);await browser.close();console.log('PASS: R5 revision views, store/wash/cabinet room details, embedded reference/section sheet, mobile dialog and no JS errors.');

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="1000" viewBox="0 0 1300 1000"><rect width="1300" height="1000" fill="#faf9f3"/><style>text{font-family:Arial,sans-serif;fill:#304a3d}.small{font-size:13px}.dim{font-size:15px;fill:#397454}.title{font-size:23px;font-weight:bold}.note{font-size:14px;fill:#657465}</style><text x="40" y="42" class="title">R1 · Stair and kitchen decision review</text><text x="40" y="68" class="note">OPTIONS ONLY — existing stair/kitchen remain active. Blue: new lower stair; grey: retained overhead flight. North is right; east is down. Metres.</text>
+<text x="55" y="110" class="title">A · Retain stair thickness</text>
+<rect x="55" y="149.4" width="432" height="446.40000000000003" fill="#eeeee5" stroke="#7c8d7a" stroke-width="1" />
+<rect x="65.8" y="437.40000000000003" width="208.79999999999998" height="147.60000000000002" fill="#d7e8cd" stroke="#7c8d7a" stroke-width="1" />
+<rect x="65.8" y="401.40000000000003" width="129.6" height="35.99999999999997" fill="#d7e8cd" stroke="#7c8d7a" stroke-width="1" />
+<rect x="195.4" y="394.20000000000005" width="7.19999999999999" height="43.199999999999974" fill="#576d5b" stroke="#7c8d7a" stroke-width="1" />
+<rect x="65.8" y="394.20000000000005" width="129.6" height="7.200000000000006" fill="#576d5b" stroke="#7c8d7a" stroke-width="1" />
+<rect x="202.6" y="430.20000000000005" width="72" height="7.199999999999974" fill="#576d5b" stroke="#7c8d7a" stroke-width="1" />
+<rect x="206.20000000000002" y="430.20000000000005" width="57.59999999999999" height="7.199999999999974" fill="#faf9f3" stroke="#7c8d7a" stroke-width="1" />
+<line x1="195.4" y1="401.40000000000003" x2="274.6" y2="401.40000000000003" stroke="#67906c" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="148.60000000000002" y="329.40000000000003" width="64.80000000000001" height="64.8" fill="#eee4ce" stroke="#b29967" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="65.8" y="156.60000000000005" width="136.79999999999998" height="64.79999999999995" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="134.2" y="193" text-anchor="middle" class="small">9</text>
+<rect x="137.8" y="221.4" width="64.8" height="18" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="170.2" y="234.4" text-anchor="middle" class="small">10</text>
+<rect x="137.8" y="239.4" width="64.8" height="18" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="170.2" y="252.4" text-anchor="middle" class="small">11</text>
+<rect x="137.8" y="257.4" width="64.8" height="18" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="170.2" y="270.4" text-anchor="middle" class="small">12</text>
+<rect x="137.8" y="275.4" width="64.8" height="18" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="170.2" y="288.4" text-anchor="middle" class="small">13</text>
+<rect x="137.8" y="293.4" width="64.8" height="18" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="170.2" y="306.4" text-anchor="middle" class="small">14</text>
+<rect x="137.8" y="311.4" width="64.8" height="18" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="170.2" y="324.4" text-anchor="middle" class="small">15</text>
+<rect x="137.8" y="329.4" width="64.8" height="18" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="170.2" y="342.4" text-anchor="middle" class="small">16</text>
+<rect x="137.8" y="347.4" width="64.8" height="82.80000000000003" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="170.2" y="392.8" text-anchor="middle" class="small">17</text>
+<rect x="130.60000000000002" y="329.40000000000003" width="18" height="64.8" fill="#cee1e2" stroke="#7c8d7a" stroke-width="1" />
+<text x="139.60000000000002" y="365.8" text-anchor="middle" class="small">1</text>
+<rect x="65.8" y="329.40000000000003" width="64.8" height="64.8" fill="#cee1e2" stroke="#7c8d7a" stroke-width="1" />
+<text x="98.19999999999999" y="365.8" text-anchor="middle" class="small">2</text>
+<rect x="65.8" y="311.40000000000003" width="64.8" height="18" fill="#cee1e2" stroke="#7c8d7a" stroke-width="1" />
+<text x="98.19999999999999" y="324.40000000000003" text-anchor="middle" class="small">3</text>
+<rect x="65.8" y="293.4000000000001" width="64.8" height="17.999999999999968" fill="#cee1e2" stroke="#7c8d7a" stroke-width="1" />
+<text x="98.19999999999999" y="306.4000000000001" text-anchor="middle" class="small">4</text>
+<rect x="65.8" y="275.4000000000001" width="64.8" height="18" fill="#cee1e2" stroke="#7c8d7a" stroke-width="1" />
+<text x="98.19999999999999" y="288.4000000000001" text-anchor="middle" class="small">5</text>
+<rect x="65.8" y="257.4000000000001" width="64.8" height="18" fill="#cee1e2" stroke="#7c8d7a" stroke-width="1" />
+<text x="98.19999999999999" y="270.4000000000001" text-anchor="middle" class="small">6</text>
+<rect x="65.8" y="239.4000000000001" width="64.8" height="18" fill="#cee1e2" stroke="#7c8d7a" stroke-width="1" />
+<text x="98.19999999999999" y="252.4000000000001" text-anchor="middle" class="small">7</text>
+<rect x="65.8" y="221.4000000000001" width="64.8" height="18" fill="#cee1e2" stroke="#7c8d7a" stroke-width="1" />
+<text x="98.19999999999999" y="234.4000000000001" text-anchor="middle" class="small">8</text>
+<text x="73" y="516.6" class="dim">KITCHEN / SE</text><text x="73" y="545.4000000000001" class="small">2.55 m deep zone</text>
+<text x="285.4" y="340.20000000000005" class="small">NORTH ENTRY ←</text><text x="285.4" y="307.8" class="small">900 mm approach landing</text><text x="285.4" y="228.60000000000005" class="small">Upper 8 risers retained</text><text x="285.4" y="203.4" class="small">Final ascent toward EAST ↓</text><text x="285.4" y="401.40000000000003" class="small">Door stays at y = 2.20 m</text><text x="285.4" y="430.20000000000005" class="small">unless you authorize its move.</text>
+<text x="55" y="660" class="dim">2 + 7 + 8 = 17 risers × 176.47 mm = 3.00 m</text><text x="55" y="685" class="note">900 mm clear flights/turn landings · 250 mm treads</text><text x="55" y="710" class="note">Tightest modeled vertical clearance: 2.497 m*</text>
+<text x="55" y="747" class="note">A conservative kitchen gain of 500 mm, with a two-riser starter.</text>
+<text x="55" y="769" class="note">The upper flight, first-floor arrival and floor opening stay fixed.</text>
+<text x="55" y="791" class="note">Keeps the modeled 120 mm stair thickness. Clearances shown</text>
+<text x="55" y="813" class="note">are geometric; beams, finishes and approvals remain to verify.</text>
+<text x="690" y="110" class="title">B · Target kitchen depth</text>
+<rect x="690" y="149.4" width="432" height="446.40000000000003" fill="#eeeee5" stroke="#7c8d7a" stroke-width="1" />
+<rect x="700.8" y="437.40000000000003" width="208.79999999999998" height="147.60000000000002" fill="#d7e8cd" stroke="#7c8d7a" stroke-width="1" />
+<rect x="700.8" y="386.2800000000001" width="129.6" height="51.11999999999996" fill="#d7e8cd" stroke="#7c8d7a" stroke-width="1" />
+<rect x="830.4" y="379.08000000000004" width="7.19999999999999" height="58.31999999999997" fill="#576d5b" stroke="#7c8d7a" stroke-width="1" />
+<rect x="700.8" y="379.08000000000004" width="129.6" height="7.200000000000006" fill="#576d5b" stroke="#7c8d7a" stroke-width="1" />
+<rect x="837.6" y="430.20000000000005" width="72" height="7.199999999999974" fill="#576d5b" stroke="#7c8d7a" stroke-width="1" />
+<rect x="841.2" y="430.20000000000005" width="57.59999999999999" height="7.199999999999974" fill="#faf9f3" stroke="#7c8d7a" stroke-width="1" />
+<line x1="830.4" y1="386.2800000000001" x2="909.6" y2="386.2800000000001" stroke="#67906c" stroke-width="2" stroke-dasharray="5 4"/>
+<rect x="801.6" y="311.40000000000003" width="64.80000000000001" height="64.8" fill="#eee4ce" stroke="#b29967" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="700.8" y="156.60000000000005" width="136.79999999999998" height="64.79999999999995" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="769.2" y="193" text-anchor="middle" class="small">9</text>
+<rect x="772.8" y="221.4" width="64.8" height="18" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="805.2" y="234.4" text-anchor="middle" class="small">10</text>
+<rect x="772.8" y="239.4" width="64.8" height="18" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="805.2" y="252.4" text-anchor="middle" class="small">11</text>
+<rect x="772.8" y="257.4" width="64.8" height="18" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="805.2" y="270.4" text-anchor="middle" class="small">12</text>
+<rect x="772.8" y="275.4" width="64.8" height="18" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="805.2" y="288.4" text-anchor="middle" class="small">13</text>
+<rect x="772.8" y="293.4" width="64.8" height="18" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="805.2" y="306.4" text-anchor="middle" class="small">14</text>
+<rect x="772.8" y="311.4" width="64.8" height="18" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="805.2" y="324.4" text-anchor="middle" class="small">15</text>
+<rect x="772.8" y="329.4" width="64.8" height="18" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="805.2" y="342.4" text-anchor="middle" class="small">16</text>
+<rect x="772.8" y="347.4" width="64.8" height="82.80000000000003" fill="#dddcd2" stroke="#7c8d7a" stroke-width="1" />
+<text x="805.2" y="392.8" text-anchor="middle" class="small">17</text>
+<rect x="783.6" y="311.40000000000003" width="18" height="64.8" fill="#cee1e2" stroke="#7c8d7a" stroke-width="1" />
+<text x="792.6" y="347.8" text-anchor="middle" class="small">1</text>
+<rect x="765.6" y="311.40000000000003" width="18" height="64.8" fill="#cee1e2" stroke="#7c8d7a" stroke-width="1" />
+<text x="774.6" y="347.8" text-anchor="middle" class="small">2</text>
+<rect x="700.8" y="311.40000000000003" width="64.8" height="64.8" fill="#cee1e2" stroke="#7c8d7a" stroke-width="1" />
+<text x="733.2" y="347.8" text-anchor="middle" class="small">3</text>
+<rect x="700.8" y="293.4000000000001" width="64.8" height="17.999999999999968" fill="#cee1e2" stroke="#7c8d7a" stroke-width="1" />
+<text x="733.2" y="306.4000000000001" text-anchor="middle" class="small">4</text>
+<rect x="700.8" y="275.4000000000001" width="64.8" height="18" fill="#cee1e2" stroke="#7c8d7a" stroke-width="1" />
+<text x="733.2" y="288.4000000000001" text-anchor="middle" class="small">5</text>
+<rect x="700.8" y="257.4000000000001" width="64.8" height="18" fill="#cee1e2" stroke="#7c8d7a" stroke-width="1" />
+<text x="733.2" y="270.4000000000001" text-anchor="middle" class="small">6</text>
+<rect x="700.8" y="239.4000000000001" width="64.8" height="18" fill="#cee1e2" stroke="#7c8d7a" stroke-width="1" />
+<text x="733.2" y="252.4000000000001" text-anchor="middle" class="small">7</text>
+<rect x="700.8" y="221.4000000000001" width="64.8" height="18" fill="#cee1e2" stroke="#7c8d7a" stroke-width="1" />
+<text x="733.2" y="234.4000000000001" text-anchor="middle" class="small">8</text>
+<text x="708" y="516.6" class="dim">KITCHEN / SE</text><text x="708" y="545.4000000000001" class="small">2.76 m deep zone</text>
+<text x="920.4" y="340.20000000000005" class="small">NORTH ENTRY ←</text><text x="920.4" y="307.8" class="small">900 mm approach landing</text><text x="920.4" y="228.60000000000005" class="small">Upper 8 risers retained</text><text x="920.4" y="203.4" class="small">Final ascent toward EAST ↓</text><text x="920.4" y="401.40000000000003" class="small">Door stays at y = 2.20 m</text><text x="920.4" y="430.20000000000005" class="small">unless you authorize its move.</text>
+<text x="690" y="660" class="dim">3 + 6 + 8 = 17 risers × 176.47 mm = 3.00 m</text><text x="690" y="685" class="note">900 mm clear flights/turn landings · 250 mm treads</text><text x="690" y="710" class="note">Tightest modeled vertical clearance: 2.174 m*</text>
+<text x="690" y="747" class="note">Kitchen target is achievable in plan, but the crossing clearance</text>
+<text x="690" y="769" class="note">does not reach the 2.20 m benchmark with the assumed 120 mm</text>
+<text x="690" y="791" class="note">stair thickness. Upper tread levels need not change; the support</text>
+<text x="690" y="813" class="note">build-up would need structural redesign, not cosmetic trimming.</text>
+<line x1="40" x2="1260" y1="855" y2="855" stroke="#ced5c5"/><text x="40" y="885" class="small">* Headroom checked against modeled tread undersides and slab. The 2.20 m benchmark comes from Kerala's published 2019 stair provisions;</text><text x="40" y="907" class="small">the architect must confirm applicable occupancy provisions and amendments. These are not structural or permit approvals.</text><text x="40" y="945" class="small">Neither option silently changes the requested south–north–east sequence: both require your choice to retain the existing final east-going flight.</text><text x="40" y="970" class="small">A full 2.90 m kitchen width at the increased depth needs its rear wall and door moved; retaining the existing door gives a stepped kitchen.</text></svg>

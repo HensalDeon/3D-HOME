@@ -1,0 +1,18 @@
+{
+  "name": "hensal-house-explorer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173",
+    "build": "vite build && node scripts/standalone.mjs",
+    "test": "node --test scripts/model.test.mjs scripts/revision.test.mjs"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "vite": "7.1.5",
+    "esbuild": "0.25.9",
+    "@playwright/test": "1.55.0"
+  }
+}
