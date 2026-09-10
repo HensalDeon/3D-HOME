@@ -1,13 +1,24 @@
 import * as THREE from 'three';
 import {facadeBand} from './facade.js';
 import {revision} from './revision.js';
-import {plan,LEVELS,rooms,openingsFor,wallPieces,stairTreads,stairLandingExtensions} from './geometry.js';
+import {plan,LEVELS,rooms,openingsFor,wallPieces,stairTreads,STAIR_STRUCTURE,STAIR_BEAM_ZONES,stairFlights,stairLandingSlabs,FRAME} from './geometry.js';
 export function createHouse(){
  const root=new THREE.Group(),levels={},pickables=[],labels=[],wallMaterials=[],furnitureGroups=[],facades=[],dimensions=new THREE.Group();root.add(dimensions);const siteDimensions=new THREE.Group(),roofDimensions=new THREE.Group();dimensions.add(siteDimensions,roofDimensions);
  const mat=(color,extra={})=>new THREE.MeshStandardMaterial({color,roughness:.8,...extra});
- const materials={wall:mat('#eeeee5'),stone:mat('#d7d5c8'),dark:mat('#37413e'),wood:mat('#956b49'),oak:mat('#b69873'),fabric:mat('#d3d4bd'),linen:mat('#f8f4e7'),green:mat('#738e76'),tile:mat('#dce8e2'),glass:mat('#b6d0cf',{transparent:true,opacity:.36,roughness:.17,metalness:.1,depthWrite:false,side:THREE.DoubleSide}),obscured:mat('#bad0cb',{transparent:true,opacity:.75,roughness:.6}),metal:mat('#717b72',{metalness:.55,roughness:.35}),soil:mat('#a3ad8d'),grass:mat('#b5c1a0'),pave:mat('#d9dbc9'),water:mat('#809f98'),white:mat('#f5f3e8'),mirror:mat('#dfe9ea',{metalness:.3,roughness:.15})};
+ const materials={wall:mat('#eeeee5'),stone:mat('#d7d5c8'),concrete:mat('#b7bab2',{roughness:.95}),dark:mat('#37413e'),wood:mat('#956b49'),oak:mat('#b69873'),fabric:mat('#d3d4bd'),linen:mat('#f8f4e7'),green:mat('#738e76'),tile:mat('#dce8e2'),glass:mat('#b6d0cf',{transparent:true,opacity:.36,roughness:.17,metalness:.1,depthWrite:false,side:THREE.DoubleSide}),obscured:mat('#bad0cb',{transparent:true,opacity:.75,roughness:.6}),metal:mat('#717b72',{metalness:.55,roughness:.35}),soil:mat('#a3ad8d'),grass:mat('#b5c1a0'),pave:mat('#d9dbc9'),water:mat('#809f98'),white:mat('#f5f3e8'),mirror:mat('#dfe9ea',{metalness:.3,roughness:.15})};
  const V=(x,h,y)=>new THREE.Vector3(x-3,h,4.85-y);
  function box(g,x0,y0,x1,y1,bottom,top,m){if(x1-x0<.00001||y1-y0<.00001||top-bottom<.00001)return;const o=new THREE.Mesh(new THREE.BoxGeometry(x1-x0,top-bottom,y1-y0),m);o.position.copy(V((x0+x1)/2,(bottom+top)/2,(y0+y1)/2));o.castShadow=true;o.receiveShadow=true;g.add(o);return o;}
+ // An inclined slab whose top face lies on the a-b segment given as (plan y, height above z).
+ function slopedSlab(g,x0,x1,a,b,thickness,m){
+  const A=V((x0+x1)/2,a[1],a[0]),B=V((x0+x1)/2,b[1],b[0]),d=B.clone().sub(A);
+  const mesh=new THREE.Mesh(new THREE.BoxGeometry(x1-x0,thickness,d.length()),m);
+  mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,0,1),d.clone().normalize());
+  // setFromUnitVectors flips the local up when the flight runs the other way down the plan,
+  // so force the offset normal upward before seating the top face on the a-b line.
+  const n=new THREE.Vector3(0,1,0).applyQuaternion(mesh.quaternion);if(n.y<0)n.negate();
+  mesh.position.copy(A.clone().add(B).multiplyScalar(.5)).addScaledVector(n,-thickness/2);
+  mesh.castShadow=true;mesh.receiveShadow=true;g.add(mesh);return mesh;
+ }
  function rod(g,a,b,r,m){const av=V(a[0],a[2],a[1]),bv=V(b[0],b[2],b[1]),d=bv.clone().sub(av);const mesh=new THREE.Mesh(new THREE.CylinderGeometry(r,r,d.length(),7),m);mesh.position.copy(av.add(bv).multiplyScalar(.5));mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());mesh.castShadow=true;g.add(mesh);return mesh;}
  function cylinder(g,x,y,b,t,r,m,segments=24){const o=new THREE.Mesh(new THREE.CylinderGeometry(r,r,t-b,segments),m);o.position.copy(V(x,(b+t)/2,y));o.castShadow=true;o.receiveShadow=true;g.add(o);return o;}
  function line(g,pts,color='#78967b',dashed=false){const geo=new THREE.BufferGeometry().setFromPoints(pts.map(p=>V(p[0],p[2],p[1])));const o=new THREE.Line(geo,dashed?new THREE.LineDashedMaterial({color,dashSize:.12,gapSize:.09}):new THREE.LineBasicMaterial({color}));o.computeLineDistances();g.add(o);return o;}
@@ -143,18 +154,46 @@ export function createHouse(){
    const[x0,y0,x1,y1]=room.box;label(room.name,room.dimensions,(x0+x1)/2,(y0+y1)/2,z+.18,level,'room',room);
   }
   if(level!=='roof'){
-   // Separate tread, riser and landing meshes leave the under-stair volumes open.
+   // R6: a conceptual cast-in-situ RCC stair. A continuous waist slab runs under each flight and
+   // is monolithic with the landing slabs, so nothing reads as a floating or cantilevered tread.
+   // The warm stone finish is a separate 20 mm layer over the concrete; walking levels are unchanged.
    const stairGroup=new THREE.Group();g.add(stairGroup);stairGroup.name='stairs';
-   const steps=stairTreads(level),rise=3/17;
+   const structure=new THREE.Group();stairGroup.add(structure);
+   structure.name='Conceptual RCC stair structure - waist slabs, landing slabs and beam zones TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER';
+   const steps=stairTreads(level),rise=3/17,FIN=STAIR_STRUCTURE.finish;
+   // Each waist slab is run into the slab it frames into, but never past a landing edge.
+   for(const f of stairFlights(level)){
+    const dy=f.b[0]-f.a[0],dh=f.b[1]-f.a[1],[ra,rb]=f.runIn.map(v=>v/Math.abs(dy));
+    slopedSlab(structure,f.x[0],f.x[1],[f.a[0]-dy*ra,z+f.a[1]-dh*ra-FIN],[f.b[0]+dy*rb,z+f.b[1]+dh*rb-FIN],STAIR_STRUCTURE.waistVertical,materials.concrete);
+   }
+   // Landing slabs at the turns; the starter landing is solid onto the plinth fill.
+   for(const s of stairLandingSlabs(level)){
+    box(structure,...s.box,z+(s.onGround?0:s.top-STAIR_STRUCTURE.landingZone),z+s.top-FIN,materials.concrete);
+    box(stairGroup,...s.box,z+s.top-FIN,z+s.top,materials.stone);
+   }
+   // Support zones shown as massing only, inside walls and slab edges that already exist.
+   const beams=new THREE.Group();structure.add(beams);beams.name='Landing beam and trimmer zones (indicative)';
+   for(const bz of STAIR_BEAM_ZONES){
+    const b=[bz.box[0]+.002,bz.box[1]+.002,bz.box[2]-.002,bz.box[3]-.002];
+    if(bz.id==='landing-beam')box(beams,...b,z+9*rise-STAIR_STRUCTURE.landingZone-.15,z+9*rise-FIN,materials.concrete);
+    else box(beams,...b,z+2.85-.15,z+2.85,materials.concrete);
+   }
+   label('Landing beam zone',STAIR_BEAM_ZONES[0].note,1.6,6.15,z+1.75,level,'dimension');
+   label('RCC waist slab',`${(STAIR_STRUCTURE.waist*1000).toFixed(0)} mm indicative - ${STAIR_STRUCTURE.status}`,1.6,4.35,z+.95,level,'dimension');
+   // Solid concrete step over the waist, then the stone tread; landings are cast above.
    for(const [i,step] of steps.entries()){
-    const b=step.box;box(stairGroup,...b,z+step.height-.12,z+step.height,materials.stone);
-    line(stairGroup,[[b[0],b[1],z+step.height+.002],[b[2],b[1],z+step.height+.002]],'#a8ab9b');
+    if(step.landing)continue;
+    const b=step.box,top=z+step.height;
+    // Each solid step is buried one finish thickness into the waist below it, so the flight
+    // reads as one casting with no gap between the steps and the slab.
+    box(structure,...b,step.arrival?top-FIN:top-rise-FIN,top-FIN,materials.concrete);
+    box(stairGroup,...b,top-FIN,top,materials.stone);
+    line(stairGroup,[[b[0],b[1],top+.002],[b[2],b[1],top+.002]],'#a8ab9b');
     if(i<8){
-     if(step.direction==='S'||(level==='ground'&&i===1))box(stairGroup,b[2]-.02,b[1],b[2],b[3],z+i*rise,z+step.height,materials.stone);
-     else box(stairGroup,b[0],b[1],b[2],b[1]+.02,z+i*rise,z+step.height,materials.stone);
+     if(step.direction==='S'||(level==='ground'&&i===1))box(stairGroup,b[2]-.02,b[1],b[2],b[3],z+i*rise,top,materials.stone);
+     else box(stairGroup,b[0],b[1],b[2],b[1]+.02,z+i*rise,top,materials.stone);
     }
    }
-   for(const s of stairLandingExtensions(level))box(stairGroup,...s.box,z+s.height-.12,z+s.height,materials.stone);
    for(let i=0;i<7;i++)box(stairGroup,1.15,5.18-i*.25,2.05,5.2-i*.25,z+(9+i)*rise,z+(10+i)*rise,materials.stone);
    const lowerEnd=level==='ground'?4.7:5.2;
    box(stairGroup,.15,lowerEnd,1.05,lowerEnd+.02,z+8*rise,z+9*rise,materials.stone);
@@ -213,6 +252,29 @@ export function createHouse(){
   }
  }
  const arrivalStair=levels.first.getObjectByName('stairs').clone(true);arrivalStair.name='roof-arrival-stair';arrivalStair.visible=false;levels.roof.add(arrivalStair);
+ // R7: one coordinated conceptual framing option for the whole house, on its own layer and off by
+ // default. Columns stand inside wall lines and piers that already exist; beams run on the grid and
+ // hang under the 150 mm floor slabs. Footprints and depths are indicative massing, never a design.
+ const structuralFrame=new THREE.Group();root.add(structuralFrame);
+ structuralFrame.name='Conceptual structural frame - COLUMN AND BEAM SIZES, SLABS, REINFORCEMENT, FOUNDATIONS AND CONNECTIONS TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER';
+ structuralFrame.visible=false;
+ {
+  const enclosure=[0,2.15,2.2,6.25];
+  const within=c=>c.x>=enclosure[0]&&c.x<=enclosure[2]&&c.y>=enclosure[1]&&c.y<=enclosure[3];
+  const columns=new THREE.Group();structuralFrame.add(columns);columns.name='Column zones (indicative footprint)';
+  for(const c of FRAME.columns){
+   // Only the two columns inside the roof-enclosure footprint continue past the roof slab.
+   const o=box(columns,...c.box,0,within(c)?9:LEVELS.roof,materials.concrete);
+   if(o)o.userData.member=c;
+  }
+  const beams=new THREE.Group();structuralFrame.add(beams);beams.name='Beam lines and floor-slab trimmers (indicative depth)';
+  for(const b of [...FRAME.beams,...FRAME.trimmers])for(const z of [LEVELS.first,LEVELS.roof]){
+   const o=box(beams,...b.box,z-FRAME.slab-FRAME.indicativeBeam,z-FRAME.slab,materials.concrete);
+   if(o)o.userData.member=b;
+  }
+  label('Structural grid',`${FRAME.columns.length} column zones on A/B/C x 1-6 - ${FRAME.status}`,3,4.85,LEVELS.first+.6,null,'dimension');
+  label('Longest beam span',`${FRAME.beams.reduce((m,b)=>Math.max(m,b.span),0).toFixed(2)} m, grid C - size to be designed`,5.925,6.15,LEVELS.first+.6,null,'dimension');
+ }
  const site=new THREE.Group();root.add(site);
  box(site,-2.7,-3,7,13.8,-.26,-.02,materials.grass);box(site,-2.7,-3,0,13.8,-.01,.0,materials.pave);box(site,6,-3,7,13.8,-.01,.0,materials.pave);box(site,3.25,-3,4.4,-.84,0,.012,materials.pave);
  box(site,-3.2,-6.6,7.5,-3,-.1,-.015,materials.stone);
@@ -233,5 +295,5 @@ export function createHouse(){
  dim([0,-1.05,.06],[6,-1.05,.06],'6.00 m','House width');dim([6.4,0,.08],[6.4,9.7,.08],'9.70 m','House depth');dim([-2.7,8,.05],[0,8,.05],'2.70 m','South parking strip');dim([6,7,.05],[7,7,.05],'1.00 m','North path');dim([2,-3,.05],[2,0,.05],'3.00 m','Front yard');dim([4,9.7,.06],[4,13.8,.06],'4.10 m','Rear garden');
  dim([-.35,0,6.55],[-.35,2.15,6.55],'2.15 m','Front roof setback','roof');dim([-.35,6.25,6.55],[-.35,9.7,6.55],'3.45 m','Rear roof setback','roof');
  label('Well','Indicative position',6.5,-1.7,.75,null,'dimension');label('Septic reserve','Indicative position',6.5,10.8,.25,null,'dimension');label('East · private road','3.60 m nominal',2,-5,.1,null,'dimension');label('Compact parking','2.50 × 5.00 m · turning unverified',-1.4,6.3,.1,null,'dimension');
- return {root,levels,pickables,labels,wallMaterials,furnitureGroups,facades,dimensions,siteDimensions,roofDimensions,arrivalStair,site,materials,V,counts:{walls:Object.fromEntries(Object.keys(LEVELS).map(l=>[l,wallPieces(l).length])),openings:Object.fromEntries(Object.keys(LEVELS).map(l=>[l,openingsFor(l).length]))}};
+ return {root,levels,pickables,labels,wallMaterials,furnitureGroups,facades,dimensions,siteDimensions,roofDimensions,arrivalStair,structuralFrame,site,materials,V,counts:{walls:Object.fromEntries(Object.keys(LEVELS).map(l=>[l,wallPieces(l).length])),openings:Object.fromEntries(Object.keys(LEVELS).map(l=>[l,openingsFor(l).length]))}};
 }

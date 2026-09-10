@@ -32,7 +32,7 @@ await page.getByLabel('Select a room',{exact:true}).selectOption('g-bath');
 assert.equal(await page.locator('#detail-name').textContent(),'Ensuite 1');
 await page.locator('#detail-source').click();
 assert.equal(await page.locator('#sheet-image').getAttribute('alt'),'Sheet 3: Ground floor');
-for(let i=0;i<11;i++){await page.locator('#sheet-list button').nth(i).click();await page.waitForFunction(()=>{const img=document.querySelector('#sheet-image');return img.complete&&img.naturalWidth>0;});}
+for(let i=0;i<12;i++){await page.locator('#sheet-list button').nth(i).click();await page.waitForFunction(()=>{const img=document.querySelector('#sheet-image');return img.complete&&img.naturalWidth>0;});}
 const dl=page.waitForEvent('download');await page.locator('#pdf-download').click();const downloaded=await dl;await downloaded.saveAs('qa/downloaded-plan.pdf');
 const hash=b=>createHash('sha256').update(b).digest('hex');assert.equal(hash(await readFile('qa/downloaded-plan.pdf')),hash(await readFile('../drawings/compact-v4/Hensal_Complete_House_Plans.pdf')));
 await unlink('qa/downloaded-plan.pdf');
@@ -50,5 +50,5 @@ const pngWait=page.waitForEvent('download');await page.getByRole('button',{name:
 await page.locator('#assumptions-button').click();assert.ok(await page.getByText('Visual assumptions',{exact:true}).isVisible());await page.keyboard.press('Escape');
 await page.setViewportSize({width:390,height:844});await page.locator('[data-mode="ground"]').click();await page.waitForTimeout(1000);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);await page.screenshot({path:'qa/mobile.png',fullPage:true});
 await page.getByLabel('Model assumptions',{exact:true}).click();assert.ok(await page.getByText('Visual assumptions',{exact:true}).isVisible());await page.keyboard.press('Escape');
-assert.deepEqual(errors,[]);assert.deepEqual(external,[]);console.log('PASS: 11 sheets, exact PDF download, floor selection, room details, camera modes, layer controls, exports, source notes, responsive layout, zero external requests and zero JS errors.');
+assert.deepEqual(errors,[]);assert.deepEqual(external,[]);console.log('PASS: 12 sheets, exact PDF download, floor selection, room details, camera modes, layer controls, exports, source notes, responsive layout, zero external requests and zero JS errors.');
 await browser.close();

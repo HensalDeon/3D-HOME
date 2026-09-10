@@ -16,7 +16,7 @@ const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamp
 scene.add(new THREE.HemisphereLight('#fffcef','#8a9b77',1.9));const sun=new THREE.DirectionalLight('#fff7e3',2.8);sun.position.set(-9,18,12);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.camera.left=-15;sun.shadow.camera.right=15;sun.shadow.camera.top=18;sun.shadow.camera.bottom=-15;sun.shadow.normalBias=.04;sun.shadow.bias=-.00015;sun.shadow.camera.far=65;sun.shadow.radius=4;scene.add(sun);scene.add(sun.target);
 const floor=new THREE.Mesh(new THREE.PlaneGeometry(200,200),new THREE.MeshStandardMaterial({color:'#e9ece3',roughness:1}));floor.rotation.x=-Math.PI/2;floor.position.y=-.28;floor.receiveShadow=true;scene.add(floor);
 const house=createHouse();scene.add(house.root);
-const state={mode:'exterior',view:'perspective',cutaway:false,explode:false,wallHeight:2.85,labels:true,dimensions:false,furniture:true,site:true,selected:null};
+const state={mode:'exterior',view:'perspective',cutaway:false,explode:false,wallHeight:2.85,labels:true,dimensions:false,structure:false,furniture:true,site:true,selected:null};
 const horizontalPlanes={};for(const level of Object.keys(LEVELS))horizontalPlanes[level]=new THREE.Plane(new THREE.Vector3(0,-1,0),20);
 const cutPlane=new THREE.Plane(new THREE.Vector3(0,0,-1),.30);
 let cameraTween=null,needsRender=true,toastTimer;
@@ -64,7 +64,7 @@ function apply(){
   horizontalPlanes[level].constant=LEVELS[level]+off[level]+state.wallHeight;
   const cover=g.getObjectByName('cover');if(cover)cover.visible=!(isFloor||state.cutaway||state.explode);
  }
- floor.receiveShadow=!isFloor;house.site.visible=state.site&&!isFloor;house.dimensions.visible=state.dimensions;house.siteDimensions.visible=!isFloor&&state.site;house.roofDimensions.visible=state.mode==='exterior'||state.mode==='roof';house.roofDimensions.position.y=off.roof;house.arrivalStair.visible=state.mode==='roof';
+ floor.receiveShadow=!isFloor;house.site.visible=state.site&&!isFloor;house.dimensions.visible=state.dimensions;house.structuralFrame.visible=state.structure;house.siteDimensions.visible=!isFloor&&state.site;house.roofDimensions.visible=state.mode==='exterior'||state.mode==='roof';house.roofDimensions.position.y=off.roof;house.arrivalStair.visible=state.mode==='roof';
  for(const g of house.furnitureGroups)g.visible=state.furniture;
  for(const {group,level} of house.facades)group.visible=!isFloor&&!state.cutaway&&!state.explode&&state.wallHeight>=2.8;
  for(const {material,level} of house.wallMaterials){material.clippingPlanes=[...(state.wallHeight<2.85?[horizontalPlanes[level]]:[]),...(state.cutaway?[cutPlane]:[])];material.clipShadows=true;}
@@ -90,7 +90,7 @@ $$('[data-view]').forEach(b=>b.addEventListener('click',()=>setCamera(b.dataset.
 $('#reset').addEventListener('click',()=>setCamera('perspective'));
 $('#cutaway').addEventListener('click',()=>{state.cutaway=!state.cutaway;state.explode=false;state.mode='exterior';state.wallHeight=2.85;$('#wall-height').value=2.85;clearSelection();apply();setCamera('perspective');});
 $('#explode').addEventListener('click',()=>{state.explode=!state.explode;state.cutaway=false;state.mode='exterior';state.wallHeight=state.explode?.9:2.85;$('#wall-height').value=state.wallHeight;clearSelection();apply();setCamera('perspective');});
-for(const name of ['furniture','labels','dimensions','site'])$('#'+name).addEventListener('change',e=>{state[name]=e.target.checked;apply();});
+for(const name of ['furniture','labels','dimensions','structure','site'])$('#'+name).addEventListener('change',e=>{state[name]=e.target.checked;apply();});
 $('#wall-height').addEventListener('input',e=>{state.wallHeight=+e.target.value;apply();});
 $('#screenshot').addEventListener('click',()=>{renderer.render(scene,camera);const a=document.createElement('a');a.download=`Hensal-${state.mode}-${state.view}.png`;a.href=renderer.domElement.toDataURL('image/png');a.click();toast('3D view saved as a PNG.');});
 let pointerStart;renderer.domElement.addEventListener('pointerdown',e=>{pointerStart={x:e.clientX,y:e.clientY};cameraTween=null;});
@@ -100,9 +100,9 @@ renderer.domElement.addEventListener('pointerup',e=>{
  const hits=ray.intersectObjects(house.pickables.filter(m=>m.parent.visible));if(hits.length&&state.mode!=='exterior')selectRoom(hits[0].object.userData.room);
 });
 viewport.addEventListener('keydown',e=>{if(e.target!==viewport)return;const d=.5;if(e.key==='ArrowLeft')controls.target.x-=d;else if(e.key==='ArrowRight')controls.target.x+=d;else if(e.key==='ArrowUp')controls.target.z-=d;else if(e.key==='ArrowDown')controls.target.z+=d;else if(e.key.toLowerCase()==='r')setCamera();else return;e.preventDefault();needsRender=true;});
-const sheetTitles=['Cover & drawing index','Site & parking','Ground floor','First floor','Roof plan','Front & rear elevations','Stair geometry & Vastu','Stair section & headroom','Roof setbacks & exit','Historical style references','Current exterior appearance'];
+const sheetTitles=['Cover & drawing index','Site & parking','Ground floor','First floor','Roof plan','Front & rear elevations','Stair geometry & Vastu','Stair section & headroom','Conceptual structural framing','Roof setbacks & exit','Historical style references','Current exterior appearance'];
 let currentSheet=1;
-function showSheet(n){currentSheet=n;$('#sheet-image').src=assets.sheets[n-1];$('#sheet-image').alt=`Sheet ${n}: ${sheetTitles[n-1]}`;$('#sheet-caption').textContent=`Sheet ${String(n).padStart(2,'0')} / 11 · ${sheetTitles[n-1]} · Coordinated set · R5 under-stair built-in on sheets 03 and 07`;$$('#sheet-list button').forEach((b,i)=>b.classList.toggle('active',i===n-1));}
+function showSheet(n){currentSheet=n;$('#sheet-image').src=assets.sheets[n-1];$('#sheet-image').alt=`Sheet ${n}: ${sheetTitles[n-1]}`;$('#sheet-caption').textContent=`Sheet ${String(n).padStart(2,'0')} / 12 · ${sheetTitles[n-1]} · Coordinated set · R6 conceptual RCC stair on 03/07/08, R7 framing on 09`;$$('#sheet-list button').forEach((b,i)=>b.classList.toggle('active',i===n-1));}
 for(let i=0;i<sheetTitles.length;i++){const b=document.createElement('button');b.textContent=`${String(i+1).padStart(2,'0')}  ${sheetTitles[i]}`;b.addEventListener('click',()=>showSheet(i+1));$('#sheet-list').append(b);}
 $('#pdf-download').href=assets.pdf;
 $('#stair-review').src=revisionAssets.stairReview;$('#facade-reference').src=revisionAssets.facadeReference;$('#revision-button').addEventListener('click',()=>$('#revision-dialog').showModal());

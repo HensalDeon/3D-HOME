@@ -10,8 +10,8 @@ const browser=await chromium.launch({headless:true,...(executablePath?{executabl
 const page=await browser.newPage({viewport:{width:1400,height:1000}});
 await page.goto(process.env.DEV_SERVER??'http://127.0.0.1:5173/');
 const views=[
- {name:'qa/R5-under-stair-detail.png',from:[3.5,2.55,3.1],to:[-1.75,1.65,.6]},        // from the passage: TV, closing panel and store doors
- {name:'qa/R5-under-stair-wash.png',from:[-1.15,1.75,3.6],to:[-1.3,1.05,.35]},         // from the stair entry looking west into the basin nook
+ {name:'qa/R6-under-stair-detail.png',from:[3.5,2.55,3.1],to:[-1.75,1.65,.6]},        // from the passage: TV, closing panel and store doors
+ {name:'qa/R6-under-stair-wash.png',from:[-1.15,1.75,3.6],to:[-1.3,1.05,.35]},         // from the stair entry looking west into the basin nook
 ];
 for(const v of views){
  await page.evaluate(async v=>{

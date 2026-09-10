@@ -1,6 +1,6 @@
 {
   "source": "Hensal_Complete_House_Plans.pdf",
-  "source_sha256": "3e61204b0da61600ae667ed955b02062d00d46c8365bec384ead02498e33974c",
+  "source_sha256": "1d63e0d6eb744da07006a0307df6fa9b492e682ac9a21baaaa4c0da669ddaba7",
   "coordinates": "x increases north; y increases west; metres; house east/south corner is origin",
   "levels": {
     "ground": [
@@ -1106,21 +1106,11 @@
         "kwargs": {}
       },
       {
-        "op": "rect",
+        "op": "circle",
         "args": [
-          4.16,
-          4.23,
-          5.61,
-          5.08
-        ],
-        "kwargs": {}
-      },
-      {
-        "op": "chair",
-        "args": [
-          4.45,
-          3.88,
-          0.35
+          4.88,
+          4.65,
+          0.45
         ],
         "kwargs": {}
       },
@@ -1128,26 +1118,8 @@
         "op": "chair",
         "args": [
           4.88,
-          3.88,
-          0.35
-        ],
-        "kwargs": {}
-      },
-      {
-        "op": "chair",
-        "args": [
-          5.31,
-          3.88,
-          0.35
-        ],
-        "kwargs": {}
-      },
-      {
-        "op": "chair",
-        "args": [
-          4.45,
-          5.43,
-          0.35
+          4.0,
+          0.38
         ],
         "kwargs": {}
       },
@@ -1155,17 +1127,17 @@
         "op": "chair",
         "args": [
           4.88,
-          5.43,
-          0.35
+          5.3,
+          0.38
         ],
         "kwargs": {}
       },
       {
         "op": "chair",
         "args": [
-          5.31,
-          5.43,
-          0.35
+          5.5,
+          4.65,
+          0.38
         ],
         "kwargs": {}
       },
@@ -1173,9 +1145,9 @@
         "op": "label",
         "args": [
           4.62,
-          5.85,
+          5.7,
           "DINING",
-          "6-SEAT RECTANGULAR",
+          "OPEN WITH LIVING",
           7.2
         ],
         "kwargs": {}
@@ -3988,6 +3960,6 @@
     "roof_cover_top_m": 9.0,
     "roof_clear_landing_height_m": 2.4,
     "roof_access": "full south stair from first floor",
-    "drawing_count": 11
+    "drawing_count": 12
   }
 }

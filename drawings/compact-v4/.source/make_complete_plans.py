@@ -10,12 +10,13 @@ from reportlab.lib.colors import white
 import make_ensuite_plans as house
 import make_roof_study as roof
 import make_integrated_roof as integrated
+import structural_framing as framing
 
 SOURCE = Path(__file__).resolve().parent
 OUT = SOURCE.parent
 PDF = OUT/'Hensal_Complete_House_Plans.pdf'
 PAGE_NUMBER = 0
-TOTAL = 11
+TOTAL = 12
 
 
 def base(c, ignored_number, title, subtitle):
@@ -43,23 +44,24 @@ def cover(c):
         ('04', 'First floor / roof-stair continuation'),
         ('05', 'Roof plan / full-stair enclosure'),
         ('06', 'Integrated front and rear elevations'),
-        ('07', 'Under-stair built-in / stair geometry locked'),
-        ('08', 'Developed stair profile and headroom'),
-        ('09', 'Roof setbacks and exit elevation'),
-        ('10', 'Original style references / context'),
-        ('11', 'Current exterior appearance'),
+        ('07', 'Under-stair built-in / conceptual RCC stair'),
+        ('08', 'Developed stair profile / RCC slab depth'),
+        ('09', 'Conceptual structural framing'),
+        ('10', 'Roof setbacks and exit elevation'),
+        ('11', 'Original style references / context'),
+        ('12', 'Current exterior appearance'),
     ]
     for i, (n, label) in enumerate(entries):
         house.tx(c, 262, 224-i*8, n, 8, house.TEAL, True)
         house.tx(c, 274, 224-i*8, label, 8, house.INK)
     house.para(c, 262, 126, 'Print on A3 at 100% / actual size. Each drawing states its scale. Do not scale the photographs or the developed stair diagram horizontally.', 134, 8, 4.5)
-    house.para(c, 262, 101, 'This set replaces the separate compact-v4 and integrated-roof review PDFs. The current design includes full stairs to the roof.', 134, 8, 4.5)
+    house.para(c, 262, 101, 'This set replaces the separate compact-v4 and integrated-roof review PDFs. The current design includes full stairs to the roof and one conceptual structural framing option.', 134, 8, 4.5)
     house.block(c, 25, 82, 'COORDINATED DESIGN BASIS', 'Each main floor: 58.20 m2 / 626.46 sq ft. Roof enclosure: 9.02 m2 / 97.09 sq ft additional. Conservative total: 125.42 m2 / 1,350.01 sq ft. Roof landing +6.45 m; stair cover +9.00 m. Rear balcony entry is on the master-bedroom side wall, with two toilet vents facing the rear.', 218)
-    house.block(c, 262, 76, 'FOR ARCHITECT / BUILDER REVIEW', 'Dimensioned vectors govern over the render. Measured site set-out, structural design, stair headroom, waterproofing, services and permit drawings remain to be coordinated by the project professionals.', 134)
+    house.block(c, 262, 76, 'FOR ARCHITECT / BUILDER REVIEW', 'Dimensioned vectors govern over the render. The stair is shown as a conceptual RCC waist-slab system only; its waist thickness, landing beams, supports, reinforcement and connections must be designed by a structural engineer. Measured site set-out, structural design, stair headroom, waterproofing, services and permit drawings remain to be coordinated by the project professionals.', 134)
 
 
 def references(c):
-    base(c, 10, 'Original style references / design context', 'REFERENCE IMAGES ONLY / NOT THE CURRENT OPENING ARRANGEMENT OR ROOF HEIGHT / NOT TO SCALE')
+    base(c, 11, 'Original style references / design context', 'REFERENCE IMAGES ONLY / NOT THE CURRENT OPENING ARRANGEMENT OR ROOF HEIGHT / NOT TO SCALE')
     house.tx(c, 26, 234, 'ORIGINAL FRONT REFERENCE', 10, house.TEAL, True)
     house.tx(c, 231, 234, 'ORIGINAL REAR REFERENCE', 10, house.TEAL, True)
     c.drawImage(str(SOURCE/'inputs/frontview.jpeg'), 27*mm, 65*mm, width=162*mm, height=165*mm, preserveAspectRatio=True, anchor='c')
@@ -69,7 +71,7 @@ def references(c):
 
 
 def exterior(c):
-    base(c, 11, 'Current exterior / full roof access', 'PHOTOREALISTIC APPEARANCE STUDY / NOT TO SCALE / DIMENSIONED PLANS AND ELEVATIONS GOVERN')
+    base(c, 12, 'Current exterior / full roof access', 'PHOTOREALISTIC APPEARANCE STUDY / NOT TO SCALE / DIMENSIONED PLANS AND ELEVATIONS GOVERN')
     c.drawImage(str(OUT/'exterior-concept.png'), 32*mm, 43*mm, width=356*mm, height=198*mm, preserveAspectRatio=True, anchor='c')
     house.para(c, 25, 32, 'The stair enclosure has matching timber end walls, warm-white sides and a white/charcoal cap. It rises 1.60 m above the existing screen. Two toilet vents replace the former upper rear door; the master balcony entrance remains on the side.', 370, 8, 4.4)
 
@@ -92,6 +94,7 @@ def main():
         ('04-elevations', 'Integrated elevations', integrated.elevation_sheet),
         ('05-stair-vastu', 'Stair geometry and Vastu', house.detail_sheet),
         ('09-stair-section', 'Developed stair profile and headroom', roof.sheet2),
+        ('11-structural-framing', 'Conceptual structural framing', framing.sheet),
         ('10-roof-setbacks', 'Roof setbacks and exit', integrated.profile_sheet),
         ('06-reference-comparison', 'Original style references', references),
         ('07-exterior-concept', 'Current exterior appearance', exterior),

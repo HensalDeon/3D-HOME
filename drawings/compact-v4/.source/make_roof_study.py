@@ -102,7 +102,7 @@ def section(p):
 
 
 def sheet2(c):
- base(c,2,'First-floor stair and roof headroom','PROPOSED FIRST-FLOOR STAIR 1:35 / DEVELOPED STAIR PROFILE 1:50 AT A3')
+ base(c,2,'First-floor stair and roof headroom','R6 / 10 SEP 2026 / PROPOSED FIRST-FLOOR STAIR 1:35 / DEVELOPED STAIR PROFILE 1:50 AT A3 / CONCEPTUAL RCC WAIST AND LANDING SLABS')
  p=Plan(c,27,90-2.3*1000/35,1000/35)
  v4.stair(p,'FF',False,continue_to_roof=True)
  # An upper UP flight and lower DN arrival share the same plan projection.
@@ -110,9 +110,9 @@ def sheet2(c):
  p.text(1.1,6.50,'FIRST FLOOR / +3.45 m',7,True,col=T)
  p.text(1.1,6.18,'UPPER FLIGHTS SHOWN; LOWER ARRIVAL BELOW',4.9,col=M)
  v4.para(c,25,74,'Remove the former guard across the bottom of the upward flight at first-floor level. The north return flight lands from below; the south flight begins the next rise to the roof.',117,8,4.5)
- v4.para(c,25,46,'Two rises of 3.00 m: GF to FF, then FF to roof. Each storey has 17 equal risers of 176.47 mm, 250 mm treads and 900 mm clear flights/landing. Structural stair thickness and all walking-line headroom still require verification.',117,8,4.5)
+ v4.para(c,25,46,'Two rises of 3.00 m: GF to FF, then FF to roof. Each storey keeps 17 equal risers of 176.47 mm, 250 mm treads and 900 mm clear flights/landing; R6 changes none of them. Both storeys are drawn as one continuous RCC waist slab per flight with landing slabs at the turns. The waist top plane sits on the internal corners of the steps, one riser below the nosing line, and walking-line headroom on the flights is 2.26 m against the new soffit - still clear of the 2.20 m benchmark.',117,8,4.5)
  section(Plan(c,180,53,20))
- v4.para(c,180,36,'R2 developed paths: GF has a 2 + 7 + 8-riser turn; first-to-roof retains 9 + 8. The GF upper flight and first-floor connection are fixed. Do not set out horizontal building dimensions from this diagram.',215,8,4.5)
+ v4.para(c,180,36,'R2 developed paths: GF has a 2 + 7 + 8-riser turn; first-to-roof retains 9 + 8, so the stair continues to the roof unchanged. Each flight shows its slab depth and soffit, landing on the plinth, the landing slabs and the floor slabs. STAIR SHOWN AS CONCEPTUAL RCC WAIST-SLAB SYSTEM. FINAL WAIST-SLAB THICKNESS, LANDING BEAMS, SUPPORT CONDITIONS, REINFORCEMENT AND CONNECTIONS TO BE DESIGNED BY STRUCTURAL ENGINEER. 100 MM PARTITION WALLS ARE NOT TO BE ASSUMED LOAD-BEARING.',215,8,4.5)
  v4.para(c,180,239,'The existing +7.40 m decorative screen is too low to be a roof-access enclosure. The new stair cover is +9.00 m, set back 2.15 m from the front and 3.45 m from the rear. Setbacks reduce visibility; they do not guarantee an unchanged roof silhouette.',215,8,4.5)
 
 
