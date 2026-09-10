@@ -1,0 +1,25 @@
+[
+  {
+    "id": "01-entrance-wide-v2",
+    "refs": [
+      "interiors/images/01-entrance-wide.png"
+    ],
+    "prompt": "Precise photo edit. Preserve this image's camera, door, window, three steps, two compact chairs, finishes and light. Remove the six small decorative square holes in the right side grey wall; that wall is continuous solid wall in approved architecture, paint the patched area the exact surrounding dark grey. Keep the sweeping charcoal facade band identical, no extra architecture. Lower the main window sill slightly if needed to750mm above porch floor, but preserve opening width and position. Remove any planter overhang obstructing the steps. No other edits, no text."
+  },
+  {
+    "id": "02-living-wide-v2",
+    "refs": [
+      "interiors/images/02-living-wide.png",
+      "drawings/compact-v4/02-ground.png"
+    ],
+    "prompt": "Correct image1 architectural conflicts while keeping all furniture, camera, colours and daylight fixed. Image2 is approved plan westUP,northRIGHT. (1) REMOVE the narrow extra doorway on the right wall between the rear service opening and artwork: this is a solid north external wall. Seamless offwhite patch. (2) Through the LEFT back bedroom entrance, the bedroom's west/back window must be ONLY a small600mm wide x700mm high window, sill1350mm above bedroom floor, placed toward LEFT/south end of that wall. Replace the existing tall window seen through that doorway with solid wall and the correct small high window; no floor-length curtain there. (3) The RIGHT back opening leads to a service PASSAGE1300mm wide,2000mm deep, not a kitchen. Show a clear unfurnished passage with its far backyard access; remove cabinet/sink immediately behind this opening. (4) Remove BOTH plants at stair starter/TV panel (floor pot and trailing pot) to keep circulation and joinery clear. (5) The store beside the TV must have low1400mm-high doors with450mm bifold leaves and wall above, not tall1700mm door like TV backing. Keep TV backing950mm wide x1700mm high, screen center1.10m, upper stair and starter geometry identical. No other changes. Photo realism."
+  },
+  {
+    "id": "07-bedroom1-wide-v2",
+    "refs": [
+      "interiors/images/07-bedroom1-wide.png",
+      "drawings/compact-v4/02-ground.png"
+    ],
+    "prompt": "Precise architecture correction to photograph image1, preserve bed, camera, colours, furnishing, scale and floor. Image2 is source plan WESTup,NORTHright,EASTdown,SOUTHleft. The large SOUTH/left-wall window must be EAST of the bedhead, nearer the camera. It must NOT sit behind the headboard. Move this opening forward along LEFT wall toward the doorway/camera until its far jamb aligns exactly with the near/east edge of bedhead. Fill its current bedhead-back location with uninterrupted warm-white wall. It is1400mm wide horizontally,1200mm high,sill1000mm; much of window may legitimately fall outside the left crop, do not move bed to show it. The small WEST/back-wall window must be600mm wide700mm high, sill1350mm above floor; currently image places it too high and wide. Resize/reposition that existing small window, placed near SOUTH/left end of rear wall rather than centered. Keep room2.90x3.35m, bed1500x2000mm, ensuite pocket door at right near camera, no new openings. Replace bedside floor cabinet with tiny floating oak shelf in same location if it blocks circulation. Photo only, no text."
+  }
+]

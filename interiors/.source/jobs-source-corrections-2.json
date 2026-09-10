@@ -1,0 +1,34 @@
+[
+  {
+    "id": "07-bedroom1-wide",
+    "prompt": "Bedroom1 exact approved2.90x3.35m interior from inside north foot clearance. Bed 2000x1500mm head SOUTH on LEFT wall. Preserve source bed direction, every opening, footprint and projected edge. SOUTH window is LEFT of headboard on the same wall, WEST small600x700mm window is on RIGHT wall. NEVER put southwindow above headboard. Keep camera and frame. Warm neutral upholstered headboard, offwhite linen and sage throw matching secondphoto, beige floor and black windowframes with compact beige Roman blind on LARGE window only, plain small western glazing. Keep source bed clearance; no walltoceilingwardrobeinvented. One small affordable botanicalprint aboveheadboard and compactblack bedsidewalllight.",
+    "references": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/07-bedroom1-wide.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/07-bedroom1-wide-v3.png"
+    ]
+  },
+  {
+    "id": "07-bedroom1-opposite",
+    "prompt": "Bedroom1 reverse from west/north foot strip lookingE. Keep source geometry exactly: oak1500W550D2100H wardrobe on EASTwall to RIGHT of bedroom doorway, open bedroom doorleaf, SOUTHwindowonright part hiddenbehindwardrobe by perspective; this occlusion is physicallyreal andmustbe retained. LEFTedge is north ensuitepocketopening/leaf. Distant kitchen and TV through bedroom entry must stay exactlyas source, noflattening/deleting the spaces. No different wardrobe location or enlarging room tofitphoto. Linen/sagebedforeground, offwhitewalls beige floor aspreviousphoto. Changewhiteentrydoorfinishinsecondphoto to oak source. Allframeopeningsfixed.",
+    "references": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/07-bedroom1-opposite.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/07-bedroom1-opposite.png"
+    ]
+  },
+  {
+    "id": "10-study-wide",
+    "prompt": "Source study2.90x2.05m exact east-facing1500x550mm desk below1700mm EASTwindow. The narrow object at leftedge is retained north-sidecabinet. Preserve desk footprint, chairlocation, windowlocation andprojectedboundaries. Furniture must follow image1: do not copythe incorrectsofa in image2. Warm oakdesk, slim charcoalendpanels, naturalupholsteredwoodchair. Addonly laptop,smalltasklamp,oneherbpot,2books,pencilcup;keepworktopusable. Warmwhitewalls,beigemattefloor,compactbeigelinenRomanblind aboveexistingwindow. Softnaturaltropicaldaylight realisticphoto.",
+    "references": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/10-study-wide.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/10-study-wide.png"
+    ]
+  },
+  {
+    "id": "01-entrance-wide",
+    "prompt": "Retain source complete exterior geometry and thisfrontcamera: CHARCOAL THIN SWEEPING CURVED BAND with openbottomentry NOT thick roundedrectangle. Door LEFT,2smallchairs beneath1050mmwidewindowRIGHT,1.2m deepcovered sitout,3approachsteps. Preserve exactdoor,window,bandprofiles all visible. Main door warmwoodclosed inphotoforwelcome (doorcanarticulate withinexistingopening, noopeningmoves); chairsinexistingfootprints naturalwoodwithlightlinen cushions. Warmwhitewalls,mattebeigefloor,sourcehorizontalcladding. Addsmallnaturalcoirdoormatatdoor,onewarmwalllightbesidedoor,smallpottedgreeneryoutsidecirculation. No railing,solidbottomframe,extraopenings/perforationsor oversizedplanters. Same restrainedcontemporarypalette as reference2, but SOURCE1 architecturewins.",
+    "references": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/01-entrance-wide.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/01-entrance-wide-v2.png"
+    ]
+  }
+]

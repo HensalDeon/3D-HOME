@@ -1,0 +1,49 @@
+[
+  {
+    "id": "06-kitchen-wide",
+    "refs": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/06-kitchen-wide.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-wide.png"
+    ],
+    "prompt": "Image1 is EXACT complete source kitchen and camera. Convert it to a natural high quality interior photograph. Image2 gives ONLY the warm oak, beige counter and offwhite finish palette; its kitchen geometry is wrong. Keep source camera and boundaries, window and appliances pixel-positioned. Clear kitchen2900x2050mm. EAST long counter in front, short NORTH sink return LEFT, southwest fridge RIGHT. EAST1700mm window and hob underneath stay EXACTLY source positions. WEST entrance behind camera is closed on its existing hinge in this view. Keep short sink return length550mm, NOT a full-width cabinet wall. Base cabinets600mm depth, source refrigerator650x700mm footprint1800high. Add precise realistic drawer fronts, stainless compact sink where source tap is, hob with2burners, charcoal fridge. Add ONE550mm-wide300mm-deep offwhite overhead cabinet ONLY above the short left sink return on its solid north wall, no other upper cabinet and no niche. Keep eastwindow fully clear. No invented third counter, wall chimney across window, island or pantry. Add small herb pot and one wooden chopping board where clear of hob and sink. Matte pale beige porcelain, soft warm daylight, slim black hardware. One landscape photograph, no text."
+  },
+  {
+    "id": "06-kitchen-opposite",
+    "refs": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/06-kitchen-opposite.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-wide.png"
+    ],
+    "prompt": "Image1 is exact source camera looking toward kitchen SOUTHWEST; preserve geometry, crop, wall edges and all appliance footprints. Image2 supplies finishes only and MUST NOT supply geometry. Photorealistic natural compact kitchen, exact2900x2050mm. Source left edge is east worktop/hob in warm oak and pale beige stone-look counter; fridge on south wall farcentre exactly650x700mm footprint1800mm high. Right edge is WEST entrance wall, existing door outside crop; no invented door/opening. Keep SOUTH wall bare around fridge, absolutely NO south counter/U-shape, no extra pantry or cabinetry. Same charcoal fridge, same black2burner hob, mattebeige floor and offwhitepaint as matching wide. Small realistic refrigerator door seam and handle only. Natural warm daylight. ONE landscape photo, no annotations."
+  },
+  {
+    "id": "06-kitchen-detail",
+    "refs": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/06-kitchen-detail.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-detail.png"
+    ],
+    "prompt": "Photographic material/detail edit of Image1's EXACT source kitchen geometry and camera. Image2 supplies warm oak/pale counter/offwhite cabinets finish ONLY. Keep closed WEST door on left source position, short NORTH sink return centre and EAST window/worktop on right. The left sink return is ONLY550mm long along north wall and600mm deep; do not enlarge this wall run to match secondimage. Compact sink400mm along northwall450mm projection where source tap is. Add ONLY one550mmwide300mmdeep offwhite overhead above that sink, no wider storage or shelving. Warm oak base with slim charcoal handles, palebeige counter, warmwhite wall and mattebeigefloor. Sink should be a real stainless steel inset bowl atsource footprint,simplechrome tap, smallsoap bottle only. Keep all room geometry and door/windowpositions/crop exactly. One landscapephoto, no text."
+  },
+  {
+    "id": "08-bedroom2-opposite",
+    "refs": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/08-bedroom2-opposite.png"
+    ],
+    "prompt": "Edit ONLY the height of the oak wardrobe in this bedroom photograph. Keep every other pixel, room architecture, doors, window, furniture position, camera, bedding and finishes. The wardrobe on rear EAST wall is incorrectly nearly ceiling height. Its approved height is2100mm, same finished height as the adjacent room-entry door opening; lower the wardrobe top to align in perspective with the top of that adjacent wooden doorway, leaving a generous plain warmwhite wall band above. Keep wardrobe width1500mm and depth550mm unchanged, same three oak fronts and handles, same basefloor contact and exactlocation. Do not move doorway/window or alter bed, lamp, vanity seen through ensuite. No extra decor. One correctedphoto sameframing."
+  },
+  {
+    "id": "01-entrance-wide",
+    "refs": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/corrections/01-entrance-wide.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/01-entrance-wide.png"
+    ],
+    "prompt": "Precision exterior correction: Image1 is the photographic edit target, Image2 exact approved geometric reference. Keep all Image1 camera, door/window openings, chairs, material colours and lighting. ONLY make the charcoal sweeping facade ribbon match Image2: narrow145mm band width,80mm projection, NOT the current overly thick300mm band. This makes the dark strip approximately half its current thickness. Maintain same centreline path, curved sweep and open lower termination, never turn it into a closed roundedrectangle. Especially reduce broad right vertical strip and curved lower tip to source145mm section. Remove the added raised planter curb at leftfront if it exceeds source originalsite floor; keep simple planting outside entryroute. Everythingelse stays. One realistic photograph no text."
+  },
+  {
+    "id": "14-balcony-wide",
+    "refs": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/14-balcony-wide-v2.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/14-balcony-wide.png"
+    ],
+    "prompt": "Correct ONLY exteriorband size of photographic Image1 using approved geometry Image2. Keep samephoto camera, glazing, room/gallery visiblebehindslider, compacttwochairs, smalltable, plants and lights. The darkcharcoal sweeping facade ribbon currentlylooks like a very thickdeepportal. Approved ribbon is ONLY145mm wide and80mm projection: reduce dark verticalstrip and curvedreturn to this slender section, keeping its original open sweep centreline and all fixed structuralwallpositions. Do not widen balcony or move railing; clearbalcony is2700x1200mm. Preserve glassguard, slimtoprail androomopenings. Only the bandwidth/depth changes. One photorealistic image sameframing no text."
+  }
+]

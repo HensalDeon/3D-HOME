@@ -1,0 +1,306 @@
+[
+  {
+    "file": "01-entrance-wide-v2.png",
+    "size": [
+      1490,
+      1055
+    ],
+    "sha256": "e8c1f7b0b25fff2937d4662e0a1e45f0bb9c94b73fc9cf87d9c2df317cff4223"
+  },
+  {
+    "file": "01-entrance-wide.png",
+    "size": [
+      1490,
+      1055
+    ],
+    "sha256": "3b05cc40c7991cb50ad6972fc6def314b689f84c69eccddf55e8636464377e9b"
+  },
+  {
+    "file": "02-living-wide-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "80aa435b60581cd0bde8c3d8ec536ae05394e9655ab3477dab7a958bb4f1214b"
+  },
+  {
+    "file": "02-living-wide.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "f4e6a0948cbf045bb02c368ad680dcebd6f873570bd9746c008db06d7857e1fb"
+  },
+  {
+    "file": "03-stair-tv-wide-v2.png",
+    "size": [
+      1484,
+      1060
+    ],
+    "sha256": "6b74282dca27919435ef18d1da28e0e277100f96ca730b8dfa04c7cad86b6d66"
+  },
+  {
+    "file": "03-stair-tv-wide.png",
+    "size": [
+      1484,
+      1060
+    ],
+    "sha256": "7fb45f5eaee77a961cf5d5ddd0cbd81c77e7662f66219ab1bd839e6eb02d2319"
+  },
+  {
+    "file": "04-storage-wide-v2.png",
+    "size": [
+      1484,
+      1060
+    ],
+    "sha256": "7db68d4b42581d87429131a94719fbe6553efe557b69243656f96072b48c9b56"
+  },
+  {
+    "file": "04-storage-wide.png",
+    "size": [
+      1484,
+      1060
+    ],
+    "sha256": "5061d548b1371f63e067e32c0bec2255b6fc15af99dcc4966d06bd79d9b6641e"
+  },
+  {
+    "file": "05-wash-wide.png",
+    "size": [
+      1484,
+      1060
+    ],
+    "sha256": "a44e9ea845973a646f24e249628aa9b584912421baa8291ef034f5f15f4c3eb0"
+  },
+  {
+    "file": "06-kitchen-detail.png",
+    "size": [
+      1495,
+      1052
+    ],
+    "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1"
+  },
+  {
+    "file": "06-kitchen-opposite.png",
+    "size": [
+      1495,
+      1052
+    ],
+    "sha256": "f7e03e7a542edc6e6f88dd682d908176a18939679ffcd6ec4191e8dbc5f2994d"
+  },
+  {
+    "file": "06-kitchen-wide.png",
+    "size": [
+      1495,
+      1052
+    ],
+    "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759"
+  },
+  {
+    "file": "07-bedroom1-detail.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "sha256": "29a37c2005ae3235cd71e61ce884b5db37841d2502a63a35c63b6e4d19190be6"
+  },
+  {
+    "file": "07-bedroom1-opposite.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "sha256": "6fcf7b82e9b57cfd0b00ef9309da37829889933e0337f633d6bed262267e9853"
+  },
+  {
+    "file": "07-bedroom1-wide-v2.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "sha256": "b3b750b9045bed588cea3f2074ab59065ce9edf6d2e57e60f7e4503d10e3efa5"
+  },
+  {
+    "file": "07-bedroom1-wide-v3.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "sha256": "309ea617e100a0d67cc9fb863be8c3b147e73b99a94f53df06afa3ab378cfa49"
+  },
+  {
+    "file": "07-bedroom1-wide.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "sha256": "62ac7f50bd4021cf962ebb4de27845a662f155900d61056f3125a2c810dbca1e"
+  },
+  {
+    "file": "08-bedroom2-detail.png",
+    "size": [
+      1490,
+      1055
+    ],
+    "sha256": "0f7067abb0b45a896c915865d13656d39dbe2f5877eefd0988db66d1e96c6cb3"
+  },
+  {
+    "file": "08-bedroom2-opposite.png",
+    "size": [
+      1490,
+      1055
+    ],
+    "sha256": "a875f51b4d073f90577d6e08a59987bac93479b8d351bdf5cf4e5bdb7b057a94"
+  },
+  {
+    "file": "08-bedroom2-wide-v2.png",
+    "size": [
+      1490,
+      1055
+    ],
+    "sha256": "ad2493a3c55b8096adca365d750035e5fcd0531d9e86c6b75ca9771eaee4af39"
+  },
+  {
+    "file": "08-bedroom2-wide.png",
+    "size": [
+      1490,
+      1055
+    ],
+    "sha256": "8f667b5ad683b97160940f664521271d5e6931af51436ce3e78f9eb5eea71360"
+  },
+  {
+    "file": "09-bedroom3-detail.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "ac67d0b33d719a1f59500fd4f73a94d2132cd767e0ac68d885a6bb6d64d8b2cb"
+  },
+  {
+    "file": "09-bedroom3-opposite.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "4689834af09dff3e641f2be22458a3e3b54efc740fa4cb37906be3603d0c563f"
+  },
+  {
+    "file": "09-bedroom3-wide-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "5d98e5640bcbe2c3643d1c2810dcb90d39637894485375152ffcd0bd96576509"
+  },
+  {
+    "file": "09-bedroom3-wide-v3.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "18c455443b9fa3d1b9104201f9f4865fa0cbb1e5ebf3b6cc72eb856972483e85"
+  },
+  {
+    "file": "09-bedroom3-wide.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "0afd124d70a60c94e58548bb9720bc6c114a4eb75d742e6cf4508580de523148"
+  },
+  {
+    "file": "10-study-wide.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "sha256": "16af193959067520ffb75cc921b273b06365470c2edc2a1e3592a5d2e387272e"
+  },
+  {
+    "file": "11-bathroom1-wide-v2.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "sha256": "48e4a13e2ab0b1492be6b03e5b01dde2cd68e9280b7ae55df09d1d525b58e1dc"
+  },
+  {
+    "file": "11-bathroom1-wide.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "sha256": "9cb7b6286a65f30e2f99d49bf3cf05cb982b3fe29a7eb4da86608169eac27ff7"
+  },
+  {
+    "file": "12-bathroom2-wide-v2.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "sha256": "3c0e92c19f94a4e6c844c1f4ba55f7837352dac63d846d1c33ebd51031b82f3d"
+  },
+  {
+    "file": "12-bathroom2-wide.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "sha256": "5db516a3d51ef96481154b1de13470e84970a3b051bd6c8def52157d21525d19"
+  },
+  {
+    "file": "13-bathroom3-wide-v2.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "sha256": "0f4633c3e97a0b473be5fc7469891ee09d436b7ef4bb5ab64fc98bd6be4514c7"
+  },
+  {
+    "file": "13-bathroom3-wide.png",
+    "size": [
+      1448,
+      1086
+    ],
+    "sha256": "50701e906bc907b13c4e66f40b63539c1a219ba1338df9f0e8c0331d07a17471"
+  },
+  {
+    "file": "14-balcony-wide-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "8794cede165b214bfa3825db9c3fed3fd7999f79ab9c4d618e3405ee6ad573f7"
+  },
+  {
+    "file": "14-balcony-wide.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "c75a4df518d8dcdf8af0b86a4366cedfd17fd892a92bbe92f8b8a7615ae7ef01"
+  },
+  {
+    "file": "15-terrace-wide-v2.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "5f45c60630fd40182c2a9de326bf073cde67faecf6256d67a7bfac0c19dad3ff"
+  },
+  {
+    "file": "15-terrace-wide.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "4ce24108b084e07238623f15cf958e12a5d538a577b03bb0340c9e2bcfc7966a"
+  },
+  {
+    "file": "16-dining-wide.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "3fb0767b1b26fc4c4ba8d77a4c0c419400c9647598d59e0fc679b9024579b2f2"
+  }
+]

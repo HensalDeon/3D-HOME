@@ -1,0 +1,66 @@
+[
+  {
+    "id": "06-kitchen-opposite",
+    "refs": [
+      "interiors/images/06-kitchen-wide.png",
+      "drawings/compact-v4/02-ground.png"
+    ],
+    "prompt": "Generate ONE new full-frame landscape photographic still of the EXACT SAME room and design as image1. Image2 is governing floorplan, westUP,northRIGHT. Change camera as specified, NEVER rearrange furniture or mirrorarchitecture. Same colours, fixedopenings, proportions, finish andfixtures. Natural professional interiorphoto,noillustration/WebGLlook,no text/watermark. Opposite-angle photograph: camera at northeast/sink corner looking SOUTHWEST across same tiny kitchen. Refrigerator on far southwest corner (back/right in SW view), existing door on north wall behind camera. The east counter with hob and east window appear along LEFT wall; the south and west walls are mostly solid. Keep2.90x2.05m room, L counter and fridge positions. Don't add a kitchen island, pantry, window or another door."
+  },
+  {
+    "id": "06-kitchen-detail",
+    "refs": [
+      "interiors/images/06-kitchen-wide.png",
+      "drawings/compact-v4/02-ground.png"
+    ],
+    "prompt": "Generate ONE new full-frame landscape photographic still of the EXACT SAME room and design as image1. Image2 is governing floorplan, westUP,northRIGHT. Change camera as specified, NEVER rearrange furniture or mirrorarchitecture. Same colours, fixedopenings, proportions, finish andfixtures. Natural professional interiorphoto,noillustration/WebGLlook,no text/watermark. Tight evening detail of the existing north-return sink, oak drawer front, quiet greige counter junction and warm-white overhead cabinet in this SAME kitchen. Only change camera distance and switch to ordinary warm undercabinet task lighting; retain alljoinery and appliance layout. Show a practical small sink and concealed undercabinet light, no new window/hob or decorative feature."
+  },
+  {
+    "id": "07-bedroom1-opposite",
+    "refs": [
+      "interiors/images/07-bedroom1-wide-v3.png",
+      "drawings/compact-v4/02-ground.png"
+    ],
+    "prompt": "Generate ONE new full-frame landscape photographic still of the EXACT SAME room and design as image1. Image2 is governing floorplan, westUP,northRIGHT. Change camera as specified, NEVER rearrange furniture or mirrorarchitecture. Same colours, fixedopenings, proportions, finish andfixtures. Natural professional interiorphoto,noillustration/WebGLlook,no text/watermark. Opposite view: from near WEST/back wall looking EAST toward the entrance wall. NORTH isLEFT,SOUTH isRIGHT. Foreground bed head/rightwall, bed length extends right-to-left, same1500x2000mm bed. On EAST/back wall,1500mm-wide550mm-deep oak wardrobe is onRIGHT/south half, bedroom entrance800mmwide onLEFT/north side. Private ensuite pocket door lies onLEFT/north wall nearback/EASTcorner, not adjacent to wardrobe. SOUTH/right window1400mmwide lies between bedhead and eastwardrobe; do not position it abovebedhead. West high window isbehindcamera. Same linens, sagecushion, wallart, readinglight and room2.90x3.35m. No new furniture or openings."
+  },
+  {
+    "id": "07-bedroom1-detail",
+    "refs": [
+      "interiors/images/07-bedroom1-wide-v3.png",
+      "drawings/compact-v4/02-ground.png"
+    ],
+    "prompt": "Generate ONE new full-frame landscape photographic still of the EXACT SAME room and design as image1. Image2 is governing floorplan, westUP,northRIGHT. Change camera as specified, NEVER rearrange furniture or mirrorarchitecture. Same colours, fixedopenings, proportions, finish andfixtures. Natural professional interiorphoto,noillustration/WebGLlook,no text/watermark. Tight close photograph of same bedroom's upholstered headboard and small oak bedside shelf with reading light, cream linen and muted sage cushion. Use the SAME exact bed and materials, camera close enough to exclude windows and doorways. Warm evening readinglight, natural texture; no new panels or furniture."
+  },
+  {
+    "id": "08-bedroom2-opposite",
+    "refs": [
+      "interiors/images/08-bedroom2-wide-v2.png",
+      "drawings/compact-v4/03-first.png"
+    ],
+    "prompt": "Generate ONE new full-frame landscape photographic still of the EXACT SAME room and design as image1. Image2 is governing floorplan, westUP,northRIGHT. Change camera as specified, NEVER rearrange furniture or mirrorarchitecture. Same colours, fixedopenings, proportions, finish andfixtures. Natural professional interiorphoto,noillustration/WebGLlook,no text/watermark. Opposite view from WEST/back of master looking EAST. NORTHleft,SOUTHright. Foreground bed headonRIGHT/south wall,bedlengthtowardLEFT. EAST/back wall wardrobe1500mmwide550mmdeep onRIGHT/south half;800mm bedroom entrance onLEFT/north end. Private ensuite pocket door onLEFT/north wall nearEAST/back corner. Rear-balcony door onLEFT/north wall nearcamera/WESTend, preserve it; no newdoor onbackwall. SOUTH/right window ahead ofbedhead, not behindheadboard. WESTwallbehindcamera stayssolid. Same1500x2000mmbed,olive throw, ivorylinen,oak shelf, plainroom2.90x3.35m. Preserve compact routes."
+  },
+  {
+    "id": "08-bedroom2-detail",
+    "refs": [
+      "interiors/images/08-bedroom2-wide-v2.png",
+      "drawings/compact-v4/03-first.png"
+    ],
+    "prompt": "Generate ONE new full-frame landscape photographic still of the EXACT SAME room and design as image1. Image2 is governing floorplan, westUP,northRIGHT. Change camera as specified, NEVER rearrange furniture or mirrorarchitecture. Same colours, fixedopenings, proportions, finish andfixtures. Natural professional interiorphoto,noillustration/WebGLlook,no text/watermark. Same master bedroom, tight warm evening detail of olive throw, linen pillows, upholstered headboard and floating oak bedside ledge. Keep all furniture as referenced. Include simple readinglight only, camera framing excludes all windows and doorways. No additional furniture or wallpanelling."
+  },
+  {
+    "id": "09-bedroom3-opposite",
+    "refs": [
+      "interiors/images/09-bedroom3-wide-v3.png",
+      "drawings/compact-v4/03-first.png"
+    ],
+    "prompt": "Generate ONE new full-frame landscape photographic still of the EXACT SAME room and design as image1. Image2 is governing floorplan, westUP,northRIGHT. Change camera as specified, NEVER rearrange furniture or mirrorarchitecture. Same colours, fixedopenings, proportions, finish andfixtures. Natural professional interiorphoto,noillustration/WebGLlook,no text/watermark. Opposite angle: camera at EAST entrance looking WEST. NORTH isRIGHT,SOUTH isLEFT. Same1200x2000mm small-double bed with head againstLEFT/south wall and foot600mm fromRIGHT/north wall. NORTH/rightwindow fixedinmiddleofrightwall withsameRomanblind. WEST/back wall ensuite door onRIGHT/north end,750mmwide, otherwise plainwall. The L-wardrobe remains atNORTHEAST corner behind/rightcamera; do not transplant it towestwall. Only nearend ofwardrobe may appear onfarrightforeground. Keepclaycushion,ivorylinen,oakfinish, samewalllight. Room2.70x3.60m. No newwindows orwall."
+  },
+  {
+    "id": "09-bedroom3-detail",
+    "refs": [
+      "interiors/images/09-bedroom3-wide-v3.png",
+      "drawings/compact-v4/03-first.png"
+    ],
+    "prompt": "Generate ONE new full-frame landscape photographic still of the EXACT SAME room and design as image1. Image2 is governing floorplan, westUP,northRIGHT. Change camera as specified, NEVER rearrange furniture or mirrorarchitecture. Same colours, fixedopenings, proportions, finish andfixtures. Natural professional interiorphoto,noillustration/WebGLlook,no text/watermark. Close feature photograph of the SAME continuous L-shaped oak wardrobe in image1, showing both returns and usable corner. Open just the two paired corner doors, show no fixed corner post, one simple reachable shelf and hanging rail. Keep550mmdepth2100mmheight and entrance/window clear. Mirror neither room norwardrobe. Surrounding doors andwindow can be croppedout. Natural light reveals woodtexture andcharcoalhardware; no additional cabinetry."
+  }
+]

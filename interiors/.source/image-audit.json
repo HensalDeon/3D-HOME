@@ -1,0 +1,307 @@
+{
+  "phase": "pre-generation audit",
+  "approval": "KEEP preserves useful design; final source-camera check and release are separate. No image is user-approved by this checklist.",
+  "sources": {
+    "drawings/compact-v4/Hensal_Complete_House_Plans.pdf": "3e61204b0da61600ae667ed955b02062d00d46c8365bec384ead02498e33974c",
+    "model/src/geometry.js": "991be4fe1bdafdb3198285539ac48b6b4db3f71b3e17359c2bf7bdd467fed032",
+    "model/src/plan-data.json": "766d0a0e3c7ef5545b4259dc4196aa6abf380cbcdbeb990643da8e267b9b4345",
+    "model/src/revision.js": "7d4babe8b78d05214cb9b70eb3f36b9b075a3393aeb49dc273d2937250753c4f",
+    "model/src/under-stair-layout.json": "ea61828b8883a17d51eaab9ee309eee075fc0d7695ad8fcfa4bc60fdd86a44a2",
+    "model/src/house.js": "1103c3f7aa4884520f4be81750ecd9804e1dd18bb8dee30facc5e3d5f98a7aae",
+    "model/src/facade.js": "9925a50e25e524d96d8c23db012760786a08131c61af0ab92a84dd7caf7af041"
+  },
+  "counts": {
+    "CORRECT": 8,
+    "REMOVE": 14,
+    "REGENERATE": 9,
+    "KEEP": 7
+  },
+  "images": [
+    {
+      "file": "01-entrance-wide-v2.png",
+      "status": "CORRECT",
+      "reason": "Useful entrance view; compare curved bands and door/window proportions to full elevation before acceptance.",
+      "sha256": "e8c1f7b0b25fff2937d4662e0a1e45f0bb9c94b73fc9cf87d9c2df317cff4223",
+      "pdf_eligible": false
+    },
+    {
+      "file": "01-entrance-wide.png",
+      "status": "REMOVE",
+      "reason": "Superseded same camera; unnecessary perforations in side wall.",
+      "sha256": "3b05cc40c7991cb50ad6972fc6def314b689f84c69eccddf55e8636464377e9b",
+      "pdf_eligible": false
+    },
+    {
+      "file": "02-living-wide-v2.png",
+      "status": "REGENERATE",
+      "reason": "Bedroom 1 ensuite wall mass is omitted/compressed; the bathroom and independent service passage are not correctly distinguished. Stair/wash access must be rebuilt from a full-source camera.",
+      "sha256": "80aa435b60581cd0bde8c3d8ec536ae05394e9655ab3477dab7a958bb4f1214b",
+      "pdf_eligible": false
+    },
+    {
+      "file": "02-living-wide.png",
+      "status": "REMOVE",
+      "reason": "Superseded camera; incorrect rear opening and bedroom window.",
+      "sha256": "f4e6a0948cbf045bb02c368ad680dcebd6f873570bd9746c008db06d7857e1fb",
+      "pdf_eligible": false
+    },
+    {
+      "file": "03-stair-tv-wide-v2.png",
+      "status": "REGENERATE",
+      "reason": "Isolated-stair reference omitted enclosure. Its camera was outside the north wall. Missing surrounding walls and behind-TV access invalidate this room view.",
+      "sha256": "6b74282dca27919435ef18d1da28e0e277100f96ca730b8dfa04c7cad86b6d66",
+      "pdf_eligible": false
+    },
+    {
+      "file": "03-stair-tv-wide.png",
+      "status": "REMOVE",
+      "reason": "Near duplicate of later composition; plant change adds no information.",
+      "sha256": "7fb45f5eaee77a961cf5d5ddd0cbd81c77e7662f66219ab1bd839e6eb02d2319",
+      "pdf_eligible": false
+    },
+    {
+      "file": "04-storage-wide-v2.png",
+      "status": "REGENERATE",
+      "reason": "Retained partition above the 1400 mm store door is missing. Open storage must follow actual stepped soffits and conditional R5 wall aperture.",
+      "sha256": "7db68d4b42581d87429131a94719fbe6553efe557b69243656f96072b48c9b56",
+      "pdf_eligible": false
+    },
+    {
+      "file": "04-storage-wide.png",
+      "status": "REMOVE",
+      "reason": "Near duplicate of later storage image; trailing plant adds no functional information.",
+      "sha256": "5061d548b1371f63e067e32c0bec2255b6fc15af99dcc4966d06bd79d9b6641e",
+      "pdf_eligible": false
+    },
+    {
+      "file": "05-wash-wide.png",
+      "status": "REGENERATE",
+      "reason": "Freestanding-looking TV backing and excessively open space above vanity do not establish the actual upper-flight soffit or west-facing standing area.",
+      "sha256": "a44e9ea845973a646f24e249628aa9b584912421baa8291ef034f5f15f4c3eb0",
+      "pdf_eligible": false
+    },
+    {
+      "file": "06-kitchen-detail.png",
+      "status": "CORRECT",
+      "reason": "Inherits exaggerated north sink run and overheads; detail must fit the 550 mm return and adjacent door.",
+      "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1",
+      "pdf_eligible": false
+    },
+    {
+      "file": "06-kitchen-opposite.png",
+      "status": "REGENERATE",
+      "reason": "Adds a south counter, turning the approved short-return L into a U-shaped kitchen.",
+      "sha256": "f7e03e7a542edc6e6f88dd682d908176a18939679ffcd6ec4191e8dbc5f2994d",
+      "pdf_eligible": false
+    },
+    {
+      "file": "06-kitchen-wide.png",
+      "status": "CORRECT",
+      "reason": "North sink return appears substantially longer than the 550 mm approved return. Verify camera and cabinet endpoints; preserve east hob/window and north entrance.",
+      "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759",
+      "pdf_eligible": false
+    },
+    {
+      "file": "07-bedroom1-detail.png",
+      "status": "KEEP",
+      "reason": "Distinct material/bedside detail. No conflicting opening or bathroom geometry is shown; retain the sage linen, small plant and wall lamp.",
+      "sha256": "29a37c2005ae3235cd71e61ce884b5db37841d2502a63a35c63b6e4d19190be6",
+      "pdf_eligible": false
+    },
+    {
+      "file": "07-bedroom1-opposite.png",
+      "status": "CORRECT",
+      "reason": "Opening relationships broadly plausible; entrance finish differs from living and wardrobe/door widths need full-model camera comparison.",
+      "sha256": "6fcf7b82e9b57cfd0b00ef9309da37829889933e0337f633d6bed262267e9853",
+      "pdf_eligible": false
+    },
+    {
+      "file": "07-bedroom1-wide-v2.png",
+      "status": "REMOVE",
+      "reason": "Superseded view with south window over the bedhead instead of east of the bed.",
+      "sha256": "b3b750b9045bed588cea3f2074ab59065ce9edf6d2e57e60f7e4503d10e3efa5",
+      "pdf_eligible": false
+    },
+    {
+      "file": "07-bedroom1-wide-v3.png",
+      "status": "CORRECT",
+      "reason": "West window aspect improved; camera and bed clearance still need comparison against room and ensuite boundary.",
+      "sha256": "309ea617e100a0d67cc9fb863be8c3b147e73b99a94f53df06afa3ab378cfa49",
+      "pdf_eligible": false
+    },
+    {
+      "file": "07-bedroom1-wide.png",
+      "status": "REMOVE",
+      "reason": "Superseded view; wrong west vent shape and south-window relationship.",
+      "sha256": "62ac7f50bd4021cf962ebb4de27845a662f155900d61056f3125a2c810dbca1e",
+      "pdf_eligible": false
+    },
+    {
+      "file": "08-bedroom2-detail.png",
+      "status": "KEEP",
+      "reason": "Useful close material/bedside view with restrained lamp and plant; no conflicting openings shown.",
+      "sha256": "0f7067abb0b45a896c915865d13656d39dbe2f5877eefd0988db66d1e96c6cb3",
+      "pdf_eligible": false
+    },
+    {
+      "file": "08-bedroom2-opposite.png",
+      "status": "CORRECT",
+      "reason": "Wardrobe top is too high relative to the adjacent door; reduce to the approved 2100 mm while retaining room layout.",
+      "sha256": "a875f51b4d073f90577d6e08a59987bac93479b8d351bdf5cf4e5bdb7b057a94",
+      "pdf_eligible": false,
+      "initial_status": "KEEP"
+    },
+    {
+      "file": "08-bedroom2-wide-v2.png",
+      "status": "KEEP",
+      "reason": "Retain established south-head bed, solid west wall and north private balcony door; verify visible projection with source camera before final release.",
+      "sha256": "ad2493a3c55b8096adca365d750035e5fcd0531d9e86c6b75ca9771eaee4af39",
+      "pdf_eligible": false
+    },
+    {
+      "file": "08-bedroom2-wide.png",
+      "status": "REMOVE",
+      "reason": "Superseded bed orientation; head appears on west wall.",
+      "sha256": "8f667b5ad683b97160940f664521271d5e6931af51436ce3e78f9eb5eea71360",
+      "pdf_eligible": false
+    },
+    {
+      "file": "09-bedroom3-detail.png",
+      "status": "KEEP",
+      "reason": "Useful corner-access detail of the continuous L wardrobe; keep paired access and Roman blind.",
+      "sha256": "ac67d0b33d719a1f59500fd4f73a94d2132cd767e0ac68d885a6bb6d64d8b2cb",
+      "pdf_eligible": false
+    },
+    {
+      "file": "09-bedroom3-opposite.png",
+      "status": "KEEP",
+      "reason": "Distinct reverse view: west ensuite door, north window and retained south-head bed; source-camera review required before release.",
+      "sha256": "4689834af09dff3e641f2be22458a3e3b54efc740fa4cb37906be3603d0c563f",
+      "pdf_eligible": false
+    },
+    {
+      "file": "09-bedroom3-wide-v2.png",
+      "status": "REMOVE",
+      "reason": "Superseded mirrored north window and L wardrobe.",
+      "sha256": "5d98e5640bcbe2c3643d1c2810dcb90d39637894485375152ffcd0bd96576509",
+      "pdf_eligible": false
+    },
+    {
+      "file": "09-bedroom3-wide-v3.png",
+      "status": "KEEP",
+      "reason": "North window and L wardrobe now on correct sides from west looking east; Roman blind clears the short corner return. Source-camera review required before release.",
+      "sha256": "18c455443b9fa3d1b9104201f9f4865fa0cbb1e5ebf3b6cc72eb856972483e85",
+      "pdf_eligible": false
+    },
+    {
+      "file": "09-bedroom3-wide.png",
+      "status": "REMOVE",
+      "reason": "Superseded mirrored room and curtain crowding at wardrobe corner.",
+      "sha256": "0afd124d70a60c94e58548bb9720bc6c114a4eb75d742e6cf4508580de523148",
+      "pdf_eligible": false
+    },
+    {
+      "file": "10-study-wide.png",
+      "status": "REGENERATE",
+      "reason": "Furniture and adjacent openings disagree with source: model has east-window desk and north cabinet, not this sofa/desk arrangement and open stair seen through gallery.",
+      "sha256": "16af193959067520ffb75cc921b273b06365470c2edc2a1e3592a5d2e387272e",
+      "pdf_eligible": false
+    },
+    {
+      "file": "11-bathroom1-wide-v2.png",
+      "status": "REGENERATE",
+      "reason": "Camera is framed as an east-wall doorway although private entry is on south side. Removing the basin from the frame did not correct the architecture.",
+      "sha256": "48e4a13e2ab0b1492be6b03e5b01dde2cd68e9280b7ae55df09d1d525b58e1dc",
+      "pdf_eligible": false
+    },
+    {
+      "file": "11-bathroom1-wide.png",
+      "status": "REMOVE",
+      "reason": "Superseded basin on wrong wall.",
+      "sha256": "9cb7b6286a65f30e2f99d49bf3cf05cb982b3fe29a7eb4da86608169eac27ff7",
+      "pdf_eligible": false
+    },
+    {
+      "file": "12-bathroom2-wide-v2.png",
+      "status": "REGENERATE",
+      "reason": "Same false east-wall doorway as Ensuite 1; actual private entrance is south-side pocket opening.",
+      "sha256": "3c0e92c19f94a4e6c844c1f4ba55f7837352dac63d846d1c33ebd51031b82f3d",
+      "pdf_eligible": false
+    },
+    {
+      "file": "12-bathroom2-wide.png",
+      "status": "REMOVE",
+      "reason": "Superseded basin on wrong wall.",
+      "sha256": "5db516a3d51ef96481154b1de13470e84970a3b051bd6c8def52157d21525d19",
+      "pdf_eligible": false
+    },
+    {
+      "file": "13-bathroom3-wide-v2.png",
+      "status": "CORRECT",
+      "reason": "West shower and two vents are useful, but the source east basin overlaps the entrance. Resolve this source conflict rather than hiding the basin behind camera.",
+      "sha256": "0f4633c3e97a0b473be5fc7469891ee09d436b7ef4bb5ab64fc98bd6be4514c7",
+      "pdf_eligible": false
+    },
+    {
+      "file": "13-bathroom3-wide.png",
+      "status": "REMOVE",
+      "reason": "Superseded basin moved to south wall.",
+      "sha256": "50701e906bc907b13c4e66f40b63539c1a219ba1338df9f0e8c0331d07a17471",
+      "pdf_eligible": false
+    },
+    {
+      "file": "14-balcony-wide-v2.png",
+      "status": "CORRECT",
+      "reason": "Charcoal band section is too thick compared with source 145 mm ribbon and 80 mm projection. Preserve its sweep and correct the section.",
+      "sha256": "8794cede165b214bfa3825db9c3fed3fd7999f79ab9c4d618e3405ee6ad573f7",
+      "pdf_eligible": false,
+      "initial_status": "KEEP"
+    },
+    {
+      "file": "14-balcony-wide.png",
+      "status": "REMOVE",
+      "reason": "Superseded view inventing stair directly inside the common gallery.",
+      "sha256": "c75a4df518d8dcdf8af0b86a4366cedfd17fd892a92bbe92f8b8a7615ae7ef01",
+      "pdf_eligible": false
+    },
+    {
+      "file": "15-terrace-wide-v2.png",
+      "status": "KEEP",
+      "reason": "End vent restored; retains north exit and restrained terrace furniture. Verify door swing and perimeter against source camera before release.",
+      "sha256": "5f45c60630fd40182c2a9de326bf073cde67faecf6256d67a7bfac0c19dad3ff",
+      "pdf_eligible": false
+    },
+    {
+      "file": "15-terrace-wide.png",
+      "status": "REMOVE",
+      "reason": "Superseded view omitting roof enclosure end vent.",
+      "sha256": "4ce24108b084e07238623f15cf958e12a5d538a577b03bb0340c9e2bcfc7966a",
+      "pdf_eligible": false
+    },
+    {
+      "file": "16-dining-wide.png",
+      "status": "REGENERATE",
+      "reason": "Inherits living rear-boundary problem and inconsistent table/window relationship; pendant is absent from the corresponding living view.",
+      "sha256": "3fb0767b1b26fc4c4ba8d77a4c0c419400c9647598d59e0fc679b9024579b2f2",
+      "pdf_eligible": false
+    }
+  ],
+  "source_conflicts": [
+    {
+      "id": "B3-BASIN-DOOR",
+      "description": "Ensuite 3 source basin footprint x=4.70\u20135.10, y=6.20\u20136.52 overlaps east entrance x=4.85\u20135.60 by 250 mm. Architecture remains locked. A fixture-only alternative needs resolution."
+    },
+    {
+      "id": "R5-HEADROOM",
+      "description": "R5 leaning strip is 2.17 m against source 2.20 m benchmark; body line 2.35 m. Do not add height or move basin silently."
+    },
+    {
+      "id": "R5-STORE",
+      "description": "900 \u00d7 1400 mm store aperture in retained partition is conditional on structural verification; wall above stays."
+    },
+    {
+      "id": "KITCHEN-EXTRACT",
+      "description": "Retained east hob lies under approved window. Chimney/window coordination unresolved; never delete the window to install a conventional hood."
+    }
+  ]
+}

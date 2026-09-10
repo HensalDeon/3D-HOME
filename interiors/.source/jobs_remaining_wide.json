@@ -1,0 +1,45 @@
+[
+  {
+    "id": "16-dining-wide",
+    "refs": [
+      "interiors/images/02-living-wide-v2.png",
+      "drawings/compact-v4/02-ground.png"
+    ],
+    "prompt": "Create a closer photographic view of the DINING AREA in image1. Same room and furniture layout, not redesign. Move camera WEST a little along the clear central passage toward the900mm diameter circular oak table; look NORTH toward table and NORTH wall window. Image2 governs architecture westUP,northRIGHT. Table fixed atx4.88,y4.65,three compact chairs at east,west,north positions. Northwall window1.10m wide at y3.45–4.55,sill1.00m,height1.20m. When lookingNORTH fromsouth oftable, EAST isRIGHT andWEST isLEFT. Thus existing north-window is partlyRIGHT oftable, sofa furtherRIGHT/east, servicepassage opening onWEST/back wall atfarLEFT. Never invent new wall or cabinetry behind table. Keep clear route WEST toward1.30m service passage, no fourthchair occupying centralpassage. Use same table,chairs,linenblind,pale floor,offwhitepaint,oak andearthymaterials asimage1. Remove tabletop plant for unobstructed everyday use, add one small ceramic bowl. Simple warm pendant can hang centered overtable, no elaborate ceiling. Bright normal daylight, real photograph, no text or gameengine appearance."
+  },
+  {
+    "id": "03-stair-tv-wide-v2",
+    "refs": [
+      "interiors/images/03-stair-tv-wide.png"
+    ],
+    "prompt": "Edit this interior photograph, change ONLY the plants: remove the floor pot beside starter steps and the trailing pot on top of TV backing, leaving clear circulation and uncluttered oak backing. Retain every stair, landing, TV panel, TV, store door, wall, lighting, material, camera and dimension. Nothing else changes. Photorealistic precision edit, no text."
+  },
+  {
+    "id": "04-storage-wide-v2",
+    "refs": [
+      "interiors/images/04-storage-wide.png"
+    ],
+    "prompt": "Edit this interior photograph. Remove the trailing plant on top of TV panel and its hanging leaves completely. Keep exact oak TV panel, TV, low store opening, two bifold doors, interior low shelves and headroom, stair/landing, camera and floor unchanged. Store opening is only900mm wide and1400mm high, top below1700mm TVbacking; do not enlarge. No other changes. Photographic precision edit."
+  },
+  {
+    "id": "14-balcony-wide-v2",
+    "refs": [
+      "interiors/images/14-balcony-wide.png"
+    ],
+    "prompt": "Edit this balcony photograph only inside the glazing on LEFT: remove the incorrectly visible indoor staircase railing and visible stair treads immediately behind slider. Replace with the approved plain common front gallery, a narrow1050mm-deep unfurnished off-white passage with pale floor and plain back wall. No bed, furniture, new windows or stair directly behind balcony sliding door. Preserve entire balcony, exact dimensions and camera, chairs, small plant, glazing, glass guard, dark sweeping facade band, greenery and lighting. Do not alter exterior. No text."
+  },
+  {
+    "id": "15-terrace-wide-v2",
+    "refs": [
+      "interiors/images/15-terrace-wide.png"
+    ],
+    "prompt": "Precise photo edit: retain terrace, camera, enclosure door, cap, guarding, seating and all finishes. Restore the single approved ventilation window to the TIMBER-clad short EAST/front endwall of the stair enclosure at LEFT ofimage. This vent is900mm wide by450mm high, centered on the2.20m-wide facade at1500mm sill above terrace floor, dark slim frame and frosted glass. The vent appears proportionately foreshortened on this endwall. Move/remove wall sconce if it overlaps this vent; don't move the vent. No second window, no newdoor. The approved existing vent was missing from this first image. Keep roofstructure exactly unchanged otherwise. Natural photo realism, no text."
+  },
+  {
+    "id": "09-bedroom3-wide-v3",
+    "refs": [
+      "interiors/images/09-bedroom3-wide-v2.png"
+    ],
+    "prompt": "Correct camera compass orientation by horizontally mirroring the ENTIRE supplied photograph, including bed, room, doorway, artwork, light and L-wardrobe. After mirroring: the bedhead must be on RIGHT/SOUTH wall, the north window onLEFTwall, the L-wardrobe atBACKLEFT/NORTHEAST corner, and entrance door atBACKRIGHT/SOUTHEAST corner. Camera looksEAST. This is a mirror correction of a previously reversed image; do not change any furniture spacing or dimensions. Then replace ONLY the north-window full-length curtains with a slim natural-linen Roman blind fitted inside the same opening, leaving no drape stack crowding the wardrobe. Window stays same size and location. Wardrobe stays550mmdeep and2100mmhigh with750mm painted wall above, continuous L shape andpaired corner doors. Bed stays1200x2000mm, tiny600mm foot clearance. Preserve warm photo styling, lighting, textures. No new furniture or openings. No text."
+  }
+]

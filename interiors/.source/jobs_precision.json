@@ -1,0 +1,38 @@
+[
+  {
+    "id": "11-bathroom1-wide-v2",
+    "refs": [
+      "interiors/images/11-bathroom1-wide.png"
+    ],
+    "prompt": "Precise photo edit of this bathroom. KEEP room, camera,WC position/orientation, shower, glass, door and windows exactly fixed. REMOVE the visible basin, vanity cabinet, tap and mirror COMPLETELY from this camera view, filling their locations with the same continuous greige wall tile and clear floor. The approved basin is on the east/entrance wall BEHIND the camera, so it cannot be visible in this west-looking view. Do NOT relocate it anywhere within the image. Remove decorative plants too. Keep1.30m room width and2.00m depth, no widening or new openings. Retain existing lighting brightness with simple ceiling light. This is an architecture-fidelity correction, not bathroom redesign. Preserve photoreal texture and natural light. No text."
+  },
+  {
+    "id": "12-bathroom2-wide-v2",
+    "refs": [
+      "interiors/images/12-bathroom2-wide.png"
+    ],
+    "prompt": "Precise photo edit of this bathroom. KEEP room, camera,WC position/orientation, shower, glass, door and windows exactly fixed. REMOVE the visible basin, vanity cabinet, tap and mirror COMPLETELY from this camera view, filling their locations with the same continuous greige wall tile and clear floor. The approved basin is on the east/entrance wall BEHIND the camera, so it cannot be visible in this west-looking view. Do NOT relocate it anywhere within the image. Remove decorative plants too. Keep1.30m room width and2.00m depth, no widening or new openings. Retain existing lighting brightness with simple ceiling light. This is an architecture-fidelity correction, not bathroom redesign. Preserve photoreal texture and natural light. No text."
+  },
+  {
+    "id": "13-bathroom3-wide-v2",
+    "refs": [
+      "interiors/images/13-bathroom3-wide.png"
+    ],
+    "prompt": "Precise photo edit of this bathroom. KEEP room, camera,WC position/orientation, shower, glass, door and windows exactly fixed. REMOVE the visible basin, vanity cabinet, tap and mirror COMPLETELY from this camera view, filling their locations with the same continuous greige wall tile and clear floor. The approved basin is on the east/entrance wall BEHIND the camera, so it cannot be visible in this west-looking view. Do NOT relocate it anywhere within the image. Remove decorative plants too. Keep1.30m room width and2.00m depth, no widening or new openings. Retain existing lighting brightness with simple ceiling light. This is an architecture-fidelity correction, not bathroom redesign. Preserve photoreal texture and natural light. No text."
+  },
+  {
+    "id": "08-bedroom2-wide-v2",
+    "refs": [
+      "interiors/images/08-bedroom2-wide.png",
+      "interiors/images/07-bedroom1-wide-v2.png"
+    ],
+    "prompt": "Correct the bed orientation in master bedroom photograph image1. Image2 shows required bed orientation: head against LEFT/SOUTH side wall, mattress length extends from left wall across image toward RIGHT/NORTH wall, bed's long side facing camera. Rotate ONLY image1's bed ninety degrees in plan to this orientation; place its head on left/south wall at WEST/back end, NOT on back/west wall. Room2.90m left-right by3.35m front-back; bed2.00m long left-right by1.50m front-back, rear edge350mm from back wall. Keep image1's back/west wall solid without window. Keep existing right/north rear balcony door exactly at back end, fully accessible via700–850mm foot clearance. Keep existing LEFT/south window on the nearer/front side of left wall, NOT behind headboard; the bedhead sits on solid wall behind this window. Keep foreground entry and its door. No new openings. Remove big rug, replace with small beside-bed runner that doesn't reach door. Warm offwhite, beige linen, olive throw, oak shelf on nearer side of headboard only. Preserve realistic compact proportions and photographic styling. Do not mirror image or rotate whole room."
+  },
+  {
+    "id": "07-bedroom1-wide-v3",
+    "refs": [
+      "interiors/images/07-bedroom1-wide-v2.png"
+    ],
+    "prompt": "Precision photographic framing correction, SAME bedroom layout and bed orientation. Move camera slightly WEST, past the SOUTH side window, and point west at the bed and small west-wall window; the large window on the LEFT wall should now be OUTSIDE the frame at left/behind camera. Show solid warm-white SOUTH wall behind the bedhead, no window over the headboard. Keep small high WEST/back-wall window at600mm wide700mm high with sill1.35m, room dimensions2.90x3.35m, bedhead againstLEFTwall and bed2.00m long extending left-to-right, all finishes and furniture. The large south window still exists outside this view; do not show a false window over the headboard. No extra doors or enlarged room. This is a narrower eye-level photograph, not a redesigned bedroom. Natural daylight from the off-frame left window."
+  }
+]

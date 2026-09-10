@@ -1,0 +1,183 @@
+{
+  "title": "Hensal House \u2014 Interior Design & Visualization",
+  "status": "Interior proposal \u00b7 review edition",
+  "date": "10 September 2026",
+  "rooms": [
+    {
+      "id": "01-entrance",
+      "title": "Entrance / sitout",
+      "floor": "GROUND FLOOR",
+      "dimension": "2.70 \u00d7 1.20 m",
+      "intent": "A quiet welcome: two compact timber seats, a warm wall light and a clear approach to the main door.",
+      "materials": "Outdoor timber \u00b7 warm-white paint \u00b7 matte stone-look tile",
+      "check": "Retain the 900 mm main door, adjacent window and three approach steps. Keep planting off the entry route."
+    },
+    {
+      "id": "02-living",
+      "title": "Living room",
+      "floor": "GROUND FLOOR",
+      "dimension": "2.70 \u00d7 4.75 m bay + open stair-side strip",
+      "intent": "A compact straight sofa faces the retained stair-boundary TV. The centre remains open for everyday movement.",
+      "materials": "Linen-look upholstery \u00b7 oak \u00b7 warm-white walls \u00b7 pale porcelain",
+      "check": "Retain the 1,800 \u00d7 730 mm sofa footprint. Avoid a central coffee table where it narrows the kitchen, stair or rear route."
+    },
+    {
+      "id": "03-stair-tv",
+      "title": "Staircase / TV composition",
+      "floor": "GROUND FLOOR",
+      "dimension": "950 \u00d7 50 \u00d7 1,700 mm TV backing",
+      "intent": "One restrained oak composition connects the TV, closing panel and low storage. The wash area stays behind it.",
+      "materials": "Natural oak veneer \u00b7 charcoal metal \u00b7 warm pale stair finish",
+      "check": "TV centre remains at plan y = 4.125 m; screen centre +1.10 m. Stair route SOUTH \u2192 WEST \u2192 EAST; 2 + 7 + 8 risers and 900 mm flights."
+    },
+    {
+      "id": "04-storage",
+      "title": "Under-stair storage",
+      "floor": "GROUND FLOOR",
+      "dimension": "1.90 \u00d7 1.35 m store \u00b7 900 \u00d7 1,400 mm access",
+      "intent": "Low headroom becomes useful household storage, with compact bifold access and reachable front shelves.",
+      "materials": "Oak doors \u00b7 washable greige lining \u00b7 simple charcoal pulls",
+      "check": "Crouch-in storage only. The existing R5 opening needs confirmation that the stair landing does not bear on this partition. Do not increase its height."
+    },
+    {
+      "id": "05-wash",
+      "title": "West-facing wash area",
+      "floor": "GROUND FLOOR",
+      "dimension": "500 \u00d7 350 mm basin \u00b7 rim +860 mm",
+      "intent": "A shallow hand-wash vanity and compact mirror occupy the upper-flight zone; the person stands to the east, facing west.",
+      "materials": "Semi-recessed white basin \u00b7 sealed oak \u00b7 pale counter \u00b7 charcoal tap",
+      "check": "Standing zone 750 \u00d7 600 mm. Modelled clearance: 2.17 m at leaning strip, 2.35 m at body line, 2.53 m at rear. Keep the 400 mm cabinet-access strip for stoop access only."
+    },
+    {
+      "id": "16-dining",
+      "title": "Dining area",
+      "floor": "GROUND FLOOR",
+      "dimension": "900 mm round table \u00b7 three compact chairs",
+      "intent": "A small round table keeps the shared room visually open. A simple pendant defines the dining spot without a feature ceiling.",
+      "materials": "Oak table and chairs \u00b7 neutral seat pads \u00b7 understated pendant",
+      "check": "Retain the three-chair arrangement. A fourth chair or crockery unit must not consume the central route or independent rear passage."
+    },
+    {
+      "id": "06-kitchen",
+      "title": "Kitchen",
+      "floor": "GROUND FLOOR",
+      "dimension": "2.90 \u00d7 2.05 m \u00b7 600 mm counter depth",
+      "intent": "An efficient L-shaped kitchen combines drawers, a short sink return and overhead storage on available solid wall.",
+      "materials": "Oak base fronts \u00b7 warm-white overheads \u00b7 quiet greige counter",
+      "check": "Clear room 2900 x 2050 mm. Retain WEST-wall 800 mm entry at plan x=2.10\u20132.90, y=2.20; east window/hob, short north sink return and southwest refrigerator. Coordinate extractor without deleting or blocking the window."
+    },
+    {
+      "id": "07-bedroom1",
+      "title": "Bedroom 1",
+      "floor": "GROUND FLOOR",
+      "dimension": "2.90 \u00d7 3.35 m \u00b7 1,500 \u00d7 2,000 mm bed",
+      "intent": "An upholstered headboard, soft sage accents and a simple oak wardrobe make a calm everyday bedroom.",
+      "materials": "Beige linen \u00b7 muted sage \u00b7 oak \u00b7 warm-white paint",
+      "check": "Bed head stays south. Preserve approximately 850 mm at the north foot route and 950 mm between the bed and east wardrobe. Do not fill the 350 mm west-side gap."
+    },
+    {
+      "id": "11-bathroom1",
+      "title": "Ensuite 1",
+      "floor": "GROUND FLOOR",
+      "dimension": "1.30 \u00d7 2.00 m \u00b7 rear shower 800 mm deep",
+      "intent": "Quiet warm tile and simple fittings make this compact bathroom easy to clean. The wet zone remains at the west end.",
+      "materials": "Matte greige wall porcelain \u00b7 textured floor tile \u00b7 clear glass",
+      "check": "Private pocket/sliding access from Bedroom 1. WC stays on the north wall; basin stays on the east wall. Preserve the existing west window."
+    },
+    {
+      "id": "10-study",
+      "title": "Family / study",
+      "floor": "FIRST FLOOR",
+      "dimension": "2.90 \u00d7 2.05 m",
+      "intent": "The user-preferred family arrangement pairs a compact sofa beneath the east window with a shallow side desk, a small stool and restrained decor.",
+      "materials": "Natural linen \u00b7 warm oak \u00b7 muted olive \u00b7 beige Roman blind",
+      "check": "Proposed 1500 x 650 mm sofa, 1000 x 450 mm north-wall desk and 320 mm movable stool fit the retained 2900 x 2050 mm room. Keep both existing connections clear."
+    },
+    {
+      "id": "08-bedroom2",
+      "title": "Bedroom 2 / master",
+      "floor": "FIRST FLOOR",
+      "dimension": "2.90 \u00d7 3.35 m \u00b7 1,500 \u00d7 2,000 mm bed",
+      "intent": "The same warm material family gains a deeper olive accent. Compact storage leaves room for the private balcony route.",
+      "materials": "Warm neutral upholstery \u00b7 olive textile \u00b7 oak \u00b7 pale porcelain",
+      "check": "Bed head stays south. Preserve the separate ensuite and rear-balcony doors on the north side. The master west wall is solid; do not copy the ground-floor west window."
+    },
+    {
+      "id": "09-bedroom3",
+      "title": "Bedroom 3 / L-shaped wardrobe",
+      "floor": "FIRST FLOOR",
+      "dimension": "2.70 \u00d7 3.60 m \u00b7 1,200 \u00d7 2,000 mm bed",
+      "intent": "A small double bed and continuous oak L-shaped wardrobe create useful storage without taking over the room.",
+      "materials": "Oak \u00b7 cream linen \u00b7 muted clay \u00b7 charcoal handles",
+      "check": "Wardrobe depth 550 mm, height 2,100 mm; east run 1,650 mm including corner, north return 850 mm overall. Paired corner doors without a fixed post. Approximately 600 mm remains at the bed foot; use a compact blind at the nearby window."
+    },
+    {
+      "id": "12-bathroom2",
+      "title": "Ensuite 2",
+      "floor": "FIRST FLOOR",
+      "dimension": "1.30 \u00d7 2.00 m",
+      "intent": "A coherent continuation of the ground-floor bathroom, with practical wet-zone screening and restrained finishes.",
+      "materials": "Warm greige porcelain \u00b7 white sanitaryware \u00b7 charcoal fittings",
+      "check": "Stacked above Ensuite 1. Retain the master-side pocket/sliding entry and 650 \u00d7 500 mm rear vent. No new wall recess or plumbing relocation."
+    },
+    {
+      "id": "13-bathroom3",
+      "title": "Ensuite 3",
+      "floor": "FIRST FLOOR",
+      "dimension": "1.30 \u00d7 2.00 m",
+      "intent": "A compact private bathroom for Bedroom 3, with the same cleanable material palette and generous attention to ventilation.",
+      "materials": "Matte porcelain \u00b7 textured floor \u00b7 clear glass \u00b7 simple metalwork",
+      "check": "Retain east entry swing, west vent and north-side high window. Keep the basin on the east wall and WC on the north wall. Check shower access against the door swing."
+    },
+    {
+      "id": "14-balcony",
+      "title": "Front balcony",
+      "floor": "FIRST FLOOR",
+      "dimension": "2.70 \u00d7 1.20 m",
+      "intent": "Two compact outdoor seats and a little greenery soften the balcony while the charcoal sweeping frame remains visible.",
+      "materials": "Weather-resistant timber \u00b7 glass guard \u00b7 charcoal metal",
+      "check": "Slider serves the common gallery. Keep its usable opening clear; do not introduce a bed or stair directly behind it. Use movable, light planting and retain the curved fa\u00e7ade band."
+    },
+    {
+      "id": "15-terrace",
+      "title": "Roof terrace",
+      "floor": "ROOF",
+      "dimension": "Roof FFL +6.45 m \u00b7 2.20 \u00d7 4.10 m stair enclosure",
+      "intent": "A small outdoor seating group leaves the terrace open for family use, circulation and maintenance.",
+      "materials": "Outdoor porcelain \u00b7 charcoal metal \u00b7 timber-look cladding",
+      "check": "Keep the north-side 900 mm exit swing clear, preserve both enclosure vents, drainage access and the southwest service reserve. No tank, pergola or structural planter is added."
+    }
+  ],
+  "palette": [
+    [
+      "Natural oak",
+      "#B9956C",
+      "Sealed veneer on stable joinery; use timber only where exposure and maintenance suit it."
+    ],
+    [
+      "Warm white",
+      "#EDE6DB",
+      "Washable wall finish; keep ceilings simple and bright."
+    ],
+    [
+      "Quiet greige",
+      "#B8AD9C",
+      "Cabinet laminates, modest stone texture and bathroom wall tile."
+    ],
+    [
+      "Pale stone",
+      "#D6C8B3",
+      "Low-sheen porcelain indoors; tested slip-resistant finish in wet and outdoor areas."
+    ],
+    [
+      "Charcoal",
+      "#353633",
+      "Slim metalwork, pulls and light fittings, coordinated with the exterior."
+    ],
+    [
+      "Earth & linen",
+      "#A48A73",
+      "Removable natural-look fabrics; sage, olive and clay used sparingly."
+    ]
+  ]
+}

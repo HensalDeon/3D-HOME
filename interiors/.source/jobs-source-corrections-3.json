@@ -1,0 +1,34 @@
+[
+  {
+    "id": "11-bathroom1-wide",
+    "refs": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/11-bathroom1-wide.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/11-bathroom1-wide-v2.png"
+    ],
+    "prompt": "Image1 is absolute full-house geometry and camera. Image2 is material inspiration ONLY, its door framing is wrong. Make image1 a natural photorealistic PORTRAIT bathroom photo, keeping all source geometry, crop and perspective. This is Ensuite1, exactly1300mm wide x2000mm long, camera INSIDE the east dry strip looking WEST. WC stays on north/right wall facing SOUTH; shower is at west/rear, width1300 depth800. South-side bedroom doorframe at lower LEFT edge remains exactly there, no invented east/front doorway framing both sides. Basin is on EAST wall behind camera; do not move it into this view. Preserve the large1150x1000mm obscured WEST window, sill1200mm, exactly as source. Matte warm beige fine-grained tiles, anti-slip floor, white compact WC with realistic ceramic details, black simple shower fittings. Glass at source shower boundary can be detailed as two sliding panels for access without changing its location. Add only a small neat towel on south wall if visible, no cabinet, no niches cut in walls. No added window, no room resizing. Geometry edges and object locations are fixed. ONE portrait image, no annotations."
+  },
+  {
+    "id": "12-bathroom2-wide",
+    "refs": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/12-bathroom2-wide.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/12-bathroom2-wide-v2.png"
+    ],
+    "prompt": "Image1 is absolute full-house geometry and camera. Image2 is material inspiration ONLY; its doorway geometry is wrong. Make image1 a natural photorealistic PORTRAIT bathroom photo, preserving exact camera, crop and all geometry. This is master Ensuite2,1300mm wide2000mm long, camera inside EAST dry strip looking WEST. WC on NORTH/right wall faces SOUTH; shower WEST1300x800. Pocket entry is on SOUTH/left side, visible at lower left source edge, NEVER invent an east doorway across foreground. Basin remains on EAST wall behind this camera, do not relocate. Preserve small650x500mm WEST window sill1650mm exactly. Matte warm greige stone-look tiles, anti-slip floor, white compact WC, black simple fittings, shower glass at source boundary can have two sliding panel seams for practical access. Subtle warm ceiling illumination and diffuse window light. One small towel only if it fits visible south wall. No inset niches, added openings or cabinets. ONE portrait image, no text."
+  },
+  {
+    "id": "04-storage-wide",
+    "refs": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/04-storage-wide.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/04-storage-wide-v2.png"
+    ],
+    "prompt": "Image1 is exact source camera, entire wall and joinery geometry. Image2 is only wood finish and storage contents inspiration; it wrongly deleted the wall above the door. Turn image1 into a realistic natural interior photograph with ONE functional change: articulate ONLY the900mm wide x1400mm high low store doors into their open bifold position (two450mm leaves, each folding in half; maximum250mm projection into room). Keep the FULL-HEIGHT WHITE WALL ABOVE this low opening exactly as image1, plus fixed TV panel to left and bedroom doorway/leaf to right. Never remove wall to reveal stairs. Inside this low cupboard preserve1470mm landing soffit, floor area1900mm depth away from camera and1350mm EW. Do not depict a standing-height room or extra opening. Add modest shallow shelves on one interior side with cleaning supplies, small baskets, folded blankets and one suitcase; leave crouching access. Warm oak joinery, simple black handles, matte beige floor and restrained warm cupboard light. Photographic realism, one landscape image, no annotations. Keep camera and all other architecture and object edges exactly."
+  },
+  {
+    "id": "03-stair-tv-wide",
+    "refs": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/corrections/03-stair-tv-wide.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/03-stair-tv-wide.png"
+    ],
+    "prompt": "Precise correction to Image1, preserve its photographic finish and every wall, aperture, door, TV, cupboard and camera. Image2 is the approved geometry. Correct ONLY the LOWER LEFT STARTER STAIR to match Image2 exactly: the approved starter contains TWO risers total, each176.47mm high, reaching a353mm-high turning platform. First tread only250mm in SOUTH-going direction, then900mm square second landing; the subsequent lower flight turns WEST and rises BEHIND the TV toward the back, it does not continue as a straight flight toward the camera. Image1 invented extra broad front-facing steps and a raised front platform. REMOVE the extra front-facing step(s), lower the turning platform and copy the exact two starter riser silhouettes/edge positions from Image2. Every other pixel/design stays. Maintain narrow access behind fixed TV boundary, low1400mm storage door and wall above it. Do not widen stairs or change upper flight, room, panel, doors or headroom. One corrected photo, same framing, no labels."
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "from": "interiors/images/01-entrance-wide.png",
+    "to": "/Users/hensaldeon/.Trash/Hensal-interior-superseded-20260909-235705/01-entrance-wide.png",
+    "sha256": "3b05cc40c7991cb50ad6972fc6def314b689f84c69eccddf55e8636464377e9b",
+    "reason": "Superseded same camera; unnecessary perforations in side wall."
+  },
+  {
+    "from": "interiors/images/02-living-wide.png",
+    "to": "/Users/hensaldeon/.Trash/Hensal-interior-superseded-20260909-235705/02-living-wide.png",
+    "sha256": "f4e6a0948cbf045bb02c368ad680dcebd6f873570bd9746c008db06d7857e1fb",
+    "reason": "Superseded camera; incorrect rear opening and bedroom window."
+  },
+  {
+    "from": "interiors/images/03-stair-tv-wide.png",
+    "to": "/Users/hensaldeon/.Trash/Hensal-interior-superseded-20260909-235705/03-stair-tv-wide.png",
+    "sha256": "7fb45f5eaee77a961cf5d5ddd0cbd81c77e7662f66219ab1bd839e6eb02d2319",
+    "reason": "Near duplicate of later composition; plant change adds no information."
+  },
+  {
+    "from": "interiors/images/04-storage-wide.png",
+    "to": "/Users/hensaldeon/.Trash/Hensal-interior-superseded-20260909-235705/04-storage-wide.png",
+    "sha256": "5061d548b1371f63e067e32c0bec2255b6fc15af99dcc4966d06bd79d9b6641e",
+    "reason": "Near duplicate of later storage image; trailing plant adds no functional information."
+  },
+  {
+    "from": "interiors/images/07-bedroom1-wide-v2.png",
+    "to": "/Users/hensaldeon/.Trash/Hensal-interior-superseded-20260909-235705/07-bedroom1-wide-v2.png",
+    "sha256": "b3b750b9045bed588cea3f2074ab59065ce9edf6d2e57e60f7e4503d10e3efa5",
+    "reason": "Superseded view with south window over the bedhead instead of east of the bed."
+  },
+  {
+    "from": "interiors/images/07-bedroom1-wide.png",
+    "to": "/Users/hensaldeon/.Trash/Hensal-interior-superseded-20260909-235705/07-bedroom1-wide.png",
+    "sha256": "62ac7f50bd4021cf962ebb4de27845a662f155900d61056f3125a2c810dbca1e",
+    "reason": "Superseded view; wrong west vent shape and south-window relationship."
+  },
+  {
+    "from": "interiors/images/08-bedroom2-wide.png",
+    "to": "/Users/hensaldeon/.Trash/Hensal-interior-superseded-20260909-235705/08-bedroom2-wide.png",
+    "sha256": "8f667b5ad683b97160940f664521271d5e6931af51436ce3e78f9eb5eea71360",
+    "reason": "Superseded bed orientation; head appears on west wall."
+  },
+  {
+    "from": "interiors/images/09-bedroom3-wide-v2.png",
+    "to": "/Users/hensaldeon/.Trash/Hensal-interior-superseded-20260909-235705/09-bedroom3-wide-v2.png",
+    "sha256": "5d98e5640bcbe2c3643d1c2810dcb90d39637894485375152ffcd0bd96576509",
+    "reason": "Superseded mirrored north window and L wardrobe."
+  },
+  {
+    "from": "interiors/images/09-bedroom3-wide.png",
+    "to": "/Users/hensaldeon/.Trash/Hensal-interior-superseded-20260909-235705/09-bedroom3-wide.png",
+    "sha256": "0afd124d70a60c94e58548bb9720bc6c114a4eb75d742e6cf4508580de523148",
+    "reason": "Superseded mirrored room and curtain crowding at wardrobe corner."
+  },
+  {
+    "from": "interiors/images/11-bathroom1-wide.png",
+    "to": "/Users/hensaldeon/.Trash/Hensal-interior-superseded-20260909-235705/11-bathroom1-wide.png",
+    "sha256": "9cb7b6286a65f30e2f99d49bf3cf05cb982b3fe29a7eb4da86608169eac27ff7",
+    "reason": "Superseded basin on wrong wall."
+  },
+  {
+    "from": "interiors/images/12-bathroom2-wide.png",
+    "to": "/Users/hensaldeon/.Trash/Hensal-interior-superseded-20260909-235705/12-bathroom2-wide.png",
+    "sha256": "5db516a3d51ef96481154b1de13470e84970a3b051bd6c8def52157d21525d19",
+    "reason": "Superseded basin on wrong wall."
+  },
+  {
+    "from": "interiors/images/13-bathroom3-wide.png",
+    "to": "/Users/hensaldeon/.Trash/Hensal-interior-superseded-20260909-235705/13-bathroom3-wide.png",
+    "sha256": "50701e906bc907b13c4e66f40b63539c1a219ba1338df9f0e8c0331d07a17471",
+    "reason": "Superseded basin moved to south wall."
+  },
+  {
+    "from": "interiors/images/14-balcony-wide.png",
+    "to": "/Users/hensaldeon/.Trash/Hensal-interior-superseded-20260909-235705/14-balcony-wide.png",
+    "sha256": "c75a4df518d8dcdf8af0b86a4366cedfd17fd892a92bbe92f8b8a7615ae7ef01",
+    "reason": "Superseded view inventing stair directly inside the common gallery."
+  },
+  {
+    "from": "interiors/images/15-terrace-wide.png",
+    "to": "/Users/hensaldeon/.Trash/Hensal-interior-superseded-20260909-235705/15-terrace-wide.png",
+    "sha256": "4ce24108b084e07238623f15cf958e12a5d538a577b03bb0340c9e2bcfc7966a",
+    "reason": "Superseded view omitting roof enclosure end vent."
+  }
+]

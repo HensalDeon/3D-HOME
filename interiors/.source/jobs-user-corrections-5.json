@@ -1,0 +1,40 @@
+[
+  {
+    "id": "10-study-wide",
+    "refs": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/10-study-wide.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/family-preferred-reference.png"
+    ],
+    "prompt": "Create one natural photographic interior image. Image1 is the exact architectural camera and room/furniture footprints: preserve every wall edge, window position, room proportion, camera and sofa/desk positions. Image2 is the USER-PREFERRED design and furnishings: restore its cozy compact beige fabric sofa under the east window, warm oak side desk on left, upholstered wooden chair, olive desk lamp, simple framed art above desk, small vase with green stems, beige Roman blind, small oak stool with one book/cup, beige rug, olive cushion and cream throw. Transfer those real materials and restrained affordable details to Image1 geometry. Sofa1500x650mm, side desk1000x450mm. Keep actual three-pane black window from Image1,1700mm wide. No bed in adjacent gallery, no extra opening or stair, no widened room. Sofa should have light oak legs like preferred image rather than heavy solid plinth; keep footprint. Daylight Kerala garden, warmwhite walls, matte pale stone floor. Wide landscape photograph, not model screenshot, no text."
+  },
+  {
+    "id": "11-bathroom1-opposite",
+    "refs": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/11-bathroom1-opposite.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/corrections/11-bathroom1-wide.png"
+    ],
+    "prompt": "Create one portrait photorealistic bathroom wash-area photograph from EXACT Image1 camera and geometry. Image1 is authoritative: retain small EAST wall basin footprint400mm wide x320mm deep at same position/height, solid wall edges, right-hand pocket doorway and correct bedroom view beyond. Image2 supplies warm beige porcelain tile and charcoal fitting finishes only. Convert the schematic basin into a real compact white wall-hung ceramic basin with a shallow bowl and small charcoal mixer tap; retain exact outer footprint, do not enlarge or move. Add a slim350mm-wide x600mm-high rectangular mirror directly above it, bottom around1050mm above floor, tiny wall-mounted soap dispenser on left atbasinlevel, visible chrome bottletrap beneath; no bulky cabinet, new wall, new niche or new window. Mirror reflection shows only a partial frosted rear ventilation opening and warm tile across this actual1300x2000room, no invented large room. Floor is small pale beige square anti-slip mosaic. Preserve visible oak bedroom wardrobe through right doorway. Natural light and gentle warm mirror tasklight, clean locally sourced fittings. The washbasin must be plainly visible and usable; one photograph no text."
+  },
+  {
+    "id": "12-bathroom2-opposite",
+    "refs": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/12-bathroom2-opposite.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/corrections/12-bathroom2-wide.png"
+    ],
+    "prompt": "Create one portrait photorealistic bathroom wash-area photograph from EXACT Image1 camera and geometry. Image1 is authoritative: retain small EAST wall basin footprint400mm wide x320mm deep at same position/height, solid wall edges, right-hand pocket doorway and correct bedroom view beyond. Image2 supplies warm beige porcelain tile and charcoal fitting finishes only. Convert the schematic basin into a real compact white wall-hung ceramic basin with a shallow bowl and small charcoal mixer tap; retain exact outer footprint, do not enlarge or move. Add a slim350mm-wide x600mm-high rectangular mirror directly above it, bottom around1050mm above floor, tiny wall-mounted soap dispenser on left atbasinlevel, visible chrome bottletrap beneath; no bulky cabinet, new wall, new niche or new window. Mirror reflection shows only a partial frosted rear ventilation opening and warm tile across this actual1300x2000room, no invented large room. Floor is pale beige matte tile. Keep right doorway as source, no invented furniture beyond. Natural light and gentle warm mirror tasklight, clean locally sourced fittings. The washbasin must be plainly visible and usable; one photograph no text."
+  },
+  {
+    "id": "11-bathroom1-wide",
+    "refs": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/corrections/11-bathroom1-wide.png"
+    ],
+    "prompt": "Precise local correction of this existing bathroom photograph, preserve camera, all wall/window/door positions, tile, shower glass, lighting and floor. REMOVE the narrow added TILED HALF-HEIGHT PARTITION beside/behind the toilet on image RIGHT; the approved bathroom has NO half-wall there. That shape must instead be ONLY the toilet's compact WHITE CERAMIC CISTERN against the existing full-height right wall. Toilet faces to image LEFT, perpendicular to that right wall; keep the source toilet floor footprint in same foreground position, do not rotate toward camera. One small ceramic cistern directly behind the bowl against right full-height wall, no second cistern farther back near shower. Keep1300mm room width and800mm-deep rear shower, no added space. Everything else unchanged. Single portrait realistic photograph."
+  },
+  {
+    "id": "12-bathroom2-wide",
+    "refs": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/corrections/12-bathroom2-wide.png"
+    ],
+    "prompt": "Precise local correction of this existing bathroom photograph, preserve camera, all wall/window/door positions, tile, shower glass, lighting and floor. REMOVE the narrow added TILED HALF-HEIGHT PARTITION beside/behind the toilet on image RIGHT; the approved bathroom has NO half-wall there. That shape must instead be ONLY the toilet's compact WHITE CERAMIC CISTERN against the existing full-height right wall. Toilet faces to image LEFT, perpendicular to that right wall; keep the source toilet floor footprint in same foreground position, do not rotate toward camera. One small ceramic cistern directly behind the bowl against right full-height wall, no second cistern farther back near shower. Keep1300mm room width and800mm-deep rear shower, no added space. Everything else unchanged. Single portrait realistic photograph."
+  }
+]

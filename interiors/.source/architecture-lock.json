@@ -1,0 +1,1628 @@
+{
+  "levels": {
+    "ground": 0.45,
+    "first": 3.45,
+    "roof": 6.45
+  },
+  "rooms": [
+    {
+      "id": "g-kitchen",
+      "level": "ground",
+      "name": "Kitchen / southeast",
+      "box": [
+        0.15,
+        0.15,
+        3.05,
+        2.2
+      ],
+      "dimensions": "2.90 × 2.05 m",
+      "description": "East-facing hob; separate sink on the north counter. Door opens from the stair passage.",
+      "sheet": 3
+    },
+    {
+      "id": "g-living",
+      "level": "ground",
+      "name": "Living & dining",
+      "box": [
+        3.15,
+        1.35,
+        5.85,
+        6.1
+      ],
+      "dimensions": "2.70 × 4.75 m bay",
+      "description": "R1: the passage partition is removed conditionally, opening the former passage into the living area. The TV is built into a slim stair-boundary panel centered on the old cabinet span, and R5 continues that line with a fixed oak panel so the passage reads as one joinery wall: TV, panel, store doors. The living floor is open; the basin and cabinet are reached through the stair entry behind the panel. Independent rear access is retained.",
+      "sheet": 3,
+      "regions": [
+        [
+          3.15,
+          1.35,
+          5.85,
+          6.1
+        ],
+        [
+          2.15,
+          2.3,
+          3.15,
+          6.1
+        ]
+      ]
+    },
+    {
+      "id": "g-bed",
+      "level": "ground",
+      "name": "Bedroom 1 / southwest",
+      "box": [
+        0.15,
+        6.2,
+        3.05,
+        9.55
+      ],
+      "dimensions": "2.90 × 3.35 m",
+      "description": "Bed head faces south. Private sliding access to Ensuite 1; entrance from the level stair passage.",
+      "sheet": 3
+    },
+    {
+      "id": "g-bath",
+      "level": "ground",
+      "name": "Ensuite 1",
+      "box": [
+        3.15,
+        6.2,
+        4.45,
+        8.2
+      ],
+      "dimensions": "1.30 × 2.00 m",
+      "description": "WC, basin and shower; accessible only from Bedroom 1.",
+      "sheet": 3
+    },
+    {
+      "id": "g-sit",
+      "level": "ground",
+      "name": "East sit-out",
+      "box": [
+        3.15,
+        0,
+        5.85,
+        1.2
+      ],
+      "dimensions": "2.70 × 1.20 m",
+      "description": "Covered entry within the 6.00 × 9.70 m envelope. Three approach steps.",
+      "sheet": 3
+    },
+    {
+      "id": "g-work",
+      "level": "ground",
+      "name": "Rear work area",
+      "box": [
+        3.15,
+        8.3,
+        5.85,
+        9.7
+      ],
+      "dimensions": "2.70 × 1.40 m",
+      "description": "Sink, washing machine and preparation counter. Wash only; no rear cooking hearth. Direct backyard steps.",
+      "sheet": 3
+    },
+    {
+      "id": "g-route",
+      "level": "ground",
+      "name": "Rear service passage",
+      "box": [
+        4.55,
+        6.2,
+        5.85,
+        8.2
+      ],
+      "dimensions": "1.30 m clear",
+      "description": "Independent route from dining to the work area without entering a bedroom or ensuite.",
+      "sheet": 3
+    },
+    {
+      "id": "g-stair",
+      "level": "ground",
+      "name": "South stair & passage",
+      "box": [
+        0.15,
+        2.3,
+        3.05,
+        6.1
+      ],
+      "dimensions": "17 risers · 0.90 m flights",
+      "description": "R2: south-going starter, west-going lower flight and retained east-going upper flight; 2 + 7 + 8 equal risers, 250 mm treads and 900 mm flights. The lower-side intermediate landing extends 500 mm to meet the shorter lower run. Kitchen boundary stays fixed to protect the wash standing space and stair entry.",
+      "sheet": 7
+    },
+    {
+      "id": "f-study",
+      "level": "first",
+      "name": "Study / family",
+      "box": [
+        0.15,
+        0.15,
+        3.05,
+        2.2
+      ],
+      "dimensions": "2.90 × 2.05 m",
+      "description": "Southeast study above the kitchen, with a front window and access to the gallery.",
+      "sheet": 4
+    },
+    {
+      "id": "f-master",
+      "level": "first",
+      "name": "Master / southwest",
+      "box": [
+        0.15,
+        6.2,
+        3.05,
+        9.55
+      ],
+      "dimensions": "2.90 × 3.35 m",
+      "description": "South-facing bed head. Private ensuite and a separate side door to the rear drying balcony.",
+      "sheet": 4
+    },
+    {
+      "id": "f-child",
+      "level": "first",
+      "name": "Bedroom 3 / north",
+      "box": [
+        3.15,
+        2.5,
+        5.85,
+        6.1
+      ],
+      "dimensions": "2.70 × 3.60 m",
+      "description": "North bedroom retained. The existing 0.55 m deep, 2.10 m high oak wardrobe now returns along the entrance wall with paired corner-access doors; the bedroom door and north window remain clear.",
+      "sheet": 4
+    },
+    {
+      "id": "f-bath2",
+      "level": "first",
+      "name": "Ensuite 2",
+      "box": [
+        3.15,
+        6.2,
+        4.45,
+        8.2
+      ],
+      "dimensions": "1.30 × 2.00 m",
+      "description": "Master ensuite, stacked directly above Ensuite 1. Rear-facing high-level vent.",
+      "sheet": 4
+    },
+    {
+      "id": "f-bath3",
+      "level": "first",
+      "name": "Ensuite 3",
+      "box": [
+        4.55,
+        6.2,
+        5.85,
+        8.2
+      ],
+      "dimensions": "1.30 × 2.00 m",
+      "description": "Private to Bedroom 3; above the ground service passage. Rear vent and north-side window.",
+      "sheet": 4
+    },
+    {
+      "id": "f-balcony",
+      "level": "first",
+      "name": "Front balcony",
+      "box": [
+        3.15,
+        0,
+        5.85,
+        1.2
+      ],
+      "dimensions": "2.70 × 1.20 m",
+      "description": "Glass railing and recessed sliding door, reached from the common front gallery.",
+      "sheet": 4
+    },
+    {
+      "id": "f-drying",
+      "level": "first",
+      "name": "Rear drying balcony",
+      "box": [
+        3.15,
+        8.3,
+        5.85,
+        9.7
+      ],
+      "dimensions": "2.70 × 1.40 m",
+      "description": "Covered and ventilated. Entry is from the master side wall, never through either bathroom.",
+      "sheet": 4
+    },
+    {
+      "id": "f-gallery",
+      "level": "first",
+      "name": "Front gallery",
+      "box": [
+        3.15,
+        1.35,
+        5.85,
+        2.4
+      ],
+      "dimensions": "2.70 × 1.05 m",
+      "description": "Common access between study, bedroom and front balcony.",
+      "sheet": 4
+    },
+    {
+      "id": "f-stair",
+      "level": "first",
+      "name": "Stair continuation",
+      "box": [
+        0.15,
+        2.3,
+        3.05,
+        6.1
+      ],
+      "dimensions": "17 risers to roof",
+      "description": "The upward flight remains open. Full stair access to +6.45 m, with a separate downward arrival from ground.",
+      "sheet": 8
+    },
+    {
+      "id": "r-head",
+      "level": "roof",
+      "name": "Roof stair enclosure",
+      "box": [
+        0,
+        2.15,
+        2.2,
+        6.25
+      ],
+      "dimensions": "2.20 × 4.10 m outside",
+      "description": "9.02 m² additional area. 2.40 m clear landing height; cap +9.00 m. North-side 900 mm outward-opening exit.",
+      "sheet": 9
+    },
+    {
+      "id": "r-terrace",
+      "level": "roof",
+      "name": "Open roof terrace",
+      "box": [
+        2.2,
+        0.15,
+        5.85,
+        9.55
+      ],
+      "dimensions": "Roof level +6.45 m",
+      "description": "Open to sky, with 1.10 m perimeter guarding. Drainage falls, outlet and overflow are indicative.",
+      "sheet": 5
+    },
+    {
+      "id": "r-services",
+      "level": "roof",
+      "name": "Services reserve",
+      "box": [
+        0.35,
+        7.5,
+        1.8,
+        9.05
+      ],
+      "dimensions": "Indicative reserve",
+      "description": "A reserved footprint only. No water tank or solar installation is specified in the plan.",
+      "sheet": 5
+    },
+    {
+      "id": "g-wash",
+      "level": "ground",
+      "name": "Stepped vanity / user faces WEST",
+      "box": [
+        1.55,
+        4.35,
+        2.05,
+        4.7
+      ],
+      "dimensions": "0.50 × 0.35 m basin · 1.40–1.75 m from the bedroom wall",
+      "description": "R5: a semi-recessed basin on a 350 mm counter with a drawer, backed by the mirror partition 1.40 m from the bedroom wall. The user faces WEST from a 750 × 600 mm standing zone 1.75–2.35 m from the wall: 2.17 m clear over the 150 mm leaning strip, 2.35 m over the body line and 2.53 m at the rear, with 2.00 m over the bowl. The basin is 0.53 m closer to the bedroom wall than R4, the westernmost usable line, and is reached through the existing 900 mm stair-entry opening behind the TV panel. Hand washing only.",
+      "sheet": 3
+    },
+    {
+      "id": "g-storage",
+      "level": "ground",
+      "name": "Rectangular cabinet / lower flight",
+      "box": [
+        0.47,
+        4.2,
+        1.02,
+        4.7
+      ],
+      "dimensions": "500 W × 550 D × 1080 H mm",
+      "description": "R5: the R3 cabinet stays beneath the last two lower-flight treads with its flat top and two 250 mm doors. Its access moves to the wash side through a 400 mm strip beside the basin under a 2.00–2.17 m soffit: stoop access to a low cabinet, not a passage. The former 600 mm passage opening is closed by a fixed oak panel on the TV line. Existing aperture unchanged; original structural review remains applicable.",
+      "sheet": 3
+    },
+    {
+      "id": "g-store",
+      "level": "ground",
+      "name": "Under-landing store / low zone",
+      "box": [
+        0.15,
+        4.75,
+        2.05,
+        6.1
+      ],
+      "dimensions": "1.90 × 1.35 m · 1.42–1.77 m clear",
+      "description": "R5: the 1.47 m-high zone under the intermediate landing becomes one built-in store of about 2.6 m² and 3.7 m³, with a stepped carcass top following the landing and riser soffits. Two 450 mm bifold leaves open from the passage beside the bedroom door, where the person stands under the full 2.85 m slab; the deeper pocket under the lower landing is crouch-in bulk storage. The 900 × 1400 mm opening is cut in the retained 100 mm stair-side partition and needs the structural engineer to confirm the landing does not bear on it; the fallback is a mirror-fronted door with no wall change.",
+      "sheet": 3
+    }
+  ],
+  "openings": {
+    "ground": [
+      {
+        "x": 2.2,
+        "y": 6.1,
+        "w": 0.8,
+        "t": 0.1,
+        "axis": "h",
+        "sill": 0,
+        "height": 2.1,
+        "kind": "door",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          2.2,
+          6.1,
+          3,
+          6.199999999999999
+        ]
+      },
+      {
+        "x": 3.05,
+        "y": 6.4,
+        "w": 0.75,
+        "t": 0.1,
+        "axis": "v",
+        "sill": 0,
+        "height": 2.1,
+        "kind": "pocket",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          3.05,
+          6.4,
+          3.15,
+          7.15
+        ]
+      },
+      {
+        "x": 4.7,
+        "y": 8.2,
+        "w": 0.9,
+        "t": 0.1,
+        "axis": "h",
+        "sill": 0,
+        "height": 2.15,
+        "kind": "door",
+        "assumed": false,
+        "swing": -1,
+        "hinge": "hi",
+        "box": [
+          4.7,
+          8.2,
+          5.6000000000000005,
+          8.299999999999999
+        ]
+      },
+      {
+        "x": 0,
+        "y": 6.3,
+        "w": 1.4,
+        "t": 0.15,
+        "axis": "v",
+        "sill": 1,
+        "height": 1.2,
+        "kind": "window",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          0,
+          6.3,
+          0.15,
+          7.699999999999999
+        ]
+      },
+      {
+        "x": 0,
+        "y": 4.1,
+        "w": 1,
+        "t": 0.15,
+        "axis": "v",
+        "sill": 1,
+        "height": 1.2,
+        "kind": "window",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          0,
+          4.1,
+          0.15,
+          5.1
+        ]
+      },
+      {
+        "x": 2.05,
+        "y": 2.3,
+        "w": 0.9,
+        "t": 0.1,
+        "axis": "v",
+        "sill": 0,
+        "height": 2.1,
+        "kind": "opening",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          2.05,
+          2.3,
+          2.15,
+          3.1999999999999997
+        ]
+      },
+      {
+        "x": 0.6,
+        "y": 0,
+        "w": 1.7,
+        "t": 0.15,
+        "axis": "h",
+        "sill": 1,
+        "height": 1.15,
+        "kind": "window",
+        "assumed": false,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          0.6,
+          0,
+          2.3,
+          0.15
+        ]
+      },
+      {
+        "x": 3.28,
+        "y": 1.2,
+        "w": 0.9,
+        "t": 0.15,
+        "axis": "h",
+        "sill": 0,
+        "height": 2.2,
+        "kind": "door",
+        "assumed": false,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          3.28,
+          1.2,
+          4.18,
+          1.3499999999999999
+        ]
+      },
+      {
+        "x": 4.55,
+        "y": 1.2,
+        "w": 1.05,
+        "t": 0.15,
+        "axis": "h",
+        "sill": 0.75,
+        "height": 1.45,
+        "kind": "window",
+        "assumed": false,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          4.55,
+          1.2,
+          5.6,
+          1.3499999999999999
+        ]
+      },
+      {
+        "x": 0.5,
+        "y": 9.55,
+        "w": 0.6,
+        "t": 0.15,
+        "axis": "h",
+        "sill": 1.35,
+        "height": 0.7,
+        "kind": "window",
+        "assumed": false,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          0.5,
+          9.55,
+          1.1,
+          9.700000000000001
+        ]
+      },
+      {
+        "x": 3.23,
+        "y": 8.2,
+        "w": 1.15,
+        "t": 0.1,
+        "axis": "h",
+        "sill": 1.2,
+        "height": 1,
+        "kind": "obscured",
+        "assumed": false,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          3.23,
+          8.2,
+          4.38,
+          8.299999999999999
+        ]
+      },
+      {
+        "x": 2.1,
+        "y": 2.2,
+        "w": 0.8,
+        "t": 0.1,
+        "axis": "h",
+        "sill": 0,
+        "height": 2.1,
+        "kind": "door",
+        "assumed": true,
+        "swing": -1,
+        "hinge": "lo",
+        "box": [
+          2.1,
+          2.2,
+          2.9000000000000004,
+          2.3000000000000003
+        ]
+      },
+      {
+        "x": 5.85,
+        "y": 3.45,
+        "w": 1.1,
+        "t": 0.15,
+        "axis": "v",
+        "sill": 1,
+        "height": 1.2,
+        "kind": "window",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          5.85,
+          3.45,
+          6,
+          4.550000000000001
+        ]
+      },
+      {
+        "x": 2.05,
+        "y": 3.25,
+        "w": 1.95,
+        "t": 0.1,
+        "axis": "v",
+        "sill": 0,
+        "height": 2.55,
+        "kind": "joinery",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          2.05,
+          3.25,
+          2.15,
+          5.2
+        ]
+      },
+      {
+        "x": 2.05,
+        "y": 5.2,
+        "w": 0.8999999999999995,
+        "t": 0.1,
+        "axis": "v",
+        "sill": 0,
+        "height": 1.4,
+        "kind": "joinery",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          2.05,
+          5.2,
+          2.15,
+          6.1
+        ],
+        "storeDoor": true
+      }
+    ],
+    "first": [
+      {
+        "x": 2.2,
+        "y": 6.1,
+        "w": 0.8,
+        "t": 0.1,
+        "axis": "h",
+        "sill": 0,
+        "height": 2.1,
+        "kind": "door",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          2.2,
+          6.1,
+          3,
+          6.199999999999999
+        ]
+      },
+      {
+        "x": 3.05,
+        "y": 6.4,
+        "w": 0.75,
+        "t": 0.1,
+        "axis": "v",
+        "sill": 0,
+        "height": 2.1,
+        "kind": "pocket",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          3.05,
+          6.4,
+          3.15,
+          7.15
+        ]
+      },
+      {
+        "x": 4.85,
+        "y": 6.1,
+        "w": 0.75,
+        "t": 0.1,
+        "axis": "h",
+        "sill": 0,
+        "height": 2.1,
+        "kind": "door",
+        "assumed": true,
+        "swing": -1,
+        "hinge": "hi",
+        "box": [
+          4.85,
+          6.1,
+          5.6,
+          6.199999999999999
+        ]
+      },
+      {
+        "x": 3.05,
+        "y": 8.4,
+        "w": 0.85,
+        "t": 0.1,
+        "axis": "v",
+        "sill": 0,
+        "height": 2.1,
+        "kind": "door",
+        "assumed": true,
+        "swing": -1,
+        "hinge": "hi",
+        "box": [
+          3.05,
+          8.4,
+          3.15,
+          9.25
+        ]
+      },
+      {
+        "x": 0,
+        "y": 6.3,
+        "w": 1.4,
+        "t": 0.15,
+        "axis": "v",
+        "sill": 1,
+        "height": 1.2,
+        "kind": "window",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          0,
+          6.3,
+          0.15,
+          7.699999999999999
+        ]
+      },
+      {
+        "x": 0,
+        "y": 4.1,
+        "w": 1,
+        "t": 0.15,
+        "axis": "v",
+        "sill": 1,
+        "height": 1.2,
+        "kind": "window",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          0,
+          4.1,
+          0.15,
+          5.1
+        ]
+      },
+      {
+        "x": 2.05,
+        "y": 2.35,
+        "w": 0.8,
+        "t": 0.1,
+        "axis": "v",
+        "sill": 0,
+        "height": 2.1,
+        "kind": "opening",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          2.05,
+          2.35,
+          2.15,
+          3.1500000000000004
+        ]
+      },
+      {
+        "x": 5.85,
+        "y": 7,
+        "w": 0.55,
+        "t": 0.15,
+        "axis": "v",
+        "sill": 1.65,
+        "height": 0.5,
+        "kind": "window",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          5.85,
+          7,
+          6,
+          7.55
+        ]
+      },
+      {
+        "x": 0.6,
+        "y": 0,
+        "w": 1.7,
+        "t": 0.15,
+        "axis": "h",
+        "sill": 0.8,
+        "height": 1.4,
+        "kind": "window",
+        "assumed": false,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          0.6,
+          0,
+          2.3,
+          0.15
+        ]
+      },
+      {
+        "x": 3.45,
+        "y": 1.2,
+        "w": 2.05,
+        "t": 0.15,
+        "axis": "h",
+        "sill": 0,
+        "height": 2.2,
+        "kind": "slider",
+        "assumed": false,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          3.45,
+          1.2,
+          5.5,
+          1.3499999999999999
+        ]
+      },
+      {
+        "x": 3.5,
+        "y": 8.2,
+        "w": 0.65,
+        "t": 0.1,
+        "axis": "h",
+        "sill": 1.65,
+        "height": 0.5,
+        "kind": "obscured",
+        "assumed": false,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          3.5,
+          8.2,
+          4.15,
+          8.299999999999999
+        ]
+      },
+      {
+        "x": 4.9,
+        "y": 8.2,
+        "w": 0.65,
+        "t": 0.1,
+        "axis": "h",
+        "sill": 1.65,
+        "height": 0.5,
+        "kind": "obscured",
+        "assumed": false,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          4.9,
+          8.2,
+          5.550000000000001,
+          8.299999999999999
+        ]
+      },
+      {
+        "x": 0.95,
+        "y": 2.2,
+        "w": 0.9,
+        "t": 0.1,
+        "axis": "h",
+        "sill": 0,
+        "height": 2.1,
+        "kind": "opening",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          0.95,
+          2.2,
+          1.85,
+          2.3000000000000003
+        ]
+      },
+      {
+        "x": 3.05,
+        "y": 1.35,
+        "w": 0.85,
+        "t": 0.1,
+        "axis": "v",
+        "sill": 0,
+        "height": 2.1,
+        "kind": "opening",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          3.05,
+          1.35,
+          3.15,
+          2.2
+        ]
+      },
+      {
+        "x": 3.25,
+        "y": 2.4,
+        "w": 0.8,
+        "t": 0.1,
+        "axis": "h",
+        "sill": 0,
+        "height": 2.1,
+        "kind": "door",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          3.25,
+          2.4,
+          4.05,
+          2.5
+        ]
+      },
+      {
+        "x": 5.85,
+        "y": 3.5,
+        "w": 1.3,
+        "t": 0.15,
+        "axis": "v",
+        "sill": 1,
+        "height": 1.2,
+        "kind": "window",
+        "assumed": true,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          5.85,
+          3.5,
+          6,
+          4.8
+        ]
+      }
+    ],
+    "roof": [
+      {
+        "x": 2.05,
+        "y": 2.35,
+        "w": 0.9,
+        "t": 0.15,
+        "axis": "v",
+        "sill": 0,
+        "height": 2.1,
+        "kind": "door",
+        "assumed": false,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          2.05,
+          2.35,
+          2.1999999999999997,
+          3.25
+        ]
+      },
+      {
+        "x": 0.55,
+        "y": 2.15,
+        "w": 0.9,
+        "t": 0.15,
+        "axis": "h",
+        "sill": 1.5,
+        "height": 0.45,
+        "kind": "obscured",
+        "assumed": false,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          0.55,
+          2.15,
+          1.4500000000000002,
+          2.3
+        ]
+      },
+      {
+        "x": 0.55,
+        "y": 6.1,
+        "w": 0.9,
+        "t": 0.15,
+        "axis": "h",
+        "sill": 1.5,
+        "height": 0.45,
+        "kind": "obscured",
+        "assumed": false,
+        "swing": 1,
+        "hinge": "lo",
+        "box": [
+          0.55,
+          6.1,
+          1.4500000000000002,
+          6.25
+        ]
+      }
+    ]
+  },
+  "stairs": {
+    "ground": {
+      "treads": [
+        {
+          "box": [
+            1.05,
+            2.3,
+            1.3,
+            3.2
+          ],
+          "height": 0.17647058823529413,
+          "direction": "S"
+        },
+        {
+          "box": [
+            0.15,
+            2.3,
+            1.05,
+            3.2
+          ],
+          "height": 0.35294117647058826,
+          "landing": true
+        },
+        {
+          "box": [
+            0.15,
+            3.2,
+            1.05,
+            3.45
+          ],
+          "height": 0.5294117647058824,
+          "direction": "W"
+        },
+        {
+          "box": [
+            0.15,
+            3.45,
+            1.05,
+            3.7
+          ],
+          "height": 0.7058823529411765,
+          "direction": "W"
+        },
+        {
+          "box": [
+            0.15,
+            3.7,
+            1.05,
+            3.95
+          ],
+          "height": 0.8823529411764707,
+          "direction": "W"
+        },
+        {
+          "box": [
+            0.15,
+            3.95,
+            1.05,
+            4.2
+          ],
+          "height": 1.0588235294117647,
+          "direction": "W"
+        },
+        {
+          "box": [
+            0.15,
+            4.2,
+            1.05,
+            4.45
+          ],
+          "height": 1.2352941176470589,
+          "direction": "W"
+        },
+        {
+          "box": [
+            0.15,
+            4.45,
+            1.05,
+            4.7
+          ],
+          "height": 1.411764705882353,
+          "direction": "W"
+        },
+        {
+          "box": [
+            0.15,
+            5.2,
+            2.05,
+            6.1
+          ],
+          "height": 1.5882352941176472,
+          "landing": true
+        },
+        {
+          "box": [
+            1.15,
+            4.95,
+            2.05,
+            5.2
+          ],
+          "height": 1.7647058823529413
+        },
+        {
+          "box": [
+            1.15,
+            4.7,
+            2.05,
+            4.95
+          ],
+          "height": 1.9411764705882355
+        },
+        {
+          "box": [
+            1.15,
+            4.45,
+            2.05,
+            4.7
+          ],
+          "height": 2.1176470588235294
+        },
+        {
+          "box": [
+            1.15,
+            4.2,
+            2.05,
+            4.45
+          ],
+          "height": 2.294117647058824
+        },
+        {
+          "box": [
+            1.15,
+            3.95,
+            2.05,
+            4.2
+          ],
+          "height": 2.4705882352941178
+        },
+        {
+          "box": [
+            1.15,
+            3.7,
+            2.05,
+            3.95
+          ],
+          "height": 2.647058823529412
+        },
+        {
+          "box": [
+            1.15,
+            3.45,
+            2.05,
+            3.7
+          ],
+          "height": 2.823529411764706
+        },
+        {
+          "box": [
+            1.15,
+            2.3,
+            2.05,
+            3.45
+          ],
+          "height": 3,
+          "arrival": true
+        }
+      ],
+      "extensions": [
+        {
+          "box": [
+            0.15,
+            4.7,
+            1.05,
+            5.2
+          ],
+          "height": 1.5882352941176472
+        }
+      ]
+    },
+    "first": {
+      "treads": [
+        {
+          "box": [
+            0.15,
+            3.2,
+            1.05,
+            3.45
+          ],
+          "height": 0.17647058823529413
+        },
+        {
+          "box": [
+            0.15,
+            3.45,
+            1.05,
+            3.7
+          ],
+          "height": 0.35294117647058826
+        },
+        {
+          "box": [
+            0.15,
+            3.7,
+            1.05,
+            3.95
+          ],
+          "height": 0.5294117647058824
+        },
+        {
+          "box": [
+            0.15,
+            3.95,
+            1.05,
+            4.2
+          ],
+          "height": 0.7058823529411765
+        },
+        {
+          "box": [
+            0.15,
+            4.2,
+            1.05,
+            4.45
+          ],
+          "height": 0.8823529411764707
+        },
+        {
+          "box": [
+            0.15,
+            4.45,
+            1.05,
+            4.7
+          ],
+          "height": 1.0588235294117647
+        },
+        {
+          "box": [
+            0.15,
+            4.7,
+            1.05,
+            4.95
+          ],
+          "height": 1.2352941176470589
+        },
+        {
+          "box": [
+            0.15,
+            4.95,
+            1.05,
+            5.2
+          ],
+          "height": 1.411764705882353
+        },
+        {
+          "box": [
+            0.15,
+            5.2,
+            2.05,
+            6.1
+          ],
+          "height": 1.5882352941176472,
+          "landing": true
+        },
+        {
+          "box": [
+            1.15,
+            4.95,
+            2.05,
+            5.2
+          ],
+          "height": 1.7647058823529413
+        },
+        {
+          "box": [
+            1.15,
+            4.7,
+            2.05,
+            4.95
+          ],
+          "height": 1.9411764705882355
+        },
+        {
+          "box": [
+            1.15,
+            4.45,
+            2.05,
+            4.7
+          ],
+          "height": 2.1176470588235294
+        },
+        {
+          "box": [
+            1.15,
+            4.2,
+            2.05,
+            4.45
+          ],
+          "height": 2.294117647058824
+        },
+        {
+          "box": [
+            1.15,
+            3.95,
+            2.05,
+            4.2
+          ],
+          "height": 2.4705882352941178
+        },
+        {
+          "box": [
+            1.15,
+            3.7,
+            2.05,
+            3.95
+          ],
+          "height": 2.647058823529412
+        },
+        {
+          "box": [
+            1.15,
+            3.45,
+            2.05,
+            3.7
+          ],
+          "height": 2.823529411764706
+        },
+        {
+          "box": [
+            1.15,
+            2.3,
+            2.05,
+            3.45
+          ],
+          "height": 3,
+          "arrival": true
+        }
+      ],
+      "extensions": []
+    }
+  },
+  "revision": {
+    "id": "R5",
+    "status": "One built-in unit under the upper flight: under-landing store, mirror partition and west-facing basin; TV panel, cabinet and stair fixed",
+    "demolitionStatus": "Conditional: the affected partitions must be confirmed non-load-bearing; retain or engineer support for the first-floor walls above. The R5 store opening in the stair-side partition needs confirmation that the intermediate landing does not bear on it.",
+    "tv": {
+      "box": [
+        2.1,
+        3.7,
+        2.14,
+        4.55
+      ],
+      "screenBottom": 0.785,
+      "screenTop": 1.415,
+      "face": "N",
+      "oldStorageCenter": 4.125,
+      "panel": [
+        2.05,
+        3.65,
+        2.1,
+        4.6
+      ],
+      "panelHeight": 1.7
+    },
+    "closingPanel": {
+      "box": [
+        2.05,
+        4.6,
+        2.1,
+        5.2
+      ],
+      "height": 1.7
+    },
+    "oldSlopedStorageFootprint": [
+      0.2,
+      3.6,
+      1.02,
+      4.65
+    ],
+    "storage": [
+      {
+        "box": [
+          0.47,
+          4.2,
+          1.02,
+          4.7
+        ],
+        "height": 1.08,
+        "access": "N",
+        "type": "rectangular cabinet",
+        "doorLeaves": 2,
+        "doorSweep": [
+          1.02,
+          4.2,
+          1.27,
+          4.7
+        ],
+        "standing": [
+          1.15,
+          4.2,
+          1.55,
+          4.7
+        ],
+        "approach": [
+          [
+            2.6,
+            2.75
+          ],
+          [
+            1.65,
+            2.75
+          ],
+          [
+            1.65,
+            3.5
+          ],
+          [
+            1.35,
+            3.5
+          ],
+          [
+            1.35,
+            4.45
+          ]
+        ]
+      }
+    ],
+    "store": {
+      "box": [
+        0.15,
+        4.75,
+        2.05,
+        6.1
+      ],
+      "zones": [
+        {
+          "box": [
+            0.15,
+            5.2,
+            2.05,
+            6.1
+          ],
+          "top": 1.42,
+          "clear": 1.47,
+          "over": "intermediate landing"
+        },
+        {
+          "box": [
+            0.15,
+            4.75,
+            1.15,
+            5.2
+          ],
+          "top": 1.42,
+          "clear": 1.47,
+          "over": "landing extension and central well"
+        },
+        {
+          "box": [
+            1.15,
+            4.95,
+            2.05,
+            5.2
+          ],
+          "top": 1.59,
+          "clear": 1.64,
+          "over": "riser 10 tread"
+        },
+        {
+          "box": [
+            1.15,
+            4.75,
+            2.05,
+            4.95
+          ],
+          "top": 1.77,
+          "clear": 1.82,
+          "over": "riser 11 tread"
+        }
+      ],
+      "crouchPocket": [
+        0.15,
+        4.75,
+        1.15,
+        6.1
+      ],
+      "door": {
+        "box": [
+          2.05,
+          5.2,
+          2.15,
+          6.1
+        ],
+        "leaves": 2,
+        "leafWidth": 0.45,
+        "height": 1.4,
+        "type": "bifold pair",
+        "face": "N / passage beside the bedroom door",
+        "sweep": [
+          2.15,
+          5.2,
+          2.4,
+          6.1
+        ]
+      },
+      "wallCut": "900 x 1400 mm opening in the retained 100 mm stair-side partition at y = 5.20-6.10 m; structural engineer to confirm the intermediate landing does not bear on it",
+      "fallback": "mirror-fronted door on the partition and crouch-in access from the wash side; no wall change"
+    },
+    "partition": {
+      "box": [
+        1.15,
+        4.7,
+        2.05,
+        4.75
+      ],
+      "height": 1.75,
+      "mirror": {
+        "x": [
+          1.6,
+          2
+        ],
+        "z": [
+          1,
+          1.65
+        ]
+      },
+      "finish": "oak slats on the wash face, mirror centred over the basin"
+    },
+    "wash": {
+      "box": [
+        1.55,
+        4.35,
+        2.05,
+        4.7
+      ],
+      "height": 0.86,
+      "front": "E",
+      "userFaces": "W",
+      "counter": {
+        "top": 0.86,
+        "drawerBottom": 0.5
+      },
+      "standing": [
+        1.3,
+        3.75,
+        2.05,
+        4.35
+      ],
+      "leanStrip": [
+        1.3,
+        4.2,
+        2.05,
+        4.35
+      ],
+      "bodyLine": [
+        1.3,
+        3.75,
+        2.05,
+        4.2
+      ],
+      "bedroomDoorLanding": [
+        2.2,
+        5.2,
+        3.05,
+        6.1
+      ],
+      "approach": [
+        [
+          2.6,
+          2.75
+        ],
+        [
+          1.65,
+          2.75
+        ],
+        [
+          1.65,
+          4.05
+        ]
+      ],
+      "fromBedroomWall": {
+        "basinBack": 1.4,
+        "basinFront": 1.75,
+        "standingRear": 2.35
+      },
+      "fallbackFront": 2
+    },
+    "stair": {
+      "frontLandingY": 2.3,
+      "starterRisers": 2,
+      "westRisers": 7,
+      "landingExtension": [
+        0.15,
+        4.7,
+        1.05,
+        5.2
+      ],
+      "route": "SOUTH → WEST → EAST",
+      "kitchenDepth": 2.05
+    },
+    "bedroomWallFace": 6.1,
+    "wardrobe": {
+      "existing": [
+        5.3,
+        2.6,
+        5.85,
+        3.35
+      ],
+      "extension": [
+        4.2,
+        2.5,
+        5.3,
+        3.05
+      ],
+      "filler": [
+        5.3,
+        2.5,
+        5.85,
+        2.6
+      ],
+      "depth": 0.55,
+      "height": 2.1,
+      "finish": "oak",
+      "corner": "paired doors with no fixed corner post"
+    },
+    "headroomBenchmark": 2.2,
+    "assumedStairThickness": 0.12,
+    "sourceHeadroom": "https://lsgkerala.gov.in/system/files/2019-11/kerala-municipality-building-rules-2019.pdf"
+  }
+}

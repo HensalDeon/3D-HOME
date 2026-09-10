@@ -1,0 +1,29 @@
+[
+  {
+    "id": "02-living-wide",
+    "style": "02-living-wide-v2",
+    "prompt": "The full R5 living room seen toward west from its actual entrance, eye 1.50m. Preserve the EXACT wall mass between the two far doors: it is the 1.30m-wide ensuite belonging to Bedroom 1, with the bedroom doorway LEFT and independent rear service passage RIGHT. Do not narrow this blank wall, merge the spaces or invent another opening. The approved staircase, low storage and TV built into its boundary are on LEFT. Preserve open access into the narrow wash nook behind TV through the stair entry; no solid infill behind TV and no freestanding TV. Preserve each tread, soffit, landing, railing and surrounding wall exactly. The 900mm round oak dining table with THREE compact chairs is on right. Keep source object outlines, camera perspective, occlusion, boundaries and door leaves. The sofa is outside this camera frame, do not add it. Do not add a north window into the visible solid rear wall; source north window is outside this frame. Oak doors and joinery, warm white walls and ceiling, matte beige stone-look floor. Table gets one small ceramic bowl and a simple warm pendant exactly centred over the source table.",
+    "references": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/02-living-wide.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/02-living-wide-v2.png"
+    ]
+  },
+  {
+    "id": "03-stair-tv-wide",
+    "style": "03-stair-tv-wide-v2",
+    "prompt": "Full R5 stair/living boundary from a physically valid camera INSIDE living. EXACTLY retain source geometry including large rectangular stair aperture with wall surround, TWO starter risers at lower left turning south then west, retained opposite upper flight, every landing and soffit, lower flight storage and narrow access on LEFT BEHIND the TV, full-height retained wall above the LOW storage door on right, kitchen door at extreme left and Bedroom 1 door at extreme right. Fixed TV backing 950mm wide x1700mm high, 50mm thick with contiguous600mm fixed panel, then900mm-wide x1400mm-high store door. TV is fixed to this integrated joinery at stair boundary. Keep upper stair volume OPEN and the narrow route behind TV accessible. Do not make backing taller, do not convert entire staircase into one straight flight, do not delete any architecture to make the frame cleaner. Match every source edge and camera, including partial door leaves. Warm oak joinery, warm white walls, matte beige stone floor/treads, black railings and small simple warm stair wall light. No furniture or plants in access.",
+    "references": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/03-stair-tv-wide.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/03-stair-tv-wide-v2.png"
+    ]
+  },
+  {
+    "id": "05-wash-wide",
+    "style": "05-wash-wide",
+    "prompt": "Under upper staircase wash nook looking WEST, exact source camera eye1.40m on eastern standing strip. Preserve exact source view and each visible geometry edge. Compact500mm-wide350mm-deep vanity with basin rim860mm,400x650mm mirror in source position, 1750mm tall slatted mirror partition, left lower-stair storage cabinet550x500x1080mm and the lower flight treads and railings, right edge is BACK of fixed TV boundary panel only1700mm high, not a full room wall. Critically preserve ACTUAL LOW STEPPED UPPER-FLIGHT SOFFIT directly above the mirror and camera, no invented extra height, no tall ceiling recess. Standing space behind camera stays east of basin, userfaceswest. Apply warm oak veneer, restrained slats, matte beige stone, black simple tap, white ceramic semi-recessed basin. Add one tiny soap dispenser beside basin if it fits, no bulky decor. Use diffuse daylight from stair entry with modest warm mirror/task glow. Do not use the second image for geometry; it is incorrect architecture and supplies finish colours only.",
+    "references": [
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/qa/source-cameras/05-wash-wide.png",
+      "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/05-wash-wide.png"
+    ]
+  }
+]
