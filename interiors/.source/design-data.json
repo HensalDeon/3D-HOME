@@ -26,9 +26,9 @@
       "title": "Staircase / TV composition",
       "floor": "GROUND FLOOR",
       "dimension": "950 \u00d7 50 \u00d7 1,700 mm TV backing",
-      "intent": "One restrained oak composition connects the TV, closing panel and low storage. The wash area stays behind it.",
-      "materials": "Natural oak veneer \u00b7 charcoal metal \u00b7 warm pale stair finish",
-      "check": "TV centre remains at plan y = 4.125 m; screen centre +1.10 m. Stair route SOUTH \u2192 WEST \u2192 EAST; 2 + 7 + 8 risers and 900 mm flights."
+      "intent": "An upgraded feature composition with vertical fluted/slatted oak wood accents on the TV backing panel, integrated warm LED backlighting behind the screen, and a slim floating media shelf below. This keeps circulation open while preserving the under-stair wash and storage access behind.",
+      "materials": "Vertical fluted oak slats \u00b7 integrated warm LED backlighting (2700-3000K) \u00b7 slim floating oak media shelf \u00b7 charcoal metal \u00b7 warm pale stair finish",
+      "check": "TV centre remains at plan y = 4.125 m; screen centre +1.10 m. Fluted oak slats run vertically on the backing panel face. LED strip concealed behind TV edges for ambient glow. Floating shelf below TV holds media devices, max 200 mm deep. Stair route SOUTH \u2192 WEST \u2192 EAST; 2 + 7 + 8 risers and 900 mm flights. Under-stair wash and bifold storage remain accessible behind."
     },
     {
       "id": "04-storage",
@@ -52,10 +52,10 @@
       "id": "16-dining",
       "title": "Dining area",
       "floor": "GROUND FLOOR",
-      "dimension": "900 mm round table \u00b7 three compact chairs",
-      "intent": "A small round table keeps the shared room visually open. A simple pendant defines the dining spot without a feature ceiling.",
-      "materials": "Oak table and chairs \u00b7 neutral seat pads \u00b7 understated pendant",
-      "check": "Retain the three-chair arrangement. A fourth chair or crockery unit must not consume the central route or independent rear passage."
+      "dimension": "1.45 m \u00d7 0.85 m rectangular table \u00b7 six compact upholstered chairs",
+      "intent": "A compact rectangular 6-seater dining table in natural oak seats the family comfortably while keeping the shared room visually open. A simple pendant defines the dining spot without a feature ceiling.",
+      "materials": "Natural oak table \u00b7 compact upholstered chairs \u00b7 neutral seat pads \u00b7 understated pendant",
+      "check": "Retain the six-chair arrangement (three per long side). The table fits the dining bay without blocking the rear service passage. No crockery unit or sideboard must consume the central route or independent rear passage."
     },
     {
       "id": "06-kitchen",
@@ -137,6 +137,24 @@
       "intent": "Two compact outdoor seats and a little greenery soften the balcony while the charcoal sweeping frame remains visible.",
       "materials": "Weather-resistant timber \u00b7 glass guard \u00b7 charcoal metal",
       "check": "Slider serves the common gallery. Keep its usable opening clear; do not introduce a bed or stair directly behind it. Use movable, light planting and retain the curved fa\u00e7ade band."
+    },
+    {
+      "id": "10-passage",
+      "title": "First-Floor Passage",
+      "floor": "FIRST FLOOR",
+      "dimension": "0.90 m wide corridor",
+      "intent": "An open gallery corridor connecting the landing to the study/family room and front gallery. No doors within the passage itself \u2014 it is an open walkway.",
+      "materials": "Off-white walls \u00b7 warm recessed lighting \u00b7 restrained framed art/family photos in oak/black frames",
+      "check": "Open passage with no doors. Runs from the stair landing (south) past the master ensuite pocket door toward the study/family room opening and front gallery. Do not add any swing or sliding doors to the passage corridor."
+    },
+    {
+      "id": "17-front-gallery",
+      "title": "Front Gallery",
+      "floor": "FIRST FLOOR",
+      "dimension": "Open area between study/family and front balcony",
+      "intent": "A transitional gallery space connecting the study/family room to the front balcony through a sliding door, with a view toward the garden.",
+      "materials": "Off-white walls \u00b7 warm recessed lighting \u00b7 oak accents",
+      "check": "Open area accessed from the passage and study/family room. Sliding door (2.05 m wide) leads to front balcony (2.70 x 1.20 m). Keep the sliding door clear and the gallery visually open."
     },
     {
       "id": "15-terrace",

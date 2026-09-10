@@ -16,14 +16,14 @@
     "page": 2,
     "file": "interiors/images/02-living-wide.png",
     "pixels": [
-      1536,
-      1024
+      1264,
+      848
     ],
     "placed_points": [
       488.0,
-      325.3333333333333
+      327.39240506329116
     ],
-    "effective_ppi": 226.6
+    "effective_ppi": 186.5
   },
   {
     "page": 9,
@@ -68,27 +68,27 @@
     "page": 12,
     "file": "interiors/images/02-living-wide.png",
     "pixels": [
-      1536,
-      1024
+      1264,
+      848
     ],
     "placed_points": [
       537.0,
-      358.0
+      360.2658227848101
     ],
-    "effective_ppi": 205.9
+    "effective_ppi": 169.5
   },
   {
     "page": 14,
     "file": "interiors/images/03-stair-tv-wide.png",
     "pixels": [
-      1536,
-      1024
+      1264,
+      848
     ],
     "placed_points": [
       537.0,
-      358.0
+      360.2658227848101
     ],
-    "effective_ppi": 205.9
+    "effective_ppi": 169.5
   },
   {
     "page": 16,
@@ -120,14 +120,14 @@
     "page": 20,
     "file": "interiors/images/16-dining-wide.png",
     "pixels": [
-      1536,
-      1024
+      1264,
+      848
     ],
     "placed_points": [
       537.0,
-      358.0
+      360.2658227848101
     ],
-    "effective_ppi": 205.9
+    "effective_ppi": 169.5
   },
   {
     "page": 22,
@@ -352,6 +352,32 @@
   },
   {
     "page": 40,
+    "file": "interiors/images/10-passage-wide.png",
+    "pixels": [
+      1200,
+      896
+    ],
+    "placed_points": [
+      537.0,
+      400.96000000000004
+    ],
+    "effective_ppi": 160.9
+  },
+  {
+    "page": 42,
+    "file": "interiors/images/17-front-gallery-wide.png",
+    "pixels": [
+      1376,
+      768
+    ],
+    "placed_points": [
+      537.0,
+      299.72093023255815
+    ],
+    "effective_ppi": 184.5
+  },
+  {
+    "page": 44,
     "file": "interiors/images/15-terrace-wide.png",
     "pixels": [
       1264,
@@ -364,7 +390,7 @@
     "effective_ppi": 169.5
   },
   {
-    "page": 43,
+    "page": 47,
     "file": "interiors/images/06-kitchen-detail.png",
     "pixels": [
       1495,
@@ -377,7 +403,7 @@
     "effective_ppi": 226.6
   },
   {
-    "page": 44,
+    "page": 48,
     "file": "interiors/images/07-bedroom1-detail.png",
     "pixels": [
       1448,
@@ -390,7 +416,7 @@
     "effective_ppi": 274.4
   },
   {
-    "page": 46,
+    "page": 50,
     "file": "interiors/images/09-bedroom3-detail.png",
     "pixels": [
       1536,
@@ -403,20 +429,20 @@
     "effective_ppi": 248.2
   },
   {
-    "page": 49,
+    "page": 53,
     "file": "interiors/images/02-living-wide.png",
     "pixels": [
-      1536,
-      1024
+      1264,
+      848
     ],
     "placed_points": [
-      633.0,
+      629.0188679245283,
       422.0
     ],
-    "effective_ppi": 174.7
+    "effective_ppi": 144.7
   },
   {
-    "page": 50,
+    "page": 54,
     "file": "interiors/images/09-bedroom3-wide.png",
     "pixels": [
       1536,
@@ -429,7 +455,7 @@
     "effective_ppi": 174.7
   },
   {
-    "page": 51,
+    "page": 55,
     "file": "interiors/images/05-wash-wide.png",
     "pixels": [
       1536,
@@ -442,7 +468,7 @@
     "effective_ppi": 174.7
   },
   {
-    "page": 52,
+    "page": 56,
     "file": "interiors/images/15-terrace-wide.png",
     "pixels": [
       1264,

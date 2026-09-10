@@ -337,6 +337,21 @@
     "fov": 68
   },
   {
+    "id": "17-front-gallery-wide",
+    "level": "first",
+    "from": [
+      2.6,
+      2.0,
+      1.5
+    ],
+    "to": [
+      4.5,
+      0.6,
+      1.2
+    ],
+    "fov": 68
+  },
+  {
     "id": "06-kitchen-detail",
     "level": "ground",
     "from": [

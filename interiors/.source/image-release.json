@@ -5,151 +5,157 @@
       "status": "accepted",
       "sha256": "e8c1f7b0b25fff2937d4662e0a1e45f0bb9c94b73fc9cf87d9c2df317cff4223",
       "review": "Covered entrance with two timber chairs, three approach steps, warm wall lantern, and approved curved facade band.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "02-living-wide.png": {
       "status": "accepted",
-      "sha256": "9b36cc0e5c50018a5cc0c2d5c3bae942c499bf02a63a137f9861ada1d850438d",
-      "review": "Restores solid ensuite wall between Bedroom 1 entry and independent rear passage. Stair boundary, TV panel and route behind TV match source.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "sha256": "dcde7ecb88ce4e5b3e878307e8f59772245c5e139fd661be2cf2ab173167c6e2",
+      "review": "Living room unified with fluted TV unit, floating ledge, Bedroom 1 entry, and compact rectangular 6-seater oak dining table in background.",
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "03-stair-tv-wide.png": {
       "status": "accepted",
-      "sha256": "308fea23074e9e6e48c220c3545dad83bc6898a056008281bf1d6c5f310c4233",
-      "review": "Two-riser starter, return flight, fixed TV panel on living stair boundary, under-stair storage door and clear route behind panel.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "sha256": "80c57d3c172db9b65b6bee950137f81e917235c06ba80cb20051c584a6b0994b",
+      "review": "Upgraded architectural TV unit with vertical fluted oak panel, integrated warm LED lighting, and slim floating media shelf preserving under-stair wash route.",
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "04-storage-wide.png": {
       "status": "accepted",
-      "sha256": "2f4a7e63065c54851b3b489eb00a0511ecb5b926b8c48570979d9d567d371d4a",
-      "review": "900 x 1400 mm low bifold oak doors with partition wall above intact and correct stepped soffits under stair landing.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "sha256": "373df098e4c1e368c541bf0f4ef2107a1d7c51107c4acf69ee0d2d7749cf19a7",
+      "review": "Under-stair storage doors with solid wall partition above intact and matching fluted TV unit edge.",
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "05-wash-wide.png": {
       "status": "accepted",
       "sha256": "50aa8f3bb9508974b3e52b6e282a49103f14c090497eb28fdc528aad3b14072c",
       "review": "West-facing semi-recessed basin under upper flight, mirror partition, low cabinet stoop access, R5 clearance profile.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "06-kitchen-detail.png": {
       "status": "accepted",
       "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1",
       "review": "Tactile detail of north sink counter, warm under-cabinet lighting, cutting board, and oak drawers.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "06-kitchen-opposite.png": {
       "status": "accepted",
       "sha256": "22e72f0e2435862cc69dbcc0cf83ebf435cfabd8f577c311dd683c2eb755dc12",
       "review": "Reverse angle looking southwest, preserving open central floor and strict L-shape without unauthorized south counter.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "06-kitchen-wide.png": {
       "status": "accepted",
       "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759",
       "review": "Approved L-counter with hob centered under 1.70m east window, short 550mm north sink return, southwest refrigerator.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "07-bedroom1-detail.png": {
       "status": "accepted",
       "sha256": "29a37c2005ae3235cd71e61ce884b5db37841d2502a63a35c63b6e4d19190be6",
       "review": "Bedside detail with oak nightstand, reading lamp, sage green cushions, and textured linen.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "07-bedroom1-opposite.png": {
       "status": "accepted",
       "sha256": "a2f40717a44ad786b990e4b82ba83ad94ffee3a52322ab970702af0b60f47a3e",
       "review": "Reverse angle showing east wardrobe, room entrance, ensuite pocket door, and corridor view.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "07-bedroom1-wide.png": {
       "status": "accepted",
       "sha256": "4f6b065f9c73ffb59690022135789d35e8b840b0b1053712b19846bb8c875162",
       "review": "Correct south bedhead, south window east of bed with Roman blind, west 600x700mm ventilation opening, sage green linen.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "08-bedroom2-detail.png": {
       "status": "accepted",
       "sha256": "0f7067abb0b45a896c915865d13656d39dbe2f5877eefd0988db66d1e96c6cb3",
       "review": "Master bedside detail with olive textile accents, oak headboard, and warm lighting.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "08-bedroom2-opposite.png": {
       "status": "accepted",
       "sha256": "a875f51b4d073f90577d6e08a59987bac93479b8d351bdf5cf4e5bdb7b057a94",
       "review": "Reverse angle distinguishing private drying balcony, ensuite pocket door, and east entrance wardrobe.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "08-bedroom2-wide.png": {
       "status": "accepted",
       "sha256": "ad2493a3c55b8096adca365d750035e5fcd0531d9e86c6b75ca9771eaee4af39",
       "review": "Master bedroom with south bedhead, solid west wall, south window, and north door to private balcony.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "09-bedroom3-detail.png": {
       "status": "accepted",
       "sha256": "ac67d0b33d719a1f59500fd4f73a94d2132cd767e0ac68d885a6bb6d64d8b2cb",
       "review": "Functional corner detail of L-shaped wardrobe showing paired door access without fixed corner post.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "09-bedroom3-opposite.png": {
       "status": "accepted",
       "sha256": "4689834af09dff3e641f2be22458a3e3b54efc740fa4cb37906be3603d0c563f",
       "review": "Reverse angle showing west ensuite door, north window, and continuous L wardrobe return.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "09-bedroom3-wide.png": {
       "status": "accepted",
       "sha256": "18c455443b9fa3d1b9104201f9f4865fa0cbb1e5ebf3b6cc72eb856972483e85",
       "review": "Bedroom 3 with small double bed, north window, and continuous built-in L-shaped oak wardrobe at northeast corner.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "10-passage-wide.png": {
       "status": "accepted",
       "sha256": "a4dff0b3de666e71b512c3200b1ddb2b877e5d1f586aa61e7e00001e59f3a769",
       "review": "First-floor gallery and 0.90m passage strictly following Page 4 plan: open stair to roof on right, solid wall with restrained framed art on left, Master bedroom door at end, daylight from front balcony.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "10-study-wide.png": {
       "status": "accepted",
       "sha256": "4e30449d6eb999b8283d41a1f94fecd065e57cf600d98df59ca2c85e9222dd57",
       "review": "User-preferred family arrangement: compact daybed/sofa under east window with Roman blind, shallow oak side desk with lamp.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "11-bathroom1-wide.png": {
       "status": "accepted",
       "sha256": "8134bbdfbdeaf7d625f9edc3569aa7c96a6be9cb3666c90d69d749ff2787619d",
       "review": "Complete 1.30 x 2.00m ground ensuite with east wash vanity, basin, mirror, wall-mounted shower shampoo/creams holder, towel hook, mat, WC, and west shower.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "12-bathroom2-wide.png": {
       "status": "accepted",
       "sha256": "58ae4c24a9a243dcf09c125044df24b40ad7f413659419813cd83eb1594a585a",
       "review": "Complete 1.30 x 2.00m master ensuite with east wash vanity, basin, mirror, wall-mounted shower shampoo/creams holder, towel hook, mat, WC, and west shower with rear vent.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "13-bathroom3-wide.png": {
       "status": "accepted",
       "sha256": "9aae5e0a1897224ecf5ec7f2522d15529a210cb8005a79dc009c879724a77d08",
       "review": "Complete 1.30 x 2.00m Bedroom 3 ensuite with east wash vanity, basin, mirror, wall-mounted shower shampoo/creams holder, towel hook, mat, WC, and west shower with dual vents.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "14-balcony-wide.png": {
       "status": "accepted",
       "sha256": "8794cede165b214bfa3825db9c3fed3fd7999f79ab9c4d618e3405ee6ad573f7",
       "review": "First-floor front balcony with glass balustrade, two outdoor seats, tropical garden view, and curved facade portal.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "15-terrace-wide.png": {
       "status": "accepted",
       "sha256": "1b6235b2876556aa33006abf8dfdc7f3400848bc9f61ad450957877495a768c8",
       "review": "Roof terrace showing accurate 2.20 x 4.10m headhouse dimensions and clear 3.45m open terrace space behind building in the SW corner with continuous perimeter safeguard railing.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "16-dining-wide.png": {
       "status": "accepted",
-      "sha256": "3fb0767b1b26fc4c4ba8d77a4c0c419400c9647598d59e0fc679b9024579b2f2",
-      "review": "Round oak pedestal table, 3 compact chairs, domed pendant, exactly matching the living room view.",
-      "reviewed_at": "2026-09-10T12:55:03.002963"
+      "sha256": "74520e27a9ba23f634d4984704656b461f91aa531ebbb8803e3f8f5032931d62",
+      "review": "Compact rectangular 6-seater natural oak dining table with 6 matching upholstered chairs, domed pendant light, and clear circulation.",
+      "reviewed_at": "2026-09-10T21:39:06.114661"
+    },
+    "17-front-gallery-wide.png": {
+      "status": "accepted",
+      "sha256": "0e28593299deb06e5b48e8defab838f4bdc54d726f70d1c1e6a6b8eaf3447549",
+      "review": "First-floor front gallery transitional space looking toward sliding door, front balcony with outdoor seating, and curved facade portal.",
+      "reviewed_at": "2026-09-10T21:48:27.693999"
     }
   },
   "approval": "Assistant visual review against full source cameras; user approval is separate."

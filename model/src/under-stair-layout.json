@@ -73,7 +73,25 @@
     "face": "N",
     "oldStorageCenter": 4.125,
     "panel": [2.05, 3.65, 2.1, 4.6],
-    "panelHeight": 1.7
+    "panelHeight": 1.7,
+    "flutedSlats": {
+      "description": "Vertical fluted oak slats on panel face",
+      "slatWidth_mm": 30,
+      "slatDepth_mm": 10,
+      "spacing_mm": 15,
+      "material": "Natural oak veneer"
+    },
+    "ledBacklight": {
+      "colorTemp_K": 3000,
+      "position": "Behind TV edges, concealed strip",
+      "type": "Integrated warm LED strip"
+    },
+    "floatingShelf": {
+      "depth_mm": 200,
+      "heightAboveFloor_mm": 400,
+      "material": "Natural oak",
+      "purpose": "Slim media shelf for devices below screen"
+    }
   },
   "oldSlopedStorageFootprint": [0.2, 3.6, 1.02, 4.65]
 }
