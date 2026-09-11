@@ -1,7 +1,7 @@
 import test from 'node:test';
 import fixedArchitecture from '../revisions/r2-architecture.json' with {type:'json'};
 import assert from 'node:assert/strict';
-import {wallPieces,openingsFor,stairTreads,stairLandingExtensions,rooms,plan,STAIR_STRUCTURE,STAIR_BEAM_ZONES,stairFlights,stairLandingSlabs,stairSoffit,FRAME,frameColumns,frameBeams,frameTrimmers} from '../src/geometry.js';
+import {wallPieces,openingsFor,stairTreads,stairLandingExtensions,rooms,plan,STAIR_STRUCTURE,STAIR_BEAM_ZONES,stairFlights,stairLandingSlabs,stairSoffit,FRAME,frameColumns,frameBeams,frameTrimmers,ENVELOPE,EXTERNAL_WALL} from '../src/geometry.js';
 import * as baseline from '../revisions/baseline-v4/geometry.js';
 import {revision,storageWallOpenings} from '../src/revision.js';
 import {stairOptions,optionTreads,modeledHeadroom} from '../src/stair-options.js';
@@ -14,6 +14,39 @@ const overlaps=(a,b)=>Math.min(a[2],b[2])-Math.max(a[0],b[0])>eps&&Math.min(a[3]
 const FIXTURE_ROOMS=['g-wash','g-storage','g-store'];
 const R=3/17,WALL=revision.bedroomWallFace;
 const sameBox=(a,b)=>a.length===b.length&&a.every((v,i)=>Math.abs(v-b[i])<eps);
+// R8: ground external walls 150 -> 220 mm. West and rear grew outward into the parking strip and
+// the garden; east and front thickened inward so the 1.00 m path and 3.00 m yard keep their
+// setbacks. Every inner face is unmoved, which is why the stair and under-stair unit are intact.
+// Ground walls went 150 -> 220, first-floor walls 150 -> 170. The roof enclosure is untouched.
+const GROW={ground:.07,first:.02,roof:0};
+function r8Box(b,level='ground'){
+ const G=GROW[level],n=[...b];
+ if(Math.abs(n[0])<eps&&Math.abs(n[2]-.15)<eps)n[0]=-G;            // west band grew outward
+ if(Math.abs(n[0]-5.85)<eps&&Math.abs(n[2]-6)<eps)n[0]=5.85-G;     // east band thickened inward
+ if(Math.abs(n[1])<eps&&Math.abs(n[3]-.15)<eps)n[3]=.15+G;         // front band thickened inward
+ if(Math.abs(n[3]-9.7)<eps)n[3]=9.7+G;                             // anything meeting the rear face
+ return n;
+}
+const r8Opening=(o,level='ground')=>{
+ const G=GROW[level],n={...o};
+ if(o.axis==='v'&&Math.abs(o.x)<eps){n.x=-G;n.t=.15+G;}
+ if(o.axis==='h'&&(Math.abs(o.y)<eps||Math.abs(o.y-9.55)<eps))n.t=.15+G;
+ n.box=n.axis==='h'?[n.x,n.y,n.x+n.w,n.y+n.t]:[n.x,n.y,n.x+n.t,n.y+n.w];
+ return n;
+};
+// Ground rooms bounded by an inner face that moved: the east face came in 70 mm and the rear
+// envelope went out 70 mm. Rooms on the west and rear inner faces, and every first-floor room,
+// are untouched - which is why the stair and the under-stair unit needed no rework.
+function r8Room(id,box){
+ const G=GROW[{g:'ground',f:'first',r:'roof'}[id[0]]]??0,n=[...box];
+ if(Math.abs(n[2]-5.85)<eps)n[2]=5.85-G;
+ if(Math.abs(n[1]-.15)<eps)n[1]=.15+G;
+ if(Math.abs(n[3]-9.7)<eps)n[3]=9.7+G;
+ return n;
+}
+const samePiece=(a,b,level='ground')=>sameBox(a.box,r8Box(b.box,level))&&Math.abs(a.bottom-b.bottom)<eps&&Math.abs(a.top-b.top)<eps;
+const sameOpening=(a,b,level='ground')=>{const e=r8Opening(b,level);return Object.keys(e).every(k=>Array.isArray(e[k])?sameBox(a[k],e[k]):(typeof e[k]==='number'?Math.abs(a[k]-e[k])<eps:a[k]===e[k]));};
+
 // R6: clear height under the conceptual RCC waist/landing soffit, replacing the superseded
 // flat 120 mm lid under each separate tread. Infinity when nothing is overhead.
 const clearance=box=>stairSoffit(box,'ground');
@@ -21,12 +54,18 @@ const cm=box=>Math.round(clearance(box)*100)/100;
 test('all door/window positions and all first/roof walls are unchanged',()=>{
  for(const l of ['ground','first','roof']){
   const fixtures=a=>a.filter(o=>!['opening','joinery'].includes(o.kind));
-  assert.deepEqual(fixtures(openingsFor(l)),fixtures(baseline.openingsFor(l)));
-  if(l!=='ground')assert.deepEqual(wallPieces(l),baseline.wallPieces(l));
+  const now=fixtures(openingsFor(l)),was=fixtures(baseline.openingsFor(l));
+  assert.equal(now.length,was.length,l);
+  // Every aperture keeps its width, sill, height, kind and position along its wall. On the ground
+  // floor the external ones are simply 70 mm thicker and sit in the repositioned wall band.
+  now.forEach((a,i)=>assert.ok(sameOpening(a,was[i],l),`${l} aperture ${i}`));
+  if(l!=='ground'){const nw=wallPieces(l),bw=baseline.wallPieces(l);
+   assert.equal(nw.length,bw.length,l);
+   nw.forEach((p,i)=>assert.ok(samePiece(p,bw[i],l),`${l} wall ${i}`));}
  }
  assert.deepEqual(stairTreads().slice(8),baseline.stairTreads().slice(8));
  assert.deepEqual(stairTreads('first'),baseline.stairTreads());
- for(const r of rooms.filter(r=>r.id!=='g-living'&&!FIXTURE_ROOMS.includes(r.id)))assert.deepEqual(r.box,baseline.rooms.find(b=>b.id===r.id).box);
+ for(const r of rooms.filter(r=>r.id!=='g-living'&&!FIXTURE_ROOMS.includes(r.id)))assert.ok(sameBox(r.box,r8Room(r.id,baseline.rooms.find(b=>b.id===r.id).box)),r.id);
 });
 test('passage partition removed only in the requested ground living/stair interval',()=>{
  const pieces=wallPieces('ground');assert.ok(!pieces.some(p=>overlaps(p.box,[3.05,2.3,3.15,6.1])));
@@ -38,12 +77,19 @@ test('R5 preserves EVERY R2 stair, landing, wall, opening and room boundary exce
  for(const l of ['ground','first','roof']){
   const walls=wallPieces(l),openings=openingsFor(l);
   assert.deepEqual(stairTreads(l),fixedArchitecture[l].stairs);assert.deepEqual(stairLandingExtensions(l),fixedArchitecture[l].landings);
-  if(l!=='ground'){assert.deepEqual({walls,openings},{walls:fixedArchitecture[l].walls,openings:fixedArchitecture[l].openings});continue;}
+  if(l!=='ground'){
+   assert.equal(walls.length,fixedArchitecture[l].walls.length,l);
+   walls.forEach((p,i)=>assert.ok(samePiece(p,fixedArchitecture[l].walls[i],l),`${l} wall ${i}`));
+   assert.equal(openings.length,fixedArchitecture[l].openings.length,l);
+   openings.forEach((a,i)=>assert.ok(sameOpening(a,fixedArchitecture[l].openings[i],l),`${l} opening ${i}`));
+   continue;}
   // R6 second disclosed change: the joinery opening used to start 50 mm clear of the stair-entry
   // opening, leaving a 50 mm x 2.85 m sliver of the partition standing alone in the stair entry.
   // The two now meet at y = 3.20 and the sliver is gone. Nothing else in the wall set moves.
   const widened=fixedArchitecture.ground.openings.map(o=>o.kind==='joinery'&&o.y===3.25?{...o,y:3.2,w:2,box:[2.05,3.2,2.15,5.2]}:o);
-  assert.deepEqual(openings.filter(o=>!o.storeDoor),widened);
+  const got=openings.filter(o=>!o.storeDoor);
+  assert.equal(got.length,widened.length);
+  got.forEach((a,i)=>assert.ok(sameOpening(a,widened[i]),`opening ${i}`));
   assert.deepEqual(openings.filter(o=>o.storeDoor),[door]);
   assert.ok(!wallPieces('ground').some(p=>p.box[3]-p.box[1]<.06&&p.top-p.bottom>2.8),'no free-standing partition sliver');
   // The retained partition beside the bedroom door keeps its wall above the 1.40 m door head; nothing else moves.
@@ -52,12 +98,18 @@ test('R5 preserves EVERY R2 stair, landing, wall, opening and room boundary exce
    .filter(p=>!sameBox(p.box,sliver))
    .map(p=>sameBox(p.box,[2.05,3.25,2.15,5.2])?{...p,box:[2.05,3.2,2.15,5.2]}:p)
    .map(p=>sameBox(p.box,door.box)&&p.bottom===0?{...p,bottom:door.height}:p);
-  assert.deepEqual(walls,expected);
+  assert.equal(walls.length,expected.length);
+  walls.forEach((p,i)=>assert.ok(samePiece(p,expected[i]),`wall piece ${i}: ${JSON.stringify(p.box)}`));
   assert.equal(walls.filter(p=>sameBox(p.box,door.box)).length,1);
   assert.notDeepEqual(walls,fixedArchitecture.ground.walls);
  }
  const boundaries=rooms.filter(r=>!FIXTURE_ROOMS.includes(r.id)).map(r=>({id:r.id,box:r.box,...(r.regions?{regions:r.regions}:{})}));
- assert.deepEqual(boundaries,fixedArchitecture.rooms);
+ assert.equal(boundaries.length,fixedArchitecture.rooms.length);
+ boundaries.forEach((r,i)=>{
+  const e=fixedArchitecture.rooms[i];assert.equal(r.id,e.id);
+  assert.ok(sameBox(r.box,r8Room(e.id,e.box)),r.id);
+  if(e.regions)r.regions.forEach((g,j)=>assert.ok(sameBox(g,r8Room(e.id,e.regions[j])),r.id+' region '+j));
+ });
 });
 test('rectangular cabinet stays beneath the high end of the lower flight; doors now clear the basin and are reached from the wash side',()=>{
  assert.equal(revision.storage.length,1);const c=revision.storage[0],w=revision.wash;
@@ -288,7 +340,8 @@ test('R7 whole-house frame is set out on existing wall lines and adds only one n
    if(g.thickness<.15-eps)near(g.project==='+'?lo:hi,g.project==='+'?g.host[0]:g.host[1]);
   }
   assert.ok(c.x>=c.box[0]-eps&&c.x<=c.box[2]+eps&&c.y>=c.box[1]-eps&&c.y<=c.box[3]+eps,`${c.id} off its grid intersection`);
-  assert.ok(c.box[0]>=-eps&&c.box[2]<=6+eps&&c.box[1]>=-eps&&c.box[3]<=9.7+eps,`${c.id} outside the envelope`);
+  const E=ENVELOPE.ground;
+  assert.ok(c.box[0]>=E[0]-eps&&c.box[2]<=E[2]+eps&&c.box[1]>=E[1]-eps&&c.box[3]<=E[3]+eps,`${c.id} outside the envelope`);
   assert.ok(walls.some(w=>overlaps(w,c.box)),`${c.id} stands free of every wall`);
  }
  // Exactly one member is not already implied by an existing wall junction or pier.
@@ -320,4 +373,36 @@ test('R7 whole-house frame is set out on existing wall lines and adds only one n
  }
  assert.ok(FRAME.coordination.some(c=>/wider than the wall/.test(c)&&/declared side/.test(c)));
  assert.ok(FRAME.coordination.some(c=>/Foundations/.test(c)));
+});
+test('R8 thickens the external walls per floor without moving a single inner face the stair needs',()=>{
+ near(EXTERNAL_WALL.ground,.22);near(EXTERNAL_WALL.first,.17);
+ assert.deepEqual(ENVELOPE.ground,[-.07,0,6,9.77]);
+ assert.deepEqual(ENVELOPE.first,[-.02,0,6,9.72]);
+ for(const level of ['ground','first']){
+  const t=EXTERNAL_WALL[level],E=ENVELOPE[level],walls=plan.levels[level].filter(c=>c.op==='wall').map(c=>c.args.slice(0,4));
+  const has=b=>walls.some(w=>sameBox(w,b));
+  // West and rear grew outward; east and front thickened inward. Every inner face is unmoved.
+  assert.ok(has([E[0],0,.15,E[3]]),`${level} west wall`);
+  assert.ok(has([.15,9.55,3.15,E[3]]),`${level} rear wall`);
+  assert.ok(has([6-t,1.2,6,8.3]),`${level} east wall`);
+  assert.ok(has([.15,0,3.15,t]),`${level} front wall`);
+  // Internal partitions are untouched at 100 mm.
+  for(const b of [[3.05,0,3.15,E[3]],[.15,2.2,3.05,2.3],[.15,6.1,3.05,6.2],[2.05,2.3,2.15,6.1]])assert.ok(has(b),`${level} partition ${b}`);
+  const thick=walls.map(w=>Math.min(w[2]-w[0],w[3]-w[1]));
+  assert.ok(thick.every(v=>[.10,.15,t].some(k=>Math.abs(v-k)<eps)),`${level} has an unexpected wall thickness`);
+ }
+ // The stair and everything built under it depend on the west and rear inner faces, which is
+ // exactly why those two walls were grown outward rather than inward.
+ assert.deepEqual(stairTreads('ground'),fixedArchitecture.ground.stairs);
+ assert.deepEqual(stairTreads('first'),fixedArchitecture.first.stairs);
+ for(const f of stairFlights('ground'))near(f.x[1]-f.x[0],.9);
+ near(revision.store.box[0],.15);near(revision.bedroomWallFace,6.1);
+ for(const b of [revision.store.box,revision.wash.box,revision.partition.box,revision.storage[0].box])assert.ok(b[0]>=.15-eps,'under-stair unit must not cross the west inner face');
+ // The tight setbacks are the reason for the hybrid: they must not have moved.
+ const site=plan.dimensions;
+ near(site.setbacks_m.north_path,1.0);near(site.setbacks_m.front_yard,3.0);
+ near(site.setbacks_m.south_parking_strip,2.63);near(site.setbacks_m.rear_garden,4.03);
+ near(1+site.ground_envelope_m[0]+site.setbacks_m.south_parking_strip,9.7);
+ near(3+site.ground_envelope_m[1]+site.setbacks_m.rear_garden,16.8);
+ assert.ok(site.first_envelope_sqft<=630,'first floor stays inside the published area guard');
 });

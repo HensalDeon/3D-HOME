@@ -27,11 +27,11 @@ INK='#333B35'; MUTED='#737A72'; PAPER='#F6F3EC'; LINE='#DADCD2'; OAK='#B8956D'
 for name,file in [('Body','Arial.ttf'),('Bold','Arial Bold.ttf'),('Display','Georgia.ttf')]:
     pdfmetrics.registerFont(TTFont(name,'/System/Library/Fonts/Supplemental/'+file))
 styles={}
-for name,size,leading,color,font in [('body',10,15,INK,'Body'),('small',8,11,MUTED,'Body'),('caption',8.5,12,MUTED,'Body'),('heading',15,20,INK,'Display'),('lead',15,22,INK,'Display')]:
+for name,size,leading,color,font in [('body',10,15,INK,'Body'),('small',8,11,MUTED,'Body'),('caption',8.5,12,MUTED,'Body'),('alert',8.5,12,OAK,'Bold'),('heading',15,20,INK,'Display'),('lead',15,22,INK,'Display')]:
     styles[name]=ParagraphStyle(name,fontName=font,fontSize=size,leading=leading,textColor=HexColor(color))
 mem=io.BytesIO(); c=canvas.Canvas(mem,pagesize=(W,H),pageCompression=1)
 c.setTitle(DATA['title']); c.setAuthor('Hensal House — interior design proposal')
-c.setSubject('Photographic-style still-image proposal based on retained R5 architecture; review edition')
+c.setSubject('Photographic-style still-image proposal based on the R8 architecture; review edition')
 page=0; inserts=[]; toc=[]; image_records=[]
 
 def text(t,x,y,w,style='body',maxh=500):
@@ -52,7 +52,7 @@ def start(label,title,bookmark=None):
     line(title,M,H-70,26,'Display')
     if bookmark: toc.append([1,bookmark,page])
 
-def footer(label='Interior proposal / images are illustrative; R5 dimensioned drawings govern'):
+def footer(label='Interior proposal / images are illustrative; R8 dimensioned drawings govern'):
     c.setStrokeColor(HexColor(LINE));c.setLineWidth(.4);c.line(M,35,W-M,35)
     line(label,M,22,7,'Body',MUTED);c.setFillColor(HexColor(MUTED));c.setFont('Body',8);c.drawRightString(W-M,22,f'{page:02}')
     c.showPage()
@@ -116,11 +116,11 @@ for title,body in [
 for i,(title,sub) in enumerate([('01','Dimensioned drawings'),('02','Approved R5 revisions'),('03','Interior finish proposals')]):
     yy=H-148-i*110;c.setFillColor(HexColor('#ECE7DC'));c.rect(553,yy-55,256,86,stroke=0,fill=1)
     line(title,568,yy+3,18,'Display',OAK);text(sub,610,yy+7,180,'body')
-footer('Source: retained 11-sheet R5 house package + current model revision data')
+footer('Source: 12-sheet R8 house package + current model revision data')
 
 # Embed original vector plan pages without modifying the source document.
 plan_doc=fitz.open(ROOT/'drawings/compact-v4/Hensal_Complete_House_Plans.pdf')
-for idx,title in [(2,'Ground-floor plan / R5'),(3,'First-floor plan / retained sheet'),(4,'Roof plan / full stair access'),(5,'Front & rear elevations'),(6,'Under-stair zoning / R5 section')]:
+for idx,title in [(2,'Ground-floor plan / R6'),(3,'First-floor plan / retained sheet'),(4,'Roof plan / full stair access'),(5,'Front & rear elevations'),(6,'Under-stair zoning / R6 conceptual RCC stair')]:
     start('02 / RETAINED DRAWINGS',title,title)
     inserts.append((page-1,idx,fitz.Rect(M,92,W-M,H-48)))
     footer('Original drawing reproduced at reduced size. Do not scale this presentation; use stated dimensions.')
@@ -133,10 +133,17 @@ text('Original front-elevation style reference.',M,66,265,'small')
 text('Earlier front/rear appearance reference. R5 geometry, corrected open bands and roof drawings override image differences.',321,138,490,'caption')
 footer('Existing project reference imagery / not a new architectural revision')
 
+# The R6 stair revision reached the drawings before these three photographs could be reshot.
+SUPERSEDED_STAIR={'03-stair-tv','04-storage','05-wash'}
+STAIR_CAVEAT=('PHOTOGRAPH PREDATES THE R6 STAIR REVISION: it shows the earlier separate-tread stair and higher '
+ 'under-stair joinery. Sheets 03, 07 and 08 of the house package govern.')
+
 # Room spreads: one establishing photograph, then two parallel views.
 for room in DATA['rooms']:
     start('03 / '+room['floor'],room['title'],room['title'])
     photo(image_for(room['id'],'wide'),M,71,537,413)
+    if room['id'] in SUPERSEDED_STAIR:
+        text(STAIR_CAVEAT,M,62,537,'alert',26)
     x=595;y=H-114
     y=text(room['dimension'],x,y,213,'heading')-24
     y=text(room['intent'],x,y,213,'body')-24

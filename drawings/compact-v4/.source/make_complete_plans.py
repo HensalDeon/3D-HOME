@@ -34,7 +34,7 @@ def base(c, ignored_number, title, subtitle):
 
 
 def cover(c):
-    base(c, 1, 'Complete house plans / full roof access', 'A3 COORDINATED DESIGN REVIEW SET / THREE BEDROOMS, THREE ENSUITES / 08 SEPTEMBER 2026')
+    base(c, 1, 'Complete house plans / full roof access', 'A3 COORDINATED DESIGN REVIEW SET / THREE BEDROOMS, THREE ENSUITES / R8 EXTERNAL WALLS 220 / 170 MM')
     c.drawImage(str(OUT/'exterior-concept.png'), 20*mm, 92*mm, width=226*mm, height=150*mm, preserveAspectRatio=True, anchor='c')
     house.tx(c, 262, 235, 'DRAWING INDEX', 11, house.TEAL, True)
     entries = [
@@ -56,7 +56,7 @@ def cover(c):
         house.tx(c, 274, 224-i*8, label, 8, house.INK)
     house.para(c, 262, 126, 'Print on A3 at 100% / actual size. Each drawing states its scale. Do not scale the photographs or the developed stair diagram horizontally.', 134, 8, 4.5)
     house.para(c, 262, 101, 'This set replaces the separate compact-v4 and integrated-roof review PDFs. The current design includes full stairs to the roof and one conceptual structural framing option.', 134, 8, 4.5)
-    house.block(c, 25, 82, 'COORDINATED DESIGN BASIS', 'Each main floor: 58.20 m2 / 626.46 sq ft. Roof enclosure: 9.02 m2 / 97.09 sq ft additional. Conservative total: 125.42 m2 / 1,350.01 sq ft. Roof landing +6.45 m; stair cover +9.00 m. Rear balcony entry is on the master-bedroom side wall, with two toilet vents facing the rear.', 218)
+    house.block(c, 25, 82, 'COORDINATED DESIGN BASIS', 'R8 external walls: 220 mm ground, 170 mm first. Ground floor: 59.30 m2 / 638.3 sq ft. First floor: 58.51 m2 / 629.8 sq ft. Roof enclosure: 9.02 m2 / 97.09 sq ft additional. Conservative total: 126.84 m2 / 1,365.3 sq ft. Roof landing +6.45 m; stair cover +9.00 m. Rear balcony entry is on the master-bedroom side wall, with two toilet vents facing the rear.', 218)
     house.block(c, 262, 76, 'FOR ARCHITECT / BUILDER REVIEW', 'Dimensioned vectors govern over the render. The stair is shown as a conceptual RCC waist-slab system only; its waist thickness, landing beams, supports, reinforcement and connections must be designed by a structural engineer. Measured site set-out, structural design, stair headroom, waterproofing, services and permit drawings remain to be coordinated by the project professionals.', 134)
 
 

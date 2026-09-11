@@ -18,7 +18,8 @@ export const revision={
 };
 export function revisedWallBoxes(level,original){
  if(level!=='ground')return original;
- return original.flatMap(b=>b[0]===3.05&&b[1]===0&&b[2]===3.15&&b[3]===9.7?[[3.05,0,3.15,2.3],[3.05,6.1,3.15,9.7]]:[b]);
+ // R8: the spine wall now runs to the grown rear face, so match on its span rather than 9.70.
+ return original.flatMap(b=>b[0]===3.05&&b[1]===0&&b[2]===3.15&&b[3]>9.6?[[3.05,0,3.15,2.3],[3.05,6.1,3.15,b[3]]]:[b]);
 }
 // One open under-upper-flight recess provides basin and cabinet access.
 // R5 adds the store-door aperture in the retained stair-side partition beside the bedroom door;

@@ -9,13 +9,13 @@
   "gridX": [
     {
       "id": "A",
-      "at": 0.075,
+      "at": 0.04,
       "host": [
-        0,
+        -0.07,
         0.15
       ],
-      "note": "west external wall, 150 mm",
-      "thickness": 0.15
+      "note": "west external wall, 220 mm",
+      "thickness": 0.22
     },
     {
       "id": "B",
@@ -31,25 +31,25 @@
     },
     {
       "id": "C",
-      "at": 5.925,
+      "at": 5.89,
       "host": [
-        5.85,
+        5.78,
         6.0
       ],
-      "note": "east external wall, 150 mm, with the existing front and rear piers",
-      "thickness": 0.15
+      "note": "east external wall, 220 mm, with the existing front and rear piers",
+      "thickness": 0.22
     }
   ],
   "gridY": [
     {
       "id": "1",
-      "at": 0.075,
+      "at": 0.11,
       "host": [
         0,
-        0.15
+        0.22
       ],
       "note": "front (east) face",
-      "thickness": 0.15
+      "thickness": 0.22
     },
     {
       "id": "2",
@@ -99,80 +99,80 @@
     },
     {
       "id": "6",
-      "at": 9.625,
+      "at": 9.66,
       "host": [
         9.55,
-        9.7
+        9.77
       ],
       "note": "rear face",
-      "thickness": 0.15
+      "thickness": 0.22
     }
   ],
   "columns": [
     {
       "id": "A1",
-      "x": 0.075,
-      "y": 0.075,
+      "x": 0.04,
+      "y": 0.11,
       "box": [
-        0,
+        -0.07,
         0,
         0.15,
-        0.15
+        0.22
       ],
       "within": "existing west/front external corner",
-      "size": "150 x 150 mm indicative"
+      "size": "220 x 220 mm indicative"
     },
     {
       "id": "A3",
-      "x": 0.075,
+      "x": 0.04,
       "y": 2.25,
       "box": [
-        0,
+        -0.07,
         2.07,
         0.15,
         2.3
       ],
       "within": "west wall meets the kitchen cross wall",
-      "size": "150 x 230 mm indicative"
+      "size": "220 x 230 mm indicative"
     },
     {
       "id": "A4",
-      "x": 0.075,
+      "x": 0.04,
       "y": 6.15,
       "box": [
-        0,
+        -0.07,
         6.1,
         0.15,
         6.33
       ],
       "within": "west wall meets the bedroom cross wall; west support of the stair landing beam",
-      "size": "150 x 230 mm indicative"
+      "size": "220 x 230 mm indicative"
     },
     {
       "id": "A6",
-      "x": 0.075,
-      "y": 9.625,
+      "x": 0.04,
+      "y": 9.66,
       "box": [
-        0,
+        -0.07,
         9.55,
         0.15,
-        9.7
+        9.77
       ],
       "within": "existing west/rear external corner",
-      "size": "150 x 150 mm indicative"
+      "size": "220 x 220 mm indicative"
     },
     {
       "id": "B1",
       "x": 3.1,
-      "y": 0.075,
+      "y": 0.11,
       "box": [
         3.05,
         0,
         3.28,
-        0.15
+        0.22
       ],
       "within": "existing front pier at x = 3.05-3.20",
-      "size": "230 x 150 mm indicative"
+      "size": "230 x 220 mm indicative"
     },
     {
       "id": "B2",
@@ -229,80 +229,80 @@
     {
       "id": "B6",
       "x": 3.1,
-      "y": 9.625,
+      "y": 9.66,
       "box": [
         3.05,
         9.55,
         3.28,
-        9.7
+        9.77
       ],
       "within": "existing rear pier at x = 3.05-3.20",
-      "size": "230 x 150 mm indicative"
+      "size": "230 x 220 mm indicative"
     },
     {
       "id": "C1",
-      "x": 5.925,
-      "y": 0.075,
+      "x": 5.89,
+      "y": 0.11,
       "box": [
-        5.85,
+        5.78,
         0,
         6.0,
-        0.15
+        0.22
       ],
       "within": "existing front pier at x = 5.85-6.00",
-      "size": "150 x 150 mm indicative"
+      "size": "220 x 220 mm indicative"
     },
     {
       "id": "C2",
-      "x": 5.925,
+      "x": 5.89,
       "y": 1.275,
       "box": [
-        5.85,
+        5.78,
         1.2,
         6.0,
         1.35
       ],
       "within": "east wall meets the sit-out edge wall",
-      "size": "150 x 150 mm indicative"
+      "size": "220 x 150 mm indicative"
     },
     {
       "id": "C4",
-      "x": 5.925,
+      "x": 5.89,
       "y": 6.15,
       "box": [
-        5.85,
+        5.78,
         6.1,
         6.0,
         6.33
       ],
       "within": "ADDED: inside the east external wall beside the rear service passage, to keep the grid C span under 5 m",
-      "size": "150 x 230 mm indicative"
+      "size": "220 x 230 mm indicative"
     },
     {
       "id": "C5",
-      "x": 5.925,
+      "x": 5.89,
       "y": 8.25,
       "box": [
-        5.85,
+        5.78,
         8.2,
         6.0,
         8.43
       ],
       "within": "east wall meets the rear cross wall",
-      "size": "150 x 230 mm indicative"
+      "size": "220 x 230 mm indicative"
     },
     {
       "id": "C6",
-      "x": 5.925,
-      "y": 9.625,
+      "x": 5.89,
+      "y": 9.66,
       "box": [
-        5.85,
+        5.78,
         9.55,
         6.0,
-        9.7
+        9.77
       ],
       "within": "existing rear pier at x = 5.85-6.00",
-      "size": "150 x 150 mm indicative"
+      "size": "220 x 220 mm indicative"
     }
   ],
   "beams": [
@@ -311,10 +311,10 @@
       "from": "A1",
       "to": "A3",
       "within": "west external wall",
-      "span": 2.175,
+      "span": 2.14,
       "box": [
-        0,
-        0.075,
+        -0.07,
+        0.11,
         0.15,
         2.25
       ],
@@ -327,7 +327,7 @@
       "within": "west external wall",
       "span": 3.9,
       "box": [
-        0,
+        -0.07,
         2.25,
         0.15,
         6.15
@@ -339,12 +339,12 @@
       "from": "A4",
       "to": "A6",
       "within": "west external wall",
-      "span": 3.475,
+      "span": 3.51,
       "box": [
-        0,
+        -0.07,
         6.15,
         0.15,
-        9.625
+        9.66
       ],
       "runs": "y"
     },
@@ -353,10 +353,10 @@
       "from": "B1",
       "to": "B2",
       "within": "spine wall line",
-      "span": 1.2,
+      "span": 1.165,
       "box": [
         3.05,
-        0.075,
+        0.11,
         3.28,
         1.275
       ],
@@ -409,12 +409,12 @@
       "from": "B5",
       "to": "B6",
       "within": "spine wall line",
-      "span": 1.375,
+      "span": 1.41,
       "box": [
         3.05,
         8.25,
         3.28,
-        9.625
+        9.66
       ],
       "runs": "y"
     },
@@ -423,10 +423,10 @@
       "from": "C1",
       "to": "C2",
       "within": "east external wall",
-      "span": 1.2,
+      "span": 1.165,
       "box": [
-        5.85,
-        0.075,
+        5.78,
+        0.11,
         6.0,
         1.275
       ],
@@ -439,7 +439,7 @@
       "within": "east external wall",
       "span": 4.875,
       "box": [
-        5.85,
+        5.78,
         1.275,
         6.0,
         6.15
@@ -453,7 +453,7 @@
       "within": "east external wall",
       "span": 2.1,
       "box": [
-        5.85,
+        5.78,
         6.15,
         6.0,
         8.25
@@ -465,12 +465,12 @@
       "from": "C5",
       "to": "C6",
       "within": "east external wall",
-      "span": 1.375,
+      "span": 1.41,
       "box": [
-        5.85,
+        5.78,
         8.25,
         6.0,
-        9.625
+        9.66
       ],
       "runs": "y"
     },
@@ -479,12 +479,12 @@
       "from": "A1",
       "to": "B1",
       "within": "front face wall",
-      "span": 3.025,
+      "span": 3.06,
       "box": [
-        0.075,
+        0.04,
         0,
         3.1,
-        0.15
+        0.22
       ],
       "runs": "x"
     },
@@ -493,12 +493,12 @@
       "from": "B1",
       "to": "C1",
       "within": "over the sit-out / balcony opening",
-      "span": 2.825,
+      "span": 2.79,
       "box": [
         3.1,
         0,
-        5.925,
-        0.15
+        5.89,
+        0.22
       ],
       "runs": "x"
     },
@@ -507,11 +507,11 @@
       "from": "B2",
       "to": "C2",
       "within": "sit-out and balcony edge wall",
-      "span": 2.825,
+      "span": 2.79,
       "box": [
         3.1,
         1.2,
-        5.925,
+        5.89,
         1.35
       ],
       "runs": "x"
@@ -521,9 +521,9 @@
       "from": "A3",
       "to": "B3",
       "within": "kitchen / stair cross wall",
-      "span": 3.025,
+      "span": 3.06,
       "box": [
-        0.075,
+        0.04,
         2.07,
         3.1,
         2.3
@@ -535,9 +535,9 @@
       "from": "A4",
       "to": "B4",
       "within": "bedroom cross wall; this is the R6 stair landing beam line",
-      "span": 3.025,
+      "span": 3.06,
       "box": [
-        0.075,
+        0.04,
         6.1,
         3.1,
         6.33
@@ -549,11 +549,11 @@
       "from": "B4",
       "to": "C4",
       "within": "cross wall and rear service passage",
-      "span": 2.825,
+      "span": 2.79,
       "box": [
         3.1,
         6.1,
-        5.925,
+        5.89,
         6.33
       ],
       "runs": "x"
@@ -563,11 +563,11 @@
       "from": "B5",
       "to": "C5",
       "within": "rear cross wall",
-      "span": 2.825,
+      "span": 2.79,
       "box": [
         3.1,
         8.2,
-        5.925,
+        5.89,
         8.43
       ],
       "runs": "x"
@@ -577,12 +577,12 @@
       "from": "A6",
       "to": "B6",
       "within": "rear face wall",
-      "span": 3.025,
+      "span": 3.06,
       "box": [
-        0.075,
+        0.04,
         9.55,
         3.1,
-        9.7
+        9.77
       ],
       "runs": "x"
     },
@@ -591,12 +591,12 @@
       "from": "B6",
       "to": "C6",
       "within": "over the rear work area opening",
-      "span": 2.825,
+      "span": 2.79,
       "box": [
         3.1,
         9.55,
-        5.925,
-        9.7
+        5.89,
+        9.77
       ],
       "runs": "x"
     }
@@ -653,7 +653,7 @@
     ]
   },
   "coordination": [
-    "Beam and column lines on grids B, 3, 4 and 5 follow existing 100 mm walls, so those members must be wider than the wall. Each is shown projecting to one declared side: grid B east into the living and service side, grid 3 south into the kitchen (projecting the other way would drop headroom over the stair starter landing to 2.20 m), grid 4 north into Bedroom 1 (projecting the other way would clash with the under-stair store), grid 5 north into the rear work area.",
+    "Beam and column lines on grids B, 3, 4 and 5 (the 100 mm walls; A, C, 1 and 6 are now 220 mm and fully conceal their members) follow existing 100 mm walls, so those members must be wider than the wall. Each is shown projecting to one declared side: grid B east into the living and service side, grid 3 south into the kitchen (projecting the other way would drop headroom over the stair starter landing to 2.20 m), grid 4 north into Bedroom 1 (projecting the other way would clash with the under-stair store), grid 5 north into the rear work area.",
     "Column C4 is the only member not already implied by an existing wall junction or pier. It stands inside the 150 mm east external wall beside the rear service passage and takes no room area.",
     "No column falls inside the living, dining, kitchen or any bedroom floor area.",
     "Foundations, plinth beams and the ground-slab build-up are not shown and are entirely for the engineer.",
@@ -661,5 +661,5 @@
   ],
   "indicativeBeamNote": "Beams are drawn as an indicative 300 mm downstand under the slab soffit. No size is specified.",
   "memberWidth": 0.23,
-  "memberWidthNote": "Members are drawn at the thickness of the wall that hosts them where that is 150 mm, so they stay concealed. Where the host is a 100 mm wall they are drawn 230 mm wide and shown projecting to one declared side. 230 mm is indicative only; the engineer sets every size."
+  "memberWidthNote": "Members are drawn at the thickness of the wall that hosts them where that is 150 mm or more, so they stay concealed. Where the host is a 100 mm wall they are drawn 230 mm wide and shown projecting to one declared side. 230 mm is indicative only; the engineer sets every size."
 }

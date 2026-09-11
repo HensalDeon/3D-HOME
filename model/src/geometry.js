@@ -4,23 +4,29 @@ import frame from './structural-frame.json' with {type:'json'};
 import {revision,revisedWallBoxes,storageWallOpenings} from './revision.js';
 export {plan};
 export const LEVELS={ground:.45,first:3.45,roof:6.45};
+// R8: 220 mm ground external walls, 170 mm on the first floor, 100 mm partitions throughout.
+// The west wall grew outward into the parking strip and the rear into the garden; the east and
+// front walls thickened inward, so every inner face the stair and under-stair unit rely on is
+// unmoved. ENVELOPE is the outer face of each level.
+export const EXTERNAL_WALL={ground:.22,first:.17,roof:.17};
+export const ENVELOPE={ground:[-.07,0,6,9.77],first:[-.02,0,6,9.72],roof:[-.02,0,6,9.72]};
 export const rooms=[
- ['g-kitchen','ground','Kitchen / southeast',[.15,.15,3.05,2.2],'2.90 × 2.05 m','East-facing hob; separate sink on the north counter. Door opens from the stair passage.',3],
- ['g-living','ground','Living & dining',[3.15,1.35,5.85,6.1],'2.70 × 4.75 m bay','R1: the passage partition is removed conditionally, opening the former passage into the living area. The TV is built into a slim stair-boundary panel centered on the old cabinet span, and R5 continues that line with a fixed oak panel so the passage reads as one joinery wall: TV, panel, store doors. The living floor is open; the basin and cabinet are reached through the stair entry behind the panel. Independent rear access is retained.',3],
+ ['g-kitchen','ground','Kitchen / southeast',[.15,.22,3.05,2.2],'2.90 × 1.98 m','East-facing hob; separate sink on the north counter. Door opens from the stair passage.',3],
+ ['g-living','ground','Living & dining',[3.15,1.35,5.78,6.1],'2.63 × 4.75 m bay','R1: the passage partition is removed conditionally, opening the former passage into the living area. The TV is built into a slim stair-boundary panel centered on the old cabinet span, and R5 continues that line with a fixed oak panel so the passage reads as one joinery wall: TV, panel, store doors. The living floor is open; the basin and cabinet are reached through the stair entry behind the panel. Independent rear access is retained.',3],
  ['g-bed','ground','Bedroom 1 / southwest',[.15,6.2,3.05,9.55],'2.90 × 3.35 m','Bed head faces south. Private sliding access to Ensuite 1; entrance from the level stair passage.',3],
  ['g-bath','ground','Ensuite 1',[3.15,6.2,4.45,8.2],'1.30 × 2.00 m','WC, basin and shower; accessible only from Bedroom 1.',3],
- ['g-sit','ground','East sit-out',[3.15,0,5.85,1.2],'2.70 × 1.20 m','Covered entry within the 6.00 × 9.70 m envelope. Three approach steps.',3],
- ['g-work','ground','Rear work area',[3.15,8.3,5.85,9.7],'2.70 × 1.40 m','Sink, washing machine and preparation counter. Wash only; no rear cooking hearth. Direct backyard steps.',3],
- ['g-route','ground','Rear service passage',[4.55,6.2,5.85,8.2],'1.30 m clear','Independent route from dining to the work area without entering a bedroom or ensuite.',3],
+ ['g-sit','ground','East sit-out',[3.15,0,5.78,1.2],'2.63 × 1.20 m','Covered entry within the 6.00 × 9.70 m envelope. Three approach steps.',3],
+ ['g-work','ground','Rear work area',[3.15,8.3,5.78,9.77],'2.63 × 1.47 m','Sink, washing machine and preparation counter. Wash only; no rear cooking hearth. Direct backyard steps.',3],
+ ['g-route','ground','Rear service passage',[4.55,6.2,5.78,8.2],'1.23 m clear','Independent route from dining to the work area without entering a bedroom or ensuite.',3],
  ['g-stair','ground','South stair & passage',[.15,2.3,3.05,6.1],'17 risers · 0.90 m flights','R2 geometry unchanged: south-going starter, west-going lower flight and retained east-going upper flight; 2 + 7 + 8 equal risers, 250 mm treads and 900 mm flights. The lower-side intermediate landing extends 500 mm to meet the shorter lower run. R6 builds it as a conceptual cast-in-situ RCC folded plate - a continuous 150 mm waist slab under each flight, monolithic with 150 mm landing slabs - carried on the plinth, the west external wall, a landing beam zone inside the bedroom cross-wall line and the floor-slab trimmer. No cantilevered treads, no stringers, no wall below the upper flight and no load on either 100 mm partition. Waist thickness, landing beams, supports, reinforcement and connections TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER.',7],
- ['f-study','first','Study / family',[.15,.15,3.05,2.2],'2.90 × 2.05 m','Southeast study above the kitchen, with a front window and access to the gallery.',4],
+ ['f-study','first','Study / family',[.15,.17,3.05,2.2],'2.90 × 2.03 m','Southeast study above the kitchen, with a front window and access to the gallery.',4],
  ['f-master','first','Master / southwest',[.15,6.2,3.05,9.55],'2.90 × 3.35 m','South-facing bed head. Private ensuite and a separate side door to the rear drying balcony.',4],
- ['f-child','first','Bedroom 3 / north',[3.15,2.5,5.85,6.1],'2.70 × 3.60 m','North bedroom retained. The existing 0.55 m deep, 2.10 m high oak wardrobe now returns along the entrance wall with paired corner-access doors; the bedroom door and north window remain clear.',4],
+ ['f-child','first','Bedroom 3 / north',[3.15,2.5,5.83,6.1],'2.68 × 3.60 m','North bedroom retained. The existing 0.55 m deep, 2.10 m high oak wardrobe now returns along the entrance wall with paired corner-access doors; the bedroom door and north window remain clear.',4],
  ['f-bath2','first','Ensuite 2',[3.15,6.2,4.45,8.2],'1.30 × 2.00 m','Master ensuite, stacked directly above Ensuite 1. Rear-facing high-level vent.',4],
- ['f-bath3','first','Ensuite 3',[4.55,6.2,5.85,8.2],'1.30 × 2.00 m','Private to Bedroom 3; above the ground service passage. Rear vent and north-side window.',4],
- ['f-balcony','first','Front balcony',[3.15,0,5.85,1.2],'2.70 × 1.20 m','Glass railing and recessed sliding door, reached from the common front gallery.',4],
- ['f-drying','first','Rear drying balcony',[3.15,8.3,5.85,9.7],'2.70 × 1.40 m','Covered and ventilated. Entry is from the master side wall, never through either bathroom.',4],
- ['f-gallery','first','Front gallery',[3.15,1.35,5.85,2.4],'2.70 × 1.05 m','Common access between study, bedroom and front balcony.',4],
+ ['f-bath3','first','Ensuite 3',[4.55,6.2,5.83,8.2],'1.28 × 2.00 m','Private to Bedroom 3; above the ground service passage. Rear vent and north-side window.',4],
+ ['f-balcony','first','Front balcony',[3.15,0,5.83,1.2],'2.68 × 1.20 m','Glass railing and recessed sliding door, reached from the common front gallery.',4],
+ ['f-drying','first','Rear drying balcony',[3.15,8.3,5.83,9.72],'2.68 × 1.42 m','Covered and ventilated. Entry is from the master side wall, never through either bathroom.',4],
+ ['f-gallery','first','Front gallery',[3.15,1.35,5.83,2.4],'2.68 × 1.05 m','Common access between study, bedroom and front balcony.',4],
  ['f-stair','first','Stair continuation',[.15,2.3,3.05,6.1],'17 risers to roof','The upward flight remains open. Full stair access to +6.45 m, with a separate downward arrival from ground. The FF-to-roof stair repeats the same conceptual RCC waist and landing slabs, springing off the first-floor slab edge and framing into the roof slab. TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER.',8],
  ['r-head','roof','Roof stair enclosure',[0,2.15,2.2,6.25],'2.20 × 4.10 m outside','9.02 m² additional area. 2.40 m clear landing height; cap +9.00 m. North-side 900 mm outward-opening exit.',9],
  ['r-terrace','roof','Open roof terrace',[2.2,.15,5.85,9.55],'Roof level +6.45 m','Open to sky, with 1.10 m perimeter guarding. Drainage falls, outlet and overflow are indicative.',5],
@@ -29,7 +35,7 @@ export const rooms=[
  ['g-storage','ground','Rectangular cabinet / lower flight',revision.storage[0].box,'500 W × 550 D × 800 H mm','R6: the cabinet keeps its R3 footprint beneath the last two lower-flight treads, with its flat top and two 250 mm doors. Its height comes down from 1080 to 800 mm to stay 45 mm clear of the 0.85 m lower-flight waist soffit: a waist slab hangs one riser plus its own thickness below each nosing, which the superseded flat-lid tread model did not account for. Access is still from the wash side through a 400 mm strip beside the basin, now under a 1.73–2.09 m soffit: stoop access to a low cabinet, not a passage. The former 600 mm passage opening is closed by a fixed oak panel on the TV line, which sits beside the flight and is unaffected. Existing aperture unchanged; structural review remains applicable.',3],
  ['g-store','ground','Under-landing store / low zone',revision.store.box,'1.90 × 1.35 m · 1.38–1.56 m clear','R6: the R5 store keeps its 1.90 × 1.35 m footprint and about 2.6 m², but the conceptual RCC landing slab and waist lower every soffit, so the stepped carcass top becomes 1.37 m under the landing slab, 1.33 m where the waist springs off it and 1.51 m under riser 11, holding about 3.5 m³. The two 450 mm bifold leaves stay 1.40 m high and still clear the 1.42 m landing soffit, opening from the passage beside the bedroom door where the person stands under the full 2.85 m slab; the deeper pocket under the lower landing is crouch-in bulk storage. R6 carries the landing on a beam zone inside the bedroom cross-wall line rather than on the 100 mm stair-side partition, so the 900 × 1400 mm opening no longer depends on that partition being non-bearing, but the whole support system and the cut still need the structural engineer.',3],
 ].map(([id,level,name,box,dimensions,description,sheet])=>({id,level,name,box,dimensions,description,sheet}));
-rooms.find(r=>r.id==='g-living').regions=[[3.15,1.35,5.85,6.1],[2.15,2.3,3.15,6.1]];
+rooms.find(r=>r.id==='g-living').regions=[[3.15,1.35,5.78,6.1],[2.15,2.3,3.15,6.1]];
 export function openingsFor(level){
  const front=plan.openings[level==='ground'?'FRONT_GF':'FRONT_FF'];
  const rear=plan.openings[level==='ground'?'REAR_GF':'REAR_FF'];
@@ -56,8 +62,9 @@ export function openingsFor(level){
 export function wallPieces(level){
  const ops=openingsFor(level),height=level==='roof'?2.4:2.85;
  const walls=revisedWallBoxes(level,plan.levels[level].filter(c=>c.op==='wall').map(c=>c.args.slice(0,4)));
- // The north rear privacy screen is drawn as a dark fill, not a wall command.
- if(level!=='roof')walls.push([5.85,8.3,6,9.7]);
+ // The north rear privacy screen is drawn as a dark fill, not a wall command. R8: on the ground
+ // floor it follows the thickened east and rear faces.
+ if(level!=='roof'){const e=ENVELOPE[level];walls.push([6-EXTERNAL_WALL[level],8.3,6,e[3]]);}
  return walls.flatMap(b=>{
   const axis=b[2]-b[0]>=b[3]-b[1]?'h':'v',lo=axis==='h'?b[0]:b[1],hi=axis==='h'?b[2]:b[3];
   const cuts=ops.filter(o=>Math.min(o.box[2],b[2])-Math.max(o.box[0],b[0])>1e-5&&Math.min(o.box[3],b[3])-Math.max(o.box[1],b[1])>1e-5);

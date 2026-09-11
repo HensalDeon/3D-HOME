@@ -1,5 +1,7 @@
 # Interactive model source
 
+**R8 status:** external walls are now 220 mm on the ground floor and 170 mm on the first; internal partitions stay 100 mm. The growth is hybrid so the plot works: the west wall grows outward into the 2.70 m parking strip and the rear into the 4.10 m garden, while the east and front walls thicken inward, leaving the 1.00 m north path and 3.00 m front yard untouched. Every inner face the stair and the under-stair unit depend on is unmoved, so the 900 mm flights, both landings and the store/basin/cabinet carry over unchanged. Envelopes: ground 6.07 x 9.77 m (59.30 m2 / 638.3 sq ft), first 6.02 x 9.72 m (58.51 m2 / 629.8 sq ft). Rooms against the east or front faces lose 20-70 mm - living 2.63 m wide, kitchen 1.98 m deep, Bedroom 3 2.68 m, Ensuite 3 1.28 m. Setbacks become parking 2.63 m and garden 4.03 m.
+
 **R6 status:** the stair is represented as a conventional cast-in-situ RCC staircase - a continuous waist slab under each flight, monolithic with the landing slabs - replacing the superseded model of 17 separate 120 mm treads. Riser count, tread size, flight width, landings and floor levels are untouched; the R5 built-in unit keeps every plan position and only its joinery tops come down to suit the new soffit. Thicknesses are conceptual massing: waist-slab thickness, landing beams, support conditions, reinforcement and connections are TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER, and the 100 mm partitions are not to be assumed load-bearing.
 
 The space beneath the upper flight remains one built-in unit: an under-landing store, a mirror partition, a semi-recessed west-facing basin and the retained TV panel and cabinet. All distances below are measured from the stair-side face of the bedroom wall (plan y = 6.10 m). The complete R2 stair geometry, landings, upper-floor connection, kitchen, bedrooms and every wall, door and window remain fixed, with one disclosed exception: the 900 × 1400 mm store-door aperture in the stair-side partition at y = 5.20–6.10 m. `revisions/r2-architecture.json` records the pre-change coordinates; the tests compare every element and allow only that aperture.
@@ -41,7 +43,7 @@ To refresh geometry from the existing drawing functions, create a Python environ
 
 Source: `Hensal_Complete_House_Plans.pdf`, coordinated review set dated 08 September 2026 with the R6 sheets 03, 07 and 08 and the new R7 framing sheet 09 dated 10 September 2026, 12 sheets.
 
-SHA-256: `1d63e0d6eb744da07006a0307df6fa9b492e682ac9a21baaaa4c0da669ddaba7`
+SHA-256: `343a4c1de5a3707043f1bf767217aa6bd03de74db074623d7ca698999cf22ee9`
 
 `src/plan-data.json` records the original wall, door, window, furniture and drawing commands directly from the retained ground/first/roof drawing functions. The drawing coordinates increase north in x and west in y. Model coordinates are x = plan x − 3, vertical y = finished height, z = 4.85 − plan y. One scene unit is one metre.
 

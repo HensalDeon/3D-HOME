@@ -1,11 +1,33 @@
 {
   "width_m": 6.0,
   "depth_m": 9.7,
+  "external_wall_mm": {
+    "GF": 220,
+    "FF": 170
+  },
+  "ground_envelope_m": [
+    6.07,
+    9.77
+  ],
+  "ground_envelope_m2": 59.3039,
+  "ground_envelope_sqft": 638.34,
+  "first_envelope_m": [
+    6.02,
+    9.72
+  ],
+  "first_envelope_m2": 58.5144,
+  "first_envelope_sqft": 629.84,
+  "setbacks_m": {
+    "north_path": 1.0,
+    "front_yard": 3.0,
+    "south_parking_strip": 2.63,
+    "rear_garden": 4.03
+  },
   "gross_envelope_m2_per_floor": 58.199999999999996,
   "gross_envelope_sqft_per_floor": 626.4595862525058,
   "both_floors_m2": 116.39999999999999,
   "bedroom_sw_clear_m2": 9.715,
-  "child_clear_m2": 9.72,
+  "child_clear_m2": 9.648000000000001,
   "front_sitout_balcony_clear_m2": 3.24,
   "rear_work_drying_clear_m2": 3.78,
   "ensuite_count": 3,

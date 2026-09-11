@@ -6,7 +6,9 @@ import {plan,rooms,LEVELS,openingsFor,wallPieces,stairTreads} from '../src/geome
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-8,`${a} != ${b}`);
 test('data traces to the current PDF and its published dimensions',()=>{
  const source=readFileSync(new URL('../../drawings/compact-v4/Hensal_Complete_House_Plans.pdf',import.meta.url));assert.equal(createHash('sha256').update(source).digest('hex'),plan.source_sha256);
- near(6*9.7,58.2);near(2*6*9.7+2.2*4.1,125.42);near(LEVELS.roof,6.45);near(9-6.45-.15,2.4);near(2.15+4.1+3.45,9.7);
+ // R8: the two floors no longer share an envelope - 220 mm walls below, 170 mm above.
+ near(6.07*9.77,plan.dimensions.ground_envelope_m2);near(6.02*9.72,plan.dimensions.first_envelope_m2);
+ near(Math.round((plan.dimensions.ground_envelope_m2+plan.dimensions.first_envelope_m2+2.2*4.1)*100)/100,126.84);near(LEVELS.roof,6.45);near(9-6.45-.15,2.4);near(2.15+4.1+3.45,9.7);
 });
 test('every door/window aperture is empty in the generated wall volumes',()=>{
  for(const l of Object.keys(LEVELS))for(const o of openingsFor(l))for(const p of wallPieces(l)){
@@ -16,7 +18,9 @@ test('every door/window aperture is empty in the generated wall volumes',()=>{
  }
 });
 test('three private ensuites have correct size, stacking and door positions',()=>{
- const baths=rooms.filter(r=>r.id.includes('bath'));assert.equal(baths.length,3);for(const r of baths){near(r.box[2]-r.box[0],1.3);near(r.box[3]-r.box[1],2);}
+ const baths=rooms.filter(r=>r.id.includes('bath'));assert.equal(baths.length,3);
+ // R8: Ensuite 3 sits against the east wall, which thickened inward by 20 mm on the first floor.
+ for(const r of baths){near(r.box[2]-r.box[0],r.id==='f-bath3'?1.28:1.3);near(r.box[3]-r.box[1],2);}
  assert.deepEqual(baths[0].box,baths[1].box);
  for(const l of ['ground','first'])assert.ok(openingsFor(l).some(o=>o.kind==='pocket'&&o.x===3.05&&o.y===6.4&&o.w===.75));
  assert.ok(openingsFor('first').some(o=>o.x===4.85&&o.y===6.1&&o.w===.75));

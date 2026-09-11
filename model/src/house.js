@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import {facadeBand} from './facade.js';
 import {revision} from './revision.js';
-import {plan,LEVELS,rooms,openingsFor,wallPieces,stairTreads,STAIR_STRUCTURE,STAIR_BEAM_ZONES,stairFlights,stairLandingSlabs,FRAME} from './geometry.js';
+import {plan,LEVELS,rooms,openingsFor,wallPieces,stairTreads,STAIR_STRUCTURE,STAIR_BEAM_ZONES,stairFlights,stairLandingSlabs,FRAME,ENVELOPE} from './geometry.js';
 export function createHouse(){
  const root=new THREE.Group(),levels={},pickables=[],labels=[],wallMaterials=[],furnitureGroups=[],facades=[],dimensions=new THREE.Group();root.add(dimensions);const siteDimensions=new THREE.Group(),roofDimensions=new THREE.Group();dimensions.add(siteDimensions,roofDimensions);
  const mat=(color,extra={})=>new THREE.MeshStandardMaterial({color,roughness:.8,...extra});
@@ -136,9 +136,11 @@ export function createHouse(){
  for(const level of Object.keys(LEVELS)){
   const z=LEVELS[level],g=new THREE.Group();g.name=level;root.add(g);levels[level]=g;const walls=new THREE.Group();g.add(walls);
   const wm=materials.wall.clone();wallMaterials.push({material:wm,level});
-  if(level==='ground')box(g,0,0,6,9.7,0,z,materials.stone);
-  else{ // Leave a genuine opening over both flights and the intermediate landing.
-   for(const b of [[0,0,6,3.2],[0,3.2,.15,6.1],[2.05,3.2,6,6.1],[.15,6.1,6,9.7],[0,6.1,.15,9.7],[1.05,3.2,2.05,3.45]])box(g,...b,z-.15,z,materials.stone);
+  if(level==='ground')box(g,...ENVELOPE.ground,0,z,materials.stone);
+  else{ // Leave a genuine opening over both flights and the intermediate landing. R8: a slab
+   // spans the envelope of the storey below, so the first-floor slab covers the 220 mm walls.
+   const [wx,,,dy]=ENVELOPE[level==='first'?'ground':'first'];
+   for(const b of [[wx,0,6,3.2],[wx,3.2,.15,6.1],[2.05,3.2,6,6.1],[.15,6.1,6,dy],[wx,6.1,.15,dy],[1.05,3.2,2.05,3.45]])box(g,...b,z-.15,z,materials.stone);
   }
   const pieces=wallPieces(level);
   for(const p of pieces)box(walls,...p.box,z+p.bottom,z+p.top,wm);
@@ -292,7 +294,7 @@ export function createHouse(){
  // Lightweight planting outside the nominal walking and parking strips.
  for(const [x,y,r] of [[.7,12.8,.53],[2.9,12.9,.6],[5.1,12.8,.50],[.4,-1.9,.35],[5.3,-1.85,.33]]){cylinder(site,x,y,0,.23,r*.72,materials.soil);const shrub=new THREE.Mesh(new THREE.IcosahedronGeometry(r,1),materials.green);shrub.position.copy(V(x,.45,y));shrub.scale.y=.8;shrub.castShadow=true;site.add(shrub);}
  function dim(a,b,text,detail,level=null){const dg=level==='roof'?roofDimensions:siteDimensions;line(dg,[a,b],'#698975');for(const p of [a,b])line(dg,[[p[0]-.09,p[1]-.09,p[2]],[p[0]+.09,p[1]+.09,p[2]]],'#698975');label(text,detail,(a[0]+b[0])/2,(a[1]+b[1])/2,(a[2]+b[2])/2+.10,level,'dimension');}
- dim([0,-1.05,.06],[6,-1.05,.06],'6.00 m','House width');dim([6.4,0,.08],[6.4,9.7,.08],'9.70 m','House depth');dim([-2.7,8,.05],[0,8,.05],'2.70 m','South parking strip');dim([6,7,.05],[7,7,.05],'1.00 m','North path');dim([2,-3,.05],[2,0,.05],'3.00 m','Front yard');dim([4,9.7,.06],[4,13.8,.06],'4.10 m','Rear garden');
+ dim([-.07,-1.05,.06],[6,-1.05,.06],'6.07 m','Ground width (220 mm walls)');dim([6.4,0,.08],[6.4,9.77,.08],'9.77 m','Ground depth (220 mm walls)');dim([-2.7,8,.05],[-.07,8,.05],'2.63 m','South parking strip');dim([6,7,.05],[7,7,.05],'1.00 m','North path');dim([2,-3,.05],[2,0,.05],'3.00 m','Front yard');dim([4,9.77,.06],[4,13.8,.06],'4.03 m','Rear garden');
  dim([-.35,0,6.55],[-.35,2.15,6.55],'2.15 m','Front roof setback','roof');dim([-.35,6.25,6.55],[-.35,9.7,6.55],'3.45 m','Rear roof setback','roof');
  label('Well','Indicative position',6.5,-1.7,.75,null,'dimension');label('Septic reserve','Indicative position',6.5,10.8,.25,null,'dimension');label('East · private road','3.60 m nominal',2,-5,.1,null,'dimension');label('Compact parking','2.50 × 5.00 m · turning unverified',-1.4,6.3,.1,null,'dimension');
  return {root,levels,pickables,labels,wallMaterials,furnitureGroups,facades,dimensions,siteDimensions,roofDimensions,arrivalStair,structuralFrame,site,materials,V,counts:{walls:Object.fromEntries(Object.keys(LEVELS).map(l=>[l,wallPieces(l).length])),openings:Object.fromEntries(Object.keys(LEVELS).map(l=>[l,openingsFor(l).length]))}};
