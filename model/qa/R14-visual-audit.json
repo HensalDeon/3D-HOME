@@ -1,0 +1,111 @@
+{
+  "revision": "R14",
+  "status": "local visual study",
+  "views": [
+    {
+      "name": "../interiors/images/R14-living-room-eye.png",
+      "eye": [
+        5,
+        3.1,
+        1.55
+      ],
+      "screenCorners": [
+        {
+          "y": 4.162,
+          "height": 0.602,
+          "clear": true,
+          "occluder": null
+        },
+        {
+          "y": 4.162,
+          "height": 1.138,
+          "clear": true,
+          "occluder": null
+        },
+        {
+          "y": 5.118,
+          "height": 0.602,
+          "clear": true,
+          "occluder": null
+        },
+        {
+          "y": 5.118,
+          "height": 1.138,
+          "clear": true,
+          "occluder": null
+        }
+      ],
+      "geometryInspection": false
+    },
+    {
+      "name": "../interiors/images/R14-joinery-close.png",
+      "eye": [
+        3.95,
+        3.3,
+        1.55
+      ],
+      "screenCorners": [
+        {
+          "y": 4.162,
+          "height": 0.602,
+          "clear": true,
+          "occluder": null
+        },
+        {
+          "y": 4.162,
+          "height": 1.138,
+          "clear": true,
+          "occluder": null
+        },
+        {
+          "y": 5.118,
+          "height": 0.602,
+          "clear": true,
+          "occluder": null
+        },
+        {
+          "y": 5.118,
+          "height": 1.138,
+          "clear": true,
+          "occluder": null
+        }
+      ],
+      "geometryInspection": false
+    },
+    {
+      "name": "../interiors/images/R14-geometry-in-stair.png",
+      "eye": [
+        5.2,
+        1.55,
+        3.8
+      ],
+      "screenCorners": [
+        {
+          "y": 4.162,
+          "height": 0.602,
+          "clear": false,
+          "occluder": "R14 fitted TV joinery / local visual study"
+        },
+        {
+          "y": 4.162,
+          "height": 1.138,
+          "clear": false,
+          "occluder": "Conceptual RCC stair structure - waist slabs, landing slabs and beam zones TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER"
+        },
+        {
+          "y": 5.118,
+          "height": 0.602,
+          "clear": true,
+          "occluder": null
+        },
+        {
+          "y": 5.118,
+          "height": 1.138,
+          "clear": true,
+          "occluder": null
+        }
+      ],
+      "geometryInspection": true
+    }
+  ]
+}
