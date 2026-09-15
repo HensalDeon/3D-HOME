@@ -1,0 +1,187 @@
+{
+  "version": 1,
+  "established": "2026-09-15",
+  "authority": "Original kitchen wide and detail govern appearance; approved model governs layout.",
+  "swatchNote": "Approximate visual swatches chosen by eye; not sampled paint specifications.",
+  "swatches": [
+    {
+      "name": "Warm ivory",
+      "hex": "#E7DECE",
+      "role": "Plaster and ceiling"
+    },
+    {
+      "name": "Sandy stone",
+      "hex": "#CEC0A8",
+      "role": "Floors, stairs and counters"
+    },
+    {
+      "name": "Warm greige",
+      "hex": "#C4B69F",
+      "role": "Matte cabinet fronts"
+    },
+    {
+      "name": "Muted oak",
+      "hex": "#AE916B",
+      "role": "Natural fine-grained timber"
+    },
+    {
+      "name": "Oatmeal",
+      "hex": "#D9CDB9",
+      "role": "Linen and upholstery"
+    },
+    {
+      "name": "Charcoal",
+      "hex": "#30302B",
+      "role": "Hardware and frames"
+    },
+    {
+      "name": "Sage",
+      "hex": "#8B9078",
+      "role": "Bedroom 1 and study"
+    },
+    {
+      "name": "Olive",
+      "hex": "#79765A",
+      "role": "Master bedroom"
+    },
+    {
+      "name": "Clay",
+      "hex": "#B07D60",
+      "role": "Bedroom 3 accent"
+    }
+  ],
+  "references": [
+    {
+      "file": "images/06-kitchen-wide.png",
+      "group": "Kitchen",
+      "role": "Primary palette, daylight, material texture and task-light reference.",
+      "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759"
+    },
+    {
+      "file": "images/06-kitchen-detail.png",
+      "group": "Kitchen",
+      "role": "Primary palette, daylight, material texture and task-light reference.",
+      "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1"
+    },
+    {
+      "file": "images/06-kitchen-opposite.png",
+      "group": "Kitchen",
+      "role": "Primary palette, daylight, material texture and task-light reference.",
+      "sha256": "22e72f0e2435862cc69dbcc0cf83ebf435cfabd8f577c311dd683c2eb755dc12"
+    },
+    {
+      "file": "images/16-dining-wide.png",
+      "group": "Dining",
+      "role": "Oak furniture, cream upholstery, pale floor and gentle daylight.",
+      "sha256": "74520e27a9ba23f634d4984704656b461f91aa531ebbb8803e3f8f5032931d62"
+    },
+    {
+      "file": "images/07-bedroom1-wide.png",
+      "group": "Bedroom 1",
+      "role": "Sage accents, textured ivory linen and natural oak.",
+      "sha256": "4f6b065f9c73ffb59690022135789d35e8b840b0b1053712b19846bb8c875162"
+    },
+    {
+      "file": "images/07-bedroom1-detail.png",
+      "group": "Bedroom 1",
+      "role": "Sage accents, textured ivory linen and natural oak.",
+      "sha256": "29a37c2005ae3235cd71e61ce884b5db37841d2502a63a35c63b6e4d19190be6"
+    },
+    {
+      "file": "images/07-bedroom1-opposite.png",
+      "group": "Bedroom 1",
+      "role": "Sage accents, textured ivory linen and natural oak.",
+      "sha256": "a2f40717a44ad786b990e4b82ba83ad94ffee3a52322ab970702af0b60f47a3e"
+    },
+    {
+      "file": "images/08-bedroom2-wide.png",
+      "group": "Master bedroom",
+      "role": "Olive textiles, oatmeal upholstery, woven runner and oak.",
+      "sha256": "ad2493a3c55b8096adca365d750035e5fcd0531d9e86c6b75ca9771eaee4af39"
+    },
+    {
+      "file": "images/08-bedroom2-detail.png",
+      "group": "Master bedroom",
+      "role": "Olive textiles, oatmeal upholstery, woven runner and oak.",
+      "sha256": "0f7067abb0b45a896c915865d13656d39dbe2f5877eefd0988db66d1e96c6cb3"
+    },
+    {
+      "file": "images/08-bedroom2-opposite.png",
+      "group": "Master bedroom",
+      "role": "Olive textiles, oatmeal upholstery, woven runner and oak.",
+      "sha256": "a875f51b4d073f90577d6e08a59987bac93479b8d351bdf5cf4e5bdb7b057a94"
+    },
+    {
+      "file": "images/09-bedroom3-wide.png",
+      "group": "Bedroom 3",
+      "role": "Clay accent, quiet oak wardrobe and dark pulls.",
+      "sha256": "18c455443b9fa3d1b9104201f9f4865fa0cbb1e5ebf3b6cc72eb856972483e85"
+    },
+    {
+      "file": "images/09-bedroom3-detail.png",
+      "group": "Bedroom 3",
+      "role": "Clay accent, quiet oak wardrobe and dark pulls.",
+      "sha256": "ac67d0b33d719a1f59500fd4f73a94d2132cd767e0ac68d885a6bb6d64d8b2cb"
+    },
+    {
+      "file": "images/09-bedroom3-opposite.png",
+      "group": "Bedroom 3",
+      "role": "Clay accent, quiet oak wardrobe and dark pulls.",
+      "sha256": "4689834af09dff3e641f2be22458a3e3b54efc740fa4cb37906be3603d0c563f"
+    },
+    {
+      "file": "images/10-study-wide.png",
+      "group": "Study",
+      "role": "Beige sofa, sage cushion, woven rug and soft daylight.",
+      "sha256": "4e30449d6eb999b8283d41a1f94fecd065e57cf600d98df59ca2c85e9222dd57"
+    },
+    {
+      "file": "images/10-passage-wide.png",
+      "group": "Passage and gallery",
+      "role": "Ivory and stone continuity, oak and charcoal edges, greenery.",
+      "sha256": "a4dff0b3de666e71b512c3200b1ddb2b877e5d1f586aa61e7e00001e59f3a769"
+    },
+    {
+      "file": "images/17-front-gallery-wide.png",
+      "group": "Passage and gallery",
+      "role": "Ivory and stone continuity, oak and charcoal edges, greenery.",
+      "sha256": "0e28593299deb06e5b48e8defab838f4bdc54d726f70d1c1e6a6b8eaf3447549"
+    },
+    {
+      "file": "images/11-bathroom1-wide.png",
+      "group": "Bathrooms",
+      "role": "Stone, oak vanity, white ceramic, dark fittings and gentle mirror light.",
+      "sha256": "8134bbdfbdeaf7d625f9edc3569aa7c96a6be9cb3666c90d69d749ff2787619d"
+    },
+    {
+      "file": "images/12-bathroom2-wide.png",
+      "group": "Bathrooms",
+      "role": "Stone, oak vanity, white ceramic, dark fittings and gentle mirror light.",
+      "sha256": "58ae4c24a9a243dcf09c125044df24b40ad7f413659419813cd83eb1594a585a"
+    },
+    {
+      "file": "images/13-bathroom3-wide.png",
+      "group": "Bathrooms",
+      "role": "Stone, oak vanity, white ceramic, dark fittings and gentle mirror light.",
+      "sha256": "9aae5e0a1897224ecf5ec7f2522d15529a210cb8005a79dc009c879724a77d08"
+    },
+    {
+      "file": "images/01-entrance-wide.png",
+      "group": "Entrance and outdoor rooms",
+      "role": "Timber, woven seating, pale stone and tropical context; natural daylight variations.",
+      "sha256": "e8c1f7b0b25fff2937d4662e0a1e45f0bb9c94b73fc9cf87d9c2df317cff4223"
+    },
+    {
+      "file": "images/14-balcony-wide.png",
+      "group": "Entrance and outdoor rooms",
+      "role": "Timber, woven seating, pale stone and tropical context; natural daylight variations.",
+      "sha256": "8794cede165b214bfa3825db9c3fed3fd7999f79ab9c4d618e3405ee6ad573f7"
+    },
+    {
+      "file": "images/15-terrace-wide.png",
+      "group": "Entrance and outdoor rooms",
+      "role": "Timber, woven seating, pale stone and tropical context; natural daylight variations.",
+      "sha256": "1b6235b2876556aa33006abf8dfdc7f3400848bc9f61ad450957877495a768c8"
+    }
+  ]
+}

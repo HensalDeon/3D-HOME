@@ -8,28 +8,69 @@
       "reviewed_at": "2026-09-10T21:39:06.114661"
     },
     "02-living-wide.png": {
-      "status": "accepted",
-      "sha256": "dcde7ecb88ce4e5b3e878307e8f59772245c5e139fd661be2cf2ab173167c6e2",
-      "review": "Living room unified with fluted TV unit, floating ledge, Bedroom 1 entry, and compact rectangular 6-seater oak dining table in background.",
-      "reviewed_at": "2026-09-10T21:39:06.114661"
+      "status": "presentation-reviewed",
+      "sha256": "2a8e919e40d2cc0aea249513bf55ac9a68ec71a8634bc06ad75b901828f9f140",
+      "review": "Living-room camera: retained stair/landing/header silhouette, TV position, four-front cabinet, shelves and separate basin nook; muted kitchen-reference oak, ivory, stone and softened daylight.",
+      "reviewed_at": "2026-09-15",
+      "revision": "R14",
+      "method": "built-in-imagegen-reference-edit",
+      "geometry_source": ".source/style-revision-2026-09-15/geometry/02-living-wide.png",
+      "style_source": [
+        "06-kitchen-wide.png",
+        "06-kitchen-detail.png"
+      ],
+      "user_approval": "pending",
+      "render_review": "Assistant visual comparison; generated image is not certified pixel-exact geometry."
     },
     "03-stair-tv-wide.png": {
-      "status": "accepted",
-      "sha256": "80c57d3c172db9b65b6bee950137f81e917235c06ba80cb20051c584a6b0994b",
-      "review": "Upgraded architectural TV unit with vertical fluted oak panel, integrated warm LED lighting, and slim floating media shelf preserving under-stair wash route.",
-      "reviewed_at": "2026-09-10T21:39:06.114661"
+      "status": "presentation-reviewed",
+      "sha256": "232b11e6a667874ae1066074f45f99a55ba93f1af0f6f3522912e5e8f18264cb",
+      "review": "Closer stair/TV camera: retained TV, backing profile, low cabinet, shelving and basin arrangement; same material palette and apparent time of day as living view.",
+      "reviewed_at": "2026-09-15",
+      "revision": "R14",
+      "method": "built-in-imagegen-reference-edit",
+      "geometry_source": ".source/style-revision-2026-09-15/geometry/03-stair-tv-wide.png",
+      "style_source": [
+        "06-kitchen-wide.png",
+        "06-kitchen-detail.png"
+      ],
+      "user_approval": "pending",
+      "render_review": "Assistant visual comparison; generated image is not certified pixel-exact geometry."
     },
     "04-storage-wide.png": {
-      "status": "accepted",
-      "sha256": "373df098e4c1e368c541bf0f4ef2107a1d7c51107c4acf69ee0d2d7749cf19a7",
-      "review": "Under-stair storage doors with solid wall partition above intact and matching fluted TV unit edge.",
-      "reviewed_at": "2026-09-10T21:39:06.114661"
+      "status": "presentation-reviewed",
+      "sha256": "b370a5dd658aba5315b9f125cbe426f07d3473df6832317ae03fed2f5587e987",
+      "review": "Tight storage camera: retained four cabinet fronts, open shelves, TV/backing and partial basin view; quiet greige fronts, fine oak grain and pale stone.",
+      "reviewed_at": "2026-09-15",
+      "revision": "R14",
+      "method": "built-in-imagegen-reference-edit",
+      "geometry_source": ".source/style-revision-2026-09-15/geometry/04-storage-wide.png",
+      "style_source": [
+        "06-kitchen-wide.png",
+        "06-kitchen-detail.png"
+      ],
+      "user_approval": "pending",
+      "render_review": "Assistant visual comparison; generated image is not certified pixel-exact geometry."
+    },
+    "04-storage-wide-imagegen.png": {
+      "status": "superseded-presentation",
+      "sha256": "561af7321a25de2a956685c00b1f3fbe8651a3a7395e31014cdca14cd44e1111",
+      "review": "Reference-guided under-stair presentation matching the user-supplied fluted-oak house theme while retaining the approved setup as the geometry reference.",
+      "reviewed_at": "2026-09-15",
+      "revision": "R14",
+      "method": "built-in-image-generation-style-transfer",
+      "geometry_source": "04-storage-wide.png",
+      "usage": "Historical candidate; not used by the current review or house style reference.",
+      "superseded_by": "04-storage-wide.png"
     },
     "05-wash-wide.png": {
-      "status": "accepted",
-      "sha256": "50aa8f3bb9508974b3e52b6e282a49103f14c090497eb28fdc528aad3b14072c",
-      "review": "West-facing semi-recessed basin under upper flight, mirror partition, low cabinet stoop access, R5 clearance profile.",
-      "reviewed_at": "2026-09-10T21:39:06.114661"
+      "status": "model-render-reviewed",
+      "sha256": "88a517bb103143b23024d04bbd0dafebfce898c480a5c24712d01c647acff822",
+      "review": "Unchanged R12 west-wall basin facing east, floating vanity, vessel, black mixer and backlit mirror. No door added to basin access.",
+      "reviewed_at": "2026-09-14",
+      "revision": "R13",
+      "method": "direct-threejs-render",
+      "user_approval": "pending"
     },
     "06-kitchen-detail.png": {
       "status": "accepted",
@@ -156,7 +197,17 @@
       "sha256": "0e28593299deb06e5b48e8defab838f4bdc54d726f70d1c1e6a6b8eaf3447549",
       "review": "First-floor front gallery transitional space looking toward sliding door, front balcony with outdoor seating, and curved facade portal.",
       "reviewed_at": "2026-09-10T21:48:27.693999"
+    },
+    "R13-living-room-eye.png": {
+      "status": "model-render-reviewed",
+      "sha256": "6ca5da87ff0bffaf2a66f9ef02781db63f1f8138510580c889dbc3e0f86e2bdc",
+      "review": "Primary comparison: 30 mm backing capped +1.40 m, raking down to +0.729 m; 43-inch TV; 1950 x 350 x 450 mm cabinet; small stepped boxes; separate basin, vanity and mirror.",
+      "reviewed_at": "2026-09-14",
+      "revision": "R13",
+      "method": "direct-threejs-render",
+      "user_approval": "pending"
     }
   },
-  "approval": "Assistant visual review against full source cameras; user approval is separate."
+  "approval": "Assistant visual review only; approval of the source layout is separate from user approval of the generated finishes.",
+  "style_reference": "STYLE_REFERENCE.md"
 }

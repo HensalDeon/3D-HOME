@@ -1,0 +1,39 @@
+{
+  "results": [
+    {
+      "view": "Living-room view",
+      "width": 1536,
+      "height": 1024,
+      "alt": "View from the living room, showing muted oak TV joinery beneath the stone staircase, the retained header and separate basin nook.",
+      "download": "02-living-wide.png"
+    },
+    {
+      "view": "Joinery close-up",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Closer view of the stair, flat oak TV backing, four-front greige cabinet, open shelves and separate basin nook.",
+      "download": "03-stair-tv-wide.png"
+    },
+    {
+      "view": "Storage detail",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Detail of the low four-front greige cabinet, fine-grained oak TV backing and open shelves, with part of the basin nook at right.",
+      "download": "04-storage-wide.png"
+    },
+    {
+      "page": "STYLE_REFERENCE.html",
+      "images": 30,
+      "broken": 0
+    },
+    {
+      "page": "STYLE_REFERENCE.html",
+      "mobileHorizontalOverflow": false
+    },
+    {
+      "page": "R14-review.html",
+      "mobileHorizontalOverflow": false
+    }
+  ],
+  "errors": []
+}

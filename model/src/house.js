@@ -1,11 +1,15 @@
+import {addTvJoineryPreview} from './tv-joinery-preview.js';
 import * as THREE from 'three';
 import {facadeBand} from './facade.js';
 import {revision} from './revision.js';
-import {plan,LEVELS,rooms,openingsFor,wallPieces,stairTreads,STAIR_STRUCTURE,STAIR_BEAM_ZONES,stairFlights,stairLandingSlabs,FRAME,ENVELOPE} from './geometry.js';
+import {plan,LEVELS,rooms,openingsFor,wallPieces,stairTreads,STAIR_STRUCTURE,stairBeamZones,stairFlights,stairLandingSlabs,FRAME,ENVELOPE} from './geometry.js';
 export function createHouse(){
  const root=new THREE.Group(),levels={},pickables=[],labels=[],wallMaterials=[],furnitureGroups=[],facades=[],dimensions=new THREE.Group();root.add(dimensions);const siteDimensions=new THREE.Group(),roofDimensions=new THREE.Group();dimensions.add(siteDimensions,roofDimensions);
  const mat=(color,extra={})=>new THREE.MeshStandardMaterial({color,roughness:.8,...extra});
- const materials={wall:mat('#eeeee5'),stone:mat('#d7d5c8'),concrete:mat('#b7bab2',{roughness:.95}),dark:mat('#37413e'),wood:mat('#956b49'),oak:mat('#b69873'),fabric:mat('#d3d4bd'),linen:mat('#f8f4e7'),green:mat('#738e76'),tile:mat('#dce8e2'),glass:mat('#b6d0cf',{transparent:true,opacity:.36,roughness:.17,metalness:.1,depthWrite:false,side:THREE.DoubleSide}),obscured:mat('#bad0cb',{transparent:true,opacity:.75,roughness:.6}),metal:mat('#717b72',{metalness:.55,roughness:.35}),soil:mat('#a3ad8d'),grass:mat('#b5c1a0'),pave:mat('#d9dbc9'),water:mat('#809f98'),white:mat('#f5f3e8'),mirror:mat('#dfe9ea',{metalness:.3,roughness:.15})};
+ const materials={wall:mat('#eeeee5'),stone:mat('#d7d5c8'),concrete:mat('#b7bab2',{roughness:.95}),dark:mat('#37413e'),wood:mat('#956b49'),oak:mat('#b69873'),fabric:mat('#d3d4bd'),linen:mat('#f8f4e7'),beige:mat('#ddd0ba'),green:mat('#738e76'),tile:mat('#dce8e2'),glass:mat('#b6d0cf',{transparent:true,opacity:.36,roughness:.17,metalness:.1,depthWrite:false,side:THREE.DoubleSide}),obscured:mat('#bad0cb',{transparent:true,opacity:.75,roughness:.6}),metal:mat('#717b72',{metalness:.55,roughness:.35}),soil:mat('#a3ad8d'),grass:mat('#b5c1a0'),pave:mat('#d9dbc9'),water:mat('#809f98'),white:mat('#f5f3e8'),mirror:mat('#dfe9ea',{metalness:.3,roughness:.15}),
+  // R12 reference palette: medium-tone oak for the panel/shelves/nook, warm beige fronts, near
+  // black for the screen, balustrade and plumbing, and a warm emissive for the concealed strips.
+  noir:mat('#1e2220',{roughness:.55}),glow:mat('#f7e3bd',{emissive:'#f0c07a',emissiveIntensity:.95,roughness:.6})};
  const V=(x,h,y)=>new THREE.Vector3(x-3,h,4.85-y);
  function box(g,x0,y0,x1,y1,bottom,top,m){if(x1-x0<.00001||y1-y0<.00001||top-bottom<.00001)return;const o=new THREE.Mesh(new THREE.BoxGeometry(x1-x0,top-bottom,y1-y0),m);o.position.copy(V((x0+x1)/2,(bottom+top)/2,(y0+y1)/2));o.castShadow=true;o.receiveShadow=true;g.add(o);return o;}
  // An inclined slab whose top face lies on the a-b segment given as (plan y, height above z).
@@ -17,6 +21,18 @@ export function createHouse(){
   // so force the offset normal upward before seating the top face on the a-b line.
   const n=new THREE.Vector3(0,1,0).applyQuaternion(mesh.quaternion);if(n.y<0)n.negate();
   mesh.position.copy(A.clone().add(B).multiplyScalar(.5)).addScaledVector(n,-thickness/2);
+  mesh.castShadow=true;mesh.receiveShadow=true;g.add(mesh);return mesh;
+ }
+ // A plate of constant thickness in x, whose face profile is an arbitrary polygon given in
+ // (plan y, height above the level datum). R12 needs it for the raking backing panel: the
+ // diagonal under the flight has to be one straight edge, not a stack of steps.
+ function profilePrism(g,x0,thickness,pts,z,m){
+  const shape=new THREE.Shape();
+  pts.forEach(([y,h],i)=>i?shape.lineTo(y-4.85,z+h):shape.moveTo(y-4.85,z+h));
+  shape.closePath();
+  const mesh=new THREE.Mesh(new THREE.ExtrudeGeometry(shape,{depth:thickness,bevelEnabled:false}),m);
+  // Local x maps to -world z (plan y), local y to height, local z to world x (plan x).
+  mesh.rotation.y=Math.PI/2;mesh.position.set(x0-3,0,0);
   mesh.castShadow=true;mesh.receiveShadow=true;g.add(mesh);return mesh;
  }
  function rod(g,a,b,r,m){const av=V(a[0],a[2],a[1]),bv=V(b[0],b[2],b[1]),d=bv.clone().sub(av);const mesh=new THREE.Mesh(new THREE.CylinderGeometry(r,r,d.length(),7),m);mesh.position.copy(av.add(bv).multiplyScalar(.5));mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());mesh.castShadow=true;g.add(mesh);return mesh;}
@@ -74,44 +90,31 @@ export function createHouse(){
    box(f,.15,1.5,.8,2.2,z,z+1.8,materials.metal);box(f,.77,1.54,.8,1.57,z+.9,z+1.38,materials.dark);
    box(f,3.15,8.9,3.75,9.5,z,z+.86,materials.white);const drum=new THREE.Mesh(new THREE.CylinderGeometry(.20,.20,.02,24),materials.dark);drum.rotation.z=Math.PI/2;drum.position.copy(V(3.76,z+.43,9.2));f.add(drum);
    box(f,5.12,2,5.85,3.8,z+.12,z+.47,materials.fabric);box(f,5.69,2,5.85,3.8,z+.4,z+.95,materials.fabric);for(let y=2.05;y<3.7;y+=.58)box(f,5.12,y,5.69,y+.52,z+.47,z+.57,materials.linen);for(const y of [2,3.65])box(f,5.12,y,5.85,y+.15,z+.4,z+.72,materials.fabric);
-   const joinery=new THREE.Group();joinery.name='R5 rectangular cabinet under LOWER flight';f.add(joinery);
-   for(const cab of revision.storage){
-    const b=cab.box,mid=(b[1]+b[3])/2;
-    box(joinery,...b,z+.05,z+cab.height,materials.oak);
-    // Two narrow hinged fronts give direct access to 550 mm deep shelves; R5 reaches them from the wash side.
-    line(joinery,[[b[2]+.002,mid,z+.06],[b[2]+.002,mid,z+cab.height-.02]],'#8d704e');
-    for(const yy of [mid-.035,mid+.035])rod(joinery,[b[2]+.015,yy,z+.68],[b[2]+.015,yy,z+.84],.007,materials.dark);
-   }
-   const tv=new THREE.Group();tv.name='R5 built-in stair TV panel';f.add(tv);
-   // Slim vertical joinery backing occupies the existing stair/living boundary only.
-   box(tv,...revision.tv.panel,z,z+revision.tv.panelHeight,materials.oak);
-   box(tv,...revision.tv.box,z+revision.tv.screenBottom,z+revision.tv.screenTop,materials.dark);
-   // R5: a fixed oak panel closes the former 600 mm cabinet opening on the same line as the TV backing.
-   const cp=revision.closingPanel;box(tv,...cp.box,z,z+cp.height,materials.oak);
-   line(tv,[[cp.box[2]+.002,cp.box[1],z+.03],[cp.box[2]+.002,cp.box[1],z+cp.height-.03]],'#8d704e');
-   const store=new THREE.Group();store.name='R5 under-landing store';f.add(store);
-   // Stepped carcass top follows the landing and riser soffits with about 50 mm clearance; the solid volume reads as a cupboard.
-   for(const zone of revision.store.zones)box(store,...zone.box,z+.02,z+zone.top,materials.oak);
-   const d=revision.store.door,dm=(d.box[1]+d.box[3])/2;
-   // Bifold pair shown closed, flush with the passage face of the retained partition; the wall above the 1.40 m head remains.
-   for(const [y0,y1] of [[d.box[1],dm],[dm,d.box[3]]])box(store,2.11,y0+.004,2.15,y1-.004,z+.02,z+d.height-.02,materials.wood);
-   for(const yy of [d.box[1]+d.leafWidth/2,dm+d.leafWidth/2])line(store,[[2.152,yy,z+.05],[2.152,yy,z+d.height-.05]],'#6d4d33');
-   for(const yy of [dm-.05,dm+.05])rod(store,[2.165,yy,z+.75],[2.165,yy,z+.95],.007,materials.dark);
-   const wash=new THREE.Group();wash.name='R5 stepped vanity under UPPER flight; user faces WEST';f.add(wash);
-   const w=revision.wash,b=w.box,cx=(b[0]+b[2])/2,back=b[3],pt=revision.partition;
-   // Mirror partition 1.40 m from the bedroom wall: the visual back of the wash and the store's east face.
-   box(wash,...pt.box,z+.02,z+pt.height,materials.oak);
-   for(let x=pt.box[0]+.06;x<pt.box[2]-.01;x+=.06)box(wash,x-.004,pt.box[1]-.006,x+.004,pt.box[1],z+.04,z+pt.height-.02,materials.wood);
-   box(wash,pt.mirror.x[0],pt.box[1]-.016,pt.mirror.x[1],pt.box[1]-.007,z+pt.mirror.z[0],z+pt.mirror.z[1],materials.mirror);
-   // 350 mm counter with a drawer below and a semi-recessed bowl; the user stands to the east and faces the mirror.
-   box(wash,b[0],b[1],b[2],b[3],z+w.counter.drawerBottom,z+w.height-.04,materials.oak);
-   box(wash,b[0],b[1]-.01,b[2],b[3],z+w.height-.04,z+w.height,materials.stone);
-   box(wash,b[0]+.05,b[1]+.02,b[2]-.05,b[3]-.03,z+w.height-.06,z+w.height+.06,materials.white);
-   box(wash,b[0]+.09,b[1]+.06,b[2]-.09,b[3]-.07,z+w.height+.061,z+w.height+.069,materials.water);
-   line(wash,[[b[0],b[1]-.002,z+w.height-.2],[b[2],b[1]-.002,z+w.height-.2]],'#8d704e');
-   rod(wash,[cx-.1,b[1]-.012,z+.66],[cx+.1,b[1]-.012,z+.66],.007,materials.dark);
-   rod(wash,[cx,back-.03,z+w.height],[cx,back-.03,z+.98],.013,materials.metal);
-   rod(wash,[cx,back-.03,z+.98],[cx,back-.17,z+.98],.013,materials.metal);
+   // Local visual study only: published R13 plan/layout data are intentionally not propagated.
+   addTvJoineryPreview({parent:f,stairs:g.getObjectByName('stairs'),z,box,profilePrism,cylinder,materials,V});
+   // ---- R12 washbasin nook: the approved geometry, given the reference interior treatment ----
+   const wash=new THREE.Group();wash.name='R12 washbasin nook against the bedroom (west) wall; basin faces east';f.add(wash);
+   const w=revision.wash,fin=w.finish,b=w.box,cx=(b[0]+b[2])/2;
+   // Warm oak panelled backdrop on the bedroom wall, floor to just under the landing soffit.
+   box(wash,fin.panelling.box[0],fin.panelling.box[1],fin.panelling.box[2],fin.panelling.box[3],z,z+fin.panelling.top,materials.oak);
+   // Warm integrated backlight, 40 mm proud of the vertical mirror on all four sides.
+   box(wash,fin.mirrorHalo.box[0],fin.mirrorHalo.box[1],fin.mirrorHalo.box[2],fin.mirrorHalo.box[3],z+fin.mirrorHalo.z[0],z+fin.mirrorHalo.z[1],materials.glow);
+   box(wash,fin.mirror.box[0],fin.mirror.box[1],fin.mirror.box[2],fin.mirror.box[3],z+fin.mirror.z[0],z+fin.mirror.z[1],materials.mirror);
+   // Compact floating oak vanity, 0.50 m clear under it, with a light stone counter.
+   box(wash,b[0],b[1],b[2],b[3],z+fin.vanity.carcass[0],z+fin.vanity.carcass[1],materials.oak);
+   box(wash,b[0],b[1]-.012,b[2],b[3],z+fin.vanity.counter[0],z+fin.vanity.counter[1],materials.stone);
+   line(wash,[[b[0],b[1]-.014,z+.66],[b[2],b[1]-.014,z+.66]],'#8d704e');
+   // White rectangular vessel basin standing on the counter.
+   box(wash,fin.bowl.box[0],fin.bowl.box[1],fin.bowl.box[2],fin.bowl.box[3],z+fin.bowl.z[0],z+fin.bowl.z[1],materials.white);
+   box(wash,fin.bowl.box[0]+.035,fin.bowl.box[1]+.035,fin.bowl.box[2]-.035,fin.bowl.box[3]-.035,z+fin.bowl.z[1]-.035,z+fin.bowl.z[1]-.027,materials.water);
+   // Simple black deck mixer behind the bowl.
+   rod(wash,[fin.tap.riser[0],fin.tap.riser[1],z+fin.tap.z[0]],[fin.tap.riser[0],fin.tap.riser[1],z+fin.tap.z[1]],.012,materials.noir);
+   rod(wash,[fin.tap.riser[0],fin.tap.riser[1],z+fin.tap.z[1]],[fin.tap.riser[0],fin.tap.spoutTo,z+fin.tap.z[1]],.012,materials.noir);
+   // Black towel ring on the panelling, and one subtle warm downlight in the landing soffit.
+   const ring=new THREE.Mesh(new THREE.TorusGeometry(fin.towelRing.radius,.008,8,28),materials.noir);
+   ring.position.copy(V(fin.towelRing.at[0],z+fin.towelRing.z,fin.towelRing.at[1]-.03));ring.rotation.y=Math.PI/2;wash.add(ring);
+   cylinder(wash,fin.downlight.at[0],fin.downlight.at[1],z+fin.downlight.z,z+fin.downlight.z+.012,fin.downlight.radius,materials.glow);
+   box(wash,cx-.045,b[1]+.05,cx+.02,b[1]+.11,z+fin.vanity.counter[1],z+fin.vanity.counter[1]+.14,materials.linen);
    cylinder(f,4.88,4.65,z+.7,z+.77,.45,materials.oak);cylinder(f,4.88,4.65,z,z+.7,.08,materials.dark);
    box(f,5.35,1.35,5.85,1.72,z+.62,z+.73,materials.oak);box(f,5.45,1.37,5.75,1.43,z+.73,z+1.24,materials.wood);
    
@@ -139,8 +142,10 @@ export function createHouse(){
   if(level==='ground')box(g,...ENVELOPE.ground,0,z,materials.stone);
   else{ // Leave a genuine opening over both flights and the intermediate landing. R8: a slab
    // spans the envelope of the storey below, so the first-floor slab covers the 220 mm walls.
+   // R10: the first-floor slab now runs to y = 4.2 under the arrival landing R9 extended to that
+   // line; the roof slab keeps the unchanged first-to-roof trimmer at y = 3.45.
    const [wx,,,dy]=ENVELOPE[level==='first'?'ground':'first'];
-   for(const b of [[wx,0,6,3.2],[wx,3.2,.15,6.1],[2.05,3.2,6,6.1],[.15,6.1,6,dy],[wx,6.1,.15,dy],[1.05,3.2,2.05,3.45]])box(g,...b,z-.15,z,materials.stone);
+   for(const b of [[wx,0,6,3.2],[wx,3.2,.15,6.1],[2.05,3.2,6,6.1],[.15,6.1,6,dy],[wx,6.1,.15,dy],[1.05,3.2,2.05,level==='first'?4.2:3.45]])box(g,...b,z-.15,z,materials.stone);
   }
   const pieces=wallPieces(level);
   for(const p of pieces)box(walls,...p.box,z+p.bottom,z+p.top,wm);
@@ -150,7 +155,7 @@ export function createHouse(){
   for(const room of rooms.filter(r=>r.level===level)){
    const m=mat(room.id.includes('bath')?'#dce9e2':room.id.includes('bed')||room.id.includes('master')||room.id.includes('child')?'#e4d9c8':room.id.includes('kitchen')||room.id.includes('study')?'#e4deca':'#e8e9de');
    // Stair zones must preserve the stair opening; only use an invisible picking plane there.
-   const isStair=room.id.includes('stair')||room.id==='r-head'||['g-storage','g-wash','g-store'].includes(room.id);
+   const isStair=room.id.includes('stair')||room.id==='r-head'||room.id==='g-wash'||room.id==='g-media';
    if(isStair){m.transparent=true;m.opacity=0;m.depthWrite=false;}
    for(const b of room.regions??[room.box]){const tile=box(g,...b,z+.002,z+.009,m);tile.userData.room=room;pickables.push(tile);}
    const[x0,y0,x1,y1]=room.box;label(room.name,room.dimensions,(x0+x1)/2,(y0+y1)/2,z+.18,level,'room',room);
@@ -168,48 +173,91 @@ export function createHouse(){
     const dy=f.b[0]-f.a[0],dh=f.b[1]-f.a[1],[ra,rb]=f.runIn.map(v=>v/Math.abs(dy));
     slopedSlab(structure,f.x[0],f.x[1],[f.a[0]-dy*ra,z+f.a[1]-dh*ra-FIN],[f.b[0]+dy*rb,z+f.b[1]+dh*rb-FIN],STAIR_STRUCTURE.waistVertical,materials.concrete);
    }
-   // Landing slabs at the turns; the starter landing is solid onto the plinth fill.
+   // Landing slabs at the turns; the starter landing is solid onto the plinth fill. The last riser
+   // of the lower flight is finished against the landing above it, so the landing concrete is set
+   // back by the finish thickness behind that plate: two coplanar outer faces would speckle.
+   const riserLandingId=level==='ground'?'extension':'intermediate';
    for(const s of stairLandingSlabs(level)){
-    box(structure,...s.box,z+(s.onGround?0:s.top-STAIR_STRUCTURE.landingZone),z+s.top-FIN,materials.concrete);
+    const lo=z+(s.onGround?0:s.top-STAIR_STRUCTURE.landingZone),hi=z+s.top-FIN;
+    if(s.id===riserLandingId){
+     box(structure,s.box[0],s.box[1]+FIN,Math.min(s.box[2],1.05),s.box[3],lo,hi,materials.concrete);
+     if(s.box[2]>1.05)box(structure,1.05,s.box[1],s.box[2],s.box[3],lo,hi,materials.concrete);
+    }else box(structure,...s.box,lo,hi,materials.concrete);
     box(stairGroup,...s.box,z+s.top-FIN,z+s.top,materials.stone);
    }
    // Support zones shown as massing only, inside walls and slab edges that already exist.
+   // R9: the intermediate landing rises from riser 9 to riser 12 on the ground-to-first stair
+   // only; the first-to-roof stair keeps its own landing at riser 9, unaffected.
+   const landingRiser=level==='ground'?12:9,beamZones=stairBeamZones(level);
    const beams=new THREE.Group();structure.add(beams);beams.name='Landing beam and trimmer zones (indicative)';
-   for(const bz of STAIR_BEAM_ZONES){
+   for(const bz of beamZones){
     const b=[bz.box[0]+.002,bz.box[1]+.002,bz.box[2]-.002,bz.box[3]-.002];
-    if(bz.id==='landing-beam')box(beams,...b,z+9*rise-STAIR_STRUCTURE.landingZone-.15,z+9*rise-FIN,materials.concrete);
+    if(bz.id==='landing-beam')box(beams,...b,z+landingRiser*rise-STAIR_STRUCTURE.landingZone-.15,z+landingRiser*rise-FIN,materials.concrete);
     else box(beams,...b,z+2.85-.15,z+2.85,materials.concrete);
    }
-   label('Landing beam zone',STAIR_BEAM_ZONES[0].note,1.6,6.15,z+1.75,level,'dimension');
+   label('Landing beam zone',beamZones[0].note,1.6,6.15,z+1.75,level,'dimension');
    label('RCC waist slab',`${(STAIR_STRUCTURE.waist*1000).toFixed(0)} mm indicative - ${STAIR_STRUCTURE.status}`,1.6,4.35,z+.95,level,'dimension');
-   // Solid concrete step over the waist, then the stone tread; landings are cast above.
-   for(const [i,step] of steps.entries()){
+   // Which face of a tread carries its riser: the side the step below it comes from. The two
+   // flights are read off the flight lines; the S-going starter treads belong to no flight and
+   // step west, so their risers face east.
+   const flights=stairFlights(level);
+   const riserFace=step=>{
+    const f=flights.find(f=>step.box[0]>=f.x[0]-1e-6&&step.box[2]<=f.x[1]+1e-6
+     &&step.box[1]>=Math.min(f.a[0],f.b[0])-1e-6&&step.box[3]<=Math.max(f.a[0],f.b[0])+1e-6);
+    return f?(f.b[0]>f.a[0]?1:3):2;
+   };
+   // Solid concrete step over the waist, then the stone tread; landings are cast above. The 20 mm
+   // stone finish wraps from the tread down on to the riser below it, so the concrete step is set
+   // back by that thickness on the riser face - exactly as it already sits one finish below the
+   // tread. Without the set-back the plate and the step shared an outer face, and the two coplanar
+   // surfaces speckled across every riser in the interior views.
+   for(const step of steps){
     if(step.landing)continue;
     const b=step.box,top=z+step.height;
     // Each solid step is buried one finish thickness into the waist below it, so the flight
     // reads as one casting with no gap between the steps and the slab.
-    box(structure,...b,step.arrival?top-FIN:top-rise-FIN,top-FIN,materials.concrete);
+    if(!step.arrival){
+     const k=riserFace(step),cb=[...b];cb[k]+=k===1?FIN:-FIN;
+     box(structure,...cb,top-rise-FIN,top-FIN,materials.concrete);
+     // The riser plate fills that recess, from the step below up to the underside of the tread
+     // finish; the tread's own nosing face carries the last 20 mm.
+     const pb=[...b];
+     if(k===1)pb[3]=b[1]+FIN;else if(k===3)pb[1]=b[3]-FIN;else pb[0]=b[2]-FIN;
+     box(stairGroup,...pb,top-rise-FIN,top-FIN,materials.stone);
+    }
     box(stairGroup,...b,top-FIN,top,materials.stone);
     line(stairGroup,[[b[0],b[1],top+.002],[b[2],b[1],top+.002]],'#a8ab9b');
-    if(i<8){
-     if(step.direction==='S'||(level==='ground'&&i===1))box(stairGroup,b[2]-.02,b[1],b[2],b[3],z+i*rise,top,materials.stone);
-     else box(stairGroup,b[0],b[1],b[2],b[1]+.02,z+i*rise,top,materials.stone);
-    }
    }
-   for(let i=0;i<7;i++)box(stairGroup,1.15,5.18-i*.25,2.05,5.2-i*.25,z+(9+i)*rise,z+(10+i)*rise,materials.stone);
-   const lowerEnd=level==='ground'?4.7:5.2;
-   box(stairGroup,.15,lowerEnd,1.05,lowerEnd+.02,z+8*rise,z+9*rise,materials.stone);
-   box(stairGroup,1.15,3.43,2.05,3.45,z+16*rise,z+17*rise,materials.stone);
-   const lowerStart=level==='ground'?3.2:3.2,lowerFirst=level==='ground'?3:1;
-   rod(stairGroup,[1.07,lowerStart,z+lowerFirst*rise+.9],[1.07,lowerEnd,z+9*rise+.9],.019,materials.dark);
+   // R9: the upper flight has 4 risers on the ground-to-first stair (landingRiser 12 -> 16) and
+   // keeps 7 on the first-to-roof stair (landingRiser 9 -> 16); same tread y-positions either way.
+   const upperCount=level==='ground'?4:7;
+   // The two risers that land on something other than a tread: the last of the lower flight, which
+   // finishes against the landing recessed for it above, and the top riser on to the arrival floor.
+   const lowerEnd=level==='ground'?4.7:5.2,lastLowerRiser=level==='ground'?11:8;
+   box(stairGroup,.15,lowerEnd,1.05,lowerEnd+FIN,z+lastLowerRiser*rise-FIN,z+(lastLowerRiser+1)*rise-FIN,materials.stone);
+   const trimmerY=level==='ground'?4.2:3.45;
+   box(stairGroup,1.15,trimmerY-FIN,2.05,trimmerY,z+16*rise-FIN,z+17*rise-FIN,materials.stone);
+   const lowerStart=3.2,lowerFirst=level==='ground'?6:1;
+   rod(stairGroup,[1.07,lowerStart,z+lowerFirst*rise+.9],[1.07,lowerEnd,z+landingRiser*rise+.9],.019,materials.dark);
    for(let i=0;i<(level==='ground'?6:8);i++)rod(stairGroup,[1.07,3.3+i*.25,z+(lowerFirst+i)*rise],[1.07,3.3+i*.25,z+(lowerFirst+i)*rise+.9],.012,materials.dark);
    if(level==='ground'){
-    rod(stairGroup,[1.30,3.21,z+rise+.9],[1.05,3.21,z+2*rise+.9],.019,materials.dark);
-    rail(stairGroup,1.07,4.7,1.07,5.2,z+9*rise,.9);
+    rod(stairGroup,[1.30,3.21,z+4*rise+.9],[1.05,3.21,z+5*rise+.9],.019,materials.dark);
+    rail(stairGroup,1.07,4.7,1.07,5.2,z+landingRiser*rise,.9);
    }
-   rod(stairGroup,[1.13,5.2,z+10*rise+.9],[1.13,3.45,z+3.9],.019,materials.dark);
-   for(let i=0;i<7;i++)rod(stairGroup,[1.13,5.07-i*.25,z+(10+i)*rise],[1.13,5.07-i*.25,z+(10+i)*rise+.9],.012,materials.dark);
-   rail(stairGroup,1.06,5.2,1.14,5.2,z+9*rise,.9);
+   rod(stairGroup,[1.13,5.2,z+(landingRiser+1)*rise+.9],[1.13,trimmerY,z+3.9],.019,materials.dark);
+   for(let i=0;i<upperCount;i++)rod(stairGroup,[1.13,5.07-i*.25,z+(landingRiser+1+i)*rise],[1.13,5.07-i*.25,z+(landingRiser+1+i)*rise+.9],.012,materials.dark);
+   rail(stairGroup,1.06,5.2,1.14,5.2,z+landingRiser*rise,.9);
+   // The east edge of the upper flight is only an open edge if the stair-side partition is taken
+   // out full height. Under the coordinated R10 opening it is not: the wall stands from the +2.10 m
+   // head to the 2.85 m slab soffit, and the flight's tread tops run +2.29 to +2.82 m, so the wall
+   // encloses the walking zone and there is nothing to guard. The balustrade is therefore drawn
+   // only if the opening is ever raised to full height - which is a separate verification, not a
+   // data edit - and revision.tv.balustrade keeps the coordinates it would be built to.
+   if(level==='ground'&&revision.tv.wallOpening.height>=2.8){
+    const b=revision.tv.balustrade,bx=b.x-.02;
+    rod(stairGroup,[bx,b.y[1],z+(landingRiser+1)*rise+b.height],[bx,b.y[0],z+3.9],.019,materials.noir);
+    for(let i=0;i<upperCount;i++)rod(stairGroup,[bx,5.07-i*.25,z+(landingRiser+1+i)*rise],[bx,5.07-i*.25,z+(landingRiser+1+i)*rise+b.height],.012,materials.noir);
+   }
    // Front and rear corner piers came directly from the wall commands.
    furniture(g,level,z);
    if(level==='first'){rail(g,3.15,0,5.85,0,z,1.1,true);rail(g,5.93,0,5.93,1.2,z,1.1,true);rail(g,3.15,9.63,5.85,9.63,z,1.1);}
@@ -270,7 +318,8 @@ export function createHouse(){
    if(o)o.userData.member=c;
   }
   const beams=new THREE.Group();structuralFrame.add(beams);beams.name='Beam lines and floor-slab trimmers (indicative depth)';
-  for(const b of [...FRAME.beams,...FRAME.trimmers])for(const z of [LEVELS.first,LEVELS.roof]){
+  const zFor={first:[LEVELS.first],roof:[LEVELS.roof]};
+  for(const b of [...FRAME.beams,...FRAME.trimmers])for(const z of b.level?zFor[b.level]:[LEVELS.first,LEVELS.roof]){
    const o=box(beams,...b.box,z-FRAME.slab-FRAME.indicativeBeam,z-FRAME.slab,materials.concrete);
    if(o)o.userData.member=b;
   }

@@ -89,11 +89,12 @@ def sheet(c):
                     'stay concealed. On a 100 mm wall they are drawn 230 mm wide, carried across the wall to one declared side: '
                     'B east into the living side, 3 south into the kitchen, 4 north into Bedroom 1, 5 north into the rear work '
                     'area. Grids 3 and 4 matter - the other way would leave 2.20 m over the stair starter landing and clash '
-                    'with the under-stair store. 230 mm is indicative only.'),
+                    'with the R9 basin against the bedroom wall. 230 mm is indicative only.'),
         ('BEAMS AND SLABS', '%d beam lines. The longest is %s at %.2f m in the east external wall; the shortest runs %.2f m. '
                             'Floor slabs are the 150 mm two-way slabs already assumed, spanning between the grid beams, with the '
-                            'stairwell trimmed as shown. The same grid serves +3.45 and +6.45 m; A3 and A4 continue to the '
-                            'stair-cover at +9.00 m. Grid 4 A4-B4 is the R6 stair landing beam. The ground floor is on grade.'
+                            'stairwell trimmed as shown - two amber zones now, since R9 moved the ground-to-first trimmer to '
+                            'y = 4.2 while the first-to-roof trimmer stays at y = 3.2-3.45. A3 and A4 continue to the '
+                            'stair-cover at +9.00 m. Grid 4 A4-B4 is the stair landing beam, now carrying riser 12. R10 adds no member: it removes the 100 mm stair-side partition below +2.10 m between y = 3.20 and 5.20 for the built-in TV unit, retains a plastered header above it off the stair-side trimmer zone, and closes the first-floor slab over the arrival landing R9 extended to y = 4.20. R12 changes the joinery inside that opening and nothing else: the headed condition drawn here still governs, and a full-height removal with no header is not assumed and must not be inferred. The ground floor is on grade.'
          % (len(F['beams']), spans[0]['grid'] + ': ' + spans[0]['from'] + '-' + spans[0]['to'], spans[0]['span'], spans[-1]['span'])),
         ('COORDINATION TO RESOLVE', F['coordination'][1] + ' ' + F['coordination'][3]),
         ('STATUS', F['note']),

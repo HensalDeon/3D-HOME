@@ -21,6 +21,6 @@ Supplementary R11–R13 study sheets and all revision changelogs have been remov
 
 ## Design scope
 
-The dimensioned drawings govern the architectural review; rendered images illustrate appearance. The retained header above the living/stair opening runs from +2.10 m to the +2.85 m slab soffit. The R14 inspection view outlines this header to reveal the furniture fit; it does not specify a full-height wall removal.
+The dimensioned drawings govern the architectural review; rendered images illustrate appearance. The retained header above the living/stair opening runs from +2.10 m to the +2.85 m slab soffit. The current R14 interior images retain this header and do not specify a full-height wall removal.
 
 The package is a design-review set, not a signed construction or permit set. Structural detailing, site set-out, waterproofing and services remain subject to professional coordination.

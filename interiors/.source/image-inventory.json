@@ -29,7 +29,7 @@
       1536,
       1024
     ],
-    "sha256": "f4e6a0948cbf045bb02c368ad680dcebd6f873570bd9746c008db06d7857e1fb"
+    "sha256": "2a8e919e40d2cc0aea249513bf55ac9a68ec71a8634bc06ad75b901828f9f140"
   },
   {
     "file": "03-stair-tv-wide-v2.png",
@@ -42,10 +42,10 @@
   {
     "file": "03-stair-tv-wide.png",
     "size": [
-      1484,
-      1060
+      1536,
+      1024
     ],
-    "sha256": "7fb45f5eaee77a961cf5d5ddd0cbd81c77e7662f66219ab1bd839e6eb02d2319"
+    "sha256": "232b11e6a667874ae1066074f45f99a55ba93f1af0f6f3522912e5e8f18264cb"
   },
   {
     "file": "04-storage-wide-v2.png",
@@ -58,18 +58,18 @@
   {
     "file": "04-storage-wide.png",
     "size": [
-      1484,
-      1060
+      1536,
+      1024
     ],
-    "sha256": "5061d548b1371f63e067e32c0bec2255b6fc15af99dcc4966d06bd79d9b6641e"
+    "sha256": "b370a5dd658aba5315b9f125cbe426f07d3473df6832317ae03fed2f5587e987"
   },
   {
     "file": "05-wash-wide.png",
     "size": [
-      1484,
-      1060
+      1800,
+      1200
     ],
-    "sha256": "a44e9ea845973a646f24e249628aa9b584912421baa8291ef034f5f15f4c3eb0"
+    "sha256": "88a517bb103143b23024d04bbd0dafebfce898c480a5c24712d01c647acff822"
   },
   {
     "file": "06-kitchen-detail.png",
@@ -302,5 +302,13 @@
       1024
     ],
     "sha256": "3fb0767b1b26fc4c4ba8d77a4c0c419400c9647598d59e0fc679b9024579b2f2"
+  },
+  {
+    "file": "R13-living-room-eye.png",
+    "size": [
+      1800,
+      1200
+    ],
+    "sha256": "6ca5da87ff0bffaf2a66f9ef02781db63f1f8138510580c889dbc3e0f86e2bdc"
   }
 ]

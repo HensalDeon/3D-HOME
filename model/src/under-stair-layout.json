@@ -1,338 +1,521 @@
 {
-  "revision": "R6",
-  "structure": {
-    "revision": "R6",
-    "system": "conventional cast-in-situ RCC staircase: continuous waist slab under each flight, monolithic with the landing slabs at the turns (folded plate)",
-    "waist": 0.15,
-    "landingSlab": 0.15,
-    "finish": 0.02,
-    "indicative": true,
-    "status": "TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER",
-    "note": "STAIR SHOWN AS CONCEPTUAL RCC WAIST-SLAB SYSTEM. FINAL WAIST-SLAB THICKNESS, LANDING BEAMS, SUPPORT CONDITIONS, REINFORCEMENT AND CONNECTIONS TO BE DESIGNED BY STRUCTURAL ENGINEER. 100 MM PARTITION WALLS ARE NOT TO BE ASSUMED LOAD-BEARING.",
-    "supports": [
-      "starter landing at +0.353 bears on plinth fill / ground slab",
-      "west 150 mm external wall at x = 0.00-0.15 along both flights",
-      "landing beam zone inside the existing 100 mm bedroom cross-wall line at y = 6.10-6.20",
-      "floor-slab trimmer at the stairwell opening edge, y = 3.45 (upper flight) and y = 3.20 (first-floor lower flight)"
-    ],
-    "beamZones": [
-      {
-        "id": "landing-beam",
-        "box": [
-          0.15,
-          6.1,
-          3.05,
-          6.2
-        ],
-        "within": "existing 100 mm bedroom cross-wall line; no encroachment into the store or any room",
-        "span": "west external wall to the retained wall junction at x = 3.05-3.15",
-        "note": "LANDING BEAM ZONE - TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER"
-      },
-      {
-        "id": "stairwell-trimmer",
-        "box": [
-          1.05,
-          3.2,
-          2.05,
-          3.45
-        ],
-        "within": "existing floor-slab edge at the stairwell opening",
-        "span": "across the 900 mm flight",
-        "note": "FLOOR-SLAB TRIMMER ZONE - TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER"
-      }
-    ],
-    "excluded": [
-      "100 mm stair-side partition at x = 2.05-2.15",
-      "100 mm bedroom partition as a bearing wall",
-      "steel stringers",
-      "cantilevered individual treads",
-      "new columns inside the living area",
-      "any wall below the upper flight"
-    ],
-    "supersededTreadZone": 0.12,
-    "supersededNote": "R5 and earlier modelled 17 separate 120 mm treads with a flat lid under each; the R6 waist soffit is an inclined plane and sits lower.",
-    "finishNote": "The 20 mm stone stair finish is included in the construction zone: the finished walking levels are fixed, so the structural steps and the waist sit below them. Soffit plaster or render is additional and to be confirmed.",
-    "waistTopPlane": "Top of the waist slab is the line through the steps internal corners, one riser below the nosing line, so the construction depth at each nosing is one riser plus the waist."
-  },
-  "stair": {
-    "frontLandingY": 2.3,
-    "starterRisers": 2,
-    "westRisers": 7,
-    "landingExtension": [
-      0.15,
-      4.7,
-      1.05,
-      5.2
-    ],
-    "route": "SOUTH \u2192 WEST \u2192 EAST",
-    "kitchenDepth": 2.05
-  },
-  "bedroomWallFace": 6.1,
-  "storage": [
-    {
-      "box": [
-        0.47,
-        4.2,
-        1.02,
-        4.7
-      ],
-      "height": 0.8,
-      "access": "N",
-      "type": "rectangular cabinet",
-      "doorLeaves": 2,
-      "doorSweep": [
-        1.02,
-        4.2,
-        1.27,
-        4.7
-      ],
-      "standing": [
-        1.15,
-        4.2,
-        1.55,
-        4.7
-      ],
-      "approach": [
-        [
-          2.6,
-          2.75
-        ],
-        [
-          1.65,
-          2.75
-        ],
-        [
-          1.65,
-          3.5
-        ],
-        [
-          1.35,
-          3.5
-        ],
-        [
-          1.35,
-          4.45
-        ]
-      ]
-    }
+ "revision": "R13",
+ "structure": {
+  "revision": "R12",
+  "system": "conventional cast-in-situ RCC staircase: continuous waist slab under each flight, monolithic with the landing slabs at the turns (folded plate)",
+  "waist": 0.15,
+  "landingSlab": 0.15,
+  "finish": 0.02,
+  "indicative": true,
+  "status": "TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER",
+  "note": "STAIR SHOWN AS CONCEPTUAL RCC WAIST-SLAB SYSTEM. FINAL WAIST-SLAB THICKNESS, LANDING BEAMS, SUPPORT CONDITIONS, REINFORCEMENT AND CONNECTIONS TO BE DESIGNED BY STRUCTURAL ENGINEER. 100 MM PARTITION WALLS ARE NOT TO BE ASSUMED LOAD-BEARING. R9 RE-DISTRIBUTED RISERS BETWEEN THE STARTER AND THE UPPER RETURN FLIGHT ON THE GROUND-TO-FIRST STAIR ONLY; THE FIRST-TO-ROOF STAIR IS UNCHANGED. R10 CHANGES NO RISER, FLIGHT, LANDING OR SUPPORT: IT ONLY BUILDS THE TV UNIT INTO THE UNDER-STAIR VOLUME AND CUTS THE 100 MM STAIR-SIDE PARTITION AWAY BELOW +2.10 m BETWEEN y = 3.20 AND y = 5.20, RETAINING IT ABOVE AS A PLASTERED HEADER TO THE 2.85 m SLAB SOFFIT. THAT HEADED OPENING IS THE COORDINATED CONDITION AND IS WHAT SHEET 11 AND structural-frame.json ARE DRAWN TO. A FULL-HEIGHT REMOVAL WITH NO HEADER IS NOT ASSUMED AND MUST NOT BE INFERRED: IT WOULD HAVE TO BE SEPARATELY VERIFIED STRUCTURALLY AND ARCHITECTURALLY BEFORE IT COULD BE DRAWN. THE PARTITION IS NOT ASSUMED LOAD-BEARING AND THE STAIR-SIDE TRIMMER ZONE ALREADY SPANS THE WALL LINE AT THE SLAB, BUT THE OPENING MUST STILL BE CONFIRMED WITH THE REST OF THE STAIR SUPPORT SYSTEM.",
+  "supports": [
+   "starter landing at +0.882 m (riser 5) bears on plinth fill / ground slab",
+   "west 150 mm external wall at x = 0.00-0.15 along both flights",
+   "landing beam zone inside the existing 100 mm bedroom cross-wall line at y = 6.10-6.20",
+   "floor-slab trimmer at the stairwell opening edge, y = 4.20 (ground-to-first upper flight, moved from y = 3.45 by R9) and y = 3.20 (first-floor lower flight, unchanged)"
   ],
-  "store": {
+  "beamZones": [
+   {
+    "id": "landing-beam",
     "box": [
-      0.15,
-      4.75,
-      2.05,
-      6.1
+     0.15,
+     6.1,
+     3.05,
+     6.2
     ],
-    "zones": [
-      {
-        "box": [
-          0.15,
-          5.2,
-          2.05,
-          6.1
-        ],
-        "top": 1.37,
-        "clear": 1.42,
-        "over": "intermediate landing"
-      },
-      {
-        "box": [
-          0.15,
-          4.75,
-          1.15,
-          5.2
-        ],
-        "top": 1.37,
-        "clear": 1.42,
-        "over": "landing extension and central well"
-      },
-      {
-        "box": [
-          1.15,
-          4.95,
-          2.05,
-          5.2
-        ],
-        "top": 1.33,
-        "clear": 1.38,
-        "over": "riser 10 tread / waist springing at the landing"
-      },
-      {
-        "box": [
-          1.15,
-          4.75,
-          2.05,
-          4.95
-        ],
-        "top": 1.51,
-        "clear": 1.56,
-        "over": "riser 11 tread"
-      }
-    ],
-    "crouchPocket": [
-      0.15,
-      4.75,
-      1.15,
-      6.1
-    ],
-    "door": {
-      "box": [
-        2.05,
-        5.2,
-        2.15,
-        6.1
-      ],
-      "leaves": 2,
-      "leafWidth": 0.45,
-      "height": 1.4,
-      "type": "bifold pair",
-      "face": "N / passage beside the bedroom door",
-      "sweep": [
-        2.15,
-        5.2,
-        2.4,
-        6.1
-      ]
-    },
-    "wallCut": "900 x 1400 mm opening in the retained 100 mm stair-side partition at y = 5.20-6.10 m; structural engineer to confirm the intermediate landing does not bear on it",
-    "fallback": "mirror-fronted door on the partition and crouch-in access from the wash side; no wall change"
-  },
-  "partition": {
+    "within": "existing 100 mm bedroom cross-wall line; no encroachment into the store or any room",
+    "span": "west external wall to the retained wall junction at x = 3.05-3.15",
+    "note": "LANDING BEAM ZONE - TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER"
+   },
+   {
+    "id": "stairwell-trimmer",
     "box": [
-      1.15,
-      4.7,
-      2.05,
-      4.75
+     1.05,
+     3.95,
+     2.05,
+     4.2
     ],
-    "height": 1.65,
-    "mirror": {
-      "x": [
-        1.6,
-        2.0
-      ],
-      "z": [
-        1.0,
-        1.61
-      ]
-    },
-    "finish": "oak slats on the wash face, mirror centred over the basin"
+    "within": "existing floor-slab edge at the stairwell opening; R9 moves this trimmer from y = 3.45 to y = 4.2 because the upper flight now needs only 4 risers instead of 7",
+    "span": "across the 900 mm flight",
+    "note": "FLOOR-SLAB TRIMMER ZONE - TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER"
+   }
+  ],
+  "excluded": [
+   "100 mm stair-side partition at x = 2.05-2.15",
+   "100 mm bedroom partition as a bearing wall",
+   "steel stringers",
+   "cantilevered individual treads",
+   "new columns inside the living area",
+   "any wall below the upper flight"
+  ],
+  "supersededTreadZone": 0.12,
+  "supersededNote": "R5 and earlier modelled 17 separate 120 mm treads with a flat lid under each; the R6 waist soffit is an inclined plane and sits lower. R9 keeps the R6 waist/landing system and only moves risers between flights.",
+  "finishNote": "The 20 mm stone stair finish is included in the construction zone: the finished walking levels are fixed, so the structural steps and the waist sit below them. Soffit plaster or render is additional and to be confirmed.",
+  "waistTopPlane": "Top of the waist slab is the line through the steps internal corners, one riser below the nosing line, so the construction depth at each nosing is one riser plus the waist.",
+  "r9Note": "R9 moves 3 risers from the ground-to-first upper return flight into the starter flight, using the floor that was previously open beside the first 2 starter risers (inside the stair's own footprint, not on the kitchen/living/bedroom circulation route). The intermediate landing rises from riser 9 to riser 12 (+0.529 m), so the store/wash zone underneath it goes from ~1.42 m to ~1.95 m clear. The upper flight shortens from 7 to 4 risers at the same 250 mm going, so its run shrinks from 1.75 m to 1.00 m; the freed 0.75 m becomes extra first-floor landing/gallery floor, and the floor-slab trimmer moves from y = 3.45 to y = 4.2. West-flight tread positions are unchanged; only their riser numbers (and so their absolute height) shift up by 3.",
+  "r10Note": "R10 leaves the R9 stair untouched - same 17 risers, same 5 + 7 + 4-plus-arrival split, same landing, trimmer and beam zones - and only occupies the volume under it. The TV unit is built into the band between the stair entry (y = 3.20) and the basin user's standing zone (y = 5.15), with the joinery face running the last 50 mm on to the archway jamb at y = 5.20, from the upper-flight well line (x = 1.15) to the living face of the stair-side partition (x = 2.15). The 100 mm partition over that span is cut away BELOW +2.10 m and retained above as a plastered header to the 2.85 m slab soffit; it is a partition, never assumed load-bearing, and the stair-side trimmer zone already runs the full length of the wall at the first-floor slab and carries the first-floor wall and the header over it. Because the wall stands from +2.10 m to the slab, the east side of the upper flight is enclosed by it over the whole walking zone (tread tops +2.29 to +2.82 m) and no balustrade is required on that edge. The joinery face tapers down to +2.10 / +1.85 / +1.50 along its length and the carcass is only 0.45 m deep behind it, leaving the back 0.45 m of the zone open and the wall line open above each lower bay, so the stair is read from the living side instead of being masked. R10 also corrects an R9 bookkeeping gap: the first-floor slab opening now stops at y = 4.20, matching the arrival landing R9 extended to that line, so the TV unit has a real 2.85 m slab soffit over its north bays instead of a hole.",
+  "r12Note": "R12 changes no riser, flight, landing, trimmer, beam zone or support condition, and it does not change what is done to the 100 mm stair-side partition either: the coordinated R10 condition is held, so the wall is cut away below +2.10 m over y = 3.20-5.20 and retained above as a plastered header to the 2.85 m slab soffit. Only what stands inside that opening changes: the R10 three-bay stepped wedge is withdrawn and replaced by a raking backing panel, a long low cabinet, floating shelves and open boxes, none of which touch the structure. The withdrawn R10b proposal to take the wall out full height with no header is NOT carried into R12; it was never coordinated with sheet 11 or structural-frame.json, both of which have always shown the retained header, and it would need separate structural and architectural verification before it could be drawn. Nothing is built under the lower/west flight."
+ },
+ "stair": {
+  "frontLandingY": 2.3,
+  "starterRisers": 5,
+  "westRisers": 7,
+  "landingRiser": 12,
+  "upperFlightRisers": 4,
+  "trimmerY": 4.2,
+  "landingExtension": [
+   0.15,
+   4.7,
+   1.05,
+   5.2
+  ],
+  "arrivalBox": [
+   1.15,
+   2.3,
+   2.05,
+   4.2
+  ],
+  "route": "SOUTH \u2192 WEST \u2192 EAST",
+  "kitchenDepth": 2.05,
+  "r9Change": "Starter grows from 2 to 5 risers, using the ~0.75 m of floor between the old riser 1 and the TV/closing-panel wall (x = 1.30-2.05, y = 2.30-3.20), inside the stair's own footprint. West flight keeps its R2 tread positions, now numbered risers 6-12. Upper return flight shortens from 7 to 4 risers (13-16) over the same 250 mm going, ending at the new trimmer y = 4.2 instead of y = 3.45. First-to-roof stair (2 + 7 + 8) is untouched."
+ },
+ "bedroomWallFace": 6.1,
+ "tv": {
+  "revision": "R13",
+  "concept": "R13 reduces the TV joinery within the unchanged R12 architecture. A 30 mm oak backing at x = 1.90-1.93 starts at y = 3.30, caps at +1.40 m to y = 4.20, then falls parallel to the actual upper-flight soffit to +0.729 m at y = 5.15. It leaves about 1.20 m of open vertical space below the raking soffit. The 43-inch screen is 0.96 x 0.54 m, centreline y = 3.88 and centre +0.97 m, in the taller portion. The low cabinet is 1.95 x 0.35 m, top +0.45 m, fronts flush at x = 2.15. Three small open boxes step down beyond the TV, tops +0.94 and +0.66 m. Upper shelves and the tall oak end trim are removed. Nothing projects into the 1.00 m passage.",
+  "supersedes": "R12 tall oak TV backing and upper shelves only. All R12 architecture and the complete washbasin nook remain unchanged.",
+  "zone": [
+   1.15,
+   3.2,
+   2.15,
+   5.15
+  ],
+  "unit": [
+   1.8,
+   3.2,
+   2.15,
+   5.15
+  ],
+  "unitLength": 1.95,
+  "unitDepth": 0.35,
+  "face": "N",
+  "faceX": 2.15,
+  "faceLength": 2.0,
+  "panel": [
+   1.9,
+   3.3,
+   1.93,
+   5.15
+  ],
+  "panelThickness": 0.03,
+  "panelFaceX": 1.93,
+  "panelTopCap": 1.4,
+  "panelSoffitGap": 1.2049,
+  "panelBreakY": 4.2,
+  "panelTopAt": {
+   "3.30": 1.4,
+   "4.20": 1.4,
+   "4.74": 1.0188,
+   "5.00": 0.8353,
+   "5.15": 0.7294
   },
-  "wash": {
+  "panelHeight": 1.4,
+  "panelProfileNote": "Flat cap +1.40 m from y = 3.30 to 4.20; rake parallel to the real upper soffit from y = 4.20 to 5.15, ending +0.729 m. The 1.205 m vertical gap is deliberate open space, not a close-fitting soffit infill.",
+  "cabinet": {
+   "box": [
+    1.8,
+    3.2,
+    2.15,
+    5.15
+   ],
+   "depth": 0.35,
+   "length": 1.95,
+   "top": 0.45,
+   "plinth": 0.09,
+   "plinthSetback": 0.06,
+   "fronts": 4,
+   "frontWidth": 0.4875,
+   "reveal": 0.008,
+   "finish": "warm beige matt fronts on an oak carcass, recessed dark plinth with a concealed warm LED strip washing the floor",
+   "note": "1.95 m long, 0.35 m deep, +0.45 m top. Four beige fronts flush at x = 2.15; 0.22 m ledge in front of backing."
+  },
+  "box": [
+   1.93,
+   3.4,
+   1.98,
+   4.36
+  ],
+  "screen": {
+   "box": [
+    1.93,
+    3.4,
+    1.98,
+    4.36
+   ],
+   "diagonalInches": 43,
+   "width": 0.96,
+   "height": 0.54,
+   "bottom": 0.7,
+   "top": 1.24,
+   "center": 3.88,
+   "centerHeight": 0.97,
+   "mount": "Surface-mounted on the backing with a slim bracket; face at x = 1.98.",
+   "note": "Reduced to nominal 43-inch size to fit the taller part of the low composition. Centreline moves to y = 3.88; architecture and basin do not move."
+  },
+  "screenBottom": 0.7,
+  "screenTop": 1.24,
+  "screenCenter": 3.88,
+  "oldStorageCenter": 4.125,
+  "shelves": [],
+  "cubbies": [
+   {
+    "id": "cubby-1",
+    "y": [
+     4.42,
+     4.77
+    ],
+    "x": [
+     1.93,
+     2.15
+    ],
+    "z": [
+     0.45,
+     0.7
+    ]
+   },
+   {
+    "id": "cubby-2",
+    "y": [
+     4.42,
+     4.77
+    ],
+    "x": [
+     1.93,
+     2.15
+    ],
+    "z": [
+     0.7,
+     0.94
+    ]
+   },
+   {
+    "id": "cubby-3",
+    "y": [
+     4.79,
+     5.15
+    ],
+    "x": [
+     1.93,
+     2.15
+    ],
+    "z": [
+     0.45,
+     0.66
+    ]
+   }
+  ],
+  "cubbyNote": "Three small open boxes after the TV: two stacked at y = 4.42-4.77, overall top +0.94; one at y = 4.79-5.15, top +0.66. No storage above the TV.",
+  "serviceVoid": [
+   1.15,
+   3.2,
+   1.8,
+   5.15
+  ],
+  "serviceVoidNote": "Unbuilt 0.65 x 1.95 m behind the shallow cabinet, within the former service zone.",
+  "endReturn": [
+   2.05,
+   5.15,
+   2.15,
+   5.2
+  ],
+  "endReturnTop": 0,
+  "joinery": {
+   "panelThickness": 0.018,
+   "toe": 0.09,
+   "toeSetback": 0.06,
+   "reveal": 0.008,
+   "cabinetTop": 0.45,
+   "backingFace": 1.93,
+   "materials": "Natural oak backing and open boxes, warm beige fronts, warm-white plaster, black TV and fittings.",
+   "flutedNote": "R10's vertical fluted slats are dropped. The reference backdrop is flat vertical-grain veneer, and the same flat oak is what ties the TV panel to the washbasin nook.",
+   "note": "30 mm backing, 350 mm cabinet, 18 mm open-box boards. No tall oak jamb, upper shelves or full-height enclosure."
+  },
+  "lighting": {
+   "plinth": {
     "box": [
-      1.55,
-      4.35,
-      2.05,
-      4.7
+     2.09,
+     3.2,
+     2.15,
+     5.15
     ],
-    "height": 0.86,
-    "front": "E",
-    "userFaces": "W",
-    "counter": {
-      "top": 0.86,
-      "drawerBottom": 0.5
-    },
-    "standing": [
-      1.3,
-      3.75,
-      2.05,
-      4.35
+    "z": [
+     0.082,
+     0.09
     ],
-    "leanStrip": [
-      1.3,
-      4.2,
-      2.05,
-      4.35
+    "colorTemp_K": 2700,
+    "note": "concealed warm strip in the recessed plinth, washing the floor - the reference's floor glow"
+   },
+   "panelTop": {
+    "x": [
+     1.9,
+     1.93
     ],
-    "bodyLine": [
-      1.3,
-      3.75,
-      2.05,
-      4.2
+    "y": [
+     3.3,
+     5.15
     ],
-    "bedroomDoorLanding": [
-      2.2,
-      5.2,
-      3.05,
-      6.1
-    ],
-    "approach": [
-      [
-        2.6,
-        2.75
-      ],
-      [
-        1.65,
-        2.75
-      ],
-      [
-        1.65,
-        4.05
-      ]
-    ],
-    "fromBedroomWall": {
-      "basinBack": 1.4,
-      "basinFront": 1.75,
-      "standingRear": 2.35
-    },
-    "fallbackFront": 2.0,
-    "clearHeights": {
-      "overBowl": 1.73,
-      "leanStrip": 1.98,
-      "bodyLine": 2.09,
-      "rear": 2.4,
-      "fallbackFront": 2.16
-    }
+    "colorTemp_K": 2700,
+    "note": "Subtle strip on the low panel top; the open zone above remains visible."
+   },
+   "screenBacklight": {
+    "colorTemp_K": 3000,
+    "note": "concealed warm strip behind the screen"
+   }
   },
-  "closingPanel": {
+  "projection": {
+   "intoPassage": 0,
+   "screenSetback": 0.17,
+   "panelSetback": 0.22,
+   "note": "All joinery at or behind x = 2.15; the 1.00 m passage and separate 0.90 m basin access are unchanged."
+  },
+  "storage": {
+   "footprint_m2": 0.6825,
+   "volume_m3": 0.2,
+   "openDisplay_m3": 0.04,
+   "note": "Approximate usable capacity: 0.20 m3 enclosed in the shallow base cabinet, 0.04 m3 open display. Additional storage must be found elsewhere; no tall storage or basin enclosure is introduced."
+  },
+  "clearances": {
+   "underFlatSlab": 2.85,
+   "underTrimmer": 2.7,
+   "overPanelAtBreak": 1.3,
+   "overPanelAtJamb": 1.2049,
+   "overCabinet": 1.4949,
+   "note": "All joinery below +1.40 m. Raking panel is approximately 1.205 m below the upper waist soffit. The +2.10 m opening head and header above are retained.",
+   "openingHead": 2.1,
+   "soffitUnderHeadAt": 4.93,
+   "panelUnderHeadAt": null
+  },
+  "wallOpening": {
+   "box": [
+    2.05,
+    3.2,
+    2.15,
+    5.2
+   ],
+   "height": 2.1,
+   "headerTop": 2.85,
+   "header": {
     "box": [
-      2.05,
-      4.6,
-      2.1,
-      5.2
+     2.05,
+     3.2,
+     2.15,
+     5.2
     ],
-    "height": 1.7
+    "z": [
+     2.1,
+     2.85
+    ],
+    "thickness": 0.1,
+    "note": "RETAINED PLASTERED HEADER - 0.75 m deep over a 2.00 m span, hung off the stair-side trimmer zone that already runs the full length of this wall line at the first-floor slab. TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER."
+   },
+   "note": "The 100 mm stair-side partition is cut away over this 2.00 m span from floor level to +2.10 m only, and retained above as a plastered header to the 2.85 m slab soffit. This is the coordinated R10 condition, unchanged by R12 and matching sheet 11 and structural-frame.json. +2.10 m is the head the joinery and the open view need: every built element except the backing panel stops at or below it, and the raking waist soffit drops under it from y = 4.93 to the archway jamb, so the low end of the rake is seen from the living room. Taking the wall out full height with no header would show more of the flight but is NOT assumed here and must not be inferred - it requires separate structural and architectural verification. The partition is not assumed load-bearing and the stair-side trimmer zone already spans this wall line at the first-floor slab, but the opening must still be confirmed with the rest of the stair support system. TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER."
   },
-  "tv": {
+  "balustrade": {
+   "x": 2.05,
+   "y": [
+    4.2,
+    5.2
+   ],
+   "height": 0.9,
+   "required": false,
+   "note": "Not built under the coordinated R10 headed opening, and not drawn. With the partition retained from +2.10 m to the 2.85 m slab soffit, the east side of the upper flight is enclosed by that wall over its whole walking zone - tread tops run +2.29 to +2.82 m - so there is no open edge to guard. These coordinates are kept only as the guard that would become necessary if the full-height removal were ever separately verified and adopted: black vertical balusters 0.90 m high on the open east edge, y = 4.20-5.20."
+  },
+  "referenceDeviations": [
+   "The real dog-leg stair is retained. Its short upper return descends toward the basin in this view; the furniture follows that slope without filling the entire tall volume.",
+   "The basin is on the west/bedroom wall and faces east, unchanged. It is beyond the low end of the upper return, unlike the reference.",
+   "The screen reduces to nominal 43 inches and the cabinet to 350 mm deep. Approximate enclosed storage is 0.20 m3.",
+   "The stair-side partition is not removed full height. The R12 plastered header remains +2.10 to +2.85 m and conceals part of the upper flight. Lower-flight treads and diagonal are visible through the open zone above the reduced backing."
+  ],
+  "panelBottom": 0.42,
+  "panelNote": "30 mm furniture backing, 0.22 m behind the living wall line; starts +0.42 m and stops +1.40 m maximum. No tall partition or full-height wrap."
+ },
+ "wash": {
+  "box": [
+   1.55,
+   5.75,
+   2.05,
+   6.1
+  ],
+  "height": 0.86,
+  "front": "bedroom wall (y = 6.10), opening east into the room - plan-data.json's own coordinate note confirms y increases west, so the y = 6.10 wall is the west wall",
+  "userFaces": "west, toward the wall and mirror, to operate an east-facing fixture",
+  "counter": {
+   "top": 0.86,
+   "drawerBottom": 0.5
+  },
+  "standing": [
+   1.3,
+   5.15,
+   2.05,
+   5.75
+  ],
+  "mirror": {
+   "x": [
+    1.6,
+    2.0
+   ],
+   "z": [
+    1.0,
+    1.8
+   ]
+  },
+  "approach": [
+   [
+    2.9,
+    5.65
+   ],
+   [
+    2.2,
+    5.65
+   ],
+   [
+    1.7,
+    5.55
+   ]
+  ],
+  "fromBedroomWall": {
+   "basinBack": 0,
+   "basinFront": 0.35,
+   "standingRear": 0.95
+  },
+  "bedroomDoorLanding": [
+   2.2,
+   5.2,
+   3.05,
+   6.1
+  ],
+  "clearHeights": {
+   "overBowl": 1.95,
+   "standing": 1.91,
+   "landingEdge": 1.91,
+   "underLanding": 1.95
+  },
+  "r9Note": "R9 removes the R5/R6 mirror partition and moves the basin from under the sloped upper-flight soffit (y = 4.35-4.70) to the bedroom wall itself (y = 5.75-6.10). plan-data.json's coordinate note confirms y increases west, so this wall is the west wall and the basin - mounted against it, opening into the room - is EAST-facing, as requested; the user stands facing WEST (toward the wall/mirror) to operate it. It now sits entirely under the flat 150 mm landing slab raised to riser 12 by R9, so clear height is a near-uniform 1.91-1.95 m instead of the R6 1.73-2.40 m sloped range - a real headroom gain, still short of the 2.20 m benchmark used elsewhere in this design but close to stand-up height. The under-landing bifold store (2.6 m2 / 3.5 m3 of storage) is removed to make room for it and is not relocated; flag to the user if that storage needs to go somewhere else. Access is a direct 0.90 m archway at y = 5.2-6.10 in the stair-side wall (reusing the R6 store-door position and size, now without doors), not a walk-through behind the TV unit: the starter flight now fills the full width of the y = 2.3-3.2 band, so that old route no longer exists.",
+  "r10Note": "R10 does not move the basin, the mirror, the standing zone, the approach or the archway. The TV unit stops at the archway jamb (y = 5.20), so the nook keeps its full 0.90 m entry and its 1.91-1.95 m clear height.",
+  "finish": {
+   "style": "warm Japandi nook, visually tied to the TV joinery by the same flat oak, functionally and physically a separate unit - the joinery finishes at the archway jamb and the nook continues as its own vertical composition",
+   "panelling": {
     "box": [
-      2.1,
-      3.7,
-      2.14,
-      4.55
+     1.25,
+     6.082,
+     2.05,
+     6.1
     ],
-    "screenBottom": 0.785,
-    "screenTop": 1.415,
-    "face": "N",
-    "oldStorageCenter": 4.125,
-    "panel": [
-      2.05,
-      3.65,
-      2.1,
-      4.6
+    "top": 1.94,
+    "material": "flat vertical-grain oak veneer, floor to the landing soffit",
+    "note": "warm wood backdrop on the bedroom (west) wall behind the vanity and mirror, 0.80 m wide, stopping 8 mm under the 1.9476 m landing-slab soffit"
+   },
+   "vanity": {
+    "box": [
+     1.55,
+     5.75,
+     2.05,
+     6.1
     ],
-    "panelHeight": 1.7,
-    "flutedSlats": {
-      "description": "Vertical fluted oak slats on panel face",
-      "slatWidth_mm": 30,
-      "slatDepth_mm": 10,
-      "spacing_mm": 15,
-      "material": "Natural oak veneer"
-    },
-    "ledBacklight": {
-      "colorTemp_K": 3000,
-      "position": "Behind TV edges, concealed strip",
-      "type": "Integrated warm LED strip"
-    },
-    "floatingShelf": {
-      "depth_mm": 200,
-      "heightAboveFloor_mm": 400,
-      "material": "Natural oak",
-      "purpose": "Slim media shelf for devices below screen"
-    }
+    "carcass": [
+     0.5,
+     0.82
+    ],
+    "counter": [
+     0.82,
+     0.86
+    ],
+    "float": 0.5,
+    "material": "oak carcass, light stone counter, single push-open drawer",
+    "note": "compact floating wooden vanity, 0.50 x 0.35 m, 0.50 m clear under it - unchanged in position, size and rim height"
+   },
+   "bowl": {
+    "box": [
+     1.62,
+     5.8,
+     1.98,
+     6.02
+    ],
+    "z": [
+     0.86,
+     0.99
+    ],
+    "type": "white rectangular vessel basin standing on the counter",
+    "note": "replaces the R9 semi-recessed bowl; the reference basin is a vessel"
+   },
+   "tap": {
+    "riser": [
+     1.8,
+     6.055
+    ],
+    "z": [
+     0.86,
+     1.2
+    ],
+    "spoutTo": 5.93,
+    "finish": "matt black",
+    "note": "simple black deck-mounted mixer behind the vessel"
+   },
+   "mirror": {
+    "box": [
+     1.6,
+     6.066,
+     2.0,
+     6.074
+    ],
+    "z": [
+     1.0,
+     1.8
+    ],
+    "note": "unchanged: 0.40 x 0.80 m, vertically oriented, on the bedroom wall"
+   },
+   "mirrorHalo": {
+    "box": [
+     1.56,
+     6.074,
+     2.04,
+     6.082
+    ],
+    "z": [
+     0.96,
+     1.84
+    ],
+    "colorTemp_K": 2700,
+    "note": "warm integrated backlight, 40 mm proud of the mirror on all four sides, washing the oak panelling behind it"
+   },
+   "downlight": {
+    "at": [
+     1.8,
+     5.92
+    ],
+    "z": 1.9376,
+    "radius": 0.045,
+    "colorTemp_K": 2700,
+    "note": "single subtle warm downlight in the landing soffit over the bowl"
+   },
+   "towelRing": {
+    "at": [
+     1.38,
+     6.075
+    ],
+    "z": 1.15,
+    "radius": 0.09,
+    "finish": "matt black"
+   },
+   "accessories": "minimal: one soap dispenser on the counter, nothing else"
   },
-  "oldSlopedStorageFootprint": [
-    0.2,
-    3.6,
-    1.02,
-    4.65
-  ]
+  "r12Note": "R12 changes nothing architectural in the nook. Position (x = 1.55-2.05, y = 5.75-6.10), east-facing orientation, rim at +0.86 m, the 750 x 600 mm standing zone at y = 5.15-5.75, the mirror at x = 1.60-2.00 / z = 1.00-1.80, the 0.90 m archway at y = 5.20-6.10 with no doors and the 1.91-1.95 m clear height are all exactly as R9 approved them. Only the interior treatment is specified, to the reference: oak panelled backdrop, floating oak vanity, white rectangular vessel basin, black tap, backlit vertical mirror, one warm downlight, black towel ring, minimal accessories."
+ },
+ "oldSlopedStorageFootprint": [
+  0.2,
+  3.6,
+  1.02,
+  4.65
+ ]
 }

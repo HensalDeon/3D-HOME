@@ -25,16 +25,18 @@ Check for an existing server before starting Vite on its default port 5173. Use 
 
 ## Refresh the interior review
 
-With the development server running, execute from the project root:
+The final interior images use Cycles to render the approved meshes with photographic materials and lighting. From the project root:
 
 ```sh
-node model/scripts/r14-reference-render.mjs
-node model/scripts/r14-review-page.mjs
+node model/scripts/export-interior.mjs
+blender --background --python interiors/.source/render_interior.py
 ```
 
-The renderer accepts `DEV_SERVER` for another local server URL and `PLAYWRIGHT_CHROMIUM_EXECUTABLE` for an installed Chromium executable. It saves three PNGs in `interiors/images/` and camera/visibility results in `model/qa/R14-visual-audit.json`. The page generator embeds the images into a self-contained HTML file using `scripts/r14-review.template.html`.
+Review the candidates in `interiors/.source/render/`, then run `python interiors/.source/promote_renders.py` to update the three canonical images, their metadata and the mesh audit. Run `node model/scripts/r14-review-page.mjs` to rebuild the offline page.
 
-Both eye-level renders retain the actual room walls, header and first-floor slab. The elevated geometry inspection isolates the stair, joinery and basin and draws the retained header as an outline. It is not a normal TV viewing position. See [the review notes](../interiors/R14-review.md).
+The exporter preserves existing vertices, triangle indices and normals. Cycles uses surface shaders and lighting only, with no geometry modifiers. The first two cameras match the approved R14 views; storage uses the close-up camera position with a tighter lens. See [rendering notes](../interiors/R14-review.md).
+
+The basic browser renderer, `scripts/r14-reference-render.mjs`, writes geometry references into `qa/` and accepts `DEV_SERVER` and `PLAYWRIGHT_CHROMIUM_EXECUTABLE`. It never overwrites the photographic deliverables.
 
 ## Rebuild the coordinated drawing package
 

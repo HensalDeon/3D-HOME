@@ -1,27 +1,23 @@
 # Interior image register
 
-**R14 was visually approved by the user on 14 September 2026.** The [current offline review](R14-review.html) contains three direct model renders.
+## Current living / stair / storage presentation
 
-| Image | Purpose |
+The three canonical files were revised on 15 September 2026 to follow the original kitchen photographs’ muted oak, creamy ivory, pale stone and natural photographic lighting.
+
+| Image | Role |
 |---|---|
-| `images/R14-living-room-eye.png` | Living-room composition with the actual room walls and retained header |
-| `images/R14-joinery-close.png` | Close view of the approved TV joinery beneath the lower flight |
-| `images/R14-geometry-in-stair.png` | Isolated geometry inspection with the retained header outlined |
+| `images/02-living-wide.png` | View from the approved living-room camera |
+| `images/03-stair-tv-wide.png` | Closer stair, TV cabinet, shelves and separate basin composition |
+| `images/04-storage-wide.png` | Tight view of the low cabinet, backing and open shelves |
 
-Both eye-level views pass the four-corner TV visibility check. The inspection view exposes the geometry by omitting room walls; part of the screen is obscured from that elevated camera. [Review notes](R14-review.md) record the checks and reproduction commands.
+All three are reference-guided generated presentations made with the built-in image-generation tool. Their original direct R14 renders are retained in `.source/style-revision-2026-09-15/geometry/` as the layout and camera references. The unchanged model governs measured geometry; visual comparison of the generated images does not certify pixel-exact dimensions.
 
-## Published-plan image baseline
+The user requested the house’s original photographic style. Assistant visual review is complete; user approval of these finished images is pending. The earlier `04-storage-wide-imagegen.png` is retained as a superseded candidate and is no longer selected by the review page.
 
-The published drawing set remains R13. Its images below remain relevant to that package, while R14 is the latest approved joinery direction:
+- [Current review](R14-review.html)
+- [Visual style board](STYLE_REFERENCE.html)
+- [Style rules and reusable brief](STYLE_REFERENCE.md)
+- [Exact generation prompts](.source/style-revision-2026-09-15/prompts.json)
+- [Output hashes and unchanged-source audit](.source/style-revision-2026-09-15/audit.json)
 
-- `images/02-living-wide.png`
-- `images/03-stair-tv-wide.png`
-- `images/04-storage-wide.png`
-- `images/05-wash-wide.png`
-- `images/R13-living-room-eye.png`
-
-The other 22 room images remain in use: entrance, kitchen, bedrooms, study, passage, bathrooms, balconies, terrace, dining and front gallery. They are illustrative room images; the dimensioned architectural set governs their stated scope.
-
-`.source/image-inventory.json`, `.source/image-release.json` and `.source/selected-wide.json` retain the numbered room-image inventory and review metadata used by the image-book tools. Those records have not been promoted to a coordinated R14 publication. Current render verification lives in `model/qa/R14-visual-audit.json` (project-relative).
-
-Superseded R6/R12 generation jobs, supplementary revision sheets and old revision screenshots have been removed. Original source references and the current image-processing tools remain.
+The other room images and all model source files were left unchanged. `.source/image-inventory.json` and `.source/image-release.json` record the new image hashes and review status. `.source/selected-wide.json` continues to use the canonical numbered filenames.

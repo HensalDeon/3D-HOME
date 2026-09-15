@@ -1,6 +1,6 @@
 {
   "source": "Hensal_Complete_House_Plans.pdf",
-  "source_sha256": "343a4c1de5a3707043f1bf767217aa6bd03de74db074623d7ca698999cf22ee9",
+  "source_sha256": "d7e1dab13f79d90c45395d5121c6c3bd5ade9d3c4f5c954ecfe872304d4f90e8",
   "coordinates": "x increases north; y increases west; metres; house east/south corner is origin",
   "levels": {
     "ground": [
@@ -3982,6 +3982,48 @@
     "roof_cover_top_m": 9.0,
     "roof_clear_landing_height_m": 2.4,
     "roof_access": "full south stair from first floor",
-    "drawing_count": 12
+    "drawing_count": 12,
+    "revision": "R13",
+    "under_stair_wall_opening": {
+      "box_m": [
+        2.05,
+        3.2,
+        2.15,
+        5.2
+      ],
+      "head_m": 2.1,
+      "header_zone_m": [
+        2.1,
+        2.85
+      ],
+      "header_depth_m": 0.75,
+      "slab_soffit_m": 2.85,
+      "partition_mm": 100,
+      "full_height_removal_assumed": false,
+      "status": "Coordinated R10 headed opening, held by R12/R13. A full-height removal with no header is not assumed and must not be inferred; it requires separate structural and architectural verification. TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER."
+    },
+    "under_stair_composition": {
+      "zone_m": [
+        1.15,
+        3.2,
+        2.15,
+        5.15
+      ],
+      "cabinet_m": [
+        1.95,
+        0.35
+      ],
+      "cabinet_top_m": 0.45,
+      "panel_thickness_m": 0.03,
+      "panel_cap_m": 1.4,
+      "panel_soffit_gap_m": 1.2049,
+      "screen_diagonal_in": 43,
+      "screen_centreline_y_m": 3.88,
+      "screen_centre_height_m": 0.97,
+      "projection_into_passage_m": 0,
+      "enclosed_storage_m3": 0.2,
+      "open_display_m3": 0.04,
+      "balustrade_required": false
+    }
   }
 }

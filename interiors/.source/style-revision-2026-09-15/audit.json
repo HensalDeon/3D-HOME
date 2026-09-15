@@ -1,0 +1,99 @@
+{
+  "date": "2026-09-15",
+  "method": "built-in-imagegen-reference-edit",
+  "status": "assistant-visually-reviewed; user finish approval pending",
+  "geometrySource": "Preserved original direct R14 renders in geometry/",
+  "scope": "Materials, lighting and photographic treatment. No model or drawing edits.",
+  "limitation": "Reference-guided generated imagery; visual layout comparison does not certify exact dimensions or every pixel.",
+  "outputs": {
+    "02-living-wide.png": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "2a8e919e40d2cc0aea249513bf55ac9a68ec71a8634bc06ad75b901828f9f140",
+      "visual_review": "Living-room camera: retained stair/landing/header silhouette, TV position, four-front cabinet, shelves and separate basin nook; muted kitchen-reference oak, ivory, stone and softened daylight."
+    },
+    "03-stair-tv-wide.png": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "232b11e6a667874ae1066074f45f99a55ba93f1af0f6f3522912e5e8f18264cb",
+      "visual_review": "Closer stair/TV camera: retained TV, backing profile, low cabinet, shelving and basin arrangement; same material palette and apparent time of day as living view."
+    },
+    "04-storage-wide.png": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "b370a5dd658aba5315b9f125cbe426f07d3473df6832317ae03fed2f5587e987",
+      "visual_review": "Tight storage camera: retained four cabinet fronts, open shelves, TV/backing and partial basin view; quiet greige fronts, fine oak grain and pale stone."
+    }
+  },
+  "unchanged_original_images": 24,
+  "unchanged_model_files": 13,
+  "source_image_hashes": {
+    "images/06-kitchen-wide.png": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759",
+    "images/06-kitchen-detail.png": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1",
+    "images/06-kitchen-opposite.png": "22e72f0e2435862cc69dbcc0cf83ebf435cfabd8f577c311dd683c2eb755dc12",
+    "images/16-dining-wide.png": "74520e27a9ba23f634d4984704656b461f91aa531ebbb8803e3f8f5032931d62",
+    "images/07-bedroom1-wide.png": "4f6b065f9c73ffb59690022135789d35e8b840b0b1053712b19846bb8c875162",
+    "images/07-bedroom1-detail.png": "29a37c2005ae3235cd71e61ce884b5db37841d2502a63a35c63b6e4d19190be6",
+    "images/07-bedroom1-opposite.png": "a2f40717a44ad786b990e4b82ba83ad94ffee3a52322ab970702af0b60f47a3e",
+    "images/08-bedroom2-wide.png": "ad2493a3c55b8096adca365d750035e5fcd0531d9e86c6b75ca9771eaee4af39",
+    "images/08-bedroom2-detail.png": "0f7067abb0b45a896c915865d13656d39dbe2f5877eefd0988db66d1e96c6cb3",
+    "images/08-bedroom2-opposite.png": "a875f51b4d073f90577d6e08a59987bac93479b8d351bdf5cf4e5bdb7b057a94",
+    "images/09-bedroom3-wide.png": "18c455443b9fa3d1b9104201f9f4865fa0cbb1e5ebf3b6cc72eb856972483e85",
+    "images/09-bedroom3-detail.png": "ac67d0b33d719a1f59500fd4f73a94d2132cd767e0ac68d885a6bb6d64d8b2cb",
+    "images/09-bedroom3-opposite.png": "4689834af09dff3e641f2be22458a3e3b54efc740fa4cb37906be3603d0c563f",
+    "images/10-study-wide.png": "4e30449d6eb999b8283d41a1f94fecd065e57cf600d98df59ca2c85e9222dd57",
+    "images/10-passage-wide.png": "a4dff0b3de666e71b512c3200b1ddb2b877e5d1f586aa61e7e00001e59f3a769",
+    "images/17-front-gallery-wide.png": "0e28593299deb06e5b48e8defab838f4bdc54d726f70d1c1e6a6b8eaf3447549",
+    "images/11-bathroom1-wide.png": "8134bbdfbdeaf7d625f9edc3569aa7c96a6be9cb3666c90d69d749ff2787619d",
+    "images/12-bathroom2-wide.png": "58ae4c24a9a243dcf09c125044df24b40ad7f413659419813cd83eb1594a585a",
+    "images/13-bathroom3-wide.png": "9aae5e0a1897224ecf5ec7f2522d15529a210cb8005a79dc009c879724a77d08",
+    "images/01-entrance-wide.png": "e8c1f7b0b25fff2937d4662e0a1e45f0bb9c94b73fc9cf87d9c2df317cff4223",
+    "images/14-balcony-wide.png": "8794cede165b214bfa3825db9c3fed3fd7999f79ab9c4d618e3405ee6ad573f7",
+    "images/15-terrace-wide.png": "1b6235b2876556aa33006abf8dfdc7f3400848bc9f61ad450957877495a768c8"
+  },
+  "verified_unchanged": [
+    "interiors/images/01-entrance-wide.png",
+    "interiors/images/04-storage-wide-imagegen.png",
+    "interiors/images/05-wash-wide.png",
+    "interiors/images/06-kitchen-detail.png",
+    "interiors/images/06-kitchen-opposite.png",
+    "interiors/images/06-kitchen-wide.png",
+    "interiors/images/07-bedroom1-detail.png",
+    "interiors/images/07-bedroom1-opposite.png",
+    "interiors/images/07-bedroom1-wide.png",
+    "interiors/images/08-bedroom2-detail.png",
+    "interiors/images/08-bedroom2-opposite.png",
+    "interiors/images/08-bedroom2-wide.png",
+    "interiors/images/09-bedroom3-detail.png",
+    "interiors/images/09-bedroom3-opposite.png",
+    "interiors/images/09-bedroom3-wide.png",
+    "interiors/images/10-passage-wide.png",
+    "interiors/images/10-study-wide.png",
+    "interiors/images/11-bathroom1-wide.png",
+    "interiors/images/12-bathroom2-wide.png",
+    "interiors/images/13-bathroom3-wide.png",
+    "interiors/images/14-balcony-wide.png",
+    "interiors/images/15-terrace-wide.png",
+    "interiors/images/16-dining-wide.png",
+    "interiors/images/17-front-gallery-wide.png",
+    "model/src/assets.json",
+    "model/src/facade.js",
+    "model/src/geometry.js",
+    "model/src/house.js",
+    "model/src/main.js",
+    "model/src/plan-data.json",
+    "model/src/revision-assets.json",
+    "model/src/revision.js",
+    "model/src/stair-options.js",
+    "model/src/structural-frame.json",
+    "model/src/style.css",
+    "model/src/tv-joinery-preview.js",
+    "model/src/under-stair-layout.json"
+  ]
+}

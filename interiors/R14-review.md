@@ -1,20 +1,47 @@
-# R14 under-stair joinery — approved interior direction
+# R14 interior presentation — kitchen-matched finish
 
-Visually approved by the user on 14 September 2026.
+The living, stair-TV and storage images were rebuilt on 15 September 2026 using the original kitchen wide and detail images as the primary style references. The approved R14 layout and cameras were supplied through the saved direct model renders. All three final PNGs are 1536 × 1024.
 
-Open [the review page](R14-review.html) for the living-room view, joinery close-up and isolated geometry inspection.
+| Presentation | Preserved geometry reference |
+|---|---|
+| [Living-room view](images/02-living-wide.png) | [.source/style-revision-2026-09-15/geometry/02-living-wide.png](.source/style-revision-2026-09-15/geometry/02-living-wide.png) |
+| [Stair and TV](images/03-stair-tv-wide.png) | [.source/style-revision-2026-09-15/geometry/03-stair-tv-wide.png](.source/style-revision-2026-09-15/geometry/03-stair-tv-wide.png) |
+| [Storage detail](images/04-storage-wide.png) | [.source/style-revision-2026-09-15/geometry/04-storage-wide.png](.source/style-revision-2026-09-15/geometry/04-storage-wide.png) |
 
-R14 places the TV unit beneath the lower flight: a 2.25 m long, 350 mm deep cabinet with a 450 mm top, a 30 mm oak backing following the measured stair underside, and small open shelves. The 960 × 540 mm screen has its centre 870 mm above finished floor. The stair, retained header and basin geometry stay as modeled in R13. The backing is sampled against the existing stair meshes, with at least 60 mm vertical clearance in the dedicated checks.
+## Finish and method
 
-The two eye-level renders retain the actual room walls, header and first-floor slab. All four TV corners are unobstructed from both cameras. The third image isolates the geometry and outlines the header; part of the screen is obscured from that elevated inspection camera. It must not be presented as a full-height wall opening or normal room view.
+The built-in image-generation tool applied muted fine-grained oak, warm ivory plaster, sandy stone, quiet greige cabinet fronts, soft daylight and controlled warm lighting. The first finished living image also served as a consistency reference for the closer views. The current selected backing remains flat oak, with the source model’s four-front cabinet and shelving profiles.
 
-Verification on 14 September 2026:
+These are generated presentation images. Visual review checked the stair route and silhouette, landings and header, door and window openings, TV and cabinetry arrangement, shelves and separate basin nook against the geometry references. This is not a pixel-exact or dimensional certification. The model and drawings govern measured geometry. User approval of the final finishes is pending.
 
-- `npm test` in `model/`: 23 existing checks passed; these check the coordinated R13 data and architecture.
-- `node --test model/scripts/r14-preview.test.mjs`: 2 dedicated R14 geometry checks passed.
-- `node model/scripts/r14-reference-render.mjs`: three views generated; both eye-level screen visibility checks passed. Requires the model dev server on port 5173, or `DEV_SERVER` set to its URL.
-- Reproducible camera and visibility results: `model/qa/R14-visual-audit.json` (project-relative).
+## Reference package
 
-After regenerating the images, run `node model/scripts/r14-review-page.mjs` to rebuild the self-contained review page. It embeds all three renders for offline use and the desktop Preview tab.
+- [Visual style board](STYLE_REFERENCE.html): original photographs, palette and room examples.
+- [Style brief](STYLE_REFERENCE.md): material rules, lighting, room variations, reusable prompt and review criteria.
+- [.source/house-style.json](.source/house-style.json): 22 original style-reference images, their roles and SHA-256 hashes; approximate palette swatches.
+- [.source/style-revision-2026-09-15/prompts.json](.source/style-revision-2026-09-15/prompts.json): exact prompts and input roles.
+- [.source/style-revision-2026-09-15/audit.json](.source/style-revision-2026-09-15/audit.json): final hashes, dimensions, visual review and unchanged-source verification.
 
-The development model currently displays R14 joinery, while the published PDF, layout data and standalone explorer remain R13. This page completes the visual review package; it does not promote the study into the coordinated plan set. Model clearance checks do not establish fabrication or structural design.
+## Rebuild the pages
+
+From the project root:
+
+```sh
+python3 interiors/.source/build_style_reference.py
+node model/scripts/r14-review-page.mjs
+```
+
+The review page embeds the three canonical PNGs for offline viewing. Keep `STYLE_REFERENCE.html` with its neighboring `images/` folder; the reference board displays the original files directly and does not alter their pixels.
+
+## Geometry sources and earlier workflow
+
+The earlier direct-render audit in `model/qa/interior-render-audit.json` describes the saved geometry-reference renders, not the current generated presentation pixels. The exporter and Blender script remain available for new geometry references:
+
+```sh
+node model/scripts/export-interior.mjs
+blender --background --python interiors/.source/render_interior.py
+```
+
+Their outputs stay in `.source/render/`. The legacy promotion script now stops before overwriting the selected generated presentations. Follow the style brief for any future final-image replacement. The older `04-storage-wide-imagegen.png` is superseded by the canonical `04-storage-wide.png`.
+
+The architecture, drawings, published PDF and standalone model were not changed by this finish revision.

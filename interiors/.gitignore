@@ -3,3 +3,6 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# Temporary mesh exports and render candidates; final images live in images/.
+.source/render/

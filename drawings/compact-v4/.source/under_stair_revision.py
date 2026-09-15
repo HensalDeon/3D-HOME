@@ -12,8 +12,9 @@ WAIST,LAND,FIN=ST['waist'],ST['landingSlab'],ST['finish']
 SLOPE=(.25**2+R**2)**.5
 WZONE=(WAIST+FIN)*SLOPE/.25   # vertical construction zone under the finished nosing line
 LZONE=LAND+FIN                # landing slab plus its finish
-NOSE=lambda d: 10*R+(d-1.15)*4*R   # upper-flight waist top: the internal-corner line, one riser
-                                   # below the nosing line, against distance from the bedroom wall
+NOSE=lambda d: 12*R+(d-.9)*4*R   # R9: upper-flight waist top, the internal-corner line one riser
+                                 # below the nosing line, against distance from the bedroom wall.
+                                 # 4 risers over 1.0 m (was 7 over 1.75 m), landing raised to 12R.
 WALL=L['bedroomWallFace']
 OLD_GROUND=h.ground
 OLD_STAIR=h.stair
@@ -22,31 +23,40 @@ OAK=HexColor('#b69873'); CARCASS=HexColor('#e3cfaf'); BASIN=HexColor('#dce8e2');
 STORE=Color(.85,.75,.58,alpha=.5)   # translucent, so the landing and tread lines beneath stay legible
 
 def steps():
- s=[([1.05,2.3,1.3,3.2],R),([.15,2.3,1.05,3.2],2*R)]
- s += [([.15,3.2+i*.25,1.05,3.45+i*.25],(3+i)*R) for i in range(6)]
- s += [([.15,5.2,2.05,6.1],9*R)]
- s += [([1.15,4.95-i*.25,2.05,5.2-i*.25],(10+i)*R) for i in range(7)]
- s += [([1.15,2.3,2.05,3.45],3)]
+ # R9: starter grows from 2 to 5 risers (S-going, using the nook beside the old riser 1); west
+ # flight keeps its R2 tread positions, renumbered 3 risers higher; intermediate landing rises
+ # from 9R to 12R; upper flight shrinks from 7 to 4 risers, arrival landing grows to y = 4.2.
+ s=[([1.8-i*.25,2.3,2.05-i*.25,3.2],(i+1)*R) for i in range(4)]
+ s += [([.15,2.3,1.05,3.2],5*R)]
+ s += [([.15,3.2+i*.25,1.05,3.45+i*.25],(6+i)*R) for i in range(6)]
+ s += [([.15,5.2,2.05,6.1],12*R)]
+ s += [([1.15,4.95-i*.25,2.05,5.2-i*.25],(13+i)*R) for i in range(4)]
+ s += [([1.15,2.3,2.05,4.2],3)]
  return s
 
 def soffits():
  """(start, end, lowest clear height) along the upper-flight bay, measured from the stair-side
- face of the bedroom wall. R6: the landing slab governs the first 0.90 m, then the inclined
- waist soffit governs; each band is quoted at its lowest point."""
- return [(0,.9,9*R-LZONE)]+[(.9+i*.25,1.15+i*.25,NOSE(.9+i*.25)-WZONE) for i in range(7)]+[(2.65,3.8,2.85)]
+ face of the bedroom wall. R9: the landing slab governs the first 0.90 m, the inclined waist
+ soffit governs the next 1.00 m (4 risers), and beyond that (1.90-3.80 m) there is no flight
+ overhead at all - it is now plain first-floor slab, the extra floor R9 frees up."""
+ return [(0,.9,12*R-LZONE)]+[(.9+i*.25,1.15+i*.25,NOSE(.9+i*.25)-WZONE) for i in range(4)]+[(1.9,3.8,2.85)]
 
 def stair(p,floor,show_passage=True,continue_to_roof=False):
  if floor!='GF':return OLD_STAIR(p,floor,show_passage,continue_to_roof)
  p.fill_rect(.15,2.3,2.05,6.1,HexColor('#f4f5f3'))
- # Upper flight overhead is dashed; starting flight remains prominent.
+ # R9: the upper flight is now only 4 risers (indices 12-15) plus the arrival (16); everything
+ # from the intermediate landing (index 11) onward is dashed as overhead, same convention as R6.
  for i,(b,z) in enumerate(steps()):
-  p.rect(*b,h.MUTED if i>=9 else h.INK,.45,dash=[2,2] if i>=9 else None)
+  p.rect(*b,h.MUTED if i>=12 else h.INK,.45,dash=[2,2] if i>=12 else None)
  p.rect(*L['stair']['landingExtension'],h.INK,.45)
  p.line(.15,5.2,1.05,5.2,h.PALE,1)
  structure_plan(p)
- p.polyline([(1.40,2.7),(.60,2.7),(.60,5.65),(1.60,5.65),(1.60,3.47)],h.TEAL,.9,True)
- p.text(1.08,2.48,'UP / S',4.6,True,col=h.TEAL)
- p.text(.60,4.90,'9R LANDING',4.2,col=h.TEAL)
+ # R9: the basin's own archway (y = 5.2-6.1) is the only way in now - the old route entering
+ # before the TV panel and walking down inside the nook no longer exists (the starter flight
+ # fills that whole width). Route drawn from the archway to the basin standing zone.
+ p.polyline([(2.9,5.65),(2.15,5.65),(1.7,5.5)],h.TEAL,.9,True)
+ p.text(1.3,2.48,'UP / S',4.6,True,col=h.TEAL)
+ p.text(.60,4.90,'12R LANDING',4.2,col=h.TEAL)
  if show_passage:p.text(2.63,4.25,'OPEN ACCESS',4.5,rot=90,col=h.MUTED)
 
 def structure_plan(p,label=True):
@@ -68,56 +78,48 @@ def poly(p,pts,fill=None,stroke=None,lw=.6):
  for x,y in pts[1:]:q.lineTo(p.X(x),p.Y(y))
  q.close();c.drawPath(q,fill=1 if fill else 0,stroke=1 if stroke else 0);c.restoreState()
 
-def bifold(p,y0,y1,hinge_lo):
- # Plan symbol for one 450 mm bifold leaf in the stair-side partition, folding toward the passage.
- p.fill_rect(2.05,y0,2.15,y1,h.white)
- p.line(2.05,y0,2.05,y1,h.INK,.3,dash=[1.5,1]);p.line(2.15,y0,2.15,y1,h.INK,.3,dash=[1.5,1])
- hy,d=(y0,1) if hinge_lo else (y1,-1)
- p.polyline([(2.15,hy),(2.36,hy+d*.11),(2.15,hy+d*.225)],h.INK,.5)
-
 def fixtures(p,detail=False):
- old=L['oldSlopedStorageFootprint'];tc=L['tv']['oldStorageCenter'];s=L['store'];w=L['wash'];pt=L['partition']
+ old=L['oldSlopedStorageFootprint'];tc=L['tv']['screenCenter'];w=L['wash']
  # Dashed outline is the TV locating reference only, not an installed cabinet.
  p.rect(*old,h.MUTED,.4,dash=[1,2])
- # Under-landing store: zones follow the landing, its extension and risers 10-11.
- for z in s['zones']:p.fill_rect(*z['box'],STORE)
- p.rect(*s['box'],h.TEAL,.7)
- for z in s['zones'][2:]:p.line(z['box'][0],z['box'][3],z['box'][2],z['box'][3],h.TEAL,.35)
- if detail:
-  p.text(1.1,5.50,'UNDER-LANDING STORE',4.6,True,col=h.TEAL)
-  p.text(1.1,5.33,'1.38-1.56 m CLEAR / 2.6 m2',3.4,col=h.TEAL)
- else:p.text(1.1,5.42,'STORE',4,True,col=h.TEAL)
- # Mirror partition 1.40 m from the bedroom wall, then the basin and its standing zone.
- p.fill_rect(*pt['box'],h.TEAL)
- p.line(pt['mirror']['x'][0],pt['box'][1]-.012,pt['mirror']['x'][1],pt['box'][1]-.012,h.GLASS,1.2)
+ # R9: basin against the bedroom wall, mirror mounted directly on the wall in place of the old
+ # mirror partition. The under-landing store and the small under-flight cabinet are both removed.
  b=w['box'];p.fill_rect(*b,BASIN);p.rect(*b,h.TEAL,.7);p.rect(b[0]+.05,b[1]+.03,b[2]-.05,b[3]-.04,h.TEAL,.4)
  p.text((b[0]+b[2])/2,b[1]+.13,'BASIN',3.8 if detail else 3.3,col=h.TEAL)
  p.rect(*w['standing'],h.TEAL,.6,dash=[2,2])
- p.polyline([(1.62,3.85),(1.62,4.22)],h.TEAL,.7,True)
- p.text(1.62,3.98,'FACE W',4.2 if detail else 3.6,True,col=h.TEAL)
- # Cabinet retained beneath the last two lower-flight treads; doors are now reached from the wash side.
- for cab in L['storage']:
-  cb=cab['box'];p.fill_rect(*cb,CARCASS);p.rect(*cb,h.TEAL,.7)
-  mid=(cb[1]+cb[3])/2;p.line(cb[2],cb[1],cb[2],cb[3],h.TEAL,1.1)
-  p.text((cb[0]+cb[2])/2,mid,'CAB.',3.8,True,rot=90,col=h.TEAL)
-  p.rect(*cab['doorSweep'],h.MUTED,.4,dash=[1,2])
-  p.polyline([(1.03,mid),(1.26,mid)],h.TEAL,.5,True)
- # TV backing and the fixed panel that closes the former 600 mm opening on the same line.
- p.fill_rect(*L['tv']['panel'],OAK);p.fill_rect(*L['closingPanel']['box'],OAK)
- p.fill_rect(*L['tv']['box'],h.INK);p.text(2.32,tc,'TV',5,rot=90)
- # Store doors on the passage face beside the bedroom door.
- d=s['door'];dm=(d['box'][1]+d['box'][3])/2
- if detail:p.wall(2.05,5.2,2.15,6.1);p.wall(.15,6.1,2.3,6.2)
- bifold(p,d['box'][1],dm,True);bifold(p,dm,d['box'][3],False)
+ mx=w['mirror']['x'];p.line(mx[0],WALL-.012,mx[1],WALL-.012,h.GLASS,1.2)
+ p.polyline([(1.62,5.25),(1.62,5.55)],h.TEAL,.7,True)
+ p.text(1.62,5.4,'BASIN FACES EAST',4.2 if detail else 3.6,True,col=h.TEAL)
+ # R12: the reference-matched composition. In plan it is a long low cabinet (0.50 m deep, fronts
+ # flush on the living wall line), an 80 mm oak backing panel 0.22 m behind that line, the screen
+ # surface-mounted on the panel, and - dashed, because they are open - the floating shelves at the
+ # tall end and the stepped open boxes in the low end of the wedge. The back 0.50 m of the zone is
+ # an unbuilt service void. Nothing full height except the 50 mm jamb at the archway.
+ t=L['tv']
+ p.fill_rect(*t['cabinet']['box'],CARCASS);p.rect(*t['cabinet']['box'],h.INK,.5)
+ for i in range(1,t['cabinet']['fronts']):
+  fy=t['cabinet']['box'][1]+i*t['cabinet']['frontWidth']
+  p.line(t['cabinet']['box'][2]-.05,fy,t['cabinet']['box'][2],fy,h.INK,.35)
+ p.rect(*t['serviceVoid'],h.MUTED,.45,dash=[2,2])
+ p.fill_rect(*t['panel'],OAK)
+ for sh in t['shelves']:p.rect(sh['x'][0],sh['y'][0],sh['x'][1],sh['y'][1],h.MUTED,.4,dash=[1.5,1.5])
+ for cb in t['cubbies']:p.rect(cb['x'][0],cb['y'][0],cb['x'][1],cb['y'][1],h.MUTED,.4,dash=[1.5,1.5])
+ if t['endReturnTop']>0:p.fill_rect(*t['endReturn'],OAK)
+ p.fill_rect(*t['box'],h.INK);p.text(2.02,tc,'TV',5,rot=90,col=HexColor('#ffffff'))
+ # R9: basin archway (dashed = open, not a wall), reusing the old store-door position, no doors.
+ p.rect(2.05,5.2,2.15,6.1,h.TEAL,.6,dash=[2,2])
+ if detail:p.wall(.15,6.1,2.3,6.2)
  p.polyline(w['approach'],h.BLUE,.55,True)
- p.polyline(L['storage'][0]['approach'],h.BLUE,.55,True)
- p.polyline([(2.9,5.85),(2.42,5.85)],h.BLUE,.55,True)
  p.line(old[0],tc,L['tv']['box'][0],tc,h.BLUE,.35,dash=[2,2])
  if detail:
   p.text(.42,3.89,'OLD SPAN',3.9,rot=90,col=h.MUTED)
-  p.text(2.88,4.125,'TV CL 4.125',4.2,rot=90,col=h.BLUE)
-  p.text(2.9,5.55,'BIFOLD 2 x 450 / H 1.40',3.6,rot=90,col=h.TEAL)
+  p.text(2.88,4.125,'SCREEN CL 3.88 / 43 in / FACE 0.17 BEHIND THE WALL LINE',4.2,rot=90,col=h.BLUE)
+  p.text(2.2,5.6,'ARCHWAY 0.90 / NO DOORS',3.6,rot=90,col=h.TEAL)
   p.text(1.2,6.31,'BEDROOM WALL / STAIR-SIDE FACE y = 6.10',4,col=h.MUTED)
+  p.text(1.89,4.125,'OAK BACKING PANEL 30 / RAKING TOP EDGE',3.2,rot=90,col=h.MUTED)
+  p.text(1.40,4.125,'SERVICE VOID 0.65 x 1.95 / NOT BUILT',3.2,rot=90,col=h.MUTED)
+  p.text(2.04,4.95,'OPEN BOXES OVER',2.9,rot=90,col=h.MUTED)
+  p.text(2.60,3.2,'LOW CABINET 1.95 x 0.35 / TOP +0.45 / FRONTS FLUSH x = 2.15',3.6,rot=90,col=h.MUTED)
 
 
 class GroundProxy:
@@ -127,7 +129,10 @@ class GroundProxy:
   if list(a[:4])==[3.05,0,3.15,9.7]:
    self.p.wall(3.05,0,3.15,2.3);self.p.wall(3.05,6.1,3.15,9.7)
   elif list(a[:4])==[2.05,2.3,2.15,6.1]:
-   self.p.wall(2.05,2.3,2.15,3.25);self.p.wall(2.05,5.2,2.15,6.1)
+   # R10: only the stair-entry jamb (y = 2.3-3.2) is still blockwork at plan-cut height. From
+   # y = 3.2 to 5.2 the partition is removed below +2.10 m and replaced by the TV unit's joinery
+   # face (drawn in fixtures); the last 0.90 m is the open basin archway.
+   self.p.wall(2.05,2.3,2.15,3.2)
   else:self.p.wall(*a,**kw)
  def opening(self,*a,**kw):
   if a[0]==3.05 and a[1] in [2.45,5.2]:return
@@ -144,108 +149,144 @@ def ground(p):
  OLD_GROUND(GroundProxy(p));fixtures(p)
 
 def ground_sheet(c):
- h.base(c,3,'Ground floor / one built-in unit under the stair','R6 / 10 SEP 2026 / PLAN 1:55 AT A3 / CONCEPTUAL RCC STAIR ADDED; ARCHITECTURE, STAIR GEOMETRY AND UNDER-STAIR FUNCTIONS UNCHANGED')
+ h.base(c,3,'Ground floor / under-stair TV composition and washbasin nook','R13 / 14 SEP 2026 / PLAN 1:55 AT A3 / LOW JOINERY / R12 ARCHITECTURE RETAINED / STAIR, BASIN AND CIRCULATION UNCHANGED')
  ground(h.Plan(c,44,45,1000/55));h.compass(h.Plan(c,0,0,10),23.4,22.1)
- y=231
+ y=236
  for title,body in [
- ('ONE BUILT-IN UNIT UNDER THE UPPER FLIGHT','Measured from the stair-side face of the bedroom wall: store 0-1.40 m, mirror partition at 1.40 m, semi-recessed basin 1.40-1.75 m, standing zone 1.75-2.35 m. Every plan position is unchanged from R5. R6 replaces the modelled separate treads with a continuous RCC waist slab, so each soffit is an inclined plane and sits lower: the zone under the landing is 1.42 m and the person stands under 1.98-2.40 m.'),
- ('UNDER-LANDING STORE','1.90 x 1.35 m floor, about 2.6 m2 and 3.5 m3, with a stepped carcass top 1.37 m under the landing slab, 1.33 m where the waist springs off it and 1.51 m under riser 11. The two 450 mm bifold leaves stay 1.40 m high and still clear the 1.42 m landing soffit; the 900 x 1400 mm opening is unchanged. The pocket under the lower landing is crouch-in bulk storage.'),
- ('WEST-FACING BASIN, SHIFTED ONLY AS FAR AS NEEDED','500 x 350 mm basin on a 350 mm counter with a drawer; rim +0.86 m; front edge 1.75 m from the wall, unmoved. Mirror on the partition, top lowered to +1.65 m under the 1.70 m waist soffit; 1.73 m at the back of the bowl. Standing zone 750 x 600 mm, unmoved: 1.98 m over the 150 mm leaning strip, 2.09 m over the body line, 2.40 m at the rear.'),
- ('CABINET, CLOSING PANEL AND TV','The cabinet keeps its 500 x 550 mm footprint under the last two lower-flight treads; its height comes down to 800 mm under the 0.85 m waist soffit, since the waist hangs one riser plus its own thickness below each nosing. Its doors are still reached from the wash side through a 400 mm strip beside the basin, now under a 1.73-2.09 m soffit (stoop access). The oak closing panel and the TV are beside the flight, not beneath it, and are unchanged: y = 4.125 m, screen centre +1.10 m.'),
- ('ROUTES AND HEADROOM BASIS','Basin: through the existing 900 mm stair entry, turning behind the TV panel. Store: from the passage face. Cabinet: past the basin. Blue arrows show the routes; the dashed old-storage outline is the TV reference only. Headroom now uses a 150 mm RCC waist plus 20 mm stone finish, an inclined soffit 209 mm under the finished nosing line, and a 150 mm landing slab. Soffit plaster is additional and to be confirmed. Fallback: basin front at 2.00 m raises the leaning strip to 2.16 m.'),
- ('CONCEPTUAL STRUCTURE / ARCHITECTURE OTHERWISE LOCKED','STAIR SHOWN AS CONCEPTUAL RCC WAIST-SLAB SYSTEM. FINAL WAIST-SLAB THICKNESS, LANDING BEAMS, SUPPORT CONDITIONS, REINFORCEMENT AND CONNECTIONS TO BE DESIGNED BY STRUCTURAL ENGINEER. 100 MM PARTITION WALLS ARE NOT TO BE ASSUMED LOAD-BEARING. The landing is carried on a beam zone inside the existing bedroom cross-wall line, the flights on the plinth and the floor-slab edges; no new wall or column is added and nothing stands below the upper flight. The 900 x 1400 mm store opening in the stair-side partition remains the only architectural change. Stair geometry, both landings, kitchen, bedroom and all other walls, doors and windows keep their R2 geometry.')]:
-  y=h.block(c,246,y,title,body,149)
+ ('RISER SHIFT: STARTER 2 -> 5, UPPER FLIGHT 7 -> 4','R9 moves 3 risers from the upper return flight into the starter flight, using floor already inside the stair\'s own footprint. The west flight keeps its exact R2 tread positions, renumbered 3 risers higher. The intermediate landing rises from riser 9 to riser 12 (+0.53 m); the upper flight needs only 4 risers instead of 7, so its run shrinks from 1.75 to 1.00 m and the trimmer moves from y = 3.45 to y = 4.2. All 17 risers stay 176.47 mm; the first-to-roof stair is untouched.'),
+ ('BASIN AGAINST THE BEDROOM (WEST) WALL, FACING EAST','The under-landing bifold store is removed. In its place the basin sits flush against the bedroom wall at y = 5.75-6.10. Y increases west, so this is the west wall; the basin, opening into the room, faces EAST, and the user stands facing WEST to use it. Entirely under the flat landing slab raised to riser 12: clear height is a near-uniform 1.91-1.95 m, short of the 2.20 m benchmark used elsewhere. Mirror on the bedroom wall; reached through a direct 0.90 m archway with no doors.'),
+ ('R13 / LOW FITTED TV JOINERY','R13 reduces the TV joinery within the unchanged R12 architecture. A 30 mm oak backing at x = 1.90-1.93 starts at y = 3.30, caps at +1.40 m to y = 4.20, then falls parallel to the actual upper-flight soffit to +0.729 m at y = 5.15. It leaves about 1.20 m of open vertical space below the raking soffit. The 43-inch screen is 0.96 x 0.54 m, centreline y = 3.88 and centre +0.97 m, in the taller portion. The low cabinet is 1.95 x 0.35 m, top +0.45 m, fronts flush at x = 2.15. Three small open boxes step down beyond the TV, tops +0.94 and +0.66 m. Upper shelves and the tall oak end trim are removed. Nothing projects into the 1.00 m passage.'),
+ ('THE WALL OPENED TO +2.10, THE HEADER RETAINED, AND THE STORAGE TRADE','The 100 mm stair-side partition is cut away over the 2.00 m span from floor level to +2.10 m only, and retained above as a plastered header to the 2.85 m slab soffit - the coordinated R10 condition, which sheet 11 and the framing data are drawn to and which R12 holds. A FULL-HEIGHT REMOVAL WITH NO HEADER IS NOT ASSUMED AND MUST NOT BE INFERRED FROM THE JOINERY; it needs separate structural and architectural verification. The consequence, stated plainly: from the living room you see the composition and the low end of the raking soffit under a 0.75 m header, with part of the upper flight concealed; the lower flight remains visible beyond the low joinery. Because that header stands from +2.10 m to the slab and the flight tread tops run +2.29 to +2.82 m, the east side of the flight is enclosed by wall and no balustrade is required. The opening must still be confirmed with the rest of the stair support system. Enclosed storage falls to the base cabinet alone - about 0.20 m3, against 0.86 m3 in the withdrawn R10 wedge and 3.5 m3 in the store R9 deleted.'),
+ ('CONCEPTUAL STRUCTURE / ARCHITECTURE OTHERWISE LOCKED','STAIR SHOWN AS CONCEPTUAL RCC WAIST-SLAB SYSTEM. FINAL WAIST-SLAB THICKNESS, LANDING BEAMS, SUPPORT CONDITIONS, REINFORCEMENT AND CONNECTIONS TO BE DESIGNED BY STRUCTURAL ENGINEER. 100 MM PARTITION WALLS ARE NOT TO BE ASSUMED LOAD-BEARING. Neither R10 nor R12 moves a riser, flight, landing, support zone, slab trimmer, basin or archway; every other wall, door and window keeps its R2 geometry.')]:
+  y=h.block(c,246,y,title,body,156)
+
+RAKE=4*R
+def panel_top(y):
+ t=L['tv'];return min(t['panelTopCap'],t['panelTopCap']-(y-t['panelBreakY'])*RAKE)
+
+def tv_section(q):
+ """R12: the reference-matched composition drawn in the upper-flight bay, d = distance from the
+ bedroom wall (west at left). The oak backing panel's top edge is one straight rake held 60 mm
+ under the waist soffit, levelling off at the +2.55 m cap under the flat slab; the low cabinet
+ runs the whole length; the screen is surface-mounted in the taller portion; open boxes step down
+ the low end of the wedge and two floating shelves step up at the tall end."""
+ t=L['tv'];D=lambda y:WALL-y;cab=t['cabinet']
+ # Backing panel, as its true profile: bottom edge, then the rake, then the cap.
+ y0,y1=t['panel'][1],t['panel'][3];yb=t['panelBreakY']
+ poly(q,[(D(y1),t['panelBottom']),(D(y0),t['panelBottom']),(D(y0),t['panelTopCap']),
+         (D(yb),t['panelTopCap']),(D(y1),panel_top(y1))],OAK,h.INK,.55)
+ # Long low cabinet on its recessed plinth.
+ q.fill_rect(D(cab['box'][3]),cab['plinth'],D(cab['box'][1]),cab['top'],CARCASS)
+ q.rect(D(cab['box'][3]),cab['plinth'],D(cab['box'][1]),cab['top'],h.INK,.55)
+ q.fill_rect(D(cab['box'][3])+.02,0,D(cab['box'][1])-.02,cab['plinth'],h.MUTED)
+ for i in range(1,cab['fronts']):
+  fy=cab['box'][1]+i*cab['frontWidth'];q.line(D(fy),cab['plinth'],D(fy),cab['top'],h.INK,.3)
+ # Stepped open boxes in the low end of the wedge, floating shelves at the tall end.
+ for cb in t['cubbies']:q.rect(D(cb['y'][1]),cb['z'][0],D(cb['y'][0]),cb['z'][1],h.INK,.45)
+ for sh in t['shelves']:q.fill_rect(D(sh['y'][1]),sh['top']-sh['thickness'],D(sh['y'][0]),sh['top'],h.INK)
+ # 55-inch screen, approved centreline kept.
+ b=t['box'];q.fill_rect(D(b[3]),t['screenBottom'],D(b[1]),t['screenTop'],h.INK)
+ q.text(D(t['screenCenter']),t['screen']['centerHeight']-.03,'43 in SCREEN',3.4,col=HexColor('#ffffff'))
+ q.text(D(t['screenCenter']),.18,'LOW CABINET / TOP +0.45',3.2,col=h.MUTED)
+ q.text(D(5.0),1.86,'OPEN BOXES',2.9,rot=90,col=h.MUTED)
+ q.polyline([(D(4.6),panel_top(4.6)+.16),(D(4.6),panel_top(4.6)+.01)],h.BLUE,.5,True)
+ q.text(D(4.6),panel_top(4.6)+.21,'LOW PANEL PARALLEL TO SOFFIT / OPEN ABOVE',3.0,col=h.BLUE)
+ q.text(D(3.6),t['panelTopCap']+.06,'CAP +1.40 / CLEAR BELOW HEADER',3.0,col=h.BLUE)
 
 def bay_section(q):
  # Horizontal axis: distance from the stair-side face of the bedroom wall (plan y = 6.10 - d); west at left, looking south.
+ # R9: the upper flight is now only 4 risers over 1.0 m (was 7 over 1.75 m), so beyond d = 1.9 m
+ # there is no flight overhead at all - that span is now plain first-floor slab.
  q.fill_rect(-.1,0,0,2.85,h.INK);q.fill_rect(3.8,0,3.9,2.85,h.INK)
  q.fill_rect(-.3,-.15,3.9,0,SLAB)
- pts=[(0,9*R),(.9,9*R)]
- for i in range(7):
-  z=(10+i)*R;d0=.9+i*.25;pts+=[(d0,z),(d0+.25,z)]
- pts+=[(2.65,3.0),(3.8,3.0),(3.8,2.85),(2.65,2.85)]
- # R6 underside: one continuous inclined waist soffit, stepping to the landing slab soffit.
- pts+=[(2.65,NOSE(2.65)-WZONE),(.9,NOSE(.9)-WZONE),(.9,9*R-LZONE),(0,9*R-LZONE)]
+ pts=[(0,12*R),(.9,12*R)]
+ for i in range(4):
+  z=(13+i)*R;d0=.9+i*.25;pts+=[(d0,z),(d0+.25,z)]
+ pts+=[(1.9,3.0),(3.8,3.0),(3.8,2.85),(1.9,2.85)]
+ # R9 underside: one continuous inclined waist soffit over the shortened flight, stepping to the
+ # landing slab soffit; beyond the flight the underside is just the flat first-floor slab.
+ pts+=[(1.9,NOSE(1.9)-WZONE),(.9,NOSE(.9)-WZONE),(.9,12*R-LZONE),(0,12*R-LZONE)]
  poly(q,pts,SLAB,h.INK,.7)
  # Conceptual landing beam zone inside the existing bedroom cross-wall; no room is encroached.
- q.fill_rect(-.1,9*R-LZONE-.15,0,9*R,HexColor('#a9aea7'))
- q.line(-.1,9*R-LZONE-.15,0,9*R-LZONE-.15,h.INK,.5)
- q.text(.06,9*R+.10,'LANDING BEAM ZONE / TO BE DESIGNED',3.4,col=h.MUTED,align='l')
- q.text(.45,9*R-.095,'9R LANDING SLAB',3.6,col=h.MUTED)
- q.polyline([(2.42,NOSE(2.42)-WZONE-.02),(2.78,1.80)],h.MUTED,.4)
- q.text(3.18,1.72,'CONTINUOUS RCC WAIST SLAB %d mm'%(WAIST*1000),3.4,col=h.MUTED)
- for z in L['store']['zones']:
-  if z['box'][2]<=1.15:continue   # the lower-bay pocket lies behind the section plane
-  d0=WALL-z['box'][3];d1=WALL-z['box'][1]
-  q.fill_rect(d0,.02,d1,z['top'],CARCASS);q.rect(d0,.02,d1,z['top'],h.TEAL,.6)
- q.text(.68,.78,'STORE',6,True,col=h.TEAL);q.text(.68,.55,'1.37 / 1.33 / 1.51 m',3.8,col=h.TEAL)
- pb=L['partition'];d0=WALL-pb['box'][3];d1=WALL-pb['box'][1]
- q.fill_rect(d0,0,d1,pb['height'],h.TEAL)
- mz=pb['mirror']['z'];q.line(d1+.012,mz[0],d1+.012,mz[1],h.GLASS,1.6)
- q.text(d1+.05,pb['height']-.02,'MIRROR / TOP +%.2f'%pb['height'],3.6,col=h.TEAL,align='l')
- w=L['wash'];wb=w['box'];c0=WALL-wb[3];c1=WALL-wb[1]
+ q.fill_rect(-.1,12*R-LZONE-.15,0,12*R,HexColor('#a9aea7'))
+ q.line(-.1,12*R-LZONE-.15,0,12*R-LZONE-.15,h.INK,.5)
+ q.text(.06,12*R+.10,'LANDING BEAM ZONE / TO BE DESIGNED',3.4,col=h.MUTED,align='l')
+ q.text(.45,12*R-.095,'12R LANDING SLAB',3.6,col=h.MUTED)
+ q.polyline([(1.2,NOSE(1.2)-WZONE-.02),(1.95,2.32)],h.MUTED,.4)
+ q.text(2.0,2.66,'CONTINUOUS RCC WAIST SLAB %d mm'%(WAIST*1000),3.4,col=h.MUTED,align='l')
+ q.text(2.0,2.50,'NO FLIGHT OVERHEAD BEYOND d = 1.90',3.4,col=h.MUTED,align='l')
+ q.text(2.0,2.34,'EXTRA FIRST-FLOOR LANDING ABOVE',3.4,col=h.MUTED,align='l')
+ q.text(1.95,2.80,'%d WAIST + %d FINISH / %d LANDING SLAB / CONCEPTUAL - VERIFY'%(WAIST*1000,FIN*1000,LAND*1000),3.0,col=h.MUTED,align='l')
+ tv_section(q)
+ # Drawn after the joinery so the joinery cannot cover it: the wall behind this section is cut
+ # to +2.10 m only, with the 100 mm partition retained above as a plastered header.
+ q.text(2.0,2.26,'WALL BEHIND: CUT TO +2.10 / HEADER RETAINED TO THE SLAB',3.0,col=h.MUTED,align='l')
+ # R9: mirror mounted directly on the bedroom wall (d = 0), basin against the wall.
+ w=L['wash'];mz=w['mirror']['z'];q.line(.012,mz[0],.012,mz[1],h.GLASS,1.6)
+ q.text(.05,mz[0]+.06,'MIRROR / TOP +%.2f'%mz[1],3.6,col=h.TEAL,align='l')
+ wb=w['box'];c0=WALL-wb[3];c1=WALL-wb[1]
  q.fill_rect(c0,w['height']-.04,c1,w['height'],h.INK)
  q.rect(c0,w['counter']['drawerBottom'],c1,w['height']-.04,h.TEAL,.6)
  q.fill_rect(c0+.05,w['height']-.06,c1-.03,w['height']+.06,BASIN);q.rect(c0+.05,w['height']-.06,c1-.03,w['height']+.06,h.TEAL,.5)
- q.line(d1,.98,d1+.14,.98,h.INK,.9);q.line(d1+.14,.98,d1+.14,.92,h.INK,.9)
+ q.line(c1,.98,c1+.14,.98,h.INK,.9);q.line(c1+.14,.98,c1+.14,.92,h.INK,.9)
  q.text((c0+c1)/2,w['counter']['drawerBottom']+.12,'DRAWER',3.2,col=h.TEAL)
  q.text((c0+c1)/2,1.28,'BASIN +0.86',3.4,col=h.TEAL)
- hx=2.05
+ hx=.65
  q.circle(hx,1.62,.1,h.MUTED,.6);q.line(hx,.95,hx,1.52,h.MUTED,.6)
  q.line(hx,.95,hx-.11,0,h.MUTED,.6);q.line(hx,.95,hx+.11,0,h.MUTED,.6)
- q.line(hx,1.38,1.66,1.02,h.MUTED,.6)
- q.fill_rect(1.75,-.03,2.35,.03,h.TEAL)
- q.polyline([(2.5,2.0),(2.2,2.0)],h.TEAL,.8,True);q.text(2.55,1.97,'USER FACES WEST',4.2,True,col=h.TEAL,align='l')
+ q.line(hx,1.38,.25,1.02,h.MUTED,.6)
+ q.fill_rect(.35,-.03,.95,.03,h.TEAL)
+ q.polyline([(.98,1.80),(.68,1.80)],h.TEAL,.8,True)
  for a,b,z in soffits():
   q.text((a+b)/2+.03,z-.06,f'{z:.2f}',3.5,rot=90,col=h.BLUE,align='r')
- q.dims('x',-.32,0,[1.4,.35,.6],size=4.6)
+ q.dims('x',-.32,0,[.35,.6],size=4.6)
  q.line(-.3,0,3.95,0,h.MUTED,.5)
  for z,t in [(0,'GF +0.45'),(3.0,'FF +3.45')]:q.line(3.9,z,4.05,z,h.BLUE,.5);q.text(4.1,z-.05,t,4.5,col=h.BLUE,align='l')
  q.text(-.2,1.45,'BEDROOM WALL',4,rot=90,col=h.MUTED)
  q.text(4.0,1.45,'KITCHEN WALL',4,rot=90,col=h.MUTED)
  q.text(.05,2.55,'< WEST',5,True,col=h.TEAL,align='l');q.text(3.7,2.55,'EAST >',5,True,col=h.TEAL,align='r')
- q.text(.05,2.42,'CLEAR HEIGHTS IN BLUE / %d mm RCC WAIST + %d mm FINISH'%(WAIST*1000,FIN*1000),3.8,col=h.MUTED,align='l')
- q.text(.05,2.27,'%d mm LANDING SLAB / CONCEPTUAL - VERIFY WITH ENGINEER'%(LAND*1000),3.4,col=h.MUTED,align='l')
+ q.text(.05,2.42,'USER FACES WEST / BASIN EAST',3.8,col=h.MUTED,align='l')
+ q.text(.05,2.29,'CLEAR HEIGHTS IN BLUE',3.6,col=h.MUTED,align='l')
+ q.dims('x',-.55,.95,[.40,1.25,.30],size=4.2)
+ q.text(2.0,-.72,'R13 COMPOSITION / CABINET 1.95 x 0.35 m + 30 mm RAKING PANEL / NOTHING PAST THE WALL LINE',3.6,col=h.BLUE)
 
 def detail_sheet(c):
- h.base(c,7,'Under-stair built-in / conceptual RCC stair','R6 / 10 SEP 2026 / STAIR PLAN 1:25 AND BAY SECTION 1:40 AT A3 / STRUCTURE IS CONCEPTUAL MASSING, NOT A STRUCTURAL DESIGN')
+ h.base(c,7,'Under-stair built-in / reference-matched TV composition','R13 / 14 SEP 2026 / STAIR PLAN 1:25 AND BAY SECTION 1:40 AT A3 / STRUCTURE IS CONCEPTUAL MASSING, NOT A STRUCTURAL DESIGN')
  p=h.Plan(c,20,70-2.3*40,40);stair(p,'GF',False);fixtures(p,True)
  p.dims('x',6.45,.15,[.9,.1,.9],size=6)
- p.dims('y',2.35,3.75,[.6,.35,.05,1.35],size=4.6,side=-1)
- for yy,t in [(4.05,'STAND'),(4.52,'BASIN'),(5.42,'STORE')]:p.text(2.63,yy,t,3.6,rot=90,col=h.BLUE)
+ p.dims('y',2.35,5.15,[.6,.35],size=4.6,side=-1)
+ for yy,t in [(5.45,'STAND'),(5.925,'BASIN')]:p.text(2.63,yy,t,3.6,rot=90,col=h.BLUE)
  p.text(3.1,3.05,'NORTH >',5.5,True,col=h.TEAL)
- h.tx(c,25,54,'One built-in unit under a conceptual RCC stair',8,h.TEAL,True)
- h.para(c,25,46,'Distances are measured from the stair-side face of the bedroom wall: store 0-1.40 m, mirror partition at 1.40 m, basin 1.40-1.75 m, standing zone 1.75-2.35 m, all unchanged. Grey hatch: conceptual landing beam and slab trimmer zones, inside walls and slab edges that already exist. Blue arrows: basin route from the stair entry, cabinet route beside the basin, store doors from the passage.',140,8,4.4)
+ h.tx(c,25,54,'The reference composition, fitted to the real under-stair triangle',8,h.TEAL,True)
+ h.para(c,25,46,'The R12 stair, all risers, flights, landings, trimmer, structural support conditions and retained +2.10 to +2.85 m plastered header are unchanged. The west-wall basin still faces EAST with its floating vanity, vessel, black mixer, mirror, standing zone and 0.90 m doorless access unchanged. The nook remains physically separate. The retained header conceals part of the upper flight; the lower flight and its diagonal can be seen through the space above the reduced panel.',140,8,4.4)
  y=231
  for title,body in [
- ('1 / UNDER-LANDING STORE, 0-1.40 m FROM THE BEDROOM WALL','Floor 1.90 x 1.35 m unchanged, about 2.6 m2 and 3.5 m3. Against the RCC soffit the carcass top becomes 1.37 m under the landing slab, 1.33 m where the waist springs off it and 1.51 m under riser 11, keeping 45-55 mm below each soffit. The two 450 mm bifold leaves stay 1.40 m high and clear the 1.42 m landing soffit; the pocket under the lower landing is crouch-in bulk storage.'),
- ('2 / STEPPED VANITY, USER FACES WEST','Mirror partition still at 1.40 m; its top comes down from +1.75 to +1.65 m under the 1.70 m waist soffit. Basin, counter, drawer, +0.86 m rim, 1.75 m front edge and the 750 x 600 mm standing zone at 1.75-2.35 m do not move. DISCLOSED: a continuous waist soffit is an inclined plane and lower than the superseded separate-tread model, so clear heights fall to 1.98 m over the leaning strip, 2.09 m over the body line, 2.40 m at the rear and 1.73 m at the back of the bowl - the whole standing zone is now under the 2.20 m benchmark. Fallback: front edge at 2.00 m gives 2.16 m.'),
- ('3 / CABINET, CLOSING PANEL AND TV','The 500 W x 550 D mm cabinet stays under the last two lower-flight treads at y = 4.20-4.70 m; its height comes down from 1080 to 800 mm under the 0.85 m waist soffit, since the waist hangs one riser plus its own thickness below each nosing. Its doors are still reached from the wash side through a 400 mm strip beside the basin, now under a 1.73-2.09 m soffit: stoop access, not a passage. The oak closing panel and the TV sit on the stair boundary at x = 2.05-2.10 m, beside the flight and never beneath it, so both are unchanged.'),
- ('4 / CONCEPTUAL RCC STAIR / EVERYTHING ELSE LOCKED','STAIR SHOWN AS CONCEPTUAL RCC WAIST-SLAB SYSTEM. FINAL WAIST-SLAB THICKNESS, LANDING BEAMS, SUPPORT CONDITIONS, REINFORCEMENT AND CONNECTIONS TO BE DESIGNED BY STRUCTURAL ENGINEER. 100 MM PARTITION WALLS ARE NOT TO BE ASSUMED LOAD-BEARING. Support: the plinth, the 150 mm west external wall, a landing beam zone in the existing bedroom cross-wall line, the floor-slab trimmer. No cantilevered treads, no stringers, no wall under the upper flight, no new column, no load on the stair-side partition. Stair geometry and every other wall, door and window keep their R2 geometry.')]:y=h.block(c,180,y,title,body,216)
+ ('1 / RISER SHIFT, 5 + 7 + 4-PLUS-ARRIVAL','Starter grows from 2 to 5 risers using the ~0.75 m nook beside the old first riser, inside the stair\'s own footprint. West flight keeps its exact R2 tread positions, renumbered 3 risers higher (6-12). The intermediate landing rises from riser 9 to riser 12 (+0.53 m). The upper flight needs only 4 risers instead of 7, so its run shrinks from 1.75 to 1.00 m and the trimmer moves from y = 3.45 to y = 4.2. First-to-roof stair unchanged.'),
+ ('2 / BASIN AGAINST THE BEDROOM (WEST) WALL, FACING EAST','Mirror mounted directly on the bedroom wall in place of the R6 mirror partition. Basin, counter, drawer, +0.86 m rim, unmoved in size, now sit at y = 5.75-6.10 m, entirely under the flat landing slab raised to riser 12. Y increases west, so the basin - opening into the room - faces EAST; the user stands facing WEST to use it. Clear height is a near-uniform 1.91-1.95 m, a real gain on the R6 sloped range but still short of the 2.20 m benchmark used elsewhere. The 750 x 600 mm standing zone sits at y = 5.15-5.75.'),
+ ('3 / R13 / 1.95 m LONG x 0.35 m DEEP','R13 reduces the TV joinery within the unchanged R12 architecture. A 30 mm oak backing at x = 1.90-1.93 starts at y = 3.30, caps at +1.40 m to y = 4.20, then falls parallel to the actual upper-flight soffit to +0.729 m at y = 5.15. It leaves about 1.20 m of open vertical space below the raking soffit. The 43-inch screen is 0.96 x 0.54 m, centreline y = 3.88 and centre +0.97 m, in the taller portion. The low cabinet is 1.95 x 0.35 m, top +0.45 m, fronts flush at x = 2.15. Three small open boxes step down beyond the TV, tops +0.94 and +0.66 m. Upper shelves and the tall oak end trim are removed. Nothing projects into the 1.00 m passage.'),
+ ('4 / CONCEPTUAL RCC STAIR / EVERYTHING ELSE LOCKED','STAIR SHOWN AS CONCEPTUAL RCC WAIST-SLAB SYSTEM. FINAL WAIST-SLAB THICKNESS, LANDING BEAMS, SUPPORT CONDITIONS, REINFORCEMENT AND CONNECTIONS TO BE DESIGNED BY STRUCTURAL ENGINEER. 100 MM PARTITION WALLS ARE NOT TO BE ASSUMED LOAD-BEARING. Support: the plinth, the west external wall, a landing beam zone in the bedroom cross-wall line, the trimmer at y = 4.2. No cantilevered treads, stringers, wall under the upper flight or new column. R10 adds no member: it cuts the partition from y = 3.20 to 5.20 away below +2.10 m and retains it above as a plastered header; full-height removal is not assumed.')]:y=h.block(c,180,y,title,body,216)
  h.tx(c,181,112,'SECTION / UPPER-FLIGHT BAY / LOOKING SOUTH / 1:40 / CONCEPTUAL RCC',8,h.TEAL,True)
  bay_section(h.Plan(c,190,33,25))
- h.tx(c,318,113,'LOWER FLIGHT / CABINET RETAINED',8,h.TEAL,True)
+ h.tx(c,318,113,'LOWER FLIGHT / WEST FLIGHT, RENUMBERED 3 RISERS HIGHER',8,h.TEAL,True)
  q=h.Plan(c,320,42,25)
- top=[(0,2*R)]
+ top=[(0,5*R)]
  for i in range(6):
-  x=i*.25;z=(3+i)*R;top+=[(x,z),(x+.25,z)]
- top+=[(1.5,9*R),(2.0,9*R)]
- bot=[(0,2*R-WZONE),(1.5,8*R-WZONE),(1.5,9*R-LZONE),(2.0,9*R-LZONE)]
+  x=i*.25;z=(6+i)*R;top+=[(x,z),(x+.25,z)]
+ top+=[(1.5,12*R),(2.0,12*R)]
+ bot=[(0,5*R-WZONE),(1.5,11*R-WZONE),(1.5,12*R-LZONE),(2.0,12*R-LZONE)]
  poly(q,top+bot[::-1],SLAB,h.INK,.7)
- for cab in L['storage']:
-  b=cab['box'];q.rect(b[1]-3.2,.05,b[3]-3.2,cab['height'],h.TEAL,.8)
  q.line(0,0,2.0,0,h.MUTED,.5)
  q.polyline([(1.65,.55),(1.52,.55)],h.TEAL,.6,True)
- q.text(.62,3*R+.30,'RCC WAIST SLAB',3.4,col=h.MUTED)
- h.para(c,318,34,'500 x 550 x 800 mm under treads 7-8; doors face the wash side. Waist slab conceptual.',84,7,3.8)
+ q.text(.62,6*R+.30,'RCC WAIST SLAB',3.4,col=h.MUTED)
+ h.para(c,318,34,'Same R2 tread positions as before, now risers 6-12. Nothing is built under this flight: the R10 TV unit sits under the upper flight and the arrival slab only. Waist slab conceptual.',84,7,3.8)
 
 
 def section(p):
- # Developed paths: GF starter + lower + retained upper; roof stair stays 9 + 8. R6 gives every
- # flight a continuous RCC waist slab and every turn a landing slab, so nothing reads as floating.
+ # Developed paths: GF now 5 + 7 + (4 + arrival) risers under R9; roof stair stays 9 + 8. Every
+ # flight is a continuous RCC waist slab and every turn a landing slab, so nothing reads as floating.
  for x0,x1,z in [(-.35,5.7,roof.GF),(-.35,0,roof.FF),(5.8,6.35,roof.FF),(4.65,5.2,roof.RF)]:
   p.fill_rect(x0,z-.15,x1,z,SLAB)
- for z0,groups in [(roof.GF,[(2,.9),(7,1.4),(8,0)]),(roof.FF,[(9,.9),(8,0)])]:
+ for z0,groups in [(roof.GF,[(5,.9),(7,1.4),(5,0)]),(roof.FF,[(9,.9),(8,0)])]:
   top=[(0,z0)];bot=[];x=0;z=z0
   for count,landing in groups:
    fx,fz=x,z
@@ -258,7 +299,7 @@ def section(p):
    if landing:
     bot+=[(x,z-LZONE)];x+=landing;top.append((x,z));bot+=[(x,z-LZONE)]
   poly(p,top+bot[::-1],SLAB,h.INK,.85)
-  p.text(2.7,z0+.25,'2 + 7 + 8 / GF' if z0==roof.GF else '9 + 8 / TO ROOF',5,col=h.TEAL)
+  p.text(2.7,z0+.25,'5 + 7 + 5 / GF (R9)' if z0==roof.GF else '9 + 8 / TO ROOF',5,col=h.TEAL)
   p.text(2.7,z0+.05,'CONTINUOUS RCC WAIST SLAB / LANDING SLAB',3.8,col=h.MUTED)
  p.fill_rect(-.1,roof.COVER_UNDER,5.7,roof.COVER_TOP,SLAB)
  p.dims('y',6.0,roof.RF,[2.4],size=6,side=-1)

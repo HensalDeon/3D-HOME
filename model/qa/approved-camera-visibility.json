@@ -1,9 +1,9 @@
 {
   "revision": "R14",
-  "status": "local visual study",
+  "status": "approved geometry camera checks",
   "views": [
     {
-      "name": "../interiors/images/R14-living-room-eye.png",
+      "name": "qa/approved-living-reference.png",
       "eye": [
         5,
         3.1,
@@ -38,7 +38,7 @@
       "geometryInspection": false
     },
     {
-      "name": "../interiors/images/R14-joinery-close.png",
+      "name": "qa/approved-joinery-reference.png",
       "eye": [
         3.95,
         3.3,
@@ -73,7 +73,7 @@
       "geometryInspection": false
     },
     {
-      "name": "../interiors/images/R14-geometry-in-stair.png",
+      "name": "qa/approved-geometry-reference.png",
       "eye": [
         5.2,
         1.55,

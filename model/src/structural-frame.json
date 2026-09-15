@@ -1,5 +1,5 @@
 {
-  "revision": "R7",
+  "revision": "R10",
   "system": "conceptual cast-in-situ RCC frame: columns inside existing wall lines and piers, beams on the grid, two-way floor slabs",
   "status": "TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER",
   "indicative": true,
@@ -611,17 +611,30 @@
         6.1
       ],
       "within": "over the retained 100 mm stair-side partition line, spanning between the grid 3 and grid 4 beams",
+      "note": "FLOOR-SLAB TRIMMER ZONE - TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER R10 removes the partition below it between y = 3.20 and y = 5.20 for the built-in TV unit and retains a plastered header from +2.10 m to the slab, hung off this zone."
+    },
+    {
+      "id": "stair-arrival-ground",
+      "level": "first",
+      "box": [
+        1.05,
+        3.95,
+        2.05,
+        4.2
+      ],
+      "within": "edge of the first-floor arrival landing; R9 moves this trimmer from y = 3.45 to y = 4.2 because the ground-to-first upper flight now needs only 4 risers instead of 7",
       "note": "FLOOR-SLAB TRIMMER ZONE - TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER"
     },
     {
-      "id": "stair-arrival",
+      "id": "stair-arrival-first",
+      "level": "roof",
       "box": [
         1.05,
         3.2,
         2.05,
         3.45
       ],
-      "within": "edge of the first-floor arrival landing, as R6",
+      "within": "edge of the roof-level arrival landing; the first-to-roof stair is unchanged by R9",
       "note": "FLOOR-SLAB TRIMMER ZONE - TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER"
     }
   ],
@@ -641,8 +654,9 @@
           1.05,
           3.2,
           2.05,
-          3.45
-        ]
+          4.2
+        ],
+        "exceptNote": "R9 extended the first-floor arrival landing to y = 4.20 and said the freed 0.75 m becomes new first-floor floor area, but left this exception at the trimmer zone alone, which implied a hole in the slab between y = 3.20 and y = 3.95. R10 corrects it to the whole arrival landing: slab from y = 3.20 to y = 4.20 across x = 1.05-2.05, with the trimmer zone at y = 3.95-4.20 inside it. This is what gives the R10 TV unit its 2.85 m soffit over the tall and screen bays."
       }
     ],
     "ground": "ground floor is on grade over plinth fill; no suspended ground slab is shown",
@@ -653,11 +667,12 @@
     ]
   },
   "coordination": [
-    "Beam and column lines on grids B, 3, 4 and 5 (the 100 mm walls; A, C, 1 and 6 are now 220 mm and fully conceal their members) follow existing 100 mm walls, so those members must be wider than the wall. Each is shown projecting to one declared side: grid B east into the living and service side, grid 3 south into the kitchen (projecting the other way would drop headroom over the stair starter landing to 2.20 m), grid 4 north into Bedroom 1 (projecting the other way would clash with the under-stair store), grid 5 north into the rear work area.",
+    "Beam and column lines on grids B, 3, 4 and 5 (the 100 mm walls; A, C, 1 and 6 are now 220 mm and fully conceal their members) follow existing 100 mm walls, so those members must be wider than the wall. Each is shown projecting to one declared side: grid B east into the living and service side, grid 3 south into the kitchen (projecting the other way would drop headroom over the stair starter landing to 2.20 m), grid 4 north into Bedroom 1 (projecting the other way would clash with the R9 basin against the bedroom wall), grid 5 north into the rear work area.",
     "Column C4 is the only member not already implied by an existing wall junction or pier. It stands inside the 150 mm east external wall beside the rear service passage and takes no room area.",
     "No column falls inside the living, dining, kitchen or any bedroom floor area.",
     "Foundations, plinth beams and the ground-slab build-up are not shown and are entirely for the engineer.",
-    "The staircase follows the R6 conceptual waist-slab system; the grid 4 beam between A4 and B4 is its landing beam line."
+    "The staircase follows the R6 conceptual waist-slab system, with R9's riser shift; the grid 4 beam between A4 and B4 is its landing beam line, now carrying the landing at riser 12 instead of riser 9.",
+    "R10 adds no member. It removes the lower 2.10 m of the 100 mm stair-side partition between y = 3.20 and y = 5.20 for the built-in TV unit and retains it above as a plastered header; the stair-side trimmer zone already spans that whole wall line at the first-floor slab. R10 also closes the first-floor slab over the arrival landing R9 extended to y = 4.20 (see slabs.openings.stairwell.exceptNote)."
   ],
   "indicativeBeamNote": "Beams are drawn as an indicative 300 mm downstand under the slab soffit. No size is specified.",
   "memberWidth": 0.23,

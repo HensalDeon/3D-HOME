@@ -18,9 +18,12 @@ export function modeledHeadroom(option){
  const overlap=(a,b)=>Math.min(a[2],b[2])-Math.max(a[0],b[0])>1e-8&&Math.min(a[3],b[3])-Math.max(a[1],b[1])>1e-8;
  const slabs=[[0,0,6,3.2],[0,3.2,.15,6.1],[2.05,3.2,6,6.1],[.15,6.1,6,9.7],[0,6.1,.15,9.7],[1.05,3.2,2.05,3.45]];
  // R6: overhead is the RCC waist/landing soffit, not the old 120 mm tread underside. The option
- // only restudies the ground lower flight, so that flight and its landing extension are not overhead.
+ // only restudies the ground starter/lower flight, so that flight and its landing extension are
+ // not overhead. R9 changed the live ground upper flight and landing, but the fixed R2/R6 upper
+ // flight and landing these historical options were studied against are exactly what the
+ // untouched first-to-roof stair still models, so use 'first' at offset 0 as that fixed reference.
  return Math.min(...optionTreads(option).slice(0,8).map(s=>{
-  const c=[stairSoffit(s.box,'ground',{exclude:['lower','extension']}),stairSoffit(s.box,'first',{offset:3})]
+  const c=[stairSoffit(s.box,'first',{exclude:['lower']}),stairSoffit(s.box,'first',{offset:3})]
    .filter(v=>Number.isFinite(v)&&v>s.height).map(v=>v-s.height);
   for(const b of slabs)if(overlap(b,s.box))c.push(2.85-s.height);
   return Math.min(...c);

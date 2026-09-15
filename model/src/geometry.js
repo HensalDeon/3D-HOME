@@ -12,13 +12,13 @@ export const EXTERNAL_WALL={ground:.22,first:.17,roof:.17};
 export const ENVELOPE={ground:[-.07,0,6,9.77],first:[-.02,0,6,9.72],roof:[-.02,0,6,9.72]};
 export const rooms=[
  ['g-kitchen','ground','Kitchen / southeast',[.15,.22,3.05,2.2],'2.90 × 1.98 m','East-facing hob; separate sink on the north counter. Door opens from the stair passage.',3],
- ['g-living','ground','Living & dining',[3.15,1.35,5.78,6.1],'2.63 × 4.75 m bay','R1: the passage partition is removed conditionally, opening the former passage into the living area. The TV is built into a slim stair-boundary panel centered on the old cabinet span, and R5 continues that line with a fixed oak panel so the passage reads as one joinery wall: TV, panel, store doors. The living floor is open; the basin and cabinet are reached through the stair entry behind the panel. Independent rear access is retained.',3],
+ ['g-living','ground','Living & dining',[3.15,1.35,5.78,6.1],'2.63 × 4.75 m bay','R1: the passage partition is removed conditionally, opening the former passage into the living area. R13 lowers the TV backing to +1.40 m in the under-stair volume and holds the coordinated R10 opening in the stair-side partition from y = 3.20 to y = 5.20: cut away to +2.10 m, retained above as a plastered header to the 2.85 m slab soffit. The joinery and the low end of the raking waist soffit are seen from the living room under that header; part of the upper flight remains concealed. Lower-flight treads are visible through the open space above the panel. A full-height opening is not assumed and needs separate structural and architectural verification. All face elements stop on the old wall line at x = 2.15, so nothing projects into the 1.00 m passage; the screen sits 0.17 m behind it on the raking oak backing panel. Beyond y = 5.20 the wall still opens directly onto the basin nook through the 0.90 m archway, with no doors. The living floor is open. Independent rear access is retained.',3],
  ['g-bed','ground','Bedroom 1 / southwest',[.15,6.2,3.05,9.55],'2.90 × 3.35 m','Bed head faces south. Private sliding access to Ensuite 1; entrance from the level stair passage.',3],
  ['g-bath','ground','Ensuite 1',[3.15,6.2,4.45,8.2],'1.30 × 2.00 m','WC, basin and shower; accessible only from Bedroom 1.',3],
  ['g-sit','ground','East sit-out',[3.15,0,5.78,1.2],'2.63 × 1.20 m','Covered entry within the 6.00 × 9.70 m envelope. Three approach steps.',3],
  ['g-work','ground','Rear work area',[3.15,8.3,5.78,9.77],'2.63 × 1.47 m','Sink, washing machine and preparation counter. Wash only; no rear cooking hearth. Direct backyard steps.',3],
  ['g-route','ground','Rear service passage',[4.55,6.2,5.78,8.2],'1.23 m clear','Independent route from dining to the work area without entering a bedroom or ensuite.',3],
- ['g-stair','ground','South stair & passage',[.15,2.3,3.05,6.1],'17 risers · 0.90 m flights','R2 geometry unchanged: south-going starter, west-going lower flight and retained east-going upper flight; 2 + 7 + 8 equal risers, 250 mm treads and 900 mm flights. The lower-side intermediate landing extends 500 mm to meet the shorter lower run. R6 builds it as a conceptual cast-in-situ RCC folded plate - a continuous 150 mm waist slab under each flight, monolithic with 150 mm landing slabs - carried on the plinth, the west external wall, a landing beam zone inside the bedroom cross-wall line and the floor-slab trimmer. No cantilevered treads, no stringers, no wall below the upper flight and no load on either 100 mm partition. Waist thickness, landing beams, supports, reinforcement and connections TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER.',7],
+ ['g-stair','ground','South stair & passage',[.15,2.3,3.05,6.1],'17 risers · 0.90 m flights','R9: south-going starter, west-going lower flight and shortened east-going upper flight; 5 + 7 + (4 + arrival) risers, 250 mm treads and 900 mm flights. The starter grows from 2 to 5 risers using floor inside the stair\'s own footprint beside the first riser; the west flight keeps its R2 tread positions, renumbered 3 risers higher; the upper return flight shrinks from 7 to 4 risers at the same going, so the intermediate landing rises from riser 9 to riser 12 and the first-floor trimmer moves from y = 3.45 to y = 4.2. It is built as a conceptual cast-in-situ RCC folded plate - a continuous 150 mm waist slab under each flight, monolithic with 150 mm landing slabs - carried on the plinth, the west external wall, a landing beam zone inside the bedroom cross-wall line and the floor-slab trimmer. No cantilevered treads, no stringers, no wall below the upper flight and no load on either 100 mm partition. Waist thickness, landing beams, supports, reinforcement and connections TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER. The R12 stair, all risers, flights, landings, trimmer, structural support conditions and retained +2.10 to +2.85 m plastered header are unchanged. The west-wall basin still faces EAST with its floating vanity, vessel, black mixer, mirror, standing zone and 0.90 m doorless access unchanged. The nook remains physically separate. The retained header conceals part of the upper flight; the lower flight and its diagonal can be seen through the space above the reduced panel.',7],
  ['f-study','first','Study / family',[.15,.17,3.05,2.2],'2.90 × 2.03 m','Southeast study above the kitchen, with a front window and access to the gallery.',4],
  ['f-master','first','Master / southwest',[.15,6.2,3.05,9.55],'2.90 × 3.35 m','South-facing bed head. Private ensuite and a separate side door to the rear drying balcony.',4],
  ['f-child','first','Bedroom 3 / north',[3.15,2.5,5.83,6.1],'2.68 × 3.60 m','North bedroom retained. The existing 0.55 m deep, 2.10 m high oak wardrobe now returns along the entrance wall with paired corner-access doors; the bedroom door and north window remain clear.',4],
@@ -31,9 +31,8 @@ export const rooms=[
  ['r-head','roof','Roof stair enclosure',[0,2.15,2.2,6.25],'2.20 × 4.10 m outside','9.02 m² additional area. 2.40 m clear landing height; cap +9.00 m. North-side 900 mm outward-opening exit.',9],
  ['r-terrace','roof','Open roof terrace',[2.2,.15,5.85,9.55],'Roof level +6.45 m','Open to sky, with 1.10 m perimeter guarding. Drainage falls, outlet and overflow are indicative.',5],
  ['r-services','roof','Services reserve',[.35,7.5,1.8,9.05],'Indicative reserve','A reserved footprint only. No water tank or solar installation is specified in the plan.',5],
- ['g-wash','ground','Stepped vanity / user faces WEST',revision.wash.box,'0.50 × 0.35 m basin · 1.40–1.75 m from the bedroom wall','R6: the R5 basin, counter, drawer and standing zone do not move, and the user faces WEST as before. Under the conceptual RCC waist slab the soffit is an inclined plane rather than a flat lid under each tread, so the clear heights fall: 1.98 m over the 150 mm leaning strip, 2.09 m over the body line, 2.40 m at the rear and 1.73 m at the back of the bowl. The whole standing zone is now below the 2.20 m benchmark; the disclosed fallback of a 2.00 m front edge gives 2.16 m. The mirror partition drops from 1.75 to 1.65 m to stay 45 mm clear of the soffit. Reached through the existing 900 mm stair-entry opening behind the TV panel. Hand washing only.',3],
- ['g-storage','ground','Rectangular cabinet / lower flight',revision.storage[0].box,'500 W × 550 D × 800 H mm','R6: the cabinet keeps its R3 footprint beneath the last two lower-flight treads, with its flat top and two 250 mm doors. Its height comes down from 1080 to 800 mm to stay 45 mm clear of the 0.85 m lower-flight waist soffit: a waist slab hangs one riser plus its own thickness below each nosing, which the superseded flat-lid tread model did not account for. Access is still from the wash side through a 400 mm strip beside the basin, now under a 1.73–2.09 m soffit: stoop access to a low cabinet, not a passage. The former 600 mm passage opening is closed by a fixed oak panel on the TV line, which sits beside the flight and is unaffected. Existing aperture unchanged; structural review remains applicable.',3],
- ['g-store','ground','Under-landing store / low zone',revision.store.box,'1.90 × 1.35 m · 1.38–1.56 m clear','R6: the R5 store keeps its 1.90 × 1.35 m footprint and about 2.6 m², but the conceptual RCC landing slab and waist lower every soffit, so the stepped carcass top becomes 1.37 m under the landing slab, 1.33 m where the waist springs off it and 1.51 m under riser 11, holding about 3.5 m³. The two 450 mm bifold leaves stay 1.40 m high and still clear the 1.42 m landing soffit, opening from the passage beside the bedroom door where the person stands under the full 2.85 m slab; the deeper pocket under the lower landing is crouch-in bulk storage. R6 carries the landing on a beam zone inside the bedroom cross-wall line rather than on the 100 mm stair-side partition, so the 900 × 1400 mm opening no longer depends on that partition being non-bearing, but the whole support system and the cut still need the structural engineer.',3],
+ ["g-media", "ground", "Compact fitted under-stair TV", revision.tv.unit, "1.95 × 0.35 m cabinet", "R13 reduces the TV joinery within the unchanged R12 architecture. A 30 mm oak backing at x = 1.90-1.93 starts at y = 3.30, caps at +1.40 m to y = 4.20, then falls parallel to the actual upper-flight soffit to +0.729 m at y = 5.15. It leaves about 1.20 m of open vertical space below the raking soffit. The 43-inch screen is 0.96 x 0.54 m, centreline y = 3.88 and centre +0.97 m, in the taller portion. The low cabinet is 1.95 x 0.35 m, top +0.45 m, fronts flush at x = 2.15. Three small open boxes step down beyond the TV, tops +0.94 and +0.66 m. Upper shelves and the tall oak end trim are removed. Nothing projects into the 1.00 m passage. Approximate storage 0.20 m3. Retained +2.10 m head.", 7],
+ ['g-wash','ground','Washbasin nook against the bedroom (west) wall, basin faces EAST',revision.wash.box,'0.50 \u00d7 0.35 m basin \u00b7 at the bedroom wall, y = 5.75-6.10','R12 moves nothing here. Position, east-facing orientation, +0.86 m rim, the 750 \u00d7 600 mm standing zone at y = 5.15-5.75, the 0.40 \u00d7 0.80 m vertical mirror at z = 1.00-1.80, the 0.90 m archway at y = 5.20-6.10 with no doors and the 1.91-1.95 m clear height under the raised landing are all exactly as R9 approved them. Only the interior treatment is specified, to the reference: a flat oak panelled backdrop on the bedroom wall, a compact floating oak vanity, a white rectangular vessel basin, a black deck mixer, warm integrated backlighting 40 mm proud of the mirror, one subtle warm downlight in the landing soffit, a black towel ring and nothing else. It shares the TV joinery\u2019s oak so the two read as one design language, but it is a separate unit: the joinery finishes at the archway jamb and the nook continues as its own vertical composition. Hand washing only.',3],
 ].map(([id,level,name,box,dimensions,description,sheet])=>({id,level,name,box,dimensions,description,sheet}));
 rooms.find(r=>r.id==='g-living').regions=[[3.15,1.35,5.78,6.1],[2.15,2.3,3.15,6.1]];
 export function openingsFor(level){
@@ -89,16 +88,23 @@ export function baselineStairTreads(){
  return steps;
 }
 
+// R9: the ground-to-first stair is fully custom (5 + 7 + 4-risers-and-arrival = 17); the
+// first-to-roof stair keeps the original baseline (2 + 7 + 8-risers-and-arrival) untouched, so
+// this no longer reuses baselineStairTreads() past index 0 for the ground level.
 export function stairTreads(level='ground'){
  const retained=baselineStairTreads();
  if(level!=='ground')return retained;
- const r=3/17,steps=[{box:[1.05,2.3,1.3,3.2],height:r,direction:'S'},
-  {box:[.15,2.3,1.05,3.2],height:2*r,landing:true}];
- for(let i=0;i<6;i++)steps.push({box:[.15,3.2+i*.25,1.05,3.45+i*.25],height:(3+i)*r,direction:'W'});
- return [...steps,...retained.slice(8)];
+ const r=3/17,steps=[];
+ for(let i=0;i<4;i++)steps.push({box:[1.8-i*.25,2.3,2.05-i*.25,3.2],height:(i+1)*r,direction:'S'});
+ steps.push({box:[.15,2.3,1.05,3.2],height:5*r,landing:true});
+ for(let i=0;i<6;i++)steps.push({box:[.15,3.2+i*.25,1.05,3.45+i*.25],height:(6+i)*r,direction:'W'});
+ steps.push({box:[.15,5.2,2.05,6.1],height:12*r,landing:true});
+ for(let i=0;i<4;i++)steps.push({box:[1.15,4.95-i*.25,2.05,5.2-i*.25],height:(13+i)*r});
+ steps.push({box:[1.15,2.3,2.05,4.2],height:3,arrival:true});
+ return steps;
 }
 export function stairLandingExtensions(level='ground'){
- return level==='ground'?[{box:revision.stair.landingExtension,height:9*(3/17)}]:[];
+ return level==='ground'?[{box:revision.stair.landingExtension,height:12*(3/17)}]:[];
 }
 
 // --- Conceptual RCC stair structure -------------------------------------------------
@@ -119,7 +125,14 @@ export const STAIR_STRUCTURE={
  waistVertical:(layout.structure.waist+layout.structure.finish)*SLOPE/.25,
  landingZone:layout.structure.landingSlab+layout.structure.finish,
 };
-export const STAIR_BEAM_ZONES=layout.structure.beamZones;
+// R9 moves the ground-to-first upper flight's trimmer to y = 4.2, but the first-to-roof stair
+// keeps its own trimmer at y = 3.2-3.45 (unchanged), so the two levels need different zones here.
+export function stairBeamZones(level='ground'){
+ const [landingBeam,groundTrimmer]=layout.structure.beamZones;
+ if(level==='ground')return [landingBeam,groundTrimmer];
+ return [landingBeam,{...groundTrimmer,box:[1.05,3.2,2.05,3.45],within:'existing floor-slab edge at the stairwell opening (first-to-roof stair, unchanged by R9)'}];
+}
+export const STAIR_BEAM_ZONES=stairBeamZones('ground');
 
 // Each flight as the top plane of its waist slab: the line through the steps' internal corners,
 // one riser below the nosing line, given as a to b in (plan y, height above the floor it starts
@@ -129,16 +142,22 @@ export function stairFlights(level='ground'){
  // runIn is how far each end is run into the slab it frames into, for representation only. The
  // ends that meet the intermediate landing get none: there the waist stops at the landing edge
  // and the landing slab takes over, so nothing hangs into the store below it.
- const r=3/17,upper={id:'upper',x:[1.15,2.05],a:[5.2,9*r],b:[3.45,16*r],runIn:[0,.15],bearing:['intermediate landing slab','floor-slab trimmer at y = 3.45']};
+ // R9: the ground-to-first upper flight sheds 3 risers (7 -> 4) and its trimmer moves from
+ // y = 3.45 to y = 4.2; the first-to-roof upper flight is untouched, so the two levels now need
+ // separate 'upper' flight objects instead of one shared between them.
+ const r=3/17;
+ const upperGround={id:'upper',x:[1.15,2.05],a:[5.2,12*r],b:[4.2,16*r],runIn:[0,.15],bearing:['intermediate landing slab','floor-slab trimmer at y = 4.2']};
+ const upperFirst={id:'upper',x:[1.15,2.05],a:[5.2,9*r],b:[3.45,16*r],runIn:[0,.15],bearing:['intermediate landing slab','floor-slab trimmer at y = 3.45']};
  return level==='ground'
-  ?[{id:'lower',x:[.15,1.05],a:[3.2,2*r],b:[4.7,8*r],runIn:[.15,0],bearing:['starter landing on plinth fill','intermediate landing slab']},upper]
-  :[{id:'lower',x:[.15,1.05],a:[3.2,0],b:[5.2,8*r],runIn:[.15,0],bearing:['floor slab edge at y = 3.20','intermediate landing slab']},upper];
+  ?[{id:'lower',x:[.15,1.05],a:[3.2,5*r],b:[4.7,11*r],runIn:[.15,0],bearing:['starter landing on plinth fill','intermediate landing slab']},upperGround]
+  :[{id:'lower',x:[.15,1.05],a:[3.2,0],b:[5.2,8*r],runIn:[.15,0],bearing:['floor slab edge at y = 3.20','intermediate landing slab']},upperFirst];
 }
 export function stairLandingSlabs(level='ground'){
- const r=3/17,slabs=[{id:'intermediate',box:[.15,5.2,2.05,6.1],top:9*r,bearing:'landing beam zone in the bedroom cross-wall line'}];
+ const r=3/17,top=level==='ground'?12*r:9*r;
+ const slabs=[{id:'intermediate',box:[.15,5.2,2.05,6.1],top,bearing:'landing beam zone in the bedroom cross-wall line'}];
  if(level==='ground')slabs.push(
-  {id:'extension',box:[.15,4.7,1.05,5.2],top:9*r,bearing:'monolithic with the intermediate landing'},
-  {id:'starter',box:[.15,2.3,1.05,3.2],top:2*r,bearing:'plinth fill / ground slab',onGround:true});
+  {id:'extension',box:[.15,4.7,1.05,5.2],top,bearing:'monolithic with the intermediate landing'},
+  {id:'starter',box:[.15,2.3,1.05,3.2],top:5*r,bearing:'plinth fill / ground slab',onGround:true});
  return slabs;
 }
 const boxesOverlap=(a,b)=>Math.min(a[2],b[2])-Math.max(a[0],b[0])>1e-9&&Math.min(a[3],b[3])-Math.max(a[1],b[1])>1e-9;

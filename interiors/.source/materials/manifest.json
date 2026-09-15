@@ -1,0 +1,22 @@
+[
+  {
+    "asset": "oak_veneer_01",
+    "map": "Diffuse",
+    "file": "oak_veneer_01_diff_2k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/oak_veneer_01/oak_veneer_01_diff_2k.jpg",
+    "md5": "0ad13b8daf8dc00318a437f56e54c484",
+    "license": "CC0",
+    "source": "https://polyhaven.com/a/oak_veneer_01",
+    "sha256": "0718c2e1a209afe6138ccb41d70e1a18cd825d1e73db33ad7cf80806fa9ce5a4"
+  },
+  {
+    "asset": "oak_veneer_01",
+    "map": "Rough",
+    "file": "oak_veneer_01_rough_2k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/oak_veneer_01/oak_veneer_01_rough_2k.jpg",
+    "md5": "cacab0148320161ceced18ae909e3ada",
+    "license": "CC0",
+    "source": "https://polyhaven.com/a/oak_veneer_01",
+    "sha256": "5c81718ee172299c44e0754fadbe652758b6feed05a8fd88be6efff5aa70ca1e"
+  }
+]

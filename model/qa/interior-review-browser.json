@@ -1,0 +1,34 @@
+{
+  "views": [
+    {
+      "view": "living",
+      "width": 1800,
+      "height": 1200,
+      "file": "02-living-wide.png",
+      "pressed": 1,
+      "overflow": false
+    },
+    {
+      "view": "detail",
+      "width": 1800,
+      "height": 1200,
+      "file": "03-stair-tv-wide.png",
+      "pressed": 1,
+      "overflow": false
+    },
+    {
+      "view": "storage",
+      "width": 1536,
+      "height": 1024,
+      "file": "04-storage-wide-imagegen.png",
+      "pressed": 1,
+      "overflow": false
+    }
+  ],
+  "mobile": {
+    "width": 390,
+    "height": 844,
+    "overflow": false
+  },
+  "errors": []
+}
