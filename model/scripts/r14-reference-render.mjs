@@ -43,7 +43,7 @@ for(const v of views.filter(v=>!process.env.RENDER_ONLY||v.name.endsWith(process
 
   if(v.geometry){
    // Isolated inspection screenshot. All selected objects retain their real model transforms.
-   for(const name of ['stairs','R14 fitted TV joinery / local visual study','R12 washbasin nook against the bedroom (west) wall; basin faces east'])scene.add(h.levels.ground.getObjectByName(name).clone(true));
+   for(const name of ['stairs','R14 fitted TV joinery under the lower flight','R12 washbasin nook against the bedroom (west) wall; basin faces east'])scene.add(h.levels.ground.getObjectByName(name).clone(true));
    const {wallPieces}=await import('/src/geometry.js');
    const header=wallPieces('ground').find(p=>p.box[0]===2.05&&p.box[1]===3.2&&Math.abs(p.bottom-2.1)<.001);
    if(!header)throw Error('Retained header missing');
@@ -83,7 +83,7 @@ for(const v of views.filter(v=>!process.env.RENDER_ONLY||v.name.endsWith(process
   composer.addPass(new RenderPass(scene,camera));composer.addPass(ao);composer.addPass(new UnrealBloomPass(new THREE.Vector2(1800,1200),.12,.25,1.0));composer.addPass(new OutputPass());composer.render();
   // Check screen corners against the actual opaque model from this exact approval camera.
   scene.updateMatrixWorld(true);
-  const preview=scene.getObjectByName('R14 fitted TV joinery / local visual study').userData.preview;
+  const preview=scene.getObjectByName('R14 fitted TV joinery under the lower flight').userData.preview;
   const checks=[];
   for(const y of [preview.screen[1]+.002,preview.screen[3]-.002])for(const z0 of [preview.screenBottom+.002,preview.screenTop-.002]){
    const point=V(preview.screen[2]+.002,.45+z0,y),d=point.clone().sub(camera.position),distance=d.length();

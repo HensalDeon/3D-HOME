@@ -12,15 +12,22 @@ export function createHouse(){
   noir:mat('#1e2220',{roughness:.55}),glow:mat('#f7e3bd',{emissive:'#f0c07a',emissiveIntensity:.95,roughness:.6})};
  const V=(x,h,y)=>new THREE.Vector3(x-3,h,4.85-y);
  function box(g,x0,y0,x1,y1,bottom,top,m){if(x1-x0<.00001||y1-y0<.00001||top-bottom<.00001)return;const o=new THREE.Mesh(new THREE.BoxGeometry(x1-x0,top-bottom,y1-y0),m);o.position.copy(V((x0+x1)/2,(bottom+top)/2,(y0+y1)/2));o.castShadow=true;o.receiveShadow=true;g.add(o);return o;}
- // An inclined slab whose top face lies on the a-b segment given as (plan y, height above z).
- function slopedSlab(g,x0,x1,a,b,thickness,m){
-  const A=V((x0+x1)/2,a[1],a[0]),B=V((x0+x1)/2,b[1],b[0]),d=B.clone().sub(A);
-  const mesh=new THREE.Mesh(new THREE.BoxGeometry(x1-x0,thickness,d.length()),m);
-  mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,0,1),d.clone().normalize());
-  // setFromUnitVectors flips the local up when the flight runs the other way down the plan,
-  // so force the offset normal upward before seating the top face on the a-b line.
-  const n=new THREE.Vector3(0,1,0).applyQuaternion(mesh.quaternion);if(n.y<0)n.negate();
-  mesh.position.copy(A.clone().add(B).multiplyScalar(.5)).addScaledVector(n,-thickness/2);
+ // An inclined slab whose top face lies on the a-b segment given as (plan y, absolute height).
+ // `depth` is the slab's VERTICAL depth below that line, which is how STAIR_STRUCTURE states the
+ // waist zone and how stairSoffit() reads it, and the end faces are vertical, so the slab covers
+ // exactly the plan span it is given. It was previously a rotated box, which made `depth` a
+ // PERPENDICULAR thickness (0.208 m became a 0.255 m vertical drop) and left the ends square to
+ // the slope, so they overran the flight in plan. Both made the modelled soffit disagree with the
+ // drawn one - by 66 mm down the rake, and by 0.13 m of plan overrun at the foot.
+ function slopedSlab(g,x0,x1,a,b,depth,m){
+  const [p,q]=a[0]<=b[0]?[a,b]:[b,a];
+  const shape=new THREE.Shape();
+  [[p[0],p[1]-depth],[q[0],q[1]-depth],[q[0],q[1]],[p[0],p[1]]]
+   .forEach(([y,hh],i)=>i?shape.lineTo(y-4.85,hh):shape.moveTo(y-4.85,hh));
+  shape.closePath();
+  const mesh=new THREE.Mesh(new THREE.ExtrudeGeometry(shape,{depth:x1-x0,bevelEnabled:false}),m);
+  // Local x maps to -world z (plan y), local y to height, local z to world x (plan x).
+  mesh.rotation.y=Math.PI/2;mesh.position.set(x0-3,0,0);mesh.name='RCC waist slab';
   mesh.castShadow=true;mesh.receiveShadow=true;g.add(mesh);return mesh;
  }
  // A plate of constant thickness in x, whose face profile is an arbitrary polygon given in
@@ -90,7 +97,8 @@ export function createHouse(){
    box(f,.15,1.5,.8,2.2,z,z+1.8,materials.metal);box(f,.77,1.54,.8,1.57,z+.9,z+1.38,materials.dark);
    box(f,3.15,8.9,3.75,9.5,z,z+.86,materials.white);const drum=new THREE.Mesh(new THREE.CylinderGeometry(.20,.20,.02,24),materials.dark);drum.rotation.z=Math.PI/2;drum.position.copy(V(3.76,z+.43,9.2));f.add(drum);
    box(f,5.12,2,5.85,3.8,z+.12,z+.47,materials.fabric);box(f,5.69,2,5.85,3.8,z+.4,z+.95,materials.fabric);for(let y=2.05;y<3.7;y+=.58)box(f,5.12,y,5.69,y+.52,z+.47,z+.57,materials.linen);for(const y of [2,3.65])box(f,5.12,y,5.85,y+.15,z+.4,z+.72,materials.fabric);
-   // Local visual study only: published R13 plan/layout data are intentionally not propagated.
+   // R14 joinery, under the lower flight. Geometry comes from under-stair-layout.json, which the
+   // drawing scripts read too, and is checked against the real stair meshes as it is built.
    addTvJoineryPreview({parent:f,stairs:g.getObjectByName('stairs'),z,box,profilePrism,cylinder,materials,V});
    // ---- R12 washbasin nook: the approved geometry, given the reference interior treatment ----
    const wash=new THREE.Group();wash.name='R12 washbasin nook against the bedroom (west) wall; basin faces east';f.add(wash);
@@ -171,7 +179,7 @@ export function createHouse(){
    // Each waist slab is run into the slab it frames into, but never past a landing edge.
    for(const f of stairFlights(level)){
     const dy=f.b[0]-f.a[0],dh=f.b[1]-f.a[1],[ra,rb]=f.runIn.map(v=>v/Math.abs(dy));
-    slopedSlab(structure,f.x[0],f.x[1],[f.a[0]-dy*ra,z+f.a[1]-dh*ra-FIN],[f.b[0]+dy*rb,z+f.b[1]+dh*rb-FIN],STAIR_STRUCTURE.waistVertical,materials.concrete);
+    slopedSlab(structure,f.x[0],f.x[1],[f.a[0]-dy*ra,z+f.a[1]-dh*ra-FIN],[f.b[0]+dy*rb,z+f.b[1]+dh*rb-FIN],STAIR_STRUCTURE.waistConcreteVertical,materials.concrete);
    }
    // Landing slabs at the turns; the starter landing is solid onto the plinth fill. The last riser
    // of the lower flight is finished against the landing above it, so the landing concrete is set

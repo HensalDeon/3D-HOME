@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 5173",
     "build": "vite build && node scripts/standalone.mjs",
-    "test": "node --test scripts/model.test.mjs scripts/revision.test.mjs"
+    "test": "node --test scripts/model.test.mjs scripts/revision.test.mjs scripts/r14-preview.test.mjs"
   },
   "dependencies": {
     "three": "0.180.0"

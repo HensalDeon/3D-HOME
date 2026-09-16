@@ -1,6 +1,6 @@
 # Hensal — coordinated house plans
 
-This folder contains the published **R13** architectural review set. The approved **R14** under-stair TV joinery is shown in the [current interior review](../../interiors/R14-review.html); it has not yet been propagated into these drawings or the standalone explorer.
+This folder contains the published **R14** architectural review set. R14 moves the under-stair TV joinery out of the stair-side wall line and into the bay under the lower/west flight: a 2.25 × 0.35 m unit at x = 0.69–1.04, y = 3.20–5.45, facing east and read from the living room through the retained 2.00 m headed opening. Sheet 03 shows it in plan; sheet 07 sections it in its own bay. The stair, landings, trimmer, supports, the +2.10 m wall opening with its retained plastered header, and the washbasin nook are all unchanged.
 
 ## Retained deliverables
 

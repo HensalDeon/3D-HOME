@@ -1,12 +1,14 @@
 # Interactive model source
 
-The development model displays the approved R14 TV joinery beneath the lower stair flight. `src/tv-joinery-preview.js` defines the shallow cabinet, screen and backing; the backing profile is sampled against the existing stair meshes. `src/house.js` assembles the house and the separate basin nook.
+The model displays the published R14 TV joinery beneath the lower stair flight. `src/tv-joinery-preview.js` builds the cabinet, screen and backing from `src/under-stair-layout.json` — the same file the drawing scripts read — and samples the backing profile against the existing stair meshes, throwing if the measured soffit departs from the published `tv.panelTopProfile` by more than 5 mm. `src/house.js` assembles the house and the separate basin nook.
+
+`slopedSlab()` builds each inclined waist as an extruded prism with a **vertical** depth and **vertical** end faces. It was previously a rotated box, which silently turned the 208 mm waist zone into a 255 mm vertical drop and overran the foot of each flight by 0.13 m in plan; the modelled soffit was 67 mm below the drawn one everywhere. Modelled and canonical soffits now agree to 0.7 mm on all four flights.
 
 ## Deliverables and drawing scope
 
-The current interior deliverable is [the offline R14 review](../interiors/R14-review.html). The published standalone explorer at `../drawings/compact-v4/interactive-3d.html`, the combined PDF and `src/under-stair-layout.json` still describe the coordinated R13 drawing revision. R14 visual approval has not yet been propagated into that drawing package.
+The current interior deliverable is [the offline R14 review](../interiors/R14-review.html). The standalone explorer at `../drawings/compact-v4/interactive-3d.html`, the combined PDF, `dimensions.json` and `src/under-stair-layout.json` are all at R14.
 
-A full standalone rebuild currently combines the development model with the retained drawing assets. Coordinate the R14 drawing annotations before replacing the published package.
+Rebuild order matters, because each artefact embeds the previous one: build the drawings first (`drawings/compact-v4/.source/make_complete_plans.py`), then `scripts/extract_plan.py`, `scripts/make_assets.py`, `scripts/revision-review.mjs`, then `npm run build`.
 
 ## Local development and checks
 

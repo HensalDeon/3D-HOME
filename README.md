@@ -4,7 +4,7 @@ The approved interior direction is **R14 fitted TV joinery beneath the lower sta
 
 The TV unit has a 2.25 m long, 350 mm deep cabinet with its top 450 mm above finished floor. A 30 mm oak backing follows the actual stair underside with a modeled minimum 60 mm vertical gap. The 960 × 540 mm screen has its centre 870 mm above finished floor. The staircase, retained header and separate washbasin nook keep their existing geometry.
 
-The **published drawing package and standalone explorer remain R13**. They retain the coordinated house, site, roof and structural review data; the approved R14 joinery has not yet been propagated into that package. Use the R14 review for the latest interior appearance and the dimensioned drawing set for its stated architectural scope.
+**R14 is now propagated everywhere.** The 12-sheet PDF, the plan gallery, `dimensions.json` and the standalone explorer all carry the R14 joinery in the lower-flight bay. Model and drawings read the same published geometry in `model/src/under-stair-layout.json`, and the model checks its backing profile against the real stair meshes as it builds, so the two cannot drift apart again.
 
 - [Current interior review](interiors/R14-review.html) and [verification notes](interiors/R14-review.md)
 - [Published interactive house explorer](drawings/compact-v4/interactive-3d.html)

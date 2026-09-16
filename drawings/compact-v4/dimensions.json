@@ -65,7 +65,7 @@
   "roof_clear_landing_height_m": 2.4,
   "roof_access": "full south stair from first floor",
   "drawing_count": 12,
-  "revision": "R13",
+  "revision": "R14",
   "under_stair_wall_opening": {
     "box_m": [
       2.05,
@@ -82,29 +82,49 @@
     "slab_soffit_m": 2.85,
     "partition_mm": 100,
     "full_height_removal_assumed": false,
-    "status": "Coordinated R10 headed opening, held by R12/R13. A full-height removal with no header is not assumed and must not be inferred; it requires separate structural and architectural verification. TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER."
+    "status": "Coordinated R10 headed opening, held unchanged through R12/R13/R14. A full-height removal with no header is not assumed and must not be inferred; it requires separate structural and architectural verification. TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER."
   },
   "under_stair_composition": {
+    "under_flight": "lower/west flight",
     "zone_m": [
-      1.15,
+      0.69,
       3.2,
-      2.15,
-      5.15
+      1.04,
+      5.45
     ],
+    "faces": "E",
+    "face_x_m": 1.04,
     "cabinet_m": [
-      1.95,
+      2.25,
       0.35
     ],
     "cabinet_top_m": 0.45,
     "panel_thickness_m": 0.03,
-    "panel_cap_m": 1.4,
-    "panel_soffit_gap_m": 1.2049,
+    "panel_top_profile_m": [
+      [
+        3.23,
+        0.6354
+      ],
+      [
+        4.7,
+        1.6724
+      ],
+      [
+        4.7,
+        1.8876
+      ],
+      [
+        5.45,
+        1.8876
+      ]
+    ],
+    "panel_soffit_gap_m": 0.06,
     "screen_diagonal_in": 43,
-    "screen_centreline_y_m": 3.88,
-    "screen_centre_height_m": 0.97,
+    "screen_centreline_y_m": 4.64,
+    "screen_centre_height_m": 0.87,
     "projection_into_passage_m": 0,
-    "enclosed_storage_m3": 0.2,
-    "open_display_m3": 0.04,
+    "enclosed_storage_m3": 0.265,
+    "open_display_m3": 0.05,
     "balustrade_required": false
   }
 }

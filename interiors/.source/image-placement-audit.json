@@ -94,27 +94,27 @@
     "page": 16,
     "file": "interiors/images/04-storage-wide.png",
     "pixels": [
-      1200,
-      896
+      1264,
+      848
     ],
     "placed_points": [
       537.0,
-      400.96000000000004
+      360.2658227848101
     ],
-    "effective_ppi": 160.9
+    "effective_ppi": 169.5
   },
   {
     "page": 18,
     "file": "interiors/images/05-wash-wide.png",
     "pixels": [
-      1536,
-      1024
+      1264,
+      848
     ],
     "placed_points": [
       537.0,
-      358.0
+      360.2658227848101
     ],
-    "effective_ppi": 205.9
+    "effective_ppi": 169.5
   },
   {
     "page": 20,
@@ -458,14 +458,14 @@
     "page": 55,
     "file": "interiors/images/05-wash-wide.png",
     "pixels": [
-      1536,
-      1024
+      1264,
+      848
     ],
     "placed_points": [
-      633.0,
+      629.0188679245283,
       422.0
     ],
-    "effective_ppi": 174.7
+    "effective_ppi": 144.7
   },
   {
     "page": 56,

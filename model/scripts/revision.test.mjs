@@ -125,104 +125,73 @@ test('R2 stair, landing, wall, opening and room boundary preserved on first/roof
 test('R9 removes the small under-flight cabinet and the under-landing store entirely',()=>{
  assert.ok(!('storage' in revision));assert.ok(!('store' in revision));assert.ok(!('partition' in revision));assert.ok(!('closingPanel' in revision));
 });
-test('R13 fits the reference composition into the real under-stair volume',()=>{
- const t=revision.tv,old=revision.oldSlopedStorageFootprint;
- // The approved screen centreline is unmoved since R5. The face itself grows to a 55-inch
- // 1.23 x 0.72 m panel and drops to centre +1.02 m so it sits just over the low cabinet.
- near((t.box[1]+t.box[3])/2,3.88);near(t.screenCenter,3.88);near(t.oldStorageCenter,4.125);
+test('R14 builds the joinery into the lower-flight bay, on the real soffit',()=>{
+ const t=revision.tv;
+ assert.equal(t.revision,'R14');assert.equal(t.under,'lower/west flight');
+ // It lives wholly inside the lower flight's own footprint and clear of that flight's guard line.
+ const flight=stairFlights('ground').find(f=>f.id==='lower');
+ for(const b of [t.unit,t.panel,t.screen.box,...t.shelves.map(sh=>[sh.x[0],sh.y[0],sh.x[1],sh.y[1]])]){
+  assert.ok(b[0]>=flight.x[0]-eps&&b[2]<=flight.x[1]+eps,`${b} leaves the lower-flight footprint`);
+ }
+ near(t.faceX,1.04);assert.ok(t.faceX<1.05,'the face must stay behind the flight edge');
+ assert.ok(t.faceX+t.projection.faceToBalustrade<=1.07+eps);
+ // The R13/R12 joinery on the stair-side wall line is gone, and so are its keys.
+ for(const k of ['panelTopCap','panelBreakY','endReturn','endReturnTop','serviceVoid','oldStorageCenter','bays','niche'])
+  assert.ok(!(k in t),`R13 key ${k} survives in R14`);
+ assert.ok(t.unit[2]<2.05,'nothing is built against the stair-side wall any more');
+ // Built footprint and the screen it carries.
+ assert.deepEqual(t.unit,t.cabinet.box);
+ assert.deepEqual(t.unit,[.69,3.2,1.04,5.45]);
+ near(t.unit[2]-t.unit[0],t.unitDepth);near(t.unit[3]-t.unit[1],t.unitLength);
+ near(t.unitDepth,.35);near(t.unitLength,2.25);
+ near((t.box[1]+t.box[3])/2,t.screenCenter);near(t.screenCenter,4.64);
  near((t.screenTop+t.screenBottom)/2,t.screen.centerHeight);
  near(t.box[3]-t.box[1],t.screen.width);near(t.screenTop-t.screenBottom,t.screen.height);
- assert.ok(t.box[0]>old[2]);
- // The R10 wedge is gone: no bays, no niche, no full-height carcass.
- for(const k of ['bays','niche','nicheDepth','nicheTop','nicheBottom','serviceVoidNote2','flutedSlats'])
-  assert.ok(!(k in t),`R10 key ${k} survives in R12`);
- assert.ok(!('foot' in t)&&!('support' in t));
- // Built footprint: the low cabinet only, from the stair entry to the back of the basin user's
- // standing zone, 0.50 m deep. The back 0.50 m of the 1.00 m zone stays an open service void.
- assert.deepEqual(t.unit,t.cabinet.box);
- assert.deepEqual(t.unit,[1.8,3.2,2.15,5.15]);
- near(t.unit[2]-t.unit[0],t.unitDepth);near(t.unit[3]-t.unit[1],t.unitLength);
- near(t.unit[3],revision.wash.standing[1]);
- assert.deepEqual(t.serviceVoid,[t.zone[0],t.unit[1],t.unit[0],t.unit[3]]);
- near(t.serviceVoid[2]-t.serviceVoid[0]+t.unitDepth,t.zone[2]-t.zone[0]);
- // Nothing passes the living wall line, so the 1.00 m passage is untouched. Face elements are
- // flush on it; the screen is 0.17 m behind it and the backing panel 0.22 m behind it.
- near(t.projection.intoPassage,0);near(t.faceX,2.15);
- for(const box of [t.unit,t.panel,t.screen.box,t.endReturn,...t.shelves.map(sh=>sh.x),...t.cubbies.map(c=>c.x)])
-  assert.ok(Math.max(box[2]??box[1],box[0])<=t.faceX+eps,'nothing projects past the living wall line');
- near(t.box[2],t.faceX-t.projection.screenSetback);
- near(t.panel[2],t.faceX-t.projection.panelSetback);
+ assert.ok(Math.abs(Math.hypot(t.screen.width,t.screen.height)/.0254-t.screen.diagonalInches)<.5,'the stated diagonal must match the face');
  near(t.panel[2]-t.panel[0],t.panelThickness);
- // The panel's top edge follows the real raking soffit with a constant 60 mm shadow gap, and
- // levels off at the cap under the flat slab. 4 risers over 1.00 m is the fall of that soffit.
- const RAKE=4*R,top=y=>Math.min(t.panelTopCap,t.panelTopCap-(y-t.panelBreakY)*RAKE);
- for(const y of [4.3,4.5,4.74,5.0,t.panel[3]]){
-  const soffit=stairSoffit([t.panel[0],y-.001,t.panel[2],y+.001],'ground');
-  assert.ok(Math.abs(soffit-top(y)-t.panelSoffitGap)<.01,`panel top at y=${y} is ${top(y)} under a ${soffit} soffit`);
+ // The published top edge is the measured stair underside. It must rise, span the backing, and
+ // keep at least the published clearance under the structure the whole way.
+ const prof=t.panelTopProfile,top=y=>{
+  for(let i=1;i<prof.length;i++){const a=prof[i-1],b=prof[i];
+   if(y>=a[0]-1e-9&&y<=b[0]+1e-9&&b[0]>a[0])return a[1]+(b[1]-a[1])*(y-a[0])/(b[0]-a[0]);}
+  throw new Error('y outside the published profile');};
+ near(prof[0][0],t.panel[1]);near(prof.at(-1)[0],t.panel[3]);
+ for(let i=1;i<prof.length;i++)assert.ok(prof[i][1]>=prof[i-1][1]-eps,'the profile must not fall');
+ assert.ok(top(t.panel[3])-top(t.panel[1])>1.0,'the backing must rake with the flight');
+ // stairSoffit reports the lowest point over the window it is given, so compare it against the
+ // profile at that same low edge. The published gap is now met exactly, not with slack.
+ for(const y of [3.3,3.7,4.1,4.5,4.7,5.0,5.4]){
+  const lo=y-.001,soffit=Math.min(stairSoffit([t.panel[0],lo,t.panel[2],y+.001],'ground'),2.85);
+  const gap=soffit-top(lo);
+  assert.ok(gap>=t.panelSoffitGap-.0005,`backing at y=${y} clears the soffit by ${gap}, under the published gap`);
+  assert.ok(gap<=t.panelSoffitGap+.003,`backing at y=${y} clears the soffit by ${gap}, over the published gap`);
  }
- near(top(t.panelBreakY),t.panelTopCap);
- assert.ok(Math.abs(top(t.panel[3])-t.panelTopAt['5.15'])<.001);
- // The cap clears the slab trimmer zone over y = 3.95-4.20, whose soffit is about 2.70 m.
- assert.ok(t.clearances.underTrimmer-t.panelTopCap>=.1);
- // The composition tapers: the panel is at least 0.6 m lower at the archway jamb than at the
- // stair entry, so it reads as fitted into the triangle, not as a flat slab across the opening.
- assert.ok(top(t.panel[1])-top(t.panel[3])>.6,'the panel must rake, not run flat');
- // The backing surrounds the complete smaller screen, with modest clearances rather than a tower.
- assert.ok(t.screen.box[1]>=t.panel[1]&&t.screen.box[3]<=t.panel[3]);
- assert.ok(t.screenTop+.04<=top(t.screen.box[3]));
- assert.ok(t.panelTopCap-t.screenTop<=.20);
- assert.ok(t.panelTopCap<1.5&&t.panelSoffitGap>1.0);
- // Every element clears the structure over it, and nothing touches the stair itself.
- const boxes=[[...t.unit,t.cabinet.top],[...t.screen.box,t.screenTop],[...t.endReturn,t.endReturnTop],
+ // Everything built clears the structure over it and stays below the +2.10 m opening head.
+ const boxes=[[...t.unit,t.cabinet.top],[...t.screen.box,t.screenTop],
   ...t.shelves.map(sh=>[sh.x[0],sh.y[0],sh.x[1],sh.y[1],sh.top]),
-  ...t.cubbies.map(c=>[c.x[0],c.y[0],c.x[1],c.y[1],c.z[1]])];
+  ...t.dividers.map(d=>[d.x[0],d.y[0],d.x[1],d.y[1],d.z[1]])];
  for(const b of boxes){
   const soffit=Math.min(stairSoffit(b.slice(0,4),'ground'),2.85);
   assert.ok(b[4]<soffit,`${b} does not clear its soffit ${soffit}`);
+  assert.ok(b[4]<=t.wallOpening.height,`${b} stands above the +2.10 m opening head`);
  }
- // The open boxes stay under the raking panel edge above them.
- for(const c of t.cubbies)assert.ok(c.z[1]<top(c.y[1])-eps,`${c.id} pokes through the panel edge`);
- // The composition never reaches the basin, its standing zone, or the stair entry band.
+ // The screen sits inside the backing and under its raking edge at the tight (low) end.
+ assert.ok(t.screen.box[1]>=t.panel[1]&&t.screen.box[3]<=t.panel[3]);
+ assert.ok(t.screenTop+.04<=top(t.screen.box[1]),'the screen must clear the backing edge at its low end');
+ assert.ok(t.screenBottom>t.cabinet.top,'the screen sits above the cabinet, not behind it');
+ // It never reaches the basin, its standing zone, the basin access or the living passage.
  for(const b of [t.unit,t.panel,t.screen.box])
-  assert.ok(!overlaps(b,revision.wash.box)&&!overlaps(b,revision.wash.standing)&&!overlaps(b,[1.05,2.3,2.15,3.2]));
- // Storage is honestly reduced: thin and furniture-like cannot also be deep storage.
- assert.ok(t.storage.volume_m3>.15&&t.storage.volume_m3<.25);
+  for(const clear of [revision.wash.box,revision.wash.standing,[2.05,5.2,2.15,6.1],[2.15,3.2,3.15,5.2],[1.05,2.3,2.15,3.2]])
+   assert.ok(!overlaps(b,clear),`${b} fouls ${clear}`);
+ near(t.projection.intoPassage,0);
+ // Storage is stated honestly and is still far short of the store R9 deleted.
+ assert.ok(t.storage.volume_m3>.2&&t.storage.volume_m3<.35);
  assert.match(t.storage.note,/3\.5 m3|elsewhere/);
+ // One reconciled profile only. A real divergence between model and drawings fails at build time.
+ assert.ok(!('panelTopProfileDrawn' in t),'one reconciled profile only - the drawn variant is withdrawn');
+ assert.match(t.panelProfileNote,/measures the built stair meshes/);
  assert.equal(t.referenceDeviations.length,4);
- // The wall is the largest departure from the reference and it is recorded as a structural one.
  assert.ok(t.referenceDeviations.some(d=>/not removed full height/.test(d)));
-});
-test('R13 is joinery, not massing, and nothing is built under the lower/west flight',()=>{
- const t=revision.tv,j=t.joinery,cab=t.cabinet;
- // Only one element runs full height: the 50 mm oak jamb lining the basin archway reveal.
- // Everything else is furniture - a 0.45 m cabinet, floating shelves and open boxes lifted off it.
- const parts=[{id:'cabinet',z:[0,cab.top]},...t.shelves.map(sh=>({id:sh.id,z:[sh.top-sh.thickness,sh.top]})),
-  ...t.cubbies.map(c=>({id:c.id,z:c.z}))];
- for(const e of parts){
-  assert.ok(e.z[1]<=2.1,`${e.id} stands as tall as the withdrawn R10 wedge`);
-  assert.ok(e.z[1]-e.z[0]<=cab.top+eps,`${e.id} is a tall carcass, not a piece of furniture`);
-  assert.ok(e.z[0]===0?e.id==='cabinet':true,`${e.id} must be lifted off the floor`);
- }
- assert.deepEqual(t.endReturn,[2.05,t.unit[3],2.15,t.wallOpening.box[3]]);
- near(t.endReturnTop,0);assert.equal(t.shelves.length,0);assert.ok(t.panelTopCap<=1.40);near(t.endReturn[2]-t.endReturn[0],.1);near(t.endReturn[3]-t.endReturn[1],.05);
- // The low cabinet is long and low, on a recessed lit plinth, with reveals between its fronts.
- near(cab.top,.45);near(cab.depth,.35);near(cab.length,1.95);
- near(cab.frontWidth*cab.fronts,cab.length);
- assert.ok(cab.plinth>0&&cab.plinthSetback>0&&cab.reveal>0&&j.panelThickness>0);
- assert.ok(cab.top<t.screenBottom,'the screen sits above the cabinet, not behind it');
- assert.ok(t.screenBottom-cab.top<.3,'the screen sits close over the cabinet, as in the reference');
- // Shelving is at the tall end; the open boxes are in the low end of the wedge, past the screen.
- for(const sh of t.shelves)assert.ok(sh.y[1]<=t.panelBreakY+.01,`${sh.id} must sit at the tall end`);
- for(const c of t.cubbies)assert.ok(c.y[0]>=t.box[3]-eps,`${c.id} must sit past the screen, in the low wedge`);
- assert.ok(t.cubbies[0].z[0]===cab.top,'the open boxes stand on the cabinet top');
- // Three concealed warm sources: plinth, panel top and behind the screen. No fluted slats.
- assert.deepEqual(Object.keys(t.lighting),['plinth','panelTop','screenBacklight']);
- assert.match(j.flutedNote,/dropped/);
- // The composition sits only under the upper flight and the arrival slab. The lower/west flight,
- // its landing and the landing extension keep clear floor beneath them, as the drawing states.
- const westFlight=[[.15,3.2,1.05,4.7],revision.stair.landingExtension,[.15,2.3,1.05,3.2]];
- for(const w of westFlight)for(const b of [t.unit,t.panel,t.screen.box,t.serviceVoid])assert.ok(!overlaps(b,w));
- assert.ok(t.zone[0]>=1.15-eps&&t.unit[0]>=t.zone[0]-eps&&t.panel[0]>=t.zone[0]-eps);
 });
 test('basin sits against the bedroom wall, facing it, under the raised landing',()=>{
  const w=revision.wash;
@@ -232,8 +201,9 @@ test('basin sits against the bedroom wall, facing it, under the raised landing',
  near(w.standing[3],w.box[1]); // standing zone starts at the basin front
  near(w.box[2],2.05);
  // R12: the vanity and the TV joinery are separate units that never meet in plan.
- for(const b of [revision.tv.unit,revision.tv.panel,revision.tv.screen.box,revision.tv.endReturn])assert.ok(!overlaps(w.box,b));
- assert.ok(w.box[1]>=revision.tv.unit[3]-eps,'the unit stops at the archway jamb, clear of the basin');
+ // R14: the vanity and the TV joinery are separate units in separate bays and never meet in plan.
+ for(const b of [revision.tv.unit,revision.tv.panel,revision.tv.screen.box])assert.ok(!overlaps(w.box,b));
+ assert.ok(revision.tv.unit[2]<w.box[0]-eps,'the joinery stops clear of the basin, in the other bay');
  near(w.standing[2]-w.standing[0],.75);near(w.standing[3]-w.standing[1],.6);
  const ch=w.clearHeights;
  near(cm(w.box),ch.overBowl);near(cm(w.standing),ch.standing);
@@ -362,14 +332,16 @@ test('R9 raises the ground intermediate landing 3 risers above the first-to-roof
  near(stairLandingSlabs('ground').find(s=>s.id==='intermediate').top,stairLandingSlabs('first').find(s=>s.id==='intermediate').top+3*R);
  // Under-stair functions survive with their plan positions intact.
  for(const b of [revision.wash.box,revision.wash.standing,revision.tv.panel,revision.tv.unit,revision.tv.screen.box])assert.ok(b.every(Number.isFinite));
- near(revision.wash.height,.86);near(revision.tv.panelTopCap,1.40);near(revision.tv.cabinet.top,.45);
+ near(revision.wash.height,.86);near(revision.tv.cabinet.top,.45);near(revision.tv.unitLength,2.25);
 });
 test('every waist slab is seated with its top face on the flight line, under every tread it carries',()=>{
  const house=createHouse(),FIN=STAIR_STRUCTURE.finish;house.root.updateMatrixWorld(true);
  for(const level of ['ground','first']){
   const z=LEVELS[level],group=house.levels[level].getObjectByName('stairs');
   const structure=group.children.find(c=>c.name.startsWith('Conceptual'));
-  const slabs=structure.children.filter(m=>m.isMesh&&Math.abs(m.quaternion.x)>1e-9);
+  // The waist slabs are extruded prisms with vertical ends, not rotated boxes, so they are
+  // identified by name rather than by having a tilted quaternion.
+  const slabs=structure.children.filter(m=>m.isMesh&&m.name==='RCC waist slab');
   assert.equal(slabs.length,stairFlights(level).length);
   const ray=new Raycaster();
   for(const f of stairFlights(level)){
@@ -381,7 +353,8 @@ test('every waist slab is seated with its top face on the flight line, under eve
     const hits=ray.intersectObjects(slabs,false);
     assert.ok(hits.length,`${level}/${f.id} no waist slab over y=${y.toFixed(2)}`);
     // Top of the waist is the internal-corner line less the stone finish; the soffit follows below.
-    near(Math.round((hits[0].point.y-z)*1e6)/1e6,Math.round((line(y)-FIN)*1e6)/1e6);
+    // 0.1 mm: the extruded prism carries a little more float noise than the old box did.
+    near(Math.round((hits[0].point.y-z)*1e4)/1e4,Math.round((line(y)-FIN)*1e4)/1e4);
    }
   }
   // Solid steps bridge the waist without a void: each spans exactly from the line at its nosing
