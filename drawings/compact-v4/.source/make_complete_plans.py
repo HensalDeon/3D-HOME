@@ -128,7 +128,7 @@ def main():
     # that is a structural commitment rather than a joinery dimension, so it is stated with its head,
     # its retained header and the fact that a full-height removal is not assumed.
     L = revision.L
-    tv, opening = L['tv'], L['tv']['wallOpening']
+    tv, opening, wash = L['tv'], L['tv']['wallOpening'], L['wash']
     dimensions.update({
         'revision': L['revision'],
         'under_stair_wall_opening': {
@@ -158,6 +158,23 @@ def main():
             'enclosed_storage_m3': tv['storage']['volume_m3'],
             'open_display_m3': tv['storage']['openDisplay_m3'],
             'balustrade_required': tv['balustrade']['required'],
+        },
+        # R15: the basin is part of the same run now, so it is published on the same face plane and
+        # depth as the joinery rather than as a separate corner fitting.
+        'under_stair_washbasin': {
+            'zone_m': wash['box'],
+            'faces': wash['face'],
+            'face_x_m': wash['faceX'],
+            'vanity_m': [wash['length'], wash['depth']],
+            'rim_m': wash['height'],
+            'standing_zone_m': wash['standing'],
+            'mirror_y_m': wash['mirror']['y'],
+            'mirror_z_m': wash['mirror']['z'],
+            'divider_m': wash['finish']['divider']['box'],
+            'clear_height_m': wash['clearHeights']['overBowl'],
+            'continuous_run_m': round(wash['box'][3]-tv['zone'][1], 3),
+            'shares_face_plane_with_joinery': wash['faceX'] == tv['faceX'],
+            'services': wash['servicesNote'],
         },
     })
     (OUT/'dimensions.json').write_text(json.dumps(dimensions, indent=2)+'\n')

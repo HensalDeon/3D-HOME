@@ -43,7 +43,7 @@ for(const v of views.filter(v=>!process.env.RENDER_ONLY||v.name.endsWith(process
 
   if(v.geometry){
    // Isolated inspection screenshot. All selected objects retain their real model transforms.
-   for(const name of ['stairs','R14 fitted TV joinery under the lower flight','R12 washbasin nook against the bedroom (west) wall; basin faces east'])scene.add(h.levels.ground.getObjectByName(name).clone(true));
+   for(const name of ['stairs','R14 fitted TV joinery under the lower flight','R15 washbasin in the lower-flight bay, continuing the TV run; basin faces east'])scene.add(h.levels.ground.getObjectByName(name).clone(true));
    const {wallPieces}=await import('/src/geometry.js');
    const header=wallPieces('ground').find(p=>p.box[0]===2.05&&p.box[1]===3.2&&Math.abs(p.bottom-2.1)<.001);
    if(!header)throw Error('Retained header missing');

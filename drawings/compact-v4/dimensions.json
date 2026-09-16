@@ -65,7 +65,7 @@
   "roof_clear_landing_height_m": 2.4,
   "roof_access": "full south stair from first floor",
   "drawing_count": 12,
-  "revision": "R14",
+  "revision": "R15",
   "under_stair_wall_opening": {
     "box_m": [
       2.05,
@@ -126,5 +126,44 @@
     "enclosed_storage_m3": 0.265,
     "open_display_m3": 0.05,
     "balustrade_required": false
+  },
+  "under_stair_washbasin": {
+    "zone_m": [
+      0.69,
+      5.48,
+      1.04,
+      6.1
+    ],
+    "faces": "E",
+    "face_x_m": 1.04,
+    "vanity_m": [
+      0.62,
+      0.35
+    ],
+    "rim_m": 0.86,
+    "standing_zone_m": [
+      1.04,
+      5.35,
+      1.64,
+      6.1
+    ],
+    "mirror_y_m": [
+      5.59,
+      5.99
+    ],
+    "mirror_z_m": [
+      1.0,
+      1.8
+    ],
+    "divider_m": [
+      0.69,
+      5.45,
+      1.04,
+      5.48
+    ],
+    "clear_height_m": 1.95,
+    "continuous_run_m": 2.9,
+    "shares_face_plane_with_joinery": true,
+    "services": "The basin no longer backs onto the bedroom cross-wall, so supply and waste run behind the 30 mm backing panel in the dead zone at x = 0.15-0.69 under the landing and turn into that same y = 6.10 wall at the end of the run - a 0.62 m horizontal leg. TO BE COORDINATED WITH THE PLUMBING DESIGN."
   }
 }

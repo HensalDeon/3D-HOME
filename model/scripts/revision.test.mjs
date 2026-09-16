@@ -193,29 +193,45 @@ test('R14 builds the joinery into the lower-flight bay, on the real soffit',()=>
  assert.equal(t.referenceDeviations.length,4);
  assert.ok(t.referenceDeviations.some(d=>/not removed full height/.test(d)));
 });
-test('basin sits against the bedroom wall, facing it, under the raised landing',()=>{
- const w=revision.wash;
- near(w.box[2]-w.box[0],.5);near(w.box[3]-w.box[1],.35);near(w.box[3],WALL);
- near(WALL-w.box[3],w.fromBedroomWall.basinBack);near(WALL-w.box[1],w.fromBedroomWall.basinFront);near(WALL-w.standing[1],w.fromBedroomWall.standingRear);
- near(w.fromBedroomWall.basinBack,0);near(w.fromBedroomWall.basinFront,.35);
- near(w.standing[3],w.box[1]); // standing zone starts at the basin front
- near(w.box[2],2.05);
- // R12: the vanity and the TV joinery are separate units that never meet in plan.
- // R14: the vanity and the TV joinery are separate units in separate bays and never meet in plan.
- for(const b of [revision.tv.unit,revision.tv.panel,revision.tv.screen.box])assert.ok(!overlaps(w.box,b));
- assert.ok(revision.tv.unit[2]<w.box[0]-eps,'the joinery stops clear of the basin, in the other bay');
- near(w.standing[2]-w.standing[0],.75);near(w.standing[3]-w.standing[1],.6);
+test('R15 basin continues the TV run in the same band, same depth, same face plane',()=>{
+ const w=revision.wash,t=revision.tv;
+ // Rotated out of the corner: the depth is now on x and the length on y.
+ near(w.box[2]-w.box[0],.35);near(w.box[3]-w.box[1],.62);near(w.box[3],WALL);
+ near(w.box[0],w.backX);near(w.box[2],w.faceX);
+ // The whole point of R15: one run, one depth, one face plane, facing the same way as the screen.
+ near(w.faceX,t.faceX);near(w.box[2],t.cabinet.box[2]);near(w.box[2]-w.box[0],t.unitDepth);
+ assert.equal(w.face,t.face);
+ // Dimensioned off the backing line the way the R9 nook was dimensioned off the bedroom wall.
+ near(w.box[0]-w.backX,w.fromBackPanel.basinBack);near(w.box[2]-w.backX,w.fromBackPanel.basinFront);
+ near(w.standing[2]-w.backX,w.fromBackPanel.standingRear);
+ near(w.fromBackPanel.basinBack,0);near(w.fromBackPanel.basinFront,.35);
+ near(w.standing[0],w.box[2]); // standing zone starts at the vanity front
+ near(w.standing[2]-w.standing[0],.6);near(w.standing[3]-w.standing[1],.75);
+ // The full-height fin is the only thing between the joinery and the wet zone, and it touches both.
+ const dv=w.finish.divider.box;
+ near(dv[1],t.endBay[1]);near(dv[3],w.box[1]);near(w.finish.divider.top,w.finish.panelling.top);
+ for(const b of [t.unit,t.panel,t.screen.box,t.cabinet.box])assert.ok(!overlaps(w.box,b)&&!overlaps(dv,b));
+ // The backing is the TV unit's own panel carried on, so it stays on the published panel line.
+ near(w.finish.panelling.box[0],t.panel[0]);near(w.finish.panelling.box[2],t.panel[2]);
+ near(w.finish.panelling.box[1],w.box[1]);near(w.finish.panelling.box[3],w.box[3]);
+ // Clear height is now uniform, because the standing zone no longer reaches the landing edge.
  const ch=w.clearHeights;
- near(cm(w.box),ch.overBowl);near(cm(w.standing),ch.standing);
- // R9: the basin sits entirely under the flat landing slab raised to riser 12, so clear height
- // is a near-uniform ~1.90-1.95 m, well above R6's 1.73 m at this position and close to (but
- // still short of) the 2.20 m benchmark used elsewhere in this design.
+ near(cm(w.box),ch.overBowl);near(cm(w.standing),ch.standing);near(cm(w.box),cm(w.standing));
  assert.ok(clearance(w.box)>=1.85&&clearance(w.box)<revision.headroomBenchmark);
  assert.ok(clearance(w.standing)>=1.85&&clearance(w.standing)<revision.headroomBenchmark);
- assert.ok(w.mirror.z[1]<=1.85);assert.ok(w.mirror.x[0]>=w.box[0]&&w.mirror.x[1]<=w.box[2]);
- for(const b of [w.box,w.standing]){assert.ok(b[0]>=1.15&&b[2]<=2.05&&b[1]>=2.3&&b[3]<=6.1);assert.ok(!overlaps(b,[1.3,2.3,2.2,3.2]));}
- for(const b of [w.box,revision.tv.box,revision.tv.panel,revision.tv.unit])assert.ok(!overlaps(w.bedroomDoorLanding,b));
- assert.ok(!('backPanel' in w)&&!('bedroomReturn' in w));
+ // The mirror is carried across unchanged, now measured along y and sitting on the backing.
+ assert.ok(w.mirror.z[1]<=1.85);near(w.mirror.z[1]-w.mirror.z[0],.8);near(w.mirror.y[1]-w.mirror.y[0],.4);
+ assert.ok(w.mirror.y[0]>=w.box[1]&&w.mirror.y[1]<=w.box[3]);
+ assert.ok(!('x' in w.mirror),'the mirror is measured along y in this position');
+ // Everything stays inside the stair footprint, clear of the starter flight and the bedroom door.
+ for(const b of [w.box,w.standing,dv]){
+  assert.ok(b[0]>=.15&&b[2]<=2.05&&b[1]>=2.3&&b[3]<=6.1);
+  assert.ok(!overlaps(b,[1.3,2.3,2.2,3.2]));
+  assert.ok(!overlaps(b,[2.05,5.2,2.15,6.1]),'the archway stays a clear 0.90 m opening');
+  assert.ok(!overlaps(w.bedroomDoorLanding,b));
+ }
+ assert.ok(!('backPanel' in w)&&!('bedroomReturn' in w)&&!('fromBedroomWall' in w));
+ assert.match(w.servicesNote,/TO BE COORDINATED WITH THE PLUMBING DESIGN/);
  assert.equal(rooms.filter(r=>r.id.includes('bath')).length,3);
 });
 test('basin route passes the stair entry and avoids the TV panel',()=>{

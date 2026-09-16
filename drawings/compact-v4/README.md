@@ -1,6 +1,6 @@
 # Hensal — coordinated house plans
 
-This folder contains the published **R14** architectural review set. R14 moves the under-stair TV joinery out of the stair-side wall line and into the bay under the lower/west flight: a 2.25 × 0.35 m unit at x = 0.69–1.04, y = 3.20–5.45, facing east and read from the living room through the retained 2.00 m headed opening. Sheet 03 shows it in plan; sheet 07 sections it in its own bay. The stair, landings, trimmer, supports, the +2.10 m wall opening with its retained plastered header, and the washbasin nook are all unchanged.
+This folder contains the published **R15** architectural review set. R14 moved the under-stair TV joinery out of the stair-side wall line and into the bay under the lower/west flight: a 2.25 × 0.35 m unit at x = 0.69–1.04, y = 3.20–5.45, facing east and read from the living room through the retained 2.00 m headed opening. R15 then brings the washbasin into that same bay, continuing the run past its end bay to the bedroom wall as a 0.62 × 0.35 m vanity at y = 5.48–6.10 on the same face plane, divided from the joinery by a full-height oak fin. Sheet 03 shows the run in plan; sheet 07 sections it, and the upper-flight bay it vacated is now drawn empty. The stair, landings, trimmer, supports, the +2.10 m wall opening with its retained plastered header and the 0.90 m archway are all unchanged.
 
 ## Retained deliverables
 
@@ -21,6 +21,6 @@ Supplementary R11–R13 study sheets and all revision changelogs have been remov
 
 ## Design scope
 
-The dimensioned drawings govern the architectural review; rendered images illustrate appearance. The retained header above the living/stair opening runs from +2.10 m to the +2.85 m slab soffit. The current R14 interior images retain this header and do not specify a full-height wall removal.
+The dimensioned drawings govern the architectural review; rendered images illustrate appearance. The retained header above the living/stair opening runs from +2.10 m to the +2.85 m slab soffit. The current interior images retain this header and do not specify a full-height wall removal; they are the R14 render set and still show the basin in its former corner position.
 
 The package is a design-review set, not a signed construction or permit set. Structural detailing, site set-out, waterproofing and services remain subject to professional coordination.

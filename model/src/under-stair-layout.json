@@ -1,5 +1,5 @@
 {
- "revision": "R14",
+ "revision": "R15",
  "structure": {
   "revision": "R14",
   "system": "conventional cast-in-situ RCC staircase: continuous waist slab under each flight, monolithic with the landing slabs at the turns (folded plate)",
@@ -435,29 +435,37 @@
   "panelNote": "The backing sits 0.29 m behind the cabinet front, so the cabinet top reads as a display ledge in front of the screen. It starts at +0.42 m, just under the cabinet top, and runs up to its measured raking edge."
  },
  "wash": {
+  "revision": "R15",
   "box": [
-   1.55,
-   5.75,
-   2.05,
+   0.69,
+   5.48,
+   1.04,
    6.1
   ],
   "height": 0.86,
-  "front": "bedroom wall (y = 6.10), opening east into the room - plan-data.json's own coordinate note confirms y increases west, so the y = 6.10 wall is the west wall",
-  "userFaces": "west, toward the wall and mirror, to operate an east-facing fixture",
+  "under": "lower/west flight bay, continuing the TV run",
+  "concept": "R15 moves the washbasin out of the corner against the bedroom (west) wall and into the SAME BAND AS THE TV JOINERY, continuing that run past its end bay to the bedroom wall. The vanity is 0.62 x 0.35 m at x = 0.69-1.04, y = 5.48-6.10, on the same 0.35 m depth and the same face plane (x = 1.04) as the TV cabinet, and it FACES THE SAME WAY - east across the stairwell, out through the 0.90 m archway. A 30 mm oak backing at x = 0.72-0.75 continues the TV unit's backing behind it, carrying the backlit mirror. A full-height oak divider at y = 5.45-5.48 separates the wet zone from the joinery. The under-stair run now reads as one continuous 2.90 m fitted composition at a single depth instead of a 2.25 m run plus a separate corner fitting.",
+  "supersedes": "R9/R12 basin against the bedroom (west) wall at x = 1.55-2.05, y = 5.75-6.10, facing east along -y with the user facing the wall. Withdrawn; none of its coordinates are carried forward. The archway, the landing, the stair and every clear height are unchanged - only the fitting moves within the same room.",
+  "face": "E",
+  "faceX": 1.04,
+  "backX": 0.69,
+  "length": 0.62,
+  "depth": 0.35,
+  "userFaces": "the backing panel and mirror, looking the opposite way to the TV screen across the same bay",
   "counter": {
    "top": 0.86,
    "drawerBottom": 0.5
   },
   "standing": [
-   1.3,
-   5.15,
-   2.05,
-   5.75
+   1.04,
+   5.35,
+   1.64,
+   6.1
   ],
   "mirror": {
-   "x": [
-    1.6,
-    2.0
+   "y": [
+    5.59,
+    5.99
    ],
    "z": [
     1.0,
@@ -467,21 +475,22 @@
   "approach": [
    [
     2.9,
-    5.65
+    5.79
    ],
    [
     2.2,
-    5.65
+    5.79
    ],
    [
-    1.7,
-    5.55
+    1.6,
+    5.79
    ]
   ],
-  "fromBedroomWall": {
+  "fromBackPanel": {
    "basinBack": 0,
    "basinFront": 0.35,
-   "standingRear": 0.95
+   "standingRear": 0.95,
+   "note": "measured out from the backing line at x = 0.69, the same way the R9 nook was dimensioned off the bedroom wall"
   },
   "bedroomDoorLanding": [
    2.2,
@@ -491,30 +500,44 @@
   ],
   "clearHeights": {
    "overBowl": 1.95,
-   "standing": 1.91,
+   "standing": 1.95,
    "landingEdge": 1.91,
-   "underLanding": 1.95
+   "underLanding": 1.95,
+   "note": "The whole fitting and its standing zone are now under the flat 12R landing slab, soffit +1.9476 m, so the clear height is a uniform 1.95 m instead of the 1.91-1.95 m range the R9 position had - its standing zone reached the landing edge at y = 5.15. Still short of the 2.20 m benchmark used elsewhere in this set."
   },
-  "r9Note": "R9 removes the R5/R6 mirror partition and moves the basin from under the sloped upper-flight soffit (y = 4.35-4.70) to the bedroom wall itself (y = 5.75-6.10). plan-data.json's coordinate note confirms y increases west, so this wall is the west wall and the basin - mounted against it, opening into the room - is EAST-facing, as requested; the user stands facing WEST (toward the wall/mirror) to operate it. It now sits entirely under the flat 150 mm landing slab raised to riser 12 by R9, so clear height is a near-uniform 1.91-1.95 m instead of the R6 1.73-2.40 m sloped range - a real headroom gain, still short of the 2.20 m benchmark used elsewhere in this design but close to stand-up height. The under-landing bifold store (2.6 m2 / 3.5 m3 of storage) is removed to make room for it and is not relocated; flag to the user if that storage needs to go somewhere else. Access is a direct 0.90 m archway at y = 5.2-6.10 in the stair-side wall (reusing the R6 store-door position and size, now without doors), not a walk-through behind the TV unit: the starter flight now fills the full width of the y = 2.3-3.2 band, so that old route no longer exists.",
-  "r10Note": "R10 does not move the basin, the mirror, the standing zone, the approach or the archway. The TV unit stops at the archway jamb (y = 5.20), so the nook keeps its full 0.90 m entry and its 1.91-1.95 m clear height.",
+  "servicesNote": "The basin no longer backs onto the bedroom cross-wall, so supply and waste run behind the 30 mm backing panel in the dead zone at x = 0.15-0.69 under the landing and turn into that same y = 6.10 wall at the end of the run - a 0.62 m horizontal leg. TO BE COORDINATED WITH THE PLUMBING DESIGN.",
+  "r9Note": "HISTORIC. R9 removed the R5/R6 mirror partition and moved the basin from under the sloped upper-flight soffit (y = 4.35-4.70) to the bedroom wall itself (y = 5.75-6.10), gaining a near-uniform 1.91-1.95 m under the landing raised to riser 12. The under-landing bifold store (2.6 m2 / 3.5 m3) was removed to make room for it and was never relocated. R15 keeps that headroom gain and that archway; it only moves the fitting within the same room.",
+  "r12Note": "HISTORIC. R12 changed nothing architectural in the nook and specified the interior treatment to the reference: oak panelled backdrop, floating oak vanity, white rectangular vessel basin, black tap, backlit vertical mirror, one warm downlight, black towel ring, minimal accessories. R15 carries every one of those elements across to the new position unchanged in size, material and rim height.",
+  "r15Note": "R15 moves the fitting only. The 0.90 m archway at y = 5.2-6.10 with no doors, the 12R landing over it, the landing beam zone in the bedroom cross-wall, the bedroom door landing, the stair, the TV joinery and the retained +2.10 m headed opening are all untouched. The rim stays at +0.86 m, the mirror stays 0.40 x 0.80 m at z = 1.00-1.80 and the standing zone stays 750 x 600 mm. What changes: you now walk in through the archway and the basin is square in front of you instead of 90 degrees to your right, and the corner it vacated - x = 1.25-2.05, y = 5.15-6.10 against the already-panelled wall - is free for the enclosed storage this design has been short of since R9 deleted the under-landing store.",
   "finish": {
-   "style": "warm Japandi nook, visually tied to the TV joinery by the same flat oak, functionally and physically a separate unit - the joinery finishes at the archway jamb and the nook continues as its own vertical composition",
+   "style": "warm Japandi, now continuous with the TV joinery rather than a separate composition: the same flat oak backing, the same face plane and the same 0.35 m depth, divided from it by a full-height oak fin so the wet zone reads as its own bay within one run",
    "panelling": {
     "box": [
-     1.25,
-     6.082,
-     2.05,
+     0.72,
+     5.48,
+     0.75,
      6.1
     ],
     "top": 1.94,
     "material": "flat vertical-grain oak veneer, floor to the landing soffit",
-    "note": "warm wood backdrop on the bedroom (west) wall behind the vanity and mirror, 0.80 m wide, stopping 8 mm under the 1.9476 m landing-slab soffit"
+    "note": "the TV unit's 30 mm oak backing continued past the divider to the bedroom wall, stopping 8 mm under the 1.9476 m landing-slab soffit"
+   },
+   "divider": {
+    "box": [
+     0.69,
+     5.45,
+     1.04,
+     5.48
+    ],
+    "top": 1.94,
+    "material": "oak, full depth of the run",
+    "note": "full-height fin closing the TV run's end bay and screening the joinery from basin splash; stands where R14's end panel already closed the run at y = 5.45"
    },
    "vanity": {
     "box": [
-     1.55,
-     5.75,
-     2.05,
+     0.69,
+     5.48,
+     1.04,
      6.1
     ],
     "carcass": [
@@ -527,66 +550,66 @@
     ],
     "float": 0.5,
     "material": "oak carcass, light stone counter, single push-open drawer",
-    "note": "compact floating wooden vanity, 0.50 x 0.35 m, 0.50 m clear under it - unchanged in position, size and rim height"
+    "note": "floating wooden vanity, 0.62 x 0.35 m, 0.50 m clear under it, face at x = 1.04 flush with the TV cabinet front; 0.12 m longer than the R9 unit because the bay runs to the wall"
    },
    "bowl": {
     "box": [
-     1.62,
-     5.8,
-     1.98,
-     6.02
+     0.77,
+     5.61,
+     0.99,
+     5.97
     ],
     "z": [
      0.86,
      0.99
     ],
     "type": "white rectangular vessel basin standing on the counter",
-    "note": "replaces the R9 semi-recessed bowl; the reference basin is a vessel"
+    "note": "unchanged 0.36 x 0.22 m vessel, rotated with the unit and centred on the bay at y = 5.79"
    },
    "tap": {
     "riser": [
-     1.8,
-     6.055
+     0.76,
+     5.79
     ],
     "z": [
      0.86,
      1.2
     ],
-    "spoutTo": 5.93,
+    "spoutTo": 0.885,
     "finish": "matt black",
-    "note": "simple black deck-mounted mixer behind the vessel"
+    "note": "black deck-mounted mixer behind the vessel, spout reaching out over the bowl toward the user"
    },
    "mirror": {
     "box": [
-     1.6,
-     6.066,
-     2.0,
-     6.074
+     0.758,
+     5.59,
+     0.766,
+     5.99
     ],
     "z": [
      1.0,
      1.8
     ],
-    "note": "unchanged: 0.40 x 0.80 m, vertically oriented, on the bedroom wall"
+    "note": "unchanged 0.40 x 0.80 m vertical mirror, now on the oak backing panel and seen face-on from the archway"
    },
    "mirrorHalo": {
     "box": [
-     1.56,
-     6.074,
-     2.04,
-     6.082
+     0.75,
+     5.55,
+     0.758,
+     6.03
     ],
     "z": [
      0.96,
      1.84
     ],
     "colorTemp_K": 2700,
-    "note": "warm integrated backlight, 40 mm proud of the mirror on all four sides, washing the oak panelling behind it"
+    "note": "warm integrated backlight, 40 mm proud of the mirror on all four sides, washing the oak backing behind it"
    },
    "downlight": {
     "at": [
-     1.8,
-     5.92
+     0.88,
+     5.79
     ],
     "z": 1.9376,
     "radius": 0.045,
@@ -595,16 +618,16 @@
    },
    "towelRing": {
     "at": [
-     1.38,
-     6.075
+     0.88,
+     6.09
     ],
     "z": 1.15,
     "radius": 0.09,
-    "finish": "matt black"
+    "finish": "matt black",
+    "on": "the bedroom wall at the end of the run, clear of the mirror"
    },
    "accessories": "minimal: one soap dispenser on the counter, nothing else"
-  },
-  "r12Note": "R12 changes nothing architectural in the nook. Position (x = 1.55-2.05, y = 5.75-6.10), east-facing orientation, rim at +0.86 m, the 750 x 600 mm standing zone at y = 5.15-5.75, the mirror at x = 1.60-2.00 / z = 1.00-1.80, the 0.90 m archway at y = 5.20-6.10 with no doors and the 1.91-1.95 m clear height are all exactly as R9 approved them. Only the interior treatment is specified, to the reference: oak panelled backdrop, floating oak vanity, white rectangular vessel basin, black tap, backlit vertical mirror, one warm downlight, black towel ring, minimal accessories."
+  }
  },
  "oldSlopedStorageFootprint": [
   0.2,

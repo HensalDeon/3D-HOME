@@ -100,29 +100,37 @@ export function createHouse(){
    // R14 joinery, under the lower flight. Geometry comes from under-stair-layout.json, which the
    // drawing scripts read too, and is checked against the real stair meshes as it is built.
    addTvJoineryPreview({parent:f,stairs:g.getObjectByName('stairs'),z,box,profilePrism,cylinder,materials,V});
-   // ---- R12 washbasin nook: the approved geometry, given the reference interior treatment ----
-   const wash=new THREE.Group();wash.name='R12 washbasin nook against the bedroom (west) wall; basin faces east';f.add(wash);
-   const w=revision.wash,fin=w.finish,b=w.box,cx=(b[0]+b[2])/2;
-   // Warm oak panelled backdrop on the bedroom wall, floor to just under the landing soffit.
+   // ---- R15 washbasin, in the same band as the TV joinery and facing the same way ----
+   // Same 0.35 m depth and the same face plane (x = 1.04) as the TV cabinet, continuing that run
+   // past its end bay to the bedroom wall. Geometry comes from under-stair-layout.json, which the
+   // drawing scripts read too. The unit's front is now +x rather than -y, so the counter oversail,
+   // the drawer line, the spout and the soap dispenser all run on the x axis instead of the y axis.
+   const wash=new THREE.Group();wash.name='R15 washbasin in the lower-flight bay, continuing the TV run; basin faces east';f.add(wash);
+   const w=revision.wash,fin=w.finish,b=w.box;
+   // Full-height oak fin closing the TV run's end bay and screening the joinery from basin splash.
+   box(wash,fin.divider.box[0],fin.divider.box[1],fin.divider.box[2],fin.divider.box[3],z,z+fin.divider.top,materials.oak);
+   // The TV unit's own 30 mm oak backing, carried on behind the vanity to the bedroom wall.
    box(wash,fin.panelling.box[0],fin.panelling.box[1],fin.panelling.box[2],fin.panelling.box[3],z,z+fin.panelling.top,materials.oak);
    // Warm integrated backlight, 40 mm proud of the vertical mirror on all four sides.
    box(wash,fin.mirrorHalo.box[0],fin.mirrorHalo.box[1],fin.mirrorHalo.box[2],fin.mirrorHalo.box[3],z+fin.mirrorHalo.z[0],z+fin.mirrorHalo.z[1],materials.glow);
    box(wash,fin.mirror.box[0],fin.mirror.box[1],fin.mirror.box[2],fin.mirror.box[3],z+fin.mirror.z[0],z+fin.mirror.z[1],materials.mirror);
-   // Compact floating oak vanity, 0.50 m clear under it, with a light stone counter.
+   // Floating oak vanity, 0.50 m clear under it, stone counter oversailing the front face by 12 mm.
    box(wash,b[0],b[1],b[2],b[3],z+fin.vanity.carcass[0],z+fin.vanity.carcass[1],materials.oak);
-   box(wash,b[0],b[1]-.012,b[2],b[3],z+fin.vanity.counter[0],z+fin.vanity.counter[1],materials.stone);
-   line(wash,[[b[0],b[1]-.014,z+.66],[b[2],b[1]-.014,z+.66]],'#8d704e');
+   box(wash,b[0],b[1],b[2]+.012,b[3],z+fin.vanity.counter[0],z+fin.vanity.counter[1],materials.stone);
+   line(wash,[[b[2]+.014,b[1],z+.66],[b[2]+.014,b[3],z+.66]],'#8d704e');
    // White rectangular vessel basin standing on the counter.
    box(wash,fin.bowl.box[0],fin.bowl.box[1],fin.bowl.box[2],fin.bowl.box[3],z+fin.bowl.z[0],z+fin.bowl.z[1],materials.white);
    box(wash,fin.bowl.box[0]+.035,fin.bowl.box[1]+.035,fin.bowl.box[2]-.035,fin.bowl.box[3]-.035,z+fin.bowl.z[1]-.035,z+fin.bowl.z[1]-.027,materials.water);
-   // Simple black deck mixer behind the bowl.
+   // Simple black deck mixer behind the bowl; the spout now reaches out along x, over the bowl.
    rod(wash,[fin.tap.riser[0],fin.tap.riser[1],z+fin.tap.z[0]],[fin.tap.riser[0],fin.tap.riser[1],z+fin.tap.z[1]],.012,materials.noir);
-   rod(wash,[fin.tap.riser[0],fin.tap.riser[1],z+fin.tap.z[1]],[fin.tap.riser[0],fin.tap.spoutTo,z+fin.tap.z[1]],.012,materials.noir);
-   // Black towel ring on the panelling, and one subtle warm downlight in the landing soffit.
+   rod(wash,[fin.tap.riser[0],fin.tap.riser[1],z+fin.tap.z[1]],[fin.tap.spoutTo,fin.tap.riser[1],z+fin.tap.z[1]],.012,materials.noir);
+   // Black towel ring on the bedroom wall at the end of the run, half let into it exactly as the
+   // R9 ring was. It sits past the mirror rather than in front of it, so nothing reads as floating.
    const ring=new THREE.Mesh(new THREE.TorusGeometry(fin.towelRing.radius,.008,8,28),materials.noir);
-   ring.position.copy(V(fin.towelRing.at[0],z+fin.towelRing.z,fin.towelRing.at[1]-.03));ring.rotation.y=Math.PI/2;wash.add(ring);
+   ring.position.copy(V(fin.towelRing.at[0],z+fin.towelRing.z,fin.towelRing.at[1]));ring.rotation.y=Math.PI/2;wash.add(ring);
    cylinder(wash,fin.downlight.at[0],fin.downlight.at[1],z+fin.downlight.z,z+fin.downlight.z+.012,fin.downlight.radius,materials.glow);
-   box(wash,cx-.045,b[1]+.05,cx+.02,b[1]+.11,z+fin.vanity.counter[1],z+fin.vanity.counter[1]+.14,materials.linen);
+   // One soap dispenser, set between the fin and the bowl rather than inside the bowl footprint.
+   box(wash,b[2]-.11,b[1]+.04,b[2]-.05,b[1]+.10,z+fin.vanity.counter[1],z+fin.vanity.counter[1]+.14,materials.linen);
    cylinder(f,4.88,4.65,z+.7,z+.77,.45,materials.oak);cylinder(f,4.88,4.65,z,z+.7,.08,materials.dark);
    box(f,5.35,1.35,5.85,1.72,z+.62,z+.73,materials.oak);box(f,5.45,1.37,5.75,1.43,z+.73,z+1.24,materials.wood);
    
