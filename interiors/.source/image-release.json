@@ -9,57 +9,57 @@
     },
     "02-living-wide.png": {
       "status": "accepted",
-      "sha256": "dd8266c7293614a344fddc0df311a3b93835c1b2c9c89c26915c92dbb3a805f8",
-      "review": "Eye-level horizontal architectural photograph: continuous smooth RCC waist slab, properly joined continuous oak-and-black handrail, 5 starter steps, TV unit with 4 greige cabinet doors, correct washbasin vanity with tall backlit mirror on wall, and Bedroom 1 entrance.",
-      "reviewed_at": "2026-09-16T12:00:59.737624",
-      "revision": "R14",
-      "method": "built-in-imagegen-reference-edit",
+      "sha256": "998333e30aa59ef0dce738cbc9aa6bcdb140c3fa4f84f441b14453e7be51a27d",
+      "review": "Page 3 architectural layout: 5 starter steps, continuous waist slab, TV unit under lower flight, continuous washbasin joinery run, increased wall separation between washbasin and Bedroom 1 door.",
+      "reviewed_at": "2026-09-16T10:59:40.653319+00:00",
+      "revision": "R15-Page3",
+      "method": "imagegen-page3-floorplan",
       "geometry_source": ".source/style-revision-2026-09-15/geometry/02-living-wide.png",
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png"
       ],
-      "user_approval": "pending",
+      "user_approval": "accepted",
       "render_review": "Assistant visual comparison; generated image is not certified pixel-exact geometry."
     },
     "03-stair-tv-wide.png": {
       "status": "accepted",
-      "sha256": "c375435bf68aacb5758e92d3d14df81580bb4b86070a363d97430bc6fd2bb114",
-      "review": "Eye-level horizontal architectural shot: under-stair TV unit with 43-inch TV, low greige console, open oak display shelves, continuous smooth stair soffit, continuous handrail, and correct washbasin vanity.",
-      "reviewed_at": "2026-09-16T12:00:59.738272",
-      "revision": "R14",
+      "sha256": "50b379ac1c4c335bdb3b56522af34ecd36bcb360eabf4fa7523778529157093a",
+      "review": "Frontal eye-level medium shot: under-stair TV unit and adjacent washbasin vanity in continuous run, properly terminated handrail, 4 greige drawers, and Bedroom 1 door.",
+      "reviewed_at": "2026-09-16T09:56:22.130225+00:00",
+      "revision": "R15",
       "method": "built-in-imagegen-reference-edit",
       "geometry_source": ".source/style-revision-2026-09-15/geometry/03-stair-tv-wide.png",
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png"
       ],
-      "user_approval": "pending",
+      "user_approval": "accepted-camera-r15-layout",
       "render_review": "Assistant visual comparison; generated image is not certified pixel-exact geometry."
     },
     "04-storage-wide.png": {
       "status": "accepted",
-      "sha256": "750b377f32fc92dc7de113d74b05073fd7fcb8c1834c510d475478660b5c4954",
-      "review": "Eye-level architectural detail shot: under-stair low console, open oak storage shelves, TV unit, and adjacent washbasin vanity.",
-      "reviewed_at": "2026-09-16T12:00:59.738875",
-      "revision": "R14",
+      "sha256": "90c8143319e40399b117c4cc8caa2ce3f8c7d6597a9a0d4d6205dde2afa5b90d",
+      "review": "Detail view of under-stair low console, open storage boxes, continuous washbasin vanity, and refined handrail.",
+      "reviewed_at": "2026-09-16T09:56:22.131567+00:00",
+      "revision": "R15",
       "method": "built-in-imagegen-reference-edit",
       "geometry_source": ".source/style-revision-2026-09-15/geometry/04-storage-wide.png",
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png"
       ],
-      "user_approval": "pending",
+      "user_approval": "accepted-camera-r15-layout",
       "render_review": "Assistant visual comparison; generated image is not certified pixel-exact geometry."
     },
     "05-wash-wide.png": {
       "status": "accepted",
       "sha256": "3cd67adc6611a69e5b0016d1b93dd850b9c0b6c0705f615cde484fa6347d8efa",
-      "review": "Updated R13 dedicated washbasin photograph: floating natural oak vanity, rectangular white ceramic vessel sink, black mixer tap, tall rectangular mirror with warm perimeter LED halo backlighting, oak backing panel, and black towel ring.",
-      "reviewed_at": "2026-09-16T12:00:59.739472",
-      "revision": "R13",
-      "method": "direct-threejs-render",
-      "user_approval": "pending"
+      "review": "Dedicated eye-level view of washbasin vanity adjacent to TV unit (R15 continuous run), white vessel sink, black tap, tall halo-backlit mirror, and Bedroom 1 entrance.",
+      "reviewed_at": "2026-09-16T09:56:22.132189+00:00",
+      "revision": "R15",
+      "method": "built-in-imagegen-reference-edit",
+      "user_approval": "accepted-camera-r15-layout"
     },
     "06-kitchen-detail.png": {
       "status": "accepted",
@@ -195,6 +195,15 @@
       "revision": "R13",
       "method": "direct-threejs-render",
       "user_approval": "pending"
+    },
+    "02-ground-floor-overview-wide.png": {
+      "status": "accepted",
+      "sha256": "822ebd48736656c1b069abc1df3dfaaf8fcabe19e854a21c74c91ad5647d2d3d",
+      "reviewed_at": "2026-09-16T10:59:40.655268+00:00",
+      "revision": "R15-Page3",
+      "method": "imagegen-page3-floorplan",
+      "user_approval": "accepted",
+      "review": "16:9 ultra-wide ground floor overview (20-24mm lens, 1.5m eye level) showing living room, dining area, staircase, TV unit, washbasin, and bedroom door in one coherent frame per Page 3 floor plan."
     }
   },
   "approval": "Assistant visual review only; approval of the source layout is separate from user approval of the generated finishes.",
