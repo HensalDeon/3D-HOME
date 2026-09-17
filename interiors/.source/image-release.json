@@ -144,11 +144,11 @@
     },
     "10-study-wide.png": {
       "status": "accepted",
-      "sha256": "8602eb4c22281edeef1f345c22422ccdc61290423169f57c2c5e1f112b2dbafa",
-      "review": "Study and family room: corrected handrail with continuous tactile natural oak timber top rail on slender vertical black balusters matching 02-living-wide, solid stone steps on left, daybed sofa under east window, and shallow oak desk.",
-      "reviewed_at": "2026-09-17T06:07:20.288523+00:00",
-      "revision": "R15-Sheet04-08",
-      "method": "imagegen-handrail-steps-alignment",
+      "sha256": "739ac8ad920eb4e01a5d6f3b1a8d7219245f34e0a53997f060caf7efba07f706",
+      "review": "Study and family room updated to preserve left wall and oak door frame while accurately showing the Front Gallery and Front Balcony view through the doorway. Includes tailoring tables with sewing machines.",
+      "reviewed_at": "2026-09-17T11:03:20Z",
+      "revision": "R16",
+      "method": "imagegen-composite",
       "user_approval": "accepted"
     },
     "11-bathroom1-wide.png": {
@@ -189,7 +189,7 @@
     },
     "17-front-gallery-wide.png": {
       "status": "accepted",
-      "sha256": "0ad71ef713056ef9743465fcfa3f08325b195734c6693c0d027183e42e33fc41",
+      "sha256": "06bf3211867e2e0327a60fa4335c66e012adf0b53cc02a89fd8470c7c86ef6b8",
       "review": "First-floor front gallery transitional space looking toward sliding door, front balcony with outdoor seating, and curved facade portal.",
       "reviewed_at": "2026-09-10T21:48:27.693999"
     },
@@ -210,6 +210,15 @@
       "method": "imagegen-page3-floorplan",
       "user_approval": "accepted",
       "review": "16:9 ultra-wide ground floor overview (20-24mm lens, 1.5m eye level) showing living room, dining area, staircase, TV unit, washbasin, and bedroom door in one coherent frame per Page 3 floor plan."
+    },
+    "18-rear-gallery-wide.png": {
+      "status": "accepted",
+      "sha256": "77b0229ea3b98dc413e53b386d26b2845af7bd36fdf501520e13bbc37a319810",
+      "review": "Rear drying area generated from west door view looking diagonally south-east. Features open north edge with charcoal railing and tropical view, and south wall with two high exhaust windows.",
+      "reviewed_at": "2026-09-17T11:03:20Z",
+      "revision": "R16",
+      "method": "imagegen",
+      "user_approval": "accepted"
     }
   },
   "approval": "Assistant visual review only; approval of the source layout is separate from user approval of the generated finishes.",
