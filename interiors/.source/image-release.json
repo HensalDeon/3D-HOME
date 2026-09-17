@@ -213,10 +213,10 @@
     },
     "18-rear-gallery-wide.png": {
       "status": "accepted",
-      "sha256": "77b0229ea3b98dc413e53b386d26b2845af7bd36fdf501520e13bbc37a319810",
-      "review": "Rear drying area generated from west door view looking diagonally south-east. Features open north edge with charcoal railing and tropical view, and south wall with two high exhaust windows.",
-      "reviewed_at": "2026-09-17T11:03:20Z",
-      "revision": "R16",
+      "sha256": "7699cf652eb4894fb2c77b23edd02eab230abde8fbdc8109abc4afd7c2018bb1",
+      "review": "Rear drying area regenerated with strict 2.68 x 1.42m geometry. Camera on West wall looking South-East. Left side (North) open ventilated edge. Right side (South) solid wall with two exhaust windows. Front wall (East) closed boundary.",
+      "reviewed_at": "2026-09-17T17:27:00Z",
+      "revision": "R17",
       "method": "imagegen",
       "user_approval": "accepted"
     }
