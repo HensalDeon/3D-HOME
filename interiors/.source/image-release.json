@@ -135,15 +135,21 @@
     },
     "10-passage-wide.png": {
       "status": "accepted",
-      "sha256": "a4dff0b3de666e71b512c3200b1ddb2b877e5d1f586aa61e7e00001e59f3a769",
-      "review": "First-floor gallery and 0.90m passage strictly following Page 4 plan: open stair to roof on right, solid wall with restrained framed art on left, Master bedroom door at end, daylight from front balcony.",
-      "reviewed_at": "2026-09-10T21:39:06.114661"
+      "sha256": "4611cc619de5f27dd4fc89305d66971529ed34c4766bd03361a1ae0682376069",
+      "review": "First floor passage (Sheet 04 & 08): solid closed pale sandy stone steps matching living room (02-living-wide), continuous RCC waist slab, oak handrail on black balusters, Master bedroom door at end, sliding doors to front balcony on left, gallery photo wall on right.",
+      "reviewed_at": "2026-09-17T06:07:20.286853+00:00",
+      "revision": "R15-Sheet04-08",
+      "method": "imagegen-handrail-steps-alignment",
+      "user_approval": "accepted"
     },
     "10-study-wide.png": {
       "status": "accepted",
-      "sha256": "4e30449d6eb999b8283d41a1f94fecd065e57cf600d98df59ca2c85e9222dd57",
-      "review": "User-preferred family arrangement: compact daybed/sofa under east window with Roman blind, shallow oak side desk with lamp.",
-      "reviewed_at": "2026-09-10T21:39:06.114661"
+      "sha256": "8602eb4c22281edeef1f345c22422ccdc61290423169f57c2c5e1f112b2dbafa",
+      "review": "Study and family room: corrected handrail with continuous tactile natural oak timber top rail on slender vertical black balusters matching 02-living-wide, solid stone steps on left, daybed sofa under east window, and shallow oak desk.",
+      "reviewed_at": "2026-09-17T06:07:20.288523+00:00",
+      "revision": "R15-Sheet04-08",
+      "method": "imagegen-handrail-steps-alignment",
+      "user_approval": "accepted"
     },
     "11-bathroom1-wide.png": {
       "status": "accepted",
@@ -183,7 +189,7 @@
     },
     "17-front-gallery-wide.png": {
       "status": "accepted",
-      "sha256": "0e28593299deb06e5b48e8defab838f4bdc54d726f70d1c1e6a6b8eaf3447549",
+      "sha256": "0ad71ef713056ef9743465fcfa3f08325b195734c6693c0d027183e42e33fc41",
       "review": "First-floor front gallery transitional space looking toward sliding door, front balcony with outdoor seating, and curved facade portal.",
       "reviewed_at": "2026-09-10T21:48:27.693999"
     },
