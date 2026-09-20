@@ -219,6 +219,33 @@
       "revision": "R20",
       "method": "imagegen",
       "user_approval": "accepted"
+    },
+    "19-exterior-front-wide.png": {
+      "status": "accepted",
+      "sha256": "a00b9a6b9c2916071c519c756b11d5fb49ead9211c7d11eeaed01e9bc5b4e2ba",
+      "review": "Front east road-facing view. Site-corrected layout: LEFT/south 2.63m parking strip with compact car parked longitudinally beside south wall (side parking, not front), vehicle gate aligned with strip. CENTER: house facade with 3m front setback, pedestrian path with grey interlocking pavers, sit-out with lounge chairs, '23 09' plaque. RIGHT/north: 1m passage between house and north compound wall, Kerala open ring well in NE corner. Continuous compound walls. House: warm-white plaster, timber cladding, dark charcoal rounded frames, first-floor panoramic bay, roof terrace railing, setback headhouse with timber face.",
+      "reviewed_at": "2026-09-21T00:00:00Z",
+      "revision": "R3-site-corrected",
+      "method": "imagegen",
+      "user_approval": "accepted"
+    },
+    "20-exterior-rear-backyard-wide.png": {
+      "status": "accepted",
+      "sha256": "7a0fe607096959dbed0968ccf5eba6c8133f365150fa979e74bc845f53424053",
+      "review": "Rear west garden view. Camera at west boundary looking east. 4.03m deep rear utility garden with cream/grey non-slip tiles. House rear: ground-floor utility door and wash area with basin, first-floor drying balcony with metal railing and laundry visible, timber cladding upper wall, two toilet vents, curved canopy return, charcoal rounded surround. Roof headhouse with timber west face visible above. LEFT/north: 1m passage visible, discreet NW septic access slab. RIGHT/south: south compound wall. Continuous compound walls on all sides. Practical Kerala residential rear yard.",
+      "reviewed_at": "2026-09-21T00:00:00Z",
+      "revision": "R3-site-corrected",
+      "method": "imagegen",
+      "user_approval": "accepted"
+    },
+    "21-exterior-south-parking-wide.png": {
+      "status": "accepted",
+      "sha256": "271401d9f6e564bf5d36b82008547535d6b565d66e8824a95b1020f20b6dc6f2",
+      "review": "South-east diagonal parking proof view. Camera at SE road corner looking NW. 2.63m wide south-side parking strip clearly visible running east-west alongside south wall. Compact car in 2.5x5m bay parked longitudinally beside house (side parking confirmed, not front). Vehicle gate aligned with south strip. Grey interlocking pavers on parking surface. Front facade and south side wall both visible at three-quarter angle. Pedestrian entry and front yard separate from parking. House: consistent warm-white plaster, timber cladding, charcoal frames, roof headhouse. North compound wall and passage visible. '23 09' plaque.",
+      "reviewed_at": "2026-09-21T00:00:00Z",
+      "revision": "R3-site-corrected",
+      "method": "imagegen",
+      "user_approval": "accepted"
     }
   },
   "approval": "Assistant visual review only; approval of the source layout is separate from user approval of the generated finishes.",
