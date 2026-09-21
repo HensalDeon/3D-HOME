@@ -246,6 +246,15 @@
       "revision": "R3-site-corrected",
       "method": "imagegen",
       "user_approval": "accepted"
+    },
+    "22-exterior-rear-utility-wide.png": {
+      "status": "accepted",
+      "sha256": "9b37ce71cac5180cdf36592bb789ebfe8ebd50660dd7a539e724f1f2eefea8ce",
+      "review": "Rear utility backyard SW diagonal view v3. Camera at SW corner looking NE. Compact ~4m deep yard. RIGHT: 2.63m south parking strip with car rear visible alongside south wall and south compound wall (corrected from garden path). LEFT: 1m north passage. Biogas green dome at far rear against west wall toward north. Square masonry burn pit in SW corner on gravel pad. Septic access in far NW corner. Middle yard: grey/cream tiles, open circulation. House rear unchanged: utility door, charcoal canopy, wash basin, drying balcony with laundry, timber cladding, headhouse. Compound walls all sides.",
+      "reviewed_at": "2026-09-21T12:24:00Z",
+      "revision": "R3-corrected",
+      "method": "imagegen",
+      "user_approval": "accepted"
     }
   },
   "approval": "Assistant visual review only; approval of the source layout is separate from user approval of the generated finishes.",
