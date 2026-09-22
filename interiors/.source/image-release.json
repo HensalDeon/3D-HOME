@@ -249,10 +249,10 @@
     },
     "22-exterior-rear-utility-wide.png": {
       "status": "accepted",
-      "sha256": "9b37ce71cac5180cdf36592bb789ebfe8ebd50660dd7a539e724f1f2eefea8ce",
-      "review": "Rear utility backyard SW diagonal view v3. Camera at SW corner looking NE. Compact ~4m deep yard. RIGHT: 2.63m south parking strip with car rear visible alongside south wall and south compound wall (corrected from garden path). LEFT: 1m north passage. Biogas green dome at far rear against west wall toward north. Square masonry burn pit in SW corner on gravel pad. Septic access in far NW corner. Middle yard: grey/cream tiles, open circulation. House rear unchanged: utility door, charcoal canopy, wash basin, drying balcony with laundry, timber cladding, headhouse. Compound walls all sides.",
-      "reviewed_at": "2026-09-21T12:24:00Z",
-      "revision": "R3-corrected",
+      "sha256": "f031adbd2b3e6f0bae01b9acee023f65b17407e03373ec784807d8206aed58af",
+      "review": "Rear utility backyard SW diagonal view v6. Wide-angle, camera against rear wall. Yard reads as tight ~4m depth — house dominates frame. Biogas green dome at rear-left near west+north walls, close to camera. Square masonry burn pit at right/south side near rear boundary on gravel pad. Septic access NW corner. RIGHT: 2.63m parking strip with car rear. LEFT: 1m north passage, frangipani. Minimal floor tiles visible between biogas and house — compact courtyard feel. House rear unchanged: utility door, charcoal canopy, wash basin, drying balcony with laundry, timber cladding, headhouse. Compound walls all sides.",
+      "reviewed_at": "2026-09-22T11:31:00Z",
+      "revision": "R6-depth-final",
       "method": "imagegen",
       "user_approval": "accepted"
     }
