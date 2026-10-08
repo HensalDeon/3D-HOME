@@ -1,5 +1,7 @@
 # Interior image register
 
+The [two-minute interior video](Hensal_Interior_Tour.mp4) presents 22 current photographs in house-tour order, at 1920 × 1080 and 24 fps. It uses gentle fitted-image motion, 0.75-second dissolves and room captions, with no audio. Original photographs are unchanged. [Video timings and source hashes](.source/video-tour.json) and [the rebuild script](.source/build_video.py) keep this export reproducible without retaining temporary frames.
+
 ## Open stair passage and corrected views · R19
 
 The first-floor stair-side partition is open below the retained 2550–2850 mm overhead band. Guards occupy the former wall band, keeping the 900 mm design passage clear. Actual stair treads, landings, main frame and roof enclosure retain their geometry; the gross total remains **1365.28 sq ft**.

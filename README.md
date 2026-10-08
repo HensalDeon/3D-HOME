@@ -22,6 +22,7 @@ The TV unit has a 2.25 m long, 350 mm deep cabinet with its top 450 mm above fin
 - [Plan gallery](drawings/compact-v4/index.html) and [complete plans PDF](drawings/compact-v4/Hensal_Complete_House_Plans.pdf)
 - [Model source and rebuild instructions](model/README.md)
 - [Interior image register](interiors/IMAGE_REVIEW.md)
+- [Two-minute interior tour](interiors/Hensal_Interior_Tour.mp4) — 1080p landscape MP4 using the current photographs, gentle motion, room captions and soft transitions.
 
 The wall above the living/stair opening remains a plastered header from +2.10 m to the +2.85 m slab soffit. The photographic views retain the actual wall and header. Structural massing and fit checks are conceptual, not construction detailing.
 
