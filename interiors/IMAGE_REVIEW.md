@@ -1,6 +1,20 @@
 # Interior image register
 
-## Current bedroom and shared storage presentation · R18
+## Open stair passage and corrected views · R19
+
+The first-floor stair-side partition is open below the retained 2550–2850 mm overhead band. Guards occupy the former wall band, keeping the 900 mm design passage clear. Actual stair treads, landings, main frame and roof enclosure retain their geometry; the gross total remains **1365.28 sq ft**.
+
+| Image | Correction |
+|---|---|
+| [Study / storage](images/10-study-storage.png) | Removed the partition nib that looked like a pillar; left sewing bench is unobstructed |
+| [Passage](images/10-passage-wide.png) | Previous photographic staircase/railings retained at user request; corrected distant tailoring room |
+| [Bedroom 2 / opposite](images/08-bedroom2-opposite.png) | Doorway looks down the actual passage with stair guards and the distant study |
+
+These are built-in imagegen presentations reviewed with the actual model camera exports in `.source/geometry/`. The passage keeps the earlier photographic staircase appearance at the user’s request; its stair silhouette is illustrative. Measured stair geometry remains in the PDF/model. The original kitchen wide/detail remain the finish references. Exact prompts, input roles/hashes, camera records and final hashes are in [the release manifest](.source/image-release.json). Assistant visual review is complete; user acceptance of the new photographs is pending. The other 30 canonical room images retain their dev-baseline hashes. Earlier R18 entries below describe the retained storage design; R19 supersedes its study and master doorway photographs.
+
+[Stair/passage layout](../model/src/stair-passage-layout.json) governs the measured opening and guards. Support, guard loads, fixings and rail connections require engineering coordination. Superseded R18 photographs and geometry are recoverable from commit `65c5704`; no bulky working revision folder is needed.
+
+## Bedroom and shared storage design · R18
 
 Six views were revised or added on 8 October 2026. All cupboards stop at 2500 mm, with 400 mm storage lofts above the 2100 mm main units and open space above. Cosmetic ceiling bands are removed. Bedroom 3 has a connected 90° L carcass without a solid corner filler; its wide camera now shows both perpendicular door faces.
 
@@ -13,7 +27,7 @@ Six views were revised or added on 8 October 2026. All cupboards stop at 2500 mm
 | `images/09-bedroom3-opposite.png` | Local ivory finish update to the visible wardrobe edge |
 | `images/10-study-storage.png` | Revised open family/tailoring room with side linen cabinet |
 
-The measured model governs geometry. Finished photos use built-in imagegen with the original kitchen wide/detail as explicit style references. The opposite Bedroom 3 view is a limited finish edit to its existing composition. Assistant visual review is complete; user acceptance of these finished views is pending. The study/stair partition is removed below the retained beam. The 750 × 450 mm cabinet is tucked beside the tailoring benches, keeping the stair connection open. The 27 unrelated existing images, including the kitchen references and tailoring-room wide view, retain their baseline hashes.
+The measured model governs geometry. Finished photos use built-in imagegen with the original kitchen wide/detail as explicit style references. The opposite Bedroom 3 view is a limited finish edit to its existing composition. Assistant visual review is complete; user acceptance of these finished views is pending. The study/stair partition is removed below the retained beam. The 750 × 450 mm cabinet is tucked beside the tailoring benches, keeping the stair connection open. The kitchen references and tailoring-room wide view retain their baseline hashes; the R19 passage/view corrections above are recorded separately.
 
 - [Canonical image and release manifest](.source/image-release.json): exact prompts, input roles/hashes, current image hashes and historical camera/source records.
 - [Measured storage layout](../model/src/storage-layout.json) and [stair/TV/basin layout](../model/src/under-stair-layout.json): authoritative geometry used by model and drawings.

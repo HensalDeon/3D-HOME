@@ -109,9 +109,9 @@
     {
       "file": "images/08-bedroom2-opposite.png",
       "group": "Master bedroom",
-      "role": "Olive textiles, oatmeal upholstery, woven runner and oak. R18 revised finish example; original kitchen images remain the primary style authority.",
-      "sha256": "e7ee82134690853bf4c72a977ffc7ea177a3c8d28b77c32f1e533b0815970952",
-      "revision": "R18"
+      "role": "Olive textiles, oatmeal upholstery, woven runner and oak. R19 revised finish example; original kitchen images remain the primary style authority.",
+      "sha256": "d5766e812401229e9378eb281957a06aeea8c16b8d5ff5f03bf5b092787deefd",
+      "revision": "R19"
     },
     {
       "file": "images/09-bedroom3-wide.png",
@@ -143,15 +143,16 @@
     {
       "file": "images/10-study-storage.png",
       "group": "Study",
-      "role": "Retained family/tailoring workspace, shared ivory linen cabinet and soft daylight. R18 revised finish example; original kitchen images remain the primary style authority.",
-      "sha256": "34340d1c59dabfa21312f49a30fc7b10d835a8e022352e3430b29fa16228655b",
-      "revision": "R18"
+      "role": "Retained family/tailoring workspace, shared ivory linen cabinet and soft daylight. R19 revised finish example; original kitchen images remain the primary style authority.",
+      "sha256": "dc876e272c6806682bb6e80817bc4cd45cf045650ceacd8b5752d6d5fbf6bbf1",
+      "revision": "R19"
     },
     {
       "file": "images/10-passage-wide.png",
       "group": "Passage and gallery",
-      "role": "Ivory and stone continuity, oak and charcoal edges, greenery.",
-      "sha256": "4611cc619de5f27dd4fc89305d66971529ed34c4766bd03361a1ae0682376069"
+      "role": "Ivory and stone continuity, oak and charcoal edges, greenery. R19 revised finish example; original kitchen images remain the primary style authority.",
+      "sha256": "b75117e389d6cf72306063d859d68dec28d70aab6688caaae1fe8b6c99d9a07a",
+      "revision": "R19"
     },
     {
       "file": "images/17-front-gallery-wide.png",

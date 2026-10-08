@@ -109,7 +109,7 @@
       1536,
       1024
     ],
-    "sha256": "e7ee82134690853bf4c72a977ffc7ea177a3c8d28b77c32f1e533b0815970952"
+    "sha256": "d5766e812401229e9378eb281957a06aeea8c16b8d5ff5f03bf5b092787deefd"
   },
   {
     "file": "08-bedroom2-wide.png",
@@ -146,10 +146,10 @@
   {
     "file": "10-passage-wide.png",
     "size": [
-      1200,
-      896
+      1451,
+      1084
     ],
-    "sha256": "4611cc619de5f27dd4fc89305d66971529ed34c4766bd03361a1ae0682376069"
+    "sha256": "b75117e389d6cf72306063d859d68dec28d70aab6688caaae1fe8b6c99d9a07a"
   },
   {
     "file": "10-study-storage.png",
@@ -157,7 +157,7 @@
       1536,
       1024
     ],
-    "sha256": "34340d1c59dabfa21312f49a30fc7b10d835a8e022352e3430b29fa16228655b"
+    "sha256": "dc876e272c6806682bb6e80817bc4cd45cf045650ceacd8b5752d6d5fbf6bbf1"
   },
   {
     "file": "10-study-wide.png",

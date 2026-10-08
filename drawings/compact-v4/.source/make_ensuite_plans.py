@@ -13,6 +13,7 @@ from make_plans import Plan
 
 ROOT = Path(__file__).resolve().parent
 STORAGE = json.loads((ROOT.parents[2] / 'model/src/storage-layout.json').read_text())
+STAIR_PASSAGE = json.loads((ROOT.parents[2] / 'model/src/stair-passage-layout.json').read_text())
 OUT = ROOT / 'compact-v4'
 PAGE = landscape(A3)
 INK=HexColor('#25343b'); MUTED=HexColor('#60747c'); TEAL=HexColor('#197a77')
@@ -180,7 +181,9 @@ def outer(p,floor):
   p.door(3.1,8.60,.85,INTERNAL,'v',-1,'hi')
  p.window(west(floor),6.3,1.4,.15+g,'v')
  p.window(west(floor),4.1,1.0,.15+g,'v')
- p.opening(2.05,2.35,.80,INTERNAL,'v')
+ if floor=='FF':
+  b=STAIR_PASSAGE['opening']['box'];p.opening(b[0],b[1],b[3]-b[1],INTERNAL,'v')
+ else:p.opening(2.05,2.35,.80,INTERNAL,'v')
  if floor=='FF':p.window(n,7.0,.55,.15+g,'v')
  for x,w,sill,h,kind in (FRONT_GF if floor=='GF' else FRONT_FF):
   yy=0 if x<3.05 else 1.2;t=(.15+g) if yy==0 else .15
@@ -197,7 +200,7 @@ def outer(p,floor):
   p.railing(3.25,0,5.85,0);p.railing(5.93,0,5.93,1.2);p.railing(3.25,9.63,5.85,9.63)
 
 
-def stair(p,floor,show_passage=True,continue_to_roof=False):
+def stair(p,floor,show_passage=True,continue_to_roof=False,show_stair_passage=True):
  # 17 risers at 3/17 m. First flight 9R, 8T; second 8R, 7T.
  # 0.90 m clear flights + 0.10 central well, 0.90 m intermediate landing.
  fill(p,(.15,2.3,2.05,6.1),HexColor('#f4f5f3'))
@@ -217,6 +220,11 @@ def stair(p,floor,show_passage=True,continue_to_roof=False):
  p.text(1.10,5.80,'LANDING',5,True)
  p.text(1.10,2.55,'17R / 176.5 mm',5.4,col=BLUE)
  if show_passage:p.text(2.62,4.25,'PASSAGE 0.90',5.6,rot=90,col=MUTED)
+ if floor=='FF' and show_stair_passage:
+  b=STAIR_PASSAGE['opening']['box'];p.rect(*b,MUTED,.35,dash=[2,2])
+  for name in ['floorEdge','upperFlight']:
+   guard=STAIR_PASSAGE['guards'][name];p.railing(guard['x'],guard['y'][0],guard['x'],guard['y'][1])
+  p.text(2.36,4.3,'OPEN STAIR / GUARD / BEAM ABOVE',3.4,rot=90,col=TEAL)
  # Roof arrival is guarded; the first-floor upward flight remains accessible.
  if floor=='FF' and not continue_to_roof:p.railing(.15,3.2,1.05,3.2)
 
@@ -430,7 +438,7 @@ def ground_sheet(c):
 
 
 def first_sheet(c):
- base(c,3,'First floor / wardrobe lofts and shared household storage','R18 / 08 OCT 2026 / PLAN 1:55 AT A3 / INTERNAL WALLS 150 MM INCLUDING PLASTER / PASSAGE 900 MM CLEAR')
+ base(c,3,'First floor / open stair passage and fitted storage','R19 / 08 OCT 2026 / OPEN STAIR SIDE WITH GUARDS / PLAN 1:55 AT A3 / PASSAGE 900 MM DESIGN CLEAR')
  p=Plan(c,44,45,1000/55);first(p)
  compass(Plan(c,0,0,10),23.4,22.1)
  y=231
@@ -438,7 +446,7 @@ def first_sheet(c):
  y=block(c,246,y,'BEDROOMS IN SW AND NORTH','R17 aligns the central wall faces through both floors. The southwest master is 2.950 x 3.300 m; Bedroom 3 is 2.580 x 3.575 m. The passage stays 900 mm clear. Both ensuites are rebalanced to 1.215 x 2.100 m, with a 900 mm deep shower zone and compact WC. Ensuite 3 uses a surface-sliding door to avoid the bed and fixtures.',149)
  y=block(c,246,y,'NO BEDROOM IN THE SOUTHEAST','The southeast room remains a study above the kitchen. Bed heads retain their southward orientation. The master keeps 625 mm at each side of the double bed and 865 mm at its foot with the sliding leaf parked (900 mm to the wall). Bedroom 3 keeps 625 mm to its wardrobe, 600 mm behind the bed and 580 mm at the foot: compact, with a sliding ensuite door.',149)
  y=block(c,246,y,'REAR DRYING TERRACE','The covered rear balcony remains above the work area, now 2.580 x 1.220 m clear. Its 850 mm side door is moved to y = 8.60, clear of the deeper bathroom wall. Access stays private to the master; the front balcony remains common.',149)
- y=block(c,246,y,'TWO SEPARATE ENSUITES','Ensuite 2 serves only the master and stacks above Ensuite 1. Ensuite 3 serves only Bedroom 3 and sits above the ground service passage, not a bedroom or kitchen. The two bathrooms are separated by a full-height wall. The south stair continues to the roof. Its indicative landing support ends at x = 2.05, clear of the master door; end bearing requires structural design. See sheets 05 and 08.',149)
+ y=block(c,246,y,'OPEN STAIR SIDE / GUARDED PASSAGE','The first-floor stair-side partition opens below +2.55 m; the overhead beam/soffit band to +2.85 m remains. Slim charcoal vertical guards with oak rails protect the passage drop and upper return flight. Proposed guards are 1100 mm high with 100 mm maximum baluster centre pitch. The former wall band is reserved for edge/guard details; the passage keeps its 900 mm design clear width. Level stair entry remains open. The gallery boundary, bedrooms and private ensuites are retained. Verify support, rail connections and fixings.',149)
  y=block(c,246,y,'WALL THICKNESS, AREA AND STRUCTURE','Gross floor envelope remains 58.51 m2 / 629.84 sq ft, including stairs and covered balconies. Walls are 150 mm total including plaster. Bathroom WC projection is limited to 550 mm installed, giving 665 mm clear in front; it is a compact layout. Coordinate carrier/cistern, tiles, services and structural pier sizes without consuming the published clearances.',149)
 
 
@@ -646,6 +654,7 @@ def validate():
          'internal_wall_mm':150,'internal_wall_spec':WALL_SPEC,
          'storage_layout':STORAGE,
          'study_stair_opening':STORAGE['study'],
+         'first_stair_passage_opening':STAIR_PASSAGE,
          'internal_wall_boxes_m':{k:internal_walls(k) for k in ['GF','FF']},
          'room_boxes_m':ids,
          'room_regions_m':{'g-living':[g['living'],g['passage']],
@@ -669,7 +678,7 @@ def validate():
          'room_clear_areas_sqft':{k:round(v/.09290304,2) for k,v in areas.items()},
          'named_clear_zone_totals_m2':clear_totals,
          'named_clear_zone_totals_sqft':{k:round(v/.09290304,2) for k,v in clear_totals.items()},
-         'clear_area_basis':'Named clear zones to plastered wall faces; stairs and covered outdoor zones included; removed study/stair partition band included; remaining wall bands/door reveals excluded. Not a statutory carpet-area measurement.',
+         'clear_area_basis':'Named clear zones to plastered wall faces; stairs and covered outdoor zones included; removed study/stair partition band included; remaining wall bands/door reveals and the stair guard reserve excluded. Not a statutory carpet-area measurement.',
          'bathroom_layout_m':{floor:bathroom_layout(floor) for floor in ['GF','FF']},
          'compact_wc_spec':WC_SPEC,
          'comfort_clearances_mm':{'first_passage':900,'ground_service_route':1165,

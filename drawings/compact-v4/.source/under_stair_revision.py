@@ -41,8 +41,8 @@ def soffits():
  overhead at all - it is now plain first-floor slab, the extra floor R9 frees up."""
  return [(0,.9,12*R-LZONE)]+[(.9+i*.25,1.15+i*.25,NOSE(.9+i*.25)-WZONE) for i in range(4)]+[(1.9,3.8,2.85)]
 
-def stair(p,floor,show_passage=True,continue_to_roof=False):
- if floor!='GF':return OLD_STAIR(p,floor,show_passage,continue_to_roof)
+def stair(p,floor,show_passage=True,continue_to_roof=False,show_stair_passage=True):
+ if floor!='GF':return OLD_STAIR(p,floor,show_passage,continue_to_roof,show_stair_passage)
  p.fill_rect(.15,2.3,2.05,6.1,HexColor('#f4f5f3'))
  # R9: the upper flight is now only 4 risers (indices 12-15) plus the arrival (16); everything
  # from the intermediate landing (index 11) onward is dashed as overhead, same convention as R6.

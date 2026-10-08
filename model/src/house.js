@@ -298,6 +298,23 @@ export function createHouse(){
     rod(stairGroup,[bx,b.y[1],z+(landingRiser+1)*rise+b.height],[bx,b.y[0],z+3.9],.019,materials.noir);
     for(let i=0;i<upperCount;i++)rod(stairGroup,[bx,5.07-i*.25,z+(landingRiser+1+i)*rise],[bx,5.07-i*.25,z+(landingRiser+1+i)*rise+b.height],.012,materials.noir);
    }
+   if(level==='first'){
+    const spec=revision.stairPassage.guards,guard=new THREE.Group();guard.name='R19 open stair passage guards';g.add(guard);
+    function guardRun(name,x,y0,y1,base,railBase){
+     const group=new THREE.Group();group.name=name;guard.add(group);
+     rod(group,[x,y0,z+railBase(y0)+spec.height],[x,y1,z+railBase(y1)+spec.height],spec.handrailRadius,materials.oak).name='Oak guard handrail';
+     const count=Math.ceil(Math.abs(y1-y0)/spec.maximumCentrePitch);
+     for(let i=0;i<=count;i++){
+      const y=y0+(y1-y0)*i/count;
+      rod(group,[x,y,z+base(y)+.03],[x,y,z+railBase(y)+spec.height],spec.balusterDiameter/2,materials.noir).name='Vertical guard baluster';
+     }
+    }
+    const edge=spec.floorEdge;guardRun('Level passage drop-edge guard',edge.x,...edge.y,()=>0,()=>0);
+    const flight=spec.upperFlight,steps=stairTreads('first').filter(t=>!t.arrival&&!t.landing&&t.box[0]>=1.15-1e-6&&t.box[2]<=2.05+1e-6);
+    const base=y=>steps.find(t=>y>=t.box[1]-1e-6&&y<=t.box[3]+1e-6)?.height??9*rise;
+    const topLine=y=>3+(y-flight.y[0])*(10*rise-3)/(flight.y[1]-flight.y[0]);
+    guardRun('First-to-roof outer flight guard',flight.x,...flight.y,base,topLine);
+   }
    // Front and rear corner piers came directly from the wall commands.
    furniture(g,level,z);
    if(level==='first'){rail(g,3.25,0,5.85,0,z,1.1,true);rail(g,5.93,0,5.93,1.2,z,1.1,true);rail(g,3.25,9.63,5.85,9.63,z,1.1);}

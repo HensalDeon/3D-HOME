@@ -28,7 +28,7 @@ test('R17 preserves exterior schedules, roof architecture and first-to-roof stai
   assert.equal(now.filter(c=>c.op==='door').length,was.filter(c=>c.op==='door').length);
   assert.equal(now.filter(c=>c.op==='window').length,was.filter(c=>c.op==='window').length);
   for(const op of ['door','window','opening']){
-   assert.deepEqual(now.filter(c=>c.op===op).map(c=>c.args[2]).sort(),was.filter(c=>c.op===op&&!(level==='first'&&op==='opening'&&c.args[0]===.95&&c.args[1]===2.2)&&!(level==='ground'&&op==='opening'&&c.args[0]===3.05&&[2.45,5.2].includes(c.args[1]))).map(c=>level==='ground'&&op==='window'&&c.args[0]===3.23?1.10:c.args[2]).sort(),`${level} ${op} widths`);
+   assert.deepEqual(now.filter(c=>c.op===op).map(c=>c.args[2]).sort(),was.filter(c=>c.op===op&&!(level==='first'&&op==='opening'&&c.args[0]===.95&&c.args[1]===2.2)&&!(level==='ground'&&op==='opening'&&c.args[0]===3.05&&[2.45,5.2].includes(c.args[1]))).map(c=>level==='ground'&&op==='window'&&c.args[0]===3.23?1.10:level==='first'&&op==='opening'&&c.args[0]===2.05&&c.args[1]===2.35?3.8:c.args[2]).sort(),`${level} ${op} widths`);
   }
  }
  for(const name of ['FRONT_GF','FRONT_FF','REAR_FF'])assert.deepEqual(plan.openings[name],baseline.plan.openings[name]);
@@ -634,4 +634,28 @@ test('stair landing support meshes leave both bedroom entrances clear',()=>{
   assert.ok(entrance);assert.ok(stairBeamZones(level)[0].box[2]<=entrance.box[0]);
  }
  assert.equal(plan.dimensions.total_including_roof_sqft,1365.28);
+});
+
+
+test('R19 opens the upper stair side, retains structure and guards the actual drop',()=>{
+ const cfg=revision.stairPassage,opening=openingsFor('first').find(o=>o.kind==='opening'&&sameBox(o.box,cfg.opening.box));
+ assert.ok(opening);near(opening.height,2.55);
+ const walls=wallPieces('first').filter(w=>overlaps(w.box,cfg.opening.box));
+ assert.ok(walls.length);assert.ok(walls.every(w=>w.bottom>=2.55-eps&&w.top===2.85));
+ assert.ok(wallPieces('ground').some(w=>overlaps(w.box,[2.05,2.3,2.2,2.35])),'ground entry jamb unchanged');
+ const h=createHouse();h.root.updateMatrixWorld(true,true);const guards=h.levels.first.getObjectByName('R19 open stair passage guards');assert.ok(guards);
+ const low=guards.getObjectByName('Level passage drop-edge guard'),high=guards.getObjectByName('First-to-roof outer flight guard');assert.ok(low&&high);
+ const b=new Box3().setFromObject(low);near(cfg.guards.floorEdge.y[0],4.2);near(cfg.guards.floorEdge.y[1],6.1);
+ assert.ok(b.min.x+3>2.05&&b.max.x+3<2.2,'guard fits former wall band and preserves passage');
+ assert.ok(b.max.y-LEVELS.first>1.1-.001);
+ for(const group of [low,high]){
+  const bars=group.children.filter(o=>o.name==='Vertical guard baluster');assert.ok(bars.length>15);
+  const centres=bars.map(o=>o.position.z).sort((a,b)=>a-b);
+  for(let i=1;i<centres.length;i++)assert.ok(centres[i]-centres[i-1]-cfg.guards.balusterDiameter<.1);
+ }
+ assert.deepEqual(stairTreads('first'),baseline.stairTreads());
+ assert.deepEqual(wallPieces('roof'),baseline.wallPieces('roof'));
+ assert.ok(frameTrimmers().some(t=>t.id==='stair-arrival-first'),'roof-arrival trimmer retained');
+ near(cfg.passage.clearBox[2]-cfg.passage.clearBox[0],.9);near(plan.dimensions.total_including_roof_sqft,1365.28);
+ assert.deepEqual(plan.dimensions.first_stair_passage_opening,cfg);
 });

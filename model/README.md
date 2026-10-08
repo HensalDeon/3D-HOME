@@ -1,5 +1,7 @@
 # Interactive model source
 
+R19 opens the first-floor stair-side partition below 2550 mm, retaining the overhead band to the 2850 mm slab soffit. Slim charcoal vertical guards with oak top rails protect the passage drop and roof stair flight; level access to the study and stair remains open. Proposed guards are 1100 mm high, with 100 mm maximum baluster centre pitch. Their footprints stay within the former wall band, preserving the 900 mm design passage width. The bedroom doorway now looks down this passage, and the study image has no partition nib. Existing stairs, main frame and roof enclosure retain their geometry. Guard connections, fixings and overhead support require structural design. The shared source is `model/src/stair-passage-layout.json` (repository-relative path). The former wall band is reserved for guard details rather than added to named clear areas; the total remains **1,365.28 sq ft**.
+
 R18 adds fitted wardrobe lofts and enclosed bed storage in the existing bedroom footprints, and opens the family/tailoring room to the stair base. The main wardrobes remain 2100 mm high, with 400 mm lofts to 2500 mm and open space above. Matte ivory fronts and sides, muted oak accent bays, narrow paired doors and recessed plinths replace the boxy timber massing. A 750 × 450 mm shared linen cabinet is tucked beside the tailoring benches. All three beds gain panel-lined lift-up storage bases; no side drawers enter the compact aisles. Lofts add **1.210 m³ gross external volume** before panels/hardware, including shared linen storage; the three bed cavities provide **1.415 m³ nominal panel-lined volume** before mechanisms/dividers. These are not net usable-capacity claims. Cabinet tops stay 50 mm below the indicative beam soffit. Cosmetic ceiling bands are removed; the loft tops remain visible. Bedroom 3 uses a continuous 90° L carcass without a solid corner filler.
 
 [Interior image register](../interiors/IMAGE_REVIEW.md). Cabinet geometry, finishes and height/capacity basis are coordinated through `model/src/storage-layout.json` (repository-relative path). Furniture-supplier checks remain required for hinges, corner access, lift mechanisms, ventilation, fixings and measured site dimensions. Gross floor areas and bedroom/bed footprints are unchanged. The study/stair partition is removed while retaining the beam and stair structure; the study zone becomes 2.950 × 2.130 m and gains 0.4425 m² (4.76 sq ft) of clear floor area. Three sewing stations use two compact benches, with a 650 mm aisle between occupied chair footprints and 2500 mm clear at the stair connection beside the cabinet. Final machine and chair dimensions require supplier coordination.
@@ -16,7 +18,7 @@ The model displays the published R14 TV joinery beneath the lower stair flight. 
 
 ## Deliverables and drawing scope
 
-The current [image register](../interiors/IMAGE_REVIEW.md) links the canonical photographs. The standalone explorer, combined PDF, `dimensions.json`, `src/storage-layout.json` and `src/under-stair-layout.json` hold the coordinated R18 design. Duplicate interior review pages have been removed.
+The current [image register](../interiors/IMAGE_REVIEW.md) links the canonical photographs. The standalone explorer, combined PDF, `dimensions.json`, `src/storage-layout.json`, `src/under-stair-layout.json` and `src/stair-passage-layout.json` hold the coordinated R19 design. Duplicate interior review pages have been removed.
 
 Rebuild order matters, because each artefact embeds the previous one: build the drawings first (`drawings/compact-v4/.source/make_complete_plans.py`), then `scripts/extract_plan.py`, `scripts/make_assets.py`, `scripts/revision-review.mjs`, then `npm run build`.
 
@@ -33,7 +35,7 @@ node --test scripts/r14-preview.test.mjs
 
 Check for an existing server before starting Vite on its default port 5173. Use another port if occupied.
 
-`npm test` covers PDF traceability, wall apertures, 150 mm finished wall bands, the 900 mm passage, room and furniture clearances, retained roof architecture and stair geometry. The dedicated R14 test checks the shallow footprint, access separation and backing clearance; the R15 test checks that the basin holds the joinery's depth, face plane and orientation, that the fin closes the run, and that the clear height is uniform. [revisions/README.md](revisions/README.md) documents the three baseline fixtures required by those tests.
+`npm test` covers PDF traceability, wall apertures, 150 mm finished wall bands, the 900 mm passage, room and furniture clearances, retained roof architecture and stair geometry. The R19 test verifies the upper opening, overhead band, drop guards and clear passage against the built meshes. The dedicated R14 test checks the shallow footprint, access separation and backing clearance; the R15 test checks that the basin holds the joinery's depth, face plane and orientation, that the fin closes the run, and that the clear height is uniform. [revisions/README.md](revisions/README.md) documents the three baseline fixtures required by those tests.
 
 ## Interior references and photographs
 
@@ -45,9 +47,9 @@ Generate an actual-model geometry reference without creating revision folders:
 node scripts/interior-references.mjs --view 08-bedroom2-opposite --output /tmp/hensal-interior-references
 ```
 
-Omit `--view` to export all five configured cameras. The projector writes PPMs and a camera/source-hash audit; convert the native renders to PNG when needed. These flat geometry views are references, not final photographs. The browser geometry renderer `scripts/r14-reference-render.mjs` remains available for the living/stair cameras and accepts `DEV_SERVER` and `PLAYWRIGHT_CHROMIUM_EXECUTABLE`.
+Omit `--view` to export all six configured cameras. The projector writes PPMs and a camera/source-hash audit; convert the native renders to PNG when needed. These flat geometry views are references, not final photographs. The browser geometry renderer `scripts/r14-reference-render.mjs` remains available for the living/stair cameras and accepts `DEV_SERVER` and `PLAYWRIGHT_CHROMIUM_EXECUTABLE`.
 
-Finished images use built-in imagegen with the original kitchen wide/detail as style references. Read [the style brief](../interiors/STYLE_REFERENCE.md) first. Review geometry and finishes, then update the canonical image, `image-release.json`, `image-inventory.json` and image register. Exact R18 prompts, source roles, hashes and camera records are consolidated in `interiors/.source/image-release.json`; superseded source pixels remain recoverable from Git commit `0333b6d`. Rebuild the live style board with `python interiors/.source/build_style_reference.py` from the repository root.
+Finished images use built-in imagegen with the original kitchen wide/detail as style references. Read [the style brief](../interiors/STYLE_REFERENCE.md) first. Review geometry and finishes, then update the canonical image, `image-release.json`, `image-inventory.json` and image register. Exact R18/R19 prompts, source roles, hashes and camera records are consolidated in `interiors/.source/image-release.json`; superseded source pixels remain recoverable from Git commits `0333b6d` and `65c5704`. Rebuild the live style board with `python interiors/.source/build_style_reference.py` from the repository root.
 
 ## Rebuild the coordinated drawing package
 

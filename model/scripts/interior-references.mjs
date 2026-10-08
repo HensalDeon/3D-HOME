@@ -2,6 +2,7 @@
 import {PerspectiveCamera,Vector3,Box3} from 'three';
 import {createHouse} from '../src/house.js';
 import {LEVELS} from '../src/geometry.js';
+import {revision} from '../src/revision.js';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 import {resolve} from 'node:path';
@@ -14,7 +15,8 @@ const views=[
  {id:'08-bedroom2-opposite',level:'first',eye:[2.75,9.05,1.5],at:[1.5,6.6,1.35],fov:65},
  {id:'09-bedroom3-wide',level:'first',eye:[4.8,5.85,1.5],at:[5.04,2.98,1.3],fov:65},
  {id:'09-bedroom3-detail',level:'first',eye:[4.95,4.25,1.4],at:[5.15,3.0,1.5],fov:65},
- {id:'10-study-storage',level:'first',eye:[1.75,3.00,1.5],at:[1.65,.50,1.35],fov:78}
+ {id:'10-study-storage',level:'first',eye:[1.75,3.00,1.5],at:[1.65,.50,1.35],fov:78},
+ {id:'10-passage-wide',level:'first',eye:[2.65,5.95,1.5],at:[2.65,.75,1.35],fov:70}
 ];
 const selectedViews=views.filter(v=>!option('--view')||v.id===option('--view'));
 if(!selectedViews.length)throw new Error('Unknown --view; use one of: '+views.map(v=>v.id).join(', '));
@@ -30,7 +32,7 @@ function clip(poly){
  return result;
 }
 const hashes={};
-for(const n of ['house.js','geometry.js','storage-layout.json','storage-joinery.js','plan-data.json','structural-frame.json','under-stair-layout.json'])hashes[n]=createHash('sha256').update(await readFile(new URL('../src/'+n,import.meta.url))).digest('hex');
+for(const n of ['house.js','geometry.js','storage-layout.json','storage-joinery.js','plan-data.json','structural-frame.json','under-stair-layout.json','stair-passage-layout.json','revision.js'])hashes[n]=createHash('sha256').update(await readFile(new URL('../src/'+n,import.meta.url))).digest('hex');
 for(const view of views.filter(v=>!option('--view')||v.id===option('--view'))){
  const camera=new PerspectiveCamera(view.fov,W/H,.05,100);
  camera.position.copy(h.V(view.eye[0],LEVELS[view.level]+view.eye[2],view.eye[1]));
@@ -82,5 +84,5 @@ for(const view of views.filter(v=>!option('--view')||v.id===option('--view'))){
  await writeFile(new URL(view.id+'.ppm',out),Buffer.concat([Buffer.from(`P6\n${W} ${H}\n255\n`),pixels]));
  view.meshCount=count;view.triangleCount=tris.length;
 }
-await writeFile(new URL('geometry-audit.json',out),JSON.stringify({revision:'R18',method:'Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted',sourceHashes:hashes,views:selectedViews},null,2)+'\n');
+await writeFile(new URL('geometry-audit.json',out),JSON.stringify({revision:revision.id,method:'Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted',sourceHashes:hashes,views:selectedViews},null,2)+'\n');
 console.log(`Exported ${selectedViews.length} current-model geometry references.`);

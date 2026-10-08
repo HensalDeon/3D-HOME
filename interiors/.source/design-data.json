@@ -91,7 +91,7 @@
       "dimension": "2.950 \u00d7 2.130 m \u00b7 open to stairs",
       "intent": "Retain the approved three-machine tailoring function. Open the study/stair boundary and tuck a 750 \u00d7 450 mm linen/household cabinet against the side wall beside two compact workbenches.",
       "materials": "Natural linen \u00b7 warm oak \u00b7 muted olive \u00b7 beige Roman blind",
-      "check": "Retain the existing beam, stair flights and gallery/balcony boundary. The occupied-chair aisle is 650 mm; the stair connection is 2500 mm clear beside the cabinet. Main cupboard height 2100 mm, loft top 2500 mm, open above. Verify actual machines, chair movement, narrow tall-bay equipment fit and structural coordination."
+      "check": "Retain the existing beam, stair flights and gallery/balcony boundary. The occupied-chair aisle is 650 mm; the stair connection is 2500 mm clear beside the cabinet. Main cupboard height 2100 mm, loft top 2500 mm, open above. Verify actual machines, chair movement, narrow tall-bay equipment fit and structural coordination. R19 removes the stair-side nib as part of the full passage-side opening; no separate pillar stands at the sewing bench."
     },
     {
       "id": "08-bedroom2",
@@ -142,10 +142,10 @@
       "id": "10-passage",
       "title": "First-Floor Passage",
       "floor": "FIRST FLOOR",
-      "dimension": "0.90 m wide corridor",
-      "intent": "An open gallery corridor connecting the landing to the study/family room and front gallery. No doors within the passage itself \u2014 it is an open walkway.",
+      "dimension": "0.90 m design clear passage \u00b7 open guarded stair side",
+      "intent": "R19 opens the first-floor stair-side partition below the retained overhead band, connecting the landing to the family/tailoring room and front gallery. Slim charcoal guards and oak rails protect the actual stair drop; the level study connection remains open.",
       "materials": "Off-white walls \u00b7 warm recessed lighting \u00b7 restrained framed art/family photos in oak/black frames",
-      "check": "Open passage with no doors. Runs from the stair landing (south) past the master ensuite pocket door toward the study/family room opening and front gallery. Do not add any swing or sliding doors to the passage corridor."
+      "check": "Match model/src/stair-passage-layout.json. Keep the solid bedroom wall, 900 mm clear passage, existing stair treads/landings and overhead support. Proposed guards are 1100 mm high with 100 mm maximum baluster centre pitch, within the former wall band. No rail crosses the level stair/study access. Bedroom 2 sees this long passage, guarded stairs and distant study through its door. Guard loads, fixings and connections require structural design."
     },
     {
       "id": "17-front-gallery",
@@ -198,5 +198,11 @@
       "Removable natural-look fabrics; sage, olive and clay used sparingly."
     ]
   ],
-  "storage_revision": "R18"
+  "storage_revision": "R18",
+  "stair_passage_revision": {
+    "id": "R19",
+    "source": "../model/src/stair-passage-layout.json",
+    "area_change_sqft": 0,
+    "date": "2026-10-08"
+  }
 }

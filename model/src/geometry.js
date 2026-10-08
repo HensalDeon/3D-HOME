@@ -27,7 +27,7 @@ export const rooms=[
  ['f-balcony','first','Front balcony',plan.dimensions.room_boxes_m['f-balcony'],'','Glass railing and recessed sliding door, reached from the common front gallery.',4],
  ['f-drying','first','Rear drying balcony',plan.dimensions.room_boxes_m['f-drying'],'','Covered and ventilated. Entry is from the master side wall, never through either bathroom.',4],
  ['f-gallery','first','Front gallery',plan.dimensions.room_boxes_m['f-gallery'],'','Common access between study, bedroom and front balcony.',4],
- ['f-passage','first','Common passage',plan.dimensions.room_boxes_m['f-passage'],'','900 mm clear between the retained stair wall and aligned central partition.',4],
+ ['f-passage','first','Common passage',plan.dimensions.room_boxes_m['f-passage'],'','900 mm design clear between the stair guard reserve and aligned central partition; R19 opens the stair side below the retained overhead beam band.',4],
  ['f-stair','first','Stair continuation',plan.dimensions.room_boxes_m['f-stair'],'','The upward flight remains open. Full stair access to +6.45 m, with a separate downward arrival from ground. The FF-to-roof stair repeats the same conceptual RCC waist and landing slabs, springing off the first-floor slab edge and framing into the roof slab. TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER.',8],
  ['r-head','roof','Roof stair enclosure',[0,2.15,2.2,6.25],'2.20 × 4.10 m outside','9.02 m² additional area. 2.40 m clear landing height; cap +9.00 m. North-side 900 mm outward-opening exit.',9],
  ['r-terrace','roof','Open roof terrace',[2.2,.15,5.85,9.55],'Roof level +6.45 m','Open to sky, with 1.10 m perimeter guarding. Drainage falls, outlet and overflow are indicative.',5],
@@ -51,6 +51,7 @@ export function openingsFor(level){
   let [x,y,w,t,axis,swing=1,hinge='lo']=c.args;
   if(level==='ground'&&c.op==='opening'&&x===2.05&&y===2.35){y=2.3;w=.9;}
   let sill=0,height=2.1,kind=c.op,assumed=true;
+  if(level==='first'&&c.op==='opening'&&x===revision.stairPassage.opening.box[0]&&y===revision.stairPassage.opening.box[1])height=revision.stairPassage.opening.head;
   if(c.op==='window'){sill=1;height=1.2;}
   if(level==='roof'){
    if(c.op==='window'){sill=1.5;height=.45;kind='obscured';} else height=2.1;

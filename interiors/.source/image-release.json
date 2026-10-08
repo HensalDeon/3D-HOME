@@ -129,9 +129,9 @@
     },
     "08-bedroom2-opposite.png": {
       "status": "accepted",
-      "revision": "R18",
-      "sha256": "e7ee82134690853bf4c72a977ffc7ea177a3c8d28b77c32f1e533b0815970952",
-      "review": "Master fitted wardrobe with six paired main and six loft leaves; corrected unobstructed common passage view, with distant tailoring room visible. Erroneous indicative landing support crossing entrance removed from source model.",
+      "revision": "R19",
+      "sha256": "d5766e812401229e9378eb281957a06aeea8c16b8d5ff5f03bf5b092787deefd",
+      "review": "Corrected actual long passage, oak-topped black guards, cropped overhead stair and broad distant study front window. No invented ivory panel at rail termination. Bedroom wardrobe/loft fronts, open storage tops, door leaf, bed, textiles and finishes preserved.",
       "reviewed_at": "2026-10-08",
       "method": "built-in-imagegen-reference-edit",
       "style_source": [
@@ -139,8 +139,8 @@
         "06-kitchen-detail.png"
       ],
       "user_approval": "pending",
-      "render_review": "Assistant visual comparison against model geometry and kitchen style; presentation is not certified pixel-exact geometry.",
-      "prompt_id": "08-bedroom2-opposite-doorway-correction",
+      "render_review": "Assistant comparison with actual model camera and kitchen finishes; generated presentation is illustrative, not certified pixel-exact geometry.",
+      "prompt_id": "R19-bedroom_panel",
       "geometry_authority": {
         "storage_layout": "../model/src/storage-layout.json",
         "house_model": "../model/src/house.js",
@@ -217,12 +217,19 @@
     },
     "10-passage-wide.png": {
       "status": "accepted",
-      "sha256": "4611cc619de5f27dd4fc89305d66971529ed34c4766bd03361a1ae0682376069",
-      "review": "First floor passage (Sheet 04 & 08): solid closed pale sandy stone steps matching living room (02-living-wide), continuous RCC waist slab, oak handrail on black balusters, Master bedroom door at end, sliding doors to front balcony on left, gallery photo wall on right.",
-      "reviewed_at": "2026-09-17T06:07:20.286853+00:00",
-      "revision": "R15-Sheet04-08",
-      "method": "imagegen-handrail-steps-alignment",
-      "user_approval": "accepted"
+      "sha256": "b75117e389d6cf72306063d859d68dec28d70aab6688caaae1fe8b6c99d9a07a",
+      "review": "Selected after user requested the previous stair/railing appearance. Updated distant tailoring room and linen cupboard retained. This preserves the original photographic stair composition; actual measured tread geometry is governed by the plan/model, not certified by this illustration.",
+      "reviewed_at": "2026-10-08",
+      "revision": "R19",
+      "method": "built-in-imagegen-reference-edit",
+      "user_approval": "pending",
+      "style_source": [
+        "06-kitchen-wide.png",
+        "06-kitchen-detail.png"
+      ],
+      "render_review": "Assistant comparison with actual model camera and kitchen finishes; generated presentation is illustrative, not certified pixel-exact geometry.",
+      "geometry_source": ".source/geometry/10-passage-wide.png",
+      "prompt_id": "R19-passage_candidate"
     },
     "10-study-wide.png": {
       "status": "accepted",
@@ -341,9 +348,9 @@
     },
     "10-study-storage.png": {
       "status": "accepted",
-      "revision": "R18",
-      "sha256": "34340d1c59dabfa21312f49a30fc7b10d835a8e022352e3430b29fa16228655b",
-      "review": "R18 open family/tailoring room viewed from the stair base. Three sewing stations and two benches follow the preferred tailoring use; 750 x 450 mm ivory linen cabinet at side. Study/stair partition removed below retained beam; gallery/balcony boundary preserved.",
+      "revision": "R19",
+      "sha256": "dc876e272c6806682bb6e80817bc4cd45cf045650ceacd8b5752d6d5fbf6bbf1",
+      "review": "Removed the stair-side partition nib; full left sewing bench visible. Camera, three tailoring stations, gallery boundary, linen cabinet and photographic palette retained.",
       "reviewed_at": "2026-10-08",
       "method": "built-in-imagegen-reference-edit",
       "style_source": [
@@ -351,13 +358,14 @@
         "06-kitchen-detail.png"
       ],
       "user_approval": "pending",
-      "render_review": "Assistant visual comparison against model geometry and kitchen style; presentation is not certified pixel-exact geometry.",
-      "prompt_id": "10-study-storage-open-stairs-final",
+      "render_review": "Assistant comparison with actual model camera and kitchen finishes; generated presentation is illustrative, not certified pixel-exact geometry.",
+      "prompt_id": "R19-study",
       "geometry_authority": {
         "storage_layout": "../model/src/storage-layout.json",
         "house_model": "../model/src/house.js",
         "historical_source_commit": "0333b6d"
-      }
+      },
+      "geometry_source": ".source/geometry/10-study-storage.png"
     }
   },
   "approval": "Assistant visual review only; approval of the source layout is separate from user approval of the generated finishes.",
@@ -591,7 +599,8 @@
         "name": "08-bedroom2-opposite-final.png",
         "sha256": "a631ffd00a9745dfd4598673909da41ced505bf3600815c2e50058203c388c01",
         "source_commit": "0333b6d"
-      }
+      },
+      "superseded_by": "R19 passage/study sightline corrections; original storage design retained."
     },
     {
       "id": "09-bedroom3-wide-final",
@@ -667,7 +676,8 @@
         "name": "10-study-storage-final.png",
         "sha256": "de5d75f4eec165570531a11f1f13c100b60bd5799b5b28af7f35ec2875f469e1",
         "source_commit": "0333b6d"
-      }
+      },
+      "superseded_by": "R19 passage/study sightline corrections; original storage design retained."
     },
     {
       "id": "08-bedroom2-opposite-paired-final",
@@ -711,7 +721,8 @@
         "name": "08-bedroom2-opposite.png",
         "sha256": "c761ad0fbe74a8c98c7bfe440c90e516f8c4ee3935f9eddfe95054bb109e8577",
         "source_commit": "0333b6d"
-      }
+      },
+      "superseded_by": "R19 passage/study sightline corrections; original storage design retained."
     },
     {
       "id": "09-bedroom3-detail-final",
@@ -831,7 +842,8 @@
         "name": "10-study-storage.png",
         "sha256": "34340d1c59dabfa21312f49a30fc7b10d835a8e022352e3430b29fa16228655b",
         "source_commit": "0333b6d"
-      }
+      },
+      "superseded_by": "R19 passage/study sightline corrections; original storage design retained."
     },
     {
       "id": "08-bedroom2-opposite-doorway-correction",
@@ -848,7 +860,8 @@
           "name": "08-bedroom2-opposite.png",
           "role": "corrected actual-model geometry and camera authority",
           "sha256": "a1af4b38470e800230289b626d24e71d42a68754372961f498e389f10539492c",
-          "retained_path": ".source/geometry/08-bedroom2-opposite.png"
+          "path_at_commit": ".source/geometry/08-bedroom2-opposite.png",
+          "source_commit": "65c5704"
         },
         {
           "name": "06-kitchen-wide.png",
@@ -867,8 +880,9 @@
       "status": "assistant visual review passed; user acceptance pending",
       "output": {
         "name": "08-bedroom2-opposite.png",
-        "retained_path": "images/08-bedroom2-opposite.png",
-        "sha256": "e7ee82134690853bf4c72a977ffc7ea177a3c8d28b77c32f1e533b0815970952"
+        "sha256": "e7ee82134690853bf4c72a977ffc7ea177a3c8d28b77c32f1e533b0815970952",
+        "path_at_commit": "images/08-bedroom2-opposite.png",
+        "source_commit": "65c5704"
       },
       "geometry_audit": {
         "revision": "R18",
@@ -901,7 +915,8 @@
           }
         ]
       },
-      "review": "Unobstructed entrance and passage sightline to existing tailoring bench; paired main/loft fronts, exposed cabinet top, camera, palette and bedroom furniture preserved."
+      "review": "Unobstructed entrance and passage sightline to existing tailoring bench; paired main/loft fronts, exposed cabinet top, camera, palette and bedroom furniture preserved.",
+      "superseded_by": "R19 passage/study sightline corrections; original storage design retained."
     }
   ],
   "storage_geometry_history": {
@@ -994,41 +1009,660 @@
       }
     ]
   },
-  "source_retention": "Bulky storage candidates, native snapshots and duplicate review pages removed at user request. Exact prompts, source roles and SHA-256 hashes retained here. Historical source pixels are recoverable from Git commit 0333b6d; measured geometry remains in model/src/storage-layout.json, model/src/under-stair-layout.json and the plans.",
-  "current_geometry_reference": {
-    "file": ".source/geometry/08-bedroom2-opposite.png",
-    "sha256": "a1af4b38470e800230289b626d24e71d42a68754372961f498e389f10539492c",
-    "audit": {
-      "revision": "R18",
-      "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
-      "sourceHashes": {
-        "house.js": "1cb7cb1b8aff8d64ba06081830c32d0a1ee9d4bb2666ee878ca190ffab3f4e64",
-        "geometry.js": "431d773a630ac80cc8d310b74e40926f722587626312467c7a9305b802fd8b52",
-        "storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
-        "storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
-        "plan-data.json": "437a7c6fdf26788c1ffebcc37005d3152380baecf3749c2e10d680a29e14a494",
-        "structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589",
-        "under-stair-layout.json": "894a9d6fcbd2c9c8884a0aea49cb56fe510d7bfc458461569fe4fb81e7542f00"
+  "source_retention": "Bulky working revision folders and duplicate review pages are removed at user request. Exact prompts, input roles/hashes, camera audits and final hashes are retained here. The three small current native geometry references are retained in .source/geometry/. Previous R18 photographs and geometry are recoverable from Git commit 65c5704; earlier storage working inputs from 0333b6d. Measured layouts remain in model/src/storage-layout.json, under-stair-layout.json, stair-passage-layout.json and the plans.",
+  "geometry_reference_history": [
+    {
+      "sha256": "a1af4b38470e800230289b626d24e71d42a68754372961f498e389f10539492c",
+      "audit": {
+        "revision": "R18",
+        "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
+        "sourceHashes": {
+          "house.js": "1cb7cb1b8aff8d64ba06081830c32d0a1ee9d4bb2666ee878ca190ffab3f4e64",
+          "geometry.js": "431d773a630ac80cc8d310b74e40926f722587626312467c7a9305b802fd8b52",
+          "storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+          "storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
+          "plan-data.json": "437a7c6fdf26788c1ffebcc37005d3152380baecf3749c2e10d680a29e14a494",
+          "structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589",
+          "under-stair-layout.json": "894a9d6fcbd2c9c8884a0aea49cb56fe510d7bfc458461569fe4fb81e7542f00"
+        },
+        "views": [
+          {
+            "id": "08-bedroom2-opposite",
+            "level": "first",
+            "eye": [
+              2.75,
+              9.05,
+              1.5
+            ],
+            "at": [
+              1.5,
+              6.6,
+              1.35
+            ],
+            "fov": 65,
+            "meshCount": 519,
+            "triangleCount": 6107
+          }
+        ]
       },
-      "views": [
-        {
-          "id": "08-bedroom2-opposite",
-          "level": "first",
-          "eye": [
-            2.75,
-            9.05,
-            1.5
-          ],
-          "at": [
-            1.5,
-            6.6,
-            1.35
-          ],
-          "fov": 65,
-          "meshCount": 519,
-          "triangleCount": 6107
-        }
-      ]
+      "source_commit": "65c5704",
+      "path_at_commit": ".source/geometry/08-bedroom2-opposite.png"
     }
+  ],
+  "current_geometry_references": {
+    "08-bedroom2-opposite.png": {
+      "file": ".source/geometry/08-bedroom2-opposite.png",
+      "sha256": "58e7dd7e7176c2297110cf9805b8723194c37e6b781e8d451a90261cbfa79d83",
+      "audit": {
+        "revision": "R19",
+        "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
+        "sourceHashes": {
+          "house.js": "c2dde4e63a09a93764912291c16667d7041a85ffdfe70625b6280bb479cdd8b0",
+          "geometry.js": "9acb7827a70312f300378eb5d22aa1764c374365c174adb4cbb238a56a861be8",
+          "storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+          "storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
+          "plan-data.json": "9f20e46c97f7281b13e99d672722651f304b2b323ca8fdf254991f64336cccc6",
+          "structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589",
+          "under-stair-layout.json": "e542093ce1b08b00e8c893ce70d05e2d39b9328758c7ecc82d2e7f205bdd6142",
+          "stair-passage-layout.json": "75a0f2e9579816e0bd40f6ccde7e1ffa44cb36f3f394f208db972a45584b5de6",
+          "revision.js": "d3d91eadec6c51802eb279979c445a1fcd5a4671eec2749fec7bb97d3bb312ad"
+        },
+        "views": [
+          {
+            "id": "08-bedroom2-opposite",
+            "level": "first",
+            "eye": [
+              2.75,
+              9.05,
+              1.5
+            ],
+            "at": [
+              1.5,
+              6.6,
+              1.35
+            ],
+            "fov": 65,
+            "meshCount": 558,
+            "triangleCount": 7231
+          }
+        ],
+        "camera_coordinates": "eye/at = [plan x, plan y, height above selected finished floor], metres"
+      }
+    },
+    "10-study-storage.png": {
+      "file": ".source/geometry/10-study-storage.png",
+      "sha256": "67a66faed57124cccd36509124f5dfb0a6a27b4f52c3ea262c00c33742712fa3",
+      "audit": {
+        "revision": "R19",
+        "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
+        "sourceHashes": {
+          "house.js": "c2dde4e63a09a93764912291c16667d7041a85ffdfe70625b6280bb479cdd8b0",
+          "geometry.js": "9acb7827a70312f300378eb5d22aa1764c374365c174adb4cbb238a56a861be8",
+          "storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+          "storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
+          "plan-data.json": "9f20e46c97f7281b13e99d672722651f304b2b323ca8fdf254991f64336cccc6",
+          "structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589",
+          "under-stair-layout.json": "e542093ce1b08b00e8c893ce70d05e2d39b9328758c7ecc82d2e7f205bdd6142",
+          "stair-passage-layout.json": "75a0f2e9579816e0bd40f6ccde7e1ffa44cb36f3f394f208db972a45584b5de6",
+          "revision.js": "d3d91eadec6c51802eb279979c445a1fcd5a4671eec2749fec7bb97d3bb312ad"
+        },
+        "views": [
+          {
+            "id": "10-study-storage",
+            "level": "first",
+            "eye": [
+              1.75,
+              3,
+              1.5
+            ],
+            "at": [
+              1.65,
+              0.5,
+              1.35
+            ],
+            "fov": 78,
+            "meshCount": 558,
+            "triangleCount": 2939
+          }
+        ],
+        "camera_coordinates": "eye/at = [plan x, plan y, height above selected finished floor], metres"
+      }
+    },
+    "10-passage-wide.png": {
+      "file": ".source/geometry/10-passage-wide.png",
+      "sha256": "c7a8fa1d3e042526e4cf89478955e89ec230893e4862e32f8602815f170d6db1",
+      "audit": {
+        "revision": "R19",
+        "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
+        "sourceHashes": {
+          "house.js": "c2dde4e63a09a93764912291c16667d7041a85ffdfe70625b6280bb479cdd8b0",
+          "geometry.js": "9acb7827a70312f300378eb5d22aa1764c374365c174adb4cbb238a56a861be8",
+          "storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+          "storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
+          "plan-data.json": "9f20e46c97f7281b13e99d672722651f304b2b323ca8fdf254991f64336cccc6",
+          "structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589",
+          "under-stair-layout.json": "e542093ce1b08b00e8c893ce70d05e2d39b9328758c7ecc82d2e7f205bdd6142",
+          "stair-passage-layout.json": "75a0f2e9579816e0bd40f6ccde7e1ffa44cb36f3f394f208db972a45584b5de6",
+          "revision.js": "d3d91eadec6c51802eb279979c445a1fcd5a4671eec2749fec7bb97d3bb312ad"
+        },
+        "views": [
+          {
+            "id": "10-passage-wide",
+            "level": "first",
+            "eye": [
+              2.65,
+              5.95,
+              1.5
+            ],
+            "at": [
+              2.65,
+              0.75,
+              1.35
+            ],
+            "fov": 70,
+            "meshCount": 558,
+            "triangleCount": 6264
+          }
+        ],
+        "camera_coordinates": "eye/at = [plan x, plan y, height above selected finished floor], metres"
+      }
+    }
+  },
+  "sightline_generation_history": [
+    {
+      "id": "R19-study",
+      "image": "10-study-storage",
+      "revision": "R19",
+      "date": "2026-10-08",
+      "prompt": "Use case: precise-object-edit\nAsset type: photorealistic first-floor study/family interior presentation.\nInputs: Image 1 is the edit target, the current study photograph. Image 2 is the authoritative R19 geometry view of this exact camera. Images 3 and 4 are original kitchen finish/style references only.\nPrimary request: remove the large floor-to-ceiling ivory pillar/partition nib at the left-centre of image 1, revealing the entire left sewing bench and chair exactly as image 2. The stair-side partition has been opened; there is no vertical post at this location. Retain the horizontal overhead support seen in image 2.\nComposition: keep the same camera, crop, front window, left gallery opening, three sewing machines (one left, two right), two facing oak worktops, all three chairs, four shelves, and ivory fitted linen cupboard with upper storage at image-right. The cabinet stops at 2500 mm with clear space above, no cosmetic band.\nChange only the erroneous pillar and the surfaces it occludes. Reconstruct the left bench/worktop, dark legs and machine naturally. Match the positions and proportions in image 2; do not widen the room or gallery.\nFinishes: preserve the target photograph's linen Roman blind, folded fabric, small plants, warm ivory plaster, muted natural oak, pale sandy stone tiles, charcoal frames and cabinet pulls. Use kitchen references for realistic fine grain, neutral creamy highlights, material detail, soft tropical daylight and restrained warm light.\nConstraints: no new pillars, walls, doorways, stairs, furniture or machines. No labels, watermark, orange wood, oversaturated grading, artificial blur or illustration. Preserve the gallery weather boundary at far left.",
+      "references": [
+        {
+          "name": "10-study-storage.png",
+          "role": "R18 study photograph / edit target",
+          "sha256": "34340d1c59dabfa21312f49a30fc7b10d835a8e022352e3430b29fa16228655b",
+          "source_commit": "65c5704",
+          "path_at_commit": "images/10-study-storage.png"
+        },
+        {
+          "name": "10-study-storage.png",
+          "role": "authoritative R19 actual-model geometry and camera",
+          "sha256": "67a66faed57124cccd36509124f5dfb0a6a27b4f52c3ea262c00c33742712fa3",
+          "retained_path": ".source/geometry/10-study-storage.png"
+        },
+        {
+          "name": "06-kitchen-wide.png",
+          "role": "original kitchen palette/daylight style",
+          "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759",
+          "retained_path": "images/06-kitchen-wide.png"
+        },
+        {
+          "name": "06-kitchen-detail.png",
+          "role": "original kitchen material-detail style",
+          "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1",
+          "retained_path": "images/06-kitchen-detail.png"
+        }
+      ],
+      "method": "built-in image_gen",
+      "status": "assistant visual review passed; user acceptance pending",
+      "geometry_audit": {
+        "revision": "R19",
+        "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
+        "sourceHashes": {
+          "house.js": "c2dde4e63a09a93764912291c16667d7041a85ffdfe70625b6280bb479cdd8b0",
+          "geometry.js": "9acb7827a70312f300378eb5d22aa1764c374365c174adb4cbb238a56a861be8",
+          "storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+          "storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
+          "plan-data.json": "9f20e46c97f7281b13e99d672722651f304b2b323ca8fdf254991f64336cccc6",
+          "structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589",
+          "under-stair-layout.json": "e542093ce1b08b00e8c893ce70d05e2d39b9328758c7ecc82d2e7f205bdd6142",
+          "stair-passage-layout.json": "75a0f2e9579816e0bd40f6ccde7e1ffa44cb36f3f394f208db972a45584b5de6",
+          "revision.js": "d3d91eadec6c51802eb279979c445a1fcd5a4671eec2749fec7bb97d3bb312ad"
+        },
+        "views": [
+          {
+            "id": "10-study-storage",
+            "level": "first",
+            "eye": [
+              1.75,
+              3,
+              1.5
+            ],
+            "at": [
+              1.65,
+              0.5,
+              1.35
+            ],
+            "fov": 78,
+            "meshCount": 558,
+            "triangleCount": 2939
+          }
+        ],
+        "camera_coordinates": "eye/at = [plan x, plan y, height above selected finished floor], metres"
+      },
+      "review": "Removed the stair-side partition nib; full left sewing bench visible. Camera, three tailoring stations, gallery boundary, linen cabinet and photographic palette retained.",
+      "output": {
+        "name": "10-study-storage.png",
+        "sha256": "dc876e272c6806682bb6e80817bc4cd45cf045650ceacd8b5752d6d5fbf6bbf1",
+        "retained_path": "images/10-study-storage.png"
+      }
+    },
+    {
+      "id": "R19-passage_candidate",
+      "image": "10-passage-wide",
+      "revision": "R19",
+      "date": "2026-10-08",
+      "prompt": "Use case: precise-object-edit\nAsset type: photorealistic first-floor passage presentation for the same compact house.\nInputs: Image 1 is the original passage photograph and edit target; Image 2 is the authoritative R19 measured model view and camera; Image 3 is the corrected study/family photograph governing the distant tailoring benches, blind, shelf finishes and linen cabinet; Images 4 and 5 are original kitchen finish references only.\nPrimary request: update the passage photograph to the measured open stair-side layout in image 2 and the corrected study end in image 3. Match image 2's camera and architectural silhouettes. Keep the long narrow 900 mm passage, uninterrupted solid bedroom wall at image-left, actual upward roof stair at upper-right and ground-floor descending stair at lower-right. Slim charcoal vertical balusters and muted oak top rails guard the floor drop at right; the upper flight has its own sloping outer guard. Maintain actual stair treads, inclined waist slab underside, level landing, and retained horizontal overhead band. Keep the level connection at the far study end open and unobstructed.\nDistant study: two facing oak worktops, three sewing machines and chairs, a three-pane front window with linen Roman blind, two shelves either side, and the narrow ivory linen cupboard at distant image-right. This room is at the far end of the passage, not immediately adjacent to the viewer. Remove the previous vertical wall nib/pillar beside the study connection. Preserve the separate gallery boundary opening at distant left.\nFinishes and photography: retain the two restrained black-framed prints on the left wall and understated ceiling downlights from image 1. Warm creamy ivory plaster, muted natural oak rails/benches, pale sandy stone treads and floor, quiet dark fittings, soft tropical daylight, fine material texture and straight verticals like kitchen originals. Preserve compact scale and realistic depth; image 2 governs architecture over image 1 wherever they differ.\nConstraints: no full-height wall along the open stair side, no added structural posts, no relocated bedroom doors or windows, no invented openings/window on the stair side, no changed stair run, no enlarged study or passage. No labels, watermark, fisheye, illustration, orange wood or exaggerated LEDs.",
+      "references": [
+        {
+          "name": "10-passage-wide.png",
+          "role": "former passage photograph / edit target",
+          "sha256": "4611cc619de5f27dd4fc89305d66971529ed34c4766bd03361a1ae0682376069",
+          "source_commit": "65c5704",
+          "path_at_commit": "images/10-passage-wide.png"
+        },
+        {
+          "name": "10-passage-wide.png",
+          "role": "authoritative R19 actual-model geometry and camera",
+          "sha256": "c7a8fa1d3e042526e4cf89478955e89ec230893e4862e32f8602815f170d6db1",
+          "retained_path": ".source/geometry/10-passage-wide.png"
+        },
+        {
+          "name": "10-study-storage.png",
+          "role": "corrected study finish/room consistency",
+          "sha256": "dc876e272c6806682bb6e80817bc4cd45cf045650ceacd8b5752d6d5fbf6bbf1",
+          "retained_path": "images/10-study-storage.png"
+        },
+        {
+          "name": "06-kitchen-wide.png",
+          "role": "original kitchen palette/daylight style",
+          "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759",
+          "retained_path": "images/06-kitchen-wide.png"
+        },
+        {
+          "name": "06-kitchen-detail.png",
+          "role": "original kitchen material-detail style",
+          "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1",
+          "retained_path": "images/06-kitchen-detail.png"
+        }
+      ],
+      "method": "built-in image_gen",
+      "status": "assistant visual review passed; user acceptance pending",
+      "geometry_audit": {
+        "revision": "R19",
+        "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
+        "sourceHashes": {
+          "house.js": "c2dde4e63a09a93764912291c16667d7041a85ffdfe70625b6280bb479cdd8b0",
+          "geometry.js": "9acb7827a70312f300378eb5d22aa1764c374365c174adb4cbb238a56a861be8",
+          "storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+          "storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
+          "plan-data.json": "9f20e46c97f7281b13e99d672722651f304b2b323ca8fdf254991f64336cccc6",
+          "structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589",
+          "under-stair-layout.json": "e542093ce1b08b00e8c893ce70d05e2d39b9328758c7ecc82d2e7f205bdd6142",
+          "stair-passage-layout.json": "75a0f2e9579816e0bd40f6ccde7e1ffa44cb36f3f394f208db972a45584b5de6",
+          "revision.js": "d3d91eadec6c51802eb279979c445a1fcd5a4671eec2749fec7bb97d3bb312ad"
+        },
+        "views": [
+          {
+            "id": "10-passage-wide",
+            "level": "first",
+            "eye": [
+              2.65,
+              5.95,
+              1.5
+            ],
+            "at": [
+              2.65,
+              0.75,
+              1.35
+            ],
+            "fov": 70,
+            "meshCount": 558,
+            "triangleCount": 6264
+          }
+        ],
+        "camera_coordinates": "eye/at = [plan x, plan y, height above selected finished floor], metres"
+      },
+      "review": "Selected after user requested the previous stair/railing appearance. Updated distant tailoring room and linen cupboard retained. This preserves the original photographic stair composition; actual measured tread geometry is governed by the plan/model, not certified by this illustration.",
+      "output": {
+        "name": "10-passage-wide.png",
+        "sha256": "b75117e389d6cf72306063d859d68dec28d70aab6688caaae1fe8b6c99d9a07a",
+        "retained_path": "images/10-passage-wide.png"
+      }
+    },
+    {
+      "id": "R19-passage",
+      "image": "10-passage-wide",
+      "revision": "R19",
+      "date": "2026-10-08",
+      "prompt": "Use case: sketch-to-render\nAsset: final photorealistic first-floor passage image.\nInput 1 is the actual measured Three.js geometry/camera view and PRIMARY EDIT TARGET. Transform its surfaces into a photograph while keeping its camera, framing, every architectural edge and stair silhouette.\nInput 2 is the previous passage photograph for finishes, two left-wall framed prints and subtle downlights ONLY. Its stair geometry/window is superseded.\nInput 3 is the current corrected study photograph for distant tailoring-room materials, sewing equipment, linen blind and cupboard. Inputs 4 and 5 are original kitchen style references.\nGeometry lock: reproduce image 1. Solid uninterrupted bedroom wall fills the left half. Straight narrow level passage leads to distant study. At right foreground the ground-floor stair descends below passage floor, protected by a horizontal oak handrail with dense slim black vertical balusters. The first-to-roof return flight is HIGH OVERHEAD at upper right; its pale diagonal WAIST SLAB UNDERSIDE is a broad solid surface across the upper-right third, exactly as image 1. Only the high upper treads and black uprights are visible at the TOP edge. Do NOT put a new ascending flight starting at passage floor on the right. Keep the lower descending treads and intermediate stair landing in their exact image 1 positions. Preserve the horizontal beam band at ceiling level; no floor-to-ceiling pillar or stair-side partition. No stair-window in this crop: do not copy the window at image 2's top-right.\nStudy end: three-pane front window with linen Roman blind, four slim shelves, left oak bench with one sewing machine, right oak bench with two sewing machines partly occluded by narrow ivory linen cupboard at right, three oak/oatmeal chairs. Same compact proportions and correct perspective as image 1. Open level connection, no vertical nib.\nPhotographic finish: creamy ivory plaster, sandy beige stone flooring/treads/waist underside, muted fine-grained oak, charcoal metal, soft tropical daylight from the distant front window, natural contact shadows and restrained warm downlights. Add the two slim dark-framed prints only on the blank solid left wall as in image 2. Use original kitchen images for neutral highlights, texture and daylight quality.\nKeep the geometry image's landscape aspect and straight verticals. No extra stairs, balustrade gates, room expansion, railing across the level study entry, columns, doorways, windows, text, watermark, orange wood or game-engine look.",
+      "references": [
+        {
+          "name": "10-passage-wide.png",
+          "role": "authoritative R19 actual-model geometry and camera",
+          "sha256": "c7a8fa1d3e042526e4cf89478955e89ec230893e4862e32f8602815f170d6db1",
+          "retained_path": ".source/geometry/10-passage-wide.png"
+        },
+        {
+          "name": "10-passage-wide.png",
+          "role": "former photograph / finishes and art only",
+          "sha256": "4611cc619de5f27dd4fc89305d66971529ed34c4766bd03361a1ae0682376069",
+          "source_commit": "65c5704",
+          "path_at_commit": "images/10-passage-wide.png"
+        },
+        {
+          "name": "10-study-storage.png",
+          "role": "corrected study finish/room consistency",
+          "sha256": "dc876e272c6806682bb6e80817bc4cd45cf045650ceacd8b5752d6d5fbf6bbf1",
+          "retained_path": "images/10-study-storage.png"
+        },
+        {
+          "name": "06-kitchen-wide.png",
+          "role": "original kitchen palette/daylight style",
+          "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759",
+          "retained_path": "images/06-kitchen-wide.png"
+        },
+        {
+          "name": "06-kitchen-detail.png",
+          "role": "original kitchen material-detail style",
+          "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1",
+          "retained_path": "images/06-kitchen-detail.png"
+        }
+      ],
+      "method": "built-in image_gen",
+      "status": "rejected by user / restore previous staircase appearance",
+      "geometry_audit": {
+        "revision": "R19",
+        "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
+        "sourceHashes": {
+          "house.js": "c2dde4e63a09a93764912291c16667d7041a85ffdfe70625b6280bb479cdd8b0",
+          "geometry.js": "9acb7827a70312f300378eb5d22aa1764c374365c174adb4cbb238a56a861be8",
+          "storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+          "storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
+          "plan-data.json": "9f20e46c97f7281b13e99d672722651f304b2b323ca8fdf254991f64336cccc6",
+          "structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589",
+          "under-stair-layout.json": "e542093ce1b08b00e8c893ce70d05e2d39b9328758c7ecc82d2e7f205bdd6142",
+          "stair-passage-layout.json": "75a0f2e9579816e0bd40f6ccde7e1ffa44cb36f3f394f208db972a45584b5de6",
+          "revision.js": "d3d91eadec6c51802eb279979c445a1fcd5a4671eec2749fec7bb97d3bb312ad"
+        },
+        "views": [
+          {
+            "id": "10-passage-wide",
+            "level": "first",
+            "eye": [
+              2.65,
+              5.95,
+              1.5
+            ],
+            "at": [
+              2.65,
+              0.75,
+              1.35
+            ],
+            "fov": 70,
+            "meshCount": 558,
+            "triangleCount": 6264
+          }
+        ],
+        "camera_coordinates": "eye/at = [plan x, plan y, height above selected finished floor], metres"
+      },
+      "review": "User rejected the changed staircase appearance; replaced with the earlier photographic stair composition while keeping the revised study end.",
+      "output": {
+        "name": "10-passage-wide.png",
+        "sha256": "a67ab96f2ab28b471c191560e901c2558d23f7bdb6b830bfdd246714ee248da9",
+        "retention": "Discarded working candidate; no project copy retained."
+      }
+    },
+    {
+      "id": "R19-bedroom_candidate",
+      "image": "08-bedroom2-opposite",
+      "revision": "R19",
+      "date": "2026-10-08",
+      "prompt": "Use case: precise-object-edit\nAsset: final photorealistic master-bedroom opposite view.\nInputs: Image 1 is the current master-bedroom photograph / edit target. Image 2 is the authoritative R19 geometry and camera view. Image 3 is the corrected passage photograph showing the same actual circulation, stair silhouette and distant study from a different camera. Images 4 and 5 are original kitchen finish references.\nPrimary request: change ONLY the background seen THROUGH THE OPEN DOORWAY at image-left to match the measured R19 sightline in image 2. The bedroom door opens onto a long narrow 900 mm common passage, with solid ivory wall to passage-left and slim black vertical stair guard with muted oak top rail along passage-right. The rail runs away in perspective, exactly where image 2 shows it. At the upper-right of the opening, show the high overhead return stair/waist underside and upper balusters, cropped like image 2; this is not a new floor-level ascending stair. At the FAR END, small and distant, show the partial study front window with linen Roman blind, one sewing station and chair at left and two slim oak shelves. Study furniture belongs at the far end, never immediately outside the bedroom. Use image 3 only to match the correct rail/stone/plaster finishes and room continuity, not to paste its different-camera viewpoint into the door.\nStrict invariants: all pixels outside the doorway's interior/background remain as close to image 1 as possible. Preserve the open timber door leaf, black jamb/frame, door dimensions, hinges and handle, bedroom camera/crop, ivory walls and ceiling, wardrobe with SIX narrow main leaves and SIX corresponding loft leaves (oak pair left, four ivory leaves right), paired charcoal handles, 2500 mm cupboard top and open clear space above, bedroom window/tropical view/linen blind, oak bedhead, olive quilt and oatmeal pillows, pale sandy floor and light quality.\nDo not add a cosmetic band above storage, grey block across the opening, a pillar in the passage, stair-side full-height partition, railing across the passage walk route, different study doorway, nearby desk, widened corridor, extra room furniture, windows, labels or watermark. Photographic realism with straight architectural verticals and fine natural materials; kitchen originals govern muted oak and creamy neutral finishes.",
+      "references": [
+        {
+          "name": "08-bedroom2-opposite.png",
+          "role": "master-bedroom photograph / edit target",
+          "sha256": "e7ee82134690853bf4c72a977ffc7ea177a3c8d28b77c32f1e533b0815970952",
+          "source_commit": "65c5704",
+          "path_at_commit": "images/08-bedroom2-opposite.png"
+        },
+        {
+          "name": "08-bedroom2-opposite.png",
+          "role": "authoritative R19 actual-model geometry and camera",
+          "sha256": "58e7dd7e7176c2297110cf9805b8723194c37e6b781e8d451a90261cbfa79d83",
+          "retained_path": ".source/geometry/08-bedroom2-opposite.png"
+        },
+        {
+          "name": "10-passage-wide.png",
+          "role": "R19 geometry-led passage candidate / finish and room consistency at generation time",
+          "sha256": "a67ab96f2ab28b471c191560e901c2558d23f7bdb6b830bfdd246714ee248da9",
+          "source_generation_id": "R19-passage",
+          "retention": "Superseded tool-generated candidate, not retained in project."
+        },
+        {
+          "name": "06-kitchen-wide.png",
+          "role": "original kitchen palette/daylight style",
+          "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759",
+          "retained_path": "images/06-kitchen-wide.png"
+        },
+        {
+          "name": "06-kitchen-detail.png",
+          "role": "original kitchen material-detail style",
+          "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1",
+          "retained_path": "images/06-kitchen-detail.png"
+        }
+      ],
+      "method": "built-in image_gen",
+      "status": "superseded / distant window correction",
+      "geometry_audit": {
+        "revision": "R19",
+        "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
+        "sourceHashes": {
+          "house.js": "c2dde4e63a09a93764912291c16667d7041a85ffdfe70625b6280bb479cdd8b0",
+          "geometry.js": "9acb7827a70312f300378eb5d22aa1764c374365c174adb4cbb238a56a861be8",
+          "storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+          "storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
+          "plan-data.json": "9f20e46c97f7281b13e99d672722651f304b2b323ca8fdf254991f64336cccc6",
+          "structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589",
+          "under-stair-layout.json": "e542093ce1b08b00e8c893ce70d05e2d39b9328758c7ecc82d2e7f205bdd6142",
+          "stair-passage-layout.json": "75a0f2e9579816e0bd40f6ccde7e1ffa44cb36f3f394f208db972a45584b5de6",
+          "revision.js": "d3d91eadec6c51802eb279979c445a1fcd5a4671eec2749fec7bb97d3bb312ad"
+        },
+        "views": [
+          {
+            "id": "08-bedroom2-opposite",
+            "level": "first",
+            "eye": [
+              2.75,
+              9.05,
+              1.5
+            ],
+            "at": [
+              1.5,
+              6.6,
+              1.35
+            ],
+            "fov": 65,
+            "meshCount": 558,
+            "triangleCount": 7231
+          }
+        ],
+        "camera_coordinates": "eye/at = [plan x, plan y, height above selected finished floor], metres"
+      },
+      "review": "Passage guards restored, but inherited the former narrow study window; next edit restored the broad front-window sightline.",
+      "output": {
+        "name": "08-bedroom2-opposite.png",
+        "sha256": "552a69f3f6d16637aeaddd5a72cabcda5909642d5ea48005510c7e22214ef874",
+        "retention": "Discarded working candidate; no project copy retained."
+      }
+    },
+    {
+      "id": "R19-bedroom",
+      "image": "08-bedroom2-opposite",
+      "revision": "R19",
+      "date": "2026-10-08",
+      "prompt": "Use case: precise-object-edit\nAsset: corrected master-bedroom opposite photograph.\nInput 1 is the original master-bedroom photograph / edit target. Input 2 is the measured R19 geometry authority for the doorway background. Input 3 is the corrected passage photograph as finish/room consistency reference. Inputs 4 and 5 are original kitchen style photographs.\nReplace the ENTIRE scene inside the black doorway at left with the actual scene in image 2, adapted to the target doorway perspective. Keep everything outside the inner black jamb unchanged, including door leaf and its overlap.\nUse the geometry background, not the target's existing tiny side window: at the far end of the long 900 mm passage, the study FRONT WINDOW is visibly broad, occupying about the RIGHT HALF of the far study opening, partially cropped by the stair side. It has vertical charcoal divisions and a linen Roman blind; it is not a narrow slit window. To its left are two thin oak shelves and the small single sewing bench with chair. Room is far away beyond the entire long passage. There is no intervening vertical wall or post hiding the study window.\nAlong the right side of the passage reproduce the oak-topped black vertical floor-drop guard that runs away in perspective. Above this guard, only at the UPPER-RIGHT corner of the doorway, reproduce the narrow cropped overhead stair/waist silhouette with upper black balusters as in image 2. The inclined underside ends against the doorway's right edge at about the far-window sill height. Preserve the open view of the far broad front window below/left of that stair silhouette. Do not put an ivory stair partition above the low guard or copy the inaccurate far-room background of image 1.\nStrictly preserve the target bedroom, crop, lighting, bed, olive quilt, pillows, 6-leaf ivory/oak wardrobe and 6 matching loft fronts, cupboard top/open space above, black handles, bedroom window and blind, door timber grain/frame/leaf/handle, walls, ceiling and floor outside the opening. No beam across the doorway or storage cosmetic band.\nMaterials inside the opening match image 3 and kitchens: creamy plaster, sandy stone, muted oak rails/bench, charcoal metal, soft daylight. No new windows, stair run, furniture, labels or watermark. Photorealistic, straight verticals.",
+      "references": [
+        {
+          "name": "08-bedroom2-opposite.png",
+          "role": "master-bedroom photograph / edit target",
+          "sha256": "e7ee82134690853bf4c72a977ffc7ea177a3c8d28b77c32f1e533b0815970952",
+          "source_commit": "65c5704",
+          "path_at_commit": "images/08-bedroom2-opposite.png"
+        },
+        {
+          "name": "08-bedroom2-opposite.png",
+          "role": "authoritative R19 actual-model geometry and camera",
+          "sha256": "58e7dd7e7176c2297110cf9805b8723194c37e6b781e8d451a90261cbfa79d83",
+          "retained_path": ".source/geometry/08-bedroom2-opposite.png"
+        },
+        {
+          "name": "10-passage-wide.png",
+          "role": "R19 geometry-led passage candidate / finish and room consistency at generation time",
+          "sha256": "a67ab96f2ab28b471c191560e901c2558d23f7bdb6b830bfdd246714ee248da9",
+          "source_generation_id": "R19-passage",
+          "retention": "Superseded tool-generated candidate, not retained in project."
+        },
+        {
+          "name": "06-kitchen-wide.png",
+          "role": "original kitchen palette/daylight style",
+          "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759",
+          "retained_path": "images/06-kitchen-wide.png"
+        },
+        {
+          "name": "06-kitchen-detail.png",
+          "role": "original kitchen material-detail style",
+          "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1",
+          "retained_path": "images/06-kitchen-detail.png"
+        }
+      ],
+      "method": "built-in image_gen",
+      "status": "superseded / rail termination correction",
+      "geometry_audit": {
+        "revision": "R19",
+        "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
+        "sourceHashes": {
+          "house.js": "c2dde4e63a09a93764912291c16667d7041a85ffdfe70625b6280bb479cdd8b0",
+          "geometry.js": "9acb7827a70312f300378eb5d22aa1764c374365c174adb4cbb238a56a861be8",
+          "storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+          "storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
+          "plan-data.json": "9f20e46c97f7281b13e99d672722651f304b2b323ca8fdf254991f64336cccc6",
+          "structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589",
+          "under-stair-layout.json": "e542093ce1b08b00e8c893ce70d05e2d39b9328758c7ecc82d2e7f205bdd6142",
+          "stair-passage-layout.json": "75a0f2e9579816e0bd40f6ccde7e1ffa44cb36f3f394f208db972a45584b5de6",
+          "revision.js": "d3d91eadec6c51802eb279979c445a1fcd5a4671eec2749fec7bb97d3bb312ad"
+        },
+        "views": [
+          {
+            "id": "08-bedroom2-opposite",
+            "level": "first",
+            "eye": [
+              2.75,
+              9.05,
+              1.5
+            ],
+            "at": [
+              1.5,
+              6.6,
+              1.35
+            ],
+            "fov": 65,
+            "meshCount": 558,
+            "triangleCount": 7231
+          }
+        ],
+        "camera_coordinates": "eye/at = [plan x, plan y, height above selected finished floor], metres"
+      },
+      "review": "Restored broad distant study window and stair sightline; removed an invented short ivory panel at the guard termination in the final edit.",
+      "output": {
+        "name": "08-bedroom2-opposite.png",
+        "sha256": "f2a94b2ee4f9d7a9ccda22b03f0c5861cff21b253e400c7a86ae00ad3ca6fb40",
+        "retention": "Discarded working candidate; no project copy retained."
+      }
+    },
+    {
+      "id": "R19-bedroom_panel",
+      "image": "08-bedroom2-opposite",
+      "revision": "R19",
+      "date": "2026-10-08",
+      "prompt": "Use case: precise-object-edit.\nImage 1 is the edit target, a master-bedroom photo with the corrected passage beyond its left doorway. Image 2 is the measured model/camera authority. Images 3 and 4 are original kitchen finish references.\nMake ONE tiny local correction INSIDE the doorway: remove the short solid ivory rectangular panel/post at the far end of the black stair guard, immediately below the distant window sill (around x400-442, y518-676 in the 1536x1024 target). It is an invented low wall/post. Replace it with the same slim black vertical guard balusters and muted oak top rail that run along the passage, terminating neatly at the actual floor edge. Let the study floor/window sightline remain open. No opaque panel, pillar or masonry plinth at this rail termination.\nPreserve EVERYTHING else in image 1: broad distant front window and linen blind, two shelves and sewing bench, all other stair guard/overhead stair silhouettes, passage perspective, doorway frame/leaf/handle, bedroom ivory/oak wardrobe with six main and six loft doors, open space above storage, bedroom window/blind, bed/olive quilt/pillows, wall/ceiling/floor planes, camera/crop, daylight and material textures. No additional openings/furniture or new stair run, no text/watermark. Photorealistic tiny object removal only.",
+      "references": [
+        {
+          "name": "08-bedroom2-opposite.png",
+          "role": "R19 broad-window candidate / local panel-removal edit target",
+          "sha256": "f2a94b2ee4f9d7a9ccda22b03f0c5861cff21b253e400c7a86ae00ad3ca6fb40",
+          "source_generation_id": "R19-bedroom",
+          "retention": "Tool-generated candidate; not retained in project."
+        },
+        {
+          "name": "08-bedroom2-opposite.png",
+          "role": "authoritative R19 actual-model geometry and camera",
+          "sha256": "58e7dd7e7176c2297110cf9805b8723194c37e6b781e8d451a90261cbfa79d83",
+          "retained_path": ".source/geometry/08-bedroom2-opposite.png"
+        },
+        {
+          "name": "06-kitchen-wide.png",
+          "role": "original kitchen palette/daylight style",
+          "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759",
+          "retained_path": "images/06-kitchen-wide.png"
+        },
+        {
+          "name": "06-kitchen-detail.png",
+          "role": "original kitchen material-detail style",
+          "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1",
+          "retained_path": "images/06-kitchen-detail.png"
+        }
+      ],
+      "method": "built-in image_gen",
+      "status": "assistant visual review passed; user acceptance pending",
+      "geometry_audit": {
+        "revision": "R19",
+        "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
+        "sourceHashes": {
+          "house.js": "c2dde4e63a09a93764912291c16667d7041a85ffdfe70625b6280bb479cdd8b0",
+          "geometry.js": "9acb7827a70312f300378eb5d22aa1764c374365c174adb4cbb238a56a861be8",
+          "storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+          "storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
+          "plan-data.json": "9f20e46c97f7281b13e99d672722651f304b2b323ca8fdf254991f64336cccc6",
+          "structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589",
+          "under-stair-layout.json": "e542093ce1b08b00e8c893ce70d05e2d39b9328758c7ecc82d2e7f205bdd6142",
+          "stair-passage-layout.json": "75a0f2e9579816e0bd40f6ccde7e1ffa44cb36f3f394f208db972a45584b5de6",
+          "revision.js": "d3d91eadec6c51802eb279979c445a1fcd5a4671eec2749fec7bb97d3bb312ad"
+        },
+        "views": [
+          {
+            "id": "08-bedroom2-opposite",
+            "level": "first",
+            "eye": [
+              2.75,
+              9.05,
+              1.5
+            ],
+            "at": [
+              1.5,
+              6.6,
+              1.35
+            ],
+            "fov": 65,
+            "meshCount": 558,
+            "triangleCount": 7231
+          }
+        ],
+        "camera_coordinates": "eye/at = [plan x, plan y, height above selected finished floor], metres"
+      },
+      "review": "Corrected actual long passage, oak-topped black guards, cropped overhead stair and broad distant study front window. No invented ivory panel at rail termination. Bedroom wardrobe/loft fronts, open storage tops, door leaf, bed, textiles and finishes preserved.",
+      "output": {
+        "name": "08-bedroom2-opposite.png",
+        "sha256": "d5766e812401229e9378eb281957a06aeea8c16b8d5ff5f03bf5b092787deefd",
+        "retained_path": "images/08-bedroom2-opposite.png"
+      }
+    }
+  ],
+  "stair_presentation_decision": {
+    "date": "2026-10-08",
+    "instruction": "Keep the previous passage staircase appearance; retain the updated study end.",
+    "selected_generation_id": "R19-passage_candidate",
+    "rejected_generation_id": "R19-passage",
+    "geometry_basis": "No tread, landing or waist-slab change in the measured plan/model; first-floor side partition is opened with guards as previously requested. Presentation staircase is illustrative."
   }
 }
