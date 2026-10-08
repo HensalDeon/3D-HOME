@@ -11,6 +11,7 @@ Open the [visual reference board](STYLE_REFERENCE.html) for the photographs, pal
 3. [Dining](images/16-dining-wide.png) governs the wider living-area atmosphere, upholstery, timber furniture, and gentle floor reflections.
 4. The bedroom, bathroom, study, and gallery originals demonstrate how the same palette carries between rooms. Their image roles are recorded in [the source manifest](.source/house-style.json).
 5. For the living photograph, the user's explicit 8 October selection makes [ground-floor overview](images/02-ground-floor-overview-wide.png) the reference for staircase tread/support/handrail appearance and the rectangular six-seater dining set. The accepted square-on living wall and rear passage remain the framing/layout reference. This is a photographic presentation preference; the measured model and drawings still govern construction geometry.
+6. For bedroom flooring, the user's explicit 8 October selection makes [Bedroom 1 wide](images/07-bedroom1-wide.png) the finish reference: light oak wood-look planks, fine grain, narrow joints and staggered ends. Apply this appearance inside the bedroom; retain pale stone beyond its doorway. This visual reference does not establish a tile manufacturer or whether the photographed material is timber or ceramic.
 
 These references govern finishes and photographic appearance. The current approved model and its camera references govern layout, with the user's specific living staircase/dining presentation selection above applied to those photographed elements. Other older photographs can contain superseded architecture; copying their stairs, doors, furniture positions, or room dimensions is not part of a general style match.
 
@@ -21,7 +22,8 @@ The hexadecimal values below are approximate visual communication swatches, chos
 | Element | Visual swatch | Required appearance |
 |---|---|---|
 | Walls / ceiling | Warm ivory `#E7DECE` | Creamy off-white plaster; light, subtly textured, with neutral highlights |
-| Floor / stairs / counters | Sandy stone `#CEC0A8` | Pale beige mineral variation, fine joints, restrained satin reflections |
+| Common-area floors / stairs / counters | Sandy stone `#CEC0A8` | Pale beige mineral variation, fine joints, restrained satin reflections |
+| Bedroom floor | Bedroom 1 wide photograph | Light oak wood-look plank appearance, subtle grain, narrow staggered joints and low sheen; cream skirting retained |
 | Cabinet fronts | Warm greige `#C4B69F` | Quiet matte finish with clean reveals |
 | Timber | Muted oak `#AE916B` | Natural light-to-medium oak, fine grain and modest board variation |
 | Linen / upholstery | Oatmeal `#D9CDB9` | Visible weave, soft folds, matte surfaces |
@@ -51,7 +53,7 @@ Fluting is a local joinery treatment visible in the user's earlier stair/TV refe
 |---|---|
 | `01-entrance-wide` | Warm timber, ivory walls, charcoal facade and frames, sandy steps, woven chairs, tropical greenery; evening light is an exterior variation |
 | `06-kitchen-wide`, `06-kitchen-detail`, `06-kitchen-opposite` | Primary oak/ivory/stone palette; restrained black fittings; natural plants, ceramics and woven runner; warm task light |
-| `07-bedroom1-wide`, `07-bedroom1-detail`, `07-bedroom1-opposite` | Same oak and stone; oatmeal upholstery, textured cream linen, sage accents, linen blind |
+| `07-bedroom1-wide`, `07-bedroom1-detail`, `07-bedroom1-opposite` | Light oak wood-look bedroom flooring; oatmeal upholstery, textured cream linen, sage accents, linen blind |
 | `08-bedroom2-wide`, `08-bedroom2-detail`, `08-bedroom2-opposite` | Same base palette; olive throw and cushion, woven runner, simple oak bedside furniture |
 | `09-bedroom3-wide`, `09-bedroom3-detail`, `09-bedroom3-opposite` | Same base palette; clay cushion, matte ivory wardrobe with fine-grained oak accent bay and recessed charcoal pulls |
 | `10-study-wide`, `10-study-storage` | Retained family/tailoring workspace; ivory shared cabinet, natural oak, soft tropical daylight |
@@ -66,6 +68,7 @@ Fluting is a local joinery treatment visible in the user's earlier stair/TV refe
 > Edit the supplied approved geometry view into a convincing interior photograph of the same house as the original kitchen wide and kitchen detail references. The geometry image governs camera, stair route, treads, landings, slab/header profiles, openings, fixture positions, cabinetry, shelving, clearances and room proportions. The kitchen photographs govern muted natural oak, creamy off-white plaster, pale sandy stone, quiet greige fronts, restrained charcoal hardware, subtle material texture, soft daylight and warm diffused practical light. Preserve the selected joinery profiles. Retain fine grain, mineral variation, contact shadows, ceramic and glass reflections, natural contrast and straight verticals. Keep neighboring views consistent in materials and time of day. Do not invent openings, furniture, fluting, extra stairs or new light fittings. No orange wood, coarse repeated grain, glowing neon edges, plastic surfaces, enlarged rooms, illustration, labels or watermark.
 
 For another angle of the same room, also supply the first successful finished view as a consistency reference, while retaining that angle's own geometry image as the camera authority.
+For bedroom floor revisions, explicitly supply `07-bedroom1-wide.png` as the floor authority. Its wood-look planks take precedence over the kitchen's stone floor inside the bedroom; the kitchen originals continue to govern overall palette and realism.
 
 ## Review before replacing an image
 
@@ -77,7 +80,9 @@ For another angle of the same room, also supply the first successful finished vi
 
 ## Current application
 
-The three replacements use the built-in image-generation tool. Exact prompts are saved in [prompts.json](.source/style-revision-2026-09-15/prompts.json); the original R14 geometry views are preserved in [.source/style-revision-2026-09-15/geometry/](.source/style-revision-2026-09-15/geometry/). The [revision audit](.source/style-revision-2026-09-15/audit.json) records outputs and unchanged source files. The original references remain the style authority for future revisions.
+The 8 October bedroom floor edits match `07-bedroom1-opposite.png`, `08-bedroom2-opposite.png` and `09-bedroom3-wide.png` to the unchanged Bedroom 1 wide reference. Only exposed bedroom flooring changes; the door sightlines, storage, right-angle wardrobe corner, rugs, skirting and common-area stone are retained. Exact built-in prompts, source roles/hashes and reviews are consolidated under `bedroom_floor_generation_history` in [image-release.json](.source/image-release.json). Previous photos are recoverable from `00d26d1`; measured model/drawing files and areas are unchanged.
+
+The earlier three R14 replacements used the built-in image-generation tool. Exact prompts are saved in [prompts.json](.source/style-revision-2026-09-15/prompts.json); the original R14 geometry views are preserved in [.source/style-revision-2026-09-15/geometry/](.source/style-revision-2026-09-15/geometry/). The [revision audit](.source/style-revision-2026-09-15/audit.json) records outputs and unchanged source files. The original references remain the style authority for future revisions.
 
 R18 updates the bedroom wardrobe views and adds a shared-cabinet close view. Those revised photographs are finish examples, rather than original geometry references. The original kitchen wide/detail remain unchanged and govern visual style. Exact R18 prompts, input roles/hashes and camera records are consolidated in [image-release.json](.source/image-release.json). Bulky working images were removed at user request; historical inputs remain recoverable from Git commit `0333b6d`.
 

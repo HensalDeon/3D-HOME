@@ -14,7 +14,7 @@
   "audio": "none",
   "transition": "0.75 second cross-dissolve",
   "motion": "Gentle fitted-image zoom and 4 px drift; complete source image remains visible.",
-  "source_note": "Uses current canonical photographs, including the accepted square-on living frontage/rear route, overview-reference staircase/support and six-seat dining, user-selected earlier upstairs staircase appearance and updated study end. Illustrative presentations; measured plans/model govern architecture.",
+  "source_note": "Uses current canonical photographs, including the accepted square-on living frontage/rear route, overview-reference staircase/support and six-seat dining, user-selected earlier upstairs staircase appearance, updated study end and three bedroom floor edits matching Bedroom 1 wide wood-look planks. Illustrative presentations; measured plans/model govern architecture.",
   "timeline": [
     {
       "kind": "intro",
@@ -98,7 +98,7 @@
       "start_seconds": 44.25,
       "duration_seconds": 6.0,
       "file": "images/07-bedroom1-opposite.png",
-      "sha256": "cd6e8109c0707f0ce329785b5caa380545cb60919367a3e5115a08bae5b4e80b",
+      "sha256": "b7dcfa34895df6024415e211b839f8ec30e66443844f17c6f82469eaf12c0be5",
       "caption": "Bedroom 1 \u00b7 fitted storage",
       "level": "GROUND FLOOR"
     },
@@ -143,7 +143,7 @@
       "start_seconds": 70.5,
       "duration_seconds": 6.0,
       "file": "images/08-bedroom2-opposite.png",
-      "sha256": "d5766e812401229e9378eb281957a06aeea8c16b8d5ff5f03bf5b092787deefd",
+      "sha256": "b969da3516cdad56785e549935f8ceb4e03179190ab1426f5abe5d31f030eff9",
       "caption": "Master bedroom \u00b7 fitted storage",
       "level": "FIRST FLOOR"
     },
@@ -161,7 +161,7 @@
       "start_seconds": 81.0,
       "duration_seconds": 6.0,
       "file": "images/09-bedroom3-wide.png",
-      "sha256": "7b1746362d6c57d616aeb0b8fff714c90952054e6e57ae65fd873915dab53472",
+      "sha256": "422ad29911daced409b8d5988bb4cfe6fccd0120dde9220c99e5efb6fb59a42b",
       "caption": "Bedroom 3",
       "level": "FIRST FLOOR"
     },
@@ -227,11 +227,12 @@
   ],
   "video": {
     "file": "Hensal_Interior_Tour.mp4",
-    "sha256": "343a6509c421fee9e7a81694cd221b32233a6d2284b9bf37ffea6d5fbf0f4308",
-    "bytes": 26494863
+    "sha256": "9391c7733be35d5637cc1496ef5bc395f25193c62e6abd888c36b2ab9141ee03",
+    "bytes": 26435239
   },
   "rebuild": "python interiors/.source/build_video.py (Pillow, imageio-ffmpeg; macOS fonts)",
-  "review": "Full decode and visual inspection passed; living stair/support and six-seat dining reference edit included.",
+  "review": "Assistant full decode, metadata/source-hash checks and three revised-bedroom frame reviews passed; user review pending.",
+  "encoder": "FFmpeg 7.1 / libx264; MP4 faststart",
   "validation": {
     "duration_seconds": 120,
     "decoded_frames": 2880,
@@ -242,7 +243,6 @@
     "fps": 24,
     "full_decode": "passed with no errors",
     "audio_streams": 0,
-    "visual_review": "Passed: decoded living frame shows the overview-reference continuous stair support and rectangular six-seat dining, preserving the accepted horizontal frontage and far covered-work doorway; framing/caption intact and all 22 source hashes match."
-  },
-  "encoder": "FFmpeg 7.1 / libx264; optimized MP4 faststart"
+    "visual_review": "Decoded frames at 47, 73 and 84 seconds show the corrected bedroom floor photographs, retained doorway stone and captions without clipping."
+  }
 }
