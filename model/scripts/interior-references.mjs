@@ -11,6 +11,8 @@ const option=name=>{const i=process.argv.indexOf(name);return i<0?undefined:proc
 const out=pathToFileURL(resolve(option('--output')??'/tmp/hensal-interior-references')+'/');
 await mkdir(out,{recursive:true});
 const views=[
+ // Wall-footprint review camera; the finished photograph retains its own composition.
+ {id:'02-ground-floor-overview-wide',level:'ground',eye:[5.0,2.2,1.55],at:[2.6,5.8,1.3],fov:75},
  {id:'07-bedroom1-opposite',level:'ground',eye:[2.75,9.25,1.5],at:[1.5,6.6,1.35],fov:65},
  {id:'08-bedroom2-opposite',level:'first',eye:[2.75,9.05,1.5],at:[1.5,6.6,1.35],fov:65},
  {id:'09-bedroom3-wide',level:'first',eye:[4.8,5.85,1.5],at:[5.04,2.98,1.3],fov:65},

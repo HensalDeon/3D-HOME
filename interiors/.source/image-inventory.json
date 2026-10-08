@@ -10,18 +10,18 @@
   {
     "file": "02-ground-floor-overview-wide.png",
     "size": [
-      1600,
-      900
+      1672,
+      941
     ],
-    "sha256": "822ebd48736656c1b069abc1df3dfaaf8fcabe19e854a21c74c91ad5647d2d3d"
+    "sha256": "07458ab6d1c7023956ed53144e4567661a885db2e3be8b5f0da321da9ac2fba7"
   },
   {
     "file": "02-living-wide.png",
     "size": [
-      1264,
-      848
+      1531,
+      1027
     ],
-    "sha256": "998333e30aa59ef0dce738cbc9aa6bcdb140c3fa4f84f441b14453e7be51a27d"
+    "sha256": "257e71a40cb911d51d1bde01d0cafd8e182f7b96ba8f661ca3a61c9279ce8f4a"
   },
   {
     "file": "03-stair-tv-wide.png",

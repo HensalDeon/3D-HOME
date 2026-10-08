@@ -1,6 +1,12 @@
 # Interior image register
 
-The [two-minute interior video](Hensal_Interior_Tour.mp4) presents 22 current photographs in house-tour order, at 1920 × 1080 and 24 fps. It uses gentle fitted-image motion, 0.75-second dissolves and room captions, with no audio. Original photographs are unchanged. [Video timings and source hashes](.source/video-tour.json) and [the rebuild script](.source/build_video.py) keep this export reproducible without retaining temporary frames.
+The [two-minute interior video](Hensal_Interior_Tour.mp4) presents 22 current photographs in house-tour order, at 1920 × 1080 and 24 fps. It uses gentle fitted-image motion, 0.75-second dissolves and room captions, with no audio. The export includes the corrected living-room wall corner. [Video timings and source hashes](.source/video-tour.json) and [the rebuild script](.source/build_video.py) keep this export reproducible without retaining temporary frames.
+
+## Bedroom / bathroom wall corner · 8 October 2026
+
+[Living room](images/02-living-wide.png) and [ground-floor overview](images/02-ground-floor-overview-wide.png) now show one flat wall continuing through Bedroom 1's doorway and one 90° return around Ensuite 1. The extra chamfer/offset beside the doorway is removed; the rectangular bathroom enclosure and independent rear passage remain. The existing photographic stair arrangement, furnishings and finish palette are retained.
+
+The measured plan/model already contained this orthogonal L-shaped boundary, so dimensions and gross area remain unchanged. The small current-model wall review view is retained in `.source/geometry/02-ground-floor-overview-wide.png`; it verifies the footprint rather than the exact photographic camera. Exact built-in imagegen prompts, input roles/hashes and output hashes are recorded under `wall_corner_generation_history` in [the release manifest](.source/image-release.json). Assistant visual review passed; user acceptance of these two replacements is pending. The other 31 canonical room images retain their `904bc9f` hashes. Superseded photographs remain recoverable from that commit.
 
 ## Open stair passage and corrected views · R19
 

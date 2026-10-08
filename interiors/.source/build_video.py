@@ -179,7 +179,7 @@ def main():
               'codec':'H.264','pixel_format':'yuv420p','container':'MP4','audio':'none',
               'transition':'0.75 second cross-dissolve',
               'motion':'Gentle fitted-image zoom and 4 px drift; complete source image remains visible.',
-              'source_note':'Uses current canonical photographs, including the user-selected earlier staircase appearance and updated study end. Illustrative presentations; measured plans/model govern architecture.',
+              'source_note':'Uses current canonical photographs, including the corrected square bedroom/ensuite wall corner, user-selected earlier staircase appearance and updated study end. Illustrative presentations; measured plans/model govern architecture.',
               'timeline':timeline,'video':{'file':args.output.name,'sha256':digest(args.output),'bytes':args.output.stat().st_size},
               'rebuild':'python interiors/.source/build_video.py (Pillow, imageio-ffmpeg; macOS fonts)',
               'review':'Encoding complete; final duration, decode and visual checks still pending.'}
