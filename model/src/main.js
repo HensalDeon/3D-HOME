@@ -6,6 +6,7 @@ import assets from './assets.json';
 import revisionAssets from './revision-assets.json';
 import {revision} from './revision.js';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+$('#area-summary').textContent=`Ground ${plan.dimensions.ground_envelope_sqft.toFixed(2)} sq ft; first ${plan.dimensions.first_envelope_sqft.toFixed(2)} sq ft; main floors ${plan.dimensions.both_floors_sqft.toFixed(2)} sq ft; including the roof enclosure ${plan.dimensions.total_including_roof_sqft.toFixed(2)} sq ft. Gross areas include walls, stairs and covered outdoor spaces. The exterior footprint is unchanged.`;
 const viewport=$('#viewport'),scene=new THREE.Scene();scene.background=new THREE.Color('#e9ece3');
 let renderer;
 try{renderer=new THREE.WebGLRenderer({antialias:true,alpha:false,preserveDrawingBuffer:true});}
@@ -45,13 +46,13 @@ function setCamera(view='perspective',animate=true){
  resize();needsRender=true;
 }
 function defaultDetail(){
- const text={exterior:['A HOME WITH THREE LEVELS','Start outside. Then step into each floor.','Choose a level to see inside. Select a room to inspect its dimensions and design details.','+9.00 m','Roof enclosure cap'],ground:['GROUND FLOOR · +0.45 M','Everyday living, with a private bedroom.','The TV is built into the under-stair volume, not stood beside it, so nothing projects into the living passage. Behind the archway, an east-facing basin under the raised landing.','59.30 m²','Gross floor envelope'],first:['FIRST FLOOR · +3.45 M','Private rooms. Shared breathing space.','Two bedroom suites, a family study, two covered balconies and the continuing stair to the roof.','58.51 m²','Gross floor envelope'],roof:['ROOF · +6.45 M','A full stair to an open terrace.','Setback enclosure, north-side exit, continuous guarding and an open services reserve.','9.02 m²','Additional enclosure area']}[state.mode];
+ const text={exterior:['A HOME WITH THREE LEVELS','Start outside. Then step into each floor.','Choose a level to see inside. Select a room to inspect its dimensions and design details.','+9.00 m','Roof enclosure cap'],ground:['GROUND FLOOR · +0.45 M','Everyday living, with a private bedroom.','The TV is built into the under-stair volume, not stood beside it, so nothing projects into the living passage. Behind the archway, an east-facing basin under the raised landing.',`${plan.dimensions.ground_envelope_sqft.toFixed(2)} sq ft`,`${plan.dimensions.ground_envelope_m2.toFixed(2)} m² gross incl. covered outdoors`],first:['FIRST FLOOR · +3.45 M','Private rooms. Shared breathing space.','Two bedroom suites, a family study, two covered balconies and the continuing stair to the roof.',`${plan.dimensions.first_envelope_sqft.toFixed(2)} sq ft`,`${plan.dimensions.first_envelope_m2.toFixed(2)} m² gross incl. covered outdoors`],roof:['ROOF · +6.45 M','A full stair to an open terrace.','Setback enclosure, north-side exit, continuous guarding and an open services reserve.','9.02 m²','Additional enclosure area']}[state.mode];
  $('#detail-kicker').textContent=text[0];$('#detail-name').textContent=text[1];$('#detail-description').textContent=text[2];$('#detail-dimension').textContent=text[3];$('#detail-metric-caption').textContent=text[4];
 }
 function selectRoom(room){
  if(!room)return;
  clearSelection();state.selected=room;$('#room-picker').value=room.id;for(const m of house.pickables)if(m.userData.room.id===room.id&&!m.material.transparent)m.material.color.set('#bbcfa7');
- $('#detail-kicker').textContent=`${room.level.toUpperCase()} · SHEET ${String(room.sheet).padStart(2,'0')}`;$('#detail-name').textContent=room.name;$('#detail-description').textContent=room.description;$('#detail-dimension').textContent=room.dimensions;$('#detail-metric-caption').textContent='Drawing dimensions';needsRender=true;
+ $('#detail-kicker').textContent=`${room.level.toUpperCase()} · SHEET ${String(room.sheet).padStart(2,'0')}`;$('#detail-name').textContent=room.name;$('#detail-description').textContent=room.description;$('#detail-dimension').textContent=room.dimensions;$('#detail-metric-caption').textContent=room.clearAreaM2?`${room.clearAreaM2.toFixed(3)} m² / ${(room.clearAreaM2/.09290304).toFixed(2)} sq ft clear zone`:'Drawing dimensions';needsRender=true;
 }
 $('#room-picker').addEventListener('change',e=>selectRoom(rooms.find(r=>r.id===e.target.value)));
 const labelElements=house.labels.map(label=>{

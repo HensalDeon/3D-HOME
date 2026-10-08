@@ -59,7 +59,7 @@ def plan_sheet(c):
     y = 230
     for title, body in [
         ('MATERIALS CONNECT THE TWO ROOF LEVELS', 'Use vertical timber-look cladding on the enclosure\'s east and west end walls to match the existing screen. Warm-white side walls and a shallow white fascia with a thin charcoal edge keep the upper enclosure visually light.'),
-        ('SAME STAIR, SAME FOOTPRINT', 'The roof enclosure remains 2.20 x 4.10 m outside, adding 9.02 m2 / 97.1 sq ft. Its front face is set back 2.15 m; the rear face is set back 3.45 m. Ground and first floors remain 626.5 sq ft each.'),
+        ('SAME STAIR, SAME FOOTPRINT', 'The roof enclosure remains 2.20 x 4.10 m outside, adding 9.02 m2 / 97.1 sq ft. Its front face is set back 2.15 m; the rear face is set back 3.45 m. Ground remains 638.34 sq ft; first remains 629.84 sq ft. Internal alignment changes do not enlarge either footprint.'),
         ('KEEP THE OPEN ROOF USABLE', 'The 900 mm exit door opens onto the north-side roof landing. Keep its swing and approach clear. The perimeter guard is shown continuously at 1.10 m concept height; final infill and fixings need detailed design.'),
         ('THE SILHOUETTE IS TALLER', 'The cap is +9.00 m, 1.60 m above the existing +7.40 m timber screen. The enclosure is narrower and set back, but remains visible. This option retains the approved first-floor rear canopy and toilet-vent arrangement.'),
         ('DETAILING STILL TO COORDINATE', 'Cladding build-up must fit the stated envelope. Coordinate weathering, cap flashings, waterproofing, guard anchors, stair structure and clear headroom. Drainage arrows and the services reserve are inherited concept indications, not installation details.'),
@@ -108,7 +108,7 @@ def profile_sheet(c):
     v4.para(c, 261, 121, 'The door sits near the front end of the north wall and opens outward onto the roof. It is distinct from the master-bedroom balcony door one floor below. Confirm the finished threshold and landing drainage together.', 133, 8, 4.5)
     y = 119
     y = v4.block(c, 28, y, 'FULL STAIR GEOMETRY RETAINED', 'Continue the south dog-leg stair for another 3.00 m rise: 17 equal risers of 176.47 mm, 250 mm treads, and 900 mm clear flights and landing. See sheet 08 in this set for the developed stair profile.', 202)
-    v4.block(c, 28, y, 'HEIGHT AND AREA ARE EXPLICIT', 'Cap +9.00 m; roof landing +6.45 m; underside +8.85 m. Added enclosure 9.02 m2; conservative combined enclosed/covered study area 125.42 m2 / 1,350.0 sq ft. Finishes do not enlarge the proposed enclosure.', 202)
+    v4.block(c, 28, y, 'HEIGHT AND AREA ARE EXPLICIT', 'Cap +9.00 m; roof landing +6.45 m; underside +8.85 m. Added enclosure 9.02 m2; conservative combined enclosed/covered study area 126.84 m2 / 1,365.28 sq ft. Finishes do not enlarge the proposed enclosure.', 202)
 
 
 def exterior_sheet(c):

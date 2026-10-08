@@ -140,7 +140,7 @@ class Plan:
             self.circle(px, py, 0.02, black, 0.3)
 
     # --- dimensions -------------------------------------------------------
-    def dims(self, axis, pos, start, segs, side=1, size=5.2, col=BLUE_DIM):
+    def dims(self, axis, pos, start, segs, side=1, size=5.2, col=BLUE_DIM, precision=2):
         """Chain dimension. axis 'x': line at y=pos from x=start; 'y': line at x=pos from y=start."""
         c = self.c; c.saveState(); c.setStrokeColor(col); c.setFillColor(col); c.setLineWidth(0.3)
         total = sum(segs); tick = 0.9 * mm
@@ -153,7 +153,7 @@ class Plan:
                 c.line(px, py - 1.6 * mm, px, py + 1.6 * mm)
                 if sgm is None: break
                 c.setFont("Helvetica", size)
-                c.drawCentredString(self.X(p + sgm / 2), py + (1.0 * mm if side > 0 else -2.6 * mm), f"{sgm:.2f}")
+                c.drawCentredString(self.X(p + sgm / 2), py + (1.0 * mm if side > 0 else -2.6 * mm), f"{sgm:.{precision}f}")
                 p += sgm
         else:
             c.line(self.X(pos), self.Y(start), self.X(pos), self.Y(start + total))
@@ -164,7 +164,7 @@ class Plan:
                 c.line(px - 1.6 * mm, py, px + 1.6 * mm, py)
                 if sgm is None: break
                 c.saveState(); c.translate(px + (-1.0 * mm if side > 0 else 2.6 * mm), self.Y(p + sgm / 2)); c.rotate(90)
-                c.setFont("Helvetica", size); c.drawCentredString(0, 0, f"{sgm:.2f}"); c.restoreState()
+                c.setFont("Helvetica", size); c.drawCentredString(0, 0, f"{sgm:.{precision}f}"); c.restoreState()
                 p += sgm
         c.restoreState()
 
@@ -179,7 +179,14 @@ class Plan:
             self.rect(x0 + 0.1, y0 + 0.1, x0 + 0.45, y0 + (y1 - y0) / 2 - 0.05); self.rect(x0 + 0.1, y0 + (y1 - y0) / 2 + 0.05, x0 + 0.45, y1 - 0.1)
             self.line(x0 + 0.6, y0, x0 + 0.6, y1, GREY_FURN, 0.3)
 
-    def wc(self, x, y, facing):
+    def wc(self, x, y, facing, projection=None, width=None):
+        if projection is not None:
+            # Compact concealed-cistern pan; projection includes the installed clearance.
+            assert facing == '-x'
+            w = width or .36
+            self.rect(x-projection, y-w/2, x, y+w/2, GREY_FURN, .3)
+            self.circle(x-projection+w/2, y, w/2-.015)
+            return
         # pan 0.4 x 0.7, tank at wall. facing: '+y' means user faces +y (tank at low y)
         if facing in ("+y", "-y"):
             tx0, tx1 = x - 0.2, x + 0.2

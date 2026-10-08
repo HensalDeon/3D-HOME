@@ -111,8 +111,8 @@ def fixtures(p,detail=False):
  # Direction of view: the unit faces east, across the stairwell and out through the opening.
  p.polyline([(t['faceX']+.06,tc),(t['faceX']+.42,tc)],h.BLUE,.7,True)
  # R9: basin archway (dashed = open, not a wall), reusing the old store-door position, no doors.
- p.rect(2.05,5.2,2.15,6.1,h.TEAL,.6,dash=[2,2])
- if detail:p.wall(.15,6.1,2.3,6.2)
+ p.rect(2.05,5.2,2.2,6.1,h.TEAL,.6,dash=[2,2])
+ if detail:p.wall(.15,6.1,2.3,6.25)
  p.polyline(w['approach'],h.BLUE,.55,True)
  if detail:
   p.text(2.88,4.30,'SCREEN CL 4.64 / 43 in / FACES EAST THROUGH THE 2.00 m OPENING',4.2,rot=90,col=h.BLUE)
@@ -129,13 +129,15 @@ class GroundProxy:
  def __init__(self,p):self.p=p
  def __getattr__(self,n):return getattr(self.p,n)
  def wall(self,*a,**kw):
-  if list(a[:4])==[3.05,0,3.15,9.7]:
-   self.p.wall(3.05,0,3.15,2.3);self.p.wall(3.05,6.1,3.15,9.7)
-  elif list(a[:4])==[2.05,2.3,2.15,6.1]:
+  if list(a[:4])==[3.05,0,3.15,h.D+h.grow('GF')]:
+   # The rear wall grew outward in R8. Match the current full-length partition, so the
+   # former passage stays open to living/dining in the PDF as it already does in 3D.
+   self.p.wall(3.05,0,3.15,2.3);self.p.wall(3.05,6.1,3.15,a[3])
+  elif list(a[:4])==[2.05,2.3,2.2,6.1]:
    # R10: only the stair-entry jamb (y = 2.3-3.2) is still blockwork at plan-cut height. From
    # y = 3.2 to 5.2 the partition is removed below +2.10 m and replaced by the TV unit's joinery
    # face (drawn in fixtures); the last 0.90 m is the open basin archway.
-   self.p.wall(2.05,2.3,2.15,3.2)
+   self.p.wall(2.05,2.3,2.2,3.2)
   else:self.p.wall(*a,**kw)
  def opening(self,*a,**kw):
   if a[0]==3.05 and a[1] in [2.45,5.2]:return
@@ -150,18 +152,24 @@ class GroundProxy:
 
 def ground(p):
  OLD_GROUND(GroundProxy(p));fixtures(p)
+ # Dashed lines denote the existing overhead header, not a floor-level partition.
+ p.rect(*L['tv']['wallOpening']['box'],h.BLUE,.55,dash=[2,2])
+ p.text(2.22,4.25,'HEADER OVER +2.10 TO +2.85',3.6,rot=90,col=h.BLUE)
+ p.text(3.08,3.75,'OPEN TO LIVING / DINING',3.8,rot=90,col=h.TEAL)
 
 def ground_sheet(c):
- h.base(c,3,'Ground floor / under-stair joinery and washbasin, one continuous run','R15 / 16 SEP 2026 / PLAN 1:55 AT A3 / BASIN MOVED INTO THE JOINERY RUN / STAIR, ARCHWAY AND CIRCULATION UNCHANGED')
+ h.base(c,3,'Ground floor / under-stair joinery and washbasin, one continuous run','R17 / 08 OCT 2026 / PLAN 1:55 AT A3 / INTERNAL WALLS 150 MM INCLUDING PLASTER / STAIR AND BASIN BOUNDARIES RETAINED')
  ground(h.Plan(c,44,45,1000/55));h.compass(h.Plan(c,0,0,10),23.4,22.1)
  y=236
  for title,body in [
- ('RISER SHIFT: STARTER 2 -> 5, UPPER FLIGHT 7 -> 4','R9 moves 3 risers from the upper return flight into the starter flight, using floor already inside the stair\'s own footprint. The west flight keeps its exact R2 tread positions, renumbered 3 risers higher. The intermediate landing rises from riser 9 to riser 12 (+0.53 m); the upper flight needs only 4 risers instead of 7, so its run shrinks from 1.75 to 1.00 m and the trimmer moves from y = 3.45 to y = 4.2. All 17 risers stay 176.47 mm; the first-to-roof stair is untouched.'),
- ('R15 / BASIN MOVED INTO THE JOINERY RUN, FACING THE SAME WAY','R15 takes the basin out of the corner against the bedroom wall and continues the joinery run with it: a 0.62 x 0.35 m vanity at x = 0.69-1.04, y = 5.48-6.10, on the same depth and the same face plane at x = 1.04, facing EAST like the screen across the bay. You come in through the unchanged 0.90 m archway and the basin is square in front of you. The oak backing runs on behind it to the wall and carries the mirror; a full-height fin at y = 5.45-5.48 keeps splash off the joinery. Rim +0.86 m, mirror 0.40 x 0.80 m and the 750 x 600 mm standing zone are all unchanged. Clear height is now a uniform 1.95 m under the 12R landing, still short of the 2.20 m benchmark. Supply and waste run behind the backing into the y = 6.10 wall, to be coordinated with the plumbing design.'),
- ('R14 / TV JOINERY MOVED UNDER THE LOWER FLIGHT','R14 moves the fitted TV joinery out of the stair-side wall line and into the volume under the LOWER / WEST FLIGHT, where the real raking soffit is and where the space was dead. The unit is 2.25 x 0.35 m at x = 0.69-1.04, y = 3.20-5.45, facing EAST across the stairwell and read from the living room through the retained 2.00 m headed opening about 1.35 m away. A 30 mm oak backing at x = 0.72-0.75 follows the flight underside, held 60 mm clear the whole way, rising with the flight and then running level under the 12R landing slab. A 43-inch screen, 0.96 x 0.54 m, is surface-mounted on the backing at centreline y = 4.64, centre +0.87 m, in the taller portion; a low shelf sits beside it and a two-shelf end bay closes the run at the nook end. The cabinet is capped at +0.45 m on a recessed lit plinth, its face at x = 1.04 just clear of the flight edge at x = 1.05 and its balustrade at x = 1.07. Nothing is built against the stair-side wall any more and nothing enters the 1.00 m living passage.'),
- ('THE WALL OPENED TO +2.10, THE HEADER RETAINED, AND THE STORAGE TRADE','The 100 mm stair-side partition is cut away over the 2.00 m span from floor level to +2.10 m only, and retained above as a plastered header to the 2.85 m slab soffit - the coordinated R10 condition, which sheet 11 and the framing data are drawn to and which R12 holds. A FULL-HEIGHT REMOVAL WITH NO HEADER IS NOT ASSUMED AND MUST NOT BE INFERRED FROM THE JOINERY; it needs separate structural and architectural verification. The consequence, stated plainly: from the living room you look through that opening, under the header, straight across the stairwell to the joinery under the lower flight; the upper flight above +2.10 m is concealed by the header. Because that header stands from +2.10 m to the slab and the flight tread tops run +2.29 to +2.82 m, the east side of the flight is enclosed by wall and no balustrade is required. The opening must still be confirmed with the rest of the stair support system. Enclosed storage is the base cabinet alone - about 0.265 m3, against 0.86 m3 in the withdrawn R10 wedge and 3.5 m3 in the store R9 deleted.'),
- ('CONCEPTUAL STRUCTURE / ARCHITECTURE OTHERWISE LOCKED','STAIR SHOWN AS CONCEPTUAL RCC WAIST-SLAB SYSTEM. FINAL WAIST-SLAB THICKNESS, LANDING BEAMS, SUPPORT CONDITIONS, REINFORCEMENT AND CONNECTIONS TO BE DESIGNED BY STRUCTURAL ENGINEER. 100 MM PARTITION WALLS ARE NOT TO BE ASSUMED LOAD-BEARING. No revision through R15 moves a riser, flight, landing, support zone, slab trimmer, wall opening or archway; R15 moves the basin only, within the room it already had. Every other wall, door and window keeps its R2 geometry.')]:
+ ('R17 / FLUSH WALL FACES, 150 MM INCLUDING PLASTER','Connected walls now share finished face lines. The central spine is x = 3.10-3.25 on both floors, aligned with the 900 mm upstairs passage. Bedroom and bathroom front walls share y = 6.10-6.25, eliminating the 50 mm projection. The rear pier caps follow the spine band, removing the former 25 mm step. All internal walls remain 150 mm TOTAL including plaster; stair and basin boundaries are retained.'),
+ ('ROOM CLEARANCES / COMPACT, COORDINATED FITTINGS','Both southwest bedrooms are 2.950 x 3.300 m. The double bed has 625 mm beside it on both sides and 865 mm at its foot with the sliding leaf parked (900 mm to the wall). Ensuite 1 is 1.215 x 2.100 m with a 900 mm deep shower and a maximum 550 mm installed WC projection, leaving 665 mm in front. The service route is 1.165 m clear. Rear work is 2.530 x 1.270 m; a 450 mm preparation counter leaves an 820 mm aisle. The washing machine opens toward the clear end of this space. These are compact clearances; coordinate tile finishes and the selected fixture installation.'),
+ ('LIVING AND DINING / OPEN CONNECTION','There is no floor-level partition to the right of OPEN ACCESS: the passage connects directly to living and dining. The dashed outline beside the stairs marks the OVERHEAD header from +2.10 to +2.85 m, not a separating wall at floor level. The stair-side opening is 2.00 m long; the separate basin archway remains 0.90 m wide.'),
+ ('FITTED TV AND BASIN / EXISTING LOWER-FLIGHT BAY','The 2.25 x 0.35 m cabinet stays at x = 0.69-1.04, y = 3.20-5.45. Its 30 mm oak backing follows the measured stair underside with 60 mm clearance; the 43-inch screen centre is +0.87 m. The 0.62 x 0.35 m basin continues that run to y = 6.10 on the same face plane, facing EAST through the archway. The full-height oak fin separates the bays. Rim +0.86 m, mirror 0.40 x 0.80 m and standing zone 750 x 600 mm are retained. Basin clear height remains 1.95 m, below this set\'s 2.20 m benchmark. Enclosed cabinet storage is about 0.265 m3. Coordinate supply and waste behind the backing.'),
+ ('STAIR / RETAINED TREADS AND HEADED OPENING','The R9 ground stair retains 17 risers at 176.47 mm, with 5 starter, 7 west-flight and 4 upper-flight risers plus arrival. The 12R landing and trimmer at y = 4.20 stay fixed. First-to-roof stairs are unchanged. The 150 mm finished partition is open below +2.10 m and retains a 0.75 m plastered header to the 2.85 m slab soffit. Full-height removal with no header is not assumed; separate architectural and structural verification would be required.'),
+ ('DIRECTIONS AND STRUCTURAL COORDINATION','The drawing compass and directional room arrangement are retained: southeast kitchen, southwest bedroom, northeast living/prayer and south stairs. This wall revision is not a complete Vastu certification. STAIR AND FRAME ARE CONCEPTUAL ONLY. Members, increased partition loads, landing supports, reinforcement and connections require structural design. The rear cross-beam line moves with the bathroom wall. Retained member sizes and grid B/pier projections need coordination; no structural member has been reduced to hide a step. Partitions are not assumed load-bearing.')]:
   y=h.block(c,246,y,title,body,156)
+
 
 RAKE=4*R
 def lower_soffit(y):
@@ -270,19 +278,19 @@ def bay_section(q):
  q.text(2.0,-.62,'R15: BAY EMPTY / ARCHWAY, 12R LANDING AND RETAINED HEADER UNCHANGED',3.6,col=h.BLUE)
 
 def detail_sheet(c):
- h.base(c,7,'Under-stair built-in / joinery and basin in the lower-flight bay','R15 / 16 SEP 2026 / STAIR PLAN 1:25 AND BAY SECTIONS 1:40 AT A3 / STRUCTURE IS CONCEPTUAL MASSING, NOT A STRUCTURAL DESIGN')
+ h.base(c,7,'Under-stair built-in / joinery and basin in the lower-flight bay','R17 / 08 OCT 2026 / STAIR PLAN 1:25 AND BAY SECTIONS 1:40 AT A3 / STRUCTURE IS CONCEPTUAL MASSING, NOT A STRUCTURAL DESIGN')
  p=h.Plan(c,20,70-2.3*40,40);stair(p,'GF',False);fixtures(p,True)
  p.dims('x',6.45,.15,[.9,.1,.9],size=6)
  p.text(1.34,5.55,'STANDING',2.9,col=h.BLUE)
  p.text(3.1,3.05,'NORTH >',5.5,True,col=h.TEAL)
  h.tx(c,25,54,'One continuous run in the bay that actually has the raking soffit',8,h.TEAL,True)
- h.para(c,25,46,'The R12 stair, all risers, flights, landings, trimmer, structural support conditions and retained +2.10 to +2.85 m plastered header are unchanged, as is the 0.90 m doorless archway. R14 emptied the upper-flight bay and built the joinery into the lower-flight bay, under a real 1.50 m rake. R15 now brings the basin across into that same bay, on the same depth and the same face plane, so the under-stair volume reads as one continuous 2.90 m fitted run instead of a joinery run plus a separate corner fitting. The upper-flight bay is left completely empty.',140,8,4.4)
+ h.para(c,25,46,'The R12 stair, all risers, flights, landings, trimmer, structural support conditions and retained +2.10 to +2.85 m header heights are unchanged. R16 grows the finished header to 150 mm toward living, keeping its stair face fixed, as well as the 0.90 m doorless archway. R14 emptied the upper-flight bay and built the joinery into the lower-flight bay, under a real 1.50 m rake. R15 now brings the basin across into that same bay, on the same depth and the same face plane, so the under-stair volume reads as one continuous 2.90 m fitted run instead of a joinery run plus a separate corner fitting. The upper-flight bay is left completely empty.',140,8,4.4)
  y=231
  for title,body in [
  ('1 / RISER SHIFT, 5 + 7 + 4-PLUS-ARRIVAL','Starter grows from 2 to 5 risers inside the stair\'s own footprint. West flight keeps its exact R2 tread positions, renumbered 3 risers higher (6-12). The intermediate landing rises from riser 9 to riser 12 (+0.53 m). The upper flight needs only 4 risers instead of 7, so the trimmer moves from y = 3.45 to y = 4.2.'),
  ('2 / R15 / BASIN CONTINUES THE RUN, 0.62 x 0.35 m, FACING EAST','The vanity leaves the bedroom wall and continues the joinery run at x = 0.69-1.04, y = 5.48-6.10: same 0.35 m depth, same face plane at x = 1.04, same EAST orientation as the screen opposite, so it is read face-on from the archway. Counter, drawer, vessel, mixer and the +0.86 m rim are unchanged; the vanity gains 0.12 m because the bay runs to the wall. The mirror moves onto the oak backing, still 0.40 x 0.80 m at z = 1.00-1.80, and a full-height fin at y = 5.45-5.48 screens the joinery from splash. Standing zone 750 x 600 mm at x = 1.04-1.64; clear height a uniform 1.95 m under the 12R landing. Supply and waste run behind the backing into the y = 6.10 wall - TO BE COORDINATED WITH THE PLUMBING DESIGN.'),
  ('3 / R14 / 2.25 m LONG x 0.35 m DEEP, UNDER THE LOWER FLIGHT','R14 moved the fitted TV joinery into the volume under the LOWER / WEST FLIGHT, where the real raking soffit is. The unit is 2.25 x 0.35 m at x = 0.69-1.04, y = 3.20-5.45, facing EAST and read from the living room through the retained 2.00 m headed opening. A 30 mm oak backing at x = 0.72-0.75 follows the flight underside 60 mm clear. A 43-inch screen, 0.96 x 0.54 m, sits at centreline y = 4.64, centre +0.87 m; a low shelf and a two-shelf end bay close the run. The cabinet is capped at +0.45 m on a recessed lit plinth, face at x = 1.04 just clear of the flight edge.'),
- ('4 / CONCEPTUAL RCC STAIR / EVERYTHING ELSE LOCKED','STAIR SHOWN AS CONCEPTUAL RCC WAIST-SLAB SYSTEM. FINAL WAIST-SLAB THICKNESS, LANDING BEAMS, SUPPORT CONDITIONS, REINFORCEMENT AND CONNECTIONS TO BE DESIGNED BY STRUCTURAL ENGINEER. 100 MM PARTITION WALLS ARE NOT TO BE ASSUMED LOAD-BEARING. Support: plinth, west external wall, landing beam zone in the bedroom cross-wall and the trimmer at y = 4.2. Partition cut below +2.10 m, header retained above.')]:y=h.block(c,180,y,title,body,216)
+ ('4 / CONCEPTUAL RCC STAIR / EVERYTHING ELSE LOCKED','STAIR SHOWN AS CONCEPTUAL RCC WAIST-SLAB SYSTEM. FINAL WAIST-SLAB THICKNESS, LANDING BEAMS, SUPPORT CONDITIONS, REINFORCEMENT AND CONNECTIONS TO BE DESIGNED BY STRUCTURAL ENGINEER. 150 MM FINISHED PARTITION WALLS ARE NOT TO BE ASSUMED LOAD-BEARING. Support: plinth, west external wall, landing beam zone in the bedroom cross-wall and the trimmer at y = 4.2. Partition cut below +2.10 m, header retained above.')]:y=h.block(c,180,y,title,body,216)
  h.tx(c,181,115,'SECTION / UPPER-FLIGHT BAY / LOOKING SOUTH / 1:40 / CONCEPTUAL RCC',8,h.TEAL,True)
  bay_section(h.Plan(c,190,36,25))
  h.tx(c,318,115,'SECTION / LOWER-FLIGHT BAY / JOINERY AND BASIN / 1:40',8,h.TEAL,True)

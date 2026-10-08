@@ -55,11 +55,19 @@ export function createHouse(){
  function opening(g,o,z,facade=false){
   const {x,y,w,t,axis,sill,height,kind,swing,hinge}=o,h=z+sill;
   if(kind==='opening'||kind==='joinery')return;
-  const isDoor=kind==='door'||kind==='pocket',m=kind==='obscured'?materials.obscured:materials.glass;
+  const isDoor=kind==='door'||kind==='pocket'||kind==='surface-slider',m=kind==='obscured'?materials.obscured:materials.glass;
   const frame=(start,end,low,high,material=materials.dark)=> axis==='h'?box(g,x+start,y+t*.35,x+end,y+t*.65,low,high,material):box(g,x+t*.35,y+start,x+t*.65,y+end,low,high,material);
   if(isDoor){
    frame(0,.035,h,h+height);frame(w-.035,w,h,h+height);frame(0,w,h+height-.035,h+height);
-   if(kind==='pocket'){
+   if(kind==='surface-slider'){
+    if(axis==='h'){
+     box(g,x-w,y-.045,x,y-.02,h,h+height-.035,materials.oak);
+     box(g,x-w,y-.055,x+w,y-.015,h+height+.02,h+height+.05,materials.metal);
+    }else{
+     box(g,x-.035,y+w,x-.01,y+2*w,h,h+height-.035,materials.oak);
+     box(g,x-.045,y,x-.01,y+2*w,h+height+.02,h+height+.05,materials.metal);
+    }
+   }else if(kind==='pocket'){
     // Shown open, leaf parked on bedroom side of the long wall as in the drawing.
     box(g,x-.035,y+w,x-.01,y+2*w,h,h+height-.035,materials.oak);
    }else{
@@ -80,23 +88,36 @@ export function createHouse(){
  function furniture(g,level,z){
   const f=new THREE.Group();g.add(f);furnitureGroups.push(f);
   function chair(x,y,w=.45){box(f,x-w/2,y-w/2,x+w/2,y+w/2,z+.34,z+.44,materials.fabric);box(f,x-w/2,y+w/2-.065,x+w/2,y+w/2,z+.40,z+.80,materials.oak);for(const a of [-1,1])for(const b of [-1,1])rod(f,[x+a*(w/2-.045),y+b*(w/2-.045),z],[x+a*(w/2-.045),y+b*(w/2-.045),z+.35],.025,materials.oak);}
-  function basin(x,y,w,d,axis){let b=axis==='x1'?[x-d,y-w/2,x,y+w/2]:axis==='y1'?[x-w/2,y-d,x+w/2,y]:[x-w/2,y,x+w/2,y+d];box(f,...b,z+.77,z+.86,materials.white);box(f,b[0]+.04,b[1]+.04,b[2]-.04,b[3]-.04,z+.861,z+.87,materials.water);rod(f,[(b[0]+b[2])/2,b[3]-.03,z+.86],[(b[0]+b[2])/2,b[3]-.03,z+1.02],.015,materials.metal);}
+  function basin(x,y,w,d,axis){let b=axis==='x1'?[x-d,y-w/2,x,y+w/2]:axis==='x0'?[x,y-w/2,x+d,y+w/2]:axis==='y1'?[x-w/2,y-d,x+w/2,y]:[x-w/2,y,x+w/2,y+d];box(f,...b,z+.77,z+.86,materials.white);box(f,b[0]+.04,b[1]+.04,b[2]-.04,b[3]-.04,z+.861,z+.87,materials.water);rod(f,[(b[0]+b[2])/2,b[3]-.03,z+.86],[(b[0]+b[2])/2,b[3]-.03,z+1.02],.015,materials.metal);}
   for(const c of plan.levels[level]){const a=c.args;
    if(c.op==='bed'){const [x0,y0,x1,y1]=a;box(f,x0,y0,x1,y1,z+.1,z+.3,materials.oak);box(f,x0+.025,y0+.025,x1-.025,y1-.025,z+.3,z+.51,materials.linen);box(f,x0,y0,x0+.07,y1,z+.13,z+.98,materials.oak);box(f,x0+.6,y0+.01,x1-.01,y1-.01,z+.51,z+.55,materials.green);for(let i=0;i<2;i++)box(f,x0+.1,y0+.1+i*(y1-y0)/2,x0+.48,y0+(i+1)*(y1-y0)/2-.1,z+.51,z+.63,materials.linen);}
    if(c.op==='chair')chair(...a.slice(0,3));
-   if(c.op==='shower'){const[x0,y0,x1,y1]=a;box(f,x0,y0,x1,y1,z+.006,z+.04,materials.tile);box(f,x0,y0,x1,y0+.015,z+.04,z+1.95,materials.glass);rod(f,[x0+.2,y1-.06,z+1],[x0+.2,y1-.06,z+2.05],.018,materials.metal);rod(f,[x0+.2,y1-.06,z+2.05],[x0+.2,y1-.26,z+2.05],.025,materials.metal);cylinder(f,x0+.2,y1-.26,z+2.01,z+2.05,.075,materials.metal);}
-   if(c.op==='wc'){const[x,y]=a;box(f,x-.16,y-.21,x,y+.21,z+.22,z+.78,materials.white);const o=cylinder(f,x-.43,y,z+.16,z+.43,.2,materials.white);o.scale.x=1.3;cylinder(f,x-.44,y,z+.43,z+.46,.145,materials.stone);}
+   if(c.op==='shower'){const[x0,y0,x1,y1]=a;box(f,x0,y0,x1,y1,z+.006,z+.04,materials.tile);box(f,x0+.6,y0-.015,x1,y0,z+.04,z+1.95,materials.glass);rod(f,[x0+.2,y1-.06,z+1],[x0+.2,y1-.06,z+2.05],.018,materials.metal);rod(f,[x0+.2,y1-.06,z+2.05],[x0+.2,y1-.26,z+2.05],.025,materials.metal);cylinder(f,x0+.2,y1-.26,z+2.01,z+2.05,.075,materials.metal);}
+   if(c.op==='wc'){
+    const[x,y,,projection,width]=a;
+    if(projection){
+     const wc=new THREE.Group();wc.name=`Compact WC ${level} ${x}`;f.add(wc);
+     const w=width||.36;
+     box(wc,x-.10,y-w/2,x,y+w/2,z+.22,z+.42,materials.white);
+     const pan=cylinder(wc,x-(projection+.1)/2,y,z+.22,z+.43,w/2,materials.white);
+     pan.scale.x=(projection-.1)/(w);pan.position.copy(V(x-(projection+.1)/2,z+.325,y));
+     const seat=cylinder(wc,x-(projection+.1)/2,y,z+.43,z+.46,w/2-.018,materials.stone);seat.scale.x=(projection-.1)/w;
+     box(wc,x-.014,y-.10,x,y+.10,z+.95,z+1.08,materials.metal);
+    }else{
+     box(f,x-.16,y-.21,x,y+.21,z+.22,z+.78,materials.white);const pan=cylinder(f,x-.43,y,z+.16,z+.43,.2,materials.white);pan.scale.x=1.3;cylinder(f,x-.44,y,z+.43,z+.46,.145,materials.stone);
+    }
+   }
    if(c.op==='basin')basin(...a.slice(0,5));
   }
   if(level!=='roof'){
-   box(f,.15,6.2,1.65,6.75,z,z+2.1,materials.oak);for(let x=.65;x<1.65;x+=.5)box(f,x-.005,6.75,x+.005,6.755,z+.04,z+2.07,materials.wood);
+   box(f,.15,6.25,1.65,6.8,z,z+2.1,materials.oak);for(let x=.65;x<1.65;x+=.5)box(f,x-.005,6.8,x+.005,6.805,z+.04,z+2.07,materials.wood);
   }
   if(level==='ground'){
-   for(const b of [[.15,.15,2.95,.75],[2.45,.75,3.05,1.3],[3.15,8.3,4.4,8.85]]){box(f,...b,z,z+.84,materials.oak);box(f,...b,z+.84,z+.9,materials.stone);}
-   box(f,.7,.22,1.32,.65,z+.905,z+.93,materials.dark);for(const x of [.86,1.16])cylinder(f,x,.42,z+.93,z+.94,.09,materials.metal);
-   box(f,.15,1.5,.8,2.2,z,z+1.8,materials.metal);box(f,.77,1.54,.8,1.57,z+.9,z+1.38,materials.dark);
-   box(f,3.15,8.9,3.75,9.5,z,z+.86,materials.white);const drum=new THREE.Mesh(new THREE.CylinderGeometry(.20,.20,.02,24),materials.dark);drum.rotation.z=Math.PI/2;drum.position.copy(V(3.76,z+.43,9.2));f.add(drum);
-   box(f,5.12,2,5.85,3.8,z+.12,z+.47,materials.fabric);box(f,5.69,2,5.85,3.8,z+.4,z+.95,materials.fabric);for(let y=2.05;y<3.7;y+=.58)box(f,5.12,y,5.69,y+.52,z+.47,z+.57,materials.linen);for(const y of [2,3.65])box(f,5.12,y,5.85,y+.15,z+.4,z+.72,materials.fabric);
+   for(const b of [[.15,.22,3.1,.82],[2.5,.82,3.1,1.3],[3.25,8.5,4.4,8.95]]){box(f,...b,z,z+.84,materials.oak);box(f,...b,z+.84,z+.9,materials.stone);}
+   box(f,.7,.29,1.32,.72,z+.905,z+.93,materials.dark);for(const x of [.86,1.16])cylinder(f,x,.49,z+.93,z+.94,.09,materials.metal);
+   box(f,.15,1.5,.8,2.15,z,z+1.8,materials.metal);box(f,.77,1.54,.8,1.57,z+.9,z+1.38,materials.dark);
+   box(f,3.25,8.95,3.85,9.55,z,z+.86,materials.white);const drum=new THREE.Mesh(new THREE.CylinderGeometry(.20,.20,.02,24),materials.dark);drum.rotation.z=Math.PI/2;drum.position.copy(V(3.86,z+.43,9.25));f.add(drum);
+   box(f,5.12,2,5.78,3.8,z+.12,z+.47,materials.fabric);box(f,5.62,2,5.78,3.8,z+.4,z+.95,materials.fabric);for(let y=2.05;y<3.7;y+=.58)box(f,5.12,y,5.62,y+.52,z+.47,z+.57,materials.linen);for(const y of [2,3.65])box(f,5.12,y,5.78,y+.15,z+.4,z+.72,materials.fabric);
    // R14 joinery, under the lower flight. Geometry comes from under-stair-layout.json, which the
    // drawing scripts read too, and is checked against the real stair meshes as it is built.
    addTvJoineryPreview({parent:f,stairs:g.getObjectByName('stairs'),z,box,profilePrism,cylinder,materials,V});
@@ -132,20 +153,20 @@ export function createHouse(){
    // One soap dispenser, set between the fin and the bowl rather than inside the bowl footprint.
    box(wash,b[2]-.11,b[1]+.04,b[2]-.05,b[1]+.10,z+fin.vanity.counter[1],z+fin.vanity.counter[1]+.14,materials.linen);
    cylinder(f,4.88,4.65,z+.7,z+.77,.45,materials.oak);cylinder(f,4.88,4.65,z,z+.7,.08,materials.dark);
-   box(f,5.35,1.35,5.85,1.72,z+.62,z+.73,materials.oak);box(f,5.45,1.37,5.75,1.43,z+.73,z+1.24,materials.wood);
+   box(f,5.28,1.35,5.78,1.72,z+.62,z+.73,materials.oak);box(f,5.38,1.37,5.68,1.43,z+.73,z+1.24,materials.wood);
    
   }else if(level==='first'){
-   box(f,.25,.35,1.75,.9,z+.73,z+.79,materials.oak);for(const x of [.30,1.67])box(f,x,.4,x+.06,.85,z,z+.73,materials.dark);box(f,2.6,.3,3.05,1.3,z,z+2.0,materials.oak);box(f,5.3,2.6,5.85,3.35,z,z+2.1,materials.oak);
+   box(f,.25,.35,1.75,.9,z+.73,z+.79,materials.oak);for(const x of [.30,1.67])box(f,x,.4,x+.06,.85,z,z+.73,materials.dark);box(f,2.65,.3,3.1,1.3,z,z+2.0,materials.oak);box(f,...revision.wardrobe.existing,z,z+2.1,materials.oak);
    const wardrobe=new THREE.Group();wardrobe.name='Bedroom 3 continuous L wardrobe extension';f.add(wardrobe);
    // Original cabinet retained; 100 mm corner filler joins the 550 mm deep perpendicular return.
-   box(wardrobe,4.2,2.5,5.3,3.05,z,z+2.1,materials.oak);
-   box(wardrobe,5.3,2.5,5.85,2.6,z,z+2.1,materials.oak);
-   for(const x of [4.75,5.29])line(wardrobe,[[x,3.052,z+.04],[x,3.052,z+2.06]],'#8d704e');
-   line(wardrobe,[[5.297,3.05,z+.04],[5.297,3.05,z+2.06]],'#8d704e');
+   box(wardrobe,...revision.wardrobe.extension,z,z+2.1,materials.oak);
+   box(wardrobe,...revision.wardrobe.filler,z,z+2.1,materials.oak);
+   for(const x of [4.75,5.27])line(wardrobe,[[x,3.077,z+.04],[x,3.077,z+2.06]],'#8d704e');
+   line(wardrobe,[[5.277,3.075,z+.04],[5.277,3.075,z+2.06]],'#8d704e');
    // Paired hinged corner fronts, no fixed corner post: 550 + 300 mm leaves expose the corner.
-   rod(wardrobe,[4.78,3.075,z+.98],[4.78,3.075,z+1.17],.009,materials.dark);
-   rod(wardrobe,[5.275,3.31,z+.98],[5.275,3.31,z+1.17],.009,materials.dark);
-   rod(wardrobe,[4.24,3.075,z+.98],[4.24,3.075,z+1.17],.009,materials.dark);
+   rod(wardrobe,[4.78,3.1,z+.98],[4.78,3.1,z+1.17],.009,materials.dark);
+   rod(wardrobe,[5.255,3.335,z+.98],[5.255,3.335,z+1.17],.009,materials.dark);
+   rod(wardrobe,[4.24,3.1,z+.98],[4.24,3.1,z+1.17],.009,materials.dark);
    for(const y of [9.07,9.32])rod(f,[3.4,y,z+1.65],[5.6,y,z+1.65],.006,materials.metal);
   }else{
    cylinder(f,4.4,7.4,z+.68,z+.74,.38,materials.oak);cylinder(f,4.4,7.4,z,z+.68,.06,materials.dark);
@@ -276,7 +297,7 @@ export function createHouse(){
    }
    // Front and rear corner piers came directly from the wall commands.
    furniture(g,level,z);
-   if(level==='first'){rail(g,3.15,0,5.85,0,z,1.1,true);rail(g,5.93,0,5.93,1.2,z,1.1,true);rail(g,3.15,9.63,5.85,9.63,z,1.1);}
+   if(level==='first'){rail(g,3.25,0,5.85,0,z,1.1,true);rail(g,5.93,0,5.93,1.2,z,1.1,true);rail(g,3.25,9.63,5.85,9.63,z,1.1);}
    const facade=new THREE.Group();g.add(facade);facades.push({group:facade,level});
    // Front finishes are split around the scheduled window so they never seal its aperture.
    const o=openingsFor(level).find(o=>o.x===.6&&o.axis==='h');

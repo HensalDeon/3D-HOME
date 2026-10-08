@@ -5,6 +5,262 @@
     "GF": 220,
     "FF": 170
   },
+  "internal_wall_mm": 150,
+  "internal_wall_spec": {
+    "finished_mm": 150,
+    "basis": "finished thickness including plaster",
+    "method": "shared flush wall bands on both floors; fixed stair/basin faces; 900 mm first-floor passage; deeper rebalanced bathrooms",
+    "masonry_and_plaster_build_up": "Select the masonry unit and plaster coats to total 150 mm; do not add plaster outside this allowance.",
+    "wet_finish_note": "Bathroom dimensions are to plastered wall faces; final tile build-up requires coordination."
+  },
+  "internal_wall_boxes_m": {
+    "GF": {
+      "front_spine": [
+        3.1,
+        0,
+        3.25,
+        2.3
+      ],
+      "rear_spine": [
+        3.1,
+        6.1,
+        3.25,
+        9.77
+      ],
+      "kitchen_study_back": [
+        0.15,
+        2.15,
+        3.25,
+        2.3
+      ],
+      "bedroom_front": [
+        0.15,
+        6.1,
+        3.25,
+        6.25
+      ],
+      "stair_side": [
+        2.05,
+        2.3,
+        2.2,
+        6.1
+      ],
+      "ensuite_front": [
+        3.25,
+        6.1,
+        4.615,
+        6.25
+      ],
+      "ensuite_divider": [
+        4.465,
+        6.25,
+        4.615,
+        8.35
+      ],
+      "ensuite_rear": [
+        3.25,
+        8.35,
+        5.779999999999999,
+        8.5
+      ]
+    },
+    "FF": {
+      "front_spine": [
+        3.1,
+        0,
+        3.25,
+        2.3
+      ],
+      "rear_spine": [
+        3.1,
+        6.1,
+        3.25,
+        9.719999999999999
+      ],
+      "kitchen_study_back": [
+        0.15,
+        2.15,
+        3.25,
+        2.3
+      ],
+      "bedroom_front": [
+        0.15,
+        6.1,
+        3.25,
+        6.25
+      ],
+      "stair_side": [
+        2.05,
+        2.3,
+        2.2,
+        6.1
+      ],
+      "ensuite_front": [
+        3.25,
+        6.1,
+        5.83,
+        6.25
+      ],
+      "ensuite_divider": [
+        4.465,
+        6.25,
+        4.615,
+        8.35
+      ],
+      "ensuite_rear": [
+        3.25,
+        8.35,
+        5.83,
+        8.5
+      ],
+      "passage_spine": [
+        3.1,
+        2.3,
+        3.25,
+        6.1
+      ],
+      "north_bedroom_front": [
+        3.25,
+        2.375,
+        5.83,
+        2.525
+      ]
+    }
+  },
+  "room_boxes_m": {
+    "g-kitchen": [
+      0.15,
+      0.22,
+      3.1,
+      2.15
+    ],
+    "g-living": [
+      3.25,
+      1.35,
+      5.779999999999999,
+      6.1
+    ],
+    "g-bed": [
+      0.15,
+      6.25,
+      3.1,
+      9.55
+    ],
+    "g-bath": [
+      3.25,
+      6.25,
+      4.465,
+      8.35
+    ],
+    "g-sit": [
+      3.25,
+      0,
+      5.779999999999999,
+      1.2
+    ],
+    "g-work": [
+      3.25,
+      8.5,
+      5.779999999999999,
+      9.77
+    ],
+    "g-route": [
+      4.615,
+      6.1,
+      5.779999999999999,
+      8.35
+    ],
+    "g-stair": [
+      0.15,
+      2.3,
+      2.05,
+      6.1
+    ],
+    "f-study": [
+      0.15,
+      0.17,
+      3.1,
+      2.15
+    ],
+    "f-master": [
+      0.15,
+      6.25,
+      3.1,
+      9.55
+    ],
+    "f-child": [
+      3.25,
+      2.525,
+      5.83,
+      6.1
+    ],
+    "f-bath2": [
+      3.25,
+      6.25,
+      4.465,
+      8.35
+    ],
+    "f-bath3": [
+      4.615,
+      6.25,
+      5.83,
+      8.35
+    ],
+    "f-balcony": [
+      3.25,
+      0,
+      5.83,
+      1.2
+    ],
+    "f-drying": [
+      3.25,
+      8.5,
+      5.83,
+      9.719999999999999
+    ],
+    "f-gallery": [
+      3.25,
+      1.35,
+      5.83,
+      2.375
+    ],
+    "f-stair": [
+      0.15,
+      2.3,
+      2.05,
+      6.1
+    ],
+    "f-passage": [
+      2.2,
+      2.3,
+      3.1,
+      6.1
+    ]
+  },
+  "room_regions_m": {
+    "g-living": [
+      [
+        3.25,
+        1.35,
+        5.779999999999999,
+        6.1
+      ],
+      [
+        2.2,
+        2.3,
+        3.25,
+        6.1
+      ]
+    ],
+    "f-gallery": [
+      [
+        3.25,
+        1.35,
+        5.83,
+        2.375
+      ]
+    ]
+  },
   "ground_envelope_m": [
     6.07,
     9.77
@@ -23,19 +279,40 @@
     "south_parking_strip": 2.63,
     "rear_garden": 4.03
   },
-  "gross_envelope_m2_per_floor": 58.199999999999996,
-  "gross_envelope_sqft_per_floor": 626.4595862525058,
-  "both_floors_m2": 116.39999999999999,
-  "bedroom_sw_clear_m2": 9.715,
-  "child_clear_m2": 9.648000000000001,
-  "front_sitout_balcony_clear_m2": 3.24,
-  "rear_work_drying_clear_m2": 3.78,
+  "gross_envelope_m2_by_floor": {
+    "ground": 59.3039,
+    "first": 58.5144
+  },
+  "gross_envelope_sqft_by_floor": {
+    "ground": 638.34,
+    "first": 629.84
+  },
+  "both_floors_sqft": 1268.19,
+  "both_floors_m2": 117.8183,
+  "bedroom_sw_clear_m2": 9.735,
+  "child_clear_m2": 9.2235,
+  "front_sitout_balcony_clear_m2": 3.036,
+  "rear_work_drying_clear_m2": 3.2131,
   "ensuite_count": 3,
   "ensuite_clear_m": [
-    1.3,
-    2.0
+    1.215,
+    2.1
   ],
-  "ensuite_clear_m2_each": 2.6,
+  "ensuite_clear_m2_each": 2.5515,
+  "ensuite_clear_sizes_m": {
+    "GF_Ensuite1": [
+      1.215,
+      2.1
+    ],
+    "FF_Ensuite2": [
+      1.215,
+      2.1
+    ],
+    "FF_Ensuite3": [
+      1.215,
+      2.1
+    ]
+  },
   "bedroom_bathroom_pairs": {
     "GF_Bed1": "GF_Ensuite1",
     "FF_Master": "FF_Ensuite2",
@@ -43,6 +320,225 @@
   },
   "rear_balcony_access": "private side door from master",
   "rear_work_access": "independent north passage",
+  "room_clear_areas_m2": {
+    "g-kitchen": 5.6935,
+    "g-living": 16.0075,
+    "g-bed": 9.735,
+    "g-bath": 2.5515,
+    "g-sit": 3.036,
+    "g-work": 3.2131,
+    "g-route": 2.62125,
+    "g-stair": 7.22,
+    "f-study": 5.841,
+    "f-master": 9.735,
+    "f-child": 9.2235,
+    "f-bath2": 2.5515,
+    "f-bath3": 2.5515,
+    "f-balcony": 3.096,
+    "f-drying": 3.1476,
+    "f-gallery": 2.6445,
+    "f-stair": 7.22,
+    "f-passage": 3.42
+  },
+  "room_clear_areas_sqft": {
+    "g-kitchen": 61.28,
+    "g-living": 172.3,
+    "g-bed": 104.79,
+    "g-bath": 27.46,
+    "g-sit": 32.68,
+    "g-work": 34.59,
+    "g-route": 28.21,
+    "g-stair": 77.72,
+    "f-study": 62.87,
+    "f-master": 104.79,
+    "f-child": 99.28,
+    "f-bath2": 27.46,
+    "f-bath3": 27.46,
+    "f-balcony": 33.33,
+    "f-drying": 33.88,
+    "f-gallery": 28.47,
+    "f-stair": 77.72,
+    "f-passage": 36.81
+  },
+  "named_clear_zone_totals_m2": {
+    "ground": 50.07785,
+    "first": 49.4306
+  },
+  "named_clear_zone_totals_sqft": {
+    "ground": 539.03,
+    "first": 532.07
+  },
+  "clear_area_basis": "Named clear zones to plastered wall faces; stairs and covered outdoor zones included; wall bands/door reveals excluded. Not a statutory carpet-area measurement.",
+  "bathroom_layout_m": {
+    "GF": [
+      {
+        "room": "ensuite_main",
+        "box": [
+          3.25,
+          6.25,
+          4.465,
+          8.35
+        ],
+        "shower": [
+          3.25,
+          7.449999999999999,
+          4.465,
+          8.35
+        ],
+        "shower_entry_width_m": 0.6,
+        "wc": [
+          4.465,
+          6.99,
+          "-x",
+          0.55,
+          0.36
+        ],
+        "wc_box": [
+          3.915,
+          6.8100000000000005,
+          4.465,
+          7.17
+        ],
+        "basin": [
+          3.6,
+          6.25,
+          0.4,
+          0.28,
+          "y0"
+        ],
+        "basin_box": [
+          3.4,
+          6.25,
+          3.8,
+          6.53
+        ],
+        "wc_front_clear_m": 0.665,
+        "wc_centre_to_shower_m": 0.445,
+        "wc_centre_to_basin_m": 0.46
+      }
+    ],
+    "FF": [
+      {
+        "room": "ensuite_main",
+        "box": [
+          3.25,
+          6.25,
+          4.465,
+          8.35
+        ],
+        "shower": [
+          3.25,
+          7.449999999999999,
+          4.465,
+          8.35
+        ],
+        "shower_entry_width_m": 0.6,
+        "wc": [
+          4.465,
+          6.99,
+          "-x",
+          0.55,
+          0.36
+        ],
+        "wc_box": [
+          3.915,
+          6.8100000000000005,
+          4.465,
+          7.17
+        ],
+        "basin": [
+          3.6,
+          6.25,
+          0.4,
+          0.28,
+          "y0"
+        ],
+        "basin_box": [
+          3.4,
+          6.25,
+          3.8,
+          6.53
+        ],
+        "wc_front_clear_m": 0.665,
+        "wc_centre_to_shower_m": 0.445,
+        "wc_centre_to_basin_m": 0.46
+      },
+      {
+        "room": "ensuite_north",
+        "box": [
+          4.615,
+          6.25,
+          5.83,
+          8.35
+        ],
+        "shower": [
+          4.615,
+          7.449999999999999,
+          5.83,
+          8.35
+        ],
+        "shower_entry_width_m": 0.6,
+        "wc": [
+          5.83,
+          7.03,
+          "-x",
+          0.55,
+          0.36
+        ],
+        "wc_box": [
+          5.28,
+          6.8500000000000005,
+          5.83,
+          7.21
+        ],
+        "basin": [
+          4.615,
+          6.43,
+          0.35,
+          0.28,
+          "x0"
+        ],
+        "basin_box": [
+          4.615,
+          6.255,
+          4.8950000000000005,
+          6.605
+        ],
+        "wc_front_clear_m": 0.665,
+        "wc_centre_to_shower_m": 0.405,
+        "wc_centre_to_basin_m": 0.425
+      }
+    ]
+  },
+  "compact_wc_spec": {
+    "projection_m": 0.55,
+    "width_m": 0.36,
+    "type": "compact WC with concealed cistern",
+    "installation_note": "Maximum installed projection 550 mm from finished wall; coordinate cistern/carrier within the wall/service construction without taking space from the published clear room. Larger fixtures require a fresh clearance check."
+  },
+  "comfort_clearances_mm": {
+    "first_passage": 900,
+    "ground_service_route": 1165,
+    "southwest_bed_sides": [
+      625,
+      625
+    ],
+    "southwest_bed_foot": 865,
+    "southwest_bed_foot_to_wall": 900,
+    "north_bed_to_wardrobe": 625,
+    "north_bed_rear": 600,
+    "north_bed_foot": 580,
+    "bathroom_wc_front": 665,
+    "shower_depth": 900,
+    "shower_entry": 600,
+    "rear_work_counter_aisle": 820
+  },
+  "comfort_basis": "Compact single-user planning; not universal-access or full NKBA clearance compliance. Fixture selection, tile finish and structural projections need coordination.",
+  "comfort_references": [
+    "https://media.nkba.org/uploads/2022/05/Bath-Planning-Guidelines.pdf",
+    "https://www.uk.roca.com/products/vitreous-china-wall-hung-rimless-wc-34647L..0?sku=A34647L000"
+  ],
+  "first_passage_clear_mm": 900,
   "stair_risers": 17,
   "stair_riser_mm": 176.47058823529412,
   "stair_tread_mm": 250,
@@ -58,19 +554,21 @@
   "parking_access_verified": false,
   "survey_setout_verified": false,
   "vastu_certified": false,
+  "vastu_orientation_basis": "drawing compass confirmed correct by user; directional room arrangement retained",
   "roof_enclosure_m2": 9.02,
-  "total_including_roof_m2": 125.41999999999999,
+  "total_including_roof_m2": 126.8383,
+  "total_including_roof_sqft": 1365.28,
   "roof_landing_m": 6.45,
   "roof_cover_top_m": 9.0,
   "roof_clear_landing_height_m": 2.4,
   "roof_access": "full south stair from first floor",
   "drawing_count": 12,
-  "revision": "R15",
+  "revision": "R17",
   "under_stair_wall_opening": {
     "box_m": [
       2.05,
       3.2,
-      2.15,
+      2.2,
       5.2
     ],
     "head_m": 2.1,
@@ -80,9 +578,10 @@
     ],
     "header_depth_m": 0.75,
     "slab_soffit_m": 2.85,
-    "partition_mm": 100,
+    "partition_mm": 150,
+    "partition_basis": "finished thickness including plaster",
     "full_height_removal_assumed": false,
-    "status": "Coordinated R10 headed opening, held unchanged through R12/R13/R14. A full-height removal with no header is not assumed and must not be inferred; it requires separate structural and architectural verification. TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER."
+    "status": "Coordinated R10 headed opening, retained through R17; partition widened to 150 mm finished. A full-height removal with no header is not assumed and must not be inferred; it requires separate structural and architectural verification. TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER."
   },
   "under_stair_composition": {
     "under_flight": "lower/west flight",

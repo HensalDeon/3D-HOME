@@ -1,5 +1,5 @@
 {
- "revision": "R15",
+ "revision": "R17",
  "structure": {
   "revision": "R14",
   "system": "conventional cast-in-situ RCC staircase: continuous waist slab under each flight, monolithic with the landing slabs at the turns (folded plate)",
@@ -8,11 +8,11 @@
   "finish": 0.02,
   "indicative": true,
   "status": "TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER",
-  "note": "STAIR SHOWN AS CONCEPTUAL RCC WAIST-SLAB SYSTEM. FINAL WAIST-SLAB THICKNESS, LANDING BEAMS, SUPPORT CONDITIONS, REINFORCEMENT AND CONNECTIONS TO BE DESIGNED BY STRUCTURAL ENGINEER. 100 MM PARTITION WALLS ARE NOT TO BE ASSUMED LOAD-BEARING. R9 RE-DISTRIBUTED RISERS BETWEEN THE STARTER AND THE UPPER RETURN FLIGHT ON THE GROUND-TO-FIRST STAIR ONLY; THE FIRST-TO-ROOF STAIR IS UNCHANGED. R10 CHANGES NO RISER, FLIGHT, LANDING OR SUPPORT: IT ONLY BUILDS THE TV UNIT INTO THE UNDER-STAIR VOLUME AND CUTS THE 100 MM STAIR-SIDE PARTITION AWAY BELOW +2.10 m BETWEEN y = 3.20 AND y = 5.20, RETAINING IT ABOVE AS A PLASTERED HEADER TO THE 2.85 m SLAB SOFFIT. THAT HEADED OPENING IS THE COORDINATED CONDITION AND IS WHAT SHEET 11 AND structural-frame.json ARE DRAWN TO. A FULL-HEIGHT REMOVAL WITH NO HEADER IS NOT ASSUMED AND MUST NOT BE INFERRED: IT WOULD HAVE TO BE SEPARATELY VERIFIED STRUCTURALLY AND ARCHITECTURALLY BEFORE IT COULD BE DRAWN. THE PARTITION IS NOT ASSUMED LOAD-BEARING AND THE STAIR-SIDE TRIMMER ZONE ALREADY SPANS THE WALL LINE AT THE SLAB, BUT THE OPENING MUST STILL BE CONFIRMED WITH THE REST OF THE STAIR SUPPORT SYSTEM.",
+  "note": "STAIR SHOWN AS CONCEPTUAL RCC WAIST-SLAB SYSTEM. FINAL WAIST-SLAB THICKNESS, LANDING BEAMS, SUPPORT CONDITIONS, REINFORCEMENT AND CONNECTIONS TO BE DESIGNED BY STRUCTURAL ENGINEER. 150 MM FINISHED PARTITION WALLS ARE NOT TO BE ASSUMED LOAD-BEARING. R9 RE-DISTRIBUTED RISERS BETWEEN THE STARTER AND THE UPPER RETURN FLIGHT ON THE GROUND-TO-FIRST STAIR ONLY; THE FIRST-TO-ROOF STAIR IS UNCHANGED. R10 CHANGES NO RISER, FLIGHT, LANDING OR SUPPORT: IT ONLY BUILDS THE TV UNIT INTO THE UNDER-STAIR VOLUME AND CUTS THE 150 MM FINISHED STAIR-SIDE PARTITION AWAY BELOW +2.10 m BETWEEN y = 3.20 AND y = 5.20, RETAINING IT ABOVE AS A PLASTERED HEADER TO THE 2.85 m SLAB SOFFIT. THAT HEADED OPENING IS THE COORDINATED CONDITION AND IS WHAT SHEET 11 AND structural-frame.json ARE DRAWN TO. A FULL-HEIGHT REMOVAL WITH NO HEADER IS NOT ASSUMED AND MUST NOT BE INFERRED: IT WOULD HAVE TO BE SEPARATELY VERIFIED STRUCTURALLY AND ARCHITECTURALLY BEFORE IT COULD BE DRAWN. THE PARTITION IS NOT ASSUMED LOAD-BEARING AND THE STAIR-SIDE TRIMMER ZONE ALREADY SPANS THE WALL LINE AT THE SLAB, BUT THE OPENING MUST STILL BE CONFIRMED WITH THE REST OF THE STAIR SUPPORT SYSTEM.",
   "supports": [
    "starter landing at +0.882 m (riser 5) bears on plinth fill / ground slab",
    "west 150 mm external wall at x = 0.00-0.15 along both flights",
-   "landing beam zone inside the existing 100 mm bedroom cross-wall line at y = 6.10-6.20",
+   "landing beam zone inside the existing 150 mm finished bedroom cross-wall line at y = 6.10-6.25",
    "floor-slab trimmer at the stairwell opening edge, y = 4.20 (ground-to-first upper flight, moved from y = 3.45 by R9) and y = 3.20 (first-floor lower flight, unchanged)"
   ],
   "beamZones": [
@@ -24,7 +24,7 @@
      3.05,
      6.2
     ],
-    "within": "existing 100 mm bedroom cross-wall line; no encroachment into the store or any room",
+    "within": "retained structural support zone inside the 150 mm finished bedroom cross-wall; final member design requires engineering coordination",
     "span": "west external wall to the retained wall junction at x = 3.05-3.15",
     "note": "LANDING BEAM ZONE - TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER"
    },
@@ -42,8 +42,8 @@
    }
   ],
   "excluded": [
-   "100 mm stair-side partition at x = 2.05-2.15",
-   "100 mm bedroom partition as a bearing wall",
+   "150 mm finished stair-side partition at x = 2.05-2.20",
+   "150 mm finished bedroom partition as a bearing wall",
    "steel stringers",
    "cantilevered individual treads",
    "new columns inside the living area",
@@ -107,7 +107,7 @@
    2.05,
    4.2
   ],
-  "route": "SOUTH → WEST → EAST",
+  "route": "SOUTH \u2192 WEST \u2192 EAST",
   "kitchenDepth": 2.05,
   "r9Change": "Starter grows from 2 to 5 risers, using the ~0.75 m of floor between the old riser 1 and the TV/closing-panel wall (x = 1.30-2.05, y = 2.30-3.20), inside the stair's own footprint. West flight keeps its R2 tread positions, now numbered risers 6-12. Upper return flight shortens from 7 to 4 risers (13-16) over the same 250 mm going, ending at the new trimmer y = 4.2 instead of y = 3.45. First-to-roof stair (2 + 7 + 8) is untouched."
  },
@@ -368,7 +368,7 @@
    "intoFlightFootprint": 0,
    "faceToFlightEdge": 0.01,
    "faceToBalustrade": 0.03,
-   "note": "The unit is wholly inside the lower flight's own footprint: face at x = 1.04 against the flight edge at x = 1.05 and the balustrade line at x = 1.07. The 1.00 m living passage east of the stair-side wall and the 0.90 m basin access are both untouched."
+   "note": "The unit is wholly inside the lower flight's own footprint: face at x = 1.04 against the flight edge at x = 1.05 and the balustrade line at x = 1.07. The living connection remains open; the 0.90 m basin access is retained."
   },
   "storage": {
    "footprint_m2": 0.7875,
@@ -386,14 +386,14 @@
    "note": "The 60 mm gap between the backing edge and the flight underside is held over the whole run and is verified by raycast against the built stair on every model build, not by projecting a line. Tightest point over the screen is 152 mm, at y = 4.16. The +2.10 m opening head in the stair-side wall and the plastered header above it are retained and unchanged."
   },
   "viewing": {
-   "from": "living room, through the 2.00 m headed opening at x = 2.05-2.15",
+   "from": "living room, through the 2.00 m headed opening at x = 2.05-2.20",
    "screenToOpening_m": 1.25,
-   "screenToLivingFace_m": 1.35,
+   "screenToLivingFace_m": 1.4,
    "note": "The screen faces east across the stairwell. The upper flight (x = 1.15-2.05, y = 4.20-5.20) passes overhead at a soffit of 1.91-2.62 m, well clear of the 1.14 m screen top, and both balustrades start above 1.6 m, so the sightline from the living floor is open."
   },
   "referenceDeviations": [
    "The reference shows one long flight running floor to ceiling, so its under-stair triangle reaches the floor. This is a dog-leg stair. R14 uses the flight that actually gives that triangle - the lower/west flight, y = 3.20-4.70 - instead of the 4-riser upper return, so the composition now sits under a real 1.5 m rake rather than a short high one.",
-   "The joinery is no longer on the stair-side wall line. It faces EAST across the stairwell and is seen from the living room through the retained 2.00 m headed opening, about 1.35 m away, rather than being mounted on the wall that forms that opening.",
+   "The joinery is no longer on the stair-side wall line. It faces EAST across the stairwell and is seen from the living room through the retained 2.00 m headed opening, about 1.40 m away, rather than being mounted on the wall that forms that opening.",
    "The stair-side partition is still not removed full height. The coordinated R10 condition - cut away to +2.10 m, plastered header retained above to the 2.85 m slab - is held, and has not been separately verified for full-height removal. The header conceals the upper flight above +2.10 m.",
    "Enclosed storage is 0.265 m3 (see storage.note)."
   ],
@@ -401,7 +401,7 @@
    "box": [
     2.05,
     3.2,
-    2.15,
+    2.2,
     5.2
    ],
    "height": 2.1,
@@ -410,17 +410,17 @@
     "box": [
      2.05,
      3.2,
-     2.15,
+     2.2,
      5.2
     ],
     "z": [
      2.1,
      2.85
     ],
-    "thickness": 0.1,
+    "thickness": 0.15,
     "note": "RETAINED PLASTERED HEADER - 0.75 m deep over a 2.00 m span, hung off the stair-side trimmer zone that already runs the full length of this wall line at the first-floor slab. TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER."
    },
-   "note": "The 100 mm stair-side partition is cut away over this 2.00 m span from floor level to +2.10 m only, and retained above as a plastered header to the 2.85 m slab soffit. This is the coordinated R10 condition, unchanged by R12 and matching sheet 11 and structural-frame.json. +2.10 m is the head the joinery and the open view need: every built element except the backing panel stops at or below it, and the raking waist soffit drops under it from y = 4.93 to the archway jamb, so the low end of the rake is seen from the living room. Taking the wall out full height with no header would show more of the flight but is NOT assumed here and must not be inferred - it requires separate structural and architectural verification. The partition is not assumed load-bearing and the stair-side trimmer zone already spans this wall line at the first-floor slab, but the opening must still be confirmed with the rest of the stair support system. TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER."
+   "note": "The 150 mm finished stair-side partition is cut away over this 2.00 m span from floor level to +2.10 m only, and retained above as a plastered header to the 2.85 m slab soffit. This is the coordinated R10 condition, unchanged by R12 and matching sheet 11 and structural-frame.json. +2.10 m is the head the joinery and the open view need: every built element except the backing panel stops at or below it, and the raking waist soffit drops under it from y = 4.93 to the archway jamb, so the low end of the rake is seen from the living room. Taking the wall out full height with no header would show more of the flight but is NOT assumed here and must not be inferred - it requires separate structural and architectural verification. The partition is not assumed load-bearing and the stair-side trimmer zone already spans this wall line at the first-floor slab, but the opening must still be confirmed with the rest of the stair support system. TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER. R16 retains the stair face at x = 2.05 and expands the living face to x = 2.20; thickness includes plaster."
   },
   "balustrade": {
    "x": 2.05,
@@ -495,7 +495,7 @@
   "bedroomDoorLanding": [
    2.2,
    5.2,
-   3.05,
+   3.1,
    6.1
   ],
   "clearHeights": {

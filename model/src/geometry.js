@@ -4,37 +4,46 @@ import frame from './structural-frame.json' with {type:'json'};
 import {revision,revisedWallBoxes,storageWallOpenings} from './revision.js';
 export {plan};
 export const LEVELS={ground:.45,first:3.45,roof:6.45};
-// R8: 220 mm ground external walls, 170 mm on the first floor, 100 mm partitions throughout.
+// R8: 220 mm ground external walls, 170 mm on the first floor, 150 mm finished partitions including plaster.
 // The west wall grew outward into the parking strip and the rear into the garden; the east and
 // front walls thickened inward, so every inner face the stair and under-stair unit rely on is
 // unmoved. ENVELOPE is the outer face of each level.
 export const EXTERNAL_WALL={ground:.22,first:.17,roof:.17};
 export const ENVELOPE={ground:[-.07,0,6,9.77],first:[-.02,0,6,9.72],roof:[-.02,0,6,9.72]};
 export const rooms=[
- ['g-kitchen','ground','Kitchen / southeast',[.15,.22,3.05,2.2],'2.90 × 1.98 m','East-facing hob; separate sink on the north counter. Door opens from the stair passage.',3],
- ['g-living','ground','Living & dining',[3.15,1.35,5.78,6.1],'2.63 × 4.75 m bay','R1: the passage partition is removed conditionally, opening the former passage into the living area. R14 holds the coordinated R10 opening in the stair-side partition from y = 3.20 to y = 5.20: cut away to +2.10 m, retained above as a plastered header to the 2.85 m slab soffit. A full-height opening is not assumed and needs separate structural and architectural verification. Nothing is built against that wall any more - R14 moves the TV joinery across the stairwell into the bay under the lower/west flight, so from the living room you look through the opening, under the header, to the fitted composition about 1.35 m beyond. Nothing projects into the 1.00 m passage. Beyond y = 5.20 the wall still opens directly onto the basin nook through the 0.90 m archway, with no doors. The living floor is open. Independent rear access is retained.',3],
- ['g-bed','ground','Bedroom 1 / southwest',[.15,6.2,3.05,9.55],'2.90 × 3.35 m','Bed head faces south. Private sliding access to Ensuite 1; entrance from the level stair passage.',3],
- ['g-bath','ground','Ensuite 1',[3.15,6.2,4.45,8.2],'1.30 × 2.00 m','WC, basin and shower; accessible only from Bedroom 1.',3],
- ['g-sit','ground','East sit-out',[3.15,0,5.78,1.2],'2.63 × 1.20 m','Covered entry within the 6.00 × 9.70 m envelope. Three approach steps.',3],
- ['g-work','ground','Rear work area',[3.15,8.3,5.78,9.77],'2.63 × 1.47 m','Sink, washing machine and preparation counter. Wash only; no rear cooking hearth. Direct backyard steps.',3],
- ['g-route','ground','Rear service passage',[4.55,6.2,5.78,8.2],'1.23 m clear','Independent route from dining to the work area without entering a bedroom or ensuite.',3],
- ['g-stair','ground','South stair & passage',[.15,2.3,3.05,6.1],'17 risers · 0.90 m flights','R9: south-going starter, west-going lower flight and shortened east-going upper flight; 5 + 7 + (4 + arrival) risers, 250 mm treads and 900 mm flights. The starter grows from 2 to 5 risers using floor inside the stair\'s own footprint beside the first riser; the west flight keeps its R2 tread positions, renumbered 3 risers higher; the upper return flight shrinks from 7 to 4 risers at the same going, so the intermediate landing rises from riser 9 to riser 12 and the first-floor trimmer moves from y = 3.45 to y = 4.2. It is built as a conceptual cast-in-situ RCC folded plate - a continuous 150 mm waist slab under each flight, monolithic with 150 mm landing slabs - carried on the plinth, the west external wall, a landing beam zone inside the bedroom cross-wall line and the floor-slab trimmer. No cantilevered treads, no stringers, no wall below the upper flight and no load on either 100 mm partition. Waist thickness, landing beams, supports, reinforcement and connections TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER. The R12 stair, all risers, flights, landings, trimmer, structural support conditions and retained +2.10 to +2.85 m plastered header are unchanged. The west-wall basin still faces EAST with its floating vanity, vessel, black mixer, mirror, standing zone and 0.90 m doorless access unchanged. The nook remains physically separate. The retained header conceals part of the upper flight; the lower flight and its diagonal can be seen through the space above the reduced panel.',7],
- ['f-study','first','Study / family',[.15,.17,3.05,2.2],'2.90 × 2.03 m','Southeast study above the kitchen, with a front window and access to the gallery.',4],
- ['f-master','first','Master / southwest',[.15,6.2,3.05,9.55],'2.90 × 3.35 m','South-facing bed head. Private ensuite and a separate side door to the rear drying balcony.',4],
- ['f-child','first','Bedroom 3 / north',[3.15,2.5,5.83,6.1],'2.68 × 3.60 m','North bedroom retained. The existing 0.55 m deep, 2.10 m high oak wardrobe now returns along the entrance wall with paired corner-access doors; the bedroom door and north window remain clear.',4],
- ['f-bath2','first','Ensuite 2',[3.15,6.2,4.45,8.2],'1.30 × 2.00 m','Master ensuite, stacked directly above Ensuite 1. Rear-facing high-level vent.',4],
- ['f-bath3','first','Ensuite 3',[4.55,6.2,5.83,8.2],'1.28 × 2.00 m','Private to Bedroom 3; above the ground service passage. Rear vent and north-side window.',4],
- ['f-balcony','first','Front balcony',[3.15,0,5.83,1.2],'2.68 × 1.20 m','Glass railing and recessed sliding door, reached from the common front gallery.',4],
- ['f-drying','first','Rear drying balcony',[3.15,8.3,5.83,9.72],'2.68 × 1.42 m','Covered and ventilated. Entry is from the master side wall, never through either bathroom.',4],
- ['f-gallery','first','Front gallery',[3.15,1.35,5.83,2.4],'2.68 × 1.05 m','Common access between study, bedroom and front balcony.',4],
- ['f-stair','first','Stair continuation',[.15,2.3,3.05,6.1],'17 risers to roof','The upward flight remains open. Full stair access to +6.45 m, with a separate downward arrival from ground. The FF-to-roof stair repeats the same conceptual RCC waist and landing slabs, springing off the first-floor slab edge and framing into the roof slab. TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER.',8],
+ ['g-kitchen','ground','Kitchen / southeast',plan.dimensions.room_boxes_m['g-kitchen'],'','East-facing hob; separate sink on the north counter. Door opens from the stair passage.',3],
+ ['g-living','ground','Living & dining',plan.dimensions.room_boxes_m['g-living'],'','R1: the passage partition is removed conditionally, opening the former passage into the living area. R14 holds the coordinated R10 opening in the stair-side partition from y = 3.20 to y = 5.20: cut away to +2.10 m, retained above as a plastered header to the 2.85 m slab soffit. A full-height opening is not assumed and needs separate structural and architectural verification. Nothing is built against that wall any more - R14 moves the TV joinery across the stairwell into the bay under the lower/west flight, so from the living room you look through the opening, under the header, to the fitted composition about 1.40 m beyond. Nothing projects into the open living connection. Beyond y = 5.20 the wall still opens directly onto the basin nook through the 0.90 m archway, with no doors. The living floor is open. Independent rear access is retained.',3],
+ ['g-bed','ground','Bedroom 1 / southwest',plan.dimensions.room_boxes_m['g-bed'],'','Bed head faces south. Private sliding access to Ensuite 1; entrance from the level stair passage.',3],
+ ['g-bath','ground','Ensuite 1',plan.dimensions.room_boxes_m['g-bath'],'','WC, basin and shower; accessible only from Bedroom 1.',3],
+ ['g-sit','ground','East sit-out',plan.dimensions.room_boxes_m['g-sit'],'','Covered entry within the ground-floor external envelope. Three approach steps.',3],
+ ['g-work','ground','Rear work area',plan.dimensions.room_boxes_m['g-work'],'','Sink, washing machine and preparation counter. Wash only; no rear cooking hearth. Direct backyard steps.',3],
+ ['g-route','ground','Rear service passage',plan.dimensions.room_boxes_m['g-route'],'','Independent route from dining to the work area without entering a bedroom or ensuite.',3],
+ ['g-stair','ground','South stair & passage',plan.dimensions.room_boxes_m['g-stair'],'','R9: south-going starter, west-going lower flight and shortened east-going upper flight; 5 + 7 + (4 + arrival) risers, 250 mm treads and 900 mm flights. The starter grows from 2 to 5 risers using floor inside the stair\'s own footprint beside the first riser; the west flight keeps its R2 tread positions, renumbered 3 risers higher; the upper return flight shrinks from 7 to 4 risers at the same going, so the intermediate landing rises from riser 9 to riser 12 and the first-floor trimmer moves from y = 3.45 to y = 4.2. It is built as a conceptual cast-in-situ RCC folded plate - a continuous 150 mm waist slab under each flight, monolithic with 150 mm landing slabs - carried on the plinth, the west external wall, a landing beam zone inside the bedroom cross-wall line and the floor-slab trimmer. No cantilevered treads, no stringers, no wall below the upper flight and no load on either 150 mm finished partition. Waist thickness, landing beams, supports, reinforcement and connections TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER. The R12 stair, all risers, flights, landings, trimmer, structural support conditions and retained +2.10 to +2.85 m plastered header are unchanged. The west-wall basin still faces EAST with its floating vanity, vessel, black mixer, mirror, standing zone and 0.90 m doorless access unchanged. The nook remains physically separate. The retained header conceals part of the upper flight; the lower flight and its diagonal can be seen through the space above the reduced panel.',7],
+ ['f-study','first','Study / family',plan.dimensions.room_boxes_m['f-study'],'','Southeast study above the kitchen, with a front window and access to the gallery.',4],
+ ['f-master','first','Master / southwest',plan.dimensions.room_boxes_m['f-master'],'','South-facing bed head. Private ensuite and a separate side door to the rear drying balcony.',4],
+ ['f-child','first','Bedroom 3 / north',plan.dimensions.room_boxes_m['f-child'],'','North bedroom retained. The existing 0.55 m deep, 2.10 m high oak wardrobe now returns along the entrance wall with paired corner-access doors; the bedroom door and north window remain clear.',4],
+ ['f-bath2','first','Ensuite 2',plan.dimensions.room_boxes_m['f-bath2'],'','Master ensuite, stacked directly above Ensuite 1. Rear-facing high-level vent.',4],
+ ['f-bath3','first','Ensuite 3',plan.dimensions.room_boxes_m['f-bath3'],'','Private to Bedroom 3; above the ground service passage. Rear vent and north-side window.',4],
+ ['f-balcony','first','Front balcony',plan.dimensions.room_boxes_m['f-balcony'],'','Glass railing and recessed sliding door, reached from the common front gallery.',4],
+ ['f-drying','first','Rear drying balcony',plan.dimensions.room_boxes_m['f-drying'],'','Covered and ventilated. Entry is from the master side wall, never through either bathroom.',4],
+ ['f-gallery','first','Front gallery',plan.dimensions.room_boxes_m['f-gallery'],'','Common access between study, bedroom and front balcony.',4],
+ ['f-passage','first','Common passage',plan.dimensions.room_boxes_m['f-passage'],'','900 mm clear between the retained stair wall and aligned central partition.',4],
+ ['f-stair','first','Stair continuation',plan.dimensions.room_boxes_m['f-stair'],'','The upward flight remains open. Full stair access to +6.45 m, with a separate downward arrival from ground. The FF-to-roof stair repeats the same conceptual RCC waist and landing slabs, springing off the first-floor slab edge and framing into the roof slab. TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER.',8],
  ['r-head','roof','Roof stair enclosure',[0,2.15,2.2,6.25],'2.20 × 4.10 m outside','9.02 m² additional area. 2.40 m clear landing height; cap +9.00 m. North-side 900 mm outward-opening exit.',9],
  ['r-terrace','roof','Open roof terrace',[2.2,.15,5.85,9.55],'Roof level +6.45 m','Open to sky, with 1.10 m perimeter guarding. Drainage falls, outlet and overflow are indicative.',5],
  ['r-services','roof','Services reserve',[.35,7.5,1.8,9.05],'Indicative reserve','A reserved footprint only. No water tank or solar installation is specified in the plan.',5],
- ["g-media", "ground", "Fitted under-stair TV, lower-flight bay", revision.tv.unit, "2.25 \u00d7 0.35 m cabinet \u00b7 x = 0.69-1.04 \u00b7 faces east", "R14 builds the fitted TV joinery into the volume under the lower/west flight instead of against the stair-side wall. A 30 mm oak backing at x = 0.72-0.75 follows the measured underside of that flight, held 60 mm clear, rising from +0.569 m at y = 3.23 to +1.691 m at y = 4.82 and then running level at +1.888 m under the 12R landing to y = 5.45. A 2.25 x 0.35 m base cabinet capped at +0.45 m on a recessed lit plinth runs the whole length with its face at x = 1.04, just clear of the flight edge at x = 1.05 and its balustrade at x = 1.07. A 43-inch screen, 0.96 x 0.54 m, is surface-mounted on the backing at centreline y = 4.64 and centre +0.87 m; a low shelf sits beside it and a two-shelf end bay closes the run at the nook end. The unit faces EAST and is seen from the living room through the retained 2.00 m headed opening, about 1.35 m away. Nothing is built against the stair-side wall and nothing enters the 1.00 m living passage. Enclosed storage is about 0.265 m3.", 7],
+ ["g-media", "ground", "Fitted under-stair TV, lower-flight bay", revision.tv.unit, "2.25 \u00d7 0.35 m cabinet \u00b7 x = 0.69-1.04 \u00b7 faces east", "R14 builds the fitted TV joinery into the volume under the lower/west flight instead of against the stair-side wall. A 30 mm oak backing at x = 0.72-0.75 follows the measured underside of that flight, held 60 mm clear, rising from +0.569 m at y = 3.23 to +1.691 m at y = 4.82 and then running level at +1.888 m under the 12R landing to y = 5.45. A 2.25 x 0.35 m base cabinet capped at +0.45 m on a recessed lit plinth runs the whole length with its face at x = 1.04, just clear of the flight edge at x = 1.05 and its balustrade at x = 1.07. A 43-inch screen, 0.96 x 0.54 m, is surface-mounted on the backing at centreline y = 4.64 and centre +0.87 m; a low shelf sits beside it and a two-shelf end bay closes the run at the nook end. The unit faces EAST and is seen from the living room through the retained 2.00 m headed opening, about 1.40 m away. Nothing is built against the stair-side wall and nothing enters the open living connection. Enclosed storage is about 0.265 m3.", 7],
  ['g-wash','ground','Washbasin in the lower-flight bay, continuing the TV run',revision.wash.box,'0.62 \u00d7 0.35 m vanity \u00b7 x = 0.69-1.04, y = 5.48-6.10 \u00b7 faces east','R15 moves the basin out of the corner against the bedroom (west) wall and into the same band as the TV joinery, continuing that run past its end bay to the wall. It keeps the same 0.35 m depth, the same face plane at x = 1.04 and the same east-facing orientation as the screen across the bay, so you walk in through the 0.90 m archway and the basin is square in front of you instead of 90 degrees to your right. The +0.86 m rim, the 0.40 \u00d7 0.80 m vertical mirror at z = 1.00-1.80, the 750 \u00d7 600 mm standing zone and the archway itself are exactly as approved; the vanity gains 0.12 m only because the bay now runs to the wall. Clear height becomes a uniform 1.95 m under the flat 12R landing, because the standing zone no longer reaches the landing edge that gave the old position its 1.91 m. A full-height oak fin at y = 5.45-5.48 closes the TV run and screens the joinery from splash, so the two share one backing and one face plane while remaining separate bays. Supply and waste run behind the backing panel and turn into the y = 6.10 wall at the end of the run - TO BE COORDINATED WITH THE PLUMBING DESIGN. The corner it vacates, x = 1.25-2.05 and y = 5.15-6.10 against the already-panelled wall, is left clear for the enclosed storage this design has lacked since R9 deleted the under-stair store. Hand washing only.',3],
 ].map(([id,level,name,box,dimensions,description,sheet])=>({id,level,name,box,dimensions,description,sheet}));
-rooms.find(r=>r.id==='g-living').regions=[[3.15,1.35,5.78,6.1],[2.15,2.3,3.15,6.1]];
+// R17 room faces come from the coordinated drawing dimensions.
+for(const room of rooms){
+ const b=plan.dimensions.room_boxes_m?.[room.id];
+ if(b){room.box=b;room.dimensions=`${(b[2]-b[0]).toFixed(3)} × ${(b[3]-b[1]).toFixed(3)} m clear`;}
+ if(room.id==='g-stair')room.dimensions='17 risers · 0.90 m clear flights';
+ if(room.id==='f-stair')room.dimensions='17 risers to roof · 0.90 m clear passage';
+ room.clearAreaM2=plan.dimensions.room_clear_areas_m2?.[room.id];
+ const regions=plan.dimensions.room_regions_m?.[room.id];if(regions)room.regions=regions;
+}
 export function openingsFor(level){
  const front=plan.openings[level==='ground'?'FRONT_GF':'FRONT_FF'];
  const rear=plan.openings[level==='ground'?'REAR_GF':'REAR_FF'];
@@ -50,8 +59,9 @@ export function openingsFor(level){
    const schedule=axis==='h' ? (y<=1.2?front:y>=8.2?rear:[]) : [];
    const match=schedule.find(a=>Math.abs(a[0]-x)<1e-6&&Math.abs(a[1]-w)<1e-6);
    if(match){[, ,sill,height,kind]=match;assumed=false;}
-   if(c.op==='opening'&&x===3.05&&y===6.4)kind='pocket';
-   if(c.op==='window'&&axis==='v'&&x===5.85&&y===7){sill=1.65;height=.5;}
+   if(c.op==='opening'&&x===3.1&&y===6.6)kind='surface-slider';
+   if(c.op==='door'&&c.kwargs?.leaf===false)kind='surface-slider';
+   if(c.op==='window'&&axis==='v'&&x===5.83&&y===7){sill=1.65;height=.5;}
   }
   return {x,y,w,t,axis,sill,height,kind,assumed,swing,hinge,box:axis==='h'?[x,y,x+w,y+t]:[x,y,x+t,y+w]};
  });
@@ -63,7 +73,7 @@ export function wallPieces(level){
  const walls=revisedWallBoxes(level,plan.levels[level].filter(c=>c.op==='wall').map(c=>c.args.slice(0,4)));
  // The north rear privacy screen is drawn as a dark fill, not a wall command. R8: on the ground
  // floor it follows the thickened east and rear faces.
- if(level!=='roof'){const e=ENVELOPE[level];walls.push([6-EXTERNAL_WALL[level],8.3,6,e[3]]);}
+ if(level!=='roof'){const e=ENVELOPE[level];walls.push([6-EXTERNAL_WALL[level],8.50,6,e[3]]);}
  return walls.flatMap(b=>{
   const axis=b[2]-b[0]>=b[3]-b[1]?'h':'v',lo=axis==='h'?b[0]:b[1],hi=axis==='h'?b[2]:b[3];
   const cuts=ops.filter(o=>Math.min(o.box[2],b[2])-Math.max(o.box[0],b[0])>1e-5&&Math.min(o.box[3],b[3])-Math.max(o.box[1],b[1])>1e-5);
@@ -111,7 +121,7 @@ export function stairLandingExtensions(level='ground'){
 // R6: the stair is represented as a conventional cast-in-situ folded plate - a continuous
 // waist slab under each flight, monolithic with the landing slabs at the turns. It bears on
 // the plinth, the 150 mm west external wall, a landing beam zone inside the existing bedroom
-// cross-wall line, and the floor-slab trimmer at the stairwell edge. The 100 mm stair-side and
+// cross-wall line, and the floor-slab trimmer at the stairwell edge. The 150 mm finished stair-side and
 // bedroom partitions carry nothing. Thicknesses are indicative massing shared with the drawings
 // through under-stair-layout.json; the final design is the structural engineer's.
 const SLOPE=Math.hypot(.25,3/17);

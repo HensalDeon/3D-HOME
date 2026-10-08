@@ -1,9 +1,9 @@
 {
-  "revision": "R10",
+  "revision": "R17 wall alignment / retained conceptual member sizing",
   "system": "conceptual cast-in-situ RCC frame: columns inside existing wall lines and piers, beams on the grid, two-way floor slabs",
   "status": "TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER",
   "indicative": true,
-  "note": "STRUCTURE SHOWN AS CONCEPTUAL FRAMING MASSING ONLY. COLUMN AND BEAM SIZES, SLAB THICKNESSES, REINFORCEMENT, FOUNDATIONS AND ALL CONNECTIONS TO BE DESIGNED BY STRUCTURAL ENGINEER. THE GRID AND MEMBER POSITIONS ARE ONE COORDINATED OPTION, NOT A STRUCTURAL DESIGN. 100 MM PARTITION WALLS ARE NOT TO BE ASSUMED LOAD-BEARING.",
+  "note": "STRUCTURE SHOWN AS CONCEPTUAL FRAMING MASSING ONLY. COLUMN AND BEAM SIZES, SLAB THICKNESSES, REINFORCEMENT, FOUNDATIONS AND ALL CONNECTIONS TO BE DESIGNED BY STRUCTURAL ENGINEER. THE GRID AND MEMBER POSITIONS ARE ONE COORDINATED OPTION, NOT A STRUCTURAL DESIGN. 150 MM FINISHED PARTITION WALLS ARE NOT TO BE ASSUMED LOAD-BEARING. R17 coordinates the rear cross-beam line with the deeper bathrooms. Other member positions and all indicative widths/depths are retained; grid B and column/pier projections require engineer review against the aligned 150 mm wall faces. No member has been reduced to hide a projection.",
   "slab": 0.15,
   "indicativeBeam": 0.3,
   "gridX": [
@@ -21,13 +21,13 @@
       "id": "B",
       "at": 3.1,
       "host": [
-        3.05,
-        3.15
+        3.1,
+        3.25
       ],
-      "note": "central spine wall line, 100 mm, with the existing front and rear piers",
-      "thickness": 0.1,
+      "note": "central spine wall line, 150 mm finished, with the existing front and rear piers",
+      "thickness": 0.15,
       "project": "+",
-      "projectNote": "east, into the living / service side, clear of the kitchen, stair and bedrooms"
+      "projectNote": "retained conceptual members straddle the R17 wall band: 50 mm to its west and 30 mm to its east; engineer to coordinate pier finishes, member sizing and usable clearance"
     },
     {
       "id": "C",
@@ -65,11 +65,11 @@
       "id": "3",
       "at": 2.25,
       "host": [
-        2.2,
+        2.15,
         2.3
       ],
-      "note": "kitchen / stair cross wall, 100 mm",
-      "thickness": 0.1,
+      "note": "kitchen / stair cross wall, 150 mm finished",
+      "thickness": 0.15,
       "project": "-",
       "projectNote": "south, into the kitchen; projecting into the stair side would drop headroom over the starter landing to 2.20 m"
     },
@@ -78,22 +78,22 @@
       "at": 6.15,
       "host": [
         6.1,
-        6.2
+        6.25
       ],
-      "note": "bedroom cross wall, 100 mm; also carries the stair intermediate landing",
-      "thickness": 0.1,
+      "note": "bedroom cross wall, 150 mm finished; also carries the stair intermediate landing",
+      "thickness": 0.15,
       "project": "+",
       "projectNote": "north, into Bedroom 1; projecting into the stair side would clash with the under-stair store"
     },
     {
       "id": "5",
-      "at": 8.25,
+      "at": 8.425,
       "host": [
-        8.2,
-        8.3
+        8.35,
+        8.5
       ],
-      "note": "rear cross wall, 100 mm",
-      "thickness": 0.1,
+      "note": "rear cross wall, 150 mm finished",
+      "thickness": 0.15,
       "project": "+",
       "projectNote": "north, into the rear work area"
     },
@@ -216,12 +216,12 @@
     {
       "id": "B5",
       "x": 3.1,
-      "y": 8.25,
+      "y": 8.425,
       "box": [
         3.05,
-        8.2,
+        8.35,
         3.28,
-        8.43
+        8.58
       ],
       "within": "spine meets the rear cross wall",
       "size": "230 x 230 mm indicative"
@@ -281,12 +281,12 @@
     {
       "id": "C5",
       "x": 5.89,
-      "y": 8.25,
+      "y": 8.425,
       "box": [
         5.78,
-        8.2,
+        8.35,
         6.0,
-        8.43
+        8.58
       ],
       "within": "east wall meets the rear cross wall",
       "size": "220 x 230 mm indicative"
@@ -395,12 +395,12 @@
       "from": "B4",
       "to": "B5",
       "within": "spine wall line",
-      "span": 2.1,
+      "span": 2.275,
       "box": [
         3.05,
         6.15,
         3.28,
-        8.25
+        8.425
       ],
       "runs": "y"
     },
@@ -409,10 +409,10 @@
       "from": "B5",
       "to": "B6",
       "within": "spine wall line",
-      "span": 1.41,
+      "span": 1.235,
       "box": [
         3.05,
-        8.25,
+        8.425,
         3.28,
         9.66
       ],
@@ -451,12 +451,12 @@
       "from": "C4",
       "to": "C5",
       "within": "east external wall",
-      "span": 2.1,
+      "span": 2.275,
       "box": [
         5.78,
         6.15,
         6.0,
-        8.25
+        8.425
       ],
       "runs": "y"
     },
@@ -465,10 +465,10 @@
       "from": "C5",
       "to": "C6",
       "within": "east external wall",
-      "span": 1.41,
+      "span": 1.235,
       "box": [
         5.78,
-        8.25,
+        8.425,
         6.0,
         9.66
       ],
@@ -566,9 +566,9 @@
       "span": 2.79,
       "box": [
         3.1,
-        8.2,
+        8.35,
         5.89,
-        8.43
+        8.58
       ],
       "runs": "x"
     },
@@ -610,7 +610,7 @@
         2.15,
         6.1
       ],
-      "within": "over the retained 100 mm stair-side partition line, spanning between the grid 3 and grid 4 beams",
+      "within": "over the retained 150 mm finished stair-side partition line, spanning between the grid 3 and grid 4 beams",
       "note": "FLOOR-SLAB TRIMMER ZONE - TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER R10 removes the partition below it between y = 3.20 and y = 5.20 for the built-in TV unit and retains a plastered header from +2.10 m to the slab, hung off this zone."
     },
     {
@@ -667,14 +667,15 @@
     ]
   },
   "coordination": [
-    "Beam and column lines on grids B, 3, 4 and 5 (the 100 mm walls; A, C, 1 and 6 are now 220 mm and fully conceal their members) follow existing 100 mm walls, so those members must be wider than the wall. Each is shown projecting to one declared side: grid B east into the living and service side, grid 3 south into the kitchen (projecting the other way would drop headroom over the stair starter landing to 2.20 m), grid 4 north into Bedroom 1 (projecting the other way would clash with the R9 basin against the bedroom wall), grid 5 north into the rear work area.",
-    "Column C4 is the only member not already implied by an existing wall junction or pier. It stands inside the 150 mm east external wall beside the rear service passage and takes no room area.",
+    "Beam and column lines on grids B, 3, 4 and 5 (the 150 mm finished walls; A, C, 1 and 6 are now 220 mm and fully conceal their members) follow revised 150 mm finished walls, so those members must be wider than the wall. Each is shown projecting to one declared side: grid B east into the living and service side, grid 3 south into the kitchen (projecting the other way would drop headroom over the stair starter landing to 2.20 m), grid 4 north into Bedroom 1 (projecting the other way would clash with the R9 basin against the bedroom wall), grid 5 north into the rear work area.",
+    "Column C4 is the only member not already implied by an existing wall junction or pier. It stands inside the 220 mm ground external wall beside the rear service passage and takes no room area.",
     "No column falls inside the living, dining, kitchen or any bedroom floor area.",
     "Foundations, plinth beams and the ground-slab build-up are not shown and are entirely for the engineer.",
     "The staircase follows the R6 conceptual waist-slab system, with R9's riser shift; the grid 4 beam between A4 and B4 is its landing beam line, now carrying the landing at riser 12 instead of riser 9.",
-    "R10 adds no member. It removes the lower 2.10 m of the 100 mm stair-side partition between y = 3.20 and y = 5.20 for the built-in TV unit and retains it above as a plastered header; the stair-side trimmer zone already spans that whole wall line at the first-floor slab. R10 also closes the first-floor slab over the arrival landing R9 extended to y = 4.20 (see slabs.openings.stairwell.exceptNote)."
+    "R10 adds no member. It removes the lower 2.10 m of the 150 mm finished stair-side partition between y = 3.20 and y = 5.20 for the built-in TV unit and retains it above as a plastered header; the stair-side trimmer zone already spans that whole wall line at the first-floor slab. R10 also closes the first-floor slab over the arrival landing R9 extended to y = 4.20 (see slabs.openings.stairwell.exceptNote).",
+    "R17 rear cross-wall moves to y = 8.35-8.50. Recheck the rear cross-beam, grid B, piers and increased partition loads against final finished faces. Architectural walls/pier caps are flush; the separate indicative frame can project beyond those bands and is not a construction design."
   ],
   "indicativeBeamNote": "Beams are drawn as an indicative 300 mm downstand under the slab soffit. No size is specified.",
   "memberWidth": 0.23,
-  "memberWidthNote": "Members are drawn at the thickness of the wall that hosts them where that is 150 mm or more, so they stay concealed. Where the host is a 100 mm wall they are drawn 230 mm wide and shown projecting to one declared side. 230 mm is indicative only; the engineer sets every size."
+  "memberWidthNote": "R16 retains the previously published conceptual member boxes and structural grids. Internal walls are now 150 mm finished including plaster; indicative 230 mm members remain wider than the partitions on their declared projection sides. The engineer must coordinate final member sizes and partition loads."
 }

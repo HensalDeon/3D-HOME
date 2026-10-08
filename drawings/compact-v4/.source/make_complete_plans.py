@@ -30,18 +30,18 @@ def base(c, ignored_number, title, subtitle):
     c.setLineWidth(.5)
     c.line(16*mm, 249*mm, 404*mm, 249*mm)
     c.line(16*mm, 19*mm, 404*mm, 19*mm)
-    house.tx(c, 16, 12, 'COORDINATED REVIEW SET / 08 SEP 2026 / DIMENSIONS IN METRES', 7, house.MUTED)
+    house.tx(c, 16, 12, 'COORDINATED REVIEW SET / 08 OCT 2026 / DIMENSIONS IN METRES', 7, house.MUTED)
     house.tx(c, 272, 12, f'ARCHITECT / BUILDER REVIEW - NOT FOR CONSTRUCTION   {PAGE_NUMBER:02d} / {TOTAL:02d}', 6.3, house.MUTED)
 
 
 def cover(c):
-    base(c, 1, 'Complete house plans / full roof access', 'A3 COORDINATED DESIGN REVIEW SET / THREE BEDROOMS, THREE ENSUITES / R8 EXTERNAL WALLS 220 / 170 MM / R13 UNDER-STAIR COMPOSITION')
+    base(c, 1, 'Complete house plans / full roof access', 'A3 COORDINATED DESIGN REVIEW SET / THREE BEDROOMS, THREE ENSUITES / R8 EXTERNAL WALLS 220 / 170 MM / R17 INTERNAL WALLS 150 MM INCLUDING PLASTER')
     c.drawImage(str(OUT/'exterior-concept.png'), 20*mm, 92*mm, width=226*mm, height=150*mm, preserveAspectRatio=True, anchor='c')
     house.tx(c, 262, 235, 'DRAWING INDEX', 11, house.TEAL, True)
     entries = [
         ('01', 'Cover, index and design basis'),
         ('02', 'Site, parking and main-floor area'),
-        ('03', 'Ground floor / R13 under-stair composition'),
+        ('03', 'Ground floor / 150 mm finished internal walls'),
         ('04', 'First floor / roof-stair continuation'),
         ('05', 'Roof plan / full-stair enclosure'),
         ('06', 'Integrated front and rear elevations'),
@@ -56,8 +56,8 @@ def cover(c):
         house.tx(c, 262, 224-i*8, n, 8, house.TEAL, True)
         house.tx(c, 274, 224-i*8, label, 8, house.INK)
     house.para(c, 262, 126, 'Print on A3 at 100% / actual size. Each drawing states its scale. Do not scale the photographs or the developed stair diagram horizontally.', 134, 8, 4.5)
-    house.para(c, 262, 101, 'This set replaces the separate compact-v4 and integrated-roof review PDFs. The current design includes full stairs to the roof and one conceptual structural framing option. The R13 under-stair composition stands in the coordinated R10 wall opening - cut to +2.10 m, plastered header retained above; a full-height removal is not assumed.', 134, 8, 4.5)
-    house.block(c, 25, 82, 'COORDINATED DESIGN BASIS', 'R8 external walls: 220 mm ground, 170 mm first. Ground floor: 59.30 m2 / 638.3 sq ft. First floor: 58.51 m2 / 629.8 sq ft. Roof enclosure: 9.02 m2 / 97.09 sq ft additional. Conservative total: 126.84 m2 / 1,365.3 sq ft. Roof landing +6.45 m; stair cover +9.00 m. Rear balcony entry is on the master-bedroom side wall, with two toilet vents facing the rear.', 218)
+    house.para(c, 262, 113, 'This set replaces the separate compact-v4 and integrated-roof review PDFs. The current design includes full stairs to the roof and one conceptual structural framing option. Internal walls are 150 mm total including plaster. Connected wall faces are flush; deeper rebalanced bathrooms and adjusted furniture preserve clear circulation. Stair clearances and the 900 mm first-floor passage are retained. The R15 under-stair composition stands in the coordinated R10 wall opening - cut to +2.10 m, plastered header retained above; a full-height removal is not assumed.', 134, 8, 4.5)
+    house.block(c, 25, 82, 'COORDINATED DESIGN BASIS', 'External walls: 220 mm ground, 170 mm first. Internal walls: 150 mm finished including plaster. Ground floor: 59.30 m2 / 638.3 sq ft. First floor: 58.51 m2 / 629.8 sq ft. Roof enclosure: 9.02 m2 / 97.09 sq ft additional. Conservative total: 126.84 m2 / 1,365.3 sq ft. Roof landing +6.45 m; stair cover +9.00 m. Rear balcony entry is on the master-bedroom side wall, with two toilet vents facing the rear.', 218)
     house.block(c, 262, 76, 'FOR ARCHITECT / BUILDER REVIEW', 'Dimensioned vectors govern over the render. The stair is shown as a conceptual RCC waist-slab system only; its waist thickness, landing beams, supports, reinforcement and connections must be designed by a structural engineer. Measured site set-out, structural design, stair headroom, waterproofing, services and permit drawings remain to be coordinated by the project professionals.', 134)
 
 
@@ -103,7 +103,7 @@ def main():
     c = canvas.Canvas(str(PDF), pagesize=house.PAGE, pageCompression=1)
     c.setTitle('Hensal - Complete House Plans with Full Roof Access')
     c.setAuthor('Hensal residence - design review set')
-    c.setSubject('Coordinated site, floor plans, full roof access, elevations and exterior. Architect/builder review; not for construction.')
+    c.setSubject('R17 internal walls 150 mm including plaster. Coordinated site, floor plans, full roof access, elevations and exterior. Architect/builder review; not for construction.')
     for PAGE_NUMBER, (slug, title, draw) in enumerate(sheets, 1):
         c.bookmarkPage(slug)
         c.addOutlineEntry(f'{PAGE_NUMBER:02d} - {title}', slug, 0)
@@ -116,13 +116,13 @@ def main():
             (OUT/f'{slug}.svg').write_text(pg.get_svg_image())
     sections = ''.join('<section id="'+slug+'"><h2>'+str(i)+'. '+title+'</h2><img alt="'+title+'" src="data:image/png;base64,'+base64.b64encode((OUT/f'{slug}.png').read_bytes()).decode()+'"></section>' for i, (slug, title, _) in enumerate(sheets, 1))
     nav = ''.join('<a href="#'+slug+'">'+str(i)+'. '+title+'</a>' for i, (slug, title, _) in enumerate(sheets, 1))
-    (OUT/'index.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hensal / Complete house plans</title><style>*{box-sizing:border-box}body{margin:0;background:#edf0eb;color:#25343b;font:16px system-ui}header,main{max-width:1450px;margin:auto;padding:24px}h1{font-size:34px;letter-spacing:-.03em}p{line-height:1.6;max-width:1050px}h2{font-size:19px;color:#197a77}section{margin-bottom:32px;scroll-margin-top:20px}img{display:block;width:100%;box-shadow:0 4px 24px #25343b18}nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}a{color:#197a77}nav a{padding:8px 12px;border:1px solid #b8c6c0;border-radius:20px;text-decoration:none;font-size:13px}.download{display:inline-block;background:#197a77;color:white;border-radius:8px;padding:12px 18px;text-decoration:none}a:focus-visible{outline:3px solid #b87f33;outline-offset:3px}@media(max-width:600px){header,main{padding:16px}h1{font-size:27px}}</style><header><h1>Complete house plans + full roof access</h1><p>One coordinated, 12-sheet A3 package for your architect and builder. Site, ground and first floors, three ensuites, full roof stairs, roof plan, elevations, setbacks and the current exterior image.</p><a class="download" href="Hensal_Complete_House_Plans.pdf" download="Hensal_Complete_House_Plans.pdf">Download the complete PDF</a><p>Each main floor: 626.46 sq ft. Roof enclosure: 97.09 sq ft additional. Design review set; professional construction detailing remains required.</p><nav aria-label="Drawing sheets">'+nav+'</nav></header><main>'+sections+'</main></html>')
+    (OUT/'index.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hensal / Complete house plans</title><style>*{box-sizing:border-box}body{margin:0;background:#edf0eb;color:#25343b;font:16px system-ui}header,main{max-width:1450px;margin:auto;padding:24px}h1{font-size:34px;letter-spacing:-.03em}p{line-height:1.6;max-width:1050px}h2{font-size:19px;color:#197a77}section{margin-bottom:32px;scroll-margin-top:20px}img{display:block;width:100%;box-shadow:0 4px 24px #25343b18}nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}a{color:#197a77}nav a{padding:8px 12px;border:1px solid #b8c6c0;border-radius:20px;text-decoration:none;font-size:13px}.download{display:inline-block;background:#197a77;color:white;border-radius:8px;padding:12px 18px;text-decoration:none}a:focus-visible{outline:3px solid #b87f33;outline-offset:3px}@media(max-width:600px){header,main{padding:16px}h1{font-size:27px}}</style><header><h1>Complete house plans + full roof access</h1><p>One coordinated, 12-sheet A3 package for your architect and builder. Site, ground and first floors, three ensuites, full roof stairs, roof plan, elevations, setbacks and the current exterior image.</p><a class="download" href="Hensal_Complete_House_Plans.pdf" download="Hensal_Complete_House_Plans.pdf">Download the complete PDF</a><p>Ground: 638.34 sq ft. First: 629.84 sq ft. Main floors: 1,268.19 sq ft. Roof enclosure: 97.09 sq ft additional; total including roof: 1,365.28 sq ft. Internal walls: 150 mm including plaster. Design review set; professional construction detailing remains required.</p><nav aria-label="Drawing sheets">'+nav+'</nav></header><main>'+sections+'</main></html>')
     # The desktop HTML preview serves a single file; embed the PDF for downloads.
     gallery = OUT/'index.html'
     pdf_data = base64.b64encode(PDF.read_bytes()).decode()
     gallery.write_text(gallery.read_text().replace('href="Hensal_Complete_House_Plans.pdf"', 'href="data:application/pdf;base64,'+pdf_data+'"'))
     dimensions = house.validate()
-    dimensions.update({'roof_enclosure_m2': roof.HEAD_AREA, 'total_including_roof_m2': 2*house.AREA+roof.HEAD_AREA, 'roof_landing_m': roof.RF, 'roof_cover_top_m': roof.COVER_TOP, 'roof_clear_landing_height_m': 2.4, 'roof_access': 'full south stair from first floor', 'drawing_count': TOTAL})
+    dimensions.update({'roof_enclosure_m2': roof.HEAD_AREA, 'total_including_roof_m2': round(house.GF_AREA+house.FF_AREA+roof.HEAD_AREA,4), 'total_including_roof_sqft': round((house.GF_AREA+house.FF_AREA+roof.HEAD_AREA)/.09290304,2), 'roof_landing_m': roof.RF, 'roof_cover_top_m': roof.COVER_TOP, 'roof_clear_landing_height_m': 2.4, 'roof_access': 'full south stair from first floor', 'drawing_count': TOTAL})
     # R13 under-stair coordination, read straight out of the layout the 3D model is built from, so
     # the published dimensions cannot drift from the model. The wall opening is the one number here
     # that is a structural commitment rather than a joinery dimension, so it is stated with its head,
@@ -137,9 +137,10 @@ def main():
             'header_zone_m': opening['header']['z'],
             'header_depth_m': round(opening['header']['z'][1]-opening['header']['z'][0], 3),
             'slab_soffit_m': opening['headerTop'],
-            'partition_mm': 100,
+            'partition_mm': 150,
+            'partition_basis': 'finished thickness including plaster',
             'full_height_removal_assumed': False,
-            'status': 'Coordinated R10 headed opening, held unchanged through R12/R13/R14. A full-height removal with no header is not assumed and must not be inferred; it requires separate structural and architectural verification. TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER.',
+            'status': 'Coordinated R10 headed opening, retained through R17; partition widened to 150 mm finished. A full-height removal with no header is not assumed and must not be inferred; it requires separate structural and architectural verification. TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER.',
         },
         'under_stair_composition': {
             'under_flight': tv['under'],
