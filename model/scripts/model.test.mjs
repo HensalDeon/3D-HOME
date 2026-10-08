@@ -20,13 +20,13 @@ test('every door/window aperture is empty in the generated wall volumes',()=>{
 test('three private ensuites have correct size, stacking and door positions',()=>{
  const baths=rooms.filter(r=>r.id.includes('bath'));assert.equal(baths.length,3);
  // R8: Ensuite 3 sits against the east wall, which thickened inward by 20 mm on the first floor.
- for(const r of baths){near(r.box[2]-r.box[0],r.id==='f-bath3'?1.28:1.3);near(r.box[3]-r.box[1],2);}
+ for(const r of baths){near(r.box[2]-r.box[0],1.215);near(r.box[3]-r.box[1],2.1);}
  assert.deepEqual(baths[0].box,baths[1].box);
- for(const l of ['ground','first'])assert.ok(openingsFor(l).some(o=>o.kind==='pocket'&&o.x===3.05&&o.y===6.4&&o.w===.75));
- assert.ok(openingsFor('first').some(o=>o.x===4.85&&o.y===6.1&&o.w===.75));
+ for(const l of ['ground','first'])assert.ok(openingsFor(l).some(o=>o.kind==='surface-slider'&&o.x===3.1&&o.y===6.6&&o.w===.75));
+ assert.ok(openingsFor('first').some(o=>o.x===5&&o.y===6.1&&o.w===.75));
 });
 test('master rear balcony has side door, rear has exactly two high toilet vents',()=>{
- const doors=openingsFor('first');assert.ok(doors.some(o=>o.kind==='door'&&o.x===3.05&&o.y===8.4&&o.axis==='v'&&o.w===.85));
+ const doors=openingsFor('first');assert.ok(doors.some(o=>o.kind==='door'&&o.x===3.1&&o.y===8.6&&o.axis==='v'&&o.w===.85));
  const rear=doors.filter(o=>o.axis==='h'&&o.y>=8.2);assert.equal(rear.length,2);for(const o of rear){assert.equal(o.kind,'obscured');near(o.sill,1.65);near(o.height,.5);}
 });
 test('both flights produce 17 equal risers, 250 mm treads and 900 mm landing',()=>{

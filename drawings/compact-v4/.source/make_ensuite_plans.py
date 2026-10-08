@@ -20,11 +20,16 @@ DARK=HexColor('#42494d'); WALL=HexColor('#f1eeE8'); GLASS=HexColor('#b1c7c9')
 BLUE=HexColor('#457b9d'); ROSE=HexColor('#f3e6df'); LINE=HexColor('#bdcbc9')
 W,D=6.0,9.7
 # R8 external wall thickness per floor: 220 mm on the ground, 170 mm on the first, with the
-# internal partitions staying 100 mm throughout. Hybrid growth: the
+# internal partitions revised in R17 to 150 mm FINISHED, INCLUDING PLASTER. Hybrid growth: the
 # west wall grows outward into the 2.70 m parking strip and the rear wall into the 4.10 m garden,
 # while the east and front walls thicken inward so the 1.00 m path and 3.00 m front yard keep
 # their setbacks. Every inner face the stair and the under-stair unit depend on stays put.
 EXT={'GF':.22,'FF':.17}
+INTERNAL=.15
+WALL_SPEC={'finished_mm':150,'basis':'finished thickness including plaster',
+           'method':'shared flush wall bands on both floors; fixed stair/basin faces; 900 mm first-floor passage; deeper rebalanced bathrooms',
+           'masonry_and_plaster_build_up':'Select the masonry unit and plaster coats to total 150 mm; do not add plaster outside this allowance.',
+           'wet_finish_note':'Bathroom dimensions are to plastered wall faces; final tile build-up requires coordination.'}
 def grow(floor):
  """How far this floor's west and rear outer faces sit beyond the nominal envelope."""
  return EXT[floor]-.15
@@ -39,11 +44,75 @@ def floor_area(floor):
 GF_AREA=floor_area('GF');FF_AREA=floor_area('FF')
 SQFT=AREA/0.09290304
 GF_SQFT=GF_AREA/0.09290304;FF_SQFT=FF_AREA/0.09290304
+
+# R17: shared finished face lines, rather than independently expanded wall centrelines.
+SPINE=[3.10,3.25]
+BATH_DIVIDER=[4.465,4.615]
+BATH_FRONT=[6.10,6.25]
+BATH_REAR=[8.35,8.50]
+WC_SPEC={'projection_m':.55,'width_m':.36,'type':'compact WC with concealed cistern',
+         'installation_note':'Maximum installed projection 550 mm from finished wall; coordinate cistern/carrier within the wall/service construction without taking space from the published clear room. Larger fixtures require a fresh clearance check.'}
+
+def internal_walls(floor):
+ """Shared 150 mm finished bands; preserve stairs and the 900 mm passage."""
+ n=5.85-grow(floor)
+ boxes={
+  'front_spine':[SPINE[0],0,SPINE[1],2.3],
+  'rear_spine':[SPINE[0],BATH_FRONT[0],SPINE[1],D+grow(floor)],
+  'kitchen_study_back':[.15,2.15,SPINE[1],2.3],
+  'bedroom_front':[.15,BATH_FRONT[0],SPINE[1],BATH_FRONT[1]],
+  'stair_side':[2.05,2.3,2.2,6.1],
+  'ensuite_front':[SPINE[1],BATH_FRONT[0],BATH_DIVIDER[1] if floor=='GF' else n,BATH_FRONT[1]],
+  'ensuite_divider':[BATH_DIVIDER[0],BATH_FRONT[1],BATH_DIVIDER[1],BATH_REAR[0]],
+  'ensuite_rear':[SPINE[1],BATH_REAR[0],n,BATH_REAR[1]],
+ }
+ if floor=='FF':
+  boxes['passage_spine']=[SPINE[0],2.3,SPINE[1],BATH_FRONT[0]]
+  boxes['north_bedroom_front']=[SPINE[1],2.375,n,2.525]
+ return boxes
+
+def room_boxes(floor):
+ n=5.85-grow(floor);rear=D+grow(floor)
+ b={'kitchen' if floor=='GF' else 'study':[.15,.15+grow(floor),SPINE[0],2.15],
+    'bedroom_sw':[.15,BATH_FRONT[1],SPINE[0],9.55],
+    'ensuite_main':[SPINE[1],BATH_FRONT[1],BATH_DIVIDER[0],BATH_REAR[0]],
+    'front_outdoor':[SPINE[1],0,n,1.2],
+    'rear_outdoor':[SPINE[1],BATH_REAR[1],n,rear],
+    'stair':[.15,2.3,2.05,6.1]}
+ if floor=='GF':
+  b.update(living=[SPINE[1],1.35,n,BATH_FRONT[0]],passage=[2.2,2.3,SPINE[1],6.1],
+           service_passage=[BATH_DIVIDER[1],BATH_FRONT[0],n,BATH_REAR[0]])
+ else:
+  b.update(bedroom_north=[SPINE[1],2.525,n,BATH_FRONT[0]],
+           ensuite_north=[BATH_DIVIDER[1],BATH_FRONT[1],n,BATH_REAR[0]],
+           passage=[2.2,2.3,SPINE[0],6.1],gallery=[SPINE[1],1.35,n,2.375])
+ return b
+
+def bathroom_layout(floor):
+ out=[]
+ for key in ['ensuite_main']+(['ensuite_north'] if floor=='FF' else []):
+  b=room_boxes(floor)[key];x0,y0,x1,y1=b
+  cy=7.03 if key=='ensuite_north' else 6.99
+  basin=[x0,6.43,.35,.28,'x0'] if key=='ensuite_north' else [x0+.35,y0,.4,.28,'y0']
+  bb=[x0,6.255,x0+.28,6.605] if key=='ensuite_north' else [x0+.15,y0,x0+.55,y0+.28]
+  out.append({'room':key,'box':b,'shower':[x0,y1-.9,x1,y1],
+              'shower_entry_width_m':.6,
+              'wc':[x1,cy,'-x',WC_SPEC['projection_m'],WC_SPEC['width_m']],
+              'wc_box':[x1-WC_SPEC['projection_m'],cy-WC_SPEC['width_m']/2,x1,cy+WC_SPEC['width_m']/2],
+              'basin':basin,'basin_box':bb,
+              'wc_front_clear_m':round(x1-x0-WC_SPEC['projection_m'],3),
+              'wc_centre_to_shower_m':round(y1-.915-cy,3),
+              'wc_centre_to_basin_m':round(cy-bb[3],3)})
+
+ return out
+
+
+def clear_size(box):return f'{box[2]-box[0]:.3f} x {box[3]-box[1]:.3f}'
 # x increases north; y increases west. External envelope includes all covered utility/balconies.
 # Opening tuples: (x, width, sill above finished floor, height, kind).
 FRONT_GF=[(.60,1.70,1.00,1.15,'window'),(3.28,.90,0,2.20,'door'),(4.55,1.05,.75,1.45,'window')]
 FRONT_FF=[(.60,1.70,.80,1.40,'window'),(3.45,2.05,0,2.20,'slider')]
-REAR_GF=[(.50,.60,1.35,.70,'window'),(4.70,.90,0,2.15,'door'),(3.23,1.15,1.20,1.00,'obscured')]
+REAR_GF=[(.50,.60,1.35,.70,'window'),(4.70,.90,0,2.15,'door'),(3.30,1.10,1.20,1.00,'obscured')]
 REAR_FF=[(3.50,.65,1.65,.50,'obscured'),(4.90,.65,1.65,.50,'obscured')]
 SOURCES=[
  ('Stair placement / ascent','https://www.architectureideas.info/2008/11/vastu-shastra-guidelines-staircases/comment-page-1/'),
@@ -91,61 +160,38 @@ def fill(p,box,col):p.fill_rect(*box,col)
 def label(p,x,y,s,dim=None):p.label(x,y,s,dim,7.2)
 
 def outer(p,floor):
- g=grow(floor)
+ g=grow(floor);n=5.85-g;r=room_boxes(floor)
  fill(p,envelope(floor),white)
- fill(p,(3.15,0,W,1.2),SAND)
- fill(p,(3.15,8.3,W,D+g),PALE)
- fill(p,(.15,.15,3.05,2.2),SAND)
- fill(p,(.15,6.2,3.05,9.55),ROSE)
- fill(p,(3.15,6.2,4.45,8.2),HexColor('#e6eff3'))
- if floor=='FF':fill(p,(4.55,6.2,5.85,8.2),HexColor('#e6eff3'))
- for box in [(west(floor),0,.15,D+g),(.15,0,3.15,.15+g),(.15,9.55,3.15,D+g),(3.05,0,3.15,D+g),(5.85-g,1.2,6,8.3),(3.15,1.2,6,1.35)]:p.wall(*box)
- p.wall(.15,2.2,3.05,2.3)
- p.wall(.15,6.1,3.05,6.2)
- p.wall(2.05,2.3,2.15,6.1)
- # Ensuite touches bedroom directly; the former public lobby is eliminated.
- p.wall(3.15,6.1,4.55 if floor=='GF' else 5.85,6.2)
- p.wall(4.45,6.2,4.55,8.2)
- p.wall(3.15,8.2,5.85,8.3)
- # SW bedroom entrance from the level passage beside the stair.
- p.door(2.20,6.1,.80,.10,'h',+1,'lo')
- # Sliding door in the long wall to avoid a leaf obstructing the narrow ensuite.
- p.opening(3.05,6.40,.75,.10,'v')
- p.line(3.035,7.15,3.035,7.90,TEAL,.8)
- p.text(2.87,6.8,'SL',4.8,col=TEAL)
- if floor=='GF':
-  p.opening(3.05,2.45,.85,.10,'v')
-  p.opening(3.05,5.2,.90,.10,'v')
-  p.door(4.70,8.2,.90,.10,'h',-1,'hi')
+ for key,col in [('front_outdoor',SAND),('rear_outdoor',PALE),('bedroom_sw',ROSE),('ensuite_main',HexColor('#e6eff3')),('kitchen' if floor=='GF' else 'study',SAND)]:fill(p,r[key],col)
+ if floor=='FF':fill(p,r['ensuite_north'],HexColor('#e6eff3'))
+ for box in [(west(floor),0,.15,D+g),(.15,0,3.25,.15+g),(.15,9.55,3.25,D+g),(n,1.2,6,8.50),(3.25,1.2,6,1.35)]:p.wall(*box)
+ for box in internal_walls(floor).values():p.wall(*box)
+ # Door widths are retained; their reveals now cross the complete 150 mm wall band.
+ p.door(2.20,6.1,.80,INTERNAL,'h',+1,'lo')
+ p.opening(3.1,6.60,.75,INTERNAL,'v')
+ p.rect(3.065,7.35,3.09,8.10,TEAL,.6);p.text(2.95,6.95,'SL',4.8,col=TEAL)
+ if floor=='GF':p.door(4.70,8.35,.90,INTERNAL,'h',-1,'hi')
  else:
-  # Bath 3 belongs only to the north bedroom. Door swings out into its clear rear aisle.
-  p.door(4.85,6.1,.75,.10,'h',-1,'hi')
-  # Rear drying balcony is private to the master; side entrance, not through a bathroom.
-  p.door(3.05,8.40,.85,.10,'v',-1,'hi')
+  p.door(5.00,6.10,.75,INTERNAL,'h',-1,'hi',leaf=False)
+  p.rect(4.25,6.055,5.00,6.08,TEAL,.6);p.text(4.625,6.02,'SL / ENSUITE 3',3.8,col=TEAL)
+  p.door(3.1,8.60,.85,INTERNAL,'v',-1,'hi')
  p.window(west(floor),6.3,1.4,.15+g,'v')
  p.window(west(floor),4.1,1.0,.15+g,'v')
- p.opening(2.05,2.35,.80,.10,'v')
- if floor=='FF':p.window(5.85,7.0,.55,.15,'v')
+ p.opening(2.05,2.35,.80,INTERNAL,'v')
+ if floor=='FF':p.window(n,7.0,.55,.15+g,'v')
  for x,w,sill,h,kind in (FRONT_GF if floor=='GF' else FRONT_FF):
-  yy=0 if x<3.05 else 1.2
-  t=(.15+g) if yy==0 else .15
+  yy=0 if x<3.05 else 1.2;t=(.15+g) if yy==0 else .15
   if kind=='door':p.door(x,yy,w,t,'h',+1,'lo')
-  elif kind=='slider':
-   p.window(x,yy,w,t,'h');p.text(x+w/2,yy+.25,'SLIDING DOOR',5,col=BLUE)
+  elif kind=='slider':p.window(x,yy,w,t,'h');p.text(x+w/2,yy+.25,'SLIDING DOOR',5,col=BLUE)
   else:p.window(x,yy,w,t,'h')
  for x,w,sill,h,kind in (REAR_GF if floor=='GF' else REAR_FF):
   if kind=='door':continue
-  yy=9.55 if x<3.05 else 8.2
-  p.window(x,yy,w,(.15+g) if x<3.05 else .10,'h')
- p.fill_rect(5.85-g,8.3,6,D+g,DARK)
- # Corner piers follow the same per-edge rule as the walls they belong to.
- for x,y in [(3.05,0),(5.85,0),(3.05,9.55),(5.85,9.55)]:
-  # Front piers thicken inward from the fixed outer face; rear piers grow outward from the
-  # fixed inner face. Both therefore run y to y+0.15+g. East piers thicken inward in x.
-  p.wall(x-g if x>5 else x, y, x+.15, y+.15+g)
+  yy=9.55 if x<3.05 else 8.35
+  p.window(x,yy,w,(.15+g) if x<3.05 else INTERNAL,'h')
+ p.fill_rect(n,8.50,6,D+g,DARK)
+ for x,y in [(SPINE[0],0),(5.85,0),(SPINE[0],9.55),(5.85,9.55)]:p.wall(x-g if x>5 else x,y,x+.15,y+.15+g)
  if floor=='FF':
-  p.railing(3.15,0,5.85,0);p.railing(5.93,0,5.93,1.2)
-  p.railing(3.15,9.63,5.85,9.63)
+  p.railing(3.25,0,5.85,0);p.railing(5.93,0,5.93,1.2);p.railing(3.25,9.63,5.85,9.63)
 
 
 def stair(p,floor,show_passage=True,continue_to_roof=False):
@@ -173,70 +219,72 @@ def stair(p,floor,show_passage=True,continue_to_roof=False):
 
 
 def bathroom(p,floor):
- for x,n in [(3.15,'1' if floor=='GF' else '2')]+([(4.55,'3')] if floor=='FF' else []):
-  p.shower(x,7.4,x+1.3,8.2)
-  p.wc(x+1.25,7.0,'-x') # seated facing south
-  p.basin(x+.35,6.2,.4,.32,'y0')
-  p.text(x+.65,7.63,'SHOWER',4.8,col=MUTED)
-  p.text(x+.65,6.68,'ENSUITE '+n,5.8,True)
-  p.text(x+.65,6.45,('%.2f x 2.00'%(1.3-grow(floor))) if n=='3' else '1.30 x 2.00',5.6,col=BLUE)
+ for fit in bathroom_layout(floor):
+  x0,y0,x1,y1=fit['box'];cx=(x0+x1)/2
+  p.shower(*fit['shower']);p.wc(*fit['wc']);p.basin(*fit['basin'])
+  p.line(x0+.6,y1-.9,x1,y1-.9,TEAL,.5)
+  number='3' if fit['room']=='ensuite_north' else ('1' if floor=='GF' else '2')
+  p.text(cx,y1-.30,'SHOWER / 900',4.4,col=MUTED)
+  p.text(cx,6.67,'ENSUITE '+number,5.8,True)
+  p.text(cx,6.44,clear_size(fit['box']),5.1,col=BLUE)
+
 
 
 def bedroom(p,floor):
  # Bed turned 90 deg from the earlier head-west layout so the sleeper's head points
  # south, the classical preference for the SW corner; south window moved clear of it.
- p.bed(.20,7.70,2.20,9.20,'x0')
- p.rect(.15,6.2,1.65,6.75);p.text(.90,6.42,'WARDROBE',5)
- label(p,1.58,6.78,'BED 1 / SW' if floor=='GF' else 'MASTER / SW','2.90 x 3.35')
+ p.bed(.20,7.425,2.20,8.925,'x0')
+ p.rect(.15,6.25,1.65,6.80);p.text(.90,6.47,'WARDROBE',5)
+ label(p,1.65,7.10,'BED 1 / SW' if floor=='GF' else 'MASTER / SW',clear_size(room_boxes(floor)['bedroom_sw']))
  p.text(.35,8.45,'HEAD SOUTH',5,rot=90,col=TEAL)
 
 
 def ground(p):
  outer(p,'GF');stair(p,'GF');bedroom(p,'GF');bathroom(p,'GF')
  # SE kitchen with east-facing cook and separate sink on north counter.
- p.rect(.15,.15,2.95,.75);p.rect(2.45,.75,3.05,1.30)
- p.rect(.70,.22,1.32,.65)
- for x in [.86,1.16]:p.circle(x,.42,.09)
+ p.rect(.15,.22,3.1,.82);p.rect(2.5,.82,3.1,1.30)
+ p.rect(.70,.29,1.32,.72)
+ for x in [.86,1.16]:p.circle(x,.49,.09)
  p.polyline([(1.01,1.20),(1.01,.80)],TEAL,.5,True)
  p.text(1.07,1.35,'FACE EAST',5,col=TEAL)
- p.basin(3.02,1.01,.40,.45,'x1')
- p.rect(.15,1.5,.80,2.2);p.text(.47,1.8,'FR',6)
+ p.basin(3.075,1.06,.40,.45,'x1')
+ p.rect(.15,1.5,.80,2.15);p.text(.47,1.8,'FR',6)
  # Door moved off the living-facing wall onto the passage wall, so cooking odours
  # vent through the service corridor rather than straight into the sitting/dining room.
- p.door(2.10,2.20,.80,.10,'h',-1,'lo')
- label(p,1.78,1.83,'KITCHEN / SE','2.90 x 1.98')
+ p.door(2.10,2.15,.80,INTERNAL,'h',-1,'lo')
+ label(p,1.78,1.83,'KITCHEN / SE',clear_size(room_boxes('GF')['kitchen']))
  # Indicative store/wash nook in the tallest part of the void under the rising
  # flight, near the mid-landing; headroom tapers toward the ground-floor entry,
  # so treat as a study item pending a stair section check.
  p.rect(.15,4.50,1.05,5.10,TEAL,.7,dash=[2,2])
  p.text(.60,4.80,'STORE/WASH - VERIFY HEADROOM',4,True,rot=90,col=TEAL)
  # NE living and dining share the north bay; central walking route stays open.
- p.rect(5.12,2.0,5.85,3.8)
- for y in [2.6,3.2]:p.line(5.12,y,5.85,y,MUTED,.3)
+ p.rect(5.12,2.0,5.78,3.8)
+ for y in [2.6,3.2]:p.line(5.12,y,5.78,y,MUTED,.3)
  p.rect(3.2,3.4,3.43,4.4);p.text(3.32,3.9,'TV',5,rot=90)
  label(p,4.40,2.85,'LIVING / NE')
  p.circle(4.88,4.65,.45)
  for x,y in [(4.88,4.0),(4.88,5.30),(5.5,4.65)]:p.chair(x,y,.38)
  label(p,4.62,5.70,'DINING','OPEN WITH LIVING')
- p.text(5.20,7.3,'PUBLIC ROUTE 1.30',5.5,rot=90,col=MUTED)
+ p.text(5.20,7.3,'REAR ROUTE 1.165',5.5,rot=90,col=MUTED)
  # NE prayer niche in living, clear of bathroom/stair on both floors.
- p.rect(5.35,1.35,5.85,1.72,TEAL,.6);p.text(5.6,1.80,'PRAYER',4.8,col=TEAL)
+ p.rect(5.28,1.35,5.78,1.72,TEAL,.6);p.text(5.6,1.80,'PRAYER',4.8,col=TEAL)
  p.chair(4.65,.65,.45);p.chair(5.32,.65,.45)
- label(p,4.23,.23,'SIT-OUT / 2.63 x 1.20')
+ label(p,4.23,.23,'SIT-OUT / 2.530 x 1.200')
  p.steps(3.25,5.65,0,3,tread=.28)
  p.polyline([(3.73,-.95),(3.73,.70)],TEAL,.7,True)
  p.text(3.7,-1.15,'EAST ENTRY',6,True,col=TEAL)
  # Rear covered wash-only area, no cooking hearth in NW.
- p.rect(3.15,8.30,4.40,8.85)
- p.basin(3.83,8.82,.60,.38,'y1')
- p.rect(3.15,8.90,3.75,9.50);p.text(3.45,9.16,'WM',5.6)
- label(p,4.8,9.28,'REAR WORK','2.63 x 1.47')
+ p.rect(3.25,8.50,4.40,8.95)
+ p.basin(3.83,8.93,.60,.36,'y1')
+ p.rect(3.25,8.95,3.85,9.55);p.text(3.45,9.16,'WM',5.6)
+ label(p,4.8,9.28,'REAR WORK',clear_size(room_boxes('GF')['rear_outdoor']))
  p.text(4.8,8.96,'WASH / PREP ONLY',5,col=TEAL)
  p.steps(4.6,5.7,9.7,3,rise_dir=1,tread=.28)
  p.polyline([(5.15,10.65),(5.15,9.90)],TEAL,.6,True)
- p.text(4.55,10.4,'BACK YARD ACCESS',5.8,col=TEAL)
+ p.text(4.55,10.50,'BACK YARD ACCESS',5.8,col=TEAL)
  # Side windows aligned to the rooms, away from parked-car doors.
- p.window(5.85,3.45,1.10,.15,'v')
+ p.window(5.78,3.45,1.10,.22,'v')
  dimensions(p,'GF')
 
 
@@ -244,37 +292,38 @@ def first(p):
  outer(p,'FF');stair(p,'FF',continue_to_roof=True);bedroom(p,'FF');bathroom(p,'FF')
  # SE study opens to the front gallery and stair base/arrival landing.
  p.rect(.25,.35,1.75,.90);p.chair(1.0,1.25,.45)
- p.rect(2.60,.3,3.05,1.3)
- p.opening(.95,2.2,.90,.10,'h')
- p.opening(3.05,1.35,.85,.10,'v')
- label(p,1.63,1.8,'STUDY / FAMILY','2.90 x 2.03')
+ p.rect(2.65,.3,3.1,1.3)
+ p.opening(.95,2.15,.90,INTERNAL,'h')
+ p.opening(3.1,1.35,.85,INTERNAL,'v')
+ label(p,1.63,1.8,'STUDY / FAMILY',clear_size(room_boxes('FF')['study']))
  # Removing the public rear lobby makes the north bedroom rectangular.
- p.wall(3.15,2.4,5.85,2.5)
- p.door(3.25,2.4,.80,.10,'h',+1,'lo')
- p.window(5.85,3.5,1.3,.15,'v')
- p.bed(3.25,3.90,5.25,5.10,'x0')
- p.rect(5.3,2.6,5.85,3.35);p.text(5.57,2.95,'WARD.',5,rot=90)
- label(p,4.5,5.72,'BED 3 / NORTH','2.68 x 3.60')
+ p.door(3.35,2.375,.80,INTERNAL,'h',+1,'lo')
+ p.window(5.83,3.5,1.3,.17,'v')
+ p.bed(3.25,3.955,5.25,5.455,'x0')
+ p.rect(4.2,2.525,5.28,3.075);p.rect(5.28,2.525,5.83,2.625)
+ p.rect(5.28,2.625,5.83,3.33);p.text(5.57,2.95,'WARD.',5,rot=90)
+ label(p,4.5,3.62,'BED 3 / NORTH',clear_size(room_boxes('FF')['bedroom_north']))
  p.text(3.40,4.50,'HEAD SOUTH',5,rot=90,col=TEAL)
  p.text(4.95,1.9,'FRONT GALLERY',5.5,col=MUTED)
  p.chair(4.45,.62,.42);p.chair(5.25,.62,.42)
- p.text(4.5,.20,'FRONT BALCONY 2.68 x 1.20',6,True)
+ p.text(4.5,.20,'FRONT BALCONY 2.580 x 1.200',6,True)
  p.line(3.4,9.07,5.6,9.07,MUTED,.5,dash=[2,2])
  p.line(3.4,9.32,5.6,9.32,MUTED,.5,dash=[2,2])
- label(p,4.48,8.78,'REAR DRYING','2.68 x 1.42')
+ label(p,4.48,8.78,'REAR DRYING',clear_size(room_boxes('FF')['rear_outdoor']))
  p.text(4.5,9.48,'COVERED / VENTILATED',5,col=TEAL)
  dimensions(p,'FF')
 
 
 def dimensions(p,floor='GF'):
- # R8: the chains follow this floor's external wall thickness. The west and rear faces move out
- # by g, the east and front faces stay put, so only the living bay and the kitchen depth lose g.
  g=grow(floor);e=.15+g;wx=west(floor)
- p.dims('x',D+g+.50,wx,[e,2.90,.10,2.70-g,e],size=6)
+ # The rear chain is through the southwest bedroom and the relocated 150 mm spine.
+ p.dims('x',D+g+.50,wx,[e,2.95,INTERNAL,2.6-g,e],size=6,precision=3)
  p.dims('x',D+g+1.05,wx,[W+g],size=7)
- p.dims('y',wx-.60,0,[e,2.05-g,.10,3.80,.10,3.35,e],size=6)
+ p.dims('y',wx-.60,0,[e,2.15-e,INTERNAL,3.80,INTERNAL,3.30,e],size=6,precision=3)
  p.dims('y',wx-1.2,0,[D+g],size=7)
- p.dims('y',W+.60,0,[1.20,.15,4.75,.10,2.00,.10,1.40+g],size=6,side=-1)
+ p.dims('y',W+.60,0,[1.20,.15,4.75,INTERNAL,2.10,INTERNAL,1.20+g],size=6,side=-1)
+ if floor=='FF':
+  p.dims('x',5.05,2.2,[.90],size=5.0,precision=3)
  p.text(wx-.22,D+g+.25,'SW',6,True,col=TEAL);p.text(W+.22,D+g+.25,'NW',6,True,col=TEAL)
  p.text(wx-.22,-.3,'SE',6,True,col=TEAL);p.text(W+.22,-.3,'NE',6,True,col=TEAL)
 
@@ -291,7 +340,7 @@ def site(c):
  p.fill_rect(5.85,3,8.7,4.2,white);p.fill_rect(5.85,11.3,8.7,12.7,white)
  p.text(5.7,8.6,'6.00 x 9.70 m',11,True,col=TEAL)
  p.text(5.7,7.8,'59.30 / 58.51 m2',8,True)
- p.text(5.7,7.1,'626.5 sq ft / FLOOR',8)
+ p.text(5.7,7.1,'GF 638.34 / FF 629.84 sq ft',7)
  p.text(7.25,3.5,'SIT-OUT',6)
  p.text(7.25,11.8,'REAR WORK',6,True)
  p.steps(5.95,8.35,3,3,tread=.28)
@@ -343,21 +392,21 @@ def ground_sheet(c):
  y=block(c,246,y,'SOUTH STAIR / NE KEPT LIGHT','The stair is in the south band. The main entrance and living room occupy the east/northeast. A small prayer niche is placed in the northeast of the living room.',149)
  y=block(c,246,y,'SE KITCHEN / SW BEDROOM','The hob faces east. The ground bedroom occupies the southwest, with the bed head to the south. Cooking remains in the kitchen; the rear work area has a sink and washing machine, with no second stove.',149)
  y=block(c,246,y,'A CONTINUOUS REAR ROUTE','The 1.30 m north-side internal passage leads from dining to the rear work area. It does not pass through the bedroom or its bathroom. The bedroom entrance is separately reached from the level passage beside the stair.',149)
- y=block(c,246,y,'PRIVATE ATTACHED BATHROOM','Ensuite 1 opens directly from Bedroom 1 through a sliding door. Its clear size is 1.30 x 2.00 m, with WC, basin and shower. There is no shared-bathroom entrance. All three bedrooms in this house have their own bathroom.',149)
- y=block(c,246,y,'DRAWING CONVENTIONS','Dark: walls. Fine lines: furniture. Dashed arcs: door swings. Blue: dimensions. Wall allowance is 150 mm external and 100 mm internal; this is a concept for an engineered frame, not a load-bearing masonry design.',149)
+ y=block(c,246,y,'PRIVATE ATTACHED BATHROOM','Ensuite 1 opens directly from Bedroom 1 through a sliding door. Its clear size is 1.215 x 2.100 m, with WC, basin and shower. There is no shared-bathroom entrance. All three bedrooms in this house have their own bathroom.',149)
+ y=block(c,246,y,'DRAWING CONVENTIONS','Dark: walls. Fine lines: furniture. Dashed arcs: door swings. Blue: dimensions. External walls are 220 / 170 mm; internal walls are 150 mm finished including plaster; this is a concept for an engineered frame, not a load-bearing masonry design.',149)
 
 
 def first_sheet(c):
- base(c,3,'First floor / two bedrooms, two ensuites','DIMENSIONED PLAN  /  1:55 AT A3  /  TWO BEDROOMS, TWO ENSUITES, STUDY AND BALCONIES')
+ base(c,3,'First floor / 150 mm internal walls, clear passage retained','R17 / 08 OCT 2026 / PLAN 1:55 AT A3 / INTERNAL WALLS 150 MM INCLUDING PLASTER / PASSAGE 900 MM CLEAR')
  p=Plan(c,44,45,1000/55);first(p)
  compass(Plan(c,0,0,10),23.4,22.1)
  y=231
  y=block(c,246,y,'FRONT MATCHES THE REFERENCE','The left window belongs to the study/family space. The front balcony is on the right, over the ground-floor sit-out, with a recessed sliding door and glass railing.',149)
- y=block(c,246,y,'BEDROOMS IN SW AND NORTH','The southwest master retains 2.90 x 3.35 m clear dimensions; its west and rear walls grew outward, so nothing inside it moved. The north bedroom is a 2.68 x 3.60 m rectangle (9.65 m2) after the 170 mm east wall thickened inward. Each bedroom has its own door into its own ensuite: 1.30 x 2.00 m, and 1.28 x 2.00 m for Ensuite 3 against that east wall.',149)
- y=block(c,246,y,'NO BEDROOM IN THE SOUTHEAST','The southeast front room is a study/family space above the kitchen. The child\'s bedroom is in the north band. The master stays southwest, with southward bed-head orientation.',149)
- y=block(c,246,y,'REAR DRYING TERRACE','The covered rear balcony remains above the work area. Access is now through a side door from the master bedroom, not through either ensuite. It is private to the master; the front balcony remains accessible from the common gallery.',149)
+ y=block(c,246,y,'BEDROOMS IN SW AND NORTH','R17 aligns the central wall faces through both floors. The southwest master is 2.950 x 3.300 m; Bedroom 3 is 2.580 x 3.575 m. The passage stays 900 mm clear. Both ensuites are rebalanced to 1.215 x 2.100 m, with a 900 mm deep shower zone and compact WC. Ensuite 3 uses a surface-sliding door to avoid the bed and fixtures.',149)
+ y=block(c,246,y,'NO BEDROOM IN THE SOUTHEAST','The southeast room remains a study above the kitchen. Bed heads retain their southward orientation. The master keeps 625 mm at each side of the double bed and 865 mm at its foot with the sliding leaf parked (900 mm to the wall). Bedroom 3 keeps 625 mm to its wardrobe, 600 mm behind the bed and 580 mm at the foot: compact, with a sliding ensuite door.',149)
+ y=block(c,246,y,'REAR DRYING TERRACE','The covered rear balcony remains above the work area, now 2.580 x 1.220 m clear. Its 850 mm side door is moved to y = 8.60, clear of the deeper bathroom wall. Access stays private to the master; the front balcony remains common.',149)
  y=block(c,246,y,'TWO SEPARATE ENSUITES','Ensuite 2 serves only the master and stacks above Ensuite 1. Ensuite 3 serves only Bedroom 3 and sits above the ground service passage, not a bedroom or kitchen. The two bathrooms are separated by a full-height wall. The south stair continues to the roof; see sheets 05 and 08 for roof access.',149)
- y=block(c,246,y,'AREA AND STRUCTURE','The whole first-floor envelope is counted at 58.51 m2 (6.02 x 9.72 m over 170 mm external walls), including the stair opening and both covered balconies. Columns, beams, slab thickness and wet-area waterproofing must be engineered without reducing the shown clear routes.',149)
+ y=block(c,246,y,'WALL THICKNESS, AREA AND STRUCTURE','Gross floor envelope remains 58.51 m2 / 629.84 sq ft, including stairs and covered balconies. Walls are 150 mm total including plaster. Bathroom WC projection is limited to 550 mm installed, giving 665 mm clear in front; it is a compact layout. Coordinate carrier/cistern, tiles, services and structural pier sizes without consuming the published clearances.',149)
 
 
 def rr(p,x,y,w,h,r,fillcol,stroke=None,lw=1):
@@ -537,11 +586,68 @@ def validate():
  for ops in [FRONT_GF,FRONT_FF,REAR_GF,REAR_FF]:
   for x,w,sill,h,kind in ops:
    assert 0<=x<x+w<=W and sill+h<=3
- # Three distinct ensuites and a full rectangular north bedroom.
- child_area=(2.7-grow('FF'))*3.6
- assert abs(child_area-9.648)<1e-8
- assert 1.3*2.0>=2.2
- return {'width_m':W,'depth_m':D,'external_wall_mm':{k:round(v*1000) for k,v in EXT.items()},'ground_envelope_m':[round(W+grow('GF'),3),round(D+grow('GF'),3)],'ground_envelope_m2':round(GF_AREA,4),'ground_envelope_sqft':round(GF_SQFT,2),'first_envelope_m':[round(W+grow('FF'),3),round(D+grow('FF'),3)],'first_envelope_m2':round(FF_AREA,4),'first_envelope_sqft':round(FF_SQFT,2),'setbacks_m':{'north_path':1.0,'front_yard':3.0,'south_parking_strip':round(2.7-grow('GF'),3),'rear_garden':round(4.1-grow('GF'),3)},'gross_envelope_m2_per_floor':AREA,'gross_envelope_sqft_per_floor':SQFT,'both_floors_m2':2*AREA,'bedroom_sw_clear_m2':2.9*3.35,'child_clear_m2':child_area,'front_sitout_balcony_clear_m2':2.7*1.2,'rear_work_drying_clear_m2':2.7*1.4,'ensuite_count':3,'ensuite_clear_m':[1.3,2.0],'ensuite_clear_m2_each':2.6,'bedroom_bathroom_pairs':{'GF_Bed1':'GF_Ensuite1','FF_Master':'FF_Ensuite2','FF_Bed3':'FF_Ensuite3'},'rear_balcony_access':'private side door from master','rear_work_access':'independent north passage','stair_risers':17,'stair_riser_mm':3000/17,'stair_tread_mm':250,'stair_clear_width_mm':900,'assumed_car_body_m':[1.75,4.2],'parking_stall_m':[2.5,5.0],'parking_access_verified':False,'survey_setout_verified':False,'vastu_certified':False}
+ # R17 checks geometry at junctions, circulation and fixture clearances.
+ g=room_boxes('GF');f=room_boxes('FF')
+ area=lambda b:round((b[2]-b[0])*(b[3]-b[1]),6)
+ assert abs(f['passage'][2]-f['passage'][0]-.9)<1e-9
+ for floor in ['GF','FF']:
+  w=internal_walls(floor)
+  assert w['bedroom_front'][1::2]==w['ensuite_front'][1::2]
+  for role,box in w.items():assert abs(min(box[2]-box[0],box[3]-box[1])-INTERNAL)<1e-9,role
+  for fit in bathroom_layout(floor):
+   assert fit['wc_front_clear_m']>=.65
+   assert fit['shower'][3]-fit['shower'][1]>=.9-1e-9
+   assert area(fit['box'])>=2.5
+ assert internal_walls('FF')['front_spine'][::2]==internal_walls('FF')['passage_spine'][::2]==internal_walls('FF')['rear_spine'][::2]
+ ids={'g-kitchen':g['kitchen'],'g-living':g['living'],'g-bed':g['bedroom_sw'],
+      'g-bath':g['ensuite_main'],'g-sit':g['front_outdoor'],'g-work':g['rear_outdoor'],
+      'g-route':g['service_passage'],'g-stair':g['stair'],
+      'f-study':f['study'],'f-master':f['bedroom_sw'],'f-child':f['bedroom_north'],
+      'f-bath2':f['ensuite_main'],'f-bath3':f['ensuite_north'],
+      'f-balcony':f['front_outdoor'],'f-drying':f['rear_outdoor'],'f-gallery':f['gallery'],
+      'f-stair':f['stair'],'f-passage':f['passage']}
+ areas={k:area(b) for k,b in ids.items()}
+ areas['g-living']=round(area(g['living'])+area(g['passage']),6)
+ clear_totals={floor:round(sum(v for k,v in areas.items() if k.startswith(prefix)),6) for floor,prefix in [('ground','g-'),('first','f-')]}
+ return {'width_m':W,'depth_m':D,'external_wall_mm':{k:round(v*1000) for k,v in EXT.items()},
+         'internal_wall_mm':150,'internal_wall_spec':WALL_SPEC,
+         'internal_wall_boxes_m':{k:internal_walls(k) for k in ['GF','FF']},
+         'room_boxes_m':ids,
+         'room_regions_m':{'g-living':[g['living'],g['passage']],
+                          'f-gallery':[f['gallery']]},
+         'ground_envelope_m':[round(W+grow('GF'),3),round(D+grow('GF'),3)],
+         'ground_envelope_m2':round(GF_AREA,4),'ground_envelope_sqft':round(GF_SQFT,2),
+         'first_envelope_m':[round(W+grow('FF'),3),round(D+grow('FF'),3)],
+         'first_envelope_m2':round(FF_AREA,4),'first_envelope_sqft':round(FF_SQFT,2),
+         'setbacks_m':{'north_path':1.0,'front_yard':3.0,'south_parking_strip':round(2.7-grow('GF'),3),'rear_garden':round(4.1-grow('GF'),3)},
+         'gross_envelope_m2_by_floor':{'ground':round(GF_AREA,4),'first':round(FF_AREA,4)},
+         'gross_envelope_sqft_by_floor':{'ground':round(GF_SQFT,2),'first':round(FF_SQFT,2)},
+         'both_floors_sqft':round(GF_SQFT+FF_SQFT,2),
+         'both_floors_m2':round(GF_AREA+FF_AREA,4),
+         'bedroom_sw_clear_m2':area(g['bedroom_sw']),'child_clear_m2':area(f['bedroom_north']),
+         'front_sitout_balcony_clear_m2':area(g['front_outdoor']),'rear_work_drying_clear_m2':area(g['rear_outdoor']),
+         'ensuite_count':3,'ensuite_clear_m':[1.215,2.1],'ensuite_clear_m2_each':2.5515,
+         'ensuite_clear_sizes_m':{'GF_Ensuite1':[1.215,2.1],'FF_Ensuite2':[1.215,2.1],'FF_Ensuite3':[1.215,2.1]},
+         'bedroom_bathroom_pairs':{'GF_Bed1':'GF_Ensuite1','FF_Master':'FF_Ensuite2','FF_Bed3':'FF_Ensuite3'},
+         'rear_balcony_access':'private side door from master','rear_work_access':'independent north passage',
+         'room_clear_areas_m2':areas,
+         'room_clear_areas_sqft':{k:round(v/.09290304,2) for k,v in areas.items()},
+         'named_clear_zone_totals_m2':clear_totals,
+         'named_clear_zone_totals_sqft':{k:round(v/.09290304,2) for k,v in clear_totals.items()},
+         'clear_area_basis':'Named clear zones to plastered wall faces; stairs and covered outdoor zones included; wall bands/door reveals excluded. Not a statutory carpet-area measurement.',
+         'bathroom_layout_m':{floor:bathroom_layout(floor) for floor in ['GF','FF']},
+         'compact_wc_spec':WC_SPEC,
+         'comfort_clearances_mm':{'first_passage':900,'ground_service_route':1165,
+           'southwest_bed_sides':[625,625],'southwest_bed_foot':865,'southwest_bed_foot_to_wall':900,
+           'north_bed_to_wardrobe':625,'north_bed_rear':600,'north_bed_foot':580,
+           'bathroom_wc_front':665,'shower_depth':900,'shower_entry':600,'rear_work_counter_aisle':820},
+         'comfort_basis':'Compact single-user planning; not universal-access or full NKBA clearance compliance. Fixture selection, tile finish and structural projections need coordination.',
+         'comfort_references':['https://media.nkba.org/uploads/2022/05/Bath-Planning-Guidelines.pdf',
+           'https://www.uk.roca.com/products/vitreous-china-wall-hung-rimless-wc-34647L..0?sku=A34647L000'],
+         'first_passage_clear_mm':900,'stair_risers':17,'stair_riser_mm':3000/17,'stair_tread_mm':250,'stair_clear_width_mm':900,
+         'assumed_car_body_m':[1.75,4.2],'parking_stall_m':[2.5,5.0],
+         'parking_access_verified':False,'survey_setout_verified':False,'vastu_certified':False,
+         'vastu_orientation_basis':'drawing compass confirmed correct by user; directional room arrangement retained'}
 
 
 def exterior_sheet(c):
@@ -555,7 +661,7 @@ def gallery():
  pages=[('07-exterior-concept','Exterior'),('02-ground','Ground floor'),('03-first','First floor'),('04-elevations','Elevations'),('01-site','Site + parking'),('05-stair-vastu','Stair + Vastu'),('06-reference-comparison','References')]
  buttons=''.join(f'<button role="tab" aria-selected="{str(i==0).lower()}" data-target="{slug}" aria-controls="{slug}" id="tab-{slug}">{name}</button>' for i,(slug,name) in enumerate(pages))
  panels=''.join(f'<section role="tabpanel" id="{slug}" aria-labelledby="tab-{slug}" '+('' if i==0 else 'hidden')+'><img alt="'+name+' drawing sheet" src="data:image/png;base64,'+base64.b64encode((OUT/f'{slug}.png').read_bytes()).decode()+'"></section>' for i,(slug,name) in enumerate(pages))
- html='''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hensal / Three ensuites v4</title><style>*{box-sizing:border-box}body{margin:0;background:#edf0eb;color:#25343b;font:15px system-ui,sans-serif}header{max-width:1450px;margin:auto;padding:30px 28px 20px}small{color:#197a77;letter-spacing:.15em;font-weight:700}h1{font-size:34px;letter-spacing:-.04em;margin:10px 0}p{line-height:1.6;max-width:1100px}nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}button{border:1px solid #b8c6c0;border-radius:30px;padding:11px 18px;color:#25343b;background:transparent;cursor:pointer;font:inherit}button[aria-selected=true]{background:#197a77;color:white;border-color:#197a77}button:focus-visible{outline:3px solid #ca9b56;outline-offset:3px}main{max-width:1450px;margin:0 auto;padding:0 18px 24px}img{width:100%;display:block;background:white;box-shadow:0 6px 28px #25343b14}footer{max-width:1450px;margin:auto;padding:0 28px 30px;color:#60747c;font-size:13px}@media(max-width:600px){header{padding:20px 16px}h1{font-size:26px}button{font-size:13px;padding:9px 12px}main{padding:0 6px 20px}}</style><header><small>HENSAL / COMPACT VARIANT V4</small><h1>Three bedrooms. Three attached bathrooms.</h1><p>626.5 sq ft per floor, including the covered outdoor spaces. The rear work area has independent access; the drying balcony is private to the master bedroom. South staircase, southeast kitchen and side parking retained.</p><nav role="tablist" aria-label="Drawing sheets">'''+buttons+'''</nav></header><main>'''+panels+'''</main><footer>Exterior appearance follows your references, with service-opening changes for the ensuites. Concept for review: measured boundaries, vehicle entry, detailed Vastu and structural design remain to be verified. Use the A3 PDF for drawing scales.</footer><script>const tabs=[...document.querySelectorAll('[role=tab]')];function activate(t){tabs.forEach(b=>b.setAttribute('aria-selected',String(b===t)));document.querySelectorAll('[role=tabpanel]').forEach(p=>p.hidden=p.id!==t.dataset.target)}tabs.forEach((t,i)=>{t.onclick=()=>activate(t);t.onkeydown=e=>{let j;if(e.key==='ArrowRight')j=(i+1)%tabs.length;else if(e.key==='ArrowLeft')j=(i+tabs.length-1)%tabs.length;else if(e.key==='Home')j=0;else if(e.key==='End')j=tabs.length-1;else return;e.preventDefault();activate(tabs[j]);tabs[j].focus()}});</script></html>'''
+ html='''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hensal / Three ensuites v4</title><style>*{box-sizing:border-box}body{margin:0;background:#edf0eb;color:#25343b;font:15px system-ui,sans-serif}header{max-width:1450px;margin:auto;padding:30px 28px 20px}small{color:#197a77;letter-spacing:.15em;font-weight:700}h1{font-size:34px;letter-spacing:-.04em;margin:10px 0}p{line-height:1.6;max-width:1100px}nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}button{border:1px solid #b8c6c0;border-radius:30px;padding:11px 18px;color:#25343b;background:transparent;cursor:pointer;font:inherit}button[aria-selected=true]{background:#197a77;color:white;border-color:#197a77}button:focus-visible{outline:3px solid #ca9b56;outline-offset:3px}main{max-width:1450px;margin:0 auto;padding:0 18px 24px}img{width:100%;display:block;background:white;box-shadow:0 6px 28px #25343b14}footer{max-width:1450px;margin:auto;padding:0 28px 30px;color:#60747c;font-size:13px}@media(max-width:600px){header{padding:20px 16px}h1{font-size:26px}button{font-size:13px;padding:9px 12px}main{padding:0 6px 20px}}</style><header><small>HENSAL / COMPACT VARIANT V4</small><h1>Three bedrooms. Three attached bathrooms.</h1><p>Ground 638.34 sq ft; first 629.84 sq ft, including the covered outdoor spaces. The rear work area has independent access; the drying balcony is private to the master bedroom. South staircase, southeast kitchen and side parking retained.</p><nav role="tablist" aria-label="Drawing sheets">'''+buttons+'''</nav></header><main>'''+panels+'''</main><footer>Exterior appearance follows your references, with service-opening changes for the ensuites. Concept for review: measured boundaries, vehicle entry, detailed Vastu and structural design remain to be verified. Use the A3 PDF for drawing scales.</footer><script>const tabs=[...document.querySelectorAll('[role=tab]')];function activate(t){tabs.forEach(b=>b.setAttribute('aria-selected',String(b===t)));document.querySelectorAll('[role=tabpanel]').forEach(p=>p.hidden=p.id!==t.dataset.target)}tabs.forEach((t,i)=>{t.onclick=()=>activate(t);t.onkeydown=e=>{let j;if(e.key==='ArrowRight')j=(i+1)%tabs.length;else if(e.key==='ArrowLeft')j=(i+tabs.length-1)%tabs.length;else if(e.key==='Home')j=0;else if(e.key==='End')j=tabs.length-1;else return;e.preventDefault();activate(tabs[j]);tabs[j].focus()}});</script></html>'''
  (OUT/'index.html').write_text(html)
 
 
@@ -563,7 +669,7 @@ def main():
  data=validate()
  pdf=OUT/'Hensal_Compact_630_v4.pdf'
  c=canvas.Canvas(str(pdf),pagesize=PAGE)
- c.setTitle('Hensal - Compact 626.5 sq ft per floor - v4');c.setAuthor('Hensal residence design study')
+ c.setTitle('Hensal - Aligned 150 mm internal walls - v4');c.setAuthor('Hensal residence design study')
  for fn in [site,ground_sheet,first_sheet,elevations_sheet,detail_sheet,references_sheet,exterior_sheet]:fn(c);c.showPage()
  c.save()
  import pymupdf

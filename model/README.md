@@ -1,12 +1,18 @@
 # Interactive model source
 
+R17 aligns connected internal walls and rear pier caps to common finished faces, at **150 mm total including plaster**. The central spine is x = 3.10–3.25 on both floors; bedroom and bathroom front walls share y = 6.10–6.25. The upstairs passage remains 900 mm. Southwest bedrooms are 2.950 × 3.300 m; Bedroom 3 is 2.580 × 3.575 m. Each ensuite is 1.215 × 2.100 m, with a 900 mm shower zone and 600 mm walk-in entry and a maximum installed WC projection of 550 mm (665 mm clear in front). Bedroom 3 uses a surface-sliding ensuite door. The rear work counter is 450 mm deep, leaving an 820 mm aisle.
+
+Gross covered areas remain **638.34 sq ft ground + 629.84 sq ft first = 1,268.19 sq ft** (total calculated before rounding each floor). Including the 97.09 sq ft roof enclosure, the total is **1,365.28 sq ft**. Room clear areas and named-zone totals are derived from the new wall faces in `dimensions.json`; they exclude wall bands/door reveals and include stairs/covered outdoor zones, so they are not statutory carpet areas.
+
+These are compact single-user clearances. The [NKBA planning guide](https://media.nkba.org/uploads/2022/05/Bath-Planning-Guidelines.pdf) recommends larger fixture-front space (762 mm); this layout provides 665 mm at the WCs and is not full NKBA or universal-access compliance. A [540 mm compact WC example](https://www.uk.roca.com/products/vitreous-china-wall-hung-rimless-wc-34647L..0?sku=A34647L000) shows the intended fixture class, not a selected product. Verify the complete installed projection, carrier/cistern and tile build-up without consuming the published clearances. No structural member has been reduced to conceal a projection: grid B/pier finishes and the revised rear cross-beam need engineering coordination. Directions and the exterior envelope are preserved; complete Vastu compliance is not certified.
+
 The model displays the published R14 TV joinery beneath the lower stair flight. `src/tv-joinery-preview.js` builds the cabinet, screen and backing from `src/under-stair-layout.json` — the same file the drawing scripts read — and samples the backing profile against the existing stair meshes, throwing if the measured soffit departs from the published `tv.panelTopProfile` by more than 5 mm. `src/house.js` assembles the house and, at R15, the basin that continues that same run: `revision.wash` is read from the identical file, and the vanity, backing, mirror and dividing fin sit on the joinery's own depth and face plane rather than in the old corner against the bedroom wall.
 
 `slopedSlab()` builds each inclined waist as an extruded prism with a **vertical** depth and **vertical** end faces. It was previously a rotated box, which silently turned the 208 mm waist zone into a 255 mm vertical drop and overran the foot of each flight by 0.13 m in plan; the modelled soffit was 67 mm below the drawn one everywhere. Modelled and canonical soffits now agree to 0.7 mm on all four flights.
 
 ## Deliverables and drawing scope
 
-The current interior deliverable is [the offline R14 review](../interiors/R14-review.html). The standalone explorer at `../drawings/compact-v4/interactive-3d.html`, the combined PDF, `dimensions.json` and `src/under-stair-layout.json` are all at R15. The linked review page is the R14 render set and still shows the basin in its former corner position.
+The current interior deliverable is [the offline R14 review](../interiors/R14-review.html). The standalone explorer at `../drawings/compact-v4/interactive-3d.html`, the combined PDF, `dimensions.json` and `src/under-stair-layout.json` are all at R17. The linked review page is the R14 render set and still shows the basin in its former corner position.
 
 Rebuild order matters, because each artefact embeds the previous one: build the drawings first (`drawings/compact-v4/.source/make_complete_plans.py`), then `scripts/extract_plan.py`, `scripts/make_assets.py`, `scripts/revision-review.mjs`, then `npm run build`.
 
@@ -23,7 +29,7 @@ node --test scripts/r14-preview.test.mjs
 
 Check for an existing server before starting Vite on its default port 5173. Use another port if occupied.
 
-`npm test` covers the coordinated plan data and architectural preservation. The dedicated R14 test checks the shallow footprint, access separation and backing clearance; the R15 test checks that the basin holds the joinery's depth, face plane and orientation, that the fin closes the run, and that the clear height is uniform. [revisions/README.md](revisions/README.md) documents the three baseline fixtures required by those tests.
+`npm test` covers PDF traceability, wall apertures, 150 mm finished wall bands, the 900 mm passage, room and furniture clearances, retained roof architecture and stair geometry. The dedicated R14 test checks the shallow footprint, access separation and backing clearance; the R15 test checks that the basin holds the joinery's depth, face plane and orientation, that the fin closes the run, and that the clear height is uniform. [revisions/README.md](revisions/README.md) documents the three baseline fixtures required by those tests.
 
 ## Refresh the interior review
 

@@ -6,80 +6,41 @@ import * as baseline from '../revisions/baseline-v4/geometry.js';
 import {revision,storageWallOpenings} from '../src/revision.js';
 import {stairOptions,optionTreads,modeledHeadroom} from '../src/stair-options.js';
 import {facadeProfiles,profilePoints,facadeBand} from '../src/facade.js';
-import {MeshBasicMaterial,Raycaster,Vector3} from 'three';
+import {MeshBasicMaterial,Raycaster,Vector3,Box3} from 'three';
 import {createHouse} from '../src/house.js';
 import {LEVELS} from '../src/geometry.js';
 const eps=1e-8,near=(a,b)=>assert.ok(Math.abs(a-b)<eps,`${a} != ${b}`);
 const overlaps=(a,b)=>Math.min(a[2],b[2])-Math.max(a[0],b[0])>eps&&Math.min(a[3],b[3])-Math.max(a[1],b[1])>eps;
-const FIXTURE_ROOMS=['g-wash','g-media'];
 const R=3/17,WALL=revision.bedroomWallFace;
 const sameBox=(a,b)=>a.length===b.length&&a.every((v,i)=>Math.abs(v-b[i])<eps);
-// R8: ground external walls 150 -> 220 mm. West and rear grew outward into the parking strip and
-// the garden; east and front thickened inward so the 1.00 m path and 3.00 m yard keep their
-// setbacks. Every inner face is unmoved, which is why the stair and under-stair unit are intact.
-// Ground walls went 150 -> 220, first-floor walls 150 -> 170. The roof enclosure is untouched.
-const GROW={ground:.07,first:.02,roof:0};
-function r8Box(b,level='ground'){
- const G=GROW[level],n=[...b];
- if(Math.abs(n[0])<eps&&Math.abs(n[2]-.15)<eps)n[0]=-G;            // west band grew outward
- if(Math.abs(n[0]-5.85)<eps&&Math.abs(n[2]-6)<eps)n[0]=5.85-G;     // east band thickened inward
- if(Math.abs(n[1])<eps&&Math.abs(n[3]-.15)<eps)n[3]=.15+G;         // front band thickened inward
- if(Math.abs(n[3]-9.7)<eps)n[3]=9.7+G;                             // anything meeting the rear face
- return n;
-}
-const r8Opening=(o,level='ground')=>{
- const G=GROW[level],n={...o};
- if(o.axis==='v'&&Math.abs(o.x)<eps){n.x=-G;n.t=.15+G;}
- if(o.axis==='h'&&(Math.abs(o.y)<eps||Math.abs(o.y-9.55)<eps))n.t=.15+G;
- n.box=n.axis==='h'?[n.x,n.y,n.x+n.w,n.y+n.t]:[n.x,n.y,n.x+n.t,n.y+n.w];
- return n;
-};
-// Ground rooms bounded by an inner face that moved: the east face came in 70 mm and the rear
-// envelope went out 70 mm. Rooms on the west and rear inner faces, and every first-floor room,
-// are untouched - which is why the stair and the under-stair unit needed no rework.
-function r8Room(id,box){
- const G=GROW[{g:'ground',f:'first',r:'roof'}[id[0]]]??0,n=[...box];
- if(Math.abs(n[2]-5.85)<eps)n[2]=5.85-G;
- if(Math.abs(n[1]-.15)<eps)n[1]=.15+G;
- if(Math.abs(n[3]-9.7)<eps)n[3]=9.7+G;
- return n;
-}
-const samePiece=(a,b,level='ground')=>sameBox(a.box,r8Box(b.box,level))&&Math.abs(a.bottom-b.bottom)<eps&&Math.abs(a.top-b.top)<eps;
-const sameOpening=(a,b,level='ground')=>{const e=r8Opening(b,level);return Object.keys(e).every(k=>Array.isArray(e[k])?sameBox(a[k],e[k]):(typeof e[k]==='number'?Math.abs(a[k]-e[k])<eps:a[k]===e[k]));};
-
 // R6: clear height under the conceptual RCC waist/landing soffit, replacing the superseded
 // flat 120 mm lid under each separate tread. Infinity when nothing is overhead.
 const clearance=box=>stairSoffit(box,'ground');
 const cm=box=>Math.round(clearance(box)*100)/100;
-test('all door/window positions and all first/roof walls are unchanged',()=>{
- for(const l of ['ground','first','roof']){
-  const fixtures=a=>a.filter(o=>!['opening','joinery'].includes(o.kind));
-  const now=fixtures(openingsFor(l)),was=fixtures(baseline.openingsFor(l));
-  assert.equal(now.length,was.length,l);
-  // Every aperture keeps its width, sill, height, kind and position along its wall. On the ground
-  // floor the external ones are simply 70 mm thicker and sit in the repositioned wall band.
-  now.forEach((a,i)=>assert.ok(sameOpening(a,was[i],l),`${l} aperture ${i}`));
-  if(l!=='ground'){const nw=wallPieces(l),bw=baseline.wallPieces(l);
-   assert.equal(nw.length,bw.length,l);
-   nw.forEach((p,i)=>assert.ok(samePiece(p,bw[i],l),`${l} wall ${i}`));}
- }
- // R9 is the first revision to change ground riser geometry; first/roof keep the original baseline.
+test('R17 preserves exterior schedules, roof architecture and first-to-roof stair',()=>{
  assert.deepEqual(stairTreads('first'),baseline.stairTreads());
- for(const r of rooms.filter(r=>r.id!=='g-living'&&!FIXTURE_ROOMS.includes(r.id)))assert.ok(sameBox(r.box,r8Room(r.id,baseline.rooms.find(b=>b.id===r.id).box)),r.id);
+ assert.deepEqual(wallPieces('roof'),baseline.wallPieces('roof'));
+ assert.deepEqual(openingsFor('roof'),baseline.openingsFor('roof'));
+ for(const level of ['ground','first']){
+  const now=plan.levels[level].filter(c=>['door','window','opening'].includes(c.op));
+  const was=baseline.plan.levels[level].filter(c=>['door','window','opening'].includes(c.op));
+  assert.equal(now.filter(c=>c.op==='door').length,was.filter(c=>c.op==='door').length);
+  assert.equal(now.filter(c=>c.op==='window').length,was.filter(c=>c.op==='window').length);
+  for(const op of ['door','window','opening']){
+   assert.deepEqual(now.filter(c=>c.op===op).map(c=>c.args[2]).sort(),was.filter(c=>c.op===op&&!(level==='ground'&&op==='opening'&&c.args[0]===3.05&&[2.45,5.2].includes(c.args[1]))).map(c=>level==='ground'&&op==='window'&&c.args[0]===3.23?1.10:c.args[2]).sort(),`${level} ${op} widths`);
+  }
+ }
+ for(const name of ['FRONT_GF','FRONT_FF','REAR_FF'])assert.deepEqual(plan.openings[name],baseline.plan.openings[name]);
 });
 test('passage partition removed only in the requested ground living/stair interval',()=>{
  const pieces=wallPieces('ground');assert.ok(!pieces.some(p=>overlaps(p.box,[3.05,2.3,3.15,6.1])));
  assert.ok(pieces.some(p=>overlaps(p.box,[3.05,6.1,3.15,6.4])));
  assert.ok(pieces.some(p=>overlaps(p.box,[3.05,0,3.15,1.2])));
 });
-test('R2 stair, landing, wall, opening and room boundary preserved on first/roof; ground basin gets a direct archway, no free-standing sliver',()=>{
+test('R17 preserves upper stairs and coordinates the thicker headed stair wall and basin archway',()=>{
  for(const l of ['first','roof']){
-  const walls=wallPieces(l),openings=openingsFor(l);
-  assert.deepEqual(stairTreads(l),fixedArchitecture[l].stairs);assert.deepEqual(stairLandingExtensions(l),fixedArchitecture[l].landings);
-  assert.equal(walls.length,fixedArchitecture[l].walls.length,l);
-  walls.forEach((p,i)=>assert.ok(samePiece(p,fixedArchitecture[l].walls[i],l),`${l} wall ${i}`));
-  assert.equal(openings.length,fixedArchitecture[l].openings.length,l);
-  openings.forEach((a,i)=>assert.ok(sameOpening(a,fixedArchitecture[l].openings[i],l),`${l} opening ${i}`));
+  assert.deepEqual(stairTreads(l),fixedArchitecture[l].stairs);
+  assert.deepEqual(stairLandingExtensions(l),fixedArchitecture[l].landings);
  }
  // R9 gave the basin a direct 0.90 m archway at the old store-door position (y = 5.2-6.1), with
  // no door leaves. R10 cuts the one remaining solid span of the same 100 mm stair-side partition,
@@ -89,8 +50,8 @@ test('R2 stair, landing, wall, opening and room boundary preserved on first/roof
  assert.equal(storageWallOpenings.length,2);
  for(const o of storageWallOpenings)assert.ok(!('storeDoor' in o));
  const [unit,archway]=storageWallOpenings;
- assert.deepEqual(unit.box,[2.05,3.2,2.15,5.2]);
- assert.deepEqual(archway.box,[2.05,5.2,2.15,6.1]);
+ assert.deepEqual(unit.box,[2.05,3.2,2.2,5.2]);
+ assert.deepEqual(archway.box,[2.05,5.2,2.2,6.1]);
  assert.deepEqual(openings.filter(o=>o.kind==='joinery'),storageWallOpenings);
  assert.ok(!walls.some(p=>p.box[3]-p.box[1]<.06&&p.top-p.bottom>2.8),'no free-standing partition sliver');
  for(const o of storageWallOpenings)assert.ok(!walls.some(p=>overlaps(p.box,o.box)&&p.bottom===0&&p.top-p.bottom>1.9),'joinery apertures are open at walking height');
@@ -114,13 +75,7 @@ test('R2 stair, landing, wall, opening and room boundary preserved on first/roof
  const treadTops=stairTreads('ground').filter(t=>t.box[0]>=1.15&&!t.landing&&!t.arrival).map(t=>t.height);
  assert.ok(Math.max(...treadTops)<revision.tv.wallOpening.headerTop,'the header must enclose the flight it replaces a guard for');
  assert.ok(b.y[0]>=revision.stair.trimmerY-eps&&b.y[1]<=unit.box[3]+eps);
- const boundaries=rooms.filter(r=>!FIXTURE_ROOMS.includes(r.id)).map(r=>({id:r.id,box:r.box,...(r.regions?{regions:r.regions}:{})}));
- assert.equal(boundaries.length,fixedArchitecture.rooms.length);
- boundaries.forEach((r,i)=>{
-  const e=fixedArchitecture.rooms[i];assert.equal(r.id,e.id);
-  assert.ok(sameBox(r.box,r8Room(e.id,e.box)),r.id);
-  if(e.regions)r.regions.forEach((g,j)=>assert.ok(sameBox(g,r8Room(e.id,e.regions[j])),r.id+' region '+j));
- });
+
 });
 test('R9 removes the small under-flight cabinet and the under-landing store entirely',()=>{
  assert.ok(!('storage' in revision));assert.ok(!('store' in revision));assert.ok(!('partition' in revision));assert.ok(!('closingPanel' in revision));
@@ -181,7 +136,7 @@ test('R14 builds the joinery into the lower-flight bay, on the real soffit',()=>
  assert.ok(t.screenBottom>t.cabinet.top,'the screen sits above the cabinet, not behind it');
  // It never reaches the basin, its standing zone, the basin access or the living passage.
  for(const b of [t.unit,t.panel,t.screen.box])
-  for(const clear of [revision.wash.box,revision.wash.standing,[2.05,5.2,2.15,6.1],[2.15,3.2,3.15,5.2],[1.05,2.3,2.15,3.2]])
+  for(const clear of [revision.wash.box,revision.wash.standing,[2.05,5.2,2.2,6.1],[2.15,3.2,3.15,5.2],[1.05,2.3,2.15,3.2]])
    assert.ok(!overlaps(b,clear),`${b} fouls ${clear}`);
  near(t.projection.intoPassage,0);
  // Storage is stated honestly and is still far short of the store R9 deleted.
@@ -227,7 +182,7 @@ test('R15 basin continues the TV run in the same band, same depth, same face pla
  for(const b of [w.box,w.standing,dv]){
   assert.ok(b[0]>=.15&&b[2]<=2.05&&b[1]>=2.3&&b[3]<=6.1);
   assert.ok(!overlaps(b,[1.3,2.3,2.2,3.2]));
-  assert.ok(!overlaps(b,[2.05,5.2,2.15,6.1]),'the archway stays a clear 0.90 m opening');
+  assert.ok(!overlaps(b,[2.05,5.2,2.2,6.1]),'the archway stays a clear 0.90 m opening');
   assert.ok(!overlaps(w.bedroomDoorLanding,b));
  }
  assert.ok(!('backPanel' in w)&&!('bedroomReturn' in w)&&!('fromBedroomWall' in w));
@@ -271,8 +226,12 @@ test('R9 riser shift: starter grows to 5, west flight keeps its tread positions 
  assert.ok(modeledHeadroom({...revision.stair,starterRisers:2,westRisers:7})>0); // study tool still runs on the R2 baseline shape
 });
 test('L wardrobe matches existing depth/height and avoids door, window and bed',()=>{
- const w=revision.wardrobe;assert.deepEqual(w.existing,[5.3,2.6,5.85,3.35]);near(w.extension[3]-w.extension[1],w.depth);near(w.height,2.1);
- for(const b of [w.extension,w.filler]){assert.ok(!overlaps(b,[3.25,2.5,4.05,3.3]));assert.ok(!overlaps(b,[5.85,3.5,6,4.8]));assert.ok(!overlaps(b,[3.25,3.9,5.25,5.1]));}
+ const w=revision.wardrobe;assert.deepEqual(w.existing,[5.28,2.625,5.83,3.33]);near(w.extension[3]-w.extension[1],w.depth);near(w.height,2.1);
+ const door=openingsFor('first').find(o=>o.kind==='door'&&o.y===2.375);
+ const window=openingsFor('first').find(o=>o.kind==='window'&&o.y===3.5&&o.axis==='v');
+ const bed=plan.levels.first.filter(c=>c.op==='bed').at(-1).args.slice(0,4);
+ const swing=[door.x,door.y+door.t,door.x+door.w,door.y+door.t+door.w];
+ for(const b of [w.existing,w.extension,w.filler]){assert.ok(!overlaps(b,swing));assert.ok(!overlaps(b,window.box));assert.ok(!overlaps(b,bed));}
  assert.equal(w.corner,'paired doors with no fixed corner post');
 });
 test('reference bands are open, asymmetric custom cubic ribbons inside façade width',()=>{
@@ -293,7 +252,7 @@ test('R6 represents the stair as a continuous RCC waist/landing system carried o
  const S=revision.structure;
  near(S.waist,.15);near(S.landingSlab,.15);near(S.finish,.02);assert.equal(S.indicative,true);
  assert.equal(S.status,'TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER');
- for(const re of [/CONCEPTUAL RCC WAIST-SLAB SYSTEM/,/DESIGNED BY STRUCTURAL ENGINEER/,/100 MM PARTITION WALLS ARE NOT TO BE ASSUMED LOAD-BEARING/])assert.match(S.note,re);
+ for(const re of [/CONCEPTUAL RCC WAIST-SLAB SYSTEM/,/DESIGNED BY STRUCTURAL ENGINEER/,/150 MM FINISHED PARTITION WALLS ARE NOT TO BE ASSUMED LOAD-BEARING/])assert.match(S.note,re);
  for(const re of [/stringer/i,/cantilever/i,/column/i])assert.ok(S.excluded.some(x=>re.test(x)));
  // Every flight is one unbroken waist between two named bearings; no flight floats.
  for(const l of ['ground','first'])for(const f of stairFlights(l)){
@@ -325,7 +284,7 @@ test('R6 represents the stair as a continuous RCC waist/landing system carried o
  // R9 moves the ground stairwell trimmer to y = 4.2; the first-to-roof trimmer stays at 3.2-3.45.
  assert.deepEqual(STAIR_BEAM_ZONES.map(z=>z.box),[[.15,6.1,3.05,6.2],[1.05,3.95,2.05,4.2]]);
  assert.deepEqual(stairBeamZones('first').map(z=>z.box),[[.15,6.1,3.05,6.2],[1.05,3.2,2.05,3.45]]);
- assert.ok(wallPieces('ground').some(p=>p.box[1]===6.1&&p.box[3]===6.2));
+ assert.ok(wallPieces('ground').some(p=>p.box[1]===6.1&&p.box[3]===6.25));
  for(const zone of STAIR_BEAM_ZONES){
   assert.ok(!overlaps(zone.box,[2.05,2.3,2.15,6.1]),'no bearing on the stair-side partition');
   assert.ok(!overlaps(zone.box,[3.15,1.35,5.85,6.1]),'nothing new inside the living area');
@@ -404,8 +363,8 @@ test('R7 whole-house frame is set out on existing wall lines and adds only one n
   // Members are the host wall's thickness where that is 150 mm, otherwise 230 mm carried across
   // the 100 mm wall to one declared side. Either way the member sits on its grid intersection.
   for(const [lo,hi,g] of [[c.box[0],c.box[2],X_[c.id[0]]],[c.box[1],c.box[3],Y_[c.id[1]]]]){
-   near(hi-lo,g.thickness>=.15-eps?g.thickness:FRAME.memberWidth);
-   if(g.thickness<.15-eps)near(g.project==='+'?lo:hi,g.project==='+'?g.host[0]:g.host[1]);
+   near(hi-lo,['B','3','4','5'].includes(g.id)?FRAME.memberWidth:g.thickness);
+   assert.ok(lo<=g.at+eps&&hi>=g.at-eps,`${g.id} retained member crosses its grid`);
   }
   assert.ok(c.x>=c.box[0]-eps&&c.x<=c.box[2]+eps&&c.y>=c.box[1]-eps&&c.y<=c.box[3]+eps,`${c.id} off its grid intersection`);
   const E=ENVELOPE.ground;
@@ -454,13 +413,13 @@ test('R8 thickens the external walls per floor without moving a single inner fac
   const has=b=>walls.some(w=>sameBox(w,b));
   // West and rear grew outward; east and front thickened inward. Every inner face is unmoved.
   assert.ok(has([E[0],0,.15,E[3]]),`${level} west wall`);
-  assert.ok(has([.15,9.55,3.15,E[3]]),`${level} rear wall`);
-  assert.ok(has([6-t,1.2,6,8.3]),`${level} east wall`);
-  assert.ok(has([.15,0,3.15,t]),`${level} front wall`);
-  // Internal partitions are untouched at 100 mm.
-  for(const b of [[3.05,0,3.15,E[3]],[.15,2.2,3.05,2.3],[.15,6.1,3.05,6.2],[2.05,2.3,2.15,6.1]])assert.ok(has(b),`${level} partition ${b}`);
+  assert.ok(has([.15,9.55,3.25,E[3]]),`${level} rear wall`);
+  assert.ok(has([6-t,1.2,6,8.5]),`${level} east wall`);
+  assert.ok(has([.15,0,3.25,t]),`${level} front wall`);
+  // Internal walls retain the stair faces and keep the new 150 mm finished allowance.
+  for(const b of [[3.1,0,3.25,2.3],[.15,2.15,3.25,2.3],[.15,6.1,3.25,6.25],[2.05,2.3,2.2,6.1]])assert.ok(has(b),`${level} partition ${b}`);
   const thick=walls.map(w=>Math.min(w[2]-w[0],w[3]-w[1]));
-  assert.ok(thick.every(v=>[.10,.15,t].some(k=>Math.abs(v-k)<eps)),`${level} has an unexpected wall thickness`);
+  assert.ok(thick.every(v=>[.15,t].some(k=>Math.abs(v-k)<eps)),`${level} has an unexpected wall thickness`);
  }
  // The stair and everything built under it depend on the west and rear inner faces, which is
  // exactly why those two walls were grown outward rather than inward.
@@ -475,4 +434,89 @@ test('R8 thickens the external walls per floor without moving a single inner fac
  near(1+site.ground_envelope_m[0]+site.setbacks_m.south_parking_strip,9.7);
  near(3+site.ground_envelope_m[1]+site.setbacks_m.rear_garden,16.8);
  assert.ok(site.first_envelope_sqft<=630,'first floor stays inside the published area guard');
+});
+
+test('150 mm finished walls keep the upstairs passage, stairs, rooms and fittings clear',()=>{
+ near(plan.dimensions.internal_wall_mm,150);
+ assert.match(plan.dimensions.internal_wall_spec.basis,/including plaster/i);
+ // Walkable passage is defined independently of labels: opposed faces must remain 900 mm apart.
+ const first=plan.levels.first.filter(c=>c.op==='wall').map(c=>c.args.slice(0,4));
+ const stairWall=first.find(b=>sameBox(b,[2.05,2.3,2.2,6.1]));
+ const bedroomWall=first.find(b=>sameBox(b,[3.1,2.3,3.25,6.1]));
+ assert.ok(stairWall&&bedroomWall);near(bedroomWall[0]-stairWall[2],.9);
+ for(const level of ['ground','first']){
+  for(const wall of Object.values(plan.dimensions.internal_wall_boxes_m[level==='ground'?'GF':'FF']))near(Math.min(wall[2]-wall[0],wall[3]-wall[1]),.15);
+  for(const tread of stairTreads(level))for(const wall of wallPieces(level))assert.ok(!overlaps(tread.box,wall.box),`${level} wall intrudes on a stair or landing`);
+  for(const room of rooms.filter(r=>r.level===level&&/kitchen|study|master|child|^g-bed$|bath/.test(r.id))){
+   for(const wall of wallPieces(level))assert.ok(!overlaps(room.box,wall.box),`${room.id} clear floor overlaps a wall`);
+  }
+  const bedrooms=rooms.filter(r=>r.level===level&&['g-bed','f-master','f-child'].includes(r.id));
+  for(const bed of plan.levels[level].filter(c=>c.op==='bed'))assert.ok(bedrooms.some(r=>bed.args[0]>=r.box[0]-eps&&bed.args[1]>=r.box[1]-eps&&bed.args[2]<=r.box[2]+eps&&bed.args[3]<=r.box[3]+eps),'bed fits within finished room faces');
+ }
+ const room=rooms.find(r=>r.id==='f-child');
+ for(const b of [revision.wardrobe.existing,revision.wardrobe.extension,revision.wardrobe.filler])assert.ok(b[0]>=room.box[0]-eps&&b[1]>=room.box[1]-eps&&b[2]<=room.box[2]+eps&&b[3]<=room.box[3]+eps,'wardrobe fits inside finished bedroom');
+ const door=openingsFor('first').find(o=>o.kind==='door'&&o.y===2.375);
+ assert.ok(door.x+door.w<revision.wardrobe.extension[0],'north-bedroom entrance stays clear of wardrobe');
+ near(rooms.find(r=>r.id==='g-bed').box[2]-.15,2.95);
+ near(rooms.find(r=>r.id==='g-bed').box[3]-rooms.find(r=>r.id==='g-bed').box[1],3.3);
+});
+
+test('R17 wall junctions are flush in plan and the rear vent stays inside its bathroom',()=>{
+ for(const floor of ['GF','FF']){
+  const w=plan.dimensions.internal_wall_boxes_m[floor];
+  assert.deepEqual([w.bedroom_front[1],w.bedroom_front[3]],[w.ensuite_front[1],w.ensuite_front[3]]);
+  assert.deepEqual([w.front_spine[0],w.front_spine[2]],[w.rear_spine[0],w.rear_spine[2]]);
+  if(floor==='FF')assert.deepEqual([w.rear_spine[0],w.rear_spine[2]],[w.passage_spine[0],w.passage_spine[2]]);
+  const level=floor==='GF'?'ground':'first';
+  const drawn=plan.levels[level].filter(c=>c.op==='wall').map(c=>c.args.slice(0,4));
+  for(const y of [0,9.55]){
+   const cap=drawn.find(b=>nearValue(b[0],3.1)&&nearValue(b[1],y)&&nearValue(b[2],3.25)&&b[3]-b[1]<.3);
+   assert.ok(cap,`${level} rear/front pier cap is aligned`);
+  }
+  assert.ok(!drawn.some(b=>nearValue(b[0],3.05)&&nearValue(b[2],3.2)),'old projecting pier is absent');
+ }
+ const bath=rooms.find(r=>r.id==='g-bath').box;
+ const vent=openingsFor('ground').find(o=>o.kind==='obscured'&&o.y>8);
+ assert.ok(vent.x>=bath[0]+.049&&vent.x+vent.w<=bath[2]-.049,'rear window has a jamb on both sides');
+});
+function nearValue(a,b){return Math.abs(a-b)<1e-7;}
+test('R17 compact fixtures, private door routes and bed circulation are usable',()=>{
+ const house=createHouse();house.root.updateMatrixWorld(true);
+ for(const level of ['ground','first']){
+  const floor=level==='ground'?'GF':'FF',fits=plan.dimensions.bathroom_layout_m[floor];
+  for(const fit of fits){
+   const b=fit.box;
+   for(const fixture of [fit.wc_box,fit.basin_box,fit.shower])assert.ok(fixture[0]>=b[0]-eps&&fixture[1]>=b[1]-eps&&fixture[2]<=b[2]+eps&&fixture[3]<=b[3]+eps,'fixture stays inside finished room');
+   assert.ok(!overlaps(fit.wc_box,fit.basin_box)&&!overlaps(fit.wc_box,fit.shower),'toilet is clear of basin and shower');
+   assert.ok(fit.wc_front_clear_m>=.65);near(fit.shower[3]-fit.shower[1],.9);near(fit.shower_entry_width_m,.6);
+   const route=fit.room==='ensuite_main'?[b[0],6.6,b[0]+.6,7.35]:[5,6.25,5.75,6.85];
+   assert.ok(!overlaps(route,fit.wc_box)&&!overlaps(route,fit.basin_box),'750 mm private doorway has a clear approach inside the bath');
+   const wc=house.levels[level].getObjectByName(`Compact WC ${level} ${fit.wc[0]}`);assert.ok(wc);
+   const mesh=new Box3().setFromObject(wc);
+   assert.ok(Math.abs(mesh.min.x+3-fit.wc_box[0])<1e-5&&Math.abs(mesh.max.x+3-fit.wc_box[2])<1e-5,'built WC uses the published installed projection');
+   assert.ok(Math.abs(4.85-mesh.max.z-fit.wc_box[1])<1e-5&&Math.abs(4.85-mesh.min.z-fit.wc_box[3])<1e-5,'built WC uses the published width');
+  }
+  const bed=plan.levels[level].find(c=>c.op==='bed').args.slice(0,4),sw=rooms.find(r=>r.id===(level==='ground'?'g-bed':'f-master')).box;
+  near(bed[1]-6.8,.625);near(sw[3]-bed[3],.625);near(sw[2]-.035-bed[2],.865);
+  const door=openingsFor(level).find(o=>o.kind==='surface-slider'&&o.axis==='v');near(door.w,.75);near(door.y,6.6);
+ }
+ const child=plan.levels.first.filter(c=>c.op==='bed').at(-1).args.slice(0,4),room=rooms.find(r=>r.id==='f-child').box;
+ near(child[1]-revision.wardrobe.existing[3],.625);near(6.055-child[3],.6);near(room[2]-child[2],.58);
+ assert.ok(openingsFor('first').some(o=>o.kind==='surface-slider'&&o.axis==='h'&&o.x===5&&o.y===6.1));
+ const work=rooms.find(r=>r.id==='g-work').box;near(work[3]-8.95,.82);
+});
+test('R17 area totals use actual envelopes and clear zones without overlap',()=>{
+ const d=plan.dimensions;
+ near(d.both_floors_m2,6.07*9.77+6.02*9.72);
+ near(d.total_including_roof_m2,d.both_floors_m2+2.2*4.1);
+ near(d.total_including_roof_sqft,Math.round(d.total_including_roof_m2/.09290304*100)/100);
+ assert.ok(!('gross_envelope_sqft_per_floor' in d),'obsolete equal-floor total is withdrawn');
+ for(const level of ['ground','first']){
+  const actual=rooms.filter(r=>r.level===level&&r.clearAreaM2!==undefined);
+  for(let i=0;i<actual.length;i++)for(let j=i+1;j<actual.length;j++)
+   for(const a of actual[i].regions??[actual[i].box])for(const b of actual[j].regions??[actual[j].box])
+    assert.ok(!overlaps(a,b),`${actual[i].id} double-counts ${actual[j].id}`);
+  const sum=actual.reduce((v,r)=>v+r.clearAreaM2,0);near(sum,d.named_clear_zone_totals_m2[level]);
+  assert.ok(sum<d.gross_envelope_m2_by_floor[level]);
+ }
 });
