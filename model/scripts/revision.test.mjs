@@ -9,6 +9,7 @@ import {facadeProfiles,profilePoints,facadeBand} from '../src/facade.js';
 import {MeshBasicMaterial,Raycaster,Vector3,Box3} from 'three';
 import {createHouse} from '../src/house.js';
 import {LEVELS} from '../src/geometry.js';
+import storage from '../src/storage-layout.json' with {type:'json'};
 const eps=1e-8,near=(a,b)=>assert.ok(Math.abs(a-b)<eps,`${a} != ${b}`);
 const overlaps=(a,b)=>Math.min(a[2],b[2])-Math.max(a[0],b[0])>eps&&Math.min(a[3],b[3])-Math.max(a[1],b[1])>eps;
 const R=3/17,WALL=revision.bedroomWallFace;
@@ -27,7 +28,7 @@ test('R17 preserves exterior schedules, roof architecture and first-to-roof stai
   assert.equal(now.filter(c=>c.op==='door').length,was.filter(c=>c.op==='door').length);
   assert.equal(now.filter(c=>c.op==='window').length,was.filter(c=>c.op==='window').length);
   for(const op of ['door','window','opening']){
-   assert.deepEqual(now.filter(c=>c.op===op).map(c=>c.args[2]).sort(),was.filter(c=>c.op===op&&!(level==='ground'&&op==='opening'&&c.args[0]===3.05&&[2.45,5.2].includes(c.args[1]))).map(c=>level==='ground'&&op==='window'&&c.args[0]===3.23?1.10:c.args[2]).sort(),`${level} ${op} widths`);
+   assert.deepEqual(now.filter(c=>c.op===op).map(c=>c.args[2]).sort(),was.filter(c=>c.op===op&&!(level==='first'&&op==='opening'&&c.args[0]===.95&&c.args[1]===2.2)&&!(level==='ground'&&op==='opening'&&c.args[0]===3.05&&[2.45,5.2].includes(c.args[1]))).map(c=>level==='ground'&&op==='window'&&c.args[0]===3.23?1.10:level==='first'&&op==='opening'&&c.args[0]===2.05&&c.args[1]===2.35?3.8:c.args[2]).sort(),`${level} ${op} widths`);
   }
  }
  for(const name of ['FRONT_GF','FRONT_FF','REAR_FF'])assert.deepEqual(plan.openings[name],baseline.plan.openings[name]);
@@ -282,8 +283,8 @@ test('R6 represents the stair as a continuous RCC waist/landing system carried o
  // Support zones stay inside walls and slab edges that already exist: no new element in any room,
  // no load on either 100 mm partition, no wall or column below the upper flight.
  // R9 moves the ground stairwell trimmer to y = 4.2; the first-to-roof trimmer stays at 3.2-3.45.
- assert.deepEqual(STAIR_BEAM_ZONES.map(z=>z.box),[[.15,6.1,3.05,6.2],[1.05,3.95,2.05,4.2]]);
- assert.deepEqual(stairBeamZones('first').map(z=>z.box),[[.15,6.1,3.05,6.2],[1.05,3.2,2.05,3.45]]);
+ assert.deepEqual(STAIR_BEAM_ZONES.map(z=>z.box),[[.15,6.1,2.05,6.2],[1.05,3.95,2.05,4.2]]);
+ assert.deepEqual(stairBeamZones('first').map(z=>z.box),[[.15,6.1,2.05,6.2],[1.05,3.2,2.05,3.45]]);
  assert.ok(wallPieces('ground').some(p=>p.box[1]===6.1&&p.box[3]===6.25));
  for(const zone of STAIR_BEAM_ZONES){
   assert.ok(!overlaps(zone.box,[2.05,2.3,2.15,6.1]),'no bearing on the stair-side partition');
@@ -417,7 +418,7 @@ test('R8 thickens the external walls per floor without moving a single inner fac
   assert.ok(has([6-t,1.2,6,8.5]),`${level} east wall`);
   assert.ok(has([.15,0,3.25,t]),`${level} front wall`);
   // Internal walls retain the stair faces and keep the new 150 mm finished allowance.
-  for(const b of [[3.1,0,3.25,2.3],[.15,2.15,3.25,2.3],[.15,6.1,3.25,6.25],[2.05,2.3,2.2,6.1]])assert.ok(has(b),`${level} partition ${b}`);
+  for(const b of [[3.1,0,3.25,2.3],[.15,6.1,3.25,6.25],[2.05,2.3,2.2,6.1],...(level==='ground'?[[.15,2.15,3.25,2.3]]:[])])assert.ok(has(b),`${level} partition ${b}`);
   const thick=walls.map(w=>Math.min(w[2]-w[0],w[3]-w[1]));
   assert.ok(thick.every(v=>[.15,t].some(k=>Math.abs(v-k)<eps)),`${level} has an unexpected wall thickness`);
  }
@@ -519,4 +520,142 @@ test('R17 area totals use actual envelopes and clear zones without overlap',()=>
   const sum=actual.reduce((v,r)=>v+r.clearAreaM2,0);near(sum,d.named_clear_zone_totals_m2[level]);
   assert.ok(sum<d.gross_envelope_m2_by_floor[level]);
  }
+});
+
+test('R18 fitted storage keeps its footprints and clears beams, windows and doors',()=>{
+ assert.deepEqual(plan.dimensions.storage_layout,storage);
+ const h=createHouse();h.root.updateMatrixWorld(true,true);
+ const planBox=o=>{const b=new Box3().setFromObject(o);return [b.min.x+3,4.85-b.max.z,b.max.x+3,4.85-b.min.z,b.min.y,b.max.y];};
+ let loftGross=0;
+ for(const unit of storage.units){
+  const g=h.levels[unit.level].getObjectByName(unit.label);assert.ok(g);
+  const z=LEVELS[unit.level],room=rooms.find(r=>r.id===unit.room).box;
+  const boxes=unit.segments.map(s=>s.box).concat(unit.corner?[unit.corner]:[]);
+  const area=boxes.reduce((v,b)=>v+(b[2]-b[0])*(b[3]-b[1]),0);
+  near(area*(storage.loftTop-storage.mainHeight),unit.grossLoftM3);loftGross+=unit.grossLoftM3;
+  g.traverse(o=>{
+   if(!o.isMesh)return;const b=planBox(o);
+   assert.ok(b[0]>=room[0]-.001&&b[1]>=room[1]-.001&&b[2]<=room[2]+.001&&b[3]<=room[3]+.001,'cabinet remains inside room');
+   for(const beam of frameBeams(unit.level)){
+    const lo=z+2.85-FRAME.indicativeBeam,hi=z+2.85;
+    assert.ok(!(overlaps(b,beam.box)&&Math.min(b[5],hi)-Math.max(b[4],lo)>1e-7),`${unit.id} ${o.name} enters beam`);
+   }
+   for(const ap of openingsFor(unit.level)){
+    const box=ap.box;
+    if(!box)continue;
+    assert.ok(!(overlaps(b,box)&&Math.min(b[5],z+ap.sill+ap.height)-Math.max(b[4],z+ap.sill)>1e-7),`${unit.id} blocks aperture`);
+   }
+   if(o.name==='main door'||o.name==='loft door')assert.ok(Math.max(b[2]-b[0],b[3]-b[1])<=.271,'door leaf stays narrow');
+   if(o.name==='top / loft shelf')assert.ok(b[5]<=z+2.5+1e-7);
+  });
+ }
+ near(loftGross,storage.capacity.additionalLoftsGrossM3);
+ near(plan.dimensions.total_including_roof_sqft,1365.28);
+});
+
+test('R18 wardrobe lofts and lift-up bed bases contain actual storage cavities',()=>{
+ const h=createHouse();h.root.updateMatrixWorld(true,true);
+ let beds=0;
+ for(const level of ['ground','first']){
+  const z=LEVELS[level];
+  for(const unit of storage.units.filter(u=>u.level===level)){
+   const g=h.levels[level].getObjectByName(unit.label);
+   for(const s of unit.segments){
+    const b=s.box,along=s.face==='y1',a=along?(b[0]+(b[2]-b[0])/s.modules/2):(b[1]+(b[3]-b[1])/s.modules/2);
+    const point=h.V(along?a:(b[0]+b[2])/2,z+2.3,along?(b[1]+b[3])/2:a);
+    g.traverse(o=>{if(o.isMesh)assert.ok(!new Box3().setFromObject(o).containsPoint(point),'loft cavity is not a solid block');});
+   }
+  }
+  h.levels[level].traverse(g=>{
+   if(g.name!=='Lift-up storage bed base')return;beds++;
+   const b=new Box3().setFromObject(g),point=b.getCenter(new Vector3());
+   g.traverse(o=>{if(o.isMesh)assert.ok(!new Box3().setFromObject(o).containsPoint(point),'bed cavity is not a solid block');});
+   near(b.max.y-b.min.y,.2);
+  });
+ }
+ assert.equal(beds,3);
+ near((2-2*storage.panel)*(1.5-2*storage.panel)*storage.beds.clearHeight,.471548544);
+});
+
+test('R18 Bedroom 3 has a continuous right-angle corner and no cosmetic ceiling bands',()=>{
+ const unit=storage.units.find(u=>u.id==='bedroom3'),[front,side]=unit.segments;
+ assert.equal(unit.cornerAngleDeg,90);assert.equal(front.face,'y1');assert.equal(side.face,'x0');
+ near(front.box[2],side.box[0]);near(front.box[3],side.doorRange[0]);near(side.box[3],side.doorRange[1]);
+ assert.equal(storage.ceilingInfill,false);
+ const h=createHouse();h.root.updateMatrixWorld(true,true);
+ for(const unit of storage.units){
+  const group=h.levels[unit.level].getObjectByName(unit.label);
+  group.traverse(o=>{
+   assert.ok(!o.name.includes('cosmetic ceiling infill')&&!o.name.includes('closed corner return'));
+   if(o.isMesh)assert.ok(new Box3().setFromObject(o).max.y<=LEVELS[unit.level]+storage.loftTop+1e-7);
+  });
+ }
+ const group=h.levels.first.getObjectByName(unit.label),cornerPoint=h.V(5.28,LEVELS.first+2.3,3.0);
+ group.traverse(o=>{if(o.isMesh)assert.ok(!new Box3().setFromObject(o).containsPoint(cornerPoint),'corner has no solid filler or dividing end wall');});
+});
+
+test('R18 opens study to stairs, keeps the gallery boundary and fits the tailoring workspace',()=>{
+ const strip=storage.study.removedPartition;
+ assert.ok(!wallPieces('first').some(p=>overlaps(p.box,strip)),'study/stair partition is absent at every height');
+ assert.ok(wallPieces('ground').some(p=>overlaps(p.box,strip)),'ground kitchen wall retained');
+ assert.ok(wallPieces('first').some(p=>overlaps(p.box,[3.1,.3,3.25,1.2])),'gallery/balcony boundary retained');
+ assert.ok(!openingsFor('first').some(o=>o.x===.95&&o.y===2.15),'obsolete doorway removed with wall');
+ const study=rooms.find(r=>r.id==='f-study').box;near(study[3],2.3);near(study[3]-study[1],2.13);
+ near(plan.dimensions.room_clear_areas_m2['f-study'],2.95*2.13);
+ near(plan.dimensions.room_clear_areas_m2['f-study']-2.95*1.98,.4425);
+ const linen=storage.units.find(u=>u.id==='linen').segments[0].box;
+ for(const table of storage.study.tables){
+  assert.ok(!overlaps(table.box,linen));
+  for(const route of [strip,[2.2,2.3,3.1,6.1],[3.1,1.35,3.25,2.15]])assert.ok(!overlaps(table.box,route),'workbench keeps routes clear');
+ }
+ assert.ok(!overlaps(linen,[.6,2.15,3.1,2.3]),'cabinet keeps a 2500 mm clear stair connection beside the west edge');
+ const h=createHouse();let machines=0;h.levels.first.traverse(o=>{if(o.name==='Sewing machine')machines++});assert.equal(machines,3);
+ near((2.15-.225)-(1.05+.225),storage.study.workingAisleM);
+ assert.ok(frameBeams('first').some(b=>overlaps(b.box,strip)),'existing cross beam remains');
+ near(plan.dimensions.total_including_roof_sqft,1365.28);
+});
+
+
+test('stair landing support meshes leave both bedroom entrances clear',()=>{
+ const h=createHouse();h.root.updateMatrixWorld(true,true);
+ for(const level of ['ground','first']){
+  const group=h.levels[level].getObjectByName('Landing beam and trimmer zones (indicative)');
+  assert.ok(group);
+  const doors=openingsFor(level).filter(o=>['door','slider','surface-slider'].includes(o.kind));
+  for(const mesh of group.children){
+   const b=new Box3().setFromObject(mesh);
+   const footprint=[b.min.x+3,4.85-b.max.z,b.max.x+3,4.85-b.min.z];
+   for(const door of doors){
+    const heightOverlap=Math.min(b.max.y,LEVELS[level]+door.sill+door.height)-Math.max(b.min.y,LEVELS[level]+door.sill)>1e-6;
+    assert.ok(!heightOverlap||!overlaps(footprint,door.box),`${level} stair support blocks door at ${door.x},${door.y}`);
+   }
+  }
+  const entrance=openingsFor(level).find(o=>o.kind==='door'&&o.axis==='h'&&Math.abs(o.y-6.1)<eps);
+  assert.ok(entrance);assert.ok(stairBeamZones(level)[0].box[2]<=entrance.box[0]);
+ }
+ assert.equal(plan.dimensions.total_including_roof_sqft,1365.28);
+});
+
+
+test('R19 opens the upper stair side, retains structure and guards the actual drop',()=>{
+ const cfg=revision.stairPassage,opening=openingsFor('first').find(o=>o.kind==='opening'&&sameBox(o.box,cfg.opening.box));
+ assert.ok(opening);near(opening.height,2.55);
+ const walls=wallPieces('first').filter(w=>overlaps(w.box,cfg.opening.box));
+ assert.ok(walls.length);assert.ok(walls.every(w=>w.bottom>=2.55-eps&&w.top===2.85));
+ assert.ok(wallPieces('ground').some(w=>overlaps(w.box,[2.05,2.3,2.2,2.35])),'ground entry jamb unchanged');
+ const h=createHouse();h.root.updateMatrixWorld(true,true);const guards=h.levels.first.getObjectByName('R19 open stair passage guards');assert.ok(guards);
+ const low=guards.getObjectByName('Level passage drop-edge guard'),high=guards.getObjectByName('First-to-roof outer flight guard');assert.ok(low&&high);
+ const b=new Box3().setFromObject(low);near(cfg.guards.floorEdge.y[0],4.2);near(cfg.guards.floorEdge.y[1],6.1);
+ assert.ok(b.min.x+3>2.05&&b.max.x+3<2.2,'guard fits former wall band and preserves passage');
+ assert.ok(b.max.y-LEVELS.first>1.1-.001);
+ for(const group of [low,high]){
+  const bars=group.children.filter(o=>o.name==='Vertical guard baluster');assert.ok(bars.length>15);
+  const centres=bars.map(o=>o.position.z).sort((a,b)=>a-b);
+  for(let i=1;i<centres.length;i++)assert.ok(centres[i]-centres[i-1]-cfg.guards.balusterDiameter<.1);
+ }
+ assert.deepEqual(stairTreads('first'),baseline.stairTreads());
+ assert.deepEqual(wallPieces('roof'),baseline.wallPieces('roof'));
+ assert.ok(frameTrimmers().some(t=>t.id==='stair-arrival-first'),'roof-arrival trimmer retained');
+ near(cfg.passage.clearBox[2]-cfg.passage.clearBox[0],.9);near(plan.dimensions.total_including_roof_sqft,1365.28);
+ assert.deepEqual(plan.dimensions.first_stair_passage_opening,cfg);
 });

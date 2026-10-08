@@ -1,0 +1,203 @@
+{
+  "revision": "R18",
+  "date": "2026-10-08",
+  "mainHeight": 2.1,
+  "loftTop": 2.5,
+  "ceiling": 2.85,
+  "panel": 0.018,
+  "plinth": 0.08,
+  "finish": "Matte warm ivory fronts and exposed sides, muted oak accent bay, recessed charcoal edge pulls. Loft tops remain at 2500 mm; space above is open. No cosmetic ceiling band.",
+  "doors": "Paired narrow hinged leaves: maximum 270 mm leaf width. Corner pair opens without a fixed face post. Supplier to coordinate hinges and access; model shows closed fronts.",
+  "beamNote": "Loft carcasses stop at 2.50 m, 50 mm below the indicative 2.55 m beam soffit. The space above is open; no cosmetic infill panel, added bulkhead or structural member is introduced. Verify final beam, ceiling, fixing and service positions on site.",
+  "units": [
+    {
+      "id": "bedroom1",
+      "level": "ground",
+      "room": "g-bed",
+      "label": "Bedroom 1 wardrobe + loft",
+      "segments": [
+        {
+          "box": [
+            0.15,
+            6.25,
+            1.65,
+            6.8
+          ],
+          "face": "y1",
+          "modules": 3,
+          "oakModule": 2
+        }
+      ],
+      "grossLoftM3": 0.33
+    },
+    {
+      "id": "bedroom2",
+      "level": "first",
+      "room": "f-master",
+      "label": "Master wardrobe + loft",
+      "segments": [
+        {
+          "box": [
+            0.15,
+            6.25,
+            1.65,
+            6.8
+          ],
+          "face": "y1",
+          "modules": 3,
+          "oakModule": 2
+        }
+      ],
+      "grossLoftM3": 0.33
+    },
+    {
+      "id": "bedroom3",
+      "level": "first",
+      "room": "f-child",
+      "label": "Bedroom 3 L wardrobe + loft",
+      "segments": [
+        {
+          "box": [
+            4.2,
+            2.525,
+            5.28,
+            3.075
+          ],
+          "face": "y1",
+          "modules": 2,
+          "oakModule": 0
+        },
+        {
+          "box": [
+            5.28,
+            2.625,
+            5.83,
+            3.33
+          ],
+          "face": "x0",
+          "modules": 1,
+          "oakModule": -1,
+          "doorRange": [
+            3.075,
+            3.33
+          ]
+        }
+      ],
+      "corner": [
+        5.28,
+        2.525,
+        5.83,
+        2.625
+      ],
+      "grossLoftM3": 0.4147,
+      "cornerAngleDeg": 90,
+      "cornerNote": "Continuous 90 degree L carcass. The short exposed return face is 255 mm wide; hidden corner volume is accessed with both corner leaves open. No solid filler or fixed face post. The full 705 mm footprint length is retained."
+    },
+    {
+      "id": "linen",
+      "level": "first",
+      "room": "f-study",
+      "label": "Shared linen / household cabinet",
+      "mainHeight": 2.1,
+      "segments": [
+        {
+          "box": [
+            0.15,
+            1.55,
+            0.6,
+            2.3
+          ],
+          "face": "x1",
+          "modules": 2,
+          "oakModule": -1
+        }
+      ],
+      "grossLoftM3": 0.135,
+      "interior": "Linen shelves in one bay; separate tall bay for slim household tools. Supplier to check equipment width in the reduced bays; keep cleaning products in a separate closed compartment."
+    }
+  ],
+  "beds": {
+    "type": "Closed lift-up storage bases in the existing 2000 x 1500 mm footprints; head hinge on south/x0 end. No side drawers into the compact aisles.",
+    "bottom": 0.1,
+    "top": 0.3,
+    "panel": 0.018,
+    "clearHeight": 0.164,
+    "nominalClearVolumeEachM3": 0.4715,
+    "mechanismNote": "Volume is the empty panel-lined cavity before lift mechanism, dividers, bedding supports and ventilation allowance; it is not guaranteed usable capacity. Supplier to select rated lift hardware and verify open-lid headboard/window clearance."
+  },
+  "capacity": {
+    "bedroomLoftsGrossM3": 1.0747,
+    "linenLoftGrossM3": 0.135,
+    "additionalLoftsGrossM3": 1.2097,
+    "bedCavitiesNominalM3": 1.4146,
+    "basis": "Loft figures are external geometric volume before panels, partitions and hardware. Bed figures are nominal panel-lined cavities before mechanisms/dividers. These figures must not be presented as net usable storage."
+  },
+  "constraints": "Bedroom cabinet and bed footprints, room directions, windows, bedroom/ensuite doors and gross floor-area totals retained. Study/stair partition removed; shared cabinet moved and reduced to 750 x 450 mm beside the tailoring benches. No overhead cupboards above the bed or across windows/doorways. Upper lofts store occasional-use light items; access with a suitable step stool. Provide ventilation and moisture-resistant detailing to the furniture supplier's specification.",
+  "ceilingInfill": false,
+  "study": {
+    "openToStairs": true,
+    "removedPartition": [
+      0.15,
+      2.15,
+      3.1,
+      2.3
+    ],
+    "retainedStructure": "Existing beams, columns, slabs, stair flights and guards retained; partition removal is an architectural proposal requiring structural coordination. The gallery/balcony boundary remains.",
+    "tables": [
+      {
+        "box": [
+          0.15,
+          0.3,
+          0.7,
+          1.5
+        ],
+        "face": "x1",
+        "stations": 2
+      },
+      {
+        "box": [
+          2.55,
+          0.35,
+          3.1,
+          1.35
+        ],
+        "face": "x0",
+        "stations": 1
+      }
+    ],
+    "chairs": [
+      [
+        1.05,
+        0.6,
+        0.45
+      ],
+      [
+        1.05,
+        1.2,
+        0.45
+      ],
+      [
+        2.15,
+        0.85,
+        0.45
+      ]
+    ],
+    "workingAisleM": 0.65,
+    "note": "Retain the approved three-machine tailoring function using two compact workbenches. Machine envelopes and seating are illustrative; check actual machines and movement before fabrication. The cabinet is 750 x 450 mm at the west-side edge, leaving the open stair connection clear.",
+    "shelves": [
+      [
+        0.2,
+        0.17,
+        0.55,
+        0.4
+      ],
+      [
+        2.4,
+        0.17,
+        3.0,
+        0.4
+      ]
+    ],
+    "clearStairConnectionM": 2.5
+  }
+}

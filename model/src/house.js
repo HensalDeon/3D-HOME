@@ -2,6 +2,8 @@ import {addTvJoineryPreview} from './tv-joinery-preview.js';
 import * as THREE from 'three';
 import {facadeBand} from './facade.js';
 import {revision} from './revision.js';
+import storage from './storage-layout.json' with {type:'json'};
+import {addStorageJoinery,addStorageBed} from './storage-joinery.js';
 import {plan,LEVELS,rooms,openingsFor,wallPieces,stairTreads,STAIR_STRUCTURE,stairBeamZones,stairFlights,stairLandingSlabs,FRAME,ENVELOPE} from './geometry.js';
 export function createHouse(){
  const root=new THREE.Group(),levels={},pickables=[],labels=[],wallMaterials=[],furnitureGroups=[],facades=[],dimensions=new THREE.Group();root.add(dimensions);const siteDimensions=new THREE.Group(),roofDimensions=new THREE.Group();dimensions.add(siteDimensions,roofDimensions);
@@ -9,7 +11,7 @@ export function createHouse(){
  const materials={wall:mat('#eeeee5'),stone:mat('#d7d5c8'),concrete:mat('#b7bab2',{roughness:.95}),dark:mat('#37413e'),wood:mat('#956b49'),oak:mat('#b69873'),fabric:mat('#d3d4bd'),linen:mat('#f8f4e7'),beige:mat('#ddd0ba'),green:mat('#738e76'),tile:mat('#dce8e2'),glass:mat('#b6d0cf',{transparent:true,opacity:.36,roughness:.17,metalness:.1,depthWrite:false,side:THREE.DoubleSide}),obscured:mat('#bad0cb',{transparent:true,opacity:.75,roughness:.6}),metal:mat('#717b72',{metalness:.55,roughness:.35}),soil:mat('#a3ad8d'),grass:mat('#b5c1a0'),pave:mat('#d9dbc9'),water:mat('#809f98'),white:mat('#f5f3e8'),mirror:mat('#dfe9ea',{metalness:.3,roughness:.15}),
   // R12 reference palette: medium-tone oak for the panel/shelves/nook, warm beige fronts, near
   // black for the screen, balustrade and plumbing, and a warm emissive for the concealed strips.
-  noir:mat('#1e2220',{roughness:.55}),glow:mat('#f7e3bd',{emissive:'#f0c07a',emissiveIntensity:.95,roughness:.6})};
+  ivory:mat('#e7dece',{roughness:.85}),noir:mat('#1e2220',{roughness:.55}),glow:mat('#f7e3bd',{emissive:'#f0c07a',emissiveIntensity:.95,roughness:.6})};
  const V=(x,h,y)=>new THREE.Vector3(x-3,h,4.85-y);
  function box(g,x0,y0,x1,y1,bottom,top,m){if(x1-x0<.00001||y1-y0<.00001||top-bottom<.00001)return;const o=new THREE.Mesh(new THREE.BoxGeometry(x1-x0,top-bottom,y1-y0),m);o.position.copy(V((x0+x1)/2,(bottom+top)/2,(y0+y1)/2));o.castShadow=true;o.receiveShadow=true;g.add(o);return o;}
  // An inclined slab whose top face lies on the a-b segment given as (plan y, absolute height).
@@ -87,11 +89,11 @@ export function createHouse(){
  }
  function furniture(g,level,z){
   const f=new THREE.Group();g.add(f);furnitureGroups.push(f);
-  function chair(x,y,w=.45){box(f,x-w/2,y-w/2,x+w/2,y+w/2,z+.34,z+.44,materials.fabric);box(f,x-w/2,y+w/2-.065,x+w/2,y+w/2,z+.40,z+.80,materials.oak);for(const a of [-1,1])for(const b of [-1,1])rod(f,[x+a*(w/2-.045),y+b*(w/2-.045),z],[x+a*(w/2-.045),y+b*(w/2-.045),z+.35],.025,materials.oak);}
+  function chair(x,y,w=.45,face='y0'){const start=f.children.length;box(f,x-w/2,y-w/2,x+w/2,y+w/2,z+.34,z+.44,materials.fabric);box(f,x-w/2,y+w/2-.065,x+w/2,y+w/2,z+.40,z+.80,materials.oak);for(const a of [-1,1])for(const b of [-1,1])rod(f,[x+a*(w/2-.045),y+b*(w/2-.045),z],[x+a*(w/2-.045),y+b*(w/2-.045),z+.35],.025,materials.oak);if(face!=='y0'){const g=new THREE.Group();g.name='Tailoring chair';g.position.copy(V(x,z,y));f.add(g);for(const o of f.children.slice(start,-1))g.attach(o);g.rotation.y=face==='x0'?-Math.PI/2:Math.PI/2;}}
   function basin(x,y,w,d,axis){let b=axis==='x1'?[x-d,y-w/2,x,y+w/2]:axis==='x0'?[x,y-w/2,x+d,y+w/2]:axis==='y1'?[x-w/2,y-d,x+w/2,y]:[x-w/2,y,x+w/2,y+d];box(f,...b,z+.77,z+.86,materials.white);box(f,b[0]+.04,b[1]+.04,b[2]-.04,b[3]-.04,z+.861,z+.87,materials.water);rod(f,[(b[0]+b[2])/2,b[3]-.03,z+.86],[(b[0]+b[2])/2,b[3]-.03,z+1.02],.015,materials.metal);}
   for(const c of plan.levels[level]){const a=c.args;
-   if(c.op==='bed'){const [x0,y0,x1,y1]=a;box(f,x0,y0,x1,y1,z+.1,z+.3,materials.oak);box(f,x0+.025,y0+.025,x1-.025,y1-.025,z+.3,z+.51,materials.linen);box(f,x0,y0,x0+.07,y1,z+.13,z+.98,materials.oak);box(f,x0+.6,y0+.01,x1-.01,y1-.01,z+.51,z+.55,materials.green);for(let i=0;i<2;i++)box(f,x0+.1,y0+.1+i*(y1-y0)/2,x0+.48,y0+(i+1)*(y1-y0)/2-.1,z+.51,z+.63,materials.linen);}
-   if(c.op==='chair')chair(...a.slice(0,3));
+   if(c.op==='bed'){const [x0,y0,x1,y1]=a;addStorageBed({parent:f,b:a.slice(0,4),z,box,materials});box(f,x0+.025,y0+.025,x1-.025,y1-.025,z+.3,z+.51,materials.linen);box(f,x0,y0,x0+.07,y1,z+.13,z+.98,materials.oak);box(f,x0+.6,y0+.01,x1-.01,y1-.01,z+.51,z+.55,materials.green);for(let i=0;i<2;i++)box(f,x0+.1,y0+.1+i*(y1-y0)/2,x0+.48,y0+(i+1)*(y1-y0)/2-.1,z+.51,z+.63,materials.linen);}
+   if(c.op==='chair'){const workSeat=level==='first'&&storage.study.chairs.some(s=>s[0]===a[0]&&s[1]===a[1]);chair(...a.slice(0,3),workSeat?(a[0]<1.5?'x0':'x1'):'y0');}
    if(c.op==='shower'){const[x0,y0,x1,y1]=a;box(f,x0,y0,x1,y1,z+.006,z+.04,materials.tile);box(f,x0+.6,y0-.015,x1,y0,z+.04,z+1.95,materials.glass);rod(f,[x0+.2,y1-.06,z+1],[x0+.2,y1-.06,z+2.05],.018,materials.metal);rod(f,[x0+.2,y1-.06,z+2.05],[x0+.2,y1-.26,z+2.05],.025,materials.metal);cylinder(f,x0+.2,y1-.26,z+2.01,z+2.05,.075,materials.metal);}
    if(c.op==='wc'){
     const[x,y,,projection,width]=a;
@@ -109,9 +111,7 @@ export function createHouse(){
    }
    if(c.op==='basin')basin(...a.slice(0,5));
   }
-  if(level!=='roof'){
-   box(f,.15,6.25,1.65,6.8,z,z+2.1,materials.oak);for(let x=.65;x<1.65;x+=.5)box(f,x-.005,6.8,x+.005,6.805,z+.04,z+2.07,materials.wood);
-  }
+  addStorageJoinery({parent:f,level,z,box,materials});
   if(level==='ground'){
    for(const b of [[.15,.22,3.1,.82],[2.5,.82,3.1,1.3],[3.25,8.5,4.4,8.95]]){box(f,...b,z,z+.84,materials.oak);box(f,...b,z+.84,z+.9,materials.stone);}
    box(f,.7,.29,1.32,.72,z+.905,z+.93,materials.dark);for(const x of [.86,1.16])cylinder(f,x,.49,z+.93,z+.94,.09,materials.metal);
@@ -156,17 +156,20 @@ export function createHouse(){
    box(f,5.28,1.35,5.78,1.72,z+.62,z+.73,materials.oak);box(f,5.38,1.37,5.68,1.43,z+.73,z+1.24,materials.wood);
    
   }else if(level==='first'){
-   box(f,.25,.35,1.75,.9,z+.73,z+.79,materials.oak);for(const x of [.30,1.67])box(f,x,.4,x+.06,.85,z,z+.73,materials.dark);box(f,2.65,.3,3.1,1.3,z,z+2.0,materials.oak);box(f,...revision.wardrobe.existing,z,z+2.1,materials.oak);
-   const wardrobe=new THREE.Group();wardrobe.name='Bedroom 3 continuous L wardrobe extension';f.add(wardrobe);
-   // Original cabinet retained; 100 mm corner filler joins the 550 mm deep perpendicular return.
-   box(wardrobe,...revision.wardrobe.extension,z,z+2.1,materials.oak);
-   box(wardrobe,...revision.wardrobe.filler,z,z+2.1,materials.oak);
-   for(const x of [4.75,5.27])line(wardrobe,[[x,3.077,z+.04],[x,3.077,z+2.06]],'#8d704e');
-   line(wardrobe,[[5.277,3.075,z+.04],[5.277,3.075,z+2.06]],'#8d704e');
-   // Paired hinged corner fronts, no fixed corner post: 550 + 300 mm leaves expose the corner.
-   rod(wardrobe,[4.78,3.1,z+.98],[4.78,3.1,z+1.17],.009,materials.dark);
-   rod(wardrobe,[5.255,3.335,z+.98],[5.255,3.335,z+1.17],.009,materials.dark);
-   rod(wardrobe,[4.24,3.1,z+.98],[4.24,3.1,z+1.17],.009,materials.dark);
+   const work=new THREE.Group();work.name='Tailoring workbenches';f.add(work);
+   for(const shelf of storage.study.shelves)for(const height of [1.35,1.65])box(work,...shelf,z+height,z+height+.025,materials.oak);
+   for(const bench of storage.study.tables){
+    const [x0,y0,x1,y1]=bench.box;box(work,x0,y0,x1,y1,z+.73,z+.77,materials.oak);
+    for(const x of [x0+.04,x1-.09])for(const y of [y0+.04,y1-.09])box(work,x,y,x+.05,y+.05,z,z+.73,materials.dark);
+    for(let i=0;i<bench.stations;i++){
+     const cy=y0+(i+.5)*(y1-y0)/bench.stations,cx=(x0+x1)/2;
+     const machine=new THREE.Group();machine.name='Sewing machine';work.add(machine);
+     box(machine,cx-.21,cy-.12,cx+.21,cy+.12,z+.77,z+.80,materials.dark);
+     box(machine,cx-.18,cy-.10,cx-.09,cy+.10,z+.80,z+1.04,materials.dark);
+     box(machine,cx-.18,cy-.08,cx+.16,cy+.08,z+.97,z+1.04,materials.dark);
+     box(machine,cx+.11,cy-.05,cx+.15,cy+.05,z+.82,z+.98,materials.metal);
+    }
+   }
    for(const y of [9.07,9.32])rod(f,[3.4,y,z+1.65],[5.6,y,z+1.65],.006,materials.metal);
   }else{
    cylinder(f,4.4,7.4,z+.68,z+.74,.38,materials.oak);cylinder(f,4.4,7.4,z,z+.68,.06,materials.dark);
@@ -294,6 +297,23 @@ export function createHouse(){
     const b=revision.tv.balustrade,bx=b.x-.02;
     rod(stairGroup,[bx,b.y[1],z+(landingRiser+1)*rise+b.height],[bx,b.y[0],z+3.9],.019,materials.noir);
     for(let i=0;i<upperCount;i++)rod(stairGroup,[bx,5.07-i*.25,z+(landingRiser+1+i)*rise],[bx,5.07-i*.25,z+(landingRiser+1+i)*rise+b.height],.012,materials.noir);
+   }
+   if(level==='first'){
+    const spec=revision.stairPassage.guards,guard=new THREE.Group();guard.name='R19 open stair passage guards';g.add(guard);
+    function guardRun(name,x,y0,y1,base,railBase){
+     const group=new THREE.Group();group.name=name;guard.add(group);
+     rod(group,[x,y0,z+railBase(y0)+spec.height],[x,y1,z+railBase(y1)+spec.height],spec.handrailRadius,materials.oak).name='Oak guard handrail';
+     const count=Math.ceil(Math.abs(y1-y0)/spec.maximumCentrePitch);
+     for(let i=0;i<=count;i++){
+      const y=y0+(y1-y0)*i/count;
+      rod(group,[x,y,z+base(y)+.03],[x,y,z+railBase(y)+spec.height],spec.balusterDiameter/2,materials.noir).name='Vertical guard baluster';
+     }
+    }
+    const edge=spec.floorEdge;guardRun('Level passage drop-edge guard',edge.x,...edge.y,()=>0,()=>0);
+    const flight=spec.upperFlight,steps=stairTreads('first').filter(t=>!t.arrival&&!t.landing&&t.box[0]>=1.15-1e-6&&t.box[2]<=2.05+1e-6);
+    const base=y=>steps.find(t=>y>=t.box[1]-1e-6&&y<=t.box[3]+1e-6)?.height??9*rise;
+    const topLine=y=>3+(y-flight.y[0])*(10*rise-3)/(flight.y[1]-flight.y[0]);
+    guardRun('First-to-roof outer flight guard',flight.x,...flight.y,base,topLine);
    }
    // Front and rear corner piers came directly from the wall commands.
    furniture(g,level,z);

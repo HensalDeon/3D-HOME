@@ -1,5 +1,5 @@
 {
- "revision": "R17",
+ "revision": "R19",
  "structure": {
   "revision": "R14",
   "system": "conventional cast-in-situ RCC staircase: continuous waist slab under each flight, monolithic with the landing slabs at the turns (folded plate)",
@@ -12,7 +12,7 @@
   "supports": [
    "starter landing at +0.882 m (riser 5) bears on plinth fill / ground slab",
    "west 150 mm external wall at x = 0.00-0.15 along both flights",
-   "landing beam zone inside the existing 150 mm finished bedroom cross-wall line at y = 6.10-6.25",
+   "landing beam zone at the rear stair landing edge x = 0.15-2.05, y = 6.10-6.20; no extension across the bedroom entrance; bearing at the landing edge requires structural design",
    "floor-slab trimmer at the stairwell opening edge, y = 4.20 (ground-to-first upper flight, moved from y = 3.45 by R9) and y = 3.20 (first-floor lower flight, unchanged)"
   ],
   "beamZones": [
@@ -21,12 +21,12 @@
     "box": [
      0.15,
      6.1,
-     3.05,
+     2.05,
      6.2
     ],
-    "within": "retained structural support zone inside the 150 mm finished bedroom cross-wall; final member design requires engineering coordination",
-    "span": "west external wall to the retained wall junction at x = 3.05-3.15",
-    "note": "LANDING BEAM ZONE - TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER"
+    "within": "indicative support zone at the stair landing rear edge, x = 0.15-2.05, y = 6.10-6.20; does not extend across the bedroom entrance or passage",
+    "span": "west external wall to the stair landing edge at x = 2.05; bearing and connection at this edge require structural design",
+    "note": "LANDING BEAM ZONE - TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER; ENDS AT STAIR LANDING, CLEAR OF BEDROOM DOOR"
    },
    {
     "id": "stairwell-trimmer",
@@ -86,7 +86,8 @@
     }
    ],
    "note": "NOT UNIFORM, AND THE TWO GROUND FLIGHTS ARE BELOW THE 2.20 m BENCHMARK THIS SET USES. The ground west flight has 1.73 m. This is a consequence of R9: it moved 3 risers out of the upper return into the starter flight, which raised the whole west flight 0.529 m (3 x 176.47 mm) closer to the first-to-roof flight running parallel above it. The two flights are parallel, so 1.73 m is constant over the whole run, not a local pinch. Sheet 09 previously stated a flat 2.26 m for all flights; that was the PRE-R9 value for the ground west flight (3.00 - 3 risers - the 208 mm waist zone) and was never recomputed when R9 shifted the risers. TO BE RESOLVED WITH THE ARCHITECTURAL AND STRUCTURAL DESIGN - it is a stair geometry question, not a drawing or modelling one, and no revision through R14 addresses it."
-  }
+  },
+  "coordination": "Bedroom-door clash correction: the indicative landing support zone previously extended to x = 3.05 and intersected the bedroom entrance at both levels. Its massing now ends at the stair landing edge x = 2.05. This is a conceptual coordination change, not an engineered beam deletion or approval; support, connections and reinforcement remain to be designed. Stair treads, landings, waist slabs, full-height frame beams and floor areas are unchanged."
  },
  "stair": {
   "frontLandingY": 2.3,

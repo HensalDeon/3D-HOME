@@ -13,6 +13,340 @@
     "masonry_and_plaster_build_up": "Select the masonry unit and plaster coats to total 150 mm; do not add plaster outside this allowance.",
     "wet_finish_note": "Bathroom dimensions are to plastered wall faces; final tile build-up requires coordination."
   },
+  "storage_layout": {
+    "revision": "R18",
+    "date": "2026-10-08",
+    "mainHeight": 2.1,
+    "loftTop": 2.5,
+    "ceiling": 2.85,
+    "panel": 0.018,
+    "plinth": 0.08,
+    "finish": "Matte warm ivory fronts and exposed sides, muted oak accent bay, recessed charcoal edge pulls. Loft tops remain at 2500 mm; space above is open. No cosmetic ceiling band.",
+    "doors": "Paired narrow hinged leaves: maximum 270 mm leaf width. Corner pair opens without a fixed face post. Supplier to coordinate hinges and access; model shows closed fronts.",
+    "beamNote": "Loft carcasses stop at 2.50 m, 50 mm below the indicative 2.55 m beam soffit. The space above is open; no cosmetic infill panel, added bulkhead or structural member is introduced. Verify final beam, ceiling, fixing and service positions on site.",
+    "units": [
+      {
+        "id": "bedroom1",
+        "level": "ground",
+        "room": "g-bed",
+        "label": "Bedroom 1 wardrobe + loft",
+        "segments": [
+          {
+            "box": [
+              0.15,
+              6.25,
+              1.65,
+              6.8
+            ],
+            "face": "y1",
+            "modules": 3,
+            "oakModule": 2
+          }
+        ],
+        "grossLoftM3": 0.33
+      },
+      {
+        "id": "bedroom2",
+        "level": "first",
+        "room": "f-master",
+        "label": "Master wardrobe + loft",
+        "segments": [
+          {
+            "box": [
+              0.15,
+              6.25,
+              1.65,
+              6.8
+            ],
+            "face": "y1",
+            "modules": 3,
+            "oakModule": 2
+          }
+        ],
+        "grossLoftM3": 0.33
+      },
+      {
+        "id": "bedroom3",
+        "level": "first",
+        "room": "f-child",
+        "label": "Bedroom 3 L wardrobe + loft",
+        "segments": [
+          {
+            "box": [
+              4.2,
+              2.525,
+              5.28,
+              3.075
+            ],
+            "face": "y1",
+            "modules": 2,
+            "oakModule": 0
+          },
+          {
+            "box": [
+              5.28,
+              2.625,
+              5.83,
+              3.33
+            ],
+            "face": "x0",
+            "modules": 1,
+            "oakModule": -1,
+            "doorRange": [
+              3.075,
+              3.33
+            ]
+          }
+        ],
+        "corner": [
+          5.28,
+          2.525,
+          5.83,
+          2.625
+        ],
+        "grossLoftM3": 0.4147,
+        "cornerAngleDeg": 90,
+        "cornerNote": "Continuous 90 degree L carcass. The short exposed return face is 255 mm wide; hidden corner volume is accessed with both corner leaves open. No solid filler or fixed face post. The full 705 mm footprint length is retained."
+      },
+      {
+        "id": "linen",
+        "level": "first",
+        "room": "f-study",
+        "label": "Shared linen / household cabinet",
+        "mainHeight": 2.1,
+        "segments": [
+          {
+            "box": [
+              0.15,
+              1.55,
+              0.6,
+              2.3
+            ],
+            "face": "x1",
+            "modules": 2,
+            "oakModule": -1
+          }
+        ],
+        "grossLoftM3": 0.135,
+        "interior": "Linen shelves in one bay; separate tall bay for slim household tools. Supplier to check equipment width in the reduced bays; keep cleaning products in a separate closed compartment."
+      }
+    ],
+    "beds": {
+      "type": "Closed lift-up storage bases in the existing 2000 x 1500 mm footprints; head hinge on south/x0 end. No side drawers into the compact aisles.",
+      "bottom": 0.1,
+      "top": 0.3,
+      "panel": 0.018,
+      "clearHeight": 0.164,
+      "nominalClearVolumeEachM3": 0.4715,
+      "mechanismNote": "Volume is the empty panel-lined cavity before lift mechanism, dividers, bedding supports and ventilation allowance; it is not guaranteed usable capacity. Supplier to select rated lift hardware and verify open-lid headboard/window clearance."
+    },
+    "capacity": {
+      "bedroomLoftsGrossM3": 1.0747,
+      "linenLoftGrossM3": 0.135,
+      "additionalLoftsGrossM3": 1.2097,
+      "bedCavitiesNominalM3": 1.4146,
+      "basis": "Loft figures are external geometric volume before panels, partitions and hardware. Bed figures are nominal panel-lined cavities before mechanisms/dividers. These figures must not be presented as net usable storage."
+    },
+    "constraints": "Bedroom cabinet and bed footprints, room directions, windows, bedroom/ensuite doors and gross floor-area totals retained. Study/stair partition removed; shared cabinet moved and reduced to 750 x 450 mm beside the tailoring benches. No overhead cupboards above the bed or across windows/doorways. Upper lofts store occasional-use light items; access with a suitable step stool. Provide ventilation and moisture-resistant detailing to the furniture supplier's specification.",
+    "ceilingInfill": false,
+    "study": {
+      "openToStairs": true,
+      "removedPartition": [
+        0.15,
+        2.15,
+        3.1,
+        2.3
+      ],
+      "retainedStructure": "Existing beams, columns, slabs, stair flights and guards retained; partition removal is an architectural proposal requiring structural coordination. The gallery/balcony boundary remains.",
+      "tables": [
+        {
+          "box": [
+            0.15,
+            0.3,
+            0.7,
+            1.5
+          ],
+          "face": "x1",
+          "stations": 2
+        },
+        {
+          "box": [
+            2.55,
+            0.35,
+            3.1,
+            1.35
+          ],
+          "face": "x0",
+          "stations": 1
+        }
+      ],
+      "chairs": [
+        [
+          1.05,
+          0.6,
+          0.45
+        ],
+        [
+          1.05,
+          1.2,
+          0.45
+        ],
+        [
+          2.15,
+          0.85,
+          0.45
+        ]
+      ],
+      "workingAisleM": 0.65,
+      "note": "Retain the approved three-machine tailoring function using two compact workbenches. Machine envelopes and seating are illustrative; check actual machines and movement before fabrication. The cabinet is 750 x 450 mm at the west-side edge, leaving the open stair connection clear.",
+      "shelves": [
+        [
+          0.2,
+          0.17,
+          0.55,
+          0.4
+        ],
+        [
+          2.4,
+          0.17,
+          3.0,
+          0.4
+        ]
+      ],
+      "clearStairConnectionM": 2.5
+    }
+  },
+  "study_stair_opening": {
+    "openToStairs": true,
+    "removedPartition": [
+      0.15,
+      2.15,
+      3.1,
+      2.3
+    ],
+    "retainedStructure": "Existing beams, columns, slabs, stair flights and guards retained; partition removal is an architectural proposal requiring structural coordination. The gallery/balcony boundary remains.",
+    "tables": [
+      {
+        "box": [
+          0.15,
+          0.3,
+          0.7,
+          1.5
+        ],
+        "face": "x1",
+        "stations": 2
+      },
+      {
+        "box": [
+          2.55,
+          0.35,
+          3.1,
+          1.35
+        ],
+        "face": "x0",
+        "stations": 1
+      }
+    ],
+    "chairs": [
+      [
+        1.05,
+        0.6,
+        0.45
+      ],
+      [
+        1.05,
+        1.2,
+        0.45
+      ],
+      [
+        2.15,
+        0.85,
+        0.45
+      ]
+    ],
+    "workingAisleM": 0.65,
+    "note": "Retain the approved three-machine tailoring function using two compact workbenches. Machine envelopes and seating are illustrative; check actual machines and movement before fabrication. The cabinet is 750 x 450 mm at the west-side edge, leaving the open stair connection clear.",
+    "shelves": [
+      [
+        0.2,
+        0.17,
+        0.55,
+        0.4
+      ],
+      [
+        2.4,
+        0.17,
+        3.0,
+        0.4
+      ]
+    ],
+    "clearStairConnectionM": 2.5
+  },
+  "first_stair_passage_opening": {
+    "revision": "R19",
+    "level": "first",
+    "opening": {
+      "box": [
+        2.05,
+        2.3,
+        2.2,
+        6.1
+      ],
+      "head": 2.55,
+      "retainedHeader": [
+        2.55,
+        2.85
+      ],
+      "note": "First-floor stair-side partition removed below the retained beam/soffit band; no floor-level nib or separate pillar. Ground-floor headed TV/basin openings retain their existing heights."
+    },
+    "passage": {
+      "clearBox": [
+        2.2,
+        2.3,
+        3.1,
+        6.1
+      ],
+      "minimumDesignClearM": 0.9,
+      "guardReserve": [
+        2.05,
+        3.2,
+        2.2,
+        6.1
+      ],
+      "areaBasis": "The former 150 mm wall band is reserved for guard/edge details; it is not added to named room clear areas. Gross floor area is unchanged."
+    },
+    "guards": {
+      "height": 1.1,
+      "balusterDiameter": 0.016,
+      "maximumCentrePitch": 0.1,
+      "handrailRadius": 0.025,
+      "finish": "Slim charcoal vertical balusters with muted oak top rails, matching the passage reference.",
+      "floorEdge": {
+        "x": 2.15,
+        "y": [
+          4.2,
+          6.1
+        ],
+        "baseHeight": 0,
+        "note": "Continuous guard beside the actual drop; leave level stair access at y = 2.30-3.20 clear."
+      },
+      "upperFlight": {
+        "x": 2.075,
+        "y": [
+          3.45,
+          5.2
+        ],
+        "note": "Additional outer guard follows the first-to-roof return flight; existing inner handrails retained. Coordinate connections where the guard meets the retained overhead support."
+      }
+    },
+    "structure": "Existing frame beams, columns, floor/slab opening, waist slabs, landing supports and treads retained. Confirm the partition is non-load-bearing and coordinate the overhead finish/support, guard loads, fixings and rail connections before construction. This is a coordinated concept, not engineered demolition or fabrication detailing.",
+    "referenceImage": "interiors/images/10-passage-wide.png",
+    "userDecision": "Open the first-floor stair-side wall to match the passage photograph; retain the study/gallery weather boundary.",
+    "guardReference": {
+      "url": "https://buildingpermit.lsgkerala.gov.in/Content/Rules/KBR2025.pdf",
+      "basis": "Official Kerala rules reference for local professional review. Proposed guard geometry is not a claim of complete current permit compliance."
+    }
+  },
   "internal_wall_boxes_m": {
     "GF": {
       "front_spine": [
@@ -76,12 +410,6 @@
         6.1,
         3.25,
         9.719999999999999
-      ],
-      "kitchen_study_back": [
-        0.15,
-        2.15,
-        3.25,
-        2.3
       ],
       "bedroom_front": [
         0.15,
@@ -180,7 +508,7 @@
       0.15,
       0.17,
       3.1,
-      2.15
+      2.3
     ],
     "f-master": [
       0.15,
@@ -329,7 +657,7 @@
     "g-work": 3.2131,
     "g-route": 2.62125,
     "g-stair": 7.22,
-    "f-study": 5.841,
+    "f-study": 6.2835,
     "f-master": 9.735,
     "f-child": 9.2235,
     "f-bath2": 2.5515,
@@ -349,7 +677,7 @@
     "g-work": 34.59,
     "g-route": 28.21,
     "g-stair": 77.72,
-    "f-study": 62.87,
+    "f-study": 67.64,
     "f-master": 104.79,
     "f-child": 99.28,
     "f-bath2": 27.46,
@@ -362,13 +690,13 @@
   },
   "named_clear_zone_totals_m2": {
     "ground": 50.07785,
-    "first": 49.4306
+    "first": 49.8731
   },
   "named_clear_zone_totals_sqft": {
     "ground": 539.03,
-    "first": 532.07
+    "first": 536.83
   },
-  "clear_area_basis": "Named clear zones to plastered wall faces; stairs and covered outdoor zones included; wall bands/door reveals excluded. Not a statutory carpet-area measurement.",
+  "clear_area_basis": "Named clear zones to plastered wall faces; stairs and covered outdoor zones included; removed study/stair partition band included; remaining wall bands/door reveals and the stair guard reserve excluded. Not a statutory carpet-area measurement.",
   "bathroom_layout_m": {
     "GF": [
       {
@@ -563,7 +891,22 @@
   "roof_clear_landing_height_m": 2.4,
   "roof_access": "full south stair from first floor",
   "drawing_count": 12,
-  "revision": "R17",
+  "revision": "R19",
+  "stair_landing_support": {
+    "box_m": [
+      0.15,
+      6.1,
+      2.05,
+      6.2
+    ],
+    "levels": [
+      "ground-to-first",
+      "first-to-roof"
+    ],
+    "ends_at_stair_landing": true,
+    "bedroom_entrances_clear": true,
+    "status": "Bedroom-door clash correction: the indicative landing support zone previously extended to x = 3.05 and intersected the bedroom entrance at both levels. Its massing now ends at the stair landing edge x = 2.05. This is a conceptual coordination change, not an engineered beam deletion or approval; support, connections and reinforcement remain to be designed. Stair treads, landings, waist slabs, full-height frame beams and floor areas are unchanged."
+  },
   "under_stair_wall_opening": {
     "box_m": [
       2.05,

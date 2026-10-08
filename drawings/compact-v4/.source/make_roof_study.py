@@ -32,7 +32,7 @@ def roof_plan(p):
  for coords in [(0,0,6,0),(6,0,6,9.7),(6,9.7,0,9.7),(0,9.7,0,0)]:p.railing(*coords)
  p.fill_rect(*HEAD,white)
  for r in [(0,2.15,.15,6.25),(2.05,2.15,2.2,6.25),(.15,2.15,2.05,2.3),(.15,6.1,2.05,6.25)]:p.wall(*r)
- v4.stair(p,'FF',False)
+ v4.stair(p,'FF',False,show_stair_passage=False)
  p.door(2.05,2.35,.90,.15,'v',+1,'lo')
  p.window(.55,2.15,.90,.15,'h');p.window(.55,6.1,.90,.15,'h')
  p.rect(2.2,2.3,3.3,3.45,T,.6,dash=[2,2])
@@ -102,7 +102,7 @@ def section(p):
 
 
 def sheet2(c):
- base(c,2,'First-floor stair and roof headroom','R14 / 16 SEP 2026 / PROPOSED FIRST-FLOOR STAIR 1:35 / DEVELOPED STAIR PROFILE 1:50 AT A3 / CONCEPTUAL RCC WAIST AND LANDING SLABS')
+ base(c,2,'First-floor stair and roof headroom','R19 / 08 OCT 2026 / OPEN STAIR SIDE WITH GUARDS / FIRST-FLOOR STAIR 1:35 / DEVELOPED STAIR PROFILE 1:50 AT A3 / CONCEPTUAL RCC WAIST AND LANDING SLABS')
  p=Plan(c,27,90-2.3*1000/35,1000/35)
  v4.stair(p,'FF',False,continue_to_roof=True)
  # An upper UP flight and lower DN arrival share the same plan projection.

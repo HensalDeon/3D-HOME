@@ -35,14 +35,14 @@ def base(c, ignored_number, title, subtitle):
 
 
 def cover(c):
-    base(c, 1, 'Complete house plans / full roof access', 'A3 COORDINATED DESIGN REVIEW SET / THREE BEDROOMS, THREE ENSUITES / R8 EXTERNAL WALLS 220 / 170 MM / R17 INTERNAL WALLS 150 MM INCLUDING PLASTER')
+    base(c, 1, 'Complete house plans / full roof access', 'A3 COORDINATED DESIGN REVIEW SET / THREE BEDROOMS, THREE ENSUITES / R8 EXTERNAL WALLS 220 / 170 MM / R19 OPEN STAIR SIDE / R18 STORAGE / INTERNAL WALLS 150 MM INCLUDING PLASTER')
     c.drawImage(str(OUT/'exterior-concept.png'), 20*mm, 92*mm, width=226*mm, height=150*mm, preserveAspectRatio=True, anchor='c')
     house.tx(c, 262, 235, 'DRAWING INDEX', 11, house.TEAL, True)
     entries = [
         ('01', 'Cover, index and design basis'),
         ('02', 'Site, parking and main-floor area'),
         ('03', 'Ground floor / 150 mm finished internal walls'),
-        ('04', 'First floor / roof-stair continuation'),
+        ('04', 'First floor / open stair passage and storage'),
         ('05', 'Roof plan / full-stair enclosure'),
         ('06', 'Integrated front and rear elevations'),
         ('07', 'Under-stair composition / headed wall opening'),
@@ -56,9 +56,9 @@ def cover(c):
         house.tx(c, 262, 224-i*8, n, 8, house.TEAL, True)
         house.tx(c, 274, 224-i*8, label, 8, house.INK)
     house.para(c, 262, 126, 'Print on A3 at 100% / actual size. Each drawing states its scale. Do not scale the photographs or the developed stair diagram horizontally.', 134, 8, 4.5)
-    house.para(c, 262, 113, 'This set replaces the separate compact-v4 and integrated-roof review PDFs. The current design includes full stairs to the roof and one conceptual structural framing option. Internal walls are 150 mm total including plaster. Connected wall faces are flush; deeper rebalanced bathrooms and adjusted furniture preserve clear circulation. Stair clearances and the 900 mm first-floor passage are retained. The R15 under-stair composition stands in the coordinated R10 wall opening - cut to +2.10 m, plastered header retained above; a full-height removal is not assumed.', 134, 8, 4.5)
+    house.para(c, 262, 113, 'This set replaces the separate compact-v4 and integrated-roof review PDFs. The current design includes full stairs to the roof and one conceptual structural framing option. Internal walls are 150 mm total including plaster. Connected wall faces are flush; 400 mm wardrobe lofts and lift-up bed bases keep bedroom footprints. R19 opens the first-floor stair side below its retained overhead band with vertical guards and oak rails. The family/tailoring room opens to the stair base below its retained beam; a small side cabinet provides shared linen storage. Ivory fronts and oak accents replace solid timber blocks. Stair clearances and the 900 mm first-floor passage are retained. The R15 under-stair composition stands in the coordinated R10 wall opening - cut to +2.10 m, plastered header retained above; a full-height removal is not assumed.', 134, 8, 4.5)
     house.block(c, 25, 82, 'COORDINATED DESIGN BASIS', 'External walls: 220 mm ground, 170 mm first. Internal walls: 150 mm finished including plaster. Ground floor: 59.30 m2 / 638.3 sq ft. First floor: 58.51 m2 / 629.8 sq ft. Roof enclosure: 9.02 m2 / 97.09 sq ft additional. Conservative total: 126.84 m2 / 1,365.3 sq ft. Roof landing +6.45 m; stair cover +9.00 m. Rear balcony entry is on the master-bedroom side wall, with two toilet vents facing the rear.', 218)
-    house.block(c, 262, 76, 'FOR ARCHITECT / BUILDER REVIEW', 'Dimensioned vectors govern over the render. The stair is shown as a conceptual RCC waist-slab system only; its waist thickness, landing beams, supports, reinforcement and connections must be designed by a structural engineer. Measured site set-out, structural design, stair headroom, waterproofing, services and permit drawings remain to be coordinated by the project professionals.', 134)
+    house.block(c, 262, 68, 'FOR ARCHITECT / BUILDER REVIEW', 'Dimensioned vectors govern over the render. The stair is shown as a conceptual RCC waist-slab system only; its waist thickness, landing beams, supports, reinforcement and connections must be designed by a structural engineer. Measured site set-out, structural design, stair headroom, waterproofing, services and permit drawings remain to be coordinated by the project professionals.', 134)
 
 
 def references(c):
@@ -103,7 +103,7 @@ def main():
     c = canvas.Canvas(str(PDF), pagesize=house.PAGE, pageCompression=1)
     c.setTitle('Hensal - Complete House Plans with Full Roof Access')
     c.setAuthor('Hensal residence - design review set')
-    c.setSubject('R17 internal walls 150 mm including plaster. Coordinated site, floor plans, full roof access, elevations and exterior. Architect/builder review; not for construction.')
+    c.setSubject('R19 open first-floor stair passage with guards; R18 fitted storage; internal walls 150 mm including plaster. Coordinated site, floor plans, full roof access, elevations and exterior. Architect/builder review; not for construction.')
     for PAGE_NUMBER, (slug, title, draw) in enumerate(sheets, 1):
         c.bookmarkPage(slug)
         c.addOutlineEntry(f'{PAGE_NUMBER:02d} - {title}', slug, 0)
@@ -131,6 +131,13 @@ def main():
     tv, opening, wash = L['tv'], L['tv']['wallOpening'], L['wash']
     dimensions.update({
         'revision': L['revision'],
+        'stair_landing_support': {
+            'box_m': L['structure']['beamZones'][0]['box'],
+            'levels': ['ground-to-first', 'first-to-roof'],
+            'ends_at_stair_landing': True,
+            'bedroom_entrances_clear': True,
+            'status': L['structure']['coordination'],
+        },
         'under_stair_wall_opening': {
             'box_m': opening['box'],
             'head_m': opening['height'],

@@ -2,7 +2,7 @@
 
 Established from the original room images on 15 September 2026, following the user's request to retain their color theme and photographic realism throughout the house.
 
-Open the [visual reference board](STYLE_REFERENCE.html) for the photographs, palette, and room examples together. Open the [revised living / stair / storage set](R14-review.html) to see the application.
+Open the [visual reference board](STYLE_REFERENCE.html) for the photographs, palette, and room examples together. The [image register](IMAGE_REVIEW.md) links the current room photographs and records their status.
 
 ## Governing references
 
@@ -52,13 +52,13 @@ Fluting is a local joinery treatment visible in the user's earlier stair/TV refe
 | `06-kitchen-wide`, `06-kitchen-detail`, `06-kitchen-opposite` | Primary oak/ivory/stone palette; restrained black fittings; natural plants, ceramics and woven runner; warm task light |
 | `07-bedroom1-wide`, `07-bedroom1-detail`, `07-bedroom1-opposite` | Same oak and stone; oatmeal upholstery, textured cream linen, sage accents, linen blind |
 | `08-bedroom2-wide`, `08-bedroom2-detail`, `08-bedroom2-opposite` | Same base palette; olive throw and cushion, woven runner, simple oak bedside furniture |
-| `09-bedroom3-wide`, `09-bedroom3-detail`, `09-bedroom3-opposite` | Same base palette; clay cushion, fine-grained oak wardrobe and dark pulls |
-| `10-study-wide` | Beige fabric sofa, sage cushion, shallow oak desk, woven rug, soft tropical daylight |
+| `09-bedroom3-wide`, `09-bedroom3-detail`, `09-bedroom3-opposite` | Same base palette; clay cushion, matte ivory wardrobe with fine-grained oak accent bay and recessed charcoal pulls |
+| `10-study-wide`, `10-study-storage` | Retained family/tailoring workspace; ivory shared cabinet, natural oak, soft tropical daylight |
 | `10-passage-wide`, `17-front-gallery-wide` | Light walls and floor, oak and charcoal edges, restrained framed art, daylight and greenery |
 | `11-bathroom1-wide`, `12-bathroom2-wide`, `13-bathroom3-wide` | Pale stone tiles, oak vanity, white sanitaryware, dark fittings, soft mirror glow and textured towels |
 | `14-balcony-wide`, `15-terrace-wide` | Same pale surfaces, natural timber/woven seating and tropical context; terrace daylight is cooler and brighter |
 
-`05-wash-wide.png` is an earlier geometry-led revision and is not a primary photographic benchmark. The rejected direct renders and `04-storage-wide-imagegen.png` are also excluded from the style-reference library. Their inclusion in the working image folder does not make them style authorities.
+`05-wash-wide.png` is an earlier geometry-led revision and is not a primary photographic benchmark. Rejected direct renders are excluded from the style-reference library. Their inclusion in the working image folder does not make them style authorities.
 
 ## Reusable generation brief
 
@@ -77,3 +77,9 @@ For another angle of the same room, also supply the first successful finished vi
 ## Current application
 
 The three replacements use the built-in image-generation tool. Exact prompts are saved in [prompts.json](.source/style-revision-2026-09-15/prompts.json); the original R14 geometry views are preserved in [.source/style-revision-2026-09-15/geometry/](.source/style-revision-2026-09-15/geometry/). The [revision audit](.source/style-revision-2026-09-15/audit.json) records outputs and unchanged source files. The original references remain the style authority for future revisions.
+
+R18 updates the bedroom wardrobe views and adds a shared-cabinet close view. Those revised photographs are finish examples, rather than original geometry references. The original kitchen wide/detail remain unchanged and govern visual style. Exact R18 prompts, input roles/hashes and camera records are consolidated in [image-release.json](.source/image-release.json). Bulky working images were removed at user request; historical inputs remain recoverable from Git commit `0333b6d`.
+
+R19 opens the first-floor stair side and corrects the passage, master doorway and study nib. Their native model camera references are retained in `.source/geometry/`, with exact prompts and hashes in the release manifest. Earlier R18 photo targets are recoverable from commit `65c5704`. The original kitchen images continue to govern finishes.
+
+The user selected the earlier photographic staircase appearance for the R19 passage, while keeping its revised study end. The measured stair treads and waist profile are unchanged in the plan/model; the photograph remains an illustrative presentation. This preference is recorded in the release manifest.

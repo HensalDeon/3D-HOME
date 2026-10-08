@@ -1,0 +1,65 @@
+{
+  "revision": "R19",
+  "level": "first",
+  "opening": {
+    "box": [
+      2.05,
+      2.3,
+      2.2,
+      6.1
+    ],
+    "head": 2.55,
+    "retainedHeader": [
+      2.55,
+      2.85
+    ],
+    "note": "First-floor stair-side partition removed below the retained beam/soffit band; no floor-level nib or separate pillar. Ground-floor headed TV/basin openings retain their existing heights."
+  },
+  "passage": {
+    "clearBox": [
+      2.2,
+      2.3,
+      3.1,
+      6.1
+    ],
+    "minimumDesignClearM": 0.9,
+    "guardReserve": [
+      2.05,
+      3.2,
+      2.2,
+      6.1
+    ],
+    "areaBasis": "The former 150 mm wall band is reserved for guard/edge details; it is not added to named room clear areas. Gross floor area is unchanged."
+  },
+  "guards": {
+    "height": 1.1,
+    "balusterDiameter": 0.016,
+    "maximumCentrePitch": 0.1,
+    "handrailRadius": 0.025,
+    "finish": "Slim charcoal vertical balusters with muted oak top rails, matching the passage reference.",
+    "floorEdge": {
+      "x": 2.15,
+      "y": [
+        4.2,
+        6.1
+      ],
+      "baseHeight": 0,
+      "note": "Continuous guard beside the actual drop; leave level stair access at y = 2.30-3.20 clear."
+    },
+    "upperFlight": {
+      "x": 2.075,
+      "y": [
+        3.45,
+        5.2
+      ],
+      "note": "Additional outer guard follows the first-to-roof return flight; existing inner handrails retained. Coordinate connections where the guard meets the retained overhead support."
+    }
+  },
+  "structure": "Existing frame beams, columns, floor/slab opening, waist slabs, landing supports and treads retained. Confirm the partition is non-load-bearing and coordinate the overhead finish/support, guard loads, fixings and rail connections before construction. This is a coordinated concept, not engineered demolition or fabrication detailing.",
+  "referenceImage": "interiors/images/10-passage-wide.png",
+  "userDecision": "Open the first-floor stair-side wall to match the passage photograph; retain the study/gallery weather boundary.",
+  "guardReference": {
+    "url": "https://buildingpermit.lsgkerala.gov.in/Content/Rules/KBR2025.pdf",
+    "basis": "Official Kerala rules reference for local professional review. Proposed guard geometry is not a claim of complete current permit compliance."
+  }
+}

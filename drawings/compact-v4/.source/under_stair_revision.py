@@ -41,8 +41,8 @@ def soffits():
  overhead at all - it is now plain first-floor slab, the extra floor R9 frees up."""
  return [(0,.9,12*R-LZONE)]+[(.9+i*.25,1.15+i*.25,NOSE(.9+i*.25)-WZONE) for i in range(4)]+[(1.9,3.8,2.85)]
 
-def stair(p,floor,show_passage=True,continue_to_roof=False):
- if floor!='GF':return OLD_STAIR(p,floor,show_passage,continue_to_roof)
+def stair(p,floor,show_passage=True,continue_to_roof=False,show_stair_passage=True):
+ if floor!='GF':return OLD_STAIR(p,floor,show_passage,continue_to_roof,show_stair_passage)
  p.fill_rect(.15,2.3,2.05,6.1,HexColor('#f4f5f3'))
  # R9: the upper flight is now only 4 risers (indices 12-15) plus the arrival (16); everything
  # from the intermediate landing (index 11) onward is dashed as overhead, same convention as R6.
@@ -158,15 +158,15 @@ def ground(p):
  p.text(3.08,3.75,'OPEN TO LIVING / DINING',3.8,rot=90,col=h.TEAL)
 
 def ground_sheet(c):
- h.base(c,3,'Ground floor / under-stair joinery and washbasin, one continuous run','R17 / 08 OCT 2026 / PLAN 1:55 AT A3 / INTERNAL WALLS 150 MM INCLUDING PLASTER / STAIR AND BASIN BOUNDARIES RETAINED')
+ h.base(c,3,'Ground floor / fitted bedroom storage, open living connection','R18 / 08 OCT 2026 / PLAN 1:55 AT A3 / INTERNAL WALLS 150 MM INCLUDING PLASTER / STAIR AND BASIN BOUNDARIES RETAINED')
  ground(h.Plan(c,44,45,1000/55));h.compass(h.Plan(c,0,0,10),23.4,22.1)
  y=236
  for title,body in [
- ('R17 / FLUSH WALL FACES, 150 MM INCLUDING PLASTER','Connected walls now share finished face lines. The central spine is x = 3.10-3.25 on both floors, aligned with the 900 mm upstairs passage. Bedroom and bathroom front walls share y = 6.10-6.25, eliminating the 50 mm projection. The rear pier caps follow the spine band, removing the former 25 mm step. All internal walls remain 150 mm TOTAL including plaster; stair and basin boundaries are retained.'),
+ ('R18 / FITTED STORAGE, FLUSH 150 MM WALLS','The 1500 x 550 mm wardrobe gains a 400 mm loft: main doors to +2.10 m, loft to +2.50 m, with the space above left open. Narrow paired leaves reduce door swing. Ivory fronts and sides with one muted oak bay lighten the room. The 2000 x 1500 mm bed gains a closed lift-up storage base. Furniture footprints and all R17 aligned 150 mm finished walls are retained.'),
  ('ROOM CLEARANCES / COMPACT, COORDINATED FITTINGS','Both southwest bedrooms are 2.950 x 3.300 m. The double bed has 625 mm beside it on both sides and 865 mm at its foot with the sliding leaf parked (900 mm to the wall). Ensuite 1 is 1.215 x 2.100 m with a 900 mm deep shower and a maximum 550 mm installed WC projection, leaving 665 mm in front. The service route is 1.165 m clear. Rear work is 2.530 x 1.270 m; a 450 mm preparation counter leaves an 820 mm aisle. The washing machine opens toward the clear end of this space. These are compact clearances; coordinate tile finishes and the selected fixture installation.'),
  ('LIVING AND DINING / OPEN CONNECTION','There is no floor-level partition to the right of OPEN ACCESS: the passage connects directly to living and dining. The dashed outline beside the stairs marks the OVERHEAD header from +2.10 to +2.85 m, not a separating wall at floor level. The stair-side opening is 2.00 m long; the separate basin archway remains 0.90 m wide.'),
  ('FITTED TV AND BASIN / EXISTING LOWER-FLIGHT BAY','The 2.25 x 0.35 m cabinet stays at x = 0.69-1.04, y = 3.20-5.45. Its 30 mm oak backing follows the measured stair underside with 60 mm clearance; the 43-inch screen centre is +0.87 m. The 0.62 x 0.35 m basin continues that run to y = 6.10 on the same face plane, facing EAST through the archway. The full-height oak fin separates the bays. Rim +0.86 m, mirror 0.40 x 0.80 m and standing zone 750 x 600 mm are retained. Basin clear height remains 1.95 m, below this set\'s 2.20 m benchmark. Enclosed cabinet storage is about 0.265 m3. Coordinate supply and waste behind the backing.'),
- ('STAIR / RETAINED TREADS AND HEADED OPENING','The R9 ground stair retains 17 risers at 176.47 mm, with 5 starter, 7 west-flight and 4 upper-flight risers plus arrival. The 12R landing and trimmer at y = 4.20 stay fixed. First-to-roof stairs are unchanged. The 150 mm finished partition is open below +2.10 m and retains a 0.75 m plastered header to the 2.85 m slab soffit. Full-height removal with no header is not assumed; separate architectural and structural verification would be required.'),
+ ('STAIR / RETAINED TREADS AND HEADED OPENING','The R9 ground stair retains 17 risers at 176.47 mm, with 5 starter, 7 west-flight and 4 upper-flight risers plus arrival. The 12R landing and trimmer at y = 4.20 stay fixed. First-to-roof treads are unchanged. Landing support ends at x = 2.05, clear of the bedroom door; its end bearing requires design. The 150 mm finished partition is open below +2.10 m and retains a 0.75 m plastered header to the 2.85 m slab soffit. Full-height removal with no header is not assumed; separate architectural and structural verification would be required.'),
  ('DIRECTIONS AND STRUCTURAL COORDINATION','The drawing compass and directional room arrangement are retained: southeast kitchen, southwest bedroom, northeast living/prayer and south stairs. This wall revision is not a complete Vastu certification. STAIR AND FRAME ARE CONCEPTUAL ONLY. Members, increased partition loads, landing supports, reinforcement and connections require structural design. The rear cross-beam line moves with the bathroom wall. Retained member sizes and grid B/pier projections need coordination; no structural member has been reduced to hide a step. Partitions are not assumed load-bearing.')]:
   y=h.block(c,246,y,title,body,156)
 

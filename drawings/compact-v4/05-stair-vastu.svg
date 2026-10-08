@@ -501,8 +501,8 @@
 <path transform="matrix(1,0,0,-1,0,841.8898)" stroke-width=".45" stroke-linecap="butt" stroke-dasharray="2,2" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#60747c" d="M187.0866 198.4252H289.1338V413.8583H187.0866Z"/>
 <path transform="matrix(1,0,0,-1,0,841.8898)" stroke-width=".45" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#25343b" d="M73.70079 470.5512H175.74799V527.24417H73.70079Z"/>
 <path transform="matrix(1,0,0,-1,0,841.8898)" stroke-width="1" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#eaf3ef" d="M73.70079 527.2441H175.748"/>
-<path transform="matrix(1,0,0,-1,0,841.8898)" d="M73.70079 629.2913H402.5197V640.6299H73.70079Z" fill="#c8ccc6" fill-rule="evenodd"/>
-<path transform="matrix(1,0,0,-1,0,841.8898)" stroke-width=".35" stroke-linecap="butt" stroke-dasharray="2,1.5" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#25343b" d="M73.70079 629.2913H402.5197V640.6299H73.70079Z"/>
+<path transform="matrix(1,0,0,-1,0,841.8898)" d="M73.70079 629.2913H289.1339V640.6299H73.70079Z" fill="#c8ccc6" fill-rule="evenodd"/>
+<path transform="matrix(1,0,0,-1,0,841.8898)" stroke-width=".35" stroke-linecap="butt" stroke-dasharray="2,1.5" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#25343b" d="M73.70079 629.2913H289.1339V640.6299H73.70079Z"/>
 <path transform="matrix(1,0,0,-1,0,841.8898)" d="M175.748 385.5118H289.1338V413.85829H175.748Z" fill="#c8ccc6" fill-rule="evenodd"/>
 <path transform="matrix(1,0,0,-1,0,841.8898)" stroke-width=".35" stroke-linecap="butt" stroke-dasharray="2,1.5" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#25343b" d="M175.748 385.5118H289.1338V413.85829H175.748Z"/>
 <use data-text="L" xlink:href="#font_2_45" transform="matrix(3.4,0,0,-3.4,147.504,194.45667)" fill="#60747c"/>
