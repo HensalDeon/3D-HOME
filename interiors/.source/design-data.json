@@ -70,10 +70,10 @@
       "id": "07-bedroom1",
       "title": "Bedroom 1",
       "floor": "GROUND FLOOR",
-      "dimension": "2.90 \u00d7 3.35 m \u00b7 1,500 \u00d7 2,000 mm bed",
-      "intent": "An upholstered headboard, soft sage accents and a simple oak wardrobe make a calm everyday bedroom.",
-      "materials": "Beige linen \u00b7 muted sage \u00b7 oak \u00b7 warm-white paint",
-      "check": "Bed head stays south. Preserve approximately 850 mm at the north foot route and 950 mm between the bed and east wardrobe. Do not fill the 350 mm west-side gap."
+      "dimension": "2.950 \u00d7 3.300 m \u00b7 1500 \u00d7 2000 mm lift-up storage bed",
+      "intent": "A fitted ivory wardrobe with one muted oak bay and a 400 mm loft adds useful storage; the lift-up bed keeps the compact aisles free of side drawers.",
+      "materials": "Matte ivory \u00b7 muted oak \u00b7 oatmeal linen \u00b7 sage accents",
+      "check": "Bed head stays south. Wardrobe 1500 \u00d7 550 mm; main height 2100 mm, loft top 2500 mm, open above. Six paired leaves at each level. Bedside aisles 625 mm; foot clearance 865 mm with parked slider. Preserve ensuite, room entrance, windows and private balcony route where applicable."
     },
     {
       "id": "11-bathroom1",
@@ -88,28 +88,28 @@
       "id": "10-study",
       "title": "Family / study",
       "floor": "FIRST FLOOR",
-      "dimension": "2.90 \u00d7 2.05 m",
-      "intent": "The user-preferred family arrangement pairs a compact sofa beneath the east window with a shallow side desk, a small stool and restrained decor.",
+      "dimension": "2.950 \u00d7 2.130 m \u00b7 open to stairs",
+      "intent": "Retain the approved three-machine tailoring function. Open the study/stair boundary and tuck a 750 \u00d7 450 mm linen/household cabinet against the side wall beside two compact workbenches.",
       "materials": "Natural linen \u00b7 warm oak \u00b7 muted olive \u00b7 beige Roman blind",
-      "check": "Proposed 1500 x 650 mm sofa, 1000 x 450 mm north-wall desk and 320 mm movable stool fit the retained 2900 x 2050 mm room. Keep both existing connections clear."
+      "check": "Retain the existing beam, stair flights and gallery/balcony boundary. The occupied-chair aisle is 650 mm; the stair connection is 2500 mm clear beside the cabinet. Main cupboard height 2100 mm, loft top 2500 mm, open above. Verify actual machines, chair movement, narrow tall-bay equipment fit and structural coordination."
     },
     {
       "id": "08-bedroom2",
       "title": "Bedroom 2 / master",
       "floor": "FIRST FLOOR",
-      "dimension": "2.90 \u00d7 3.35 m \u00b7 1,500 \u00d7 2,000 mm bed",
-      "intent": "The same warm material family gains a deeper olive accent. Compact storage leaves room for the private balcony route.",
-      "materials": "Warm neutral upholstery \u00b7 olive textile \u00b7 oak \u00b7 pale porcelain",
-      "check": "Bed head stays south. Preserve the separate ensuite and rear-balcony doors on the north side. The master west wall is solid; do not copy the ground-floor west window."
+      "dimension": "2.950 \u00d7 3.300 m \u00b7 1500 \u00d7 2000 mm lift-up storage bed",
+      "intent": "A fitted ivory wardrobe with one muted oak bay and a 400 mm loft adds useful storage; the lift-up bed keeps the compact aisles free of side drawers.",
+      "materials": "Matte ivory \u00b7 muted oak \u00b7 oatmeal linen \u00b7 olive accents",
+      "check": "Bed head stays south. Wardrobe 1500 \u00d7 550 mm; main height 2100 mm, loft top 2500 mm, open above. Six paired leaves at each level. Bedside aisles 625 mm; foot clearance 865 mm with parked slider. Preserve ensuite, room entrance, windows and private balcony route where applicable."
     },
     {
       "id": "09-bedroom3",
       "title": "Bedroom 3 / L-shaped wardrobe",
       "floor": "FIRST FLOOR",
-      "dimension": "2.70 \u00d7 3.60 m \u00b7 1,200 \u00d7 2,000 mm bed",
-      "intent": "A small double bed and continuous oak L-shaped wardrobe create useful storage without taking over the room.",
-      "materials": "Oak \u00b7 cream linen \u00b7 muted clay \u00b7 charcoal handles",
-      "check": "Wardrobe depth 550 mm, height 2,100 mm; east run 1,650 mm including corner, north return 850 mm overall. Paired corner doors without a fixed post. Approximately 600 mm remains at the bed foot; use a compact blind at the nearby window."
+      "dimension": "2.580 \u00d7 3.575 m \u00b7 1500 \u00d7 2000 mm lift-up storage bed",
+      "intent": "A continuous 90\u00b0 L wardrobe with ivory fronts, one muted oak bay and a 400 mm loft adds storage without a solid corner filler or cosmetic ceiling band.",
+      "materials": "Matte ivory \u00b7 muted oak accent bay \u00b7 cream linen \u00b7 muted clay \u00b7 recessed charcoal pulls",
+      "check": "Wardrobe depth 550 mm; main height 2100 mm, loft top 2500 mm. Front door run 1080 mm; overall return 705 mm, with 255 mm exposed face. Paired corner access without fixed face post. Clearances: 625 mm to wardrobe, 600 mm behind bed, 580 mm at foot; preserve the surface-sliding ensuite door. Final corner hinges and bed lift hardware require supplier detailing."
     },
     {
       "id": "12-bathroom2",
@@ -197,5 +197,7 @@
       "#A48A73",
       "Removable natural-look fabrics; sage, olive and clay used sparingly."
     ]
-  ]
+  ],
+  "storage_revision": "R18",
+  "storage_review": "R18-storage-review.html"
 }

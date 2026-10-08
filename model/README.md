@@ -1,5 +1,9 @@
 # Interactive model source
 
+R18 adds fitted wardrobe lofts and enclosed bed storage in the existing bedroom footprints, and opens the family/tailoring room to the stair base. The main wardrobes remain 2100 mm high, with 400 mm lofts to 2500 mm and open space above. Matte ivory fronts and sides, muted oak accent bays, narrow paired doors and recessed plinths replace the boxy timber massing. A 750 × 450 mm shared linen cabinet is tucked beside the tailoring benches. All three beds gain panel-lined lift-up storage bases; no side drawers enter the compact aisles. Lofts add **1.210 m³ gross external volume** before panels/hardware, including shared linen storage; the three bed cavities provide **1.415 m³ nominal panel-lined volume** before mechanisms/dividers. These are not net usable-capacity claims. Cabinet tops stay 50 mm below the indicative beam soffit. Cosmetic ceiling bands are removed; the loft tops remain visible. Bedroom 3 uses a continuous 90° L carcass without a solid corner filler.
+
+[Storage and bedroom image review](../interiors/R18-storage-review.html). Cabinet geometry, finishes and height/capacity basis are coordinated through `model/src/storage-layout.json` (repository-relative path). Furniture-supplier checks remain required for hinges, corner access, lift mechanisms, ventilation, fixings and measured site dimensions. Gross floor areas and bedroom/bed footprints are unchanged. The study/stair partition is removed while retaining the beam and stair structure; the study zone becomes 2.950 × 2.130 m and gains 0.4425 m² (4.76 sq ft) of clear floor area. Three sewing stations use two compact benches, with a 650 mm aisle between occupied chair footprints and 2500 mm clear at the stair connection beside the cabinet. Final machine and chair dimensions require supplier coordination.
+
 R17 aligns connected internal walls and rear pier caps to common finished faces, at **150 mm total including plaster**. The central spine is x = 3.10–3.25 on both floors; bedroom and bathroom front walls share y = 6.10–6.25. The upstairs passage remains 900 mm. Southwest bedrooms are 2.950 × 3.300 m; Bedroom 3 is 2.580 × 3.575 m. Each ensuite is 1.215 × 2.100 m, with a 900 mm shower zone and 600 mm walk-in entry and a maximum installed WC projection of 550 mm (665 mm clear in front). Bedroom 3 uses a surface-sliding ensuite door. The rear work counter is 450 mm deep, leaving an 820 mm aisle.
 
 Gross covered areas remain **638.34 sq ft ground + 629.84 sq ft first = 1,268.19 sq ft** (total calculated before rounding each floor). Including the 97.09 sq ft roof enclosure, the total is **1,365.28 sq ft**. Room clear areas and named-zone totals are derived from the new wall faces in `dimensions.json`; they exclude wall bands/door reveals and include stairs/covered outdoor zones, so they are not statutory carpet areas.
@@ -12,7 +16,7 @@ The model displays the published R14 TV joinery beneath the lower stair flight. 
 
 ## Deliverables and drawing scope
 
-The current interior deliverable is [the offline R14 review](../interiors/R14-review.html). The standalone explorer at `../drawings/compact-v4/interactive-3d.html`, the combined PDF, `dimensions.json` and `src/under-stair-layout.json` are all at R17. The linked review page is the R14 render set and still shows the basin in its former corner position.
+The current bedroom and shared-storage deliverable is [the offline R18 review](../interiors/R18-storage-review.html). The earlier living/stair images remain in [the R14 review](../interiors/R14-review.html). The standalone explorer at `../drawings/compact-v4/interactive-3d.html`, the combined PDF, `dimensions.json` and `src/under-stair-layout.json` are all at R18. The R14 review retains its historical render set and shows the basin in its former corner position.
 
 Rebuild order matters, because each artefact embeds the previous one: build the drawings first (`drawings/compact-v4/.source/make_complete_plans.py`), then `scripts/extract_plan.py`, `scripts/make_assets.py`, `scripts/revision-review.mjs`, then `npm run build`.
 
@@ -73,3 +77,9 @@ Plan x increases north and plan y increases west. The model uses x = plan x − 
 The living/stair opening retains its header from +2.10 m to +2.85 m above the ground finished floor. Stair waist slabs and support zones are conceptual structural massing. Model fit checks do not establish fabrication, reinforcement or structural design. Unspecified finish details are illustrative; the drawing set and viewer notes record architectural assumptions.
 
 Three.js is MIT licensed; see `THIRD_PARTY_LICENSE.txt`. The standalone explorer embeds its runtime and drawing assets for offline viewing.
+
+## Refresh the R18 storage review
+
+`src/storage-layout.json` controls wardrobe footprints, paired fronts, loft heights, bed cavities and the published capacity basis. `scripts/storage-references.mjs` projects the actual Three.js meshes into geometry-reference PPMs under `interiors/.source/storage-r18/geometry/`; convert those native renders to PNG with Pillow. They are layout references, not finished presentation images. Current camera positions and source hashes are saved in `geometry-audit.json`.
+
+The finished photographs use built-in imagegen; exact prompts and input hashes are in `interiors/.source/storage-r18/prompts.json`. Review model fit and photographic consistency before promoting images and updating the release/inventory/audit. Run `python interiors/.source/build_storage_review.py` from the repository root to refresh the offline photo/model comparison page. `npm test` checks storage cavities, fixed footprints, aperture/beam clearance, narrow leaves, the 90° corner and removal of cosmetic bands.

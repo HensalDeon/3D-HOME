@@ -87,9 +87,19 @@
     },
     "07-bedroom1-opposite.png": {
       "status": "accepted",
-      "sha256": "a2f40717a44ad786b990e4b82ba83ad94ffee3a52322ab970702af0b60f47a3e",
-      "review": "Reverse angle showing east wardrobe, room entrance, ensuite pocket door, and corridor view.",
-      "reviewed_at": "2026-09-10T21:39:06.114661"
+      "revision": "R18",
+      "sha256": "cd6e8109c0707f0ce329785b5caa380545cb60919367a3e5115a08bae5b4e80b",
+      "review": "R18 fitted ivory/oak wardrobe: paired doors, 400 mm loft and exposed top; cosmetic band removed. Sage textiles and retained room geometry.",
+      "reviewed_at": "2026-10-08",
+      "method": "built-in-imagegen-reference-edit",
+      "geometry_source": ".source/storage-r18/geometry/07-bedroom1-opposite.png",
+      "style_source": [
+        "06-kitchen-wide.png",
+        "06-kitchen-detail.png"
+      ],
+      "user_approval": "pending",
+      "render_review": "Assistant visual comparison against model geometry and kitchen style; presentation is not certified pixel-exact geometry.",
+      "prompt_id": "07-bedroom1-opposite-final"
     },
     "07-bedroom1-wide.png": {
       "status": "accepted",
@@ -105,9 +115,19 @@
     },
     "08-bedroom2-opposite.png": {
       "status": "accepted",
-      "sha256": "a875f51b4d073f90577d6e08a59987bac93479b8d351bdf5cf4e5bdb7b057a94",
-      "review": "Reverse angle distinguishing private drying balcony, ensuite pocket door, and east entrance wardrobe.",
-      "reviewed_at": "2026-09-10T21:39:06.114661"
+      "revision": "R18",
+      "sha256": "c761ad0fbe74a8c98c7bfe440c90e516f8c4ee3935f9eddfe95054bb109e8577",
+      "review": "R18 fitted ivory/oak wardrobe with six paired main/loft leaves, exposed top, olive textiles and corrected common passage view.",
+      "reviewed_at": "2026-10-08",
+      "method": "built-in-imagegen-reference-edit",
+      "geometry_source": ".source/storage-r18/geometry/08-bedroom2-opposite.png",
+      "style_source": [
+        "06-kitchen-wide.png",
+        "06-kitchen-detail.png"
+      ],
+      "user_approval": "pending",
+      "render_review": "Assistant visual comparison against model geometry and kitchen style; presentation is not certified pixel-exact geometry.",
+      "prompt_id": "08-bedroom2-opposite-paired-final"
     },
     "08-bedroom2-wide.png": {
       "status": "accepted",
@@ -117,21 +137,51 @@
     },
     "09-bedroom3-detail.png": {
       "status": "accepted",
-      "sha256": "ac67d0b33d719a1f59500fd4f73a94d2132cd767e0ac68d885a6bb6d64d8b2cb",
-      "review": "Functional corner detail of L-shaped wardrobe showing paired door access without fixed corner post.",
-      "reviewed_at": "2026-09-10T21:39:06.114661"
+      "revision": "R18",
+      "sha256": "a3de2d36241f1e9909891c214bd36cd4f1dffb56633065fe1b5e0639feab058c",
+      "review": "R18 closed-door detail of connected 90-degree corner, paired leaves and consistent ivory/oak finish. Supersedes the former all-oak open corner detail.",
+      "reviewed_at": "2026-10-08",
+      "method": "built-in-imagegen-reference-edit",
+      "geometry_source": ".source/storage-r18/geometry/09-bedroom3-detail.png",
+      "style_source": [
+        "06-kitchen-wide.png",
+        "06-kitchen-detail.png"
+      ],
+      "user_approval": "pending",
+      "render_review": "Assistant visual comparison against model geometry and kitchen style; presentation is not certified pixel-exact geometry.",
+      "prompt_id": "09-bedroom3-detail-final"
     },
     "09-bedroom3-opposite.png": {
       "status": "accepted",
-      "sha256": "4689834af09dff3e641f2be22458a3e3b54efc740fa4cb37906be3603d0c563f",
-      "review": "Reverse angle showing west ensuite door, north window, and continuous L wardrobe return.",
-      "reviewed_at": "2026-09-10T21:39:06.114661"
+      "revision": "R18",
+      "sha256": "a81ff3065c887f9d56d07f5af9523401e4de67d862b958273728b4f5081e6c48",
+      "review": "R18 local finish correction to visible wardrobe edge; existing opposite composition retained.",
+      "reviewed_at": "2026-10-08",
+      "method": "built-in-imagegen-reference-edit",
+      "geometry_source": null,
+      "style_source": [
+        "06-kitchen-wide.png",
+        "06-kitchen-detail.png"
+      ],
+      "user_approval": "pending",
+      "render_review": "Assistant visual comparison against model geometry and kitchen style; presentation is not certified pixel-exact geometry.",
+      "prompt_id": "09-bedroom3-opposite-final"
     },
     "09-bedroom3-wide.png": {
       "status": "accepted",
-      "sha256": "18c455443b9fa3d1b9104201f9f4865fa0cbb1e5ebf3b6cc72eb856972483e85",
-      "review": "Bedroom 3 with small double bed, north window, and continuous built-in L-shaped oak wardrobe at northeast corner.",
-      "reviewed_at": "2026-09-10T21:39:06.114661"
+      "revision": "R18",
+      "sha256": "7b1746362d6c57d616aeb0b8fff714c90952054e6e57ae65fd873915dab53472",
+      "review": "R18 continuous right-angle L wardrobe: camera moved inside corner so both perpendicular faces are visible. No solid filler; 400 mm loft, space above open.",
+      "reviewed_at": "2026-10-08",
+      "method": "built-in-imagegen-reference-edit",
+      "geometry_source": ".source/storage-r18/geometry/09-bedroom3-wide.png",
+      "style_source": [
+        "06-kitchen-wide.png",
+        "06-kitchen-detail.png"
+      ],
+      "user_approval": "pending",
+      "render_review": "Assistant visual comparison against model geometry and kitchen style; presentation is not certified pixel-exact geometry.",
+      "prompt_id": "09-bedroom3-wide-final"
     },
     "10-passage-wide.png": {
       "status": "accepted",
@@ -250,11 +300,27 @@
     "22-exterior-rear-utility-wide.png": {
       "status": "accepted",
       "sha256": "f031adbd2b3e6f0bae01b9acee023f65b17407e03373ec784807d8206aed58af",
-      "review": "Rear utility backyard SW diagonal view v6. Wide-angle, camera against rear wall. Yard reads as tight ~4m depth — house dominates frame. Biogas green dome at rear-left near west+north walls, close to camera. Square masonry burn pit at right/south side near rear boundary on gravel pad. Septic access NW corner. RIGHT: 2.63m parking strip with car rear. LEFT: 1m north passage, frangipani. Minimal floor tiles visible between biogas and house — compact courtyard feel. House rear unchanged: utility door, charcoal canopy, wash basin, drying balcony with laundry, timber cladding, headhouse. Compound walls all sides.",
+      "review": "Rear utility backyard SW diagonal view v6. Wide-angle, camera against rear wall. Yard reads as tight ~4m depth \u2014 house dominates frame. Biogas green dome at rear-left near west+north walls, close to camera. Square masonry burn pit at right/south side near rear boundary on gravel pad. Septic access NW corner. RIGHT: 2.63m parking strip with car rear. LEFT: 1m north passage, frangipani. Minimal floor tiles visible between biogas and house \u2014 compact courtyard feel. House rear unchanged: utility door, charcoal canopy, wash basin, drying balcony with laundry, timber cladding, headhouse. Compound walls all sides.",
       "reviewed_at": "2026-09-22T11:31:00Z",
       "revision": "R6-depth-final",
       "method": "imagegen",
       "user_approval": "accepted"
+    },
+    "10-study-storage.png": {
+      "status": "accepted",
+      "revision": "R18",
+      "sha256": "34340d1c59dabfa21312f49a30fc7b10d835a8e022352e3430b29fa16228655b",
+      "review": "R18 open family/tailoring room viewed from the stair base. Three sewing stations and two benches follow the preferred tailoring use; 750 x 450 mm ivory linen cabinet at side. Study/stair partition removed below retained beam; gallery/balcony boundary preserved.",
+      "reviewed_at": "2026-10-08",
+      "method": "built-in-imagegen-reference-edit",
+      "geometry_source": ".source/storage-r18/geometry/10-study-storage.png",
+      "style_source": [
+        "06-kitchen-wide.png",
+        "06-kitchen-detail.png"
+      ],
+      "user_approval": "pending",
+      "render_review": "Assistant visual comparison against model geometry and kitchen style; presentation is not certified pixel-exact geometry.",
+      "prompt_id": "10-study-storage-open-stairs-final"
     }
   },
   "approval": "Assistant visual review only; approval of the source layout is separate from user approval of the generated finishes.",

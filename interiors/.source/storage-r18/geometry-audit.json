@@ -1,0 +1,99 @@
+{
+  "revision": "R18",
+  "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
+  "sourceHashes": {
+    "house.js": "1cb7cb1b8aff8d64ba06081830c32d0a1ee9d4bb2666ee878ca190ffab3f4e64",
+    "geometry.js": "8c03128a770d47aec0f1eecf2b776f7eb85e8e8bd9d922ca65b66ef1635107ae",
+    "storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+    "storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
+    "plan-data.json": "f54b045e371ede7cf743079b3a591e59b0b9e3486f6a45ae91b3b990003a8cfe",
+    "structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589"
+  },
+  "views": [
+    {
+      "id": "07-bedroom1-opposite",
+      "level": "ground",
+      "eye": [
+        2.75,
+        9.25,
+        1.5
+      ],
+      "at": [
+        1.5,
+        6.6,
+        1.35
+      ],
+      "fov": 65,
+      "meshCount": 434,
+      "triangleCount": 7316
+    },
+    {
+      "id": "08-bedroom2-opposite",
+      "level": "first",
+      "eye": [
+        2.75,
+        9.05,
+        1.5
+      ],
+      "at": [
+        1.5,
+        6.6,
+        1.35
+      ],
+      "fov": 65,
+      "meshCount": 519,
+      "triangleCount": 6107
+    },
+    {
+      "id": "09-bedroom3-wide",
+      "level": "first",
+      "eye": [
+        4.8,
+        5.85,
+        1.5
+      ],
+      "at": [
+        5.04,
+        2.98,
+        1.3
+      ],
+      "fov": 65,
+      "meshCount": 519,
+      "triangleCount": 4462
+    },
+    {
+      "id": "09-bedroom3-detail",
+      "level": "first",
+      "eye": [
+        4.95,
+        4.25,
+        1.4
+      ],
+      "at": [
+        5.15,
+        3,
+        1.5
+      ],
+      "fov": 65,
+      "meshCount": 519,
+      "triangleCount": 3076
+    },
+    {
+      "id": "10-study-storage",
+      "level": "first",
+      "eye": [
+        1.75,
+        3,
+        1.5
+      ],
+      "at": [
+        1.65,
+        0.5,
+        1.35
+      ],
+      "fov": 78,
+      "meshCount": 519,
+      "triangleCount": 2947
+    }
+  ]
+}

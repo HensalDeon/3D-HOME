@@ -79,7 +79,7 @@
       "file": "images/07-bedroom1-wide.png",
       "group": "Bedroom 1",
       "role": "Sage accents, textured ivory linen and natural oak.",
-      "sha256": "4f6b065f9c73ffb59690022135789d35e8b840b0b1053712b19846bb8c875162"
+      "sha256": "89c37abc5272c4aa53d850cd2009818e59e467b32474ade8c2706f768481c9f8"
     },
     {
       "file": "images/07-bedroom1-detail.png",
@@ -90,62 +90,74 @@
     {
       "file": "images/07-bedroom1-opposite.png",
       "group": "Bedroom 1",
-      "role": "Sage accents, textured ivory linen and natural oak.",
-      "sha256": "a2f40717a44ad786b990e4b82ba83ad94ffee3a52322ab970702af0b60f47a3e"
+      "role": "Sage accents, textured ivory linen and natural oak. R18 revised finish example; original kitchen images remain the primary style authority.",
+      "sha256": "cd6e8109c0707f0ce329785b5caa380545cb60919367a3e5115a08bae5b4e80b",
+      "revision": "R18"
     },
     {
       "file": "images/08-bedroom2-wide.png",
       "group": "Master bedroom",
       "role": "Olive textiles, oatmeal upholstery, woven runner and oak.",
-      "sha256": "ad2493a3c55b8096adca365d750035e5fcd0531d9e86c6b75ca9771eaee4af39"
+      "sha256": "c9aa67b6f8cd9d842ad8d13474d15c08c2c2047d6af1959eebdd7a3f8f770ae4"
     },
     {
       "file": "images/08-bedroom2-detail.png",
       "group": "Master bedroom",
       "role": "Olive textiles, oatmeal upholstery, woven runner and oak.",
-      "sha256": "0f7067abb0b45a896c915865d13656d39dbe2f5877eefd0988db66d1e96c6cb3"
+      "sha256": "c62008e9bbef03a5284e440d0c8a474ca768d60c979e46062cc53fc4f494ae95"
     },
     {
       "file": "images/08-bedroom2-opposite.png",
       "group": "Master bedroom",
-      "role": "Olive textiles, oatmeal upholstery, woven runner and oak.",
-      "sha256": "a875f51b4d073f90577d6e08a59987bac93479b8d351bdf5cf4e5bdb7b057a94"
+      "role": "Olive textiles, oatmeal upholstery, woven runner and oak. R18 revised finish example; original kitchen images remain the primary style authority.",
+      "sha256": "c761ad0fbe74a8c98c7bfe440c90e516f8c4ee3935f9eddfe95054bb109e8577",
+      "revision": "R18"
     },
     {
       "file": "images/09-bedroom3-wide.png",
       "group": "Bedroom 3",
-      "role": "Clay accent, quiet oak wardrobe and dark pulls.",
-      "sha256": "18c455443b9fa3d1b9104201f9f4865fa0cbb1e5ebf3b6cc72eb856972483e85"
+      "role": "Clay accent, ivory wardrobe with muted oak bay, and recessed charcoal pulls. R18 revised finish example; original kitchen images remain the primary style authority.",
+      "sha256": "7b1746362d6c57d616aeb0b8fff714c90952054e6e57ae65fd873915dab53472",
+      "revision": "R18"
     },
     {
       "file": "images/09-bedroom3-detail.png",
       "group": "Bedroom 3",
-      "role": "Clay accent, quiet oak wardrobe and dark pulls.",
-      "sha256": "ac67d0b33d719a1f59500fd4f73a94d2132cd767e0ac68d885a6bb6d64d8b2cb"
+      "role": "Clay accent, ivory wardrobe with muted oak bay, and recessed charcoal pulls. R18 revised finish example; original kitchen images remain the primary style authority.",
+      "sha256": "a3de2d36241f1e9909891c214bd36cd4f1dffb56633065fe1b5e0639feab058c",
+      "revision": "R18"
     },
     {
       "file": "images/09-bedroom3-opposite.png",
       "group": "Bedroom 3",
-      "role": "Clay accent, quiet oak wardrobe and dark pulls.",
-      "sha256": "4689834af09dff3e641f2be22458a3e3b54efc740fa4cb37906be3603d0c563f"
+      "role": "Clay accent, ivory wardrobe with muted oak bay, and recessed charcoal pulls. R18 revised finish example; original kitchen images remain the primary style authority.",
+      "sha256": "a81ff3065c887f9d56d07f5af9523401e4de67d862b958273728b4f5081e6c48",
+      "revision": "R18"
     },
     {
       "file": "images/10-study-wide.png",
       "group": "Study",
-      "role": "Beige sofa, sage cushion, woven rug and soft daylight.",
-      "sha256": "4e30449d6eb999b8283d41a1f94fecd065e57cf600d98df59ca2c85e9222dd57"
+      "role": "Retained family/tailoring workspace, shared ivory linen cabinet and soft daylight.",
+      "sha256": "a3932effcc5e498b19453297158419f708d4ea7008e38155e0f3b733a4976763"
+    },
+    {
+      "file": "images/10-study-storage.png",
+      "group": "Study",
+      "role": "Retained family/tailoring workspace, shared ivory linen cabinet and soft daylight. R18 revised finish example; original kitchen images remain the primary style authority.",
+      "sha256": "34340d1c59dabfa21312f49a30fc7b10d835a8e022352e3430b29fa16228655b",
+      "revision": "R18"
     },
     {
       "file": "images/10-passage-wide.png",
       "group": "Passage and gallery",
       "role": "Ivory and stone continuity, oak and charcoal edges, greenery.",
-      "sha256": "a4dff0b3de666e71b512c3200b1ddb2b877e5d1f586aa61e7e00001e59f3a769"
+      "sha256": "4611cc619de5f27dd4fc89305d66971529ed34c4766bd03361a1ae0682376069"
     },
     {
       "file": "images/17-front-gallery-wide.png",
       "group": "Passage and gallery",
       "role": "Ivory and stone continuity, oak and charcoal edges, greenery.",
-      "sha256": "0e28593299deb06e5b48e8defab838f4bdc54d726f70d1c1e6a6b8eaf3447549"
+      "sha256": "06bf3211867e2e0327a60fa4335c66e012adf0b53cc02a89fd8470c7c86ef6b8"
     },
     {
       "file": "images/11-bathroom1-wide.png",

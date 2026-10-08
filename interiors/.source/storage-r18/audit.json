@@ -1,0 +1,122 @@
+{
+  "revision": "R18",
+  "method": "built-in image_gen; native model geometry references",
+  "assistant_review": "passed",
+  "user_approval": "pending",
+  "outputs": [
+    {
+      "image": "07-bedroom1-opposite.png",
+      "sha256": "cd6e8109c0707f0ce329785b5caa380545cb60919367a3e5115a08bae5b4e80b",
+      "prompt_id": "07-bedroom1-opposite-final",
+      "review": "R18 fitted ivory/oak wardrobe: paired doors, 400 mm loft and exposed top; cosmetic band removed. Sage textiles and retained room geometry."
+    },
+    {
+      "image": "08-bedroom2-opposite.png",
+      "sha256": "c761ad0fbe74a8c98c7bfe440c90e516f8c4ee3935f9eddfe95054bb109e8577",
+      "prompt_id": "08-bedroom2-opposite-paired-final",
+      "review": "R18 fitted ivory/oak wardrobe with six paired main/loft leaves, exposed top, olive textiles and corrected common passage view."
+    },
+    {
+      "image": "09-bedroom3-wide.png",
+      "sha256": "7b1746362d6c57d616aeb0b8fff714c90952054e6e57ae65fd873915dab53472",
+      "prompt_id": "09-bedroom3-wide-final",
+      "review": "R18 continuous right-angle L wardrobe: camera moved inside corner so both perpendicular faces are visible. No solid filler; 400 mm loft, space above open."
+    },
+    {
+      "image": "09-bedroom3-detail.png",
+      "sha256": "a3de2d36241f1e9909891c214bd36cd4f1dffb56633065fe1b5e0639feab058c",
+      "prompt_id": "09-bedroom3-detail-final",
+      "review": "R18 closed-door detail of connected 90-degree corner, paired leaves and consistent ivory/oak finish. Supersedes the former all-oak open corner detail."
+    },
+    {
+      "image": "09-bedroom3-opposite.png",
+      "sha256": "a81ff3065c887f9d56d07f5af9523401e4de67d862b958273728b4f5081e6c48",
+      "prompt_id": "09-bedroom3-opposite-final",
+      "review": "R18 local finish correction to visible wardrobe edge; existing opposite composition retained."
+    },
+    {
+      "image": "10-study-storage.png",
+      "sha256": "34340d1c59dabfa21312f49a30fc7b10d835a8e022352e3430b29fa16228655b",
+      "prompt_id": "10-study-storage-open-stairs-final",
+      "review": "R18 open family/tailoring room viewed from the stair base. Three sewing stations and two benches follow the preferred tailoring use; 750 x 450 mm ivory linen cabinet at side. Study/stair partition removed below retained beam; gallery/balcony boundary preserved."
+    }
+  ],
+  "unchanged_images": {
+    "10-passage-wide.png": "4611cc619de5f27dd4fc89305d66971529ed34c4766bd03361a1ae0682376069",
+    "08-bedroom2-wide.png": "c9aa67b6f8cd9d842ad8d13474d15c08c2c2047d6af1959eebdd7a3f8f770ae4",
+    "10-study-wide.png": "a3932effcc5e498b19453297158419f708d4ea7008e38155e0f3b733a4976763",
+    "15-terrace-wide.png": "1b6235b2876556aa33006abf8dfdc7f3400848bc9f61ad450957877495a768c8",
+    "04-storage-wide.png": "90c8143319e40399b117c4cc8caa2ce3f8c7d6597a9a0d4d6205dde2afa5b90d",
+    "16-dining-wide.png": "74520e27a9ba23f634d4984704656b461f91aa531ebbb8803e3f8f5032931d62",
+    "05-wash-wide.png": "3cd67adc6611a69e5b0016d1b93dd850b9c0b6c0705f615cde484fa6347d8efa",
+    "22-exterior-rear-utility-wide.png": "9f38e2f8cf619a86d8ac20becf286c33eff247f150dda61b67f474a02bffe781",
+    "07-bedroom1-wide.png": "89c37abc5272c4aa53d850cd2009818e59e467b32474ade8c2706f768481c9f8",
+    "17-front-gallery-wide.png": "06bf3211867e2e0327a60fa4335c66e012adf0b53cc02a89fd8470c7c86ef6b8",
+    "01-entrance-wide.png": "e8c1f7b0b25fff2937d4662e0a1e45f0bb9c94b73fc9cf87d9c2df317cff4223",
+    "14-balcony-wide.png": "8794cede165b214bfa3825db9c3fed3fd7999f79ab9c4d618e3405ee6ad573f7",
+    "21-exterior-south-parking-wide.png": "271401d9f6e564bf5d36b82008547535d6b565d66e8824a95b1020f20b6dc6f2",
+    "06-kitchen-opposite.png": "22e72f0e2435862cc69dbcc0cf83ebf435cfabd8f577c311dd683c2eb755dc12",
+    "12-bathroom2-wide.png": "58ae4c24a9a243dcf09c125044df24b40ad7f413659419813cd83eb1594a585a",
+    "08-bedroom2-detail.png": "c62008e9bbef03a5284e440d0c8a474ca768d60c979e46062cc53fc4f494ae95",
+    "06-kitchen-wide.png": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759",
+    "06-kitchen-detail.png": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1",
+    "13-bathroom3-wide.png": "9aae5e0a1897224ecf5ec7f2522d15529a210cb8005a79dc009c879724a77d08",
+    "19-exterior-front-wide.png": "a00b9a6b9c2916071c519c756b11d5fb49ead9211c7d11eeaed01e9bc5b4e2ba",
+    "03-stair-tv-wide.png": "50b379ac1c4c335bdb3b56522af34ecd36bcb360eabf4fa7523778529157093a",
+    "02-living-wide.png": "998333e30aa59ef0dce738cbc9aa6bcdb140c3fa4f84f441b14453e7be51a27d",
+    "02-ground-floor-overview-wide.png": "822ebd48736656c1b069abc1df3dfaaf8fcabe19e854a21c74c91ad5647d2d3d",
+    "18-rear-gallery-wide.png": "da37dec152ed05ce937bb60c33af49e53c7d180dfdd9ce603b820a86b5bd78ad",
+    "20-exterior-rear-backyard-wide.png": "7a0fe607096959dbed0968ccf5eba6c8133f365150fa979e74bc845f53424053",
+    "11-bathroom1-wide.png": "8134bbdfbdeaf7d625f9edc3569aa7c96a6be9cb3666c90d69d749ff2787619d",
+    "07-bedroom1-detail.png": "29a37c2005ae3235cd71e61ce884b5db37841d2502a63a35c63b6e4d19190be6"
+  },
+  "unchanged_image_count": 27,
+  "storage_layout_sha256": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+  "area_including_roof_sqft": 1365.28,
+  "checks": [
+    "No cosmetic band above the 2500 mm loft tops",
+    "Continuous 90 degree L cabinet, no solid corner filler",
+    "Storage model cavities, beam and opening clearance checked by automated tests",
+    "Original kitchen wide/detail and tailoring-room wide view preserved"
+  ],
+  "limits": "Generated presentation photos are illustrative. Native model and dimensioned drawings govern geometry; final supplier hinge/lift/fixing details remain to be coordinated.",
+  "study_revision": {
+    "removed_partition": [
+      0.15,
+      2.15,
+      3.1,
+      2.3
+    ],
+    "clear_zone_m": [
+      2.95,
+      2.13
+    ],
+    "clear_area_gain_m2": 0.4425,
+    "clear_area_gain_sqft": 4.76,
+    "cabinet_mm": [
+      750,
+      450
+    ],
+    "retained": "existing beam/columns/slabs/stairs and gallery/balcony boundary",
+    "requested_reference_path": "inputs/geometry-v1/10-study-storage.png",
+    "requested_reference_sha256": "958b6e753f7fe165bf393ab8bf1596c16dcbe6b0f939bc42c3cb2f7420ca11d2"
+  },
+  "lofts_gross_external_m3": 1.2097,
+  "sources": {
+    "model/src/house.js": "1cb7cb1b8aff8d64ba06081830c32d0a1ee9d4bb2666ee878ca190ffab3f4e64",
+    "model/src/geometry.js": "8c03128a770d47aec0f1eecf2b776f7eb85e8e8bd9d922ca65b66ef1635107ae",
+    "model/src/storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
+    "model/src/storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+    "model/src/structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589",
+    "model/src/plan-data.json": "f54b045e371ede7cf743079b3a591e59b0b9e3486f6a45ae91b3b990003a8cfe",
+    "drawings/compact-v4/Hensal_Complete_House_Plans.pdf": "e4badc2fe2044db2df338f68cdd25f0a2e1ed1e36a24629152782d593632c056"
+  },
+  "geometry": {
+    "09-bedroom3-wide.png": "ba3a799caddb9fcb89db154c6087ff98e4050b86282948bf53b347b7336b8985",
+    "08-bedroom2-opposite.png": "df6afe0fdf22309fe65249fee63bf53de5c84357c679705157123b0436b3a7f1",
+    "07-bedroom1-opposite.png": "9d4fb12609db6ffe5dc057959fa169b3a07671a1719846da770f634cb178ac99",
+    "09-bedroom3-detail.png": "515adfa71418aa4361d6404f98db5023cf8cac1cddd6e004c5b3c6ca67751168",
+    "10-study-storage.png": "958b6e753f7fe165bf393ab8bf1596c16dcbe6b0f939bc42c3cb2f7420ca11d2"
+  },
+  "validation": "32 model/geometry/traceability tests passed; drawing pages and final photos visually reviewed; offline review embedding and source hashes checked."
+}

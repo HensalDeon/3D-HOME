@@ -106,10 +106,10 @@
   {
     "file": "07-bedroom1-opposite.png",
     "size": [
-      1448,
-      1086
+      1536,
+      1024
     ],
-    "sha256": "6fcf7b82e9b57cfd0b00ef9309da37829889933e0337f633d6bed262267e9853"
+    "sha256": "cd6e8109c0707f0ce329785b5caa380545cb60919367a3e5115a08bae5b4e80b"
   },
   {
     "file": "07-bedroom1-wide-v2.png",
@@ -146,10 +146,10 @@
   {
     "file": "08-bedroom2-opposite.png",
     "size": [
-      1490,
-      1055
+      1536,
+      1024
     ],
-    "sha256": "a875f51b4d073f90577d6e08a59987bac93479b8d351bdf5cf4e5bdb7b057a94"
+    "sha256": "c761ad0fbe74a8c98c7bfe440c90e516f8c4ee3935f9eddfe95054bb109e8577"
   },
   {
     "file": "08-bedroom2-wide-v2.png",
@@ -173,7 +173,7 @@
       1536,
       1024
     ],
-    "sha256": "ac67d0b33d719a1f59500fd4f73a94d2132cd767e0ac68d885a6bb6d64d8b2cb"
+    "sha256": "a3de2d36241f1e9909891c214bd36cd4f1dffb56633065fe1b5e0639feab058c"
   },
   {
     "file": "09-bedroom3-opposite.png",
@@ -181,7 +181,7 @@
       1536,
       1024
     ],
-    "sha256": "4689834af09dff3e641f2be22458a3e3b54efc740fa4cb37906be3603d0c563f"
+    "sha256": "a81ff3065c887f9d56d07f5af9523401e4de67d862b958273728b4f5081e6c48"
   },
   {
     "file": "09-bedroom3-wide-v2.png",
@@ -205,7 +205,7 @@
       1536,
       1024
     ],
-    "sha256": "0afd124d70a60c94e58548bb9720bc6c114a4eb75d742e6cf4508580de523148"
+    "sha256": "7b1746362d6c57d616aeb0b8fff714c90952054e6e57ae65fd873915dab53472"
   },
   {
     "file": "10-study-wide.png",
@@ -310,5 +310,13 @@
       1200
     ],
     "sha256": "6ca5da87ff0bffaf2a66f9ef02781db63f1f8138510580c889dbc3e0f86e2bdc"
+  },
+  {
+    "file": "10-study-storage.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "sha256": "34340d1c59dabfa21312f49a30fc7b10d835a8e022352e3430b29fa16228655b"
   }
 ]

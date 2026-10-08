@@ -12,6 +12,7 @@ from reportlab.lib.colors import HexColor, Color, white, black
 from make_plans import Plan
 
 ROOT = Path(__file__).resolve().parent
+STORAGE = json.loads((ROOT.parents[2] / 'model/src/storage-layout.json').read_text())
 OUT = ROOT / 'compact-v4'
 PAGE = landscape(A3)
 INK=HexColor('#25343b'); MUTED=HexColor('#60747c'); TEAL=HexColor('#197a77')
@@ -67,6 +68,7 @@ def internal_walls(floor):
   'ensuite_rear':[SPINE[1],BATH_REAR[0],n,BATH_REAR[1]],
  }
  if floor=='FF':
+  del boxes['kitchen_study_back']  # R18: open study to stair base; retain the structural beam.
   boxes['passage_spine']=[SPINE[0],2.3,SPINE[1],BATH_FRONT[0]]
   boxes['north_bedroom_front']=[SPINE[1],2.375,n,2.525]
  return boxes
@@ -83,6 +85,7 @@ def room_boxes(floor):
   b.update(living=[SPINE[1],1.35,n,BATH_FRONT[0]],passage=[2.2,2.3,SPINE[1],6.1],
            service_passage=[BATH_DIVIDER[1],BATH_FRONT[0],n,BATH_REAR[0]])
  else:
+  b['study'][3]=2.30  # Include the former 150 mm partition band in the open study zone.
   b.update(bedroom_north=[SPINE[1],2.525,n,BATH_FRONT[0]],
            ensuite_north=[BATH_DIVIDER[1],BATH_FRONT[1],n,BATH_REAR[0]],
            passage=[2.2,2.3,SPINE[0],6.1],gallery=[SPINE[1],1.35,n,2.375])
@@ -230,11 +233,35 @@ def bathroom(p,floor):
 
 
 
+def storage_plan(p,unit_id):
+ unit=next(u for u in STORAGE['units'] if u['id']==unit_id)
+ if unit_id=='bedroom3':
+  # A continuous L outline, with no separate closed corner filler cell.
+  front,side=unit['segments'];x0,y0,xj,yf=front['box'];_,_,x1,y1=side['box']
+  outline=[(x0,y0),(x1,y0),(x1,y1),(xj,y1),(xj,yf),(x0,yf)]
+  for a,b in zip(outline,outline[1:]+outline[:1]):p.line(*a,*b,MUTED,.35)
+  for i in range(1,front['modules']):
+   x=x0+(xj-x0)*i/front['modules'];p.line(x,y0,x,yf,MUTED,.35)
+  p.text((x0+xj)/2,(y0+yf)/2,'WARD. + LOFT',4.2,col=TEAL)
+  p.text((xj+x1)/2,(y0+y1)/2,'WARD. + LOFT',4.2,rot=90,col=TEAL)
+  return
+ for s in unit['segments']:
+  b=s['box'];p.rect(*b)
+  if s['face']=='y1':
+   for i in range(1,s['modules']):
+    x=b[0]+(b[2]-b[0])*i/s['modules'];p.line(x,b[1],x,b[3],MUTED,.35)
+   p.text((b[0]+b[2])/2,(b[1]+b[3])/2,'WARD. + LOFT' if unit_id!='linen' else 'LINEN + LOFT',4.2,col=TEAL)
+  else:
+   p.text((b[0]+b[2])/2,(b[1]+b[3])/2,'WARD. + LOFT' if unit_id!='linen' else 'LINEN + LOFT',4.2,rot=90,col=TEAL)
+ if unit.get('corner'):p.rect(*unit['corner'])
+
+
 def bedroom(p,floor):
  # Bed turned 90 deg from the earlier head-west layout so the sleeper's head points
  # south, the classical preference for the SW corner; south window moved clear of it.
  p.bed(.20,7.425,2.20,8.925,'x0')
- p.rect(.15,6.25,1.65,6.80);p.text(.90,6.47,'WARDROBE',5)
+ storage_plan(p,'bedroom1' if floor=='GF' else 'bedroom2')
+ p.text(1.91,8.2,'LIFT-UP BASE',4.2,rot=90,col=TEAL)
  label(p,1.65,7.10,'BED 1 / SW' if floor=='GF' else 'MASTER / SW',clear_size(room_boxes(floor)['bedroom_sw']))
  p.text(.35,8.45,'HEAD SOUTH',5,rot=90,col=TEAL)
 
@@ -291,17 +318,22 @@ def ground(p):
 def first(p):
  outer(p,'FF');stair(p,'FF',continue_to_roof=True);bedroom(p,'FF');bathroom(p,'FF')
  # SE study opens to the front gallery and stair base/arrival landing.
- p.rect(.25,.35,1.75,.90);p.chair(1.0,1.25,.45)
- p.rect(2.65,.3,3.1,1.3)
- p.opening(.95,2.15,.90,INTERNAL,'h')
+ for bench in STORAGE['study']['tables']:
+  p.rect(*bench['box'])
+  x0,y0,x1,y1=bench['box']
+  for i in range(bench['stations']):
+   cy=y0+(i+.5)*(y1-y0)/bench['stations'];p.rect(x0+.06,cy-.18,x1-.06,cy+.18)
+ for seat in STORAGE['study']['chairs']:p.chair(*seat)
+ storage_plan(p,'linen')
+ p.text(1.65,2.23,'OPEN TO STAIRS / BEAM ABOVE',4.5,col=TEAL)
  p.opening(3.1,1.35,.85,INTERNAL,'v')
- label(p,1.63,1.8,'STUDY / FAMILY',clear_size(room_boxes('FF')['study']))
+ label(p,1.65,1.90,'STUDY / FAMILY',clear_size(room_boxes('FF')['study']))
  # Removing the public rear lobby makes the north bedroom rectangular.
  p.door(3.35,2.375,.80,INTERNAL,'h',+1,'lo')
  p.window(5.83,3.5,1.3,.17,'v')
  p.bed(3.25,3.955,5.25,5.455,'x0')
- p.rect(4.2,2.525,5.28,3.075);p.rect(5.28,2.525,5.83,2.625)
- p.rect(5.28,2.625,5.83,3.33);p.text(5.57,2.95,'WARD.',5,rot=90)
+ storage_plan(p,'bedroom3')
+ p.text(4.97,4.7,'LIFT-UP BASE',4.2,rot=90,col=TEAL)
  label(p,4.5,3.62,'BED 3 / NORTH',clear_size(room_boxes('FF')['bedroom_north']))
  p.text(3.40,4.50,'HEAD SOUTH',5,rot=90,col=TEAL)
  p.text(4.95,1.9,'FRONT GALLERY',5.5,col=MUTED)
@@ -319,7 +351,8 @@ def dimensions(p,floor='GF'):
  # The rear chain is through the southwest bedroom and the relocated 150 mm spine.
  p.dims('x',D+g+.50,wx,[e,2.95,INTERNAL,2.6-g,e],size=6,precision=3)
  p.dims('x',D+g+1.05,wx,[W+g],size=7)
- p.dims('y',wx-.60,0,[e,2.15-e,INTERNAL,3.80,INTERNAL,3.30,e],size=6,precision=3)
+ chain=[e,2.15-e,INTERNAL,3.80,INTERNAL,3.30,e] if floor=='GF' else [e,2.30-e,3.80,INTERNAL,3.30,e]
+ p.dims('y',wx-.60,0,chain,size=6,precision=3)
  p.dims('y',wx-1.2,0,[D+g],size=7)
  p.dims('y',W+.60,0,[1.20,.15,4.75,INTERNAL,2.10,INTERNAL,1.20+g],size=6,side=-1)
  if floor=='FF':
@@ -397,11 +430,11 @@ def ground_sheet(c):
 
 
 def first_sheet(c):
- base(c,3,'First floor / 150 mm internal walls, clear passage retained','R17 / 08 OCT 2026 / PLAN 1:55 AT A3 / INTERNAL WALLS 150 MM INCLUDING PLASTER / PASSAGE 900 MM CLEAR')
+ base(c,3,'First floor / wardrobe lofts and shared household storage','R18 / 08 OCT 2026 / PLAN 1:55 AT A3 / INTERNAL WALLS 150 MM INCLUDING PLASTER / PASSAGE 900 MM CLEAR')
  p=Plan(c,44,45,1000/55);first(p)
  compass(Plan(c,0,0,10),23.4,22.1)
  y=231
- y=block(c,246,y,'FRONT MATCHES THE REFERENCE','The left window belongs to the study/family space. The front balcony is on the right, over the ground-floor sit-out, with a recessed sliding door and glass railing.',149)
+ y=block(c,246,y,'R18 / FITTED WARDROBES AND LINEN STORAGE','All wardrobes keep their footprints and gain 400 mm lofts above the 2100 mm main units. Ivory fronts, narrow paired doors and muted oak accent bays create a fitted finish. Cabinet tops at 2500 mm leave 50 mm below the indicative beam soffit; the space above is left open. Bedroom 3 has a continuous 90-degree L carcass with no solid filler. The study opens to the stairs below the retained beam. A 750 x 450 mm shared linen cabinet sits beside the tailoring benches. All beds gain lift-up storage bases.',149)
  y=block(c,246,y,'BEDROOMS IN SW AND NORTH','R17 aligns the central wall faces through both floors. The southwest master is 2.950 x 3.300 m; Bedroom 3 is 2.580 x 3.575 m. The passage stays 900 mm clear. Both ensuites are rebalanced to 1.215 x 2.100 m, with a 900 mm deep shower zone and compact WC. Ensuite 3 uses a surface-sliding door to avoid the bed and fixtures.',149)
  y=block(c,246,y,'NO BEDROOM IN THE SOUTHEAST','The southeast room remains a study above the kitchen. Bed heads retain their southward orientation. The master keeps 625 mm at each side of the double bed and 865 mm at its foot with the sliding leaf parked (900 mm to the wall). Bedroom 3 keeps 625 mm to its wardrobe, 600 mm behind the bed and 580 mm at the foot: compact, with a sliding ensuite door.',149)
  y=block(c,246,y,'REAR DRYING TERRACE','The covered rear balcony remains above the work area, now 2.580 x 1.220 m clear. Its 850 mm side door is moved to y = 8.60, clear of the deeper bathroom wall. Access stays private to the master; the front balcony remains common.',149)
@@ -611,6 +644,8 @@ def validate():
  clear_totals={floor:round(sum(v for k,v in areas.items() if k.startswith(prefix)),6) for floor,prefix in [('ground','g-'),('first','f-')]}
  return {'width_m':W,'depth_m':D,'external_wall_mm':{k:round(v*1000) for k,v in EXT.items()},
          'internal_wall_mm':150,'internal_wall_spec':WALL_SPEC,
+         'storage_layout':STORAGE,
+         'study_stair_opening':STORAGE['study'],
          'internal_wall_boxes_m':{k:internal_walls(k) for k in ['GF','FF']},
          'room_boxes_m':ids,
          'room_regions_m':{'g-living':[g['living'],g['passage']],
@@ -634,7 +669,7 @@ def validate():
          'room_clear_areas_sqft':{k:round(v/.09290304,2) for k,v in areas.items()},
          'named_clear_zone_totals_m2':clear_totals,
          'named_clear_zone_totals_sqft':{k:round(v/.09290304,2) for k,v in clear_totals.items()},
-         'clear_area_basis':'Named clear zones to plastered wall faces; stairs and covered outdoor zones included; wall bands/door reveals excluded. Not a statutory carpet-area measurement.',
+         'clear_area_basis':'Named clear zones to plastered wall faces; stairs and covered outdoor zones included; removed study/stair partition band included; remaining wall bands/door reveals excluded. Not a statutory carpet-area measurement.',
          'bathroom_layout_m':{floor:bathroom_layout(floor) for floor in ['GF','FF']},
          'compact_wc_spec':WC_SPEC,
          'comfort_clearances_mm':{'first_passage':900,'ground_service_route':1165,
