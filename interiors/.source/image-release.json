@@ -9,12 +9,12 @@
     },
     "02-living-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "257e71a40cb911d51d1bde01d0cafd8e182f7b96ba8f661ca3a61c9279ce8f4a",
-      "review": "Assistant visual comparison passed: removed intermediate chamfer/offset beside Bedroom 1 door; one coplanar front wall and one square return around the rectangular ensuite. Rear passage, photographed staircase arrangement, joinery and furnishings preserved. Generated presentation remains illustrative, not pixel-exact measured geometry.",
-      "reviewed_at": "2026-10-08T14:04:13+00:00",
+      "sha256": "52795c3592ac75c22bd837676772f4d1ddf01d091236e478ed5519dfa056e1ef",
+      "review": "Assistant visual review of the doorway and adjacent wall: continuous plaster front face at the right jamb, straight skirting to one outer corner, then a perpendicular return beside the passage. Door frame perspective and front wall treated together; photographic stair arrangement, TV/basin joinery and furnishings retained. Illustrative generated presentation; measured model governs dimensions. User acceptance pending.",
+      "reviewed_at": "2026-10-08T14:19:22+00:00",
       "revision": "R19-wall-presentation",
       "method": "built-in-imagegen-local-wall-edit",
-      "geometry_source": ".source/geometry/02-ground-floor-overview-wide.png",
+      "geometry_source": ".source/geometry/02-living-wide.png",
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png"
@@ -1015,7 +1015,7 @@
       }
     ]
   },
-  "source_retention": "Bulky working revision folders and duplicate review pages are removed at user request. Exact prompts, input roles/hashes, camera audits and final hashes are retained here. The small current native geometry references are retained in .source/geometry/. Previous R18 photographs and geometry are recoverable from Git commit 65c5704; earlier storage working inputs from 0333b6d. Measured layouts remain in model/src/storage-layout.json, under-stair-layout.json, stair-passage-layout.json and the plans. Superseded living and overview photographs are recoverable from commit 904bc9f; wall-corner prompts and input hashes are retained here.",
+  "source_retention": "Bulky working revision folders and duplicate review pages are removed at user request. Exact prompts, input roles/hashes, camera audits and final hashes are retained here. The small current native geometry references are retained in .source/geometry/. Previous R18 photographs and geometry are recoverable from Git commit 65c5704; earlier storage working inputs from 0333b6d. Measured layouts remain in model/src/storage-layout.json, under-stair-layout.json, stair-passage-layout.json and the plans. Superseded living and overview photographs are recoverable from commit 904bc9f; wall-corner prompts and input hashes are retained here. The first living corner attempt was rejected for doorway alignment and is recoverable from 92f83e5; the follow-up prompt and current living wall geometry guide are retained.",
   "geometry_reference_history": [
     {
       "sha256": "a1af4b38470e800230289b626d24e71d42a68754372961f498e389f10539492c",
@@ -1208,6 +1208,45 @@
             "fov": 75,
             "meshCount": 434,
             "triangleCount": 5256
+          }
+        ]
+      }
+    },
+    "02-living-wide.png": {
+      "file": ".source/geometry/02-living-wide.png",
+      "sha256": "68473a5564d0e637862007730ca3697f20d788cd83706db42a84f4a18d2268b1",
+      "role": "Door-containing wall and square return verification; photographic target governs framing and retained stair appearance.",
+      "audit": {
+        "revision": "R19",
+        "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
+        "sourceHashes": {
+          "house.js": "c2dde4e63a09a93764912291c16667d7041a85ffdfe70625b6280bb479cdd8b0",
+          "geometry.js": "9acb7827a70312f300378eb5d22aa1764c374365c174adb4cbb238a56a861be8",
+          "storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+          "storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
+          "plan-data.json": "9f20e46c97f7281b13e99d672722651f304b2b323ca8fdf254991f64336cccc6",
+          "structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589",
+          "under-stair-layout.json": "e542093ce1b08b00e8c893ce70d05e2d39b9328758c7ecc82d2e7f205bdd6142",
+          "stair-passage-layout.json": "75a0f2e9579816e0bd40f6ccde7e1ffa44cb36f3f394f208db972a45584b5de6",
+          "revision.js": "d3d91eadec6c51802eb279979c445a1fcd5a4671eec2749fec7bb97d3bb312ad"
+        },
+        "views": [
+          {
+            "id": "02-living-wide",
+            "level": "ground",
+            "eye": [
+              5.1,
+              2.6,
+              1.55
+            ],
+            "at": [
+              2,
+              5.3,
+              1.3
+            ],
+            "fov": 70,
+            "meshCount": 434,
+            "triangleCount": 4943
           }
         ]
       }
@@ -1874,7 +1913,7 @@
       },
       "output_sha256": "257e71a40cb911d51d1bde01d0cafd8e182f7b96ba8f661ca3a61c9279ce8f4a",
       "review": "Assistant visual comparison passed: removed intermediate chamfer/offset beside Bedroom 1 door; one coplanar front wall and one square return around the rectangular ensuite. Rear passage, photographed staircase arrangement, joinery and furnishings preserved. Generated presentation remains illustrative, not pixel-exact measured geometry.",
-      "status": "assistant visual review passed; user acceptance pending",
+      "status": "superseded after user rejected doorway-to-wall alignment",
       "superseded_release": {
         "status": "accepted",
         "sha256": "998333e30aa59ef0dce738cbc9aa6bcdb140c3fa4f84f441b14453e7be51a27d",
@@ -1889,6 +1928,101 @@
         ],
         "user_approval": "accepted",
         "render_review": "Assistant visual comparison; generated image is not certified pixel-exact geometry."
+      },
+      "user_feedback": "User reported that the wall from the bedroom doorway to the open area was still tilted and must continue in the doorway plane before turning 90 degrees toward the passage."
+    },
+    {
+      "id": "R19-living-door-wall-alignment-followup",
+      "image": "02-living-wide.png",
+      "date": "2026-10-08",
+      "revision": "R19-wall-presentation",
+      "method": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit.\nImage 1 is the living-room photograph to correct. Image 2 is the CURRENT measured 3D model, used ONLY to establish the straight wall containing the bedroom entrance and bathroom front. Images 3 and 4 are the original kitchen finish references. Image 5 is the ground-floor plan.\nThe previous image has a perspective/geometry error: the timber bedroom doorway looks oblique while the broad plaster wall immediately to its right faces a different direction. Correct THIS mismatch, not merely the outside corner.\nReconstruct the door-containing bedroom/ensuite FRONT WALL as ONE single continuous flat rectangular plane. The bedroom entrance is an opening cut into this same plane. Its timber architrave lies flat against the front wall, not on a turned side face or in a recessed angled alcove. From the door's right-hand jamb, extend that exact plane in a perfectly straight line to the bathroom outer corner, with NO rotation, wall crease, bulge, splay, wedge, bevel or kink at or beside the jamb. Match the topology in Image 2: the doorway and the blank bathroom wall share one front face. Correct the doorway's frame projection if necessary so it is clearly on that same face, rather than preserving its erroneous angle.\nPerspective calibration is essential: the door lintel, door threshold, wall/ceiling junction and skirting of this long front wall must be coherent parallel world-space lines projected to the SAME horizontal vanishing point. The top of the architrave must be parallel in 3D to the front wall's skirting and ceiling edge; the wall must not have a different vanishing direction from the doorway. Straight architectural verticals. The skirting continues from the doorway to the outer corner in one uninterrupted straight projected line. ONLY at that far outer corner does the wall turn exactly 90 degrees back toward the rear, forming the passage beside the rectangular bathroom. Retain the bathroom enclosure and passage. Do not flatten away the return wall.\nKeep the target photograph's composition and 3:2 framing. Preserve the existing photographic staircase arrangement/treads, diagonal waist, charcoal balusters and oak handrail; TV, oak panel, shelves, four greige cabinet fronts, basin and halo mirror; foreground sofa and cropped dining chair; stone floor texture, original ivory/oak palette, daylight and lights. No change to stair shape or route. The native model is a wall-geometry guide, NOT a replacement staircase, camera, lighting, furniture or photographic style. Do not invent a column or additional doorway. Output only the corrected realistic photograph, no labels, borders or watermark.",
+      "references": [
+        {
+          "name": "02-living-wide.png",
+          "role": "Edit target; original photographic framing, staircase and furnishing arrangement",
+          "source_commit": "92f83e5",
+          "path_at_commit": "interiors/images/02-living-wide.png",
+          "sha256": "257e71a40cb911d51d1bde01d0cafd8e182f7b96ba8f661ca3a61c9279ce8f4a"
+        },
+        {
+          "name": "02-living-wide.png",
+          "role": "Current-model straight door-containing wall and square return; footprint guide rather than pixel-aligned photo camera",
+          "retained_path": ".source/geometry/02-living-wide.png",
+          "sha256": "68473a5564d0e637862007730ca3697f20d788cd83706db42a84f4a18d2268b1"
+        },
+        {
+          "name": "06-kitchen-wide.png",
+          "role": "Original palette/daylight",
+          "retained_path": "images/06-kitchen-wide.png",
+          "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759"
+        },
+        {
+          "name": "06-kitchen-detail.png",
+          "role": "Original material detail",
+          "retained_path": "images/06-kitchen-detail.png",
+          "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1"
+        },
+        {
+          "name": "02-ground.png",
+          "role": "Authoritative orthogonal bedroom/ensuite footprint",
+          "retained_path": "../drawings/compact-v4/02-ground.png",
+          "sha256": "f0f8e6547339009d6efe6260060f545d6d5fe11f7ac501476d2da2529de5c016"
+        }
+      ],
+      "geometry_audit": {
+        "revision": "R19",
+        "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
+        "sourceHashes": {
+          "house.js": "c2dde4e63a09a93764912291c16667d7041a85ffdfe70625b6280bb479cdd8b0",
+          "geometry.js": "9acb7827a70312f300378eb5d22aa1764c374365c174adb4cbb238a56a861be8",
+          "storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+          "storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
+          "plan-data.json": "9f20e46c97f7281b13e99d672722651f304b2b323ca8fdf254991f64336cccc6",
+          "structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589",
+          "under-stair-layout.json": "e542093ce1b08b00e8c893ce70d05e2d39b9328758c7ecc82d2e7f205bdd6142",
+          "stair-passage-layout.json": "75a0f2e9579816e0bd40f6ccde7e1ffa44cb36f3f394f208db972a45584b5de6",
+          "revision.js": "d3d91eadec6c51802eb279979c445a1fcd5a4671eec2749fec7bb97d3bb312ad"
+        },
+        "views": [
+          {
+            "id": "02-living-wide",
+            "level": "ground",
+            "eye": [
+              5.1,
+              2.6,
+              1.55
+            ],
+            "at": [
+              2,
+              5.3,
+              1.3
+            ],
+            "fov": 70,
+            "meshCount": 434,
+            "triangleCount": 4943
+          }
+        ]
+      },
+      "output_sha256": "52795c3592ac75c22bd837676772f4d1ddf01d091236e478ed5519dfa056e1ef",
+      "review": "Assistant visual review of the doorway and adjacent wall: continuous plaster front face at the right jamb, straight skirting to one outer corner, then a perpendicular return beside the passage. Door frame perspective and front wall treated together; photographic stair arrangement, TV/basin joinery and furnishings retained. Illustrative generated presentation; measured model governs dimensions. User acceptance pending.",
+      "status": "assistant visual review passed; user acceptance pending",
+      "superseded_release": {
+        "status": "assistant-reviewed",
+        "sha256": "257e71a40cb911d51d1bde01d0cafd8e182f7b96ba8f661ca3a61c9279ce8f4a",
+        "review": "Assistant visual comparison passed: removed intermediate chamfer/offset beside Bedroom 1 door; one coplanar front wall and one square return around the rectangular ensuite. Rear passage, photographed staircase arrangement, joinery and furnishings preserved. Generated presentation remains illustrative, not pixel-exact measured geometry.",
+        "reviewed_at": "2026-10-08T14:04:13+00:00",
+        "revision": "R19-wall-presentation",
+        "method": "built-in-imagegen-local-wall-edit",
+        "geometry_source": ".source/geometry/02-ground-floor-overview-wide.png",
+        "style_source": [
+          "06-kitchen-wide.png",
+          "06-kitchen-detail.png"
+        ],
+        "user_approval": "rejected-wall-alignment",
+        "render_review": "Current model/plan govern dimensions; only photographic wall shape corrected.",
+        "user_feedback": "User reported that the wall from the bedroom doorway to the open area was still tilted and must continue in the doorway plane before turning 90 degrees toward the passage."
       }
     }
   ]
