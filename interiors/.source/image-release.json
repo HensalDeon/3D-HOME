@@ -9,19 +9,20 @@
     },
     "02-living-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "ab54434fdc880dd0dca214b3f1284aee5145a9dd25ec4aeb3a2d839323653aa0",
-      "review": "Assistant comparison to the new measured-model camera: front wall and bedroom lintel/skirting read horizontally; one narrow 90-degree return into the independent rear route, leading to the smaller doorway at its far end. Covered utility-room background replaces the invented outdoor vista. Actual stair/header, TV/basin bay and furniture arrangement shown from the new camera. Kitchen finish palette retained. Photograph remains illustrative; numerical projection verification applies to the native guide, not pixel-exact photo dimensions. User acceptance pending.",
-      "reviewed_at": "2026-10-08T14:45:05+00:00",
-      "revision": "R19-wall-presentation",
-      "method": "built-in-imagegen-measured-camera-rebuild",
+      "sha256": "f6a18c4ae59455eedfe76fd9e9a8bf2f0aabce3ad11a10ef6fa94c58953a4afe",
+      "review": "Assistant visual review: source-selected staircase has regular pale-stone treads, continuous inclined plastered waist/upper support profile, slim charcoal balusters and oak handrail. Rectangular oak table with six matching upholstered chairs replaces the round pedestal set (two on each long side and one at each end, with natural occlusion). Accepted horizontal bedroom/ensuite frontage, narrow perpendicular return and far covered-work doorway preserved. Photographic presentation preference; not a measured stair redesign or a furniture-clearance certification. User acceptance of the fixture edit pending.",
+      "reviewed_at": "2026-10-08T15:25:11+00:00",
+      "revision": "R19-user-selected-stair-dining",
+      "method": "built-in-imagegen-user-reference-fixture-edit",
       "geometry_source": ".source/geometry/02-living-wide.png",
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png"
       ],
-      "user_approval": "pending",
-      "render_review": "New square-on model camera governs the replacement; measured plan/model unchanged. Photograph is illustrative.",
-      "source_camera": "02-living-wide / square-on R19 camera"
+      "user_approval": "wall/passage accepted; updated staircase/dining pending",
+      "render_review": "Square-on wall/passage retained; user-selected overview governs photographed stair/support and six-seat dining appearance. Measured model/drawing geometry unchanged.",
+      "source_camera": "02-living-wide / square-on R19 camera",
+      "design_source": "images/02-ground-floor-overview-wide.png (stairs/support and six-seat dining only)"
     },
     "03-stair-tv-wide.png": {
       "status": "accepted",
@@ -1016,7 +1017,7 @@
       }
     ]
   },
-  "source_retention": "Bulky working revision folders and duplicate review pages are removed at user request. Exact prompts, input roles/hashes, camera audits and final hashes are retained here. The small current native geometry references are retained in .source/geometry/. Previous R18 photographs and geometry are recoverable from Git commit 65c5704; earlier storage working inputs from 0333b6d. Measured layouts remain in model/src/storage-layout.json, under-stair-layout.json, stair-passage-layout.json and the plans. Superseded living and overview photographs are recoverable from commit 904bc9f; wall-corner prompts and input hashes are retained here. The first living corner attempt was rejected for doorway alignment and is recoverable from 92f83e5; the follow-up prompt and current living wall geometry guide are retained. The rejected follow-up photo and oblique geometry guide are recoverable from 7b52dc7. The final square-on native camera is retained; photographic working intermediates remain outside the project, with exact prompts and hashes recorded here.",
+  "source_retention": "Bulky working revision folders and duplicate review pages are removed at user request. Exact prompts, input roles/hashes, camera audits and final hashes are retained here. The small current native geometry references are retained in .source/geometry/. Previous R18 photographs and geometry are recoverable from Git commit 65c5704; earlier storage working inputs from 0333b6d. Measured layouts remain in model/src/storage-layout.json, under-stair-layout.json, stair-passage-layout.json and the plans. Superseded living and overview photographs are recoverable from commit 904bc9f; wall-corner prompts and input hashes are retained here. The first living corner attempt was rejected for doorway alignment and is recoverable from 92f83e5; the follow-up prompt and current living wall geometry guide are retained. The rejected follow-up photo and oblique geometry guide are recoverable from 7b52dc7. The final square-on native camera is retained; photographic working intermediates remain outside the project, with exact prompts and hashes recorded here. The accepted wall/passage photo preceding this fixture edit is recoverable from 9c3f2f8; the overview reference remains canonical and unchanged. Exact fixture-edit prompt and input/output hashes are retained.",
   "geometry_reference_history": [
     {
       "sha256": "a1af4b38470e800230289b626d24e71d42a68754372961f498e389f10539492c",
@@ -1216,7 +1217,7 @@
     "02-living-wide.png": {
       "file": ".source/geometry/02-living-wide.png",
       "sha256": "427272ec3a7378680fb200c1f5b969cfb1a66abd586824d4a24bcbab1cb31ea6",
-      "role": "Authoritative current-model geometry and square-on camera for the rebuilt living photograph; horizontal lens shift includes the TV bay without rotating the front wall.",
+      "role": "Native square-on frontage and rear-route camera reference. Following explicit user instruction, the overview photograph governs the current stair/support appearance and six-seat dining presentation; this guide does not govern those photographic elements.",
       "audit": {
         "revision": "R19",
         "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
@@ -2352,7 +2353,75 @@
       },
       "output_sha256": "ab54434fdc880dd0dca214b3f1284aee5145a9dd25ec4aeb3a2d839323653aa0",
       "review": "Assistant comparison to the new measured-model camera: front wall and bedroom lintel/skirting read horizontally; one narrow 90-degree return into the independent rear route, leading to the smaller doorway at its far end. Covered utility-room background replaces the invented outdoor vista. Actual stair/header, TV/basin bay and furniture arrangement shown from the new camera. Kitchen finish palette retained. Photograph remains illustrative; numerical projection verification applies to the native guide, not pixel-exact photo dimensions. User acceptance pending.",
-      "status": "assistant visual review passed; user acceptance pending"
+      "status": "user accepted wall/passage; superseded by requested staircase/dining reference edit",
+      "user_feedback": "User accepted the rebuilt living wall/passage and explicitly selected 02-ground-floor-overview-wide.png as the reference for staircase steps, upper support design and six-seater dining furniture."
     }
-  ]
+  ],
+  "living_fixture_generation_history": [
+    {
+      "id": "R19-living-overview-stair-six-seat-reference",
+      "image": "02-living-wide.png",
+      "date": "2026-10-08",
+      "revision": "R19-user-selected-stair-dining",
+      "method": "built-in image_gen reference edit",
+      "prompt": "Use case: precise-object-edit.\nImage 1 is the EDIT TARGET: the latest living-room photograph whose straight bedroom/bathroom wall and rear passage the user has explicitly accepted.\nImage 2 is the USER-SELECTED DESIGN REFERENCE for the STAIRCASE, ITS UPPER SUPPORT/WAIST PROFILE, and SIX-SEATER DINING SET ONLY. Images 3 and 4 are the original kitchen photographs for material/style continuity.\nMake two changes to Image 1:\n1. Match the staircase design in Image 2. Use its regular pale-stone treads and risers, clean continuous plastered inclined waist/soffit beneath the flight, slim black vertical balusters and continuous natural-oak handrail. In the target's left stair area, replace the chunky stacked horizontal slab/beam ledges and disjointed upper support profile with the same smooth, coherent upper landing/waist treatment seen in Image 2. Keep the step design, proportions, nosing treatment and railing design consistent with that reference, adapted to the target's existing camera. A partially cropped staircase is fine; do not change the camera merely to show every starter step. It must read as the SAME staircase seen from this different viewpoint, with a continuous supported stone/concrete flight, not floating steps or an invented second staircase. Keep the stairwell opening and the existing TV/basin bay; adapt only the affected oak backing edge under the corrected soffit.\n2. Replace the small round pedestal table with the RECTANGULAR NATURAL-OAK SIX-SEATER dining table from Image 2, including its four slender timber legs and matching six oak chairs with light upholstered seats. Six chairs total: two on each long side and one at each short end; use plausible perspective/occlusion, with enough chair backs visible to read the six-seat arrangement. Match the reference's chair shape and warm muted oak, not the target's round table or bulky pedestal. Keep it compact and in the current dining zone toward image-right; retain a clear walking route to the rear-work doorway and avoid overlap with the sofa. Do not enlarge the room, move walls or make the table span the passage.\nABSOLUTE INVARIANTS FROM IMAGE 1: keep its square-on camera and 3:2 framing. Preserve EXACTLY the single flat bedroom/ensuite FRONT WALL, horizontal door lintel and skirting, bedroom doorway position, one narrow 90-degree return, straight rear service route and smaller timber rear-work doorway at its far end. Do not copy Image 2's oblique wall/camera, rear-door background or wall corner perspective. Keep the covered ivory utility-room wall through the rear door, not an outdoor garden view. Do not tilt, bevel, push forward, rotate or shift the accepted front wall, return wall, doors or passage.\nKeep the target TV, shelves, cabinet fronts, washbasin/mirror, sofa, large right window and greenery, stone floor, rug, wall paint, sunlight and exposure. Keep the original creamy ivory, sandy stone, muted natural oak and charcoal palette with realistic fine material texture and restrained warm lighting. No extra columns, room enlargement, added doors or windows, labels, watermark or borders. Output only the corrected realistic living photograph.",
+      "references": [
+        {
+          "name": "02-living-wide.png",
+          "role": "User-accepted square-on wall/passage and camera; photo edit target",
+          "source_commit": "9c3f2f8",
+          "path_at_commit": "interiors/images/02-living-wide.png",
+          "sha256": "ab54434fdc880dd0dca214b3f1284aee5145a9dd25ec4aeb3a2d839323653aa0"
+        },
+        {
+          "name": "02-ground-floor-overview-wide.png",
+          "role": "Explicit user-selected staircase tread/support/handrail and rectangular six-seater dining reference only; not a wall/camera reference",
+          "retained_path": "images/02-ground-floor-overview-wide.png",
+          "sha256": "07458ab6d1c7023956ed53144e4567661a885db2e3be8b5f0da321da9ac2fba7"
+        },
+        {
+          "name": "06-kitchen-wide.png",
+          "role": "Original palette and daylight",
+          "retained_path": "images/06-kitchen-wide.png",
+          "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759"
+        },
+        {
+          "name": "06-kitchen-detail.png",
+          "role": "Original material detail",
+          "retained_path": "images/06-kitchen-detail.png",
+          "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1"
+        }
+      ],
+      "output_sha256": "f6a18c4ae59455eedfe76fd9e9a8bf2f0aabce3ad11a10ef6fa94c58953a4afe",
+      "review": "Assistant visual review: source-selected staircase has regular pale-stone treads, continuous inclined plastered waist/upper support profile, slim charcoal balusters and oak handrail. Rectangular oak table with six matching upholstered chairs replaces the round pedestal set (two on each long side and one at each end, with natural occlusion). Accepted horizontal bedroom/ensuite frontage, narrow perpendicular return and far covered-work doorway preserved. Photographic presentation preference; not a measured stair redesign or a furniture-clearance certification. User acceptance of the fixture edit pending.",
+      "status": "assistant visual review passed; user acceptance of staircase/dining edit pending",
+      "user_instruction": "User accepted the rebuilt living wall/passage and explicitly selected 02-ground-floor-overview-wide.png as the reference for staircase steps, upper support design and six-seater dining furniture.",
+      "superseded_release": {
+        "status": "assistant-reviewed",
+        "sha256": "ab54434fdc880dd0dca214b3f1284aee5145a9dd25ec4aeb3a2d839323653aa0",
+        "review": "Assistant comparison to the new measured-model camera: front wall and bedroom lintel/skirting read horizontally; one narrow 90-degree return into the independent rear route, leading to the smaller doorway at its far end. Covered utility-room background replaces the invented outdoor vista. Actual stair/header, TV/basin bay and furniture arrangement shown from the new camera. Kitchen finish palette retained. Photograph remains illustrative; numerical projection verification applies to the native guide, not pixel-exact photo dimensions. User acceptance pending.",
+        "reviewed_at": "2026-10-08T14:45:05+00:00",
+        "revision": "R19-wall-presentation",
+        "method": "built-in-imagegen-measured-camera-rebuild",
+        "geometry_source": ".source/geometry/02-living-wide.png",
+        "style_source": [
+          "06-kitchen-wide.png",
+          "06-kitchen-detail.png"
+        ],
+        "user_approval": "wall/passage accepted; staircase/dining refinement requested",
+        "render_review": "New square-on model camera governs the replacement; measured plan/model unchanged. Photograph is illustrative.",
+        "source_camera": "02-living-wide / square-on R19 camera",
+        "user_feedback": "User accepted the rebuilt living wall/passage and explicitly selected 02-ground-floor-overview-wide.png as the reference for staircase steps, upper support design and six-seater dining furniture."
+      },
+      "measured_geometry_note": "Native camera guide still governs the accepted square-on frontage and rear-route verification. The user explicitly selected the overview photographic stair/support appearance and six-seat furniture; the native guide is not the presentation authority for those elements. Measured model/drawing geometry is unchanged."
+    }
+  ],
+  "living_presentation_reference_decision": {
+    "date": "2026-10-08",
+    "source": "images/02-ground-floor-overview-wide.png",
+    "source_sha256": "07458ab6d1c7023956ed53144e4567661a885db2e3be8b5f0da321da9ac2fba7",
+    "scope": "Living staircase steps, continuous waist/upper support, oak/charcoal railing and rectangular six-seat dining set. Latest accepted living photo governs straight frontage, rear route and framing.",
+    "authority": "Explicit user preference",
+    "measured_geometry": "Unchanged; photographs remain illustrative."
+  }
 }

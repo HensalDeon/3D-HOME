@@ -14,7 +14,7 @@
   "audio": "none",
   "transition": "0.75 second cross-dissolve",
   "motion": "Gentle fitted-image zoom and 4 px drift; complete source image remains visible.",
-  "source_note": "Uses current canonical photographs, including the rebuilt square-on living frontage and visible rear route, user-selected earlier upstairs staircase appearance and updated study end. Illustrative presentations; measured plans/model govern architecture.",
+  "source_note": "Uses current canonical photographs, including the accepted square-on living frontage/rear route, overview-reference staircase/support and six-seat dining, user-selected earlier upstairs staircase appearance and updated study end. Illustrative presentations; measured plans/model govern architecture.",
   "timeline": [
     {
       "kind": "intro",
@@ -35,7 +35,7 @@
       "start_seconds": 7.5,
       "duration_seconds": 6.0,
       "file": "images/02-living-wide.png",
-      "sha256": "ab54434fdc880dd0dca214b3f1284aee5145a9dd25ec4aeb3a2d839323653aa0",
+      "sha256": "f6a18c4ae59455eedfe76fd9e9a8bf2f0aabce3ad11a10ef6fa94c58953a4afe",
       "caption": "Living room",
       "level": "GROUND FLOOR"
     },
@@ -227,11 +227,11 @@
   ],
   "video": {
     "file": "Hensal_Interior_Tour.mp4",
-    "sha256": "6adc32df9238dfef45d1dc1e7d1c5dcb99e8c5509d0e9245d79d52aa842eb6e8",
-    "bytes": 26334048
+    "sha256": "343a6509c421fee9e7a81694cd221b32233a6d2284b9bf37ffea6d5fbf0f4308",
+    "bytes": 26494863
   },
   "rebuild": "python interiors/.source/build_video.py (Pillow, imageio-ffmpeg; macOS fonts)",
-  "review": "Full decode and visual inspection passed; rebuilt model-based living view with square-on frontage and visible rear route included.",
+  "review": "Full decode and visual inspection passed; living stair/support and six-seat dining reference edit included.",
   "validation": {
     "duration_seconds": 120,
     "decoded_frames": 2880,
@@ -242,7 +242,7 @@
     "fps": 24,
     "full_decode": "passed with no errors",
     "audio_streams": 0,
-    "visual_review": "Passed: decoded living frame shows the new horizontal bedroom/ensuite frontage, narrow perpendicular return and far covered-work doorway; framing/caption intact and all 22 source hashes match."
+    "visual_review": "Passed: decoded living frame shows the overview-reference continuous stair support and rectangular six-seat dining, preserving the accepted horizontal frontage and far covered-work doorway; framing/caption intact and all 22 source hashes match."
   },
   "encoder": "FFmpeg 7.1 / libx264; optimized MP4 faststart"
 }
