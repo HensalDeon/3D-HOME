@@ -2,7 +2,7 @@
 
 Established from the original room images on 15 September 2026, following the user's request to retain their color theme and photographic realism throughout the house.
 
-Open the [visual reference board](STYLE_REFERENCE.html) for the photographs, palette, and room examples together. Open the [R18 bedroom and shared storage review](R18-storage-review.html) or the [earlier living / stair / storage set](R14-review.html) to see the application.
+Open the [visual reference board](STYLE_REFERENCE.html) for the photographs, palette, and room examples together. The [image register](IMAGE_REVIEW.md) links the current room photographs and records their status.
 
 ## Governing references
 
@@ -58,7 +58,7 @@ Fluting is a local joinery treatment visible in the user's earlier stair/TV refe
 | `11-bathroom1-wide`, `12-bathroom2-wide`, `13-bathroom3-wide` | Pale stone tiles, oak vanity, white sanitaryware, dark fittings, soft mirror glow and textured towels |
 | `14-balcony-wide`, `15-terrace-wide` | Same pale surfaces, natural timber/woven seating and tropical context; terrace daylight is cooler and brighter |
 
-`05-wash-wide.png` is an earlier geometry-led revision and is not a primary photographic benchmark. The rejected direct renders and `04-storage-wide-imagegen.png` are also excluded from the style-reference library. Their inclusion in the working image folder does not make them style authorities.
+`05-wash-wide.png` is an earlier geometry-led revision and is not a primary photographic benchmark. Rejected direct renders are excluded from the style-reference library. Their inclusion in the working image folder does not make them style authorities.
 
 ## Reusable generation brief
 
@@ -78,4 +78,4 @@ For another angle of the same room, also supply the first successful finished vi
 
 The three replacements use the built-in image-generation tool. Exact prompts are saved in [prompts.json](.source/style-revision-2026-09-15/prompts.json); the original R14 geometry views are preserved in [.source/style-revision-2026-09-15/geometry/](.source/style-revision-2026-09-15/geometry/). The [revision audit](.source/style-revision-2026-09-15/audit.json) records outputs and unchanged source files. The original references remain the style authority for future revisions.
 
-R18 updates the bedroom wardrobe views and adds a shared-cabinet close view. Those revised photographs are finish examples, rather than original geometry references. The original kitchen wide/detail remain unchanged and govern visual style. [R18 prompts](.source/storage-r18/prompts.json) and [audit](.source/storage-r18/audit.json) preserve source roles and hashes.
+R18 updates the bedroom wardrobe views and adds a shared-cabinet close view. Those revised photographs are finish examples, rather than original geometry references. The original kitchen wide/detail remain unchanged and govern visual style. Exact R18 prompts, input roles/hashes and camera records are consolidated in [image-release.json](.source/image-release.json). Bulky working images were removed at user request; historical inputs remain recoverable from Git commit `0333b6d`.

@@ -827,6 +827,21 @@
   "roof_access": "full south stair from first floor",
   "drawing_count": 12,
   "revision": "R18",
+  "stair_landing_support": {
+    "box_m": [
+      0.15,
+      6.1,
+      2.05,
+      6.2
+    ],
+    "levels": [
+      "ground-to-first",
+      "first-to-roof"
+    ],
+    "ends_at_stair_landing": true,
+    "bedroom_entrances_clear": true,
+    "status": "Bedroom-door clash correction: the indicative landing support zone previously extended to x = 3.05 and intersected the bedroom entrance at both levels. Its massing now ends at the stair landing edge x = 2.05. This is a conceptual coordination change, not an engineered beam deletion or approval; support, connections and reinforcement remain to be designed. Stair treads, landings, waist slabs, full-height frame beams and floor areas are unchanged."
+  },
   "under_stair_wall_opening": {
     "box_m": [
       2.05,

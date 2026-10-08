@@ -120,8 +120,9 @@ export function stairLandingExtensions(level='ground'){
 // --- Conceptual RCC stair structure -------------------------------------------------
 // R6: the stair is represented as a conventional cast-in-situ folded plate - a continuous
 // waist slab under each flight, monolithic with the landing slabs at the turns. It bears on
-// the plinth, the 150 mm west external wall, a landing beam zone inside the existing bedroom
-// cross-wall line, and the floor-slab trimmer at the stairwell edge. The 150 mm finished stair-side and
+// the plinth, the west external wall, a landing beam zone at the rear landing edge
+// ending at x = 2.05 clear of the bedroom entrance, and the floor-slab trimmer.
+// Bearing at the landing edge must be designed; the adjacent partition is not a support. The 150 mm finished stair-side and
 // bedroom partitions carry nothing. Thicknesses are indicative massing shared with the drawings
 // through under-stair-layout.json; the final design is the structural engineer's.
 const SLOPE=Math.hypot(.25,3/17);
@@ -169,7 +170,7 @@ export function stairFlights(level='ground'){
 }
 export function stairLandingSlabs(level='ground'){
  const r=3/17,top=level==='ground'?12*r:9*r;
- const slabs=[{id:'intermediate',box:[.15,5.2,2.05,6.1],top,bearing:'landing beam zone in the bedroom cross-wall line'}];
+ const slabs=[{id:'intermediate',box:[.15,5.2,2.05,6.1],top,bearing:'indicative landing beam ending at x = 2.05; end bearing to be designed'}];
  if(level==='ground')slabs.push(
   {id:'extension',box:[.15,4.7,1.05,5.2],top,bearing:'monolithic with the intermediate landing'},
   {id:'starter',box:[.15,2.3,1.05,3.2],top:5*r,bearing:'plinth fill / ground slab',onGround:true});

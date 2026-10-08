@@ -131,6 +131,13 @@ def main():
     tv, opening, wash = L['tv'], L['tv']['wallOpening'], L['wash']
     dimensions.update({
         'revision': L['revision'],
+        'stair_landing_support': {
+            'box_m': L['structure']['beamZones'][0]['box'],
+            'levels': ['ground-to-first', 'first-to-roof'],
+            'ends_at_stair_landing': True,
+            'bedroom_entrances_clear': True,
+            'status': L['structure']['coordination'],
+        },
         'under_stair_wall_opening': {
             'box_m': opening['box'],
             'head_m': opening['height'],

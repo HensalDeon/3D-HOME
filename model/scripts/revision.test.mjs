@@ -283,8 +283,8 @@ test('R6 represents the stair as a continuous RCC waist/landing system carried o
  // Support zones stay inside walls and slab edges that already exist: no new element in any room,
  // no load on either 100 mm partition, no wall or column below the upper flight.
  // R9 moves the ground stairwell trimmer to y = 4.2; the first-to-roof trimmer stays at 3.2-3.45.
- assert.deepEqual(STAIR_BEAM_ZONES.map(z=>z.box),[[.15,6.1,3.05,6.2],[1.05,3.95,2.05,4.2]]);
- assert.deepEqual(stairBeamZones('first').map(z=>z.box),[[.15,6.1,3.05,6.2],[1.05,3.2,2.05,3.45]]);
+ assert.deepEqual(STAIR_BEAM_ZONES.map(z=>z.box),[[.15,6.1,2.05,6.2],[1.05,3.95,2.05,4.2]]);
+ assert.deepEqual(stairBeamZones('first').map(z=>z.box),[[.15,6.1,2.05,6.2],[1.05,3.2,2.05,3.45]]);
  assert.ok(wallPieces('ground').some(p=>p.box[1]===6.1&&p.box[3]===6.25));
  for(const zone of STAIR_BEAM_ZONES){
   assert.ok(!overlaps(zone.box,[2.05,2.3,2.15,6.1]),'no bearing on the stair-side partition');
@@ -613,4 +613,25 @@ test('R18 opens study to stairs, keeps the gallery boundary and fits the tailori
  near((2.15-.225)-(1.05+.225),storage.study.workingAisleM);
  assert.ok(frameBeams('first').some(b=>overlaps(b.box,strip)),'existing cross beam remains');
  near(plan.dimensions.total_including_roof_sqft,1365.28);
+});
+
+
+test('stair landing support meshes leave both bedroom entrances clear',()=>{
+ const h=createHouse();h.root.updateMatrixWorld(true,true);
+ for(const level of ['ground','first']){
+  const group=h.levels[level].getObjectByName('Landing beam and trimmer zones (indicative)');
+  assert.ok(group);
+  const doors=openingsFor(level).filter(o=>['door','slider','surface-slider'].includes(o.kind));
+  for(const mesh of group.children){
+   const b=new Box3().setFromObject(mesh);
+   const footprint=[b.min.x+3,4.85-b.max.z,b.max.x+3,4.85-b.min.z];
+   for(const door of doors){
+    const heightOverlap=Math.min(b.max.y,LEVELS[level]+door.sill+door.height)-Math.max(b.min.y,LEVELS[level]+door.sill)>1e-6;
+    assert.ok(!heightOverlap||!overlaps(footprint,door.box),`${level} stair support blocks door at ${door.x},${door.y}`);
+   }
+  }
+  const entrance=openingsFor(level).find(o=>o.kind==='door'&&o.axis==='h'&&Math.abs(o.y-6.1)<eps);
+  assert.ok(entrance);assert.ok(stairBeamZones(level)[0].box[2]<=entrance.box[0]);
+ }
+ assert.equal(plan.dimensions.total_including_roof_sqft,1365.28);
 });
