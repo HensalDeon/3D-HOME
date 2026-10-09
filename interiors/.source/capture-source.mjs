@@ -51,6 +51,7 @@ for(const v of views){
   h.root.traverse(o=>{if(o.isLine)o.visible=false;});
   const width=v.width??1536,height=v.height??1024;
   const camera=new THREE.PerspectiveCamera(v.fov??65,width/height,.02,100);
+  if(v.shiftX)camera.setViewOffset(width,height,v.shiftX,0,width,height);
   camera.position.copy(h.V(v.from[0],LEVELS[v.level]+v.from[2],v.from[1]));
   camera.lookAt(h.V(v.to[0],LEVELS[v.level]+v.to[2],v.to[1]));
   const [x,y,eye]=v.from;
@@ -69,7 +70,7 @@ for(const v of views){
   });
   const meshes=[];h.root.traverse(o=>{if(o.isMesh)meshes.push(o);});
   const withinMeshes=meshes.filter(o=>{const b=new THREE.Box3().setFromObject(o);return b.containsPoint(camera.position)&&!o.material.transparent;}).map(o=>o.name||o.parent.name||'unnamed mesh');
-  return {id:v.id,level:v.level,planCamera:v.from,planTarget:v.to,verticalFov:camera.fov,inRooms,wallHits:wallHits.length,possibleMeshIntersections:withinMeshes,fullModel:true,architectureClipped:false,kitchenDoorPose:v.closeKitchenDoor?'closed on existing hinge':'source open pose',familyLayout:!!v.familyLayout,openingProjections};
+  return {id:v.id,level:v.level,planCamera:v.from,planTarget:v.to,verticalFov:camera.fov,horizontalLensShiftPixels:v.shiftX??0,inRooms,wallHits:wallHits.length,possibleMeshIntersections:withinMeshes,fullModel:true,architectureClipped:false,kitchenDoorPose:v.closeKitchenDoor?'closed on existing hinge':'source open pose',familyLayout:!!v.familyLayout,openingProjections};
  },v);
  await page.screenshot({path:join(out,v.id+'.png')});log.push(check);
 }

@@ -883,6 +883,25 @@
   "survey_setout_verified": false,
   "vastu_certified": false,
   "vastu_orientation_basis": "drawing compass confirmed correct by user; directional room arrangement retained",
+  "bedroom1_window_update": {
+    "date": "2026-10-09",
+    "rear": {
+      "plan_x_m": 0.5,
+      "plan_y_m": 9.55,
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "sill_above_floor_m": 1.0,
+      "head_above_floor_m": 2.2,
+      "previous_width_m": 0.6,
+      "previous_height_m": 0.7
+    },
+    "side_retained": {
+      "width_m": 1.4,
+      "height_m": 1.2,
+      "sill_above_floor_m": 1.0
+    },
+    "scope": "User-requested rear opening enlargement; bedroom furniture, room clear dimensions, directions, frame and gross areas retained. Lintel and fixing details require coordination."
+  },
   "roof_enclosure_m2": 9.02,
   "total_including_roof_m2": 126.8383,
   "total_including_roof_sqft": 1365.28,

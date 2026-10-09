@@ -3,16 +3,19 @@
     "id": "02-living-wide",
     "level": "ground",
     "from": [
-      4.2,
+      4.9,
       1.55,
-      1.5
+      1.55
     ],
     "to": [
-      2.9,
-      5.7,
-      1.35
+      4.9,
+      6.8,
+      1.55
     ],
-    "fov": 65
+    "fov": 85,
+    "shiftX": -230,
+    "width": 1536,
+    "height": 1024
   },
   {
     "id": "02-living-opposite",
@@ -110,16 +113,18 @@
     "id": "07-bedroom1-wide",
     "level": "ground",
     "from": [
-      2.8,
-      7.15,
+      2.9,
+      7.45,
       1.5
     ],
     "to": [
-      1.25,
-      8.45,
-      1.15
+      0.8,
+      8.05,
+      1.5
     ],
-    "fov": 68
+    "fov": 75,
+    "width": 1536,
+    "height": 1024
   },
   {
     "id": "07-bedroom1-opposite",

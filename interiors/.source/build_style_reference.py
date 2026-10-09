@@ -6,7 +6,7 @@ import hashlib, json
 ROOT = Path(__file__).resolve().parent.parent
 swatches = [
     ('Warm ivory', '#E7DECE', 'Plaster and ceiling'),
-    ('Sandy stone', '#CEC0A8', 'Floors, stairs and counters'),
+    ('Sandy stone', '#CEC0A8', 'Common floors, stairs and counters'),
     ('Warm greige', '#C4B69F', 'Matte cabinet fronts'),
     ('Muted oak', '#AE916B', 'Natural fine-grained timber'),
     ('Oatmeal', '#D9CDB9', 'Linen and upholstery'),
@@ -18,9 +18,9 @@ swatches = [
 groups = [
     ('Kitchen', ['06-kitchen-wide', '06-kitchen-detail', '06-kitchen-opposite'], 'Primary palette, daylight, material texture and task-light reference.'),
     ('Dining', ['16-dining-wide'], 'Oak furniture, cream upholstery, pale floor and gentle daylight.'),
-    ('Bedroom 1', ['07-bedroom1-wide', '07-bedroom1-detail', '07-bedroom1-opposite'], 'Sage accents, textured ivory linen and natural oak.'),
-    ('Master bedroom', ['08-bedroom2-wide', '08-bedroom2-detail', '08-bedroom2-opposite'], 'Olive textiles, oatmeal upholstery, woven runner and oak.'),
-    ('Bedroom 3', ['09-bedroom3-wide', '09-bedroom3-detail', '09-bedroom3-opposite'], 'Clay accent, ivory wardrobe with muted oak bay, and recessed charcoal pulls.'),
+    ('Bedroom 1', ['07-bedroom1-wide', '07-bedroom1-detail', '07-bedroom1-opposite'], 'Sage accents, textured ivory linen and natural oak; the wide view governs light oak wood-look bedroom flooring.'),
+    ('Master bedroom', ['08-bedroom2-wide', '08-bedroom2-detail', '08-bedroom2-opposite'], 'Olive textiles, oatmeal upholstery, woven runner and oak; opposite-view bedroom flooring follows Bedroom 1 wide, with stone retained beyond the door.'),
+    ('Bedroom 3', ['09-bedroom3-wide', '09-bedroom3-detail', '09-bedroom3-opposite'], 'Clay accent, ivory wardrobe with muted oak bay, and recessed charcoal pulls; wide-view bedroom flooring follows Bedroom 1 wide and preserves the rug.'),
     ('Study', ['10-study-wide', '10-study-storage'], 'Retained family/tailoring workspace, shared ivory linen cabinet and soft daylight.'),
     ('Passage and gallery', ['10-passage-wide', '17-front-gallery-wide'], 'Ivory and stone continuity, oak and charcoal edges, greenery.'),
     ('Bathrooms', ['11-bathroom1-wide', '12-bathroom2-wide', '13-bathroom3-wide'], 'Stone, oak vanity, white ceramic, dark fittings and gentle mirror light.'),
@@ -37,7 +37,7 @@ for group, files, role in groups:
             revision = release[name+'.png']['revision']
             images[-1].update(revision=revision, role=role+' '+revision+' revised finish example; original kitchen images remain the primary style authority.')
 manifest = dict(version=1, established='2026-09-15',
-    authority='Original kitchen wide and detail govern appearance; approved model governs layout.',
+    authority='Original kitchen wide and detail govern palette and realism; Bedroom 1 wide governs bedroom floor appearance; approved model governs layout.',
     swatchNote='Approximate visual swatches chosen by eye; not sampled paint specifications.',
     swatches=[dict(name=n, hex=c, role=r) for n,c,r in swatches], references=images)
 (ROOT/'.source/house-style.json').write_text(json.dumps(manifest,indent=2)+'\n')

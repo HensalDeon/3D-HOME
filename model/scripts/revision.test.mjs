@@ -18,7 +18,7 @@ const sameBox=(a,b)=>a.length===b.length&&a.every((v,i)=>Math.abs(v-b[i])<eps);
 // flat 120 mm lid under each separate tread. Infinity when nothing is overhead.
 const clearance=box=>stairSoffit(box,'ground');
 const cm=box=>Math.round(clearance(box)*100)/100;
-test('R17 preserves exterior schedules, roof architecture and first-to-roof stair',()=>{
+test('retained exterior schedules allow only the requested Bedroom 1 rear enlargement',()=>{
  assert.deepEqual(stairTreads('first'),baseline.stairTreads());
  assert.deepEqual(wallPieces('roof'),baseline.wallPieces('roof'));
  assert.deepEqual(openingsFor('roof'),baseline.openingsFor('roof'));
@@ -28,10 +28,15 @@ test('R17 preserves exterior schedules, roof architecture and first-to-roof stai
   assert.equal(now.filter(c=>c.op==='door').length,was.filter(c=>c.op==='door').length);
   assert.equal(now.filter(c=>c.op==='window').length,was.filter(c=>c.op==='window').length);
   for(const op of ['door','window','opening']){
-   assert.deepEqual(now.filter(c=>c.op===op).map(c=>c.args[2]).sort(),was.filter(c=>c.op===op&&!(level==='first'&&op==='opening'&&c.args[0]===.95&&c.args[1]===2.2)&&!(level==='ground'&&op==='opening'&&c.args[0]===3.05&&[2.45,5.2].includes(c.args[1]))).map(c=>level==='ground'&&op==='window'&&c.args[0]===3.23?1.10:level==='first'&&op==='opening'&&c.args[0]===2.05&&c.args[1]===2.35?3.8:c.args[2]).sort(),`${level} ${op} widths`);
+   assert.deepEqual(now.filter(c=>c.op===op).map(c=>c.args[2]).sort(),was.filter(c=>c.op===op&&!(level==='first'&&op==='opening'&&c.args[0]===.95&&c.args[1]===2.2)&&!(level==='ground'&&op==='opening'&&c.args[0]===3.05&&[2.45,5.2].includes(c.args[1]))).map(c=>level==='ground'&&op==='window'&&c.args[0]===.5&&c.args[1]===9.55?1.20:level==='ground'&&op==='window'&&c.args[0]===3.23?1.10:level==='first'&&op==='opening'&&c.args[0]===2.05&&c.args[1]===2.35?3.8:c.args[2]).sort(),`${level} ${op} widths`);
   }
  }
  for(const name of ['FRONT_GF','FRONT_FF','REAR_FF'])assert.deepEqual(plan.openings[name],baseline.plan.openings[name]);
+ // R17 already moved/reduced the ensuite vent to its aligned 150 mm wall faces.
+ assert.deepEqual(plan.openings.REAR_GF.slice(1),baseline.plan.openings.REAR_GF.slice(1).map(o=>o[0]===3.23?[3.3,1.1,...o.slice(2)]:o));
+ assert.deepEqual(plan.openings.REAR_GF[0],[.5,1.2,1,1.2,'window']);
+ const rear=openingsFor('ground').find(o=>o.kind==='window'&&o.x===.5&&o.y===9.55);
+ near(rear.w,1.2);near(rear.sill,1);near(rear.height,1.2);near(rear.sill+rear.height,2.2);
 });
 test('passage partition removed only in the requested ground living/stair interval',()=>{
  const pieces=wallPieces('ground');assert.ok(!pieces.some(p=>overlaps(p.box,[3.05,2.3,3.15,6.1])));

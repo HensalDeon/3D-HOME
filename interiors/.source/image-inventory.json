@@ -10,18 +10,18 @@
   {
     "file": "02-ground-floor-overview-wide.png",
     "size": [
-      1600,
-      900
+      1672,
+      941
     ],
-    "sha256": "822ebd48736656c1b069abc1df3dfaaf8fcabe19e854a21c74c91ad5647d2d3d"
+    "sha256": "07458ab6d1c7023956ed53144e4567661a885db2e3be8b5f0da321da9ac2fba7"
   },
   {
     "file": "02-living-wide.png",
     "size": [
-      1264,
-      848
+      1536,
+      1024
     ],
-    "sha256": "998333e30aa59ef0dce738cbc9aa6bcdb140c3fa4f84f441b14453e7be51a27d"
+    "sha256": "f6a18c4ae59455eedfe76fd9e9a8bf2f0aabce3ad11a10ef6fa94c58953a4afe"
   },
   {
     "file": "03-stair-tv-wide.png",
@@ -85,15 +85,15 @@
       1536,
       1024
     ],
-    "sha256": "cd6e8109c0707f0ce329785b5caa380545cb60919367a3e5115a08bae5b4e80b"
+    "sha256": "b7dcfa34895df6024415e211b839f8ec30e66443844f17c6f82469eaf12c0be5"
   },
   {
     "file": "07-bedroom1-wide.png",
     "size": [
-      1264,
-      848
+      1536,
+      1024
     ],
-    "sha256": "89c37abc5272c4aa53d850cd2009818e59e467b32474ade8c2706f768481c9f8"
+    "sha256": "50629a27b7e04ba438fa62e382ac819b6923dc5f23925ad88acc351b1e1d22c6"
   },
   {
     "file": "08-bedroom2-detail.png",
@@ -109,7 +109,7 @@
       1536,
       1024
     ],
-    "sha256": "d5766e812401229e9378eb281957a06aeea8c16b8d5ff5f03bf5b092787deefd"
+    "sha256": "b969da3516cdad56785e549935f8ceb4e03179190ab1426f5abe5d31f030eff9"
   },
   {
     "file": "08-bedroom2-wide.png",
@@ -141,7 +141,7 @@
       1536,
       1024
     ],
-    "sha256": "7b1746362d6c57d616aeb0b8fff714c90952054e6e57ae65fd873915dab53472"
+    "sha256": "422ad29911daced409b8d5988bb4cfe6fccd0120dde9220c99e5efb6fb59a42b"
   },
   {
     "file": "10-passage-wide.png",
@@ -242,10 +242,10 @@
   {
     "file": "20-exterior-rear-backyard-wide.png",
     "size": [
-      1376,
-      768
+      1678,
+      937
     ],
-    "sha256": "7a0fe607096959dbed0968ccf5eba6c8133f365150fa979e74bc845f53424053"
+    "sha256": "31f9b39f35b9b1f05c3c1997f34074035283a178a59e5e88d3f5b534646fac71"
   },
   {
     "file": "21-exterior-south-parking-wide.png",
@@ -261,6 +261,6 @@
       1678,
       937
     ],
-    "sha256": "9f38e2f8cf619a86d8ac20becf286c33eff247f150dda61b67f474a02bffe781"
+    "sha256": "c5e65e1b3cb4991437a46ddd4b191d9146cc1887857a31b44e746fedc5c9e7d1"
   }
 ]

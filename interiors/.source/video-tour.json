@@ -1,0 +1,248 @@
+{
+  "created": "2026-10-09",
+  "format": "Landscape still-image house tour",
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 24,
+  "frames": 2880,
+  "duration_seconds": 120.0,
+  "codec": "H.264",
+  "pixel_format": "yuv420p",
+  "container": "MP4",
+  "audio": "none",
+  "transition": "0.75 second cross-dissolve",
+  "motion": "Gentle fitted-image zoom and 4 px drift; complete source image remains visible.",
+  "source_note": "Uses current canonical interior photographs, including the accepted square-on living frontage/rear route, overview-reference staircase/support and six-seat dining, user-selected earlier upstairs staircase appearance, updated study end, matching bedroom wood-look planks and the 9 October Bedroom 1 level camera/rear window enlargement. Illustrative presentations; measured plans/model govern architecture.",
+  "timeline": [
+    {
+      "kind": "intro",
+      "start_seconds": 0.0,
+      "duration_seconds": 3.0
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 2.25,
+      "duration_seconds": 6.0,
+      "file": "images/01-entrance-wide.png",
+      "sha256": "e8c1f7b0b25fff2937d4662e0a1e45f0bb9c94b73fc9cf87d9c2df317cff4223",
+      "caption": "The entrance",
+      "level": "WELCOME HOME"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 7.5,
+      "duration_seconds": 6.0,
+      "file": "images/02-living-wide.png",
+      "sha256": "f6a18c4ae59455eedfe76fd9e9a8bf2f0aabce3ad11a10ef6fa94c58953a4afe",
+      "caption": "Living room",
+      "level": "GROUND FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 12.75,
+      "duration_seconds": 6.0,
+      "file": "images/03-stair-tv-wide.png",
+      "sha256": "50b379ac1c4c335bdb3b56522af34ecd36bcb360eabf4fa7523778529157093a",
+      "caption": "Stair & TV corner",
+      "level": "GROUND FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 18.0,
+      "duration_seconds": 6.0,
+      "file": "images/04-storage-wide.png",
+      "sha256": "90c8143319e40399b117c4cc8caa2ce3f8c7d6597a9a0d4d6205dde2afa5b90d",
+      "caption": "Under-stair storage",
+      "level": "GROUND FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 23.25,
+      "duration_seconds": 6.0,
+      "file": "images/16-dining-wide.png",
+      "sha256": "74520e27a9ba23f634d4984704656b461f91aa531ebbb8803e3f8f5032931d62",
+      "caption": "Dining room",
+      "level": "GROUND FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 28.5,
+      "duration_seconds": 6.0,
+      "file": "images/06-kitchen-wide.png",
+      "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759",
+      "caption": "Kitchen",
+      "level": "GROUND FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 33.75,
+      "duration_seconds": 6.0,
+      "file": "images/06-kitchen-detail.png",
+      "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1",
+      "caption": "Kitchen details",
+      "level": "GROUND FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 39.0,
+      "duration_seconds": 6.0,
+      "file": "images/07-bedroom1-wide.png",
+      "sha256": "50629a27b7e04ba438fa62e382ac819b6923dc5f23925ad88acc351b1e1d22c6",
+      "caption": "Bedroom 1",
+      "level": "GROUND FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 44.25,
+      "duration_seconds": 6.0,
+      "file": "images/07-bedroom1-opposite.png",
+      "sha256": "b7dcfa34895df6024415e211b839f8ec30e66443844f17c6f82469eaf12c0be5",
+      "caption": "Bedroom 1 \u00b7 fitted storage",
+      "level": "GROUND FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 49.5,
+      "duration_seconds": 6.0,
+      "file": "images/11-bathroom1-wide.png",
+      "sha256": "8134bbdfbdeaf7d625f9edc3569aa7c96a6be9cb3666c90d69d749ff2787619d",
+      "caption": "Ensuite 1",
+      "level": "GROUND FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 54.75,
+      "duration_seconds": 6.0,
+      "file": "images/10-passage-wide.png",
+      "sha256": "b75117e389d6cf72306063d859d68dec28d70aab6688caaae1fe8b6c99d9a07a",
+      "caption": "The upstairs passage",
+      "level": "FIRST FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 60.0,
+      "duration_seconds": 6.0,
+      "file": "images/10-study-storage.png",
+      "sha256": "dc876e272c6806682bb6e80817bc4cd45cf045650ceacd8b5752d6d5fbf6bbf1",
+      "caption": "Family & tailoring room",
+      "level": "FIRST FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 65.25,
+      "duration_seconds": 6.0,
+      "file": "images/08-bedroom2-wide.png",
+      "sha256": "c9aa67b6f8cd9d842ad8d13474d15c08c2c2047d6af1959eebdd7a3f8f770ae4",
+      "caption": "The master bedroom",
+      "level": "FIRST FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 70.5,
+      "duration_seconds": 6.0,
+      "file": "images/08-bedroom2-opposite.png",
+      "sha256": "b969da3516cdad56785e549935f8ceb4e03179190ab1426f5abe5d31f030eff9",
+      "caption": "Master bedroom \u00b7 fitted storage",
+      "level": "FIRST FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 75.75,
+      "duration_seconds": 6.0,
+      "file": "images/12-bathroom2-wide.png",
+      "sha256": "58ae4c24a9a243dcf09c125044df24b40ad7f413659419813cd83eb1594a585a",
+      "caption": "Master ensuite",
+      "level": "FIRST FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 81.0,
+      "duration_seconds": 6.0,
+      "file": "images/09-bedroom3-wide.png",
+      "sha256": "422ad29911daced409b8d5988bb4cfe6fccd0120dde9220c99e5efb6fb59a42b",
+      "caption": "Bedroom 3",
+      "level": "FIRST FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 86.25,
+      "duration_seconds": 6.0,
+      "file": "images/09-bedroom3-detail.png",
+      "sha256": "a3de2d36241f1e9909891c214bd36cd4f1dffb56633065fe1b5e0639feab058c",
+      "caption": "Bedroom 3 \u00b7 corner storage",
+      "level": "FIRST FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 91.5,
+      "duration_seconds": 6.0,
+      "file": "images/13-bathroom3-wide.png",
+      "sha256": "9aae5e0a1897224ecf5ec7f2522d15529a210cb8005a79dc009c879724a77d08",
+      "caption": "Ensuite 3",
+      "level": "FIRST FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 96.75,
+      "duration_seconds": 6.0,
+      "file": "images/17-front-gallery-wide.png",
+      "sha256": "06bf3211867e2e0327a60fa4335c66e012adf0b53cc02a89fd8470c7c86ef6b8",
+      "caption": "Front gallery",
+      "level": "FIRST FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 102.0,
+      "duration_seconds": 6.0,
+      "file": "images/14-balcony-wide.png",
+      "sha256": "8794cede165b214bfa3825db9c3fed3fd7999f79ab9c4d618e3405ee6ad573f7",
+      "caption": "Front balcony",
+      "level": "FIRST FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 107.25,
+      "duration_seconds": 6.0,
+      "file": "images/18-rear-gallery-wide.png",
+      "sha256": "da37dec152ed05ce937bb60c33af49e53c7d180dfdd9ce603b820a86b5bd78ad",
+      "caption": "Rear drying balcony",
+      "level": "FIRST FLOOR"
+    },
+    {
+      "kind": "photo",
+      "start_seconds": 112.5,
+      "duration_seconds": 6.0,
+      "file": "images/15-terrace-wide.png",
+      "sha256": "1b6235b2876556aa33006abf8dfdc7f3400848bc9f61ad450957877495a768c8",
+      "caption": "Roof terrace",
+      "level": "ROOF LEVEL"
+    },
+    {
+      "kind": "outro",
+      "start_seconds": 117.75,
+      "duration_seconds": 2.25
+    }
+  ],
+  "video": {
+    "file": "Hensal_Interior_Tour.mp4",
+    "sha256": "34728f5c134e3b97a0df8eea9697d1869935ac324571aed3dfaf2f5fb35db5a0",
+    "bytes": 26905330
+  },
+  "rebuild": "python interiors/.source/build_video.py (Pillow, imageio-ffmpeg; macOS fonts)",
+  "review": "Assistant full decode, metadata/source-hash checks and revised Bedroom 1 frame review passed; user review pending.",
+  "encoder": "FFmpeg 7.1 / libx264; MP4 faststart",
+  "validation": {
+    "duration_seconds": 120,
+    "decoded_frames": 2880,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "fps": 24,
+    "full_decode": "passed with no errors",
+    "audio_streams": 0,
+    "visual_review": "Decoded Bedroom 1 frame at 42 seconds shows the level room composition, two windows, retained floor finish and unobstructed caption."
+  }
+}

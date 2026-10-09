@@ -11,6 +11,12 @@ const option=name=>{const i=process.argv.indexOf(name);return i<0?undefined:proc
 const out=pathToFileURL(resolve(option('--output')??'/tmp/hensal-interior-references')+'/');
 await mkdir(out,{recursive:true});
 const views=[
+ // Living camera faces the bedroom/ensuite frontage squarely; lens shift includes the TV bay.
+ {id:'02-living-wide',level:'ground',eye:[4.9,1.55,1.55],at:[4.9,6.8,1.55],fov:85,shiftX:-230},
+ // Overview footprint review; the finished photograph retains its own composition.
+ {id:'02-ground-floor-overview-wide',level:'ground',eye:[5.0,2.2,1.55],at:[2.6,5.8,1.3],fov:75},
+ // Bedroom 1: level entrance-side camera explains the south-facing bed and primary side window.
+ {id:'07-bedroom1-wide',level:'ground',eye:[2.9,7.45,1.5],at:[.8,8.05,1.5],fov:75},
  {id:'07-bedroom1-opposite',level:'ground',eye:[2.75,9.25,1.5],at:[1.5,6.6,1.35],fov:65},
  {id:'08-bedroom2-opposite',level:'first',eye:[2.75,9.05,1.5],at:[1.5,6.6,1.35],fov:65},
  {id:'09-bedroom3-wide',level:'first',eye:[4.8,5.85,1.5],at:[5.04,2.98,1.3],fov:65},
@@ -35,6 +41,7 @@ const hashes={};
 for(const n of ['house.js','geometry.js','storage-layout.json','storage-joinery.js','plan-data.json','structural-frame.json','under-stair-layout.json','stair-passage-layout.json','revision.js'])hashes[n]=createHash('sha256').update(await readFile(new URL('../src/'+n,import.meta.url))).digest('hex');
 for(const view of views.filter(v=>!option('--view')||v.id===option('--view'))){
  const camera=new PerspectiveCamera(view.fov,W/H,.05,100);
+ if(view.shiftX)camera.setViewOffset(W,H,view.shiftX,0,W,H);
  camera.position.copy(h.V(view.eye[0],LEVELS[view.level]+view.eye[2],view.eye[1]));
  camera.lookAt(h.V(view.at[0],LEVELS[view.level]+view.at[2],view.at[1]));camera.updateMatrixWorld();
  const tris=[];let count=0;
