@@ -111,14 +111,47 @@
       "floor_scope": "Bedroom exposed flooring only; common-area stone beyond door retained"
     },
     "07-bedroom1-wide.png": {
-      "status": "accepted",
-      "sha256": "89c37abc5272c4aa53d850cd2009818e59e467b32474ade8c2706f768481c9f8",
-      "review": "Correct south bedhead, south window east of bed with Roman blind, west 600x700mm ventilation opening, sage green linen.",
-      "reviewed_at": "2026-09-10T21:39:06.114661",
+      "status": "assistant-reviewed",
+      "sha256": "50629a27b7e04ba438fa62e382ac819b6923dc5f23925ad88acc351b1e1d22c6",
+      "review": "Level entrance-side composition matches the native model guide, with bed, fitted ivory/oak wardrobe and two perpendicular windows visible. Rear aperture enlarged to 1200 x 1200 mm; side opening retained. Sage/cream bedding and pale oak wood-look planks carried forward. No cosmetic ceiling band; top foreground crop follows the close camera. Photograph remains illustrative.",
+      "reviewed_at": "2026-10-09",
       "metadata_alignment": {
         "previous_sha256": "4f6b065f9c73ffb59690022135789d35e8b840b0b1053712b19846bb8c875162",
         "date": "2026-10-08",
         "reason": "Aligned stale release hash with preserved canonical file during cleanup; image pixels unchanged."
+      },
+      "revision": "R19",
+      "presentation_revision": "bedroom1-window-camera-2026-10-09",
+      "method": "built-in-imagegen-native-guide-rebuild",
+      "prompt_id": "bedroom1-window-camera-2026-10-09-07-bedroom1-wide",
+      "user_approval": "pending",
+      "style_source": [
+        "06-kitchen-wide.png",
+        "06-kitchen-detail.png"
+      ],
+      "render_review": "Assistant comparison with actual geometry/elevation and retained photo/style sources; photographs are illustrative, not pixel-exact measured drawings.",
+      "geometry_source": ".source/geometry/07-bedroom1-wide.png",
+      "camera": {
+        "id": "07-bedroom1-wide",
+        "level": "ground",
+        "eye": [
+          2.9,
+          7.45,
+          1.5
+        ],
+        "at": [
+          0.8,
+          8.05,
+          1.5
+        ],
+        "fov": 75,
+        "meshCount": 434,
+        "triangleCount": 1070
+      },
+      "floor_finish_source": {
+        "source_commit": "abe0fd7",
+        "path_at_commit": "interiors/images/07-bedroom1-wide.png",
+        "sha256": "89c37abc5272c4aa53d850cd2009818e59e467b32474ade8c2706f768481c9f8"
       }
     },
     "08-bedroom2-detail.png": {
@@ -332,13 +365,20 @@
       "user_approval": "accepted"
     },
     "20-exterior-rear-backyard-wide.png": {
-      "status": "accepted",
-      "sha256": "7a0fe607096959dbed0968ccf5eba6c8133f365150fa979e74bc845f53424053",
-      "review": "Rear west garden view. Camera at west boundary looking east. 4.03m deep rear utility garden with cream/grey non-slip tiles. House rear: ground-floor utility door and wash area with basin, first-floor drying balcony with metal railing and laundry visible, timber cladding upper wall, two toilet vents, curved canopy return, charcoal rounded surround. Roof headhouse with timber west face visible above. LEFT/north: 1m passage visible, discreet NW septic access slab. RIGHT/south: south compound wall. Continuous compound walls on all sides. Practical Kerala residential rear yard.",
-      "reviewed_at": "2026-09-21T00:00:00Z",
-      "revision": "R3-site-corrected",
-      "method": "imagegen",
-      "user_approval": "accepted"
+      "status": "assistant-reviewed",
+      "sha256": "31f9b39f35b9b1f05c3c1997f34074035283a178a59e5e88d3f5b534646fac71",
+      "review": "Local Bedroom 1 ground rear window enlargement follows the current rear elevation; two-panel charcoal frame and neutral curtains retained. Utility window/door/sink, upper vents, drying balcony, roofline, dusk palette and garden composition preserved. Photograph remains illustrative.",
+      "reviewed_at": "2026-10-09",
+      "revision": "R19",
+      "method": "built-in-imagegen-local-window-edit",
+      "user_approval": "pending",
+      "presentation_revision": "bedroom1-window-camera-2026-10-09",
+      "prompt_id": "bedroom1-window-camera-2026-10-09-20-exterior-rear-backyard-wide",
+      "style_source": [
+        "06-kitchen-wide.png",
+        "06-kitchen-detail.png"
+      ],
+      "render_review": "Assistant comparison with actual geometry/elevation and retained photo/style sources; photographs are illustrative, not pixel-exact measured drawings."
     },
     "21-exterior-south-parking-wide.png": {
       "status": "accepted",
@@ -350,18 +390,25 @@
       "user_approval": "accepted"
     },
     "22-exterior-rear-utility-wide.png": {
-      "status": "accepted",
-      "sha256": "9f38e2f8cf619a86d8ac20becf286c33eff247f150dda61b67f474a02bffe781",
-      "review": "Rear utility backyard SW diagonal view v6. Wide-angle, camera against rear wall. Yard reads as tight ~4m depth \u2014 house dominates frame. Biogas green dome at rear-left near west+north walls, close to camera. Square masonry burn pit at right/south side near rear boundary on gravel pad. Septic access NW corner. RIGHT: 2.63m parking strip with car rear. LEFT: 1m north passage, frangipani. Minimal floor tiles visible between biogas and house \u2014 compact courtyard feel. House rear unchanged: utility door, charcoal canopy, wash basin, drying balcony with laundry, timber cladding, headhouse. Compound walls all sides.",
-      "reviewed_at": "2026-09-22T11:31:00Z",
-      "revision": "R6-depth-final",
-      "method": "imagegen",
-      "user_approval": "accepted",
+      "status": "assistant-reviewed",
+      "sha256": "c5e65e1b3cb4991437a46ddd4b191d9146cc1887857a31b44e746fedc5c9e7d1",
+      "review": "Bedroom 1 ground rear aperture now reads as the larger square two-panel window beside the utility bay. Utility fittings, upper facade, laundry balcony, parked car, bins and garden retained. Checked against the updated elevation; photograph remains illustrative.",
+      "reviewed_at": "2026-10-09",
+      "revision": "R19",
+      "method": "built-in-imagegen-local-window-edit",
+      "user_approval": "pending",
       "metadata_alignment": {
         "previous_sha256": "f031adbd2b3e6f0bae01b9acee023f65b17407e03373ec784807d8206aed58af",
         "date": "2026-10-08",
         "reason": "Aligned stale release hash with preserved canonical file during cleanup; image pixels unchanged."
-      }
+      },
+      "presentation_revision": "bedroom1-window-camera-2026-10-09",
+      "prompt_id": "bedroom1-window-camera-2026-10-09-22-exterior-rear-utility-wide",
+      "style_source": [
+        "06-kitchen-wide.png",
+        "06-kitchen-detail.png"
+      ],
+      "render_review": "Assistant comparison with actual geometry/elevation and retained photo/style sources; photographs are illustrative, not pixel-exact measured drawings."
     },
     "10-study-storage.png": {
       "status": "accepted",
@@ -1026,7 +1073,7 @@
       }
     ]
   },
-  "source_retention": "Bulky working revision folders and duplicate review pages are removed at user request. Exact prompts, input roles/hashes, camera audits and final hashes are retained here. The small current native geometry references are retained in .source/geometry/. Previous R18 photographs and geometry are recoverable from Git commit 65c5704; earlier storage working inputs from 0333b6d. Measured layouts remain in model/src/storage-layout.json, under-stair-layout.json, stair-passage-layout.json and the plans. Superseded living and overview photographs are recoverable from commit 904bc9f; wall-corner prompts and input hashes are retained here. The first living corner attempt was rejected for doorway alignment and is recoverable from 92f83e5; the follow-up prompt and current living wall geometry guide are retained. The rejected follow-up photo and oblique geometry guide are recoverable from 7b52dc7. The final square-on native camera is retained; photographic working intermediates remain outside the project, with exact prompts and hashes recorded here. The accepted wall/passage photo preceding this fixture edit is recoverable from 9c3f2f8; the overview reference remains canonical and unchanged. Exact fixture-edit prompt and input/output hashes are retained. Superseded three bedroom floor photographs are recoverable from 00d26d1; exact floor prompts and source/output hashes remain here without a bulky revision folder.",
+  "source_retention": "Bulky working revision folders and duplicate review pages are removed at user request. Exact prompts, input roles/hashes, camera audits and final hashes are retained here. The small current native geometry references are retained in .source/geometry/. Previous R18 photographs and geometry are recoverable from Git commit 65c5704; earlier storage working inputs from 0333b6d. Measured layouts remain in model/src/storage-layout.json, under-stair-layout.json, stair-passage-layout.json and the plans. Superseded living and overview photographs are recoverable from commit 904bc9f; wall-corner prompts and input hashes are retained here. The first living corner attempt was rejected for doorway alignment and is recoverable from 92f83e5; the follow-up prompt and current living wall geometry guide are retained. The rejected follow-up photo and oblique geometry guide are recoverable from 7b52dc7. The final square-on native camera is retained; photographic working intermediates remain outside the project, with exact prompts and hashes recorded here. The accepted wall/passage photo preceding this fixture edit is recoverable from 9c3f2f8; the overview reference remains canonical and unchanged. Exact fixture-edit prompt and input/output hashes are retained. Superseded three bedroom floor photographs are recoverable from 00d26d1; exact floor prompts and source/output hashes remain here without a bulky revision folder. The preceding Bedroom 1 wide/floor reference and rear exterior photos are recoverable from abe0fd7. The small native Bedroom 1 guide, prompt/input/output history and window schedule are retained without a bulky working folder.",
   "geometry_reference_history": [
     {
       "sha256": "a1af4b38470e800230289b626d24e71d42a68754372961f498e389f10539492c",
@@ -1302,6 +1349,45 @@
           },
           "camera": "Level and normal to the bedroom/ensuite front wall; horizontal lens shift changes framing without rotating the wall."
         }
+      }
+    },
+    "07-bedroom1-wide.png": {
+      "file": ".source/geometry/07-bedroom1-wide.png",
+      "sha256": "b6dd43d86be6ad981802a351139ca0e3001688ab3ca90ea83a9be23b21abb24c",
+      "role": "Native current-model camera, bed/wardrobe footprint and two window openings; original photographs govern palette, sage textiles and wood-look floor finish.",
+      "audit": {
+        "revision": "R19",
+        "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
+        "sourceHashes": {
+          "house.js": "c2dde4e63a09a93764912291c16667d7041a85ffdfe70625b6280bb479cdd8b0",
+          "geometry.js": "9acb7827a70312f300378eb5d22aa1764c374365c174adb4cbb238a56a861be8",
+          "storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+          "storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
+          "plan-data.json": "33e096c1602efae0ab73aa4a057e6f7b06b3e4e15b2407aaaf8520fb1ef1c0e9",
+          "structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589",
+          "under-stair-layout.json": "e542093ce1b08b00e8c893ce70d05e2d39b9328758c7ecc82d2e7f205bdd6142",
+          "stair-passage-layout.json": "75a0f2e9579816e0bd40f6ccde7e1ffa44cb36f3f394f208db972a45584b5de6",
+          "revision.js": "d3d91eadec6c51802eb279979c445a1fcd5a4671eec2749fec7bb97d3bb312ad"
+        },
+        "views": [
+          {
+            "id": "07-bedroom1-wide",
+            "level": "ground",
+            "eye": [
+              2.9,
+              7.45,
+              1.5
+            ],
+            "at": [
+              0.8,
+              8.05,
+              1.5
+            ],
+            "fov": 75,
+            "meshCount": 434,
+            "triangleCount": 1070
+          }
+        ]
       }
     }
   },
@@ -2451,8 +2537,10 @@
         {
           "name": "07-bedroom1-wide.png",
           "role": "Explicit user-selected bedroom floor appearance: pale oak wood-look long planks, fine grain and staggered joints; not an architecture reference",
-          "retained_path": "images/07-bedroom1-wide.png",
-          "sha256": "89c37abc5272c4aa53d850cd2009818e59e467b32474ade8c2706f768481c9f8"
+          "sha256": "89c37abc5272c4aa53d850cd2009818e59e467b32474ade8c2706f768481c9f8",
+          "source_commit": "abe0fd7",
+          "path_at_commit": "interiors/images/07-bedroom1-wide.png",
+          "source_note": "Historical floor reference; current Bedroom 1 photo carries this finish forward with a new camera and enlarged rear opening."
         },
         {
           "name": "06-kitchen-wide.png",
@@ -2528,8 +2616,10 @@
         {
           "name": "07-bedroom1-wide.png",
           "role": "Explicit user-selected bedroom floor appearance: pale oak wood-look long planks, fine grain and staggered joints; not an architecture reference",
-          "retained_path": "images/07-bedroom1-wide.png",
-          "sha256": "89c37abc5272c4aa53d850cd2009818e59e467b32474ade8c2706f768481c9f8"
+          "sha256": "89c37abc5272c4aa53d850cd2009818e59e467b32474ade8c2706f768481c9f8",
+          "source_commit": "abe0fd7",
+          "path_at_commit": "interiors/images/07-bedroom1-wide.png",
+          "source_note": "Historical floor reference; current Bedroom 1 photo carries this finish forward with a new camera and enlarged rear opening."
         },
         {
           "name": "06-kitchen-wide.png",
@@ -2645,8 +2735,10 @@
         {
           "name": "07-bedroom1-wide.png",
           "role": "Explicit user-selected bedroom floor appearance: pale oak wood-look long planks, fine grain and staggered joints; not an architecture reference",
-          "retained_path": "images/07-bedroom1-wide.png",
-          "sha256": "89c37abc5272c4aa53d850cd2009818e59e467b32474ade8c2706f768481c9f8"
+          "sha256": "89c37abc5272c4aa53d850cd2009818e59e467b32474ade8c2706f768481c9f8",
+          "source_commit": "abe0fd7",
+          "path_at_commit": "interiors/images/07-bedroom1-wide.png",
+          "source_note": "Historical floor reference; current Bedroom 1 photo carries this finish forward with a new camera and enlarged rear opening."
         },
         {
           "name": "06-kitchen-wide.png",
@@ -2723,6 +2815,307 @@
       "model_and_drawing_baseline_files": "unchanged",
       "release_inventory_style_hashes": "verified",
       "video": "Refreshed 120-second 1920x1080/24fps export; all 2880 frames decoded without errors; three changed bedroom shots visually reviewed"
+    },
+    "source_commit": "abe0fd7",
+    "source_note": "Selected floor reference at this commit; the later Bedroom 1 camera/window revision preserves its plank finish.",
+    "current_continuity_reference": {
+      "file": "images/07-bedroom1-wide.png",
+      "sha256": "50629a27b7e04ba438fa62e382ac819b6923dc5f23925ad88acc351b1e1d22c6"
+    }
+  },
+  "bedroom1_window_camera_generation_history": [
+    {
+      "id": "bedroom1-window-camera-2026-10-09-07-bedroom1-wide",
+      "image": "07-bedroom1-wide.png",
+      "date": "2026-10-09",
+      "method": "built-in image_gen native-guide photographic rebuild",
+      "prompt": "Use case: sketch-to-render. Create the corrected Bedroom 1 wide photograph from the FIRST image's current measured-model camera and geometry. This replaces the old Bedroom 1 wide photo.\nInput roles:\n1: Native geometry reference, authoritative for this exact level eye-height camera/framing, true bedroom dimensions, bed orientation/footprint, wardrobe location, wall corner and BOTH window positions/opening proportions.\n2: Previous Bedroom 1 wide photograph: ONLY sage/cream bed styling, upholstered headboard appearance, soft daylight and the exact light oak wood-look plank floor finish. Its old camera and small rear window are superseded.\n3: Bedroom 2 wide: user-selected reference for intimate natural eye-level bedroom photography and a clear bed/side-window presentation; do not copy its balcony door, room openings or olive accents. The native guide's bed-and-wardrobe framing also follows the inspected Bedroom 3 wide composition.\n4 and 5: Original kitchen wide/detail, house palette and photographic realism only. The bedroom floor must stay light oak wood-look planks from image 2, not kitchen stone.\nPhotograph the exact scene shown by image 1 as a warmly realistic compact bedroom, camera 1.5 m above floor, level and entrance-side, not the old high oblique downward view. Keep the visible fitted wardrobe along the left foreground edge, south-facing upholstered bed in centre/right foreground and the two actual windows on perpendicular exterior walls. Retain the guide's room corner and window geometry. The side/main window is 1400 x 1200 mm, sill 1000 mm; rear window is now 1200 x 1200 mm, sill 1000 mm, head 2200 mm, replacing the former 600 x 700 mm opening. Slim charcoal two-panel window frames, tropical greenery outside, natural linen Roman blinds raised so glass and usable daylight remain visible. Do not invent a tiny high window.\nUse cream textured bedding, sage cushions and throw, natural oak closed lift-up bed base and upholstered oatmeal headboard consistent with image 2. Convert the model's plain furniture blocks into these realistic selected materials without shifting their footprint or orientation. The wardrobe is fitted matte warm ivory with a muted oak accent bay, slim paired charcoal pulls and useful loft cupboards to 2500 mm; keep the space above clear, no cosmetic ceiling band or solid block. Preserve the natural compact aisles; partial bed foreground crop is acceptable and must not be fixed by enlarging the room.\nLight oak wood-look long plank tiles with fine pale oak grain, narrow seams, staggered ends and low sheen exactly as image 2. Cream painted skirting, soft contact shadows, natural sunlight, original creamy ivory house palette. No new rugs or furniture, no extra door/window, no change to walls, room size, bed head direction, storage geometry or window openings. Straight verticals, believable photographic scale, 3:2 landscape composition, 1536x1024. No labels, text, watermark, border or diagram appearance. Output only the corrected photo.",
+      "references": [
+        {
+          "name": "07-bedroom1-wide.png",
+          "role": "Native current measured-model camera and enlarged-window geometry authority",
+          "sha256": "b6dd43d86be6ad981802a351139ca0e3001688ab3ca90ea83a9be23b21abb24c",
+          "retained_path": ".source/geometry/07-bedroom1-wide.png"
+        },
+        {
+          "name": "07-bedroom1-wide.png",
+          "role": "Previous same-room bed styling, sage palette and original wood-look floor; old camera/window superseded",
+          "sha256": "89c37abc5272c4aa53d850cd2009818e59e467b32474ade8c2706f768481c9f8",
+          "source_commit": "abe0fd7",
+          "path_at_commit": "interiors/images/07-bedroom1-wide.png"
+        },
+        {
+          "name": "08-bedroom2-wide.png",
+          "role": "User-selected level bedroom photographic composition reference only",
+          "sha256": "c9aa67b6f8cd9d842ad8d13474d15c08c2c2047d6af1959eebdd7a3f8f770ae4",
+          "retained_path": "images/08-bedroom2-wide.png"
+        },
+        {
+          "name": "06-kitchen-wide.png",
+          "role": "Original kitchen palette/daylight and realism",
+          "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759",
+          "retained_path": "images/06-kitchen-wide.png"
+        },
+        {
+          "name": "06-kitchen-detail.png",
+          "role": "Original kitchen material detail and realism",
+          "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1",
+          "retained_path": "images/06-kitchen-detail.png"
+        }
+      ],
+      "geometry_reference": {
+        "file": ".source/geometry/07-bedroom1-wide.png",
+        "sha256": "b6dd43d86be6ad981802a351139ca0e3001688ab3ca90ea83a9be23b21abb24c",
+        "role": "Native current-model camera, bed/wardrobe footprint and two window openings; original photographs govern palette, sage textiles and wood-look floor finish.",
+        "audit": {
+          "revision": "R19",
+          "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
+          "sourceHashes": {
+            "house.js": "c2dde4e63a09a93764912291c16667d7041a85ffdfe70625b6280bb479cdd8b0",
+            "geometry.js": "9acb7827a70312f300378eb5d22aa1764c374365c174adb4cbb238a56a861be8",
+            "storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+            "storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
+            "plan-data.json": "33e096c1602efae0ab73aa4a057e6f7b06b3e4e15b2407aaaf8520fb1ef1c0e9",
+            "structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589",
+            "under-stair-layout.json": "e542093ce1b08b00e8c893ce70d05e2d39b9328758c7ecc82d2e7f205bdd6142",
+            "stair-passage-layout.json": "75a0f2e9579816e0bd40f6ccde7e1ffa44cb36f3f394f208db972a45584b5de6",
+            "revision.js": "d3d91eadec6c51802eb279979c445a1fcd5a4671eec2749fec7bb97d3bb312ad"
+          },
+          "views": [
+            {
+              "id": "07-bedroom1-wide",
+              "level": "ground",
+              "eye": [
+                2.9,
+                7.45,
+                1.5
+              ],
+              "at": [
+                0.8,
+                8.05,
+                1.5
+              ],
+              "fov": 75,
+              "meshCount": 434,
+              "triangleCount": 1070
+            }
+          ]
+        }
+      },
+      "output": {
+        "file": "images/07-bedroom1-wide.png",
+        "sha256": "50629a27b7e04ba438fa62e382ac819b6923dc5f23925ad88acc351b1e1d22c6",
+        "size": [
+          1536,
+          1024
+        ]
+      },
+      "review": "Level entrance-side composition matches the native model guide, with bed, fitted ivory/oak wardrobe and two perpendicular windows visible. Rear aperture enlarged to 1200 x 1200 mm; side opening retained. Sage/cream bedding and pale oak wood-look planks carried forward. No cosmetic ceiling band; top foreground crop follows the close camera. Photograph remains illustrative.",
+      "user_approval": "pending",
+      "superseded_release": {
+        "status": "accepted",
+        "sha256": "89c37abc5272c4aa53d850cd2009818e59e467b32474ade8c2706f768481c9f8",
+        "review": "Correct south bedhead, south window east of bed with Roman blind, west 600x700mm ventilation opening, sage green linen.",
+        "reviewed_at": "2026-09-10T21:39:06.114661",
+        "metadata_alignment": {
+          "previous_sha256": "4f6b065f9c73ffb59690022135789d35e8b840b0b1053712b19846bb8c875162",
+          "date": "2026-10-08",
+          "reason": "Aligned stale release hash with preserved canonical file during cleanup; image pixels unchanged."
+        }
+      }
+    },
+    {
+      "id": "bedroom1-window-camera-2026-10-09-20-exterior-rear-backyard-wide",
+      "image": "20-exterior-rear-backyard-wide.png",
+      "date": "2026-10-09",
+      "method": "built-in image_gen localized aperture edit",
+      "prompt": "Use case: precise-object-edit. Modify ONLY the small ground-floor Bedroom 1 rear window on the RIGHT side of the FIRST attached exterior photograph, in the plain ivory wall to the right of the covered utility/sink bay.\nInput roles: Image 1 is the edit target; preserve its exact camera, landscape framing, house silhouette, all other openings, dusk lighting and entire garden. Image 2 is the current dimensioned elevation reference (rear elevation is on its right), governing this specific enlarged bedroom opening only. Images 3 and 4 are original kitchen material/palette/realism references only; retain the target exterior's dusk lighting.\nThe actual Bedroom 1 rear opening has changed from 600 mm wide x 700 mm high at 1350 mm sill to 1200 mm wide x 1200 mm high at 1000 mm sill, head 2200 mm above bedroom floor. Replace the small right-hand ground window with this larger square two-panel charcoal-framed operable window, shown in the target's existing perspective. Keep its original physical left jamb location on the rear wall: viewed from outside the rear, this is the window's RIGHT image-side vertical edge. Enlarge width toward image-left, away from that fixed right edge, lower its bottom for the 1000 mm sill, and set its head in line with the planned utility window head. The larger opening must read about twice the previous width, with fine dark framing, two panes and the same existing neutral curtains/warm interior treatment. No new balcony or grille.\nSTRICT INVARIANTS: do not change the larger utility sink window under the canopy at image-left, work-area door, vanity/sink/plants, upper two toilet vents, drying balcony/railing/laundry, timber screen, stair enclosure, roofline or facade ribbons. Preserve all landscaping, paving, boundaries, neighbor houses, palms, sky, light fittings, shadows and photographic realism. Preserve all bins, parked car or foreground details if present. Keep ivory wall clear around the window; no architectural enlargement, added rooms, doors or extra windows. Change only this bedroom aperture and its local wall reveal. No text, border or watermark. Preserve the target's exact landscape aspect ratio.",
+      "references": [
+        {
+          "name": "20-exterior-rear-backyard-wide.png",
+          "role": "Photo edit target; preserve framing, dusk lighting, garden and all other architecture",
+          "sha256": "7a0fe607096959dbed0968ccf5eba6c8133f365150fa979e74bc845f53424053",
+          "source_commit": "abe0fd7",
+          "path_at_commit": "interiors/images/20-exterior-rear-backyard-wide.png"
+        },
+        {
+          "name": "04-elevations.png",
+          "role": "Current rear elevation; only the enlarged Bedroom 1 ground window is the edit authority",
+          "sha256": "4803fe0efe1c74d05c98f8a5c4b9d797f4f7e70ab2ac52774eb189679a2af98d",
+          "retained_path": "../drawings/compact-v4/04-elevations.png"
+        },
+        {
+          "name": "06-kitchen-wide.png",
+          "role": "Original kitchen palette/realism only; target dusk light retained",
+          "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759",
+          "retained_path": "images/06-kitchen-wide.png"
+        },
+        {
+          "name": "06-kitchen-detail.png",
+          "role": "Original kitchen material detail/realism only",
+          "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1",
+          "retained_path": "images/06-kitchen-detail.png"
+        }
+      ],
+      "geometry_reference": {
+        "file": "../drawings/compact-v4/04-elevations.png",
+        "sha256": "4803fe0efe1c74d05c98f8a5c4b9d797f4f7e70ab2ac52774eb189679a2af98d",
+        "opening_schedule_source": "../drawings/compact-v4/.source/make_ensuite_plans.py"
+      },
+      "output": {
+        "file": "images/20-exterior-rear-backyard-wide.png",
+        "sha256": "31f9b39f35b9b1f05c3c1997f34074035283a178a59e5e88d3f5b534646fac71",
+        "size": [
+          1678,
+          937
+        ]
+      },
+      "review": "Local Bedroom 1 ground rear window enlargement follows the current rear elevation; two-panel charcoal frame and neutral curtains retained. Utility window/door/sink, upper vents, drying balcony, roofline, dusk palette and garden composition preserved. Photograph remains illustrative.",
+      "user_approval": "pending",
+      "superseded_release": {
+        "status": "accepted",
+        "sha256": "7a0fe607096959dbed0968ccf5eba6c8133f365150fa979e74bc845f53424053",
+        "review": "Rear west garden view. Camera at west boundary looking east. 4.03m deep rear utility garden with cream/grey non-slip tiles. House rear: ground-floor utility door and wash area with basin, first-floor drying balcony with metal railing and laundry visible, timber cladding upper wall, two toilet vents, curved canopy return, charcoal rounded surround. Roof headhouse with timber west face visible above. LEFT/north: 1m passage visible, discreet NW septic access slab. RIGHT/south: south compound wall. Continuous compound walls on all sides. Practical Kerala residential rear yard.",
+        "reviewed_at": "2026-09-21T00:00:00Z",
+        "revision": "R3-site-corrected",
+        "method": "imagegen",
+        "user_approval": "accepted"
+      }
+    },
+    {
+      "id": "bedroom1-window-camera-2026-10-09-22-exterior-rear-utility-wide",
+      "image": "22-exterior-rear-utility-wide.png",
+      "date": "2026-10-09",
+      "method": "built-in image_gen localized aperture edit",
+      "prompt": "Use case: precise-object-edit. Modify ONLY the small ground-floor Bedroom 1 rear window on the RIGHT side of the FIRST attached exterior photograph (rear utility view with bins and parked car), in the plain ivory wall to the right of the covered utility/sink bay.\nInput roles: Image 1 is the edit target; preserve its exact camera, landscape framing, house silhouette, all other openings, dusk lighting and entire garden. Image 2 is the current dimensioned elevation reference (rear elevation is on its right), governing this specific enlarged bedroom opening only. Images 3 and 4 are original kitchen material/palette/realism references only; retain the target exterior's dusk lighting.\nThe actual Bedroom 1 rear opening has changed from 600 mm wide x 700 mm high at 1350 mm sill to 1200 mm wide x 1200 mm high at 1000 mm sill, head 2200 mm above bedroom floor. Replace the small right-hand ground window with this larger square two-panel charcoal-framed operable window, shown in the target's existing perspective. Keep its original physical left jamb location on the rear wall: viewed from outside the rear, this is the window's RIGHT image-side vertical edge. Enlarge width toward image-left, away from that fixed right edge, lower its bottom for the 1000 mm sill, and set its head in line with the planned utility window head. The larger opening must read about twice the previous width, with fine dark framing, two panes and the same existing neutral curtains/warm interior treatment. No new balcony or grille.\nSTRICT INVARIANTS: do not change the larger utility sink window under the canopy at image-left, work-area door, vanity/sink/plants, upper two toilet vents, drying balcony/railing/laundry, timber screen, stair enclosure, roofline or facade ribbons. Preserve all landscaping, paving, boundaries, neighbor houses, palms, sky, light fittings, shadows and photographic realism. Preserve all bins, parked car or foreground details if present. Keep ivory wall clear around the window; no architectural enlargement, added rooms, doors or extra windows. Change only this bedroom aperture and its local wall reveal. No text, border or watermark. Preserve the target's exact landscape aspect ratio.",
+      "references": [
+        {
+          "name": "22-exterior-rear-utility-wide.png",
+          "role": "Photo edit target; preserve framing, dusk lighting, garden and all other architecture",
+          "sha256": "9f38e2f8cf619a86d8ac20becf286c33eff247f150dda61b67f474a02bffe781",
+          "source_commit": "abe0fd7",
+          "path_at_commit": "interiors/images/22-exterior-rear-utility-wide.png"
+        },
+        {
+          "name": "04-elevations.png",
+          "role": "Current rear elevation; only the enlarged Bedroom 1 ground window is the edit authority",
+          "sha256": "4803fe0efe1c74d05c98f8a5c4b9d797f4f7e70ab2ac52774eb189679a2af98d",
+          "retained_path": "../drawings/compact-v4/04-elevations.png"
+        },
+        {
+          "name": "06-kitchen-wide.png",
+          "role": "Original kitchen palette/realism only; target dusk light retained",
+          "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759",
+          "retained_path": "images/06-kitchen-wide.png"
+        },
+        {
+          "name": "06-kitchen-detail.png",
+          "role": "Original kitchen material detail/realism only",
+          "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1",
+          "retained_path": "images/06-kitchen-detail.png"
+        }
+      ],
+      "geometry_reference": {
+        "file": "../drawings/compact-v4/04-elevations.png",
+        "sha256": "4803fe0efe1c74d05c98f8a5c4b9d797f4f7e70ab2ac52774eb189679a2af98d",
+        "opening_schedule_source": "../drawings/compact-v4/.source/make_ensuite_plans.py"
+      },
+      "output": {
+        "file": "images/22-exterior-rear-utility-wide.png",
+        "sha256": "c5e65e1b3cb4991437a46ddd4b191d9146cc1887857a31b44e746fedc5c9e7d1",
+        "size": [
+          1678,
+          937
+        ]
+      },
+      "review": "Bedroom 1 ground rear aperture now reads as the larger square two-panel window beside the utility bay. Utility fittings, upper facade, laundry balcony, parked car, bins and garden retained. Checked against the updated elevation; photograph remains illustrative.",
+      "user_approval": "pending",
+      "superseded_release": {
+        "status": "accepted",
+        "sha256": "9f38e2f8cf619a86d8ac20becf286c33eff247f150dda61b67f474a02bffe781",
+        "review": "Rear utility backyard SW diagonal view v6. Wide-angle, camera against rear wall. Yard reads as tight ~4m depth \u2014 house dominates frame. Biogas green dome at rear-left near west+north walls, close to camera. Square masonry burn pit at right/south side near rear boundary on gravel pad. Septic access NW corner. RIGHT: 2.63m parking strip with car rear. LEFT: 1m north passage, frangipani. Minimal floor tiles visible between biogas and house \u2014 compact courtyard feel. House rear unchanged: utility door, charcoal canopy, wash basin, drying balcony with laundry, timber cladding, headhouse. Compound walls all sides.",
+        "reviewed_at": "2026-09-22T11:31:00Z",
+        "revision": "R6-depth-final",
+        "method": "imagegen",
+        "user_approval": "accepted",
+        "metadata_alignment": {
+          "previous_sha256": "f031adbd2b3e6f0bae01b9acee023f65b17407e03373ec784807d8206aed58af",
+          "date": "2026-10-08",
+          "reason": "Aligned stale release hash with preserved canonical file during cleanup; image pixels unchanged."
+        }
+      }
+    }
+  ],
+  "bedroom1_window_camera_decision": {
+    "date": "2026-10-09",
+    "user_choice": "Enlarge the actual rear opening in both plan and model; improve Bedroom 1 camera using other bedroom wide views",
+    "opening": {
+      "date": "2026-10-09",
+      "rear": {
+        "plan_x_m": 0.5,
+        "plan_y_m": 9.55,
+        "width_m": 1.2,
+        "height_m": 1.2,
+        "sill_above_floor_m": 1.0,
+        "head_above_floor_m": 2.2,
+        "previous_width_m": 0.6,
+        "previous_height_m": 0.7
+      },
+      "side_retained": {
+        "width_m": 1.4,
+        "height_m": 1.2,
+        "sill_above_floor_m": 1.0
+      },
+      "scope": "User-requested rear opening enlargement; bedroom furniture, room clear dimensions, directions, frame and gross areas retained. Lintel and fixing details require coordination."
+    },
+    "source_pdf_sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+    "camera": {
+      "id": "07-bedroom1-wide",
+      "level": "ground",
+      "eye": [
+        2.9,
+        7.45,
+        1.5
+      ],
+      "at": [
+        0.8,
+        8.05,
+        1.5
+      ],
+      "fov": 75,
+      "meshCount": 434,
+      "triangleCount": 1070
+    },
+    "composition_references_inspected": [
+      {
+        "file": "images/08-bedroom2-wide.png",
+        "sha256": "c9aa67b6f8cd9d842ad8d13474d15c08c2c2047d6af1959eebdd7a3f8f770ae4"
+      },
+      {
+        "file": "images/09-bedroom3-wide.png",
+        "sha256": "422ad29911daced409b8d5988bb4cfe6fccd0120dde9220c99e5efb6fb59a42b"
+      }
+    ],
+    "same_room_opposite_inspected": {
+      "file": "images/07-bedroom1-opposite.png",
+      "sha256": "b7dcfa34895df6024415e211b839f8ec30e66443844f17c6f82469eaf12c0be5"
+    },
+    "scope": "Three photographic replacements; measured enlargement in rear opening only. Bed, wardrobe, room sizes, directions, main frame and gross floor areas retained; native camera metadata and derived plan/model exports refreshed.",
+    "user_approval": "Window enlargement and camera correction requested; final photographs pending",
+    "verification": {
+      "model_tests": "34 passed",
+      "production_build": "passed; current standalone explorer generated",
+      "drawing_exports": "12-page A3 PDF; ground plan and rear elevation visually reviewed; current PDF/all 12 PNG bytes verified in gallery and standalone explorer",
+      "architecture_scope": "Compared with abe0fd7: only Bedroom 1 rear opening and its plan label changed; all other floor geometry/furniture, directions and area values retained",
+      "canonical_images_changed": [
+        "07-bedroom1-wide.png",
+        "20-exterior-rear-backyard-wide.png",
+        "22-exterior-rear-utility-wide.png"
+      ],
+      "other_canonical_images_unchanged": 30,
+      "release_inventory_style_geometry_hashes": "verified",
+      "video": "120 seconds, 1920x1080/24 fps; 2880 frames decoded without errors; revised Bedroom 1 shot visually reviewed",
+      "opening_detail": "Final lintel, frame connection and fixing details require architectural/structural coordination; enlargement shown as review geometry"
     }
   }
 }

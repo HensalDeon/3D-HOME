@@ -1,5 +1,5 @@
 {
-  "created": "2026-10-08",
+  "created": "2026-10-09",
   "format": "Landscape still-image house tour",
   "resolution": [
     1920,
@@ -14,7 +14,7 @@
   "audio": "none",
   "transition": "0.75 second cross-dissolve",
   "motion": "Gentle fitted-image zoom and 4 px drift; complete source image remains visible.",
-  "source_note": "Uses current canonical photographs, including the accepted square-on living frontage/rear route, overview-reference staircase/support and six-seat dining, user-selected earlier upstairs staircase appearance, updated study end and three bedroom floor edits matching Bedroom 1 wide wood-look planks. Illustrative presentations; measured plans/model govern architecture.",
+  "source_note": "Uses current canonical interior photographs, including the accepted square-on living frontage/rear route, overview-reference staircase/support and six-seat dining, user-selected earlier upstairs staircase appearance, updated study end, matching bedroom wood-look planks and the 9 October Bedroom 1 level camera/rear window enlargement. Illustrative presentations; measured plans/model govern architecture.",
   "timeline": [
     {
       "kind": "intro",
@@ -89,7 +89,7 @@
       "start_seconds": 39.0,
       "duration_seconds": 6.0,
       "file": "images/07-bedroom1-wide.png",
-      "sha256": "89c37abc5272c4aa53d850cd2009818e59e467b32474ade8c2706f768481c9f8",
+      "sha256": "50629a27b7e04ba438fa62e382ac819b6923dc5f23925ad88acc351b1e1d22c6",
       "caption": "Bedroom 1",
       "level": "GROUND FLOOR"
     },
@@ -227,11 +227,11 @@
   ],
   "video": {
     "file": "Hensal_Interior_Tour.mp4",
-    "sha256": "9391c7733be35d5637cc1496ef5bc395f25193c62e6abd888c36b2ab9141ee03",
-    "bytes": 26435239
+    "sha256": "34728f5c134e3b97a0df8eea9697d1869935ac324571aed3dfaf2f5fb35db5a0",
+    "bytes": 26905330
   },
   "rebuild": "python interiors/.source/build_video.py (Pillow, imageio-ffmpeg; macOS fonts)",
-  "review": "Assistant full decode, metadata/source-hash checks and three revised-bedroom frame reviews passed; user review pending.",
+  "review": "Assistant full decode, metadata/source-hash checks and revised Bedroom 1 frame review passed; user review pending.",
   "encoder": "FFmpeg 7.1 / libx264; MP4 faststart",
   "validation": {
     "duration_seconds": 120,
@@ -243,6 +243,6 @@
     "fps": 24,
     "full_decode": "passed with no errors",
     "audio_streams": 0,
-    "visual_review": "Decoded frames at 47, 73 and 84 seconds show the corrected bedroom floor photographs, retained doorway stone and captions without clipping."
+    "visual_review": "Decoded Bedroom 1 frame at 42 seconds shows the level room composition, two windows, retained floor finish and unobstructed caption."
   }
 }

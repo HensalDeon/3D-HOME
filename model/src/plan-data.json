@@ -1,6 +1,6 @@
 {
   "source": "Hensal_Complete_House_Plans.pdf",
-  "source_sha256": "f2e08c4e3dc809d560a8fe9900dc4fa3f7616f69c47abf484a3f9fe012aa95f4",
+  "source_sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
   "coordinates": "x increases north; y increases west; metres; house east/south corner is origin",
   "levels": {
     "ground": [
@@ -334,7 +334,7 @@
         "args": [
           0.5,
           9.55,
-          0.6,
+          1.2,
           0.22,
           "h"
         ],
@@ -821,6 +821,18 @@
           7.2
         ],
         "kwargs": {}
+      },
+      {
+        "op": "text",
+        "args": [
+          1.1,
+          9.96,
+          "REAR W 1.20 x 1.20 / SILL 1.00",
+          4.4
+        ],
+        "kwargs": {
+          "col": "#197a77"
+        }
       },
       {
         "op": "text",
@@ -4263,9 +4275,9 @@
     "REAR_GF": [
       [
         0.5,
-        0.6,
-        1.35,
-        0.7,
+        1.2,
+        1.0,
+        1.2,
         "window"
       ],
       [
@@ -5185,6 +5197,25 @@
     "survey_setout_verified": false,
     "vastu_certified": false,
     "vastu_orientation_basis": "drawing compass confirmed correct by user; directional room arrangement retained",
+    "bedroom1_window_update": {
+      "date": "2026-10-09",
+      "rear": {
+        "plan_x_m": 0.5,
+        "plan_y_m": 9.55,
+        "width_m": 1.2,
+        "height_m": 1.2,
+        "sill_above_floor_m": 1.0,
+        "head_above_floor_m": 2.2,
+        "previous_width_m": 0.6,
+        "previous_height_m": 0.7
+      },
+      "side_retained": {
+        "width_m": 1.4,
+        "height_m": 1.2,
+        "sill_above_floor_m": 1.0
+      },
+      "scope": "User-requested rear opening enlargement; bedroom furniture, room clear dimensions, directions, frame and gross areas retained. Lintel and fixing details require coordination."
+    },
     "roof_enclosure_m2": 9.02,
     "total_including_roof_m2": 126.8383,
     "total_including_roof_sqft": 1365.28,

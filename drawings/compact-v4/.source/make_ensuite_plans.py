@@ -116,7 +116,9 @@ def clear_size(box):return f'{box[2]-box[0]:.3f} x {box[3]-box[1]:.3f}'
 # Opening tuples: (x, width, sill above finished floor, height, kind).
 FRONT_GF=[(.60,1.70,1.00,1.15,'window'),(3.28,.90,0,2.20,'door'),(4.55,1.05,.75,1.45,'window')]
 FRONT_FF=[(.60,1.70,.80,1.40,'window'),(3.45,2.05,0,2.20,'slider')]
-REAR_GF=[(.50,.60,1.35,.70,'window'),(4.70,.90,0,2.15,'door'),(3.30,1.10,1.20,1.00,'obscured')]
+# Bedroom 1 rear opening enlarged at the user's request (9 October 2026).
+# Keep its left edge and the bedroom furniture footprint; head aligns with the primary side window.
+REAR_GF=[(.50,1.20,1.00,1.20,'window'),(4.70,.90,0,2.15,'door'),(3.30,1.10,1.20,1.00,'obscured')]
 REAR_FF=[(3.50,.65,1.65,.50,'obscured'),(4.90,.65,1.65,.50,'obscured')]
 SOURCES=[
  ('Stair placement / ascent','https://www.architectureideas.info/2008/11/vastu-shastra-guidelines-staircases/comment-page-1/'),
@@ -271,6 +273,7 @@ def bedroom(p,floor):
  storage_plan(p,'bedroom1' if floor=='GF' else 'bedroom2')
  p.text(1.91,8.2,'LIFT-UP BASE',4.2,rot=90,col=TEAL)
  label(p,1.65,7.10,'BED 1 / SW' if floor=='GF' else 'MASTER / SW',clear_size(room_boxes(floor)['bedroom_sw']))
+ if floor=='GF':p.text(1.10,9.96,'REAR W 1.20 x 1.20 / SILL 1.00',4.4,col=TEAL)
  p.text(.35,8.45,'HEAD SOUTH',5,rot=90,col=TEAL)
 
 

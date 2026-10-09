@@ -2,6 +2,12 @@
 
 The [two-minute interior video](Hensal_Interior_Tour.mp4) presents 22 current photographs in house-tour order, at 1920 × 1080 and 24 fps. It uses gentle fitted-image motion, 0.75-second dissolves and room captions, with no audio. The export includes the rebuilt living-room view with a square-on frontage and visible rear route. [Video timings and source hashes](.source/video-tour.json) and [the rebuild script](.source/build_video.py) keep this export reproducible without retaining temporary frames.
 
+## Bedroom 1 camera and rear window · 9 October 2026
+
+[Bedroom 1 wide](images/07-bedroom1-wide.png) uses a level entrance-side camera showing the bed, wardrobe and two perpendicular windows together. The user requested a better angle following the other bedroom wide views and chose to enlarge the actual rear opening. It is now 1200 × 1200 mm, sill +1.00 m and head +2.20 m; the side window remains 1400 × 1200 mm. The shared drawing schedule governs the PDF, rear elevation and model. Bed orientation, fitted storage, plank flooring and floor areas are retained.
+
+[Rear backyard](images/20-exterior-rear-backyard-wide.png) and [rear utility](images/22-exterior-rear-utility-wide.png) carry the same local window enlargement. The native Bedroom 1 camera guide is retained in `.source/geometry/07-bedroom1-wide.png`; the source photographs, including the preceding floor reference, are recoverable from `abe0fd7`. Exact built-in imagegen prompts, input roles/hashes and reviews are under `bedroom1_window_camera_generation_history` in [the release manifest](.source/image-release.json). Assistant visual review passed; user acceptance of the new photographs is pending. The tour includes the updated bedroom view; the rear exterior photographs remain in the image library. The other 30 canonical room images are unchanged from `abe0fd7`.
+
 ## Bedroom flooring · 8 October 2026
 
 [Bedroom 1 wide](images/07-bedroom1-wide.png) is the user's selected reference for light oak wood-look plank flooring. [Bedroom 1 opposite](images/07-bedroom1-opposite.png), [Bedroom 2 opposite](images/08-bedroom2-opposite.png) and [Bedroom 3 wide](images/09-bedroom3-wide.png) now match its pale tone, fine grain, narrow seams and staggered plank ends. The bedroom finish stops at the entry threshold; stone floors beyond the doors are retained. Existing wardrobe/loft designs, the 90° Bedroom 3 corner, rugs, cream skirting and doorway sightlines are preserved.

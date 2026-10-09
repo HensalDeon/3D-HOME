@@ -30,7 +30,7 @@ def base(c, ignored_number, title, subtitle):
     c.setLineWidth(.5)
     c.line(16*mm, 249*mm, 404*mm, 249*mm)
     c.line(16*mm, 19*mm, 404*mm, 19*mm)
-    house.tx(c, 16, 12, 'COORDINATED REVIEW SET / 08 OCT 2026 / DIMENSIONS IN METRES', 7, house.MUTED)
+    house.tx(c, 16, 12, 'COORDINATED REVIEW SET / 09 OCT 2026 / DIMENSIONS IN METRES', 7, house.MUTED)
     house.tx(c, 272, 12, f'ARCHITECT / BUILDER REVIEW - NOT FOR CONSTRUCTION   {PAGE_NUMBER:02d} / {TOTAL:02d}', 6.3, house.MUTED)
 
 
@@ -122,6 +122,7 @@ def main():
     pdf_data = base64.b64encode(PDF.read_bytes()).decode()
     gallery.write_text(gallery.read_text().replace('href="Hensal_Complete_House_Plans.pdf"', 'href="data:application/pdf;base64,'+pdf_data+'"'))
     dimensions = house.validate()
+    dimensions['bedroom1_window_update'] = {'date':'2026-10-09','rear':{'plan_x_m':.50,'plan_y_m':9.55,'width_m':1.20,'height_m':1.20,'sill_above_floor_m':1.00,'head_above_floor_m':2.20,'previous_width_m':.60,'previous_height_m':.70},'side_retained':{'width_m':1.40,'height_m':1.20,'sill_above_floor_m':1.00},'scope':'User-requested rear opening enlargement; bedroom furniture, room clear dimensions, directions, frame and gross areas retained. Lintel and fixing details require coordination.'}
     dimensions.update({'roof_enclosure_m2': roof.HEAD_AREA, 'total_including_roof_m2': round(house.GF_AREA+house.FF_AREA+roof.HEAD_AREA,4), 'total_including_roof_sqft': round((house.GF_AREA+house.FF_AREA+roof.HEAD_AREA)/.09290304,2), 'roof_landing_m': roof.RF, 'roof_cover_top_m': roof.COVER_TOP, 'roof_clear_landing_height_m': 2.4, 'roof_access': 'full south stair from first floor', 'drawing_count': TOTAL})
     # R13 under-stair coordination, read straight out of the layout the 3D model is built from, so
     # the published dimensions cannot drift from the model. The wall opening is the one number here

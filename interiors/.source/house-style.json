@@ -78,8 +78,9 @@
     {
       "file": "images/07-bedroom1-wide.png",
       "group": "Bedroom 1",
-      "role": "Sage accents, textured ivory linen and natural oak; the wide view governs light oak wood-look bedroom flooring.",
-      "sha256": "89c37abc5272c4aa53d850cd2009818e59e467b32474ade8c2706f768481c9f8"
+      "role": "Sage accents, textured ivory linen and natural oak; the wide view governs light oak wood-look bedroom flooring. R19 revised finish example; original kitchen images remain the primary style authority.",
+      "sha256": "50629a27b7e04ba438fa62e382ac819b6923dc5f23925ad88acc351b1e1d22c6",
+      "revision": "R19"
     },
     {
       "file": "images/07-bedroom1-detail.png",

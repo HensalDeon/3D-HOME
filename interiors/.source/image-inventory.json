@@ -90,10 +90,10 @@
   {
     "file": "07-bedroom1-wide.png",
     "size": [
-      1264,
-      848
+      1536,
+      1024
     ],
-    "sha256": "89c37abc5272c4aa53d850cd2009818e59e467b32474ade8c2706f768481c9f8"
+    "sha256": "50629a27b7e04ba438fa62e382ac819b6923dc5f23925ad88acc351b1e1d22c6"
   },
   {
     "file": "08-bedroom2-detail.png",
@@ -242,10 +242,10 @@
   {
     "file": "20-exterior-rear-backyard-wide.png",
     "size": [
-      1376,
-      768
+      1678,
+      937
     ],
-    "sha256": "7a0fe607096959dbed0968ccf5eba6c8133f365150fa979e74bc845f53424053"
+    "sha256": "31f9b39f35b9b1f05c3c1997f34074035283a178a59e5e88d3f5b534646fac71"
   },
   {
     "file": "21-exterior-south-parking-wide.png",
@@ -261,6 +261,6 @@
       1678,
       937
     ],
-    "sha256": "9f38e2f8cf619a86d8ac20becf286c33eff247f150dda61b67f474a02bffe781"
+    "sha256": "c5e65e1b3cb4991437a46ddd4b191d9146cc1887857a31b44e746fedc5c9e7d1"
   }
 ]

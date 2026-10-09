@@ -174,12 +174,12 @@ def main():
     for i,s in enumerate(segments):
         timeline.append({'kind':s['kind'],'start_seconds':cursor/FPS,'duration_seconds':s['frames']/FPS,**(sources[i-1] if s['kind']=='photo' else {})})
         cursor+=s['frames']-(FADE if i<len(segments)-1 else 0)
-    manifest={'created':'2026-10-08','format':'Landscape still-image house tour',
+    manifest={'created':'2026-10-09','format':'Landscape still-image house tour',
               'resolution':[WIDTH,HEIGHT],'fps':FPS,'frames':total,'duration_seconds':total/FPS,
               'codec':'H.264','pixel_format':'yuv420p','container':'MP4','audio':'none',
               'transition':'0.75 second cross-dissolve',
               'motion':'Gentle fitted-image zoom and 4 px drift; complete source image remains visible.',
-              'source_note':'Uses current canonical photographs, including the accepted square-on living frontage/rear route, overview-reference staircase/support and six-seat dining, user-selected earlier upstairs staircase appearance, updated study end and three bedroom floor edits matching Bedroom 1 wide wood-look planks. Illustrative presentations; measured plans/model govern architecture.',
+              'source_note':'Uses current canonical interior photographs, including the accepted square-on living frontage/rear route, overview-reference staircase/support and six-seat dining, user-selected earlier upstairs staircase appearance, updated study end, matching bedroom wood-look planks and the 9 October Bedroom 1 level camera/rear window enlargement. Illustrative presentations; measured plans/model govern architecture.',
               'timeline':timeline,'video':{'file':args.output.name,'sha256':digest(args.output),'bytes':args.output.stat().st_size},
               'rebuild':'python interiors/.source/build_video.py (Pillow, imageio-ffmpeg; macOS fonts)',
               'review':'Encoding complete; final duration, decode and visual checks still pending.'}

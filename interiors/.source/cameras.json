@@ -113,16 +113,18 @@
     "id": "07-bedroom1-wide",
     "level": "ground",
     "from": [
-      2.8,
-      7.15,
+      2.9,
+      7.45,
       1.5
     ],
     "to": [
-      1.25,
-      8.45,
-      1.15
+      0.8,
+      8.05,
+      1.5
     ],
-    "fov": 68
+    "fov": 75,
+    "width": 1536,
+    "height": 1024
   },
   {
     "id": "07-bedroom1-opposite",
