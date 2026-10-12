@@ -112,14 +112,14 @@
     },
     "06-kitchen-opposite.png": {
       "status": "assistant-reviewed",
-      "sha256": "7a398419ca4c143a16407374b868ac4580d0500f463de87ed521be78b7d0708c",
-      "review": "Assistant visual review: three flat ivory doors and open oak shelf bay match selected wide reference; added only on solid end wall. Window, hob counter, fridge, straight right wall/skirting, rug and south-facing composition retained.",
+      "sha256": "e6316828ba8a7497a1299d2b36d40667e8cb40679022c5b4da8d66e8dcab951c",
+      "review": "Assistant visual comparison: storage is visibly wider and taller with a usable closed loft row; original south-facing room layout, window/hob counter, fridge/top plant, straight right wall/skirting, counter props, rug and floor remain in place. Original house finish retained; only cupboard design and local lighting/shadows intentionally changed.",
       "reviewed_at": "2026-10-12",
-      "presentation_revision": "kitchen-opposite-wall-cupboards-2026-10-12",
+      "presentation_revision": "kitchen-opposite-larger-storage-2026-10-12",
       "method": "built-in-imagegen-with-native-south-facing-guide",
       "user_approval": "pending",
       "geometry_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
-      "prompt_id": "opposite-matching-wall-cupboards",
+      "prompt_id": "opposite-larger-two-tier-storage",
       "prompt_file": ".source/image-release.json",
       "superseded": {
         "recoverable_generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-6c6333ce-e298-431b-9b0b-e848fadb74d1.png",
@@ -127,7 +127,7 @@
         "status": "user-rejected",
         "reason": "Incorrect camera/end-wall door and fridge placement."
       },
-      "render_review": "Assistant visual comparison against selected cupboard reference and retained room geometry; new cupboard addition shown in presentation only.",
+      "render_review": "Assistant comparison of enlarged storage with original kitchen finish references and retained fixture/wall/camera layout; presentation design only.",
       "camera": {
         "id": "06-kitchen-opposite",
         "level": "ground",
@@ -148,7 +148,7 @@
       },
       "geometry_page": 3,
       "cabinet_design_source": "images/06-kitchen-wide.png",
-      "cabinet_placement": "Matching ivory wall cupboards with an open oak right-end shelf bay and soft under-cabinet lighting on the solid south end wall; stop before fridge, preserve window."
+      "cabinet_placement": "Wider near-ceiling ivory unit with three taller main closed fronts, four aligned closed loft fronts and one narrow open oak shelf bay below the right loft; concealed warm task lighting. Majority closed storage, with countertop clearance and gap before fridge retained."
     },
     "06-kitchen-wide.png": {
       "status": "accepted",
@@ -3777,6 +3777,68 @@
         ]
       },
       "review": "Assistant visual review: three flat ivory doors and open oak shelf bay match selected wide reference; added only on solid end wall. Window, hob counter, fridge, straight right wall/skirting, rug and south-facing composition retained.",
+      "user_approval": "pending",
+      "status": "superseded",
+      "user_feedback": "Cupboards felt too small; user requested improved storage using more wall area."
+    },
+    {
+      "id": "opposite-larger-two-tier-storage",
+      "date": "2026-10-12",
+      "method": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Redesign ONLY the small upper cupboard unit on the solid FAR END WALL of IMAGE 1, the current kitchen opposite photograph.\nUSER REQUIREMENTS: existing new cupboards feel too small; use the available wall better for useful storage and aesthetics. The other kitchen photos are style references, not a fixed cabinet size to copy. EVERYTHING ELSE must stay unchanged.\nImages 2/3 are approved kitchen wide/detail references for muted ivory/oak finishes and photo quality, not a size limitation.\nREPLACE the current three-door floating cabinet and small oak shelf bay with a substantially LARGER, thoughtfully fitted TWO-TIER storage composition:\n- Use most of the available solid end-wall width: start at the same far-left wall corner, extend right approximately 20\u201325% farther than the current unit, and stop with a clear 150\u2013200mm visual gap BEFORE the fridge's left edge. Do not overlap, enclose or cover the fridge/plant.\n- Extend UPWARD nearly to the existing ceiling, leaving a neat small visible 80\u2013100mm gap. Increase total cupboard height to about 1.15\u20131.25m instead of the current shallow 0.7m, while maintaining approximately 550\u2013600mm clear wall above the existing left countertop. Cabinet depth about 300mm. The bigger cabinet is fitted on the existing wall without enlarging the room.\n- Main LOWER tier: three or four generous flat creamy-ivory closed doors with fine straight reveals for everyday storage. At the far-right end, keep ONE narrow natural-oak open shelf bay, only roughly 15% of the unit width, with two tidy compartments. Reuse the small shelf plant, books and stacked cream bowls from the original cabinet; the majority of the area must be CLOSED storage.\n- UPPER loft tier: a genuine row of usable closed ivory cupboards, about 350\u2013400mm high, aligned with main door divisions. This is storage with visible doors and subtle reveal lines, NOT a cosmetic ceiling band/filler. Run the loft across the complete unit, including over the oak shelf bay, for a calm continuous horizontal top.\n- Fine muted-oak underside/side detail, original matte creamy-ivory door finish, discreet finger-pull or recessed bottom-edge access without bulky handles. Restrained soft diffused warm under-cabinet lighting along the larger unit, no orange or neon glow. Straight consistent lines, believable fitted carpentry proportions.\nThis should look noticeably more substantial and make better use of both width and height, with a refined warm minimalist aesthetic. Do not just enlarge the old unit by a tiny amount. Do not add extra decorative shelf rows instead of practical storage.\nABSOLUTE INVARIANTS: only cabinet region and its immediate local light/shadows may change. Keep original image dimensions/camera/framing and ALL remaining architecture/objects exactly unchanged: full left charcoal sliding window and tropical exterior, continuous left stone counter and oak base cabinet divisions, two-burner hob and black glass, pots, fruit bowl, boards and ceramic jars, fridge size/location/orientation and top plant, straight right wall and skirting with NO projection, far end wall and corners, floor tile grid, runner dimensions/location, sunlight, exposure and material colors. No fridge moves, no new base unit or counter on end wall, no sink, door, window changes, wall enlargement, new furniture or extra plants. Do not add cabinets across the window, on the right wall or above the fridge. Preserve all pixels outside the cabinet/local wall-light area as closely as possible. Output the same photograph with only the end-wall cupboard design upgraded. No text, label or watermark.",
+      "user_request": "Previous cupboards look too small. Reference is stylistic only; improve use of wall for storage and aesthetics, keeping all remaining elements unchanged.",
+      "inputs": [
+        {
+          "path": "images/06-kitchen-opposite.png",
+          "role": "Edit target; only end-wall upper storage changed",
+          "sha256": "7a398419ca4c143a16407374b868ac4580d0500f463de87ed521be78b7d0708c",
+          "recoverable_generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-5b9e3448-3a7b-4dd4-9c46-262fc5c50a28.png"
+        },
+        {
+          "path": "images/06-kitchen-wide.png",
+          "role": "Approved ivory/oak finish and photographic reference; cupboard dimensions are not copied",
+          "sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9"
+        },
+        {
+          "path": "images/06-kitchen-detail.png",
+          "role": "Approved ivory/oak finish and photographic reference; cupboard dimensions are not copied",
+          "sha256": "46ee70f6899b8719e6d6553cfd4a2263bbcbb0f0e6f3335aa3a465887e343b1e"
+        }
+      ],
+      "geometry_reference": {
+        "source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "camera": {
+          "id": "06-kitchen-opposite",
+          "level": "ground",
+          "eye": [
+            2.4,
+            1.13,
+            1.5
+          ],
+          "at": [
+            0.15,
+            1.13,
+            1.2
+          ],
+          "fov": 75,
+          "doorPose": "closed on existing hinge; behind camera",
+          "meshCount": 434,
+          "triangleCount": 1496
+        },
+        "scope": "Retain room, openings, left counter, fridge, floor and camera. Storage is a requested presentation design revision; measured drawing/model files unchanged."
+      },
+      "storage_design": "Wider near-ceiling ivory unit with three taller main closed fronts, four aligned closed loft fronts and one narrow open oak shelf bay below the right loft; concealed warm task lighting. Majority closed storage, with countertop clearance and gap before fridge retained.",
+      "review": "Assistant visual comparison: storage is visibly wider and taller with a usable closed loft row; original south-facing room layout, window/hob counter, fridge/top plant, straight right wall/skirting, counter props, rug and floor remain in place. Original house finish retained; only cupboard design and local lighting/shadows intentionally changed.",
+      "output": {
+        "path": "images/06-kitchen-opposite.png",
+        "sha256": "e6316828ba8a7497a1299d2b36d40667e8cb40679022c5b4da8d66e8dcab951c",
+        "size": [
+          1536,
+          1024
+        ]
+      },
       "user_approval": "pending"
     }
   ]
