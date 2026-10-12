@@ -54,20 +54,20 @@
     {
       "file": "images/06-kitchen-wide.png",
       "group": "Kitchen",
-      "role": "User-approved wide/detail retain the original palette. Corrected south-facing opposite: blank end wall, left hob counter continuing to it, fridge against the straight right wall; northwest entry and north sink return behind the camera. PDF page 3 governs layout.",
+      "role": "User-approved wide/detail retain the original palette. South-facing opposite adds matching ivory cupboards and an oak shelf bay on the solid end wall; left hob counter continues to it and fridge stays against the straight right wall. Entry and sink return remain behind the camera.",
       "sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9"
     },
     {
       "file": "images/06-kitchen-detail.png",
       "group": "Kitchen",
-      "role": "User-approved wide/detail retain the original palette. Corrected south-facing opposite: blank end wall, left hob counter continuing to it, fridge against the straight right wall; northwest entry and north sink return behind the camera. PDF page 3 governs layout.",
+      "role": "User-approved wide/detail retain the original palette. South-facing opposite adds matching ivory cupboards and an oak shelf bay on the solid end wall; left hob counter continues to it and fridge stays against the straight right wall. Entry and sink return remain behind the camera.",
       "sha256": "46ee70f6899b8719e6d6553cfd4a2263bbcbb0f0e6f3335aa3a465887e343b1e"
     },
     {
       "file": "images/06-kitchen-opposite.png",
       "group": "Kitchen",
-      "role": "User-approved wide/detail retain the original palette. Corrected south-facing opposite: blank end wall, left hob counter continuing to it, fridge against the straight right wall; northwest entry and north sink return behind the camera. PDF page 3 governs layout.",
-      "sha256": "2adea7440eae0dfa91760c9cf265bbb69ee9731c9573cbc42bff535d247f03f1"
+      "role": "User-approved wide/detail retain the original palette. South-facing opposite adds matching ivory cupboards and an oak shelf bay on the solid end wall; left hob counter continues to it and fridge stays against the straight right wall. Entry and sink return remain behind the camera.",
+      "sha256": "7a398419ca4c143a16407374b868ac4580d0500f463de87ed521be78b7d0708c"
     },
     {
       "file": "images/16-dining-wide.png",

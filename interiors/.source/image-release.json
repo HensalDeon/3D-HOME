@@ -112,14 +112,14 @@
     },
     "06-kitchen-opposite.png": {
       "status": "assistant-reviewed",
-      "sha256": "2adea7440eae0dfa91760c9cf265bbb69ee9731c9573cbc42bff535d247f03f1",
-      "review": "Assistant visual comparison with PDF page 3: right/west fridge wall is one flat uninterrupted plane; near-right projecting nib and stepped skirting removed. Fridge, blank south end wall, left counter/window/hob and camera retained.",
+      "sha256": "7a398419ca4c143a16407374b868ac4580d0500f463de87ed521be78b7d0708c",
+      "review": "Assistant visual review: three flat ivory doors and open oak shelf bay match selected wide reference; added only on solid end wall. Window, hob counter, fridge, straight right wall/skirting, rug and south-facing composition retained.",
       "reviewed_at": "2026-10-12",
-      "presentation_revision": "kitchen-fridge-wall-straight-2026-10-12",
+      "presentation_revision": "kitchen-opposite-wall-cupboards-2026-10-12",
       "method": "built-in-imagegen-with-native-south-facing-guide",
       "user_approval": "pending",
       "geometry_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
-      "prompt_id": "opposite-straight-fridge-wall",
+      "prompt_id": "opposite-matching-wall-cupboards",
       "prompt_file": ".source/image-release.json",
       "superseded": {
         "recoverable_generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-6c6333ce-e298-431b-9b0b-e848fadb74d1.png",
@@ -127,7 +127,7 @@
         "status": "user-rejected",
         "reason": "Incorrect camera/end-wall door and fridge placement."
       },
-      "render_review": "Assistant visual review against PDF page 3 and original materials; photographic presentation is illustrative, not a pixel-exact measured drawing.",
+      "render_review": "Assistant visual comparison against selected cupboard reference and retained room geometry; new cupboard addition shown in presentation only.",
       "camera": {
         "id": "06-kitchen-opposite",
         "level": "ground",
@@ -146,7 +146,9 @@
         "meshCount": 434,
         "triangleCount": 1496
       },
-      "geometry_page": 3
+      "geometry_page": 3,
+      "cabinet_design_source": "images/06-kitchen-wide.png",
+      "cabinet_placement": "Matching ivory wall cupboards with an open oak right-end shelf bay and soft under-cabinet lighting on the solid south end wall; stop before fridge, preserve window."
     },
     "06-kitchen-wide.png": {
       "status": "accepted",
@@ -3720,5 +3722,62 @@
       ]
     },
     "video": "Unchanged by user request."
-  }
+  },
+  "kitchen_cupboard_generation_history": [
+    {
+      "id": "opposite-matching-wall-cupboards",
+      "date": "2026-10-12",
+      "method": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit.\nAdd matching wall cupboards to IMAGE 1, the current kitchen opposite photograph, as explicitly requested by the user. IMAGE 2 (kitchen wide) is the exact cupboard-design/material reference.\nADD ONLY a modest wall-mounted cupboard run on the available SOLID FAR/SOUTH END WALL above the end of the LEFT countertop. Begin at the far-left interior corner, extend partway along that plain end wall, and stop comfortably BEFORE the refrigerator/right corner. Match image 2: THREE flat matte creamy-ivory handleless doors with clean fine vertical reveals, a slim muted natural-oak base edge, and ONE small open oak shelf bay at the right end containing a few cream bowls and two or three books. Fine oak grain, softly lit ceramic texture. The cupboards should read as a compact roughly 1.4m-wide, 0.7m-high, 0.3m-deep wall unit, with their underside approximately 0.6m above the existing 0.9m-high countertop and top comfortably below the ceiling. Fit this into the existing room perspective and true compact scale.\nAdd one discreet warm under-cupboard task-light strip, concealed and diffused exactly like image 2, softly grazing the ivory wall at the countertop end. Avoid neon edges or strong orange light. Keep the shelving understated and do not extend cabinets over or around the fridge.\nSTRICT INVARIANTS: preserve image 1's exact camera/crop/dimensions and all existing room geometry. The far wall stays a solid wall with NO doorway. The right/fridge-side wall and skirting stay STRAIGHT with NO inward bulge, column, step or niche. Preserve fridge position/size/orientation and trailing plant, the continuous LEFT counter and its oak base cupboards, black two-burner hob, full charcoal sliding window and daylight/tropical view, counter pots/boards/ceramics, woven floor runner and original beige floor joints. Do not add cupboards in front of or over the window; put this new unit exclusively on the solid END wall. No new base cabinets or countertop across the end wall; no new sink or appliances, tall pantry or fridge housing. Preserve room dimensions and uncluttered aisle.\nKeep original natural photographic realism, creamy ivory/muted oak/pale sandy stone palette, exposure, daylight, existing shadows and fine textures. Match image 2's flat cabinet faces and exact subdued finish. Output the same photograph with ONLY the requested matching end-wall cupboards and their soft task light added. No labels, text or watermark.",
+      "inputs": [
+        {
+          "path": "images/06-kitchen-opposite.png",
+          "role": "Edit target; corrected south-facing composition and straight fridge-side wall retained",
+          "sha256": "2adea7440eae0dfa91760c9cf265bbb69ee9731c9573cbc42bff535d247f03f1",
+          "recoverable_generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-06d41364-8d44-42eb-8d7d-a3292fb61021.png"
+        },
+        {
+          "path": "images/06-kitchen-wide.png",
+          "role": "User-selected cupboard design, finish, oak shelf bay and concealed task-light reference",
+          "sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9"
+        }
+      ],
+      "geometry_reference": {
+        "source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "camera": {
+          "id": "06-kitchen-opposite",
+          "level": "ground",
+          "eye": [
+            2.4,
+            1.13,
+            1.5
+          ],
+          "at": [
+            0.15,
+            1.13,
+            1.2
+          ],
+          "fov": 75,
+          "doorPose": "closed on existing hinge; behind camera",
+          "meshCount": 434,
+          "triangleCount": 1496
+        },
+        "scope": "Existing walls/openings/fixtures and south-facing camera retained. End-wall cupboards are a new user-requested presentation addition; measured drawing/model files are unchanged."
+      },
+      "user_request": "Add cupboards like kitchen wide to kitchen opposite.",
+      "placement": "Matching ivory wall cupboards with an open oak right-end shelf bay and soft under-cabinet lighting on the solid south end wall; stop before fridge, preserve window.",
+      "output": {
+        "path": "images/06-kitchen-opposite.png",
+        "sha256": "7a398419ca4c143a16407374b868ac4580d0500f463de87ed521be78b7d0708c",
+        "size": [
+          1536,
+          1024
+        ]
+      },
+      "review": "Assistant visual review: three flat ivory doors and open oak shelf bay match selected wide reference; added only on solid end wall. Window, hob counter, fridge, straight right wall/skirting, rug and south-facing composition retained.",
+      "user_approval": "pending"
+    }
+  ]
 }
