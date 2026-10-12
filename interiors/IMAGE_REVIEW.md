@@ -1,5 +1,11 @@
 # Interior image register
 
+## Kitchen plan correction · 12 October 2026
+
+[Kitchen wide](images/06-kitchen-wide.png) and [kitchen detail](images/06-kitchen-detail.png) were explicitly accepted by the user and remain unchanged in this follow-up. [Kitchen opposite](images/06-kitchen-opposite.png) now faces south: the visible end is a plain wall, the east/window hob counter continues along the left to that wall, and the southwest fridge is on the right against the west wall. The northwest door and north sink return are behind this camera, matching their positions in the accepted wide photograph and on page 3 of [the complete house plans](../drawings/compact-v4/Hensal_Complete_House_Plans.pdf). The earlier west-facing opposite image, with a door on the visible end wall and fridge at back-left, was rejected by the user.
+
+The latest opposite-view correction removes the inward projection beside the fridge: the right/west wall and skirting now run straight, as drawn on PDF page 3. The wide and detail retain user acceptance and are unchanged. The kitchen working folder was removed at the user's request; exact built-in imagegen prompts, source roles/hashes, PDF crop recipe, camera audit and final hashes are consolidated in [the release manifest](.source/image-release.json). Original style inputs remain recoverable from Git commit `12e352ed27b39eb4b067b05daf43ecc3e3e2a4ca`; generated intermediates remain outside the project. Assistant visual review passed for the wall correction; user acceptance of this latest edit is pending. These photographs are illustrative. The tour video and its source manifest remain unchanged at the user's request and still show the preceding kitchen wide photograph.
+
 The [two-minute interior video](Hensal_Interior_Tour.mp4) presents 22 current photographs in house-tour order, at 1920 × 1080 and 24 fps. It uses gentle fitted-image motion, 0.75-second dissolves and room captions, with no audio. The export includes the rebuilt living-room view with a square-on frontage and visible rear route. [Video timings and source hashes](.source/video-tour.json) and [the rebuild script](.source/build_video.py) keep this export reproducible without retaining temporary frames.
 
 ## Bedroom 1 camera and rear window · 9 October 2026

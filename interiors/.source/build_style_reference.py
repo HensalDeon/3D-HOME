@@ -16,7 +16,7 @@ swatches = [
     ('Clay', '#B07D60', 'Bedroom 3 accent'),
 ]
 groups = [
-    ('Kitchen', ['06-kitchen-wide', '06-kitchen-detail', '06-kitchen-opposite'], 'Primary palette, daylight, material texture and task-light reference.'),
+    ('Kitchen', ['06-kitchen-wide', '06-kitchen-detail', '06-kitchen-opposite'], 'User-approved wide/detail retain the original palette. Corrected south-facing opposite: blank end wall, left hob counter continuing to it, fridge against the straight right wall; northwest entry and north sink return behind the camera. PDF page 3 governs layout.'),
     ('Dining', ['16-dining-wide'], 'Oak furniture, cream upholstery, pale floor and gentle daylight.'),
     ('Bedroom 1', ['07-bedroom1-wide', '07-bedroom1-detail', '07-bedroom1-opposite'], 'Sage accents, textured ivory linen and natural oak; the wide view governs light oak wood-look bedroom flooring.'),
     ('Master bedroom', ['08-bedroom2-wide', '08-bedroom2-detail', '08-bedroom2-opposite'], 'Olive textiles, oatmeal upholstery, woven runner and oak; opposite-view bedroom flooring follows Bedroom 1 wide, with stone retained beyond the door.'),

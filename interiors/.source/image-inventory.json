@@ -53,15 +53,15 @@
       1495,
       1052
     ],
-    "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1"
+    "sha256": "46ee70f6899b8719e6d6553cfd4a2263bbcbb0f0e6f3335aa3a465887e343b1e"
   },
   {
     "file": "06-kitchen-opposite.png",
     "size": [
-      1200,
-      896
+      1536,
+      1024
     ],
-    "sha256": "22e72f0e2435862cc69dbcc0cf83ebf435cfabd8f577c311dd683c2eb755dc12"
+    "sha256": "2adea7440eae0dfa91760c9cf265bbb69ee9731c9573cbc42bff535d247f03f1"
   },
   {
     "file": "06-kitchen-wide.png",
@@ -69,7 +69,7 @@
       1495,
       1052
     ],
-    "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759"
+    "sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9"
   },
   {
     "file": "07-bedroom1-detail.png",

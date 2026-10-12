@@ -65,21 +65,135 @@
     },
     "06-kitchen-detail.png": {
       "status": "accepted",
-      "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1",
-      "review": "Tactile detail of north sink counter, warm under-cabinet lighting, cutting board, and oak drawers.",
-      "reviewed_at": "2026-09-10T21:39:06.114661"
+      "sha256": "46ee70f6899b8719e6d6553cfd4a2263bbcbb0f0e6f3335aa3a465887e343b1e",
+      "review": "Preserved the sink close-up, door, joinery and finishes; removed the misplaced fridge sliver and vine at the extreme left, consistent with the corrected wide camera.",
+      "reviewed_at": "2026-10-12",
+      "presentation_revision": "kitchen-plan-page3-2026-10-12",
+      "method": "built-in-imagegen",
+      "user_approval": "accepted",
+      "geometry_source": {
+        "file": "../../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "full_page_render_provenance": {
+          "availability": "Working raster removed at user request",
+          "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+          "page": 3,
+          "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+        },
+        "kitchen_crop_provenance": {
+          "availability": "Working raster removed at user request",
+          "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+          "page": 3,
+          "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+        },
+        "crop_pdf_points": [
+          110,
+          520,
+          295,
+          725
+        ],
+        "crop_scale": 5,
+        "orientation": "west up, north right, east down, south left",
+        "authority": "User explicitly selected PDF page 3 for kitchen architecture and placement."
+      },
+      "prompt_id": "detail",
+      "prompt_file": ".source/image-release.json",
+      "superseded": {
+        "historical_source": {
+          "source_commit": "12e352ed27b39eb4b067b05daf43ecc3e3e2a4ca",
+          "path_at_commit": "interiors/images/06-kitchen-detail.png"
+        },
+        "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1"
+      },
+      "render_review": "Assistant visual review against PDF page 3 and original materials; photographic presentation is illustrative, not a pixel-exact measured drawing.",
+      "user_approved_at": "2026-10-12",
+      "approval_scope": "User explicitly stated this kitchen view is correct; opposite view alone rejected."
     },
     "06-kitchen-opposite.png": {
-      "status": "accepted",
-      "sha256": "22e72f0e2435862cc69dbcc0cf83ebf435cfabd8f577c311dd683c2eb755dc12",
-      "review": "Reverse angle looking southwest, preserving open central floor and strict L-shape without unauthorized south counter.",
-      "reviewed_at": "2026-09-10T21:39:06.114661"
+      "status": "assistant-reviewed",
+      "sha256": "2adea7440eae0dfa91760c9cf265bbb69ee9731c9573cbc42bff535d247f03f1",
+      "review": "Assistant visual comparison with PDF page 3: right/west fridge wall is one flat uninterrupted plane; near-right projecting nib and stepped skirting removed. Fridge, blank south end wall, left counter/window/hob and camera retained.",
+      "reviewed_at": "2026-10-12",
+      "presentation_revision": "kitchen-fridge-wall-straight-2026-10-12",
+      "method": "built-in-imagegen-with-native-south-facing-guide",
+      "user_approval": "pending",
+      "geometry_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+      "prompt_id": "opposite-straight-fridge-wall",
+      "prompt_file": ".source/image-release.json",
+      "superseded": {
+        "recoverable_generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-6c6333ce-e298-431b-9b0b-e848fadb74d1.png",
+        "sha256": "7e913a3e3438d7203199725d447c4902862182923b9f44bd4633ee9b4033ec3c",
+        "status": "user-rejected",
+        "reason": "Incorrect camera/end-wall door and fridge placement."
+      },
+      "render_review": "Assistant visual review against PDF page 3 and original materials; photographic presentation is illustrative, not a pixel-exact measured drawing.",
+      "camera": {
+        "id": "06-kitchen-opposite",
+        "level": "ground",
+        "eye": [
+          2.4,
+          1.13,
+          1.5
+        ],
+        "at": [
+          0.15,
+          1.13,
+          1.2
+        ],
+        "fov": 75,
+        "doorPose": "closed on existing hinge; behind camera",
+        "meshCount": 434,
+        "triangleCount": 1496
+      },
+      "geometry_page": 3
     },
     "06-kitchen-wide.png": {
       "status": "accepted",
-      "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759",
-      "review": "Approved L-counter with hob centered under 1.70m east window, short 550mm north sink return, southwest refrigerator.",
-      "reviewed_at": "2026-09-10T21:39:06.114661"
+      "sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9",
+      "review": "Preserved the selected sink/window L-counter composition and open northwest door; removed the wrongly adjacent fridge. Fridge is in the southwest corner, behind this camera and out of frame.",
+      "reviewed_at": "2026-10-12",
+      "presentation_revision": "kitchen-plan-page3-2026-10-12",
+      "method": "built-in-imagegen",
+      "user_approval": "accepted",
+      "geometry_source": {
+        "file": "../../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "full_page_render_provenance": {
+          "availability": "Working raster removed at user request",
+          "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+          "page": 3,
+          "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+        },
+        "kitchen_crop_provenance": {
+          "availability": "Working raster removed at user request",
+          "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+          "page": 3,
+          "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+        },
+        "crop_pdf_points": [
+          110,
+          520,
+          295,
+          725
+        ],
+        "crop_scale": 5,
+        "orientation": "west up, north right, east down, south left",
+        "authority": "User explicitly selected PDF page 3 for kitchen architecture and placement."
+      },
+      "prompt_id": "wide",
+      "prompt_file": ".source/image-release.json",
+      "superseded": {
+        "historical_source": {
+          "source_commit": "12e352ed27b39eb4b067b05daf43ecc3e3e2a4ca",
+          "path_at_commit": "interiors/images/06-kitchen-wide.png"
+        },
+        "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759"
+      },
+      "render_review": "Assistant visual review against PDF page 3 and original materials; photographic presentation is illustrative, not a pixel-exact measured drawing.",
+      "user_approved_at": "2026-10-12",
+      "approval_scope": "User explicitly stated this kitchen view is correct; opposite view alone rejected."
     },
     "07-bedroom1-detail.png": {
       "status": "accepted",
@@ -1073,7 +1187,7 @@
       }
     ]
   },
-  "source_retention": "Bulky working revision folders and duplicate review pages are removed at user request. Exact prompts, input roles/hashes, camera audits and final hashes are retained here. The small current native geometry references are retained in .source/geometry/. Previous R18 photographs and geometry are recoverable from Git commit 65c5704; earlier storage working inputs from 0333b6d. Measured layouts remain in model/src/storage-layout.json, under-stair-layout.json, stair-passage-layout.json and the plans. Superseded living and overview photographs are recoverable from commit 904bc9f; wall-corner prompts and input hashes are retained here. The first living corner attempt was rejected for doorway alignment and is recoverable from 92f83e5; the follow-up prompt and current living wall geometry guide are retained. The rejected follow-up photo and oblique geometry guide are recoverable from 7b52dc7. The final square-on native camera is retained; photographic working intermediates remain outside the project, with exact prompts and hashes recorded here. The accepted wall/passage photo preceding this fixture edit is recoverable from 9c3f2f8; the overview reference remains canonical and unchanged. Exact fixture-edit prompt and input/output hashes are retained. Superseded three bedroom floor photographs are recoverable from 00d26d1; exact floor prompts and source/output hashes remain here without a bulky revision folder. The preceding Bedroom 1 wide/floor reference and rear exterior photos are recoverable from abe0fd7. The small native Bedroom 1 guide, prompt/input/output history and window schedule are retained without a bulky working folder.",
+  "source_retention": "Bulky working revision folders and duplicate review pages are removed at user request. Exact prompts, input roles/hashes, camera audits and final hashes are retained here. The small current native geometry references are retained in .source/geometry/. Previous R18 photographs and geometry are recoverable from Git commit 65c5704; earlier storage working inputs from 0333b6d. Measured layouts remain in model/src/storage-layout.json, under-stair-layout.json, stair-passage-layout.json and the plans. Superseded living and overview photographs are recoverable from commit 904bc9f; wall-corner prompts and input hashes are retained here. The first living corner attempt was rejected for doorway alignment and is recoverable from 92f83e5; the follow-up prompt and current living wall geometry guide are retained. The rejected follow-up photo and oblique geometry guide are recoverable from 7b52dc7. The final square-on native camera is retained; photographic working intermediates remain outside the project, with exact prompts and hashes recorded here. The accepted wall/passage photo preceding this fixture edit is recoverable from 9c3f2f8; the overview reference remains canonical and unchanged. Exact fixture-edit prompt and input/output hashes are retained. Superseded three bedroom floor photographs are recoverable from 00d26d1; exact floor prompts and source/output hashes remain here without a bulky revision folder. The preceding Bedroom 1 wide/floor reference and rear exterior photos are recoverable from abe0fd7. The small native Bedroom 1 guide, prompt/input/output history and window schedule are retained without a bulky working folder. Kitchen working rasters were removed at user request on 12 October 2026; original inputs are recoverable from Git commit 12e352ed27b39eb4b067b05daf43ecc3e3e2a4ca and generated candidates remain outside the project. Exact kitchen prompts, hashes, PDF crop recipe and camera/source audits are consolidated in this manifest.",
   "geometry_reference_history": [
     {
       "sha256": "a1af4b38470e800230289b626d24e71d42a68754372961f498e389f10539492c",
@@ -3117,5 +3231,494 @@
       "video": "120 seconds, 1920x1080/24 fps; 2880 frames decoded without errors; revised Bedroom 1 shot visually reviewed",
       "opening_detail": "Final lintel, frame connection and fixing details require architectural/structural coordination; enlargement shown as review geometry"
     }
+  },
+  "kitchen_plan_generation_history": [
+    {
+      "id": "wide",
+      "prompt": "Use case: precise-object-edit. Correct the refrigerator placement in the FIRST image (kitchen wide) using the SECOND image, the kitchen crop rendered directly from PAGE 3 of Hensal_Complete_House_Plans.pdf. THIRD image is the original same-room kitchen detail, a material/photographic reference.\nThe plan is the layout authority: WEST is UP, NORTH is RIGHT, EAST is DOWN, SOUTH is LEFT. Kitchen clear size 2.950m north-south x 1.930m east-west. Refrigerator FR is in the SOUTHWEST corner (UPPER LEFT in the plan); entry door is at the NORTHWEST end (UPPER RIGHT in the plan), so they are widely separated on the west boundary. East/window hob counter lies along the BOTTOM of the plan; short sink return lies on the RIGHT/NORTH wall.\nKeep the first image's correct camera looking towards the north-wall sink and east-wall window/hob, existing L-counter, sink, faucet, base cabinets, ivory upper cabinets, open oak shelves, window, open oak door and frame, floor and woven runner, all props and lighting exactly unchanged.\nThe incorrect fridge and trailing plant at the LEFT FOREGROUND of image 1 appear immediately beside the entry door. REMOVE that entire visible fridge and its plant. It is not located beside the kitchen door. The actual fridge is relocated to the southwest corner BEHIND this wide-view camera and therefore MUST be OUT OF FRAME. Do not show another refrigerator in this view. Reconstruct the small area exposed by its removal with the existing creamy ivory plaster south/west wall and pale beige stone floor, keeping the actual doorway geometry and door leaf unchanged. Do not create another opening, extra cabinets or decorative panel where the fridge was. Retain the original compact room size, natural soft daylight, muted oak, creamy ivory, sandy stone and original photographic realism. No camera redesign, no architecture changes beyond correcting the misplaced appliance, no extra sink or door, no text or watermark. Output one corrected photograph, same landscape dimensions and composition as image 1.",
+      "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-e46cd98b-0504-403d-b92c-8697e0eafb40.png",
+      "status": "selected",
+      "method": "built-in image_gen",
+      "inputs": [
+        {
+          "path": "originals/06-kitchen-wide.png",
+          "role": "edit target; preserve layout except misplaced fridge",
+          "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759"
+        },
+        {
+          "path": "page-3-kitchen.png",
+          "role": "PDF page 3 layout authority",
+          "sha256": "a072db64e9687f87332fba53fa6bfda1abb9fc853c92a9f1c6a22201e3ac08fc"
+        },
+        {
+          "path": "originals/06-kitchen-detail.png",
+          "role": "original materials/realism",
+          "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1"
+        }
+      ],
+      "output_sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9",
+      "date": "2026-10-12",
+      "geometry_reference": {
+        "file": "../../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "full_page_render_provenance": {
+          "availability": "Working raster removed at user request",
+          "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+          "page": 3,
+          "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+        },
+        "kitchen_crop_provenance": {
+          "availability": "Working raster removed at user request",
+          "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+          "page": 3,
+          "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+        },
+        "crop_pdf_points": [
+          110,
+          520,
+          295,
+          725
+        ],
+        "crop_scale": 5,
+        "orientation": "west up, north right, east down, south left",
+        "authority": "User explicitly selected PDF page 3 for kitchen architecture and placement."
+      },
+      "user_approval": "pending"
+    },
+    {
+      "id": "detail",
+      "prompt": "Use case: precise-object-edit. Edit image 1, the kitchen DETAIL photograph, with ONLY a small left-edge appliance removal. Image 2 is the corrected same-room wide photograph and image 3 is the kitchen plan cropped directly from page 3 of the house PDF.\nThe plan places the fridge in the southwest corner, far away from the northwest entry door. In this tight north-wall sink close-up the fridge is behind the camera, OUT OF FRAME. Remove ONLY the narrow blurry stainless refrigerator fragment and hanging plant visible at the extreme left edge of image 1; fill that local area with the same ivory plaster/pale stone seen behind the unchanged oak door in image 2. Preserve the oak door leaf, its angle, frame and black handle exactly. Preserve every other aspect: original camera and crop, stainless sink, tap, soap bottle and pot, backsplash texture, sockets, cutting board, jars, base door divisions and fine oak grain, ivory upper cabinet divisions and open oak shelf/books/bowls/plant, warm undercabinet light, daylight, exposure and shadows. No new visible refrigerator, no camera shift, no new objects, no geometry changes, text or watermark. Deliver the original close-up photograph with just that misplaced fridge sliver and fridge-top vine removed.",
+      "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-12865c03-abbe-4a77-84f9-bfb6579fa85b.png",
+      "status": "selected",
+      "method": "built-in image_gen",
+      "inputs": [
+        {
+          "path": "originals/06-kitchen-detail.png",
+          "role": "edit target; preserve sink close-up except fridge sliver",
+          "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1"
+        },
+        {
+          "path": "../../images/06-kitchen-wide.png",
+          "role": "corrected same-room consistency reference",
+          "sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9"
+        },
+        {
+          "path": "page-3-kitchen.png",
+          "role": "PDF page 3 layout authority",
+          "sha256": "a072db64e9687f87332fba53fa6bfda1abb9fc853c92a9f1c6a22201e3ac08fc"
+        }
+      ],
+      "output_sha256": "46ee70f6899b8719e6d6553cfd4a2263bbcbb0f0e6f3335aa3a465887e343b1e",
+      "date": "2026-10-12",
+      "geometry_reference": {
+        "file": "../../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "full_page_render_provenance": {
+          "availability": "Working raster removed at user request",
+          "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+          "page": 3,
+          "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+        },
+        "kitchen_crop_provenance": {
+          "availability": "Working raster removed at user request",
+          "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+          "page": 3,
+          "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+        },
+        "crop_pdf_points": [
+          110,
+          520,
+          295,
+          725
+        ],
+        "crop_scale": 5,
+        "orientation": "west up, north right, east down, south left",
+        "authority": "User explicitly selected PDF page 3 for kitchen architecture and placement."
+      },
+      "user_approval": "pending"
+    },
+    {
+      "id": "opposite-layout",
+      "prompt": "Use case: precise-object-edit.\nCreate the corrected kitchen OPPOSITE / reverse-view photograph.\nInput roles: Image 1 is the kitchen layout cropped directly from PAGE 3 of Hensal_Complete_House_Plans.pdf, the SOLE architecture/placement authority. Image 2 is the now-corrected same kitchen wide photograph, authority for all selected finishes, appliances, joinery and lighting. Image 3 is the original kitchen detail, materials and north-return cabinet design. Image 4 is the incorrect older opposite photograph to replace; its galley layout and appliance/door placements are NOT authoritative.\nRead the plan exactly: WEST is UP, NORTH is RIGHT, EAST is DOWN, SOUTH is LEFT. Compact clear room 2.950m north-south x 1.930m east-west. The FR refrigerator occupies the SOUTHWEST/UPPER-LEFT corner of the plan, footprint about 650mm square. Kitchen door is in the WEST wall at its NORTHWEST/UPPER-RIGHT end, 800mm wide, 2100mm high, far from the fridge. Door jamb spans north coordinate 2.10-2.90m; fridge spans 0.15-0.80m, leaving approximately 1.30m of wall between them. Do NOT put fridge next to door. EAST/front window is on the BOTTOM plan wall above the long 600mm-deep hob counter; black two-burner hob toward SOUTH/LEFT end. This counter turns only once onto the NORTH/RIGHT wall for the short sink return. No galley or third counter.\nPhotograph the reverse angle from near the north/east sink corner looking southwest/west. Show the original east/window hob counter in LEFT foreground, the SAME stainless top-fridge/bottom-freezer appliance with trailing plant in the SOUTHWEST corner at BACK LEFT, and oak kitchen entry door at BACK RIGHT in the WEST wall. The fridge backs onto the west boundary and has no cabinet housing. Keep a clearly visible uninterrupted ivory wall between fridge and door, approximately twice the fridge width. The door must be in the SAME FLAT WEST-WALL PLANE as this clear wall; do not place it in the perpendicular right/north side wall. Both jambs, head and threshold belong to the back wall. The north/right wall only turns AFTER the door near the right edge.\nShow the door CLOSED on its existing left hinge so its real location is unmistakable. Full 2100mm-high oak door and matching frame, ivory wall above to the 2850mm ceiling, small black lever handle. Door is neither full-height panel nor new opening. Do not show invented stairs through it.\nThe sink and ivory overhead cupboards/open oak shelves over the short north return are BEHIND this reverse camera, out of frame. Therefore remove the old opposite image's entire parallel right-hand sink counter and cabinets. No visible sink, no cabinets on the west wall, no overhead cupboards over the hob window. Keep floor and doorway clear.\nMatch image 2's muted fine-grained natural oak base drawers, creamy ivory plaster, pale sandy stone counter, beige large-format stone floor with thin joints, charcoal two-panel window, black glass two-burner hob, brushed stainless fridge, tropical daylight, plants and modest woven floor runner. Preserve natural room scale and original photographic exposure. Level eye-height architectural photography, straight verticals, compact 3:2-ish landscape framing. Keep enough of the left window/hob counter to explain the same room. No new furniture, extra openings, island, tall pantry, changed finishes, text, diagram marks or watermark. Output a finished realistic interior photograph.",
+      "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-a26484fe-b134-493d-9333-1a17fe7454b4.png",
+      "status": "superseded-hinge-corrected",
+      "method": "built-in image_gen",
+      "inputs": [
+        {
+          "path": "page-3-kitchen.png",
+          "role": "PDF page 3 layout authority",
+          "sha256": "a072db64e9687f87332fba53fa6bfda1abb9fc853c92a9f1c6a22201e3ac08fc"
+        },
+        {
+          "path": "../../images/06-kitchen-wide.png",
+          "role": "corrected same-room consistency reference",
+          "sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9"
+        },
+        {
+          "path": "originals/06-kitchen-detail.png",
+          "role": "original material/realism reference",
+          "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1"
+        },
+        {
+          "path": "originals/06-kitchen-opposite.png",
+          "role": "incorrect opposite edit target",
+          "sha256": "22e72f0e2435862cc69dbcc0cf83ebf435cfabd8f577c311dd683c2eb755dc12"
+        }
+      ],
+      "output_sha256": "988c84cc2d0804c8968afd811fcce883030c27937775c6c44b80f98bb33acad1",
+      "date": "2026-10-12",
+      "geometry_reference": {
+        "file": "../../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "full_page_render_provenance": {
+          "availability": "Working raster removed at user request",
+          "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+          "page": 3,
+          "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+        },
+        "kitchen_crop_provenance": {
+          "availability": "Working raster removed at user request",
+          "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+          "page": 3,
+          "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+        },
+        "crop_pdf_points": [
+          110,
+          520,
+          295,
+          725
+        ],
+        "crop_scale": 5,
+        "orientation": "west up, north right, east down, south left",
+        "authority": "User explicitly selected PDF page 3 for kitchen architecture and placement."
+      },
+      "user_approval": "superseded"
+    },
+    {
+      "id": "opposite-hinge",
+      "prompt": "Use case: precise-object-edit. Make ONE very small correction to image 1, the corrected kitchen reverse photograph. Image 2 is the cropped page-3 plan and image 3 is the same-room corrected wide view.\nCorrect the CLOSED oak kitchen door's HINGE SIDE only. The plan shows the hinge at the SOUTH/LEFT jamb, opening into the kitchen toward the fridge side. In this reverse photograph the hinges MUST be on the LEFT edge of the door, and the black handle/lock MUST be on the RIGHT edge. The candidate incorrectly has hinges on right and handle on left. Remove the existing right-edge hinge plates and left-side handle/lock, restoring the natural wood grain there. Put small black hinges on LEFT edge and the same modest black lever/lock at the RIGHT edge at the same height. Door remains closed, no movement of its frame, size, location or wall.\nPreserve everything else exactly: camera/framing, coplanar west wall with broad clear strip between fridge and entry, stainless fridge far back-left and plant, entire left window/hob counter and oak drawers, props, runner, beige floor, shadows, creamy ivory and muted oak palette, daylight and photographic finish. No other architectural edit, no new objects or text or watermark. Output the same finished photograph with only the door handing corrected.",
+      "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-6c6333ce-e298-431b-9b0b-e848fadb74d1.png",
+      "status": "user-rejected",
+      "method": "built-in image_gen",
+      "inputs": [
+        {
+          "path": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-a26484fe-b134-493d-9333-1a17fe7454b4.png",
+          "role": "generated reverse view; edit target for door handing",
+          "sha256": "988c84cc2d0804c8968afd811fcce883030c27937775c6c44b80f98bb33acad1"
+        },
+        {
+          "path": "page-3-kitchen.png",
+          "role": "PDF page 3 door swing authority",
+          "sha256": "a072db64e9687f87332fba53fa6bfda1abb9fc853c92a9f1c6a22201e3ac08fc"
+        },
+        {
+          "path": "../../images/06-kitchen-wide.png",
+          "role": "corrected same-room reference",
+          "sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9"
+        }
+      ],
+      "output_sha256": "7e913a3e3438d7203199725d447c4902862182923b9f44bd4633ee9b4033ec3c",
+      "date": "2026-10-12",
+      "geometry_reference": {
+        "file": "../../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "full_page_render_provenance": {
+          "availability": "Working raster removed at user request",
+          "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+          "page": 3,
+          "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+        },
+        "kitchen_crop_provenance": {
+          "availability": "Working raster removed at user request",
+          "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+          "page": 3,
+          "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+        },
+        "crop_pdf_points": [
+          110,
+          520,
+          295,
+          725
+        ],
+        "crop_scale": 5,
+        "orientation": "west up, north right, east down, south left",
+        "authority": "User explicitly selected PDF page 3 for kitchen architecture and placement."
+      },
+      "user_approval": "rejected",
+      "rejection_reason": "Wrong camera: visible end wall should be plain, fridge on right, door behind camera."
+    }
+  ],
+  "kitchen_plan_decision": {
+    "date": "2026-10-12",
+    "user_request": "Use PDF page 3; fridge is not close to kitchen door. Correct kitchen images. Do not update tour video.",
+    "layout_authority": {
+      "file": "../../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+      "page": 3,
+      "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+      "full_page_render_provenance": {
+        "availability": "Working raster removed at user request",
+        "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+      },
+      "kitchen_crop_provenance": {
+        "availability": "Working raster removed at user request",
+        "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+      },
+      "crop_pdf_points": [
+        110,
+        520,
+        295,
+        725
+      ],
+      "crop_scale": 5,
+      "orientation": "west up, north right, east down, south left",
+      "authority": "User explicitly selected PDF page 3 for kitchen architecture and placement."
+    },
+    "previous_records": {
+      "06-kitchen-wide.png": {
+        "status": "accepted",
+        "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759",
+        "review": "Approved L-counter with hob centered under 1.70m east window, short 550mm north sink return, southwest refrigerator.",
+        "reviewed_at": "2026-09-10T21:39:06.114661"
+      },
+      "06-kitchen-detail.png": {
+        "status": "accepted",
+        "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1",
+        "review": "Tactile detail of north sink counter, warm under-cabinet lighting, cutting board, and oak drawers.",
+        "reviewed_at": "2026-09-10T21:39:06.114661"
+      },
+      "06-kitchen-opposite.png": {
+        "status": "accepted",
+        "sha256": "22e72f0e2435862cc69dbcc0cf83ebf435cfabd8f577c311dd683c2eb755dc12",
+        "review": "Reverse angle looking southwest, preserving open central floor and strict L-shape without unauthorized south counter.",
+        "reviewed_at": "2026-09-10T21:39:06.114661"
+      }
+    },
+    "video_update": "Explicitly deferred by user; video file and video source manifest remain unchanged.",
+    "original_style_references_provenance": {
+      "availability": "Working raster removed at user request",
+      "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+      "page": 3,
+      "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+    }
+  },
+  "kitchen_opposite_camera_generation_history": [
+    {
+      "id": "opposite-south-facing",
+      "date": "2026-10-12",
+      "method": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit.\nReplace ONLY the first image, 06-kitchen-opposite.png, with the correct south-facing reverse view of the SAME kitchen.\nINPUT ROLES:\n1: Incorrect opposite photograph, edit target. Its door on the end wall and fridge on the left are WRONG.\n2: NEW actual-model south-facing geometry/camera reference. This is the placement authority: blank south/end wall, continuous window/hob counter down the LEFT all the way to that wall, refrigerator on the RIGHT against the west wall at the southwest corner. No visible doorway.\n3: User-approved kitchen wide photo. Controls exact oak/ivory/stone palette, cabinet design, window, hob, lighting and DOOR LOCATION. Its entry is beside the north sink return; when viewing in the opposite direction toward the SOUTH end, this entry is BEHIND the camera/outside the photograph. Do not copy the visible door onto the far wall.\n4: User-approved kitchen detail. Exact material/joinery/realism reference; sink return is behind this camera, not a new right-hand counter.\n5: Kitchen crop from PDF page 3, corroborates same geometry: WEST up, NORTH right, EAST down, SOUTH left; southwest fridge and northwest door, east hob/window counter.\nREQUIRED CORRECTIONS:\nRemove the far-end oak door, its frame, handle and ALL opening traces; reconstruct an uninterrupted creamy ivory plaster SOUTH END WALL with matching stone skirting. No door or doorway anywhere in this reverse photograph.\nRemove the refrigerator from the LEFT end of the counter. Extend that existing LEFT pale stone countertop and its flat natural oak base cabinets continuously through the cleared space until they meet the blank far wall, exactly as geometry image 2. This is a straight continuation of the existing east counter, not a new return across the back wall. Preserve the black glass two-burner hob beneath the charcoal sliding window.\nPlace the SAME compact stainless upper-fridge/lower-freezer refrigerator on the RIGHT side of the clear aisle, against the west/right wall in the far southwest corner, as image 2. Its front faces toward the camera; preserve practical approximately 650mm footprint and 1800mm height. Retain the small trailing plant on top. Show clear floor space between it and the left cabinetry.\nCAMERA: photograph the exact view arrangement in image 2 from the north end looking SOUTH, at natural eye-height with straight verticals and landscape composition. The far wall is plain and closed. The real northwest entry and north sink/upper cabinets remain BEHIND the camera, out of frame. No new doors, no stair sightline, no window in the far wall, no right sink counter, no cupboard run on right, no counter wrapping across the end wall, no upper cupboards over the hob window.\nMatch images 3/4's original muted fine-grained oak, creamy ivory plaster, sandy stone worktop, large beige stone floor tiles and fine joints, restrained charcoal fittings, brushed stainless reflections, tropical greenery through the existing LEFT window, soft natural daylight, contact shadows and warm photographic exposure. Keep compact dimensions 2.950m long by 1.930m deep and same modest woven aisle runner. Existing counter plants/ceramics may remain, correctly occluded. No enlarged room, added furniture, label, text or watermark. Deliver one finished realistic kitchen photo with blank end wall, full-length left counter and right-side fridge.",
+      "inputs": [
+        {
+          "recoverable_generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-6c6333ce-e298-431b-9b0b-e848fadb74d1.png",
+          "role": "Rejected west-facing opposite photograph; edit target",
+          "sha256": "7e913a3e3438d7203199725d447c4902862182923b9f44bd4633ee9b4033ec3c"
+        },
+        {
+          "path_provenance": {
+            "availability": "Working raster removed at user request",
+            "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+            "page": 3,
+            "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+          },
+          "role": "Current-model south-facing camera and fixture geometry; layout authority",
+          "sha256": "cdad2d7cb259e415bea4296932078a3a27a67bc48a39ab27ddd4f8da03f875a4"
+        },
+        {
+          "path": "images/06-kitchen-wide.png",
+          "role": "User-approved correct door position, room layout, palette and photographic finish",
+          "sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9"
+        },
+        {
+          "path": "images/06-kitchen-detail.png",
+          "role": "User-approved correct sink/joinery/material detail",
+          "sha256": "46ee70f6899b8719e6d6553cfd4a2263bbcbb0f0e6f3335aa3a465887e343b1e"
+        },
+        {
+          "path_provenance": {
+            "availability": "Working raster removed at user request",
+            "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+            "page": 3,
+            "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+          },
+          "role": "PDF page 3 kitchen placement and orientation",
+          "sha256": "a072db64e9687f87332fba53fa6bfda1abb9fc853c92a9f1c6a22201e3ac08fc"
+        }
+      ],
+      "geometry_audit": {
+        "revision": "R19",
+        "method": "Perspective projection of actual Three.js meshes; flat geometry reference only; no photographic presentation substituted",
+        "sourceHashes": {
+          "house.js": "c2dde4e63a09a93764912291c16667d7041a85ffdfe70625b6280bb479cdd8b0",
+          "geometry.js": "9acb7827a70312f300378eb5d22aa1764c374365c174adb4cbb238a56a861be8",
+          "storage-layout.json": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+          "storage-joinery.js": "b77630e068ef755872d6bf97b3eb1243b72c5c8b7fd061136d7090ad6883c813",
+          "plan-data.json": "33e096c1602efae0ab73aa4a057e6f7b06b3e4e15b2407aaaf8520fb1ef1c0e9",
+          "structural-frame.json": "9abc40c4bafef0736439a9dfa697962dbd06f897099904de4c45e43b5858f589",
+          "under-stair-layout.json": "e542093ce1b08b00e8c893ce70d05e2d39b9328758c7ecc82d2e7f205bdd6142",
+          "stair-passage-layout.json": "75a0f2e9579816e0bd40f6ccde7e1ffa44cb36f3f394f208db972a45584b5de6",
+          "revision.js": "d3d91eadec6c51802eb279979c445a1fcd5a4671eec2749fec7bb97d3bb312ad"
+        },
+        "views": [
+          {
+            "id": "06-kitchen-opposite",
+            "level": "ground",
+            "eye": [
+              2.4,
+              1.13,
+              1.5
+            ],
+            "at": [
+              0.15,
+              1.13,
+              1.2
+            ],
+            "fov": 75,
+            "doorPose": "closed on existing hinge; behind camera",
+            "meshCount": 434,
+            "triangleCount": 1496
+          }
+        ]
+      },
+      "output": {
+        "path": "images/06-kitchen-opposite.png",
+        "sha256": "7531a431952baef6c8ac2537f295fcb570ada496f1cc8acf3fbf2baacda9dfac",
+        "size": [
+          1536,
+          1024
+        ]
+      },
+      "review": "Assistant comparison: blank south end wall; left window/hob counter continues to end wall; fridge against right/west side at southwest corner. Northwest door and north sink return are behind this camera, consistent with user-approved wide/detail and the native south-facing guide. Palette and photographic finish retained.",
+      "user_approval": "pending",
+      "user_feedback": "User requested only a small straight-wall correction beside fridge; remaining south-facing composition retained."
+    }
+  ],
+  "kitchen_opposite_camera_decision": {
+    "date": "2026-10-12",
+    "user_request": "Wide and detail are correct. Opposite end is just wall; extend left counter and put fridge on right. Use wide for door location.",
+    "camera_resolution": "South-facing reverse photograph. The northwest entry is behind the camera; visible end wall is south, not the west entry wall.",
+    "previous_record": {
+      "status": "assistant-reviewed",
+      "sha256": "7e913a3e3438d7203199725d447c4902862182923b9f44bd4633ee9b4033ec3c",
+      "review": "Reverse view shows east/window hob counter at left, fridge in southwest corner at back-left, and northwest door at back-right on the west wall with a broad clear wall between. Removed parallel right-hand sink counter and extra upper cabinets. Door shown closed with south/left hinges and right handle; sink return is behind camera.",
+      "reviewed_at": "2026-10-12",
+      "presentation_revision": "kitchen-plan-page3-2026-10-12",
+      "method": "built-in-imagegen",
+      "user_approval": "pending",
+      "geometry_source": {
+        "file": "../../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "full_page_render_provenance": {
+          "availability": "Working raster removed at user request",
+          "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+          "page": 3,
+          "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+        },
+        "kitchen_crop_provenance": {
+          "availability": "Working raster removed at user request",
+          "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+          "page": 3,
+          "camera_audit": "Retained in kitchen_opposite_camera_generation_history where applicable"
+        },
+        "crop_pdf_points": [
+          110,
+          520,
+          295,
+          725
+        ],
+        "crop_scale": 5,
+        "orientation": "west up, north right, east down, south left",
+        "authority": "User explicitly selected PDF page 3 for kitchen architecture and placement."
+      },
+      "prompt_id": "opposite-hinge",
+      "prompt_file": ".source/image-release.json",
+      "superseded": {
+        "historical_source": {
+          "source_commit": "12e352ed27b39eb4b067b05daf43ecc3e3e2a4ca",
+          "path_at_commit": "interiors/images/06-kitchen-opposite.png"
+        },
+        "sha256": "22e72f0e2435862cc69dbcc0cf83ebf435cfabd8f577c311dd683c2eb755dc12"
+      },
+      "render_review": "Assistant visual review against PDF page 3 and original materials; photographic presentation is illustrative, not a pixel-exact measured drawing."
+    },
+    "approved_unchanged": [
+      "06-kitchen-wide.png",
+      "06-kitchen-detail.png"
+    ],
+    "video": "Leave unchanged as requested."
+  },
+  "kitchen_wall_generation_history": [
+    {
+      "id": "opposite-straight-fridge-wall",
+      "date": "2026-10-12",
+      "method": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit.\nEdit ONLY the small incorrect inward wall projection beside the fridge in image 1, the current kitchen opposite photograph.\nImage 2 is the actual kitchen plan from PDF page 3: the WEST wall along the fridge side is STRAIGHT, without a column, nib, recess, step, pilaster or inward bulge. Images 3 and 4 are user-approved same-room kitchen wide/detail, governing exact finishes and photographic realism.\nIn image 1, at the extreme RIGHT foreground beside/in front of the fridge, a tall creamy ivory wall strip projects into the walking aisle, with a vertical corner line and a stepped skirting/floor junction. REMOVE that entire inward projection. Reconstruct a single continuous FLAT right/west wall plane extending from behind the refrigerator all the way toward the camera and off the right image edge. The right wall face and stone skirting must run in ONE straight unbroken perspective line, with NO vertical corner/nib at the near-right edge, NO offset in the floor/wall edge, NO beam/column mass. Restore the small strip of beige stone aisle floor exposed by removal, matching original tiles, joints and natural shadows. Keep the legitimate 90-degree far-end/south wall corner where the straight right wall meets the blank far wall.\nSTRICT INVARIANTS: preserve every other element and its placement: original image size/crop/camera, blank far wall with no door, refrigerator position/size/orientation and stainless upper fridge/lower freezer split, trailing plant, entire left window/hob counter extended to end wall, oak drawer fronts, window frame and tropical view, counter plants/ceramics/boards, woven runner, floor tile grid, soft daylight, color balance and realistic fine texture. Do not move the fridge, broaden the whole room, add any door or cabinetry, alter the left counter or wall, or remove the actual right wall. The fridge remains against that straight right wall with proper clearance. No text or watermark. Output the same photograph with only the erroneous near-right wall projection and stepped skirting corrected.",
+      "inputs": [
+        {
+          "path": "images/06-kitchen-opposite.png",
+          "role": "Pre-edit south-facing kitchen photograph; localized wall edit target",
+          "sha256": "7531a431952baef6c8ac2537f295fcb570ada496f1cc8acf3fbf2baacda9dfac",
+          "recoverable_generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-a04cf014-daf0-4e49-8a38-2b8a75fea943.png"
+        },
+        {
+          "role": "PDF page 3 cropped kitchen; straight west/fridge wall authority",
+          "sha256": "a072db64e9687f87332fba53fa6bfda1abb9fc853c92a9f1c6a22201e3ac08fc",
+          "source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+          "page": 3,
+          "source_sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+          "render_recipe": {
+            "crop_pdf_points": [
+              110,
+              520,
+              295,
+              725
+            ],
+            "scale": 5
+          }
+        },
+        {
+          "path": "images/06-kitchen-wide.png",
+          "role": "User-approved kitchen finish and fixture consistency reference",
+          "sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9"
+        },
+        {
+          "path": "images/06-kitchen-detail.png",
+          "role": "User-approved kitchen finish and fixture consistency reference",
+          "sha256": "46ee70f6899b8719e6d6553cfd4a2263bbcbb0f0e6f3335aa3a465887e343b1e"
+        }
+      ],
+      "output": {
+        "path": "images/06-kitchen-opposite.png",
+        "sha256": "2adea7440eae0dfa91760c9cf265bbb69ee9731c9573cbc42bff535d247f03f1",
+        "size": [
+          1536,
+          1024
+        ]
+      },
+      "review": "Assistant visual comparison with PDF page 3: right/west fridge wall is one flat uninterrupted plane; near-right projecting nib and stepped skirting removed. Fridge, blank south end wall, left counter/window/hob and camera retained.",
+      "user_approval": "pending"
+    }
+  ],
+  "kitchen_source_cleanup": {
+    "date": "2026-10-12",
+    "reason": "User requested a clean project and removal of the kitchen working folder.",
+    "retained": "Canonical photographs; exact prompts, roles/hashes, PDF page/crop recipe and camera/source audit in this manifest.",
+    "historical_originals": {
+      "source_commit": "12e352ed27b39eb4b067b05daf43ecc3e3e2a4ca",
+      "paths_at_commit": [
+        "interiors/images/06-kitchen-wide.png",
+        "interiors/images/06-kitchen-detail.png",
+        "interiors/images/06-kitchen-opposite.png"
+      ]
+    },
+    "video": "Unchanged by user request."
   }
 }
