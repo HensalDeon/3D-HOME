@@ -6,6 +6,10 @@ Open the [visual reference board](STYLE_REFERENCE.html) for the photographs, pal
 
 ## Governing references
 
+The latest opposite-view edit adds user-requested ivory wall cupboards, an open oak shelf bay and concealed task lighting on the solid south end wall, matching kitchen wide. The window, fridge placement and straight fridge-side wall remain clear and unchanged. This is a presentation addition; exact prompt and review are under `kitchen_cupboard_generation_history` in the release manifest.
+
+The 12 October kitchen correction follows PDF page 3 for the fridge, door and L-counter layout. Current kitchen wide/detail were explicitly accepted by the user and retain the original finishes, with the misplaced fridge removed from their cameras. The corrected opposite faces south, with a blank end wall, left counter extended to that wall and southwest fridge on the right; the northwest entry and north sink return are behind the camera. The fridge-side wall and skirting are straight, without an inward projection. Exact prompts, source hashes, PDF crop recipe and native camera/source audit are consolidated in [image-release.json](.source/image-release.json); the working folder was removed at the user's request. Original material references are recoverable from Git commit `12e352ed27b39eb4b067b05daf43ecc3e3e2a4ca`. Use those historical images for materials only; use page 3 and the accepted wide/detail for kitchen layout. The tour video update is deferred at the user's request.
+
 1. [Kitchen wide](images/06-kitchen-wide.png) governs overall daylight, exposure, muted oak, creamy paint, pale stone, and black accents.
 2. [Kitchen detail](images/06-kitchen-detail.png) governs wood-grain scale, stone texture, ceramic and metal response, and concealed task lighting.
 3. [Dining](images/16-dining-wide.png) governs the wider living-area atmosphere, upholstery, timber furniture, and gentle floor reflections.
