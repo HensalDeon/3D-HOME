@@ -1,7 +1,7 @@
 {
   "version": 1,
   "established": "2026-09-15",
-  "authority": "Original kitchen wide and detail govern palette and realism; Bedroom 1 wide governs bedroom floor appearance; approved model governs layout.",
+  "authority": "Kitchen wide/detail retain the original palette and realism; the 17 October upper-storage/chimney concept is a presentation addition. Bedroom 1 wide governs bedroom floor appearance; approved model governs measured layout.",
   "swatchNote": "Approximate visual swatches chosen by eye; not sampled paint specifications.",
   "swatches": [
     {
@@ -54,20 +54,20 @@
     {
       "file": "images/06-kitchen-wide.png",
       "group": "Kitchen",
-      "role": "User-approved wide/detail retain the original palette. South-facing opposite uses larger ivory main cupboards, closed loft storage and a narrow oak display bay on the solid end wall. Existing counter, window, fridge and straight right wall retain their positions; entry and sink return remain behind the camera.",
-      "sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9"
+      "role": "17 October concept: continuous solid-ivory loft cupboards around the upper perimeter and above the fridge, plus one charcoal chimney over the existing hob. Original oak/ivory/stone palette, room layout, fixtures and straight fridge-side wall retained.",
+      "sha256": "c35b433f4dd0b038fee1aeef9b0a97dbf9acb13d79a65ccc52324f729c11055c"
     },
     {
       "file": "images/06-kitchen-detail.png",
       "group": "Kitchen",
-      "role": "User-approved wide/detail retain the original palette. South-facing opposite uses larger ivory main cupboards, closed loft storage and a narrow oak display bay on the solid end wall. Existing counter, window, fridge and straight right wall retain their positions; entry and sink return remain behind the camera.",
-      "sha256": "46ee70f6899b8719e6d6553cfd4a2263bbcbb0f0e6f3335aa3a465887e343b1e"
+      "role": "17 October concept: continuous solid-ivory loft cupboards around the upper perimeter and above the fridge, plus one charcoal chimney over the existing hob. Original oak/ivory/stone palette, room layout, fixtures and straight fridge-side wall retained.",
+      "sha256": "c191f3f76d4a1ee767cd0a62ff186df782d97346e1648b6153334f2c8f1c8730"
     },
     {
       "file": "images/06-kitchen-opposite.png",
       "group": "Kitchen",
-      "role": "User-approved wide/detail retain the original palette. South-facing opposite uses larger ivory main cupboards, closed loft storage and a narrow oak display bay on the solid end wall. Existing counter, window, fridge and straight right wall retain their positions; entry and sink return remain behind the camera.",
-      "sha256": "e6316828ba8a7497a1299d2b36d40667e8cb40679022c5b4da8d66e8dcab951c"
+      "role": "17 October concept: continuous solid-ivory loft cupboards around the upper perimeter and above the fridge, plus one charcoal chimney over the existing hob. Original oak/ivory/stone palette, room layout, fixtures and straight fridge-side wall retained.",
+      "sha256": "153b537969102c6c9eda3dd7b187c4abdeaab8a17a24699302ee0086911ee987"
     },
     {
       "file": "images/16-dining-wide.png",
