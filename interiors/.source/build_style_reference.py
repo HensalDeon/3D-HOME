@@ -16,7 +16,7 @@ swatches = [
     ('Clay', '#B07D60', 'Bedroom 3 accent'),
 ]
 groups = [
-    ('Kitchen', ['06-kitchen-wide', '06-kitchen-detail', '06-kitchen-opposite'], '17 October concept: continuous solid-ivory loft cupboards around the upper perimeter and above the fridge, plus one charcoal chimney over the existing hob. Original oak/ivory/stone palette, room layout, fixtures and straight fridge-side wall retained.'),
+    ('Kitchen', ['06-kitchen-wide', '06-kitchen-detail', '06-kitchen-opposite'], '17 October finish: muted oak main upper doors match the base cupboards; continuous top lofts and window bridge remain creamy ivory. Existing charcoal chimney, room layout, fixtures and straight fridge-side wall retained.'),
     ('Dining', ['16-dining-wide'], 'Oak furniture, cream upholstery, pale floor and gentle daylight.'),
     ('Bedroom 1', ['07-bedroom1-wide', '07-bedroom1-detail', '07-bedroom1-opposite'], 'Sage accents, textured ivory linen and natural oak; the wide view governs light oak wood-look bedroom flooring.'),
     ('Master bedroom', ['08-bedroom2-wide', '08-bedroom2-detail', '08-bedroom2-opposite'], 'Olive textiles, oatmeal upholstery, woven runner and oak; opposite-view bedroom flooring follows Bedroom 1 wide, with stone retained beyond the door.'),

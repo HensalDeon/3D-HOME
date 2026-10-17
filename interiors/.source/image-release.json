@@ -65,11 +65,11 @@
     },
     "06-kitchen-detail.png": {
       "status": "assistant-reviewed",
-      "sha256": "c191f3f76d4a1ee767cd0a62ff186df782d97346e1648b6153334f2c8f1c8730",
-      "review": "Four ivory main door divisions match the new north wide view; closed loft tier and corner bridge are visible/cropped at top. Original right oak display bay is replaced by closed storage. Sink, faucet, open door, stone backsplash/counter, base fronts and counter objects retain their layout. The chimney is outside this close-up and is not duplicated above the sink.",
+      "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba",
+      "review": "Assistant visual comparison: main upper door fronts match muted natural oak base cabinetry; all top loft and window-bridge storage remains creamy ivory. Door counts/reveals, chimney, cameras and fixture/layout positions retained.",
       "reviewed_at": "2026-10-17",
-      "presentation_revision": "continuous-upper-chimney-2026-10-17",
-      "method": "built-in-imagegen",
+      "presentation_revision": "oak-main-ivory-loft-2026-10-17",
+      "method": "built-in-imagegen-material-edit",
       "user_approval": "pending",
       "geometry_source": {
         "file": "../../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
@@ -97,35 +97,35 @@
         "orientation": "west up, north right, east down, south left",
         "authority": "User explicitly selected PDF page 3 for kitchen architecture and placement."
       },
-      "prompt_id": "continuous-upper-chimney-2026-10-17-detail",
+      "prompt_id": "oak-main-ivory-loft-2026-10-17-detail",
       "prompt_file": ".source/image-release.json",
       "superseded": {
+        "source_commit": "93a0161bebf167e76c9af4e5224eac8f4e3d5ad2",
         "path_at_commit": "interiors/images/06-kitchen-detail.png",
-        "source_commit": "8d67d35350c2824be497e1104d13ca9a9c8c195d",
-        "sha256": "46ee70f6899b8719e6d6553cfd4a2263bbcbb0f0e6f3335aa3a465887e343b1e",
+        "sha256": "c191f3f76d4a1ee767cd0a62ff186df782d97346e1648b6153334f2c8f1c8730",
         "size": [
           1495,
           1052
         ]
       },
       "render_review": "Assistant visual comparison across all three room views and original target cameras/fixtures; illustrative photographic concept, not pixel-exact measured geometry.",
-      "upper_storage_concept": "Continuous matte solid-ivory high-level loft storage connecting end walls and above fridge; deeper main cupboards on solid end walls. Original oak/ivory/stone finish retained."
+      "upper_storage_concept": "Muted natural oak main upper fronts matching base cupboards; topmost continuous loft/window bridge remains creamy ivory; existing chimney and geometry retained."
     },
     "06-kitchen-opposite.png": {
       "status": "assistant-reviewed",
-      "sha256": "153b537969102c6c9eda3dd7b187c4abdeaab8a17a24699302ee0086911ee987",
-      "review": "Existing south-wall storage now has a continuous closed top row reaching above the fridge and turning onto the high window-wall run. Same charcoal/stainless canopy chimney is visible over left hob. Fridge/top plant, straight right wall/skirting, south-facing camera, original counter/base divisions, rug and floor retain their positions; door remains behind camera.",
+      "sha256": "13a0b285b32601eb80bdb4ae07a2c728ed5d7a3db500d1f1bbd639aa692d0169",
+      "review": "Assistant visual comparison: main upper door fronts match muted natural oak base cabinetry; all top loft and window-bridge storage remains creamy ivory. Door counts/reveals, chimney, cameras and fixture/layout positions retained.",
       "reviewed_at": "2026-10-17",
-      "presentation_revision": "continuous-upper-chimney-2026-10-17",
-      "method": "built-in-imagegen",
+      "presentation_revision": "oak-main-ivory-loft-2026-10-17",
+      "method": "built-in-imagegen-material-edit",
       "user_approval": "pending",
       "geometry_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
-      "prompt_id": "continuous-upper-chimney-2026-10-17-opposite",
+      "prompt_id": "oak-main-ivory-loft-2026-10-17-opposite",
       "prompt_file": ".source/image-release.json",
       "superseded": {
+        "source_commit": "93a0161bebf167e76c9af4e5224eac8f4e3d5ad2",
         "path_at_commit": "interiors/images/06-kitchen-opposite.png",
-        "source_commit": "8d67d35350c2824be497e1104d13ca9a9c8c195d",
-        "sha256": "e6316828ba8a7497a1299d2b36d40667e8cb40679022c5b4da8d66e8dcab951c",
+        "sha256": "153b537969102c6c9eda3dd7b187c4abdeaab8a17a24699302ee0086911ee987",
         "size": [
           1536,
           1024
@@ -153,15 +153,15 @@
       "geometry_page": 3,
       "cabinet_design_source": "images/06-kitchen-wide.png",
       "cabinet_placement": "Existing large south-end two-tier unit retained with continuous loft extension across to above fridge and back round window wall; straight west wall remains.",
-      "upper_storage_concept": "Continuous matte solid-ivory high-level loft storage connecting end walls and above fridge; deeper main cupboards on solid end walls. Original oak/ivory/stone finish retained."
+      "upper_storage_concept": "Muted natural oak main upper fronts matching base cupboards; topmost continuous loft/window bridge remains creamy ivory; existing chimney and geometry retained."
     },
     "06-kitchen-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "c35b433f4dd0b038fee1aeef9b0a97dbf9acb13d79a65ccc52324f729c11055c",
-      "review": "Four closed ivory north-wall main doors and aligned loft row replace the original isolated cupboard/open bay; high-level storage turns along window wall. Compact charcoal metal chimney is centred over existing two-burner hob, with glazing visible behind/either side. Open entry, sink, counter/base layout, sill/mullion positions, props, runner and finishes retain their composition.",
+      "sha256": "20945ad2ed111569f3daf8b6f853146bb37507fa7efd77bc9c8cea218af41a6c",
+      "review": "Assistant visual comparison: main upper door fronts match muted natural oak base cabinetry; all top loft and window-bridge storage remains creamy ivory. Door counts/reveals, chimney, cameras and fixture/layout positions retained.",
       "reviewed_at": "2026-10-17",
-      "presentation_revision": "continuous-upper-chimney-2026-10-17",
-      "method": "built-in-imagegen",
+      "presentation_revision": "oak-main-ivory-loft-2026-10-17",
+      "method": "built-in-imagegen-material-edit",
       "user_approval": "pending",
       "geometry_source": {
         "file": "../../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
@@ -189,19 +189,19 @@
         "orientation": "west up, north right, east down, south left",
         "authority": "User explicitly selected PDF page 3 for kitchen architecture and placement."
       },
-      "prompt_id": "continuous-upper-chimney-2026-10-17-wide",
+      "prompt_id": "oak-main-ivory-loft-2026-10-17-wide",
       "prompt_file": ".source/image-release.json",
       "superseded": {
+        "source_commit": "93a0161bebf167e76c9af4e5224eac8f4e3d5ad2",
         "path_at_commit": "interiors/images/06-kitchen-wide.png",
-        "source_commit": "8d67d35350c2824be497e1104d13ca9a9c8c195d",
-        "sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9",
+        "sha256": "c35b433f4dd0b038fee1aeef9b0a97dbf9acb13d79a65ccc52324f729c11055c",
         "size": [
           1495,
           1052
         ]
       },
       "render_review": "Assistant visual comparison across all three room views and original target cameras/fixtures; illustrative photographic concept, not pixel-exact measured geometry.",
-      "upper_storage_concept": "Continuous matte solid-ivory high-level loft storage connecting end walls and above fridge; deeper main cupboards on solid end walls. Original oak/ivory/stone finish retained."
+      "upper_storage_concept": "Muted natural oak main upper fronts matching base cupboards; topmost continuous loft/window bridge remains creamy ivory; existing chimney and geometry retained."
     },
     "07-bedroom1-detail.png": {
       "status": "accepted",
@@ -2936,7 +2936,7 @@
       "other_canonical_images_unchanged": 30,
       "model_and_drawing_baseline_files": "unchanged",
       "release_inventory_style_hashes": "verified",
-      "video": "Refreshed 120-second 1920x1080/24fps export; all 2880 frames decoded without errors; three changed bedroom shots visually reviewed"
+      "video": "Removed at user request on 2026-10-17; see video_removal."
     },
     "source_commit": "abe0fd7",
     "source_note": "Selected floor reference at this commit; the later Bedroom 1 camera/window revision preserves its plank finish.",
@@ -3236,7 +3236,7 @@
       ],
       "other_canonical_images_unchanged": 30,
       "release_inventory_style_geometry_hashes": "verified",
-      "video": "120 seconds, 1920x1080/24 fps; 2880 frames decoded without errors; revised Bedroom 1 shot visually reviewed",
+      "video": "Removed at user request on 2026-10-17; see video_removal.",
       "opening_detail": "Final lintel, frame connection and fixing details require architectural/structural coordination; enlargement shown as review geometry"
     }
   },
@@ -3509,7 +3509,7 @@
         "reviewed_at": "2026-09-10T21:39:06.114661"
       }
     },
-    "video_update": "Explicitly deferred by user; video file and video source manifest remain unchanged.",
+    "video_update": "Removed at user request on 2026-10-17; see video_removal.",
     "original_style_references_provenance": {
       "availability": "Working raster removed at user request",
       "layout_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
@@ -3661,7 +3661,7 @@
       "06-kitchen-wide.png",
       "06-kitchen-detail.png"
     ],
-    "video": "Leave unchanged as requested."
+    "video": "Removed at user request on 2026-10-17; see video_removal."
   },
   "kitchen_wall_generation_history": [
     {
@@ -3727,7 +3727,7 @@
         "interiors/images/06-kitchen-opposite.png"
       ]
     },
-    "video": "Unchanged by user request."
+    "video": "Removed at user request on 2026-10-17; see video_removal."
   },
   "kitchen_cupboard_generation_history": [
     {
@@ -4064,7 +4064,209 @@
     },
     "attachment": "User-provided reference; only storage extent/continuity and chimney idea used, not colors/materials/glass/layout.",
     "approval": "Assistant visual review complete; user acceptance pending.",
-    "video": "Existing export and video-tour.json left unchanged per prior request.",
+    "video": "Removed at user request on 2026-10-17; see video_removal.",
     "source_retention": "Exact prompts, source roles/hashes, original Git sources and final hashes consolidated here; no revision folder created."
+  },
+  "kitchen_oak_upper_generation_history": [
+    {
+      "id": "oak-main-ivory-loft-2026-10-17-wide",
+      "date": "2026-10-17",
+      "image": "06-kitchen-wide.png",
+      "method": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Make ONLY a material/color change to the MAIN UPPER CUPBOARD DOORS in image 1, the current kitchen WIDE photograph.\nImage 1 is the edit target and exact authority for layout/camera/every object. Image 2 is the current kitchen detail, confirming the exact existing lower-cabinet natural oak finish.\nChange the FOUR large main cupboard doors on the NORTH/SINK wall, between the existing horizontal loft seam and the warm under-cabinet light, from matte creamy ivory to the EXACT SAME muted natural oak as the base cupboard doors immediately below the sink. Match pale medium-oak/beige color, fine subtle vertical grain, restrained board variation and matte sheen. No orange, reddish, dark walnut, heavy knots, fluting or gloss. Preserve all door widths, reveals and original simple handleless fronts.\nKEEP the entire topmost LOFT row above that horizontal seam CREAMY IVORY. Also keep the high-level bridge cupboards over the east/window wall CREAMY IVORY. The concept is oak MAIN upper doors, ivory TOP lofts \u2014 not all-wood cabinetry.\nABSOLUTE INVARIANTS: do not change cupboard dimensions, number of doors, loft seam, joinery footprint or shadows except local wood-surface response. Keep the chimney canopy/flue, lights, window/frame/glazing/exterior, open door/frame/handle, sink/tap/soap, counter/backsplash, all base cabinet grain/divisions, counter plants/fruit/ceramics/boards/jars, beige tile grid and runner exactly in their current positions. Preserve the original full image dimensions/crop/camera, daylight/exposure, wall and ceiling shape, straight room geometry and photographic realism. No new objects, hardware, architecture, pattern or text. Output the same photograph, changing ONLY the four main upper cupboard fronts to matching muted oak while retaining creamy-ivory loft storage.",
+      "inputs": [
+        {
+          "role": "Existing canonical edit target; preserve geometry and all fixtures",
+          "historical_source": {
+            "source_commit": "93a0161bebf167e76c9af4e5224eac8f4e3d5ad2",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "c35b433f4dd0b038fee1aeef9b0a97dbf9acb13d79a65ccc52324f729c11055c",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "role": "Original sink/base detail for exact oak grain and material",
+          "historical_source": {
+            "source_commit": "93a0161bebf167e76c9af4e5224eac8f4e3d5ad2",
+            "path_at_commit": "interiors/images/06-kitchen-detail.png",
+            "sha256": "c191f3f76d4a1ee767cd0a62ff186df782d97346e1648b6153334f2c8f1c8730",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        }
+      ],
+      "geometry_reference": {
+        "source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "camera": "Existing target camera and all cupboard divisions retained",
+        "scope": "Material-only edit to main upper fronts. Existing loft/hood/room geometry retained; measured model/drawing files unchanged."
+      },
+      "review": "Assistant visual comparison: main upper door fronts match muted natural oak base cabinetry; all top loft and window-bridge storage remains creamy ivory. Door counts/reveals, chimney, cameras and fixture/layout positions retained.",
+      "user_approval": "pending",
+      "output": {
+        "path": "images/06-kitchen-wide.png",
+        "sha256": "20945ad2ed111569f3daf8b6f853146bb37507fa7efd77bc9c8cea218af41a6c",
+        "size": [
+          1495,
+          1052
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-55b6b396-ea12-4828-a80f-ab8e6fc5abad.png"
+      }
+    },
+    {
+      "id": "oak-main-ivory-loft-2026-10-17-opposite",
+      "date": "2026-10-17",
+      "image": "06-kitchen-opposite.png",
+      "method": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Make ONLY a cupboard material/color change to IMAGE 1, the current kitchen OPPOSITE photograph. IMAGE 2 is the newly selected same-room wide view and the authoritative oak/ivory color arrangement.\nOn the solid SOUTH/END wall, change ONLY the THREE large main UPPER cupboard fronts BELOW the loft horizontal seam and ABOVE the under-cabinet task light from creamy ivory to the same muted natural oak as the base cabinets at left and the new main uppers in image 2. Exact fine vertical oak grain, natural pale-medium beige oak, subdued board variation, matte sheen; no orange, dark walnut, large repeated grain, knots, slats or gloss. Match their slender side/underside edges to the existing oak. Keep each door width/division, all fine reveals and the existing main cabinet footprint exactly.\nKEEP ALL TOPMOST LOFT CUPBOARDS CREAMY IVORY, including the continuous row extending across above the fridge and the high bridge above the left/window wall. Keep the existing narrow OPEN OAK shelf bay and its plant/books/bowls unchanged. Do not turn the loft or other wall surfaces into wood.\nABSOLUTE INVARIANTS: everything else remains as in image 1: exact camera/crop/dimensions, original main-door dimensions and loft seam, existing chimney/canopy/flue/lights, window/frame/glazing and tropical view, all left counter/hob/base cabinet divisions and grain, counter plants/fruit/boards/jars, fridge/top plant, flat straight right wall/skirting with no inward bulge, far wall/corners, floor tile grid, runner and daylight/exposure. No relocation, resizing or new objects, no new door/window, no wall changes. Only main upper door surface material and its local light response change. Output one same-room realistic photograph with oak MAIN uppers and ivory TOP lofts, no text/watermark.",
+      "inputs": [
+        {
+          "role": "Existing canonical edit target; preserve geometry and all fixtures",
+          "historical_source": {
+            "source_commit": "93a0161bebf167e76c9af4e5224eac8f4e3d5ad2",
+            "path_at_commit": "interiors/images/06-kitchen-opposite.png",
+            "sha256": "153b537969102c6c9eda3dd7b187c4abdeaab8a17a24699302ee0086911ee987",
+            "size": [
+              1536,
+              1024
+            ]
+          }
+        },
+        {
+          "role": "Selected new wide for matching oak-main/ivory-loft arrangement",
+          "path": "images/06-kitchen-wide.png",
+          "sha256": "20945ad2ed111569f3daf8b6f853146bb37507fa7efd77bc9c8cea218af41a6c"
+        }
+      ],
+      "geometry_reference": {
+        "source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "camera": "Existing target camera and all cupboard divisions retained",
+        "scope": "Material-only edit to main upper fronts. Existing loft/hood/room geometry retained; measured model/drawing files unchanged."
+      },
+      "review": "Assistant visual comparison: main upper door fronts match muted natural oak base cabinetry; all top loft and window-bridge storage remains creamy ivory. Door counts/reveals, chimney, cameras and fixture/layout positions retained.",
+      "user_approval": "pending",
+      "output": {
+        "path": "images/06-kitchen-opposite.png",
+        "sha256": "13a0b285b32601eb80bdb4ae07a2c728ed5d7a3db500d1f1bbd639aa692d0169",
+        "size": [
+          1536,
+          1024
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-0b8760a1-b56b-4b35-9091-4d228e43bb4f.png"
+      }
+    },
+    {
+      "id": "oak-main-ivory-loft-2026-10-17-detail",
+      "date": "2026-10-17",
+      "image": "06-kitchen-detail.png",
+      "method": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Change ONLY the main UPPER cupboard material in IMAGE 1, the current kitchen DETAIL/sink close-up. IMAGE 2 is the selected new same-room wide photograph, exact oak/ivory finish arrangement to match.\nTurn ONLY the FOUR large main upper doors on the sink wall, BELOW the horizontal loft seam near the image top and ABOVE the warm under-cabinet light, into the EXACT SAME muted natural oak as the existing sink-base doors directly below and the new main uppers in image 2. Fine vertical natural grain, pale medium beige oak, understated variation, matte sheen. Preserve four door widths, reveal lines, existing side/underside thickness and simple handleless design. No darker or orange wood, large knots, fluting or gloss.\nKEEP the slim visible TOP LOFT row ABOVE that horizontal seam CREAMY IVORY, and keep the high corner bridge at upper-right CREAMY IVORY. Only main cupboard faces and their thin exposed matching edge surfaces become oak.\nStrict invariants: exact original crop/camera/dimensions, open oak door/angle/frame/black handle, all original walls/window reveal, sink/tap/soap/potted plant, counter/stone backsplash mineral pattern, black sockets, cutting board/jars/utensils, all base cupboard divisions and grain, lighting/exposure, and original photo texture. Do not add or move any object or cupboard, do not change geometry or the window, do not add a hood above the sink: existing chimney stays outside this detail camera. Preserve every element except local main-upper surface material and its natural light response. Output the same close-up photograph with matching oak MAIN uppers and ivory TOP lofts. No labels, text or watermark.",
+      "inputs": [
+        {
+          "role": "Existing canonical edit target; preserve geometry and all fixtures",
+          "historical_source": {
+            "source_commit": "93a0161bebf167e76c9af4e5224eac8f4e3d5ad2",
+            "path_at_commit": "interiors/images/06-kitchen-detail.png",
+            "sha256": "c191f3f76d4a1ee767cd0a62ff186df782d97346e1648b6153334f2c8f1c8730",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "role": "Selected new wide for matching oak-main/ivory-loft arrangement",
+          "path": "images/06-kitchen-wide.png",
+          "sha256": "20945ad2ed111569f3daf8b6f853146bb37507fa7efd77bc9c8cea218af41a6c"
+        }
+      ],
+      "geometry_reference": {
+        "source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "camera": "Existing target camera and all cupboard divisions retained",
+        "scope": "Material-only edit to main upper fronts. Existing loft/hood/room geometry retained; measured model/drawing files unchanged."
+      },
+      "review": "Assistant visual comparison: main upper door fronts match muted natural oak base cabinetry; all top loft and window-bridge storage remains creamy ivory. Door counts/reveals, chimney, cameras and fixture/layout positions retained.",
+      "user_approval": "pending",
+      "output": {
+        "path": "images/06-kitchen-detail.png",
+        "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba",
+        "size": [
+          1495,
+          1052
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-411b2932-f1e0-4a3a-b8f6-aa10c773a207.png"
+      }
+    }
+  ],
+  "kitchen_oak_upper_decision": {
+    "date": "2026-10-17",
+    "user_request": "Apply matching muted oak to main upper doors while retaining creamy ivory top loft row; remove video and its related files.",
+    "material_scope": "All three kitchen photographs; only main upper face materials/local light response intentionally changed.",
+    "preceding_sources": {
+      "06-kitchen-wide.png": {
+        "source_commit": "93a0161bebf167e76c9af4e5224eac8f4e3d5ad2",
+        "path_at_commit": "interiors/images/06-kitchen-wide.png",
+        "sha256": "c35b433f4dd0b038fee1aeef9b0a97dbf9acb13d79a65ccc52324f729c11055c",
+        "size": [
+          1495,
+          1052
+        ]
+      },
+      "06-kitchen-opposite.png": {
+        "source_commit": "93a0161bebf167e76c9af4e5224eac8f4e3d5ad2",
+        "path_at_commit": "interiors/images/06-kitchen-opposite.png",
+        "sha256": "153b537969102c6c9eda3dd7b187c4abdeaab8a17a24699302ee0086911ee987",
+        "size": [
+          1536,
+          1024
+        ]
+      },
+      "06-kitchen-detail.png": {
+        "source_commit": "93a0161bebf167e76c9af4e5224eac8f4e3d5ad2",
+        "path_at_commit": "interiors/images/06-kitchen-detail.png",
+        "sha256": "c191f3f76d4a1ee767cd0a62ff186df782d97346e1648b6153334f2c8f1c8730",
+        "size": [
+          1495,
+          1052
+        ]
+      }
+    },
+    "approval": "Assistant visual review complete; user acceptance of new images pending."
+  },
+  "video_removal": {
+    "date": "2026-10-17",
+    "reason": "Explicit user request to remove the video file and its related files.",
+    "removed_artifacts": [
+      {
+        "path": "interiors/Hensal_Interior_Tour.mp4",
+        "sha256": "34728f5c134e3b97a0df8eea9697d1869935ac324571aed3dfaf2f5fb35db5a0",
+        "bytes": 26905330,
+        "availability": "deleted at user request"
+      },
+      {
+        "path": "interiors/.source/video-tour.json",
+        "sha256": "071a29ad1fc92231c5d3df6bf7496d576f28ea7f25d8751eefdcac55bcadfd2c",
+        "bytes": 8299,
+        "availability": "deleted at user request"
+      },
+      {
+        "path": "interiors/.source/build_video.py",
+        "sha256": "5624c088d0d90870bb0febf37dcc6313784cb6d857fef0ccfacb3e469ac5d392",
+        "bytes": 9684,
+        "availability": "deleted at user request"
+      }
+    ],
+    "recovery_commit": "93a0161bebf167e76c9af4e5224eac8f4e3d5ad2",
+    "references": "Active README/image-register links and obsolete video-update statements removed."
   }
 }
