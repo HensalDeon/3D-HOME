@@ -64,13 +64,13 @@
       "user_approval": "accepted-camera-r15-layout"
     },
     "06-kitchen-detail.png": {
-      "status": "accepted",
-      "sha256": "46ee70f6899b8719e6d6553cfd4a2263bbcbb0f0e6f3335aa3a465887e343b1e",
-      "review": "Preserved the sink close-up, door, joinery and finishes; removed the misplaced fridge sliver and vine at the extreme left, consistent with the corrected wide camera.",
-      "reviewed_at": "2026-10-12",
-      "presentation_revision": "kitchen-plan-page3-2026-10-12",
+      "status": "assistant-reviewed",
+      "sha256": "c191f3f76d4a1ee767cd0a62ff186df782d97346e1648b6153334f2c8f1c8730",
+      "review": "Four ivory main door divisions match the new north wide view; closed loft tier and corner bridge are visible/cropped at top. Original right oak display bay is replaced by closed storage. Sink, faucet, open door, stone backsplash/counter, base fronts and counter objects retain their layout. The chimney is outside this close-up and is not duplicated above the sink.",
+      "reviewed_at": "2026-10-17",
+      "presentation_revision": "continuous-upper-chimney-2026-10-17",
       "method": "built-in-imagegen",
-      "user_approval": "accepted",
+      "user_approval": "pending",
       "geometry_source": {
         "file": "../../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
         "page": 3,
@@ -97,37 +97,41 @@
         "orientation": "west up, north right, east down, south left",
         "authority": "User explicitly selected PDF page 3 for kitchen architecture and placement."
       },
-      "prompt_id": "detail",
+      "prompt_id": "continuous-upper-chimney-2026-10-17-detail",
       "prompt_file": ".source/image-release.json",
       "superseded": {
-        "historical_source": {
-          "source_commit": "12e352ed27b39eb4b067b05daf43ecc3e3e2a4ca",
-          "path_at_commit": "interiors/images/06-kitchen-detail.png"
-        },
-        "sha256": "7ecfac994acef0b50569a15ddfa4954cbd74259afa2eddc3af549f3552ce67d1"
+        "path_at_commit": "interiors/images/06-kitchen-detail.png",
+        "source_commit": "8d67d35350c2824be497e1104d13ca9a9c8c195d",
+        "sha256": "46ee70f6899b8719e6d6553cfd4a2263bbcbb0f0e6f3335aa3a465887e343b1e",
+        "size": [
+          1495,
+          1052
+        ]
       },
-      "render_review": "Assistant visual review against PDF page 3 and original materials; photographic presentation is illustrative, not a pixel-exact measured drawing.",
-      "user_approved_at": "2026-10-12",
-      "approval_scope": "User explicitly stated this kitchen view is correct; opposite view alone rejected."
+      "render_review": "Assistant visual comparison across all three room views and original target cameras/fixtures; illustrative photographic concept, not pixel-exact measured geometry.",
+      "upper_storage_concept": "Continuous matte solid-ivory high-level loft storage connecting end walls and above fridge; deeper main cupboards on solid end walls. Original oak/ivory/stone finish retained."
     },
     "06-kitchen-opposite.png": {
       "status": "assistant-reviewed",
-      "sha256": "7a398419ca4c143a16407374b868ac4580d0500f463de87ed521be78b7d0708c",
-      "review": "Assistant visual review: three flat ivory doors and open oak shelf bay match selected wide reference; added only on solid end wall. Window, hob counter, fridge, straight right wall/skirting, rug and south-facing composition retained.",
-      "reviewed_at": "2026-10-12",
-      "presentation_revision": "kitchen-opposite-wall-cupboards-2026-10-12",
-      "method": "built-in-imagegen-with-native-south-facing-guide",
+      "sha256": "153b537969102c6c9eda3dd7b187c4abdeaab8a17a24699302ee0086911ee987",
+      "review": "Existing south-wall storage now has a continuous closed top row reaching above the fridge and turning onto the high window-wall run. Same charcoal/stainless canopy chimney is visible over left hob. Fridge/top plant, straight right wall/skirting, south-facing camera, original counter/base divisions, rug and floor retain their positions; door remains behind camera.",
+      "reviewed_at": "2026-10-17",
+      "presentation_revision": "continuous-upper-chimney-2026-10-17",
+      "method": "built-in-imagegen",
       "user_approval": "pending",
       "geometry_source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
-      "prompt_id": "opposite-matching-wall-cupboards",
+      "prompt_id": "continuous-upper-chimney-2026-10-17-opposite",
       "prompt_file": ".source/image-release.json",
       "superseded": {
-        "recoverable_generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-6c6333ce-e298-431b-9b0b-e848fadb74d1.png",
-        "sha256": "7e913a3e3438d7203199725d447c4902862182923b9f44bd4633ee9b4033ec3c",
-        "status": "user-rejected",
-        "reason": "Incorrect camera/end-wall door and fridge placement."
+        "path_at_commit": "interiors/images/06-kitchen-opposite.png",
+        "source_commit": "8d67d35350c2824be497e1104d13ca9a9c8c195d",
+        "sha256": "e6316828ba8a7497a1299d2b36d40667e8cb40679022c5b4da8d66e8dcab951c",
+        "size": [
+          1536,
+          1024
+        ]
       },
-      "render_review": "Assistant visual comparison against selected cupboard reference and retained room geometry; new cupboard addition shown in presentation only.",
+      "render_review": "Assistant visual comparison across all three room views and original target cameras/fixtures; illustrative photographic concept, not pixel-exact measured geometry.",
       "camera": {
         "id": "06-kitchen-opposite",
         "level": "ground",
@@ -148,16 +152,17 @@
       },
       "geometry_page": 3,
       "cabinet_design_source": "images/06-kitchen-wide.png",
-      "cabinet_placement": "Matching ivory wall cupboards with an open oak right-end shelf bay and soft under-cabinet lighting on the solid south end wall; stop before fridge, preserve window."
+      "cabinet_placement": "Existing large south-end two-tier unit retained with continuous loft extension across to above fridge and back round window wall; straight west wall remains.",
+      "upper_storage_concept": "Continuous matte solid-ivory high-level loft storage connecting end walls and above fridge; deeper main cupboards on solid end walls. Original oak/ivory/stone finish retained."
     },
     "06-kitchen-wide.png": {
-      "status": "accepted",
-      "sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9",
-      "review": "Preserved the selected sink/window L-counter composition and open northwest door; removed the wrongly adjacent fridge. Fridge is in the southwest corner, behind this camera and out of frame.",
-      "reviewed_at": "2026-10-12",
-      "presentation_revision": "kitchen-plan-page3-2026-10-12",
+      "status": "assistant-reviewed",
+      "sha256": "c35b433f4dd0b038fee1aeef9b0a97dbf9acb13d79a65ccc52324f729c11055c",
+      "review": "Four closed ivory north-wall main doors and aligned loft row replace the original isolated cupboard/open bay; high-level storage turns along window wall. Compact charcoal metal chimney is centred over existing two-burner hob, with glazing visible behind/either side. Open entry, sink, counter/base layout, sill/mullion positions, props, runner and finishes retain their composition.",
+      "reviewed_at": "2026-10-17",
+      "presentation_revision": "continuous-upper-chimney-2026-10-17",
       "method": "built-in-imagegen",
-      "user_approval": "accepted",
+      "user_approval": "pending",
       "geometry_source": {
         "file": "../../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
         "page": 3,
@@ -184,18 +189,19 @@
         "orientation": "west up, north right, east down, south left",
         "authority": "User explicitly selected PDF page 3 for kitchen architecture and placement."
       },
-      "prompt_id": "wide",
+      "prompt_id": "continuous-upper-chimney-2026-10-17-wide",
       "prompt_file": ".source/image-release.json",
       "superseded": {
-        "historical_source": {
-          "source_commit": "12e352ed27b39eb4b067b05daf43ecc3e3e2a4ca",
-          "path_at_commit": "interiors/images/06-kitchen-wide.png"
-        },
-        "sha256": "4dbef1d514d0ccc59f52e5bf32969fea781ece4d097a511a2a84354cc176e759"
+        "path_at_commit": "interiors/images/06-kitchen-wide.png",
+        "source_commit": "8d67d35350c2824be497e1104d13ca9a9c8c195d",
+        "sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9",
+        "size": [
+          1495,
+          1052
+        ]
       },
-      "render_review": "Assistant visual review against PDF page 3 and original materials; photographic presentation is illustrative, not a pixel-exact measured drawing.",
-      "user_approved_at": "2026-10-12",
-      "approval_scope": "User explicitly stated this kitchen view is correct; opposite view alone rejected."
+      "render_review": "Assistant visual comparison across all three room views and original target cameras/fixtures; illustrative photographic concept, not pixel-exact measured geometry.",
+      "upper_storage_concept": "Continuous matte solid-ivory high-level loft storage connecting end walls and above fridge; deeper main cupboards on solid end walls. Original oak/ivory/stone finish retained."
     },
     "07-bedroom1-detail.png": {
       "status": "accepted",
@@ -3777,7 +3783,288 @@
         ]
       },
       "review": "Assistant visual review: three flat ivory doors and open oak shelf bay match selected wide reference; added only on solid end wall. Window, hob counter, fridge, straight right wall/skirting, rug and south-facing composition retained.",
+      "user_approval": "pending",
+      "status": "superseded",
+      "user_feedback": "Cupboards felt too small; user requested improved storage using more wall area."
+    },
+    {
+      "id": "opposite-larger-two-tier-storage",
+      "date": "2026-10-12",
+      "method": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Redesign ONLY the small upper cupboard unit on the solid FAR END WALL of IMAGE 1, the current kitchen opposite photograph.\nUSER REQUIREMENTS: existing new cupboards feel too small; use the available wall better for useful storage and aesthetics. The other kitchen photos are style references, not a fixed cabinet size to copy. EVERYTHING ELSE must stay unchanged.\nImages 2/3 are approved kitchen wide/detail references for muted ivory/oak finishes and photo quality, not a size limitation.\nREPLACE the current three-door floating cabinet and small oak shelf bay with a substantially LARGER, thoughtfully fitted TWO-TIER storage composition:\n- Use most of the available solid end-wall width: start at the same far-left wall corner, extend right approximately 20\u201325% farther than the current unit, and stop with a clear 150\u2013200mm visual gap BEFORE the fridge's left edge. Do not overlap, enclose or cover the fridge/plant.\n- Extend UPWARD nearly to the existing ceiling, leaving a neat small visible 80\u2013100mm gap. Increase total cupboard height to about 1.15\u20131.25m instead of the current shallow 0.7m, while maintaining approximately 550\u2013600mm clear wall above the existing left countertop. Cabinet depth about 300mm. The bigger cabinet is fitted on the existing wall without enlarging the room.\n- Main LOWER tier: three or four generous flat creamy-ivory closed doors with fine straight reveals for everyday storage. At the far-right end, keep ONE narrow natural-oak open shelf bay, only roughly 15% of the unit width, with two tidy compartments. Reuse the small shelf plant, books and stacked cream bowls from the original cabinet; the majority of the area must be CLOSED storage.\n- UPPER loft tier: a genuine row of usable closed ivory cupboards, about 350\u2013400mm high, aligned with main door divisions. This is storage with visible doors and subtle reveal lines, NOT a cosmetic ceiling band/filler. Run the loft across the complete unit, including over the oak shelf bay, for a calm continuous horizontal top.\n- Fine muted-oak underside/side detail, original matte creamy-ivory door finish, discreet finger-pull or recessed bottom-edge access without bulky handles. Restrained soft diffused warm under-cabinet lighting along the larger unit, no orange or neon glow. Straight consistent lines, believable fitted carpentry proportions.\nThis should look noticeably more substantial and make better use of both width and height, with a refined warm minimalist aesthetic. Do not just enlarge the old unit by a tiny amount. Do not add extra decorative shelf rows instead of practical storage.\nABSOLUTE INVARIANTS: only cabinet region and its immediate local light/shadows may change. Keep original image dimensions/camera/framing and ALL remaining architecture/objects exactly unchanged: full left charcoal sliding window and tropical exterior, continuous left stone counter and oak base cabinet divisions, two-burner hob and black glass, pots, fruit bowl, boards and ceramic jars, fridge size/location/orientation and top plant, straight right wall and skirting with NO projection, far end wall and corners, floor tile grid, runner dimensions/location, sunlight, exposure and material colors. No fridge moves, no new base unit or counter on end wall, no sink, door, window changes, wall enlargement, new furniture or extra plants. Do not add cabinets across the window, on the right wall or above the fridge. Preserve all pixels outside the cabinet/local wall-light area as closely as possible. Output the same photograph with only the end-wall cupboard design upgraded. No text, label or watermark.",
+      "user_request": "Previous cupboards look too small. Reference is stylistic only; improve use of wall for storage and aesthetics, keeping all remaining elements unchanged.",
+      "inputs": [
+        {
+          "path": "images/06-kitchen-opposite.png",
+          "role": "Edit target; only end-wall upper storage changed",
+          "sha256": "7a398419ca4c143a16407374b868ac4580d0500f463de87ed521be78b7d0708c",
+          "recoverable_generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-5b9e3448-3a7b-4dd4-9c46-262fc5c50a28.png"
+        },
+        {
+          "path": "images/06-kitchen-wide.png",
+          "role": "Approved ivory/oak finish and photographic reference; cupboard dimensions are not copied",
+          "sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9"
+        },
+        {
+          "path": "images/06-kitchen-detail.png",
+          "role": "Approved ivory/oak finish and photographic reference; cupboard dimensions are not copied",
+          "sha256": "46ee70f6899b8719e6d6553cfd4a2263bbcbb0f0e6f3335aa3a465887e343b1e"
+        }
+      ],
+      "geometry_reference": {
+        "source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "camera": {
+          "id": "06-kitchen-opposite",
+          "level": "ground",
+          "eye": [
+            2.4,
+            1.13,
+            1.5
+          ],
+          "at": [
+            0.15,
+            1.13,
+            1.2
+          ],
+          "fov": 75,
+          "doorPose": "closed on existing hinge; behind camera",
+          "meshCount": 434,
+          "triangleCount": 1496
+        },
+        "scope": "Retain room, openings, left counter, fridge, floor and camera. Storage is a requested presentation design revision; measured drawing/model files unchanged."
+      },
+      "storage_design": "Wider near-ceiling ivory unit with three taller main closed fronts, four aligned closed loft fronts and one narrow open oak shelf bay below the right loft; concealed warm task lighting. Majority closed storage, with countertop clearance and gap before fridge retained.",
+      "review": "Assistant visual comparison: storage is visibly wider and taller with a usable closed loft row; original south-facing room layout, window/hob counter, fridge/top plant, straight right wall/skirting, counter props, rug and floor remain in place. Original house finish retained; only cupboard design and local lighting/shadows intentionally changed.",
+      "output": {
+        "path": "images/06-kitchen-opposite.png",
+        "sha256": "e6316828ba8a7497a1299d2b36d40667e8cb40679022c5b4da8d66e8dcab951c",
+        "size": [
+          1536,
+          1024
+        ]
+      },
       "user_approval": "pending"
     }
-  ]
+  ],
+  "kitchen_continuous_upper_chimney_generation_history": [
+    {
+      "id": "continuous-upper-chimney-2026-10-17-wide",
+      "date": "2026-10-17",
+      "image": "06-kitchen-wide.png",
+      "method": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit.\nTASK: Edit ONLY the existing Hensal House KITCHEN WIDE photograph, the landscape picture looking toward the sink with an open oak door on the LEFT and the long window/hob counter on the RIGHT. This is the edit target, not the uploaded square inspiration picture.\nOther provided pictures: kitchen detail and opposite are SAME ROOM fixture/palette references. The uploaded square glossy kitchen image is ONLY a reference for continuous upper storage that uses the perimeter up to the ceiling and continues above the fridge, plus a cooking chimney. Do NOT copy its glass cupboards, glossy doors, marble, black counters, ceiling lights, room layout or window positions.\nNEW CONCEPT, adapted to this exact room:\n1. Replace the isolated original north/sink-wall upper cupboard with a fitted matte creamy-ivory TWO-TIER composition: tall closed everyday-storage doors below, a separate aligned row of genuinely usable loft cupboard doors above up to the existing ceiling. Maintain the existing cupboard underside and original counter clearance. Replace the existing open oak shelf bay at the window corner with CLOSED ivory storage to make the corner join cleanly. Use fine muted-oak underside/recess details only.\n2. Continue the UPPER LOFT tier round the 90-degree east/window-wall corner as a shallow high-level ivory cupboard bridge ABOVE the existing window head. It connects the north and south end-wall cupboard groups into one continuous high-level storage system. This is closed cabinetry with door divisions, not a plain decorative fascia. Its underside must stay above the existing window head; preserve the actual full aperture dimensions, frame/mullions and sill exactly. In this original camera, some of the high-level east run may naturally be cropped by the top frame: accept the crop, NEVER lower the window head, alter the camera or remove glass to force extra cupboards into view. No full-depth cupboards down in front of the window.\n3. Add ONE compact solid metal cooking chimney/extractor centred vertically above the EXISTING two-burner hob on the east/window counter. A restrained matte charcoal rectangular canopy with discreet brushed-stainless lower edge and a narrow vertical flue rising to and concealed within the upper joinery. Suspended structurally from the ceiling/header above, NOT attached to window glass. Keep the glass/frame in its exact original location BEHIND the appliance. The small hood/flue can naturally occlude part of the glazing; keep generous visible daylight glazing either side, and do not brick up the window or add a solid wall behind it. No glass hood, oversized industrial duct or extra appliance. Canopy should be compact, cover the hob footprint, have sensible visible working clearance above the hob and subtle task lighting.\nFinishes: existing muted natural oak base doors, creamy ivory matte handleless upper fronts with fine straight reveals, sandy stone, subtle warm concealed light. Quiet continuous aligned joinery, mostly closed practical storage, no glass-front cabinetry or display-heavy shelving.\nABSOLUTE INVARIANTS: everything apart from upper cabinetry and the new hood/flue remains unchanged: original photo dimensions/camera/crop, ceiling height/shape with no new false ceiling, exact open oak entry door/frame/black lever and angle, sink/tap/soap and sockets, left-wall geometry, existing L-counter footprint and stone thickness, every oak base cabinet division, hob location and number of burners, full window aperture/sill/charcoal frame/tropical exterior, plants/fruit/boards/ceramics on counter, beige floor tile grid, runner, shadows, daylight/exposure, room size and original photographic realism. Fridge remains behind this camera and OUT OF FRAME. No island, new base cabinets, wall bulge, door/window move, new sink, new furniture, ceiling strips or downlights, marble, high gloss, text or watermark.\nProduce ONE finished corrected wide photograph of this existing room. The square inspiration is a concept reference ONLY; this must remain recognisably the original Hensal wide view.",
+      "inputs": [
+        {
+          "role": "Original edit target: north/sink-facing wide camera",
+          "historical_source": {
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "source_commit": "8d67d35350c2824be497e1104d13ca9a9c8c195d",
+            "sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "role": "Original same-room sink/material detail",
+          "historical_source": {
+            "path_at_commit": "interiors/images/06-kitchen-detail.png",
+            "source_commit": "8d67d35350c2824be497e1104d13ca9a9c8c195d",
+            "sha256": "46ee70f6899b8719e6d6553cfd4a2263bbcbb0f0e6f3335aa3a465887e343b1e",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "role": "Original same-room south-facing geometry/fixture consistency",
+          "historical_source": {
+            "path_at_commit": "interiors/images/06-kitchen-opposite.png",
+            "source_commit": "8d67d35350c2824be497e1104d13ca9a9c8c195d",
+            "sha256": "e6316828ba8a7497a1299d2b36d40667e8cb40679022c5b4da8d66e8dcab951c",
+            "size": [
+              1536,
+              1024
+            ]
+          }
+        },
+        {
+          "role": "User-attached 17 October reference; continuous upper perimeter/above-fridge storage and chimney only",
+          "source": "Conversation attachment supplied directly to image_gen via num_last_images_to_include=4",
+          "sha256": null,
+          "hash_note": "No local file or raw attachment bytes provided; hash unavailable. Glass/gloss/marble/layout excluded."
+        }
+      ],
+      "geometry_reference": {
+        "source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "camera": "Existing canonical target photo camera/crop retained",
+        "scope": "Room/openings/fixtures retained. Continuous upper storage and chimney are requested photographic concept additions; measured model/drawing/duct route not changed."
+      },
+      "review": "Four closed ivory north-wall main doors and aligned loft row replace the original isolated cupboard/open bay; high-level storage turns along window wall. Compact charcoal metal chimney is centred over existing two-burner hob, with glazing visible behind/either side. Open entry, sink, counter/base layout, sill/mullion positions, props, runner and finishes retain their composition.",
+      "user_approval": "pending",
+      "output": {
+        "path": "images/06-kitchen-wide.png",
+        "sha256": "c35b433f4dd0b038fee1aeef9b0a97dbf9acb13d79a65ccc52324f729c11055c",
+        "size": [
+          1495,
+          1052
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-bbe8b731-3306-4492-8e18-ac105c0dc0fa.png"
+      }
+    },
+    {
+      "id": "continuous-upper-chimney-2026-10-17-opposite",
+      "date": "2026-10-17",
+      "image": "06-kitchen-opposite.png",
+      "method": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Edit IMAGE 1, the existing kitchen OPPOSITE/south-facing photograph. IMAGE 2 is the selected NEW same-room wide view, authoritative for continuous solid-door loft joinery and the new chimney appearance. IMAGE 3 is the original detail, palette/material reference only.\nUpgrade only UPPER STORAGE and add the SAME chimney seen from this reverse camera. The uploaded concept is implemented as one connected high-level storage system, not isolated cupboards on two end walls.\nKeep the existing south/end-wall large two-tier ivory cupboard footprint, original main lower doors, muted oak accent bay, and warm concealed light. Continue its TOP/LOFT row all the way to the RIGHT and around the southwest corner as shallow closed storage ABOVE THE FRIDGE, and also around the LEFT/east corner as a closed ivory loft bridge ABOVE the existing window head toward the other end's sink cupboards. These should read as continuous fitted perimeter storage at the existing ceiling, with aligned top/reveal lines and real usable closed doors, NOT a decorative fascia or ceiling bulkhead. Matte creamy ivory handleless fronts, fine straight reveals, restrained muted-oak underside detail; NO glass cabinet fronts or glossy finish.\nAt the fridge: keep the refrigerator and its trailing plant EXACTLY where they are. Fit a shallow high loft cupboard in the upper strip ABOVE the existing plant crown, retaining a visible air gap and usable doors; its underside may step up locally to clear the plant. Do not conceal, resize, remove or move the fridge/plant, and do not add a tall fridge carcass or side panels projecting into the aisle. Leave the right wall and skirting one flat straight plane.\nAt the left/window: keep the original full window aperture/frame/mullions/sill fixed. The loft bridge is above the actual head and may naturally be cropped at the top of this camera; do not lower, narrow or brick up the window to show storage. No deep lower cupboard in front of the glass.\nAdd the EXACT SAME restrained matte charcoal rectangular metal chimney hood with brushed-stainless underside edge, two small warm work lights and narrow vertical charcoal flue from image 2, directly over the existing left-foreground two-burner hob. This is ONE appliance seen from the reverse angle, not a different hood. Suspend from the ceiling/header, not the glass; keep glazing behind and on either side intact. Allow natural crop at left/top where the existing camera cuts it. No glass hood, no second hood.\nABSOLUTE INVARIANTS: original image dimensions/camera/framing, full left counter footprint and its oak base drawer/door divisions, hob location and burner count, stone surface/backsplash, window/exterior, counter plants/fruit/boards/ceramics, fridge/top plant, straight right wall and corners, door OUT OF FRAME behind camera, no opening in solid far wall, all floor joints/runner, daylight/exposure and original photographic realism. Do not add base storage/counter across end wall, sink, new appliance, fake ceiling, downlights, wall bulge or new furniture. Keep original muted oak/ivory/sandy stone palette. Only upper cupboards, their local lighting/shadows and the requested hood/flue change. One realistic finished landscape photograph, no text or watermark.",
+      "inputs": [
+        {
+          "role": "Original south-facing edit target",
+          "historical_source": {
+            "path_at_commit": "interiors/images/06-kitchen-opposite.png",
+            "source_commit": "8d67d35350c2824be497e1104d13ca9a9c8c195d",
+            "sha256": "e6316828ba8a7497a1299d2b36d40667e8cb40679022c5b4da8d66e8dcab951c",
+            "size": [
+              1536,
+              1024
+            ]
+          }
+        },
+        {
+          "role": "Selected new wide view: upper joinery and one same-room chimney design",
+          "path": "images/06-kitchen-wide.png",
+          "sha256": "c35b433f4dd0b038fee1aeef9b0a97dbf9acb13d79a65ccc52324f729c11055c"
+        },
+        {
+          "role": "Original material detail",
+          "historical_source": {
+            "path_at_commit": "interiors/images/06-kitchen-detail.png",
+            "source_commit": "8d67d35350c2824be497e1104d13ca9a9c8c195d",
+            "sha256": "46ee70f6899b8719e6d6553cfd4a2263bbcbb0f0e6f3335aa3a465887e343b1e",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        }
+      ],
+      "geometry_reference": {
+        "source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "camera": "Existing canonical target photo camera/crop retained",
+        "scope": "Room/openings/fixtures retained. Continuous upper storage and chimney are requested photographic concept additions; measured model/drawing/duct route not changed."
+      },
+      "review": "Existing south-wall storage now has a continuous closed top row reaching above the fridge and turning onto the high window-wall run. Same charcoal/stainless canopy chimney is visible over left hob. Fridge/top plant, straight right wall/skirting, south-facing camera, original counter/base divisions, rug and floor retain their positions; door remains behind camera.",
+      "user_approval": "pending",
+      "output": {
+        "path": "images/06-kitchen-opposite.png",
+        "sha256": "153b537969102c6c9eda3dd7b187c4abdeaab8a17a24699302ee0086911ee987",
+        "size": [
+          1536,
+          1024
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-db8a97ff-1df7-4804-8b3a-a5e93be23b29.png"
+      }
+    },
+    {
+      "id": "continuous-upper-chimney-2026-10-17-detail",
+      "date": "2026-10-17",
+      "image": "06-kitchen-detail.png",
+      "method": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Edit IMAGE 1, the original kitchen DETAIL photograph of the north sink wall, with open oak door at extreme LEFT. IMAGE 2 is the selected NEW kitchen wide view, exact authority for the revised north-wall cupboard divisions and the corner loft/hood design. IMAGE 3 is the selected NEW opposite view, same-room continuity.\nUpdate ONLY the upper cupboard faces/loft portion visible in this tight crop so this image is an accurate close view of image 2. North wall now has FOUR flat matte creamy-ivory main doors in place of the original three doors plus open oak shelf bay; the old right-hand open oak shelving/books/bowls/plant is replaced by the fourth CLOSED ivory door. There is a full row of aligned usable loft cupboard doors above, up to the existing ceiling. Use the EXACT same four-door division/alignment as image 2 in perspective, the same original bottom edge height, fine straight reveals, subtle oak underside edge and concealed warm task light.\nAt the upper RIGHT, only the near corner of the high-level closed loft bridge above the east window may enter this camera, matching image 2. Keep the window opening, sill/reveal and glass exactly where they already are. The chimney is over the east hob OUTSIDE this sink close-up camera; do NOT invent a hood over the sink or widen the camera to show it. Loft tops can be naturally cropped by the original frame; do not tilt/zoom the photo.\nSTRICT INVARIANTS: exact original dimensions/camera/crop; open oak door leaf/angle, frame and black handle; sink/tap/soap/left plant, counter and backsplash mineral texture, sockets, cutting board, jars and utensils, original L-counter geometry and oak base door divisions/grain, window reveal at right, all wall/floor edges in frame, original lighting/exposure and photographic material realism. Fridge stays out of frame. No new base cabinet, appliance, shelf, wall projection, door, window, false ceiling, ceiling strip or downlight. Do not copy the reference's black counters, glass cabinetry, glossy finish or marble. Preserve Hensal House's original matte ivory/muted oak/sandy stone palette. Only upper storage faces/loft and their local light/shadows change. One finished realistic close-up, no text or watermark.",
+      "inputs": [
+        {
+          "role": "Original sink close-up edit target",
+          "historical_source": {
+            "path_at_commit": "interiors/images/06-kitchen-detail.png",
+            "source_commit": "8d67d35350c2824be497e1104d13ca9a9c8c195d",
+            "sha256": "46ee70f6899b8719e6d6553cfd4a2263bbcbb0f0e6f3335aa3a465887e343b1e",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "role": "Selected new wide: four-door north cupboard divisions and corner loft bridge",
+          "path": "images/06-kitchen-wide.png",
+          "sha256": "c35b433f4dd0b038fee1aeef9b0a97dbf9acb13d79a65ccc52324f729c11055c"
+        },
+        {
+          "role": "Selected new reverse view: same-room continuity",
+          "path": "images/06-kitchen-opposite.png",
+          "sha256": "153b537969102c6c9eda3dd7b187c4abdeaab8a17a24699302ee0086911ee987"
+        }
+      ],
+      "geometry_reference": {
+        "source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "camera": "Existing canonical target photo camera/crop retained",
+        "scope": "Room/openings/fixtures retained. Continuous upper storage and chimney are requested photographic concept additions; measured model/drawing/duct route not changed."
+      },
+      "review": "Four ivory main door divisions match the new north wide view; closed loft tier and corner bridge are visible/cropped at top. Original right oak display bay is replaced by closed storage. Sink, faucet, open door, stone backsplash/counter, base fronts and counter objects retain their layout. The chimney is outside this close-up and is not duplicated above the sink.",
+      "user_approval": "pending",
+      "output": {
+        "path": "images/06-kitchen-detail.png",
+        "sha256": "c191f3f76d4a1ee767cd0a62ff186df782d97346e1648b6153334f2c8f1c8730",
+        "size": [
+          1495,
+          1052
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-19c6d129-1b69-415d-b193-e6c37c416511.png"
+      }
+    }
+  ],
+  "kitchen_continuous_upper_chimney_decision": {
+    "date": "2026-10-17",
+    "user_request": "Use the attached reference for continuous top/perimeter cupboard storage, not glass cupboards; incorporate chimney, change nothing else.",
+    "concept": "Closed matte ivory loft tier connects north and south upper storage over window-side perimeter and above fridge. Charcoal metal chimney over existing east/window hob, suspended from upper support; aperture retained behind it. Original base joinery and all fixtures/cameras retained.",
+    "scope": [
+      "06-kitchen-wide.png",
+      "06-kitchen-opposite.png",
+      "06-kitchen-detail.png"
+    ],
+    "preceding_sources": {
+      "06-kitchen-wide.png": {
+        "path_at_commit": "interiors/images/06-kitchen-wide.png",
+        "source_commit": "8d67d35350c2824be497e1104d13ca9a9c8c195d",
+        "sha256": "0e265b56fd1a39f0b26d9ba8dfa8535809b25e8de12d2d2b82cf69f30e2d29b9",
+        "size": [
+          1495,
+          1052
+        ]
+      },
+      "06-kitchen-opposite.png": {
+        "path_at_commit": "interiors/images/06-kitchen-opposite.png",
+        "source_commit": "8d67d35350c2824be497e1104d13ca9a9c8c195d",
+        "sha256": "e6316828ba8a7497a1299d2b36d40667e8cb40679022c5b4da8d66e8dcab951c",
+        "size": [
+          1536,
+          1024
+        ]
+      },
+      "06-kitchen-detail.png": {
+        "path_at_commit": "interiors/images/06-kitchen-detail.png",
+        "source_commit": "8d67d35350c2824be497e1104d13ca9a9c8c195d",
+        "sha256": "46ee70f6899b8719e6d6553cfd4a2263bbcbb0f0e6f3335aa3a465887e343b1e",
+        "size": [
+          1495,
+          1052
+        ]
+      }
+    },
+    "attachment": "User-provided reference; only storage extent/continuity and chimney idea used, not colors/materials/glass/layout.",
+    "approval": "Assistant visual review complete; user acceptance pending.",
+    "video": "Existing export and video-tour.json left unchanged per prior request.",
+    "source_retention": "Exact prompts, source roles/hashes, original Git sources and final hashes consolidated here; no revision folder created."
+  }
 }
