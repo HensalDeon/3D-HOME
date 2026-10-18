@@ -212,17 +212,17 @@
     "07-bedroom1-opposite.png": {
       "status": "assistant-reviewed",
       "revision": "R18",
-      "sha256": "d0bfe1f2db76b793278576bebe4091756fc42815513e8c981946d882bff3f7c0",
-      "review": "Assistant visual comparison: Roman blind removed; floor-length warm oatmeal ripple-fold curtains on slim ceiling track, drawn open. Existing camera, window opening/frame/sill, bedroom furniture/storage profiles and floor finish retained. No desks added.",
+      "sha256": "c89f8a0a196055b7cd67787a2755ec7d94be481dd47ee1d3e74c630ec5a9c623",
+      "review": "One compact muted-oak tree-style valet stand added between the open entry leaf and wardrobe side. Existing ceiling-level ripple curtains retained. Existing doors, wardrobe profiles, bed, flooring and distant bathroom/stair view retained. Assistant visual review only; generated photographs are illustrative, not pixel-exact measured geometry.",
       "reviewed_at": "2026-10-18",
-      "method": "built-in-imagegen-window-treatment-edit",
+      "method": "built-in-imagegen-local-object-and-curtain-edit",
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png"
       ],
       "user_approval": "pending",
-      "render_review": "Assistant visual comparison with edit target, Bedroom 1 wide floor reference and original kitchen palette; retained geometry authority unchanged. Generated photograph remains illustrative, not certified pixel-exact geometry.",
-      "prompt_id": "ripple-curtains-2026-10-18-07-bedroom1-opposite",
+      "render_review": "Compared against pre-edit photograph, selected same-revision room reference and kitchen wide/detail. Ceiling mounting corrected where needed; existing room layout and furniture visually retained. Stand design is conceptual and does not certify a product fit.",
+      "prompt_id": "ceiling-curtains-oak-valet-2026-10-18-07-bedroom1-opposite",
       "geometry_authority": {
         "storage_layout": "../model/src/storage-layout.json",
         "house_model": "../model/src/house.js",
@@ -231,18 +231,19 @@
       "finish_revision": "bedroom-wood-look-floor-2026-10-08",
       "floor_reference": "images/07-bedroom1-wide.png",
       "floor_scope": "Bedroom exposed flooring only; common-area stone beyond door retained",
-      "presentation_revision": "bedroom-ripple-curtains-2026-10-18",
+      "presentation_revision": "bedroom-ceiling-curtains-oak-valet-2026-10-18",
       "prompt_file": ".source/image-release.json",
       "superseded": {
-        "source_commit": "401c9d111305d55e16daba61279c5158708f0b49",
+        "source_commit": "4f84d7672b40f0154d5cb9d7fa9c54504421f9d1",
         "path_at_commit": "interiors/images/07-bedroom1-opposite.png",
-        "sha256": "b7dcfa34895df6024415e211b839f8ec30e66443844f17c6f82469eaf12c0be5",
+        "sha256": "d0bfe1f2db76b793278576bebe4091756fc42815513e8c981946d882bff3f7c0",
         "size": [
           1536,
           1024
         ]
       },
-      "window_treatment": "Warm light oatmeal/greige linen-look privacy fabric, continuous S-shaped ripple folds, slim ceiling track, open stacks, hems just above floor."
+      "window_treatment": "Warm light oatmeal/greige linen-look privacy fabric, continuous S-shaped ripple folds, slim ceiling track, open stacks, hems just above floor.",
+      "valet_stand": "Compact muted-oak freestanding tree-style stand, staggered upright hooks, two small round shelves and round base; one neutral shirt and folded cloth. Bedroom 3 uses a slimmer version."
     },
     "07-bedroom1-wide.png": {
       "status": "assistant-reviewed",
@@ -313,17 +314,17 @@
     "08-bedroom2-opposite.png": {
       "status": "assistant-reviewed",
       "revision": "R19",
-      "sha256": "1232f0de44520b2cdb8918dc3a6c34315e243601c01d0c7f58cee38ff3144b3b",
-      "review": "Assistant visual comparison: Roman blind removed; floor-length warm oatmeal ripple-fold curtains on slim ceiling track, drawn open. Existing camera, window opening/frame/sill, bedroom furniture/storage profiles and floor finish retained. No desks added. Actual stair passage and distant study Roman blind are retained outside the bedroom.",
+      "sha256": "638d2283a8deae2db8c77da4dd40e015c6b3495a4bda987ac08770a41df888bb",
+      "review": "One matching compact oak valet stand added beside the wardrobe/entry. Right-window ripple curtain track and headers raised to the actual ceiling junction. Window, wardrobe, bed, doorway and distant study/guard sightline retained. Assistant visual review only; generated photographs are illustrative, not pixel-exact measured geometry.",
       "reviewed_at": "2026-10-18",
-      "method": "built-in-imagegen-window-treatment-edit",
+      "method": "built-in-imagegen-local-object-and-curtain-edit",
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png"
       ],
       "user_approval": "pending",
-      "render_review": "Assistant visual comparison with edit target, Bedroom 1 wide floor reference and original kitchen palette; retained geometry authority unchanged. Generated photograph remains illustrative, not certified pixel-exact geometry.",
-      "prompt_id": "ripple-curtains-2026-10-18-08-bedroom2-opposite",
+      "render_review": "Compared against pre-edit photograph, selected same-revision room reference and kitchen wide/detail. Ceiling mounting corrected where needed; existing room layout and furniture visually retained. Stand design is conceptual and does not certify a product fit.",
+      "prompt_id": "ceiling-curtains-oak-valet-2026-10-18-08-bedroom2-opposite",
       "geometry_authority": {
         "storage_layout": "../model/src/storage-layout.json",
         "house_model": "../model/src/house.js",
@@ -333,23 +334,24 @@
       "finish_revision": "bedroom-wood-look-floor-2026-10-08",
       "floor_reference": "images/07-bedroom1-wide.png",
       "floor_scope": "Bedroom exposed flooring only; common-area stone beyond door retained",
-      "presentation_revision": "bedroom-ripple-curtains-2026-10-18",
+      "presentation_revision": "bedroom-ceiling-curtains-oak-valet-2026-10-18",
       "prompt_file": ".source/image-release.json",
       "superseded": {
-        "source_commit": "401c9d111305d55e16daba61279c5158708f0b49",
+        "source_commit": "4f84d7672b40f0154d5cb9d7fa9c54504421f9d1",
         "path_at_commit": "interiors/images/08-bedroom2-opposite.png",
-        "sha256": "b969da3516cdad56785e549935f8ceb4e03179190ab1426f5abe5d31f030eff9",
+        "sha256": "1232f0de44520b2cdb8918dc3a6c34315e243601c01d0c7f58cee38ff3144b3b",
         "size": [
           1536,
           1024
         ]
       },
-      "window_treatment": "Warm light oatmeal/greige linen-look privacy fabric, continuous S-shaped ripple folds, slim ceiling track, open stacks, hems just above floor."
+      "window_treatment": "Warm light oatmeal/greige linen-look privacy fabric, continuous S-shaped ripple folds, slim ceiling track, open stacks, hems just above floor.",
+      "valet_stand": "Compact muted-oak freestanding tree-style stand, staggered upright hooks, two small round shelves and round base; one neutral shirt and folded cloth. Bedroom 3 uses a slimmer version."
     },
     "08-bedroom2-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "017c434d76b8724855f840536741b078ffb7cbc5b05caa811e47fad55a8645f1",
-      "review": "Assistant visual comparison: Roman blind removed; floor-length warm oatmeal ripple-fold curtains on slim ceiling track, drawn open. Existing camera, window opening/frame/sill, bedroom furniture/storage profiles and floor finish retained. No desks added. Rear balcony door/threshold remain unobstructed.",
+      "sha256": "59c2cdd95b856cbde6d9ccf9aa51d67595ebabed89bcc07ed14292fa8973da92",
+      "review": "Left-window curtain headers extended to ceiling level above the top crop; low wall track removed. Existing window, bed, art, lamp, bedside unit and balcony door retained. Entry-side stand is behind this camera; no duplicate added. Assistant visual review only; generated photographs are illustrative, not pixel-exact measured geometry.",
       "reviewed_at": "2026-10-18",
       "metadata_alignment": {
         "previous_sha256": "ad2493a3c55b8096adca365d750035e5fcd0531d9e86c6b75ca9771eaee4af39",
@@ -357,20 +359,22 @@
         "reason": "Aligned stale release hash with preserved canonical file during cleanup; image pixels unchanged."
       },
       "user_approval": "pending",
-      "presentation_revision": "bedroom-ripple-curtains-2026-10-18",
-      "method": "built-in-imagegen-window-treatment-edit",
-      "prompt_id": "ripple-curtains-2026-10-18-08-bedroom2-wide",
+      "presentation_revision": "bedroom-ceiling-curtains-oak-valet-2026-10-18",
+      "method": "built-in-imagegen-local-object-and-curtain-edit",
+      "prompt_id": "ceiling-curtains-oak-valet-2026-10-18-08-bedroom2-wide",
       "prompt_file": ".source/image-release.json",
       "superseded": {
-        "source_commit": "401c9d111305d55e16daba61279c5158708f0b49",
+        "source_commit": "4f84d7672b40f0154d5cb9d7fa9c54504421f9d1",
         "path_at_commit": "interiors/images/08-bedroom2-wide.png",
-        "sha256": "c9aa67b6f8cd9d842ad8d13474d15c08c2c2047d6af1959eebdd7a3f8f770ae4",
+        "sha256": "017c434d76b8724855f840536741b078ffb7cbc5b05caa811e47fad55a8645f1",
         "size": [
           1490,
           1055
         ]
       },
-      "window_treatment": "Warm light oatmeal/greige linen-look privacy fabric, continuous S-shaped ripple folds, slim ceiling track, open stacks, hems just above floor."
+      "window_treatment": "Warm light oatmeal/greige linen-look privacy fabric, continuous S-shaped ripple folds, slim ceiling track, open stacks, hems just above floor.",
+      "render_review": "Compared against pre-edit photograph, selected same-revision room reference and kitchen wide/detail. Ceiling mounting corrected where needed; existing room layout and furniture visually retained. Stand design is conceptual and does not certify a product fit.",
+      "valet_stand": "The room has one stand by its entry, behind this camera and outside this crop. No duplicate in this view."
     },
     "09-bedroom3-detail.png": {
       "status": "assistant-reviewed",
@@ -407,45 +411,46 @@
     "09-bedroom3-opposite.png": {
       "status": "assistant-reviewed",
       "revision": "R18",
-      "sha256": "8a8fc5e7e3a97ce61862750fc5135db67b0091743af314bf6a51d319ad74b998",
-      "review": "Assistant visual comparison: Roman blind removed; floor-length warm oatmeal ripple-fold curtains on slim ceiling track, drawn open. Existing camera, window opening/frame/sill, bedroom furniture/storage profiles and floor finish retained. No desks added. Bedroom 3 right-angle wardrobe corner/return and all paired doors retained.",
+      "sha256": "3907700334fd448a5e7cacf29d8386689e54882c31effa3d5b720a2f265b52a8",
+      "review": "Right-window curtain headers extended to ceiling level, continuing through the top crop as appropriate. Bed, closed ensuite door, bedside flowers, art, wardrobe edge and floor retained. Entry-side stand is behind this camera; no duplicate added. Assistant visual review only; generated photographs are illustrative, not pixel-exact measured geometry.",
       "reviewed_at": "2026-10-18",
-      "method": "built-in-imagegen-window-treatment-edit",
+      "method": "built-in-imagegen-local-object-and-curtain-edit",
       "geometry_source": null,
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png"
       ],
       "user_approval": "pending",
-      "render_review": "Assistant visual comparison against model geometry and kitchen style; presentation is not certified pixel-exact geometry.",
-      "prompt_id": "ripple-curtains-2026-10-18-09-bedroom3-opposite",
-      "presentation_revision": "bedroom-ripple-curtains-2026-10-18",
+      "render_review": "Compared against pre-edit photograph, selected same-revision room reference and kitchen wide/detail. Ceiling mounting corrected where needed; existing room layout and furniture visually retained. Stand design is conceptual and does not certify a product fit.",
+      "prompt_id": "ceiling-curtains-oak-valet-2026-10-18-09-bedroom3-opposite",
+      "presentation_revision": "bedroom-ceiling-curtains-oak-valet-2026-10-18",
       "prompt_file": ".source/image-release.json",
       "superseded": {
-        "source_commit": "401c9d111305d55e16daba61279c5158708f0b49",
+        "source_commit": "4f84d7672b40f0154d5cb9d7fa9c54504421f9d1",
         "path_at_commit": "interiors/images/09-bedroom3-opposite.png",
-        "sha256": "a81ff3065c887f9d56d07f5af9523401e4de67d862b958273728b4f5081e6c48",
+        "sha256": "8a8fc5e7e3a97ce61862750fc5135db67b0091743af314bf6a51d319ad74b998",
         "size": [
           1536,
           1024
         ]
       },
-      "window_treatment": "Warm light oatmeal/greige linen-look privacy fabric, continuous S-shaped ripple folds, slim ceiling track, open stacks, hems just above floor."
+      "window_treatment": "Warm light oatmeal/greige linen-look privacy fabric, continuous S-shaped ripple folds, slim ceiling track, open stacks, hems just above floor.",
+      "valet_stand": "The room has one stand by its entry, behind this camera and outside this crop. No duplicate in this view."
     },
     "09-bedroom3-wide.png": {
       "status": "assistant-reviewed",
       "revision": "R18",
-      "sha256": "631a5e928a6e7ff3ff7851664de0df9782fbf62f8e333455aea840500efc0236",
-      "review": "Assistant visual comparison: Roman blind removed; floor-length warm oatmeal ripple-fold curtains on slim ceiling track, drawn open. Existing camera, window opening/frame/sill, bedroom furniture/storage profiles and floor finish retained. No desks added. Bedroom 3 right-angle wardrobe corner/return and all paired doors retained.",
+      "sha256": "851dd94fca1d0aa6f09ebeca504fc28a027624d05bffc68f4d270e31f70e6285",
+      "review": "Slimmer tree-style oak stand placed on the short headboard-wall strip between open entry leaf and existing bedside furniture; lower stand naturally occluded. Left-window curtain headers extended to the true ceiling level. Door angle, bedside unit, bed, L wardrobe and floor retained. Assistant visual review only; generated photographs are illustrative, not pixel-exact measured geometry.",
       "reviewed_at": "2026-10-18",
-      "method": "built-in-imagegen-window-treatment-edit",
+      "method": "built-in-imagegen-local-object-and-curtain-edit",
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png"
       ],
       "user_approval": "pending",
-      "render_review": "Assistant visual comparison with edit target, Bedroom 1 wide floor reference and original kitchen palette; retained geometry authority unchanged. Generated photograph remains illustrative, not certified pixel-exact geometry.",
-      "prompt_id": "ripple-curtains-2026-10-18-09-bedroom3-wide",
+      "render_review": "Compared against pre-edit photograph, selected same-revision room reference and kitchen wide/detail. Ceiling mounting corrected where needed; existing room layout and furniture visually retained. Stand design is conceptual and does not certify a product fit.",
+      "prompt_id": "ceiling-curtains-oak-valet-2026-10-18-09-bedroom3-wide",
       "geometry_authority": {
         "storage_layout": "../model/src/storage-layout.json",
         "house_model": "../model/src/house.js",
@@ -454,18 +459,19 @@
       "finish_revision": "bedroom-wood-look-floor-2026-10-08",
       "floor_reference": "images/07-bedroom1-wide.png",
       "floor_scope": "Bedroom exposed flooring only; common-area stone beyond door retained",
-      "presentation_revision": "bedroom-ripple-curtains-2026-10-18",
+      "presentation_revision": "bedroom-ceiling-curtains-oak-valet-2026-10-18",
       "prompt_file": ".source/image-release.json",
       "superseded": {
-        "source_commit": "401c9d111305d55e16daba61279c5158708f0b49",
+        "source_commit": "4f84d7672b40f0154d5cb9d7fa9c54504421f9d1",
         "path_at_commit": "interiors/images/09-bedroom3-wide.png",
-        "sha256": "422ad29911daced409b8d5988bb4cfe6fccd0120dde9220c99e5efb6fb59a42b",
+        "sha256": "631a5e928a6e7ff3ff7851664de0df9782fbf62f8e333455aea840500efc0236",
         "size": [
           1536,
           1024
         ]
       },
-      "window_treatment": "Warm light oatmeal/greige linen-look privacy fabric, continuous S-shaped ripple folds, slim ceiling track, open stacks, hems just above floor."
+      "window_treatment": "Warm light oatmeal/greige linen-look privacy fabric, continuous S-shaped ripple folds, slim ceiling track, open stacks, hems just above floor.",
+      "valet_stand": "Compact muted-oak freestanding tree-style stand, staggered upright hooks, two small round shelves and round base; one neutral shirt and folded cloth. Bedroom 3 uses a slimmer version."
     },
     "10-passage-wide.png": {
       "status": "accepted",
@@ -4759,7 +4765,8 @@
     "reason_closeups_unchanged": "No window/blind within either tight bed-detail crop.",
     "fabric": "Warm oatmeal/greige matte linen-look privacy curtains, ceiling track, ripple S-folds, open for daylight.",
     "approval": "Assistant visual review complete; user acceptance pending.",
-    "retention": "Prompts/input roles/hashes and final hashes consolidated here; previous originals recoverable from source commit 401c9d111305d55e16daba61279c5158708f0b49. No working revision folder created."
+    "retention": "Prompts/input roles/hashes and final hashes consolidated here; previous originals recoverable from source commit 401c9d111305d55e16daba61279c5158708f0b49. No working revision folder created.",
+    "follow_up": "User identified inconsistent header mounting; ceiling offsets in master/Bedroom 3 are superseded by bedroom_ceiling_valet_generation_history. Bedroom 1 remains the ceiling-height reference."
   },
   "bedroom_desk_feasibility": {
     "date": "2026-10-18",
@@ -4905,7 +4912,339 @@
       "path": "Bedroom_Desk_Feasibility.pdf",
       "sha256": "934175117bf5d533641f18f4992abf70c3cd5a26033d418c165ca58db3b4980b",
       "review": "Rendered to PNG and visually checked; floor plans and measured trade-offs fit on one A3 landscape page.",
-      "status": "Feasibility only; no desk or wardrobe reallocation implemented."
+      "status": "Withdrawn. PDF was already absent at the start of the ceiling/valet revision; active documentation links removed. Retain this record as historical analysis only."
+    },
+    "status": "Withdrawn at user request on 2026-10-18; historical analysis only. No desks or storage conversion implemented."
+  },
+  "bedroom_ceiling_valet_generation_history": [
+    {
+      "id": "ceiling-curtains-oak-valet-2026-10-18-07-bedroom1-opposite",
+      "date": "2026-10-18",
+      "image": "07-bedroom1-opposite.png",
+      "method": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Asset: canonical Bedroom 1 opposite interior photograph.\nIMAGE 1 is the EDIT TARGET and sole camera/geometry authority. Images 2/3 are the house kitchen palette and photographic realism references only.\nAdd ONE compact freestanding wooden dress/valet stand in the existing narrow solid-wall niche between the open entrance door and the LEFT SIDE of the fitted wardrobe. It stands against that wall, tucked beside the wardrobe's exposed left side, in the approximately 550 mm wall strip. The existing open door can naturally partially occlude the stand; never move the door to reveal it.\nDesign based on the user's uploaded reference: a tall airy tree-like stand with three slim round wooden uprights at staggered heights, short upward-angled rounded peg hooks, a small circular accessory tray at waist height, a second small circular shelf lower down, and a stable flat round plinth base. Compact interpretation: approximately 1650 mm tall, 300 mm diameter base/trays, hook envelope no more than 360 mm. Matte muted natural oak matching the existing wardrobe accent; fine grain, no orange gloss. Stage only one light neutral shirt neatly hanging from a short hook and one small folded cloth on the lower shelf; no bulky coat, hat or handbag expanding the footprint.\nThis is a LOCAL OBJECT INSERTION ONLY. Match the original camera scale, perspective, daylight, floor contact shadows and fine realistic material detail. Keep the main walkway, door swing and wardrobe front clear. No shelf or hook intersects the door or wardrobe.\nSTRICT INVARIANTS: original exact crop and image dimensions 1536x1024; all walls/corners/ceiling/window apertures and frames; existing oatmeal floor-length ceiling-mounted ripple curtains unchanged; wardrobe size, ivory/oak doors and lofts, handles and open space above; open entry leaf and hardware/angle; distant bathroom, stairs, passage and tile flooring; bed/headboard, sage/cream bedding and bedside furniture; original oak plank floor, rug, skirting, lighting and color balance. No rearrangement, enlarged room, desk or other additions. No text/watermark. Return only the edited full photograph.",
+      "inputs": [
+        {
+          "role": "Edit target: exact existing camera, crop, architecture and furniture layout",
+          "historical_source": {
+            "source_commit": "4f84d7672b40f0154d5cb9d7fa9c54504421f9d1",
+            "path_at_commit": "interiors/images/07-bedroom1-opposite.png",
+            "sha256": "d0bfe1f2db76b793278576bebe4091756fc42815513e8c981946d882bff3f7c0",
+            "size": [
+              1536,
+              1024
+            ]
+          }
+        },
+        {
+          "role": "Explicit house palette, material texture and photographic finish reference only",
+          "path": "images/06-kitchen-wide.png",
+          "sha256": "20945ad2ed111569f3daf8b6f853146bb37507fa7efd77bc9c8cea218af41a6c"
+        },
+        {
+          "role": "Explicit house palette, material texture and photographic finish reference only",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        }
+      ],
+      "geometry_reference": {
+        "source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 3,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "storage_source": "../model/src/storage-layout.json",
+        "storage_sha256": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+        "camera": "Retained canonical target camera and crop; no new camera or geometry generated",
+        "scope": "Photographic concept addition of a freestanding valet and/or curtain mounting-height correction; measured model/drawing files unchanged."
+      },
+      "review": "One compact muted-oak tree-style valet stand added between the open entry leaf and wardrobe side. Existing ceiling-level ripple curtains retained. Existing doors, wardrobe profiles, bed, flooring and distant bathroom/stair view retained. Assistant visual review only; generated photographs are illustrative, not pixel-exact measured geometry.",
+      "user_approval": "pending",
+      "output": {
+        "path": "images/07-bedroom1-opposite.png",
+        "sha256": "c89f8a0a196055b7cd67787a2755ec7d94be481dd47ee1d3e74c630ec5a9c623",
+        "size": [
+          1536,
+          1024
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-1c0d29e6-4e9a-492a-9bb7-89140be766b9.png"
+      }
+    },
+    {
+      "id": "ceiling-curtains-oak-valet-2026-10-18-08-bedroom2-opposite",
+      "date": "2026-10-18",
+      "image": "08-bedroom2-opposite.png",
+      "method": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Asset: MASTER BEDROOM opposite photograph.\nIMAGE 1 is the EDIT TARGET and camera/layout authority. IMAGE 2 is the successful Bedroom 1 opposite showing the selected compact wooden valet stand; use its object design, scale and staging. IMAGE 3 is Bedroom 1 wide showing the correct ceiling-level curtain treatment. IMAGES 4/5 are kitchen palette and photoreal finish references only.\nMake exactly TWO localized edits:\n1. Raise the existing RIGHT WINDOW ripple-curtain track and fabric headers to the ACTUAL CEILING at the wall/ceiling junction, like image 3. The current track floats lower on the wall, leaving a visible strip above. Eliminate that mounting gap by extending the same oatmeal fabric UPWARDS to the true ceiling-level track. Keep hems just clear of floor and curtains drawn open in compact soft S-fold stacks. Do not lower the ceiling, enlarge the window, change the wardrobe or add a bulkhead/pelmet. Preserve window frame, opening, sill and daylight. Track follows the real perspective and actual ceiling junction.\n2. Add ONE compact freestanding matte muted-oak wooden dress/valet stand matching image 2, in the narrow existing solid-wall niche between the open entry door and the wardrobe's exposed LEFT SIDE. Approximately 1650 mm tall, 300 mm round plinth/base and two small round trays, three slender staggered uprights and short upward-angled rounded hooks; total hook width no more than 360 mm. Same neutral shirt and small folded cloth as image 2. Keep it tucked against the wall, clear of wardrobe fronts and doorway/door swing. Existing open door can partially hide it; do not move that leaf to expose the stand.\nSTRICT INVARIANTS: original 1536x1024 crop/camera/perspective, wall/ceiling corners and room size, all door openings/leaves/angles/handles, distant study/sewing table/Roman blind/stair guards through entry, wardrobe exact size/divisions/handles/lofts and open space above, bed/olive textiles/headboard, all bedside furniture and existing props, original plank floor/rug/skirting, lamps, exposure and color balance. No desk, room widening, altered layout or new furniture besides the single stand. Only localized curtain-header extension and stand with realistic contact shadows. No text/watermark. Return the full edited photograph.",
+      "inputs": [
+        {
+          "role": "Edit target: exact existing camera, crop, architecture and furniture layout",
+          "historical_source": {
+            "source_commit": "4f84d7672b40f0154d5cb9d7fa9c54504421f9d1",
+            "path_at_commit": "interiors/images/08-bedroom2-opposite.png",
+            "sha256": "1232f0de44520b2cdb8918dc3a6c34315e243601c01d0c7f58cee38ff3144b3b",
+            "size": [
+              1536,
+              1024
+            ]
+          }
+        },
+        {
+          "role": "Successful same-revision stand/curtain consistency reference; not a camera/layout override",
+          "path": "images/07-bedroom1-opposite.png",
+          "sha256": "c89f8a0a196055b7cd67787a2755ec7d94be481dd47ee1d3e74c630ec5a9c623"
+        },
+        {
+          "role": "Ceiling-level curtain height/fabric reference",
+          "path": "images/07-bedroom1-wide.png",
+          "sha256": "18409ff91b776c6e29e2bdc538e6892dd0df74dd92c0f9b338dbd06e34142696"
+        },
+        {
+          "role": "Explicit house palette, material texture and photographic finish reference only",
+          "path": "images/06-kitchen-wide.png",
+          "sha256": "20945ad2ed111569f3daf8b6f853146bb37507fa7efd77bc9c8cea218af41a6c"
+        },
+        {
+          "role": "Explicit house palette, material texture and photographic finish reference only",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        }
+      ],
+      "geometry_reference": {
+        "source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 4,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "storage_source": "../model/src/storage-layout.json",
+        "storage_sha256": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+        "camera": "Retained canonical target camera and crop; no new camera or geometry generated",
+        "scope": "Photographic concept addition of a freestanding valet and/or curtain mounting-height correction; measured model/drawing files unchanged."
+      },
+      "review": "One matching compact oak valet stand added beside the wardrobe/entry. Right-window ripple curtain track and headers raised to the actual ceiling junction. Window, wardrobe, bed, doorway and distant study/guard sightline retained. Assistant visual review only; generated photographs are illustrative, not pixel-exact measured geometry.",
+      "user_approval": "pending",
+      "output": {
+        "path": "images/08-bedroom2-opposite.png",
+        "sha256": "638d2283a8deae2db8c77da4dd40e015c6b3495a4bda987ac08770a41df888bb",
+        "size": [
+          1536,
+          1024
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-8ea70f3d-e953-4900-bdd6-48dba24ed56e.png"
+      }
+    },
+    {
+      "id": "ceiling-curtains-oak-valet-2026-10-18-09-bedroom3-wide",
+      "date": "2026-10-18",
+      "image": "09-bedroom3-wide.png",
+      "method": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Asset: Bedroom 3 wide photograph.\nIMAGE 1 is the EDIT TARGET and exact layout/camera authority. IMAGE 2 is the selected Bedroom 1 opposite, showing the chosen compact wooden dress stand. IMAGE 3 is Bedroom 1 wide showing correct ceiling-level curtain headers. IMAGES 4/5 are kitchen palette and photographic finish references only.\nMake exactly TWO LOCAL changes:\n1. Raise the LEFT WINDOW's existing oatmeal ripple-fold curtains and discreet white track to the actual wall/CEILING junction. Eliminate the low wall-mounted header offset; extend fabric upwards to the true ceiling datum, as in image 3. If the ceiling is outside this crop, the fabric continues naturally out of frame. Preserve the original window aperture, black frame/mullions/sill and view. Keep compact open S-fold stacks and floor-length hems just clear of floor, same fabric/color, no pelmet or new ceiling/bulkhead. Do not fill the open space above the wardrobe.\n2. Add ONE compact wooden dress/valet stand inspired by image 2 and the user's tree-style stand reference, on the SHORT HEADBOARD-WALL STRIP at the far RIGHT, between the open entry door leaf and the EXISTING small bedside unit. Tuck against that wall on the room side, entirely clear of the doorway and wardrobe fronts. It should be naturally partly occluded by the existing open door/bedside furniture rather than displacing anything. Reduced compact version: about 1600 mm tall, 280 mm round flat base, two tiny round trays, three slim staggered wood uprights with short upward-angled rounded pegs, maximum 300 mm hook envelope; matte muted oak to match cabinetry. One neatly hung lightweight neutral shirt close to the uprights, a folded cloth on lower shelf. No sprawling coat/hats/bag.\nThere is only a short available strip between the fully open entry door and bedside furniture. Use realistic small scale; do NOT widen that gap, shift the door, remove or move the bedside unit, or overlap the stand base with another object's footprint. Keep the bed-foot through-route free. The stand may be partly hidden, with just its upper posts visible; physical plausibility matters more than revealing every shelf.\nSTRICT INVARIANTS: original exact 1536x1024 camera/crop/room proportions, ceiling and wall corners, actual 90-degree L wardrobe with ivory/oak doors/lofts/handles and open space above, all doors/frames/leaves/angles/handles and corridor view, bed/headboard/clay/cream linen, white bedside furniture, plank floor/rug/skirting, lights, props, soft daylight/exposure/color balance. No desk, new doorway, enlarged room or other furniture. Only curtain mounting correction and one stand, with realistic contact shadows. No text/watermark. Return the full edited photograph.",
+      "inputs": [
+        {
+          "role": "Edit target: exact existing camera, crop, architecture and furniture layout",
+          "historical_source": {
+            "source_commit": "4f84d7672b40f0154d5cb9d7fa9c54504421f9d1",
+            "path_at_commit": "interiors/images/09-bedroom3-wide.png",
+            "sha256": "631a5e928a6e7ff3ff7851664de0df9782fbf62f8e333455aea840500efc0236",
+            "size": [
+              1536,
+              1024
+            ]
+          }
+        },
+        {
+          "role": "Successful same-revision stand/curtain consistency reference; not a camera/layout override",
+          "path": "images/07-bedroom1-opposite.png",
+          "sha256": "c89f8a0a196055b7cd67787a2755ec7d94be481dd47ee1d3e74c630ec5a9c623"
+        },
+        {
+          "role": "Ceiling-level curtain height/fabric reference",
+          "path": "images/07-bedroom1-wide.png",
+          "sha256": "18409ff91b776c6e29e2bdc538e6892dd0df74dd92c0f9b338dbd06e34142696"
+        },
+        {
+          "role": "Explicit house palette, material texture and photographic finish reference only",
+          "path": "images/06-kitchen-wide.png",
+          "sha256": "20945ad2ed111569f3daf8b6f853146bb37507fa7efd77bc9c8cea218af41a6c"
+        },
+        {
+          "role": "Explicit house palette, material texture and photographic finish reference only",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        }
+      ],
+      "geometry_reference": {
+        "source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 4,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "storage_source": "../model/src/storage-layout.json",
+        "storage_sha256": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+        "camera": "Retained canonical target camera and crop; no new camera or geometry generated",
+        "scope": "Photographic concept addition of a freestanding valet and/or curtain mounting-height correction; measured model/drawing files unchanged."
+      },
+      "review": "Slimmer tree-style oak stand placed on the short headboard-wall strip between open entry leaf and existing bedside furniture; lower stand naturally occluded. Left-window curtain headers extended to the true ceiling level. Door angle, bedside unit, bed, L wardrobe and floor retained. Assistant visual review only; generated photographs are illustrative, not pixel-exact measured geometry.",
+      "user_approval": "pending",
+      "output": {
+        "path": "images/09-bedroom3-wide.png",
+        "sha256": "851dd94fca1d0aa6f09ebeca504fc28a027624d05bffc68f4d270e31f70e6285",
+        "size": [
+          1536,
+          1024
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-2efa440b-39cc-4017-aa31-f26e51495ca5.png"
+      }
+    },
+    {
+      "id": "ceiling-curtains-oak-valet-2026-10-18-08-bedroom2-wide",
+      "date": "2026-10-18",
+      "image": "08-bedroom2-wide.png",
+      "method": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Asset: master bedroom WIDE photograph.\nIMAGE 1 is the EDIT TARGET and exact layout/camera authority. IMAGE 2 is the successful corrected MASTER opposite view: same room's ceiling-level oatmeal ripple curtains and stand. IMAGE 3 is Bedroom 1 wide, the selected ceiling-level curtain appearance. IMAGES 4/5 are kitchen palette/photographic realism references only.\nMake ONE LOCAL correction: raise the existing LEFT WINDOW curtain track and ripple fabric headers to the actual CEILING datum, matching images 2/3. In this wide camera the left ceiling junction is mostly outside the TOP crop: therefore extend the curtain stacks naturally out through the top edge instead of showing the present lower-mounted header/track sloping across the upper-left wall. Remove the lower wall track and its local mounting shadow; do not invent a new visible ceiling, change the crop or alter room geometry. Same warm oatmeal/greige woven fabric, soft continuous S-shaped ripple folds, compact open stacks, original floor-length hems just clear of floor. Keep window frame/glass/mullions/aperture/sill and daylight exactly unchanged.\nThe single new valet stand in the room sits beside the entrance/wardrobe on the wall BEHIND THIS CAMERA, and is outside this wide crop; DO NOT add a second stand anywhere visible in image 1, or copy image 2's cupboard/door arrangement into this camera.\nSTRICT INVARIANTS: original exact 1490x1055 image/camera/crop/perspective, original ceiling/walls/corners/window positions, bed and olive/cream linens/headboard, bedside oak cabinet/books/plant, black reading lamp/socket, wall art, balcony door at rear right and entrance leaf/hardware foreground right, floor planks/rug/skirting, furniture positions/props, exposure/light/shadows/color balance. No desk, extra furniture, new drapes across balcony doorway, wardrobe alterations, room enlargement or new ceiling bulkhead/pelmet. Only extend original window curtain headers to true ceiling-level out of crop. No text/watermark. Return full edited photograph.",
+      "inputs": [
+        {
+          "role": "Edit target: exact existing camera, crop, architecture and furniture layout",
+          "historical_source": {
+            "source_commit": "4f84d7672b40f0154d5cb9d7fa9c54504421f9d1",
+            "path_at_commit": "interiors/images/08-bedroom2-wide.png",
+            "sha256": "017c434d76b8724855f840536741b078ffb7cbc5b05caa811e47fad55a8645f1",
+            "size": [
+              1490,
+              1055
+            ]
+          }
+        },
+        {
+          "role": "Successful same-revision stand/curtain consistency reference; not a camera/layout override",
+          "path": "images/08-bedroom2-opposite.png",
+          "sha256": "638d2283a8deae2db8c77da4dd40e015c6b3495a4bda987ac08770a41df888bb"
+        },
+        {
+          "role": "Ceiling-level curtain height/fabric reference",
+          "path": "images/07-bedroom1-wide.png",
+          "sha256": "18409ff91b776c6e29e2bdc538e6892dd0df74dd92c0f9b338dbd06e34142696"
+        },
+        {
+          "role": "Explicit house palette, material texture and photographic finish reference only",
+          "path": "images/06-kitchen-wide.png",
+          "sha256": "20945ad2ed111569f3daf8b6f853146bb37507fa7efd77bc9c8cea218af41a6c"
+        },
+        {
+          "role": "Explicit house palette, material texture and photographic finish reference only",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        }
+      ],
+      "geometry_reference": {
+        "source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 4,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "storage_source": "../model/src/storage-layout.json",
+        "storage_sha256": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+        "camera": "Retained canonical target camera and crop; no new camera or geometry generated",
+        "scope": "Photographic concept addition of a freestanding valet and/or curtain mounting-height correction; measured model/drawing files unchanged."
+      },
+      "review": "Left-window curtain headers extended to ceiling level above the top crop; low wall track removed. Existing window, bed, art, lamp, bedside unit and balcony door retained. Entry-side stand is behind this camera; no duplicate added. Assistant visual review only; generated photographs are illustrative, not pixel-exact measured geometry.",
+      "user_approval": "pending",
+      "output": {
+        "path": "images/08-bedroom2-wide.png",
+        "sha256": "59c2cdd95b856cbde6d9ccf9aa51d67595ebabed89bcc07ed14292fa8973da92",
+        "size": [
+          1490,
+          1055
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-4aa45a7d-a72e-4e80-af33-3dd34f75a70d.png"
+      }
+    },
+    {
+      "id": "ceiling-curtains-oak-valet-2026-10-18-09-bedroom3-opposite",
+      "date": "2026-10-18",
+      "image": "09-bedroom3-opposite.png",
+      "method": "built-in image_gen",
+      "prompt": "Use case: precise-object-edit. Asset: Bedroom 3 OPPOSITE photograph.\nIMAGE 1 is the EDIT TARGET and sole exact layout/camera authority. IMAGE 2 is the successful Bedroom 3 wide with the same room's corrected ceiling-level curtains and compact entry-side wooden stand. IMAGE 3 is Bedroom 1 wide, the ceiling-track fabric/height reference. IMAGES 4/5 are kitchen palette/material/photorealism references only.\nMake ONE LOCAL correction: raise the RIGHT WINDOW's current white track and ripple-fold curtain headers to the ACTUAL CEILING junction. At present the top of the left curtain stack and track sit slightly down the wall. Extend the same warm oatmeal linen-look fabric upward until its hanging point meets the true ceiling. Where the junction lies outside the image crop, let the curtain continue out of the top frame; do not change the crop or invent a lower ceiling. Keep soft continuous S-folds, compact drawn-open stacks and unchanged floor-length hems just clear of floor. Keep wall/ceiling corner, window aperture/frame/glazing/mullions/sill/outside view unchanged. No pelmet or new bulkhead.\nThe wooden dress stand added in image 2 is beside the BEDROOM ENTRY on the wall BEHIND THIS OPPOSITE CAMERA. It is not visible in this crop. Do NOT put another stand by the visible closed bathroom door, beside the window or into the bed-foot aisle.\nSTRICT INVARIANTS: original exact 1536x1024 camera/crop/perspective; ceiling plane and spotlight, all walls/corners and room size; closed bathroom door/trim/hardware; existing bed/headboard/cream-clay textiles and bedside unit/flowers; art, black reading lamp/socket, visible ivory wardrobe edge and charcoal handle foreground right; plank floor/rug/skirting, existing daylight/shadows/exposure and color balance. No desks or other additions/rearrangement. Only curtain header/track height and directly associated fabric/shadows may change. No text/watermark. Return the full edited photograph.",
+      "inputs": [
+        {
+          "role": "Edit target: exact existing camera, crop, architecture and furniture layout",
+          "historical_source": {
+            "source_commit": "4f84d7672b40f0154d5cb9d7fa9c54504421f9d1",
+            "path_at_commit": "interiors/images/09-bedroom3-opposite.png",
+            "sha256": "8a8fc5e7e3a97ce61862750fc5135db67b0091743af314bf6a51d319ad74b998",
+            "size": [
+              1536,
+              1024
+            ]
+          }
+        },
+        {
+          "role": "Successful same-revision stand/curtain consistency reference; not a camera/layout override",
+          "path": "images/09-bedroom3-wide.png",
+          "sha256": "851dd94fca1d0aa6f09ebeca504fc28a027624d05bffc68f4d270e31f70e6285"
+        },
+        {
+          "role": "Ceiling-level curtain height/fabric reference",
+          "path": "images/07-bedroom1-wide.png",
+          "sha256": "18409ff91b776c6e29e2bdc538e6892dd0df74dd92c0f9b338dbd06e34142696"
+        },
+        {
+          "role": "Explicit house palette, material texture and photographic finish reference only",
+          "path": "images/06-kitchen-wide.png",
+          "sha256": "20945ad2ed111569f3daf8b6f853146bb37507fa7efd77bc9c8cea218af41a6c"
+        },
+        {
+          "role": "Explicit house palette, material texture and photographic finish reference only",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        }
+      ],
+      "geometry_reference": {
+        "source": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "page": 4,
+        "sha256": "c1b017e8e264372274caedf4b8086980b1f0674cf1c92052684a5cea46a86d5e",
+        "storage_source": "../model/src/storage-layout.json",
+        "storage_sha256": "6ac920e58dc316289b07d4e892032678767180a16c9139f055fbe8b7bf4e618f",
+        "camera": "Retained canonical target camera and crop; no new camera or geometry generated",
+        "scope": "Photographic concept addition of a freestanding valet and/or curtain mounting-height correction; measured model/drawing files unchanged."
+      },
+      "review": "Right-window curtain headers extended to ceiling level, continuing through the top crop as appropriate. Bed, closed ensuite door, bedside flowers, art, wardrobe edge and floor retained. Entry-side stand is behind this camera; no duplicate added. Assistant visual review only; generated photographs are illustrative, not pixel-exact measured geometry.",
+      "user_approval": "pending",
+      "output": {
+        "path": "images/09-bedroom3-opposite.png",
+        "sha256": "3907700334fd448a5e7cacf29d8386689e54882c31effa3d5b720a2f265b52a8",
+        "size": [
+          1536,
+          1024
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-126e6fe7-3b3a-45f5-a4cc-b364c57dee16.png"
+      }
     }
+  ],
+  "bedroom_ceiling_valet_decision": {
+    "date": "2026-10-18",
+    "user_request": "Drop bedroom desks; use the uploaded wooden dress-stand image as the design reference for a compact stand in every bedroom, and correct curtain mounting consistency using Bedroom 1 as the ceiling-level reference.",
+    "scope": [
+      "07-bedroom1-opposite.png",
+      "08-bedroom2-opposite.png",
+      "09-bedroom3-wide.png",
+      "08-bedroom2-wide.png",
+      "09-bedroom3-opposite.png"
+    ],
+    "user_attachment": {
+      "role": "Stand design reference only: tall slender tree-style timber uprights, upward branch hooks, two round shelves and round plinth.",
+      "retention": "Original attachment remains in conversation; no local attachment file was available or added to the project. Its design was transcribed into the exact prompts; it was not passed as a local image input. The first successful generated Bedroom 1 stand was passed explicitly to subsequent room edits."
+    },
+    "curtains": "Consistent actual ceiling-level low-profile tracks and floor-length oatmeal ripple-fold fabric. Where the ceiling is above the camera crop, fabric continues through the top edge. Original window positions and heights remain unchanged.",
+    "ceiling_basis_m": 2.85,
+    "ceiling_source": "../model/src/storage-layout.json",
+    "stand_concept": {
+      "bedroom1_and_master": "About 1650 mm high; 300 mm round base/trays; hook envelope up to 360 mm. Niche between entrance leaf and exposed wardrobe side, on the 550 mm solid-wall strip.",
+      "bedroom3": "About 1600 mm high; 280 mm round base; hook envelope up to 300 mm. Short headboard-wall strip beyond the open entry leaf, beside existing bedside furniture; naturally partly occluded.",
+      "finish": "Matte muted natural oak matching existing furniture, one lightweight neutral shirt and small folded cloth; no large garment rail.",
+      "basis": "Illustrative furniture design envelopes, not selected products or additions to the measured model. Retained door/wardrobe routes reviewed visually; actual loaded hook/garment envelope and Bedroom 3 bedside dimensions must be checked for furniture procurement."
+    },
+    "unchanged_bedroom_views": [
+      "07-bedroom1-wide.png",
+      "07-bedroom1-detail.png",
+      "08-bedroom2-detail.png",
+      "09-bedroom3-detail.png"
+    ],
+    "reason_unchanged": "Bedroom 1 wide already establishes the correct ceiling datum; closeups do not show a low header or the new entry-side stand. Do not relocate the stand simply to show it in every camera.",
+    "scope_limits": "All other canonical images, model sources and drawing files unchanged. No desks or wardrobe reallocation. No video or working revision folder added.",
+    "approval": "User approved ceiling-height correction and the stand reference/concept. Assistant reviewed these five new photographs; user acceptance of final generated edits pending.",
+    "retention": "Exact prompts, input roles/hashes and output hashes consolidated in this manifest. Pre-edit photos recoverable from 4f84d7672b40f0154d5cb9d7fa9c54504421f9d1."
   }
 }
