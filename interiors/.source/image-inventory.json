@@ -85,7 +85,7 @@
       1536,
       1024
     ],
-    "sha256": "b7dcfa34895df6024415e211b839f8ec30e66443844f17c6f82469eaf12c0be5"
+    "sha256": "d0bfe1f2db76b793278576bebe4091756fc42815513e8c981946d882bff3f7c0"
   },
   {
     "file": "07-bedroom1-wide.png",
@@ -93,7 +93,7 @@
       1536,
       1024
     ],
-    "sha256": "50629a27b7e04ba438fa62e382ac819b6923dc5f23925ad88acc351b1e1d22c6"
+    "sha256": "18409ff91b776c6e29e2bdc538e6892dd0df74dd92c0f9b338dbd06e34142696"
   },
   {
     "file": "08-bedroom2-detail.png",
@@ -109,7 +109,7 @@
       1536,
       1024
     ],
-    "sha256": "b969da3516cdad56785e549935f8ceb4e03179190ab1426f5abe5d31f030eff9"
+    "sha256": "1232f0de44520b2cdb8918dc3a6c34315e243601c01d0c7f58cee38ff3144b3b"
   },
   {
     "file": "08-bedroom2-wide.png",
@@ -117,7 +117,7 @@
       1490,
       1055
     ],
-    "sha256": "c9aa67b6f8cd9d842ad8d13474d15c08c2c2047d6af1959eebdd7a3f8f770ae4"
+    "sha256": "017c434d76b8724855f840536741b078ffb7cbc5b05caa811e47fad55a8645f1"
   },
   {
     "file": "09-bedroom3-detail.png",
@@ -125,7 +125,7 @@
       1536,
       1024
     ],
-    "sha256": "a3de2d36241f1e9909891c214bd36cd4f1dffb56633065fe1b5e0639feab058c"
+    "sha256": "dcd171ea1723913a0042d4ac0a77b4a98d46c3351d24410c39273025b7c9a149"
   },
   {
     "file": "09-bedroom3-opposite.png",
@@ -133,7 +133,7 @@
       1536,
       1024
     ],
-    "sha256": "a81ff3065c887f9d56d07f5af9523401e4de67d862b958273728b4f5081e6c48"
+    "sha256": "8a8fc5e7e3a97ce61862750fc5135db67b0091743af314bf6a51d319ad74b998"
   },
   {
     "file": "09-bedroom3-wide.png",
@@ -141,7 +141,7 @@
       1536,
       1024
     ],
-    "sha256": "422ad29911daced409b8d5988bb4cfe6fccd0120dde9220c99e5efb6fb59a42b"
+    "sha256": "631a5e928a6e7ff3ff7851664de0df9782fbf62f8e333455aea840500efc0236"
   },
   {
     "file": "10-passage-wide.png",

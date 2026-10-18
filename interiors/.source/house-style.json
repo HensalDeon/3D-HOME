@@ -78,61 +78,61 @@
     {
       "file": "images/07-bedroom1-wide.png",
       "group": "Bedroom 1",
-      "role": "Sage accents, textured ivory linen and natural oak; the wide view governs light oak wood-look bedroom flooring. R19 revised finish example; original kitchen images remain the primary style authority.",
-      "sha256": "50629a27b7e04ba438fa62e382ac819b6923dc5f23925ad88acc351b1e1d22c6",
+      "role": "Sage accents, ivory linen and natural oak; warm oatmeal ceiling-track ripple curtains replace Roman blinds in window views. The wide view governs light oak wood-look bedroom flooring. R19 revised finish example; original kitchen images remain the primary style authority.",
+      "sha256": "18409ff91b776c6e29e2bdc538e6892dd0df74dd92c0f9b338dbd06e34142696",
       "revision": "R19"
     },
     {
       "file": "images/07-bedroom1-detail.png",
       "group": "Bedroom 1",
-      "role": "Sage accents, textured ivory linen and natural oak; the wide view governs light oak wood-look bedroom flooring.",
+      "role": "Sage accents, ivory linen and natural oak; warm oatmeal ceiling-track ripple curtains replace Roman blinds in window views. The wide view governs light oak wood-look bedroom flooring.",
       "sha256": "29a37c2005ae3235cd71e61ce884b5db37841d2502a63a35c63b6e4d19190be6"
     },
     {
       "file": "images/07-bedroom1-opposite.png",
       "group": "Bedroom 1",
-      "role": "Sage accents, textured ivory linen and natural oak; the wide view governs light oak wood-look bedroom flooring. R18 revised finish example; original kitchen images remain the primary style authority.",
-      "sha256": "b7dcfa34895df6024415e211b839f8ec30e66443844f17c6f82469eaf12c0be5",
+      "role": "Sage accents, ivory linen and natural oak; warm oatmeal ceiling-track ripple curtains replace Roman blinds in window views. The wide view governs light oak wood-look bedroom flooring. R18 revised finish example; original kitchen images remain the primary style authority.",
+      "sha256": "d0bfe1f2db76b793278576bebe4091756fc42815513e8c981946d882bff3f7c0",
       "revision": "R18"
     },
     {
       "file": "images/08-bedroom2-wide.png",
       "group": "Master bedroom",
-      "role": "Olive textiles, oatmeal upholstery, woven runner and oak; opposite-view bedroom flooring follows Bedroom 1 wide, with stone retained beyond the door.",
-      "sha256": "c9aa67b6f8cd9d842ad8d13474d15c08c2c2047d6af1959eebdd7a3f8f770ae4"
+      "role": "Olive textiles, oatmeal upholstery, woven runner and oak, with matching ripple-fold bedroom curtains. Original furniture remains; wardrobe-integrated desk feasibility is reviewed separately.",
+      "sha256": "017c434d76b8724855f840536741b078ffb7cbc5b05caa811e47fad55a8645f1"
     },
     {
       "file": "images/08-bedroom2-detail.png",
       "group": "Master bedroom",
-      "role": "Olive textiles, oatmeal upholstery, woven runner and oak; opposite-view bedroom flooring follows Bedroom 1 wide, with stone retained beyond the door.",
+      "role": "Olive textiles, oatmeal upholstery, woven runner and oak, with matching ripple-fold bedroom curtains. Original furniture remains; wardrobe-integrated desk feasibility is reviewed separately.",
       "sha256": "c62008e9bbef03a5284e440d0c8a474ca768d60c979e46062cc53fc4f494ae95"
     },
     {
       "file": "images/08-bedroom2-opposite.png",
       "group": "Master bedroom",
-      "role": "Olive textiles, oatmeal upholstery, woven runner and oak; opposite-view bedroom flooring follows Bedroom 1 wide, with stone retained beyond the door. R19 revised finish example; original kitchen images remain the primary style authority.",
-      "sha256": "b969da3516cdad56785e549935f8ceb4e03179190ab1426f5abe5d31f030eff9",
+      "role": "Olive textiles, oatmeal upholstery, woven runner and oak, with matching ripple-fold bedroom curtains. Original furniture remains; wardrobe-integrated desk feasibility is reviewed separately. R19 revised finish example; original kitchen images remain the primary style authority.",
+      "sha256": "1232f0de44520b2cdb8918dc3a6c34315e243601c01d0c7f58cee38ff3144b3b",
       "revision": "R19"
     },
     {
       "file": "images/09-bedroom3-wide.png",
       "group": "Bedroom 3",
-      "role": "Clay accent, ivory wardrobe with muted oak bay, and recessed charcoal pulls; wide-view bedroom flooring follows Bedroom 1 wide and preserves the rug. R18 revised finish example; original kitchen images remain the primary style authority.",
-      "sha256": "422ad29911daced409b8d5988bb4cfe6fccd0120dde9220c99e5efb6fb59a42b",
+      "role": "Clay accent and ivory/oak L wardrobe with paired charcoal pulls; oatmeal ripple-fold curtains keep wardrobe access clear. Bedroom furniture and floor finishes retained; desk feasibility reviewed separately. R18 revised finish example; original kitchen images remain the primary style authority.",
+      "sha256": "631a5e928a6e7ff3ff7851664de0df9782fbf62f8e333455aea840500efc0236",
       "revision": "R18"
     },
     {
       "file": "images/09-bedroom3-detail.png",
       "group": "Bedroom 3",
-      "role": "Clay accent, ivory wardrobe with muted oak bay, and recessed charcoal pulls; wide-view bedroom flooring follows Bedroom 1 wide and preserves the rug. R18 revised finish example; original kitchen images remain the primary style authority.",
-      "sha256": "a3de2d36241f1e9909891c214bd36cd4f1dffb56633065fe1b5e0639feab058c",
+      "role": "Clay accent and ivory/oak L wardrobe with paired charcoal pulls; oatmeal ripple-fold curtains keep wardrobe access clear. Bedroom furniture and floor finishes retained; desk feasibility reviewed separately. R18 revised finish example; original kitchen images remain the primary style authority.",
+      "sha256": "dcd171ea1723913a0042d4ac0a77b4a98d46c3351d24410c39273025b7c9a149",
       "revision": "R18"
     },
     {
       "file": "images/09-bedroom3-opposite.png",
       "group": "Bedroom 3",
-      "role": "Clay accent, ivory wardrobe with muted oak bay, and recessed charcoal pulls; wide-view bedroom flooring follows Bedroom 1 wide and preserves the rug. R18 revised finish example; original kitchen images remain the primary style authority.",
-      "sha256": "a81ff3065c887f9d56d07f5af9523401e4de67d862b958273728b4f5081e6c48",
+      "role": "Clay accent and ivory/oak L wardrobe with paired charcoal pulls; oatmeal ripple-fold curtains keep wardrobe access clear. Bedroom furniture and floor finishes retained; desk feasibility reviewed separately. R18 revised finish example; original kitchen images remain the primary style authority.",
+      "sha256": "8a8fc5e7e3a97ce61862750fc5135db67b0091743af314bf6a51d319ad74b998",
       "revision": "R18"
     },
     {

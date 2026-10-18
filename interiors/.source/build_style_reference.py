@@ -18,9 +18,9 @@ swatches = [
 groups = [
     ('Kitchen', ['06-kitchen-wide', '06-kitchen-detail', '06-kitchen-opposite'], '17 October finish: muted oak main upper doors match the base cupboards; continuous top lofts and window bridge remain creamy ivory. Existing charcoal chimney, room layout, fixtures and straight fridge-side wall retained.'),
     ('Dining', ['16-dining-wide'], 'Oak furniture, cream upholstery, pale floor and gentle daylight.'),
-    ('Bedroom 1', ['07-bedroom1-wide', '07-bedroom1-detail', '07-bedroom1-opposite'], 'Sage accents, textured ivory linen and natural oak; the wide view governs light oak wood-look bedroom flooring.'),
-    ('Master bedroom', ['08-bedroom2-wide', '08-bedroom2-detail', '08-bedroom2-opposite'], 'Olive textiles, oatmeal upholstery, woven runner and oak; opposite-view bedroom flooring follows Bedroom 1 wide, with stone retained beyond the door.'),
-    ('Bedroom 3', ['09-bedroom3-wide', '09-bedroom3-detail', '09-bedroom3-opposite'], 'Clay accent, ivory wardrobe with muted oak bay, and recessed charcoal pulls; wide-view bedroom flooring follows Bedroom 1 wide and preserves the rug.'),
+    ('Bedroom 1', ['07-bedroom1-wide', '07-bedroom1-detail', '07-bedroom1-opposite'], 'Sage accents, ivory linen and natural oak; warm oatmeal ceiling-track ripple curtains replace Roman blinds in window views. The wide view governs light oak wood-look bedroom flooring.'),
+    ('Master bedroom', ['08-bedroom2-wide', '08-bedroom2-detail', '08-bedroom2-opposite'], 'Olive textiles, oatmeal upholstery, woven runner and oak, with matching ripple-fold bedroom curtains. Original furniture remains; wardrobe-integrated desk feasibility is reviewed separately.'),
+    ('Bedroom 3', ['09-bedroom3-wide', '09-bedroom3-detail', '09-bedroom3-opposite'], 'Clay accent and ivory/oak L wardrobe with paired charcoal pulls; oatmeal ripple-fold curtains keep wardrobe access clear. Bedroom furniture and floor finishes retained; desk feasibility reviewed separately.'),
     ('Study', ['10-study-wide', '10-study-storage'], 'Retained family/tailoring workspace, shared ivory linen cabinet and soft daylight.'),
     ('Passage and gallery', ['10-passage-wide', '17-front-gallery-wide'], 'Ivory and stone continuity, oak and charcoal edges, greenery.'),
     ('Bathrooms', ['11-bathroom1-wide', '12-bathroom2-wide', '13-bathroom3-wide'], 'Stone, oak vanity, white ceramic, dark fittings and gentle mirror light.'),
