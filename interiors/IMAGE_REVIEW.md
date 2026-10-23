@@ -1,5 +1,90 @@
 # Interior image register
 
+## Detail refinements and corrected consistency review · 23 October 2026
+
+Seven specifically named images are revised after the user identified remaining mismatches. The preceding wide-study photo still had its old chairs and angled thread rack; it now uses the storage view's curved-rail chairs and pegboard. The dining pendant and wider/lower artwork have a clear bare-wall gap. The living view now has two long-side chairs and one cushioned bench, without end chairs, while its pendant position is retained. The overview basin mirror has one uninterrupted glass sheet and a matte black tap. Three exterior views use moderated oak tones guided by the unchanged entrance and rear-utility references.
+
+Review checked the visible details rather than relying only on changed hashes. The first front recolour incorrectly turned rooftop boards horizontal and was corrected before canonical replacement. The living candidate initially left a far-end chair back and needed one targeted removal. Both attempts are retained in the prompt audit. Assistant visual comparison is complete; user acceptance remains pending. Generative images are illustrative rather than pixel-identical or dimensionally certified.
+
+Only these seven images change in this pass; the other 26 photographs, model and drawing files remain unchanged. Pre-edit photographs are recoverable from Git `8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff`. The [review board](STYLE_REFERENCE.html#library) now versions image URLs by hash to refresh changed PNGs. Exact user prompts, all generation/correction prompts, input roles/hashes and final hashes are under `house_detail_refinement_generation_history` and `house_detail_refinement_decision` in [the release manifest](.source/image-release.json). Earlier records below describe prior versions and are superseded for these details.
+
+| Updated image | Visible change checked |
+|---|---|
+| [20-exterior-rear-backyard-wide.png](images/20-exterior-rear-backyard-wide.png) | Timber recoloured to a softer, less orange warm oak using the rear-utility and entrance views; open railing, laundry and short-end louvres retained. |
+| [19-exterior-front-wide.png](images/19-exterior-front-wide.png) | Timber panels moderated toward the entrance/rear-utility oak references. Original vertical rooftop boarding restored after candidate review; source furniture and facade retained. |
+| [21-exterior-south-parking-wide.png](images/21-exterior-south-parking-wide.png) | Moderate warm oak coordinated across rooftop, parapet, balcony soffit, front panels and side strips while retaining existing board directions. |
+| [10-study-wide.png](images/10-study-wide.png) | Both visible chairs now match storage: curved continuous top rails, slender spindles, splayed legs and solid oak seats. Left wall now has the matching oak thread-spool pegboard. Other study elements retained. |
+| [16-dining-wide.png](images/16-dining-wide.png) | Wider, lower 100 × 50 cm landscape abstract and slightly raised drum pendant, with a visible bare-wall gap and no overlap. |
+| [02-living-wide.png](images/02-living-wide.png) | Near-end and far-end dining chairs removed; two left-long-side chairs and the cushioned window-side oak bench remain. Living-view pendant stays in place. |
+| [02-ground-floor-overview-wide.png](images/02-ground-floor-overview-wide.png) | Single uninterrupted mirror glass in one thin oak frame, centred charcoal sconce and matte black tap. Staircase and other overview details retained. |
+
+## Consistency follow-up · 23 October 2026
+
+Twelve photographs are updated in the requested dependency order using built-in imagegen. The study storage photograph establishes the corrected chair, shelf and thread-rack design; the wide study, passage and distant master-bedroom view follow it. The rear balconies restore their open long railings from the supplied pre-edit originals, with louvres confined to the left short end. All four exterior views use warmer honey-oak/light-teak timber. The dining artwork is now landscape and fully inside the frame. The overview follows the corrected dining/living fixtures and two-chair-plus-bench arrangement. The optional living pendant correction is included; the wardrobe close-up now uses the shorter recessed pulls.
+
+The other 21 current photographs, including both kitchen references, are unchanged from the start of this follow-up. Model and drawing files are unchanged. No project working-image folder was added. Earlier 23 October records below describe the preceding image versions and are superseded for these twelve files.
+
+Assistant visual review is complete; user acceptance is pending. Generated dimensions and placement remain approximate, and visual review does not establish pixel-identical geometry. Exact user prompts, every generation/correction prompt, input roles and hashes, prior-image recovery paths and final hashes are under `house_consistency_followup_generation_history` and `house_consistency_followup_decision` in [the release manifest](.source/image-release.json).
+
+[Open the updated review board](STYLE_REFERENCE.html#library).
+
+| Updated image | Changes |
+|---|---|
+| [10-study-storage.png](images/10-study-storage.png) | Three matching curved-back solid oak chairs; two lidded oatmeal linen boxes on each of four shelves; left-wall thread-spool rack. Window, blind, benches, machines and lamps retained. |
+| [22-exterior-rear-utility-wide.png](images/22-exterior-rear-utility-wide.png) | Open long charcoal balcony railing restored from the supplied pre-edit original; louvres confined to the left short end, with garments partly visible. Warm honey-oak timber across rear cladding, soffit and rooftop boards. |
+| [20-exterior-rear-backyard-wide.png](images/20-exterior-rear-backyard-wide.png) | Matching open long railing, narrow left short-end louvres and partly visible drying garments; consistent warm honey-oak cladding, soffit and rooftop boards. |
+| [19-exterior-front-wide.png](images/19-exterior-front-wide.png) | Consistent warm natural honey-oak/light-teak timber and two woven upper-balcony armchairs with a round charcoal table; source front architecture and sitout retained. |
+| [21-exterior-south-parking-wide.png](images/21-exterior-south-parking-wide.png) | Parking angle coordinated with warm oak timber and woven upper-balcony chairs/charcoal table; source gate, numerals, car and paving retained. |
+| [10-study-wide.png](images/10-study-wide.png) | Three-pane black-framed window with visible palms and half-raised Roman blind, waterfall left desk and exactly two oatmeal linen boxes per shelf. Existing chairs and right benches retained. |
+| [10-passage-wide.png](images/10-passage-wide.png) | Only the distant tailoring room updated to waterfall oak benches, curved-back oak chairs, linen boxes and task lamps; foreground passage and stair retained. |
+| [08-bedroom2-opposite.png](images/08-bedroom2-opposite.png) | Only the distant tailoring view updated to an oak waterfall bench, black sewing machine, charcoal lamp, curved-back oak chair and linen boxes. Bedroom and passage railing retained. |
+| [16-dining-wide.png](images/16-dining-wide.png) | Landscape 90 × 60 cm oatmeal/sage/clay abstract lowered fully inside the camera frame; pendant, table, two near-side chairs and tucked cushioned bench retained. |
+| [02-living-wide.png](images/02-living-wide.png) | Optional correction applied: existing linen drum pendant lowered and centred over the dining table. Other living furnishings and source composition retained. |
+| [02-ground-floor-overview-wide.png](images/02-ground-floor-overview-wide.png) | Drum pendant and landscape abstract coordinated with dining, wider oak-framed basin mirror and under-counter basin; two room-side chairs and a cushioned window-side bench, with no end chairs. Source staircase retained. |
+| [09-bedroom3-detail.png](images/09-bedroom3-detail.png) | Short recessed charcoal edge pulls coordinated with the wide wardrobe view, retaining oak main doors, ivory lofts, door divisions and the 90-degree corner. |
+
+## Coordinated house finish edits · 23 October 2026
+
+All 29 specifically requested photographs now use the built-in imagegen edits listed below. The source photographs govern each camera and architectural composition. The pre-edit kitchen wide and unchanged kitchen detail govern materials; completed same-room views provide fixture consistency. Newer instructions replace the earlier tree-style bedroom stands with wall peg rails in the named views.
+
+The kitchen detail, Bedroom 1 detail, master wide and master detail are unchanged. All measured model/drawing files remain unchanged. Pre-edit photographs are recoverable from Git `7f2136ec45715d62b453b395612474c332264c2d`; no working image folder was added to the project.
+
+Assistant visual review is complete; user acceptance is pending. These are generated photographic presentations, with approximate dimensions and placement, rather than pixel-identical or measured images. Small hardware and texture details may vary between angles. The dining artwork extends above the existing camera crop at its requested high mounting position.
+
+Exact prompts for every generation and correction, input roles/hashes, source-camera authority and final output hashes are under `house_finish_generation_history` and `house_finish_decision` in [the release manifest](.source/image-release.json). Open the [updated visual board](STYLE_REFERENCE.html#library) to review every image at full size.
+
+| Edited image | Visible changes |
+|---|---|
+| [01-entrance-wide.png](images/01-entrance-wide.png) | Muted oak/greyed teak cladding and door, warmer pavers and larger coir mat. |
+| [02-living-wide.png](images/02-living-wide.png) | Oak-framed basin mirror with charcoal downlight, under-counter basin, closed lower cubby, larger oatmeal rug, round coffee table, floor lamp, open sheers and drum dining pendant; four-chair and bench arrangement. |
+| [02-ground-floor-overview-wide.png](images/02-ground-floor-overview-wide.png) | Coordinated basin and cubby, larger rug and round coffee table, open sheers and dining bench; original pendant and source stair presentation retained. |
+| [03-stair-tv-wide.png](images/03-stair-tv-wide.png) | Plain oak-framed mirror, charcoal downlight, under-counter basin, closed lower left cubby and single vase above; stair LED and towel ring removed. |
+| [04-storage-wide.png](images/04-storage-wide.png) | Coordinated TV/basin joinery close-up with closed lower cubby, framed mirror and downlight; under-cabinet glow retained. |
+| [05-wash-wide.png](images/05-wash-wide.png) | Framed mirror and charcoal downlight, clean slab counter and under-counter basin; towel ring and stair LED removed. |
+| [16-dining-wide.png](images/16-dining-wide.png) | Two near-side chairs and tucked upholstered bench, linen drum pendant, large abstract art mounted high and cropped at the existing upper frame, and open sheer curtains. |
+| [06-kitchen-wide.png](images/06-kitchen-wide.png) | Slim inclined charcoal hood and oatmeal cotton runner with fine charcoal edge stripe. |
+| [06-kitchen-opposite.png](images/06-kitchen-opposite.png) | Matching inclined hood and runner, oak fridge enclosure, shallow full-height end-wall storage and clear central aisle; fridge-top plant removed. |
+| [07-bedroom1-wide.png](images/07-bedroom1-wide.png) | Oak main wardrobe doors, ivory loft doors and recessed charcoal pulls; existing door divisions, bed, curtains and plank floor retained. |
+| [07-bedroom1-opposite.png](images/07-bedroom1-opposite.png) | Oak main wardrobe doors and ivory lofts, recessed pulls, wall peg rail with linen shirt and ivory sliding-track pelmet. |
+| [08-bedroom2-opposite.png](images/08-bedroom2-opposite.png) | Oak main wardrobe doors and ivory lofts, recessed pulls, wall peg rail with linen shirt and ivory sliding-track pelmet; source passage sightline retained. |
+| [09-bedroom3-wide.png](images/09-bedroom3-wide.png) | Oak main doors on both wardrobe legs, ivory lofts, recessed pulls and three-peg wall rail with linen shirt; L corner retained. |
+| [09-bedroom3-detail.png](images/09-bedroom3-detail.png) | Oak main wardrobe doors, ivory lofts and recessed pulls in the retained 90-degree corner. |
+| [09-bedroom3-opposite.png](images/09-bedroom3-opposite.png) | Floating oak shelf with one stoneware vase, dried stems and two linen-covered books; slim recessed wardrobe-edge pull. |
+| [10-study-wide.png](images/10-study-wide.png) | Three task lamps, three lidded linen boxes on each shelf and solid oak chair seats; source machines, benches and Roman blind retained. |
+| [10-study-storage.png](images/10-study-storage.png) | Oak waterfall bench sides and solid oak chairs, linen boxes and a task lamp at each machine. |
+| [10-passage-wide.png](images/10-passage-wide.png) | One large oak-framed oatmeal/sage/clay abstract with charcoal picture light; source staircase and distant study retained. |
+| [17-front-gallery-wide.png](images/17-front-gallery-wide.png) | Two larger oak-framed oatmeal/sage botanical and abstract prints above the existing bench. |
+| [11-bathroom1-wide.png](images/11-bathroom1-wide.png) | Stone counter with under-counter basin, mirror cabinet lit beneath, stoneware counter set, tiled niche with three amber bottles, large-format floor and waffle mat. |
+| [12-bathroom2-wide.png](images/12-bathroom2-wide.png) | Coordinated stone counter/basin, mirror cabinet, stoneware counter set, tiled niche, large-format floor and waffle mat. |
+| [13-bathroom3-wide.png](images/13-bathroom3-wide.png) | Coordinated stone counter/basin, mirror cabinet, stoneware counter set, tiled niche, large-format floor and waffle mat; both source windows retained. |
+| [14-balcony-wide.png](images/14-balcony-wide.png) | Woven chairs angled toward palm view with charcoal side table between them, on an oatmeal outdoor rug. |
+| [15-terrace-wide.png](images/15-terrace-wide.png) | Charcoal pergola with bamboo shade, ivory masonry bench with seat cushions, outdoor rug, three textured planters, festoon lights, paler oak stair timber and sandy terrace floor. |
+| [18-rear-gallery-wide.png](images/18-rear-gallery-wide.png) | Muted oak soffit and vertical oak-toned aluminium laundry screen at the drying zone. |
+| [19-exterior-front-wide.png](images/19-exterior-front-wide.png) | Muted oak/greyed teak cladding and front door, woven sitout chairs, no hanging balcony planters and warmer paving. |
+| [21-exterior-south-parking-wide.png](images/21-exterior-south-parking-wide.png) | Parking angle coordinated with edited entrance/front finishes, woven sitout chairs and no hanging balcony planters. |
+| [20-exterior-rear-backyard-wide.png](images/20-exterior-rear-backyard-wide.png) | Muted cladding and soffits with vertical laundry-screen louvres; original subdued sky restored after review. |
+| [22-exterior-rear-utility-wide.png](images/22-exterior-rear-utility-wide.png) | Muted cladding and soffits with vertical laundry-screen louvres, retaining the utility yard and existing text. |
+
 ## Ceiling-height curtains and compact wooden dress stands · 18 October 2026
 
 Bedroom 1 remains the ceiling-level curtain reference. The master [wide](images/08-bedroom2-wide.png) and [opposite](images/08-bedroom2-opposite.png), and Bedroom 3 [wide](images/09-bedroom3-wide.png) and [opposite](images/09-bedroom3-opposite.png), now extend the oatmeal ripple-fold headers to the actual ceiling datum. In views cropped below the ceiling, fabric continues through the upper image edge. The difference was a generated mounting offset, not a window-height requirement; the common model clear ceiling is 2850 mm. Window openings, frames and sills retain their positions.
