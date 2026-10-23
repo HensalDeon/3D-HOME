@@ -1,5 +1,11 @@
 # Interior image register
 
+## Study right-wall bench layout · 23 October 2026
+
+[10-study-wide.png](images/10-study-wide.png) now replaces the projecting industrial-machine table and rear table with one continuous oak waterfall workbench against the right wall. White and charcoal domestic machines, two task lamps, a window-end thread-cone stand and two curved-rail oak chairs occupy that side; the centre aisle and floor below the window are clear. The left desk and surrounding room features are visually retained. This supersedes the earlier wide-study bench-layout retention instruction.
+
+The first candidate introduced extra worktop items; a targeted cleanup removed them before saving. Assistant visual review is complete; user acceptance is pending. Generated dimensions remain approximate. Only this photograph changes; the other 32 canonical images and model/drawing files are unchanged. Pre-edit inputs are recoverable from Git `2f2626d0a8fa010a10d48fa15e93c6972200f137`. Exact user and generation prompts, five input roles/hashes, both attempts and final hash are under `study_right_wall_bench_generation_history` in [the release manifest](.source/image-release.json). The [review board](STYLE_REFERENCE.html#library) uses the new hash version.
+
 ## Detail refinements and corrected consistency review · 23 October 2026
 
 Seven specifically named images are revised after the user identified remaining mismatches. The preceding wide-study photo still had its old chairs and angled thread rack; it now uses the storage view's curved-rail chairs and pegboard. The dining pendant and wider/lower artwork have a clear bare-wall gap. The living view now has two long-side chairs and one cushioned bench, without end chairs, while its pendant position is retained. The overview basin mirror has one uninterrupted glass sheet and a matte black tap. Three exterior views use moderated oak tones guided by the unchanged entrance and rear-utility references.

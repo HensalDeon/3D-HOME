@@ -513,10 +513,10 @@
     },
     "10-study-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "5b20e2b8a024a096fcb874f6a178c23fa35305274a00776e3d1c8a739cfcc733",
-      "review": "Both visible chairs now match storage: curved continuous top rails, slender spindles, splayed legs and solid oak seats. Left wall now has the matching oak thread-spool pegboard. Other study elements retained. Assistant visual comparison; generated dimensions, tones and unchanged geometry are not pixel-exact measurements.",
+      "sha256": "e7b082b0e8adef24afc96d986b11015c487722359900fa7658ab457a4b96e938",
+      "review": "One continuous waterfall-sided oak bench against the right wall; white domestic machine near the window and charcoal domestic machine nearer the camera, two charcoal task lamps and a tall thread-cone stand. Two curved-rail oak chairs face the right wall with backs toward the open central aisle. Industrial machine and white motor stand removed. Window floor zone is clear and sunlit. Left desk, plant, lamp, machine and chair, wall pegboard, four two-box shelves, blind, doorway and source room composition visually retained. Generated dimensions and geometry are approximate, not pixel-exact measurements.",
       "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-detail-refinements",
+      "revision": "2026-10-23-study-right-wall-bench",
       "method": "built-in-imagegen-precise-object-edit",
       "user_approval": "pending",
       "metadata_alignment": {
@@ -524,14 +524,15 @@
         "date": "2026-10-08",
         "reason": "Aligned stale release hash with preserved canonical file during cleanup; image pixels unchanged."
       },
-      "geometry_source": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff:interiors/images/10-study-wide.png",
+      "geometry_source": "2f2626d0a8fa010a10d48fa15e93c6972200f137:interiors/images/10-study-wide.png",
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png",
-        "10-study-storage.png"
+        "10-study-storage.png",
+        "10-passage-wide.png"
       ],
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_detail_refinement_generation_history"
+      "prompt_key": "study_right_wall_bench_generation_history"
     },
     "11-bathroom1-wide.png": {
       "status": "assistant-reviewed",
@@ -9177,5 +9178,102 @@
     "model_and_drawings": "unchanged",
     "source_retention": "Pre-edit sources recoverable from the recorded Git commit. Exact input/output hashes and all candidate/correction prompts retained here. No working image folder added to the project.",
     "review_board_image_urls": "Image links include a SHA-256 version token so changed PNGs receive fresh browser URLs."
+  },
+  "study_right_wall_bench_generation_history": [
+    {
+      "file": "10-study-wide.png",
+      "date": "2026-10-23",
+      "revision": "2026-10-23-study-right-wall-bench",
+      "user_prompt_verbatim": "Edit Image 1, a photograph of a tailoring room looking toward its window. Images 4 and 5 show the same room from other angles; its furniture layout must match them. Rearrange only the right-hand side of the room:\n1. Remove both right-hand tables — the one projecting into the middle of the room with the black industrial sewing machine on a white metal motor stand, and the table behind it with the white machine — together with the chair in front of them.\n2. In their place, put one continuous muted-oak workbench with solid waterfall side panels, about 55 cm deep and 1.2 m long, pushed flat against the right-hand wall, running from the window-wall corner toward the camera. It matches the right-hand bench in Image 4.\n3. On that bench, two domestic sewing machines stand side by side along the wall, facing the wall: a white machine near the window end and a grey-charcoal machine nearer the camera, the same machines as Image 4. Add a slim charcoal task lamp at each machine and the tall thread-cone stand at the window end.\n4. Two muted-oak chairs with a curved back rail (the same design as the chair at the left desk) are tucked at the bench, facing the right-hand wall, with their backs to the middle of the room.\n5. The middle of the room is a clear, open aisle of pale stone floor running from the camera to the window. Nothing stands in front of the window, and sunlight falls on the empty floor.\nKeep the left desk with its black machine, plant, lamp and chair, the thread pegboard, the floating shelves with lidded boxes, the window and Roman blind, the oak-cased doorway on the left, walls and ceiling exactly as they are.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals and room proportions. Match Images 2–3: muted natural oak (never orange), creamy ivory plaster, pale sandy stone, charcoal hardware, soft daylight, warm 2700–3000 K diffused light. Photorealistic, fine texture. No added objects beyond those listed, no gloss, no text or watermark.",
+      "source": {
+        "sha256": "5b20e2b8a024a096fcb874f6a178c23fa35305274a00776e3d1c8a739cfcc733",
+        "git_commit": "2f2626d0a8fa010a10d48fa15e93c6972200f137",
+        "git_path": "interiors/images/10-study-wide.png",
+        "role": "edit target; sole camera, framing, room proportions and unlisted architecture authority"
+      },
+      "geometry_reference": "Current target photograph governs camera and architecture; only the explicitly requested right-hand furniture layout changes. Model and drawings unchanged.",
+      "attempts": [
+        {
+          "run": 1,
+          "method": "built-in-imagegen",
+          "prompt": "Use case: precise-object-edit. Edit Image 1 only. Input roles: Image 1 is the current edit target and sole authority for camera, room proportions, window, doorway, walls and all unlisted features; Images 2 and 3 are finish references only; Images 4 and 5 are same-room furniture consistency references, not replacement camera views. The replacement right workbench runs parallel to and flush against the RIGHT wall, with two chairs facing that wall, leaving the window and middle aisle clear.\n\nEdit Image 1, a photograph of a tailoring room looking toward its window. Images 4 and 5 show the same room from other angles; its furniture layout must match them. Rearrange only the right-hand side of the room:\n1. Remove both right-hand tables — the one projecting into the middle of the room with the black industrial sewing machine on a white metal motor stand, and the table behind it with the white machine — together with the chair in front of them.\n2. In their place, put one continuous muted-oak workbench with solid waterfall side panels, about 55 cm deep and 1.2 m long, pushed flat against the right-hand wall, running from the window-wall corner toward the camera. It matches the right-hand bench in Image 4.\n3. On that bench, two domestic sewing machines stand side by side along the wall, facing the wall: a white machine near the window end and a grey-charcoal machine nearer the camera, the same machines as Image 4. Add a slim charcoal task lamp at each machine and the tall thread-cone stand at the window end.\n4. Two muted-oak chairs with a curved back rail (the same design as the chair at the left desk) are tucked at the bench, facing the right-hand wall, with their backs to the middle of the room.\n5. The middle of the room is a clear, open aisle of pale stone floor running from the camera to the window. Nothing stands in front of the window, and sunlight falls on the empty floor.\nKeep the left desk with its black machine, plant, lamp and chair, the thread pegboard, the floating shelves with lidded boxes, the window and Roman blind, the oak-cased doorway on the left, walls and ceiling exactly as they are.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals and room proportions. Match Images 2–3: muted natural oak (never orange), creamy ivory plaster, pale sandy stone, charcoal hardware, soft daylight, warm 2700–3000 K diffused light. Photorealistic, fine texture. No added objects beyond those listed, no gloss, no text or watermark.",
+          "inputs": [
+            {
+              "index": 1,
+              "file": "10-study-wide.png",
+              "path_used": "/private/tmp/dream-home-study-wall-bench-2026-10-23/10-study-wide.png",
+              "sha256": "5b20e2b8a024a096fcb874f6a178c23fa35305274a00776e3d1c8a739cfcc733",
+              "role": "edit target; sole camera, framing, room proportions and unlisted architecture authority"
+            },
+            {
+              "index": 2,
+              "file": "06-kitchen-wide.png",
+              "path_used": "/private/tmp/dream-home-study-wall-bench-2026-10-23/06-kitchen-wide.png",
+              "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+              "role": "material reference only"
+            },
+            {
+              "index": 3,
+              "file": "06-kitchen-detail.png",
+              "path_used": "/private/tmp/dream-home-study-wall-bench-2026-10-23/06-kitchen-detail.png",
+              "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba",
+              "role": "material reference only"
+            },
+            {
+              "index": 4,
+              "file": "10-study-storage.png",
+              "path_used": "/private/tmp/dream-home-study-wall-bench-2026-10-23/10-study-storage.png",
+              "sha256": "7f6f383518e4117c81b91842b346de874c1765fc98a6e443db3b23656eee99c7",
+              "role": "same-room furniture and chair consistency reference"
+            },
+            {
+              "index": 5,
+              "file": "10-passage-wide.png",
+              "path_used": "/private/tmp/dream-home-study-wall-bench-2026-10-23/10-passage-wide.png",
+              "sha256": "280912471e6cf33e13894d7546cd15cd33d91e9212de5d9c4180a797de658fc4",
+              "role": "same-room layout consistency reference"
+            }
+          ],
+          "generated_path": "/Users/hensaldeon/.codex/generated_images/01a167af-55b2-7652-a34a-367ee3569eea/exec-f2db6db3-7802-4964-b67a-7703d301d68c.png",
+          "sha256": "0d5c90fb87f050aeeddb90cb68ea8381852de3bef9b7c2c0f15d3fb852200c0b",
+          "review": "Requested wall bench, machines, chairs and clear aisle achieved; rejected for added right-worktop plant/vase, papers/fabric and small mouse-like item."
+        },
+        {
+          "run": 2,
+          "method": "built-in-imagegen",
+          "prompt": "Use case: precise-object-edit. Edit this candidate image with one targeted cleanup only: remove the extra plant and its vase between the two right-hand sewing machines, and remove the loose folded cloth, stacked books/papers and small mouse-like object from the RIGHT workbench. The right bench should hold only the two domestic sewing machines (white near window, charcoal nearer camera), their two slim charcoal task lamps, and the tall thread-cone stand at the window end. Keep the bench, both right-hand chairs and their orientation facing the right wall, and the clear central aisle exactly as shown. Keep the entire LEFT desk with its existing machine, plant, lamp, small tools and chair unchanged. Keep window, blind, shelves, boxes, pegboard, doorway, walls, floor, ceiling, daylight, camera and framing unchanged. No other edits, no new objects, no text, no watermark.",
+          "inputs": [
+            {
+              "index": 1,
+              "path_used": "/Users/hensaldeon/.codex/generated_images/01a167af-55b2-7652-a34a-367ee3569eea/exec-f2db6db3-7802-4964-b67a-7703d301d68c.png",
+              "sha256": "0d5c90fb87f050aeeddb90cb68ea8381852de3bef9b7c2c0f15d3fb852200c0b",
+              "role": "candidate cleanup target; preserve achieved layout and every other feature"
+            }
+          ],
+          "generated_path": "/Users/hensaldeon/.codex/generated_images/01a167af-55b2-7652-a34a-367ee3569eea/exec-7258f457-faad-4683-9e3c-d0686372f77c.png",
+          "sha256": "e7b082b0e8adef24afc96d986b11015c487722359900fa7658ab457a4b96e938",
+          "review": "One continuous waterfall-sided oak bench against the right wall; white domestic machine near the window and charcoal domestic machine nearer the camera, two charcoal task lamps and a tall thread-cone stand. Two curved-rail oak chairs face the right wall with backs toward the open central aisle. Industrial machine and white motor stand removed. Window floor zone is clear and sunlit. Left desk, plant, lamp, machine and chair, wall pegboard, four two-box shelves, blind, doorway and source room composition visually retained. Generated dimensions and geometry are approximate, not pixel-exact measurements."
+        }
+      ],
+      "selected_run": 2,
+      "final_path": "interiors/images/10-study-wide.png",
+      "final_sha256": "e7b082b0e8adef24afc96d986b11015c487722359900fa7658ab457a4b96e938",
+      "review": "One continuous waterfall-sided oak bench against the right wall; white domestic machine near the window and charcoal domestic machine nearer the camera, two charcoal task lamps and a tall thread-cone stand. Two curved-rail oak chairs face the right wall with backs toward the open central aisle. Industrial machine and white motor stand removed. Window floor zone is clear and sunlit. Left desk, plant, lamp, machine and chair, wall pegboard, four two-box shelves, blind, doorway and source room composition visually retained. Generated dimensions and geometry are approximate, not pixel-exact measurements.",
+      "user_approval": "pending"
+    }
+  ],
+  "study_right_wall_bench_decision": {
+    "date": "2026-10-23",
+    "revision": "2026-10-23-study-right-wall-bench",
+    "scope": [
+      "10-study-wide.png"
+    ],
+    "source_git_commit": "2f2626d0a8fa010a10d48fa15e93c6972200f137",
+    "method": "built-in-imagegen",
+    "assistant_visual_review": "passed after targeted cleanup of added right-worktop clutter",
+    "user_approval": "pending",
+    "other_canonical_images_unchanged": 32,
+    "model_and_drawings": "unchanged",
+    "prompt_key": "study_right_wall_bench_generation_history"
   }
 }
