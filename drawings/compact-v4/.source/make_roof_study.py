@@ -41,10 +41,7 @@ def roof_plan(p):
  p.text(1.1,6.88,'2.20 x 4.10 m OUTSIDE',5.8,col=B)
  p.text(4.12,5.75,'OPEN ROOF TERRACE',8,True,col=T)
  p.text(4.12,5.38,'ROOF FFL +6.45 m',6,col=M)
- # Light indicative seating, no additional canopy/covered roof room.
- p.circle(4.4,7.4,.38,M,.5)
- for x,y in [(3.8,7.4),(5.0,7.4)]:p.chair(x,y,.40)
- p.text(4.4,8.1,'SEATING / OPEN TO SKY',5.5,col=M)
+ terrace(p)
  # Proposed south-west reserve only, not an installed tank.
  p.rect(.35,7.5,1.8,9.05,M,.5,dash=[2,2])
  p.text(1.05,8.3,'SERVICES',5.5,col=M)
@@ -59,6 +56,24 @@ def roof_plan(p):
  p.text(3,-.45,'FRONT / EAST',7,True,col=T)
  p.text(3,10.6,'REAR / WEST',7,True,col=T)
  v4.compass(p,7.4,8.8)
+
+
+def terrace(p):
+ # R20 terrace: an open steel pergola with bamboo shade on posts over the B4/B5/C4/C5 column
+ # zones, a masonry bench against the north parapet with its guard raised 1.10 m above the seat,
+ # the table and chairs beneath, and three planters. Not an enclosed room or added floor area.
+ t=v4.FITOUT['terrace'];pg=t['pergola'];x0,y0,x1,y1=pg['box'];s=pg['post']
+ p.rect(x0,y0,x1,y1,I,.45,dash=[3,2])
+ for x in [x0,x1-s]:
+  for y in [y0,y1-s]:p.fill_rect(x,y,x+s,y+s,v4.DARK)
+ b=t['bench']['box'];p.fill_rect(*b,v4.SAND);p.rect(*b,I,.5)
+ p.line(5.93,b[1]-.1,5.93,b[3]+.1,v4.DARK,1.6)
+ p.circle(*t['table']['centre'],t['table']['radius'],M,.5)
+ for seat in t['chairs']:p.chair(*seat)
+ for x,y,r in t['planters']:p.circle(x,y,r,v4.TEAL,.5)
+ p.text(4.5,y1-.22,'OPEN PERGOLA / BAMBOO SHADE',5.2,True,col=T)
+ p.text(4.5,y0+.13,'POSTS OVER B4 B5 C4 C5',4.2,col=M)
+ p.text(5.62,(b[1]+b[3])/2,'BENCH / GUARD +1.55',3.8,rot=90,col=M)
 
 
 def sheet1(c):

@@ -47,7 +47,8 @@ export function addStorageJoinery({parent,level,z,box,materials}){
     for(let leaf=0;leaf<2;leaf++){
      const a=left+leaf*module/2+.002,b=left+(leaf+1)*module/2-.002;
      const front=alongX?[a,y1-p,b,y1]:positive?[x1-p,a,x1,b]:[x0,a,x0+p,b];
-     put(front,layout.plinth+.003,main-.003,bay===s.oakModule?materials.oak:materials.ivory,'main door');
+     // R20: oak main doors on every bay (ivory on the shared linen cabinet); lofts stay ivory.
+     put(front,layout.plinth+.003,main-.003,(unit.mainDoorFinish??layout.mainDoorFinish)==='oak'?materials.oak:materials.ivory,'main door');
      put(front,main+.003,layout.loftTop-.003,materials.ivory,'loft door');
      const handleAt=leaf===0?b-.012:a+.012;
      const pull=alongX?[handleAt-.004,y1-.004,handleAt+.004,y1+.0001]:positive?[x1-.004,handleAt-.004,x1+.0001,handleAt+.004]:[x0-.0001,handleAt-.004,x0+.004,handleAt+.004];

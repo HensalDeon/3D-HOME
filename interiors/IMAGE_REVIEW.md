@@ -1,5 +1,28 @@
 # Interior image register
 
+## Drawings and model coordinated to these images · R20 · 23 October 2026
+
+The built-in joinery, fixtures, finishes and fixed exterior elements in the accepted 23 October photographs are now carried into [the complete house plans](../drawings/compact-v4/Hensal_Complete_House_Plans.pdf) and the 3D model. They come from one shared source, [fitout-layout.json](../model/src/fitout-layout.json), plus the existing storage and under-stair layouts:
+
+- oak wardrobe doors with ivory lofts;
+- kitchen oak uppers, loft bridge, hood, 350 mm pantry and fridge housing;
+- ensuite vanities, niches, drains and floors;
+- the under-stair under-counter basin, oak-framed mirror and sconce, with the stair-soffit strip removed;
+- the dining table, two chairs and bench, and the coffee table;
+- the terrace pergola, bench, raised guard and planters;
+- the drying-balcony louvre screen;
+- one honey-oak exterior timber, an oak front door, a charcoal rear door and warm pavers.
+
+The plans' exterior concept image is now a front/rear composite of `19-exterior-front-wide.png` and `20-exterior-rear-backyard-wide.png`.
+
+Artwork, rugs, lamps, curtains, plants, peg rails, the Bedroom 3 shelf and accessories remain photographic staging and are not drawn. The 23 October entry below, which says the measured files are unchanged, records the state before this coordination. No image in this folder was changed by R20.
+
+## Study right-wall bench layout · 23 October 2026
+
+[10-study-wide.png](images/10-study-wide.png) now replaces the projecting industrial-machine table and rear table with one continuous oak waterfall workbench against the right wall. White and charcoal domestic machines, two task lamps, a window-end thread-cone stand and two curved-rail oak chairs occupy that side; the centre aisle and floor below the window are clear. The left desk and surrounding room features are visually retained. This supersedes the earlier wide-study bench-layout retention instruction.
+
+The first candidate introduced extra worktop items; a targeted cleanup removed them before saving. Assistant visual review is complete; user acceptance is pending. Generated dimensions remain approximate. Only this photograph changes; the other 32 canonical images and model/drawing files are unchanged. Pre-edit inputs are recoverable from Git `2f2626d0a8fa010a10d48fa15e93c6972200f137`. Exact user and generation prompts, five input roles/hashes, both attempts and final hash are under `study_right_wall_bench_generation_history` in [the release manifest](.source/image-release.json). The [review board](STYLE_REFERENCE.html#library) uses the new hash version.
+
 ## Detail refinements and corrected consistency review · 23 October 2026
 
 Seven specifically named images are revised after the user identified remaining mismatches. The preceding wide-study photo still had its old chairs and angled thread rack; it now uses the storage view's curved-rail chairs and pegboard. The dining pendant and wider/lower artwork have a clear bare-wall gap. The living view now has two long-side chairs and one cushioned bench, without end chairs, while its pendant position is retained. The overview basin mirror has one uninterrupted glass sheet and a matte black tap. Three exterior views use moderated oak tones guided by the unchanged entrance and rear-utility references.

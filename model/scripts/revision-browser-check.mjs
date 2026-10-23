@@ -9,7 +9,7 @@ if(!executablePath&&!existsSync(chromium.executablePath())&&process.platform==='
 const browser=await chromium.launch({headless:true,...(executablePath?{executablePath}:{})});
 const page=await browser.newPage({viewport:{width:1440,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
 await page.goto(new URL('../../drawings/compact-v4/interactive-3d.html',import.meta.url).href);await page.waitForFunction(()=>window.houseExplorer?.audit.renderer.calls>0);
-assert.equal(await page.evaluate(()=>window.houseExplorer.audit.revision.startsWith('R15 moves the washbasin')),true);
+assert.equal(await page.evaluate(()=>window.houseExplorer.audit.revision.startsWith('R20 carries the accepted')),true);
 await page.locator('[data-view="front"]').click();await page.mouse.move(900,500);await page.mouse.wheel(0,-650);await page.waitForTimeout(400);await page.locator('#viewport').screenshot({path:'qa/R15-front-detail.png'});
 await page.locator('[data-mode="ground"]').click();await page.waitForTimeout(900);await page.locator('#labels').uncheck();await page.mouse.move(950,500);await page.mouse.wheel(0,-350);await page.waitForTimeout(400);await page.locator('#viewport').screenshot({path:'qa/R15-interior.png'});
 await page.getByLabel('Select a room',{exact:true}).selectOption('g-wash');await page.waitForTimeout(400);await page.locator('#viewport').screenshot({path:'qa/R15-wash.png'});assert.match(await page.locator('#detail-description').textContent(),/east-facing orientation/);assert.match(await page.locator('#detail-description').textContent(),/uniform 1\.95 m/);assert.match(await page.locator('#detail-description').textContent(),/continuing that run/);

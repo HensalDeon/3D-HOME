@@ -30,12 +30,12 @@ def base(c, ignored_number, title, subtitle):
     c.setLineWidth(.5)
     c.line(16*mm, 249*mm, 404*mm, 249*mm)
     c.line(16*mm, 19*mm, 404*mm, 19*mm)
-    house.tx(c, 16, 12, 'COORDINATED REVIEW SET / 09 OCT 2026 / DIMENSIONS IN METRES', 7, house.MUTED)
+    house.tx(c, 16, 12, 'COORDINATED REVIEW SET / 23 OCT 2026 / DIMENSIONS IN METRES', 7, house.MUTED)
     house.tx(c, 272, 12, f'ARCHITECT / BUILDER REVIEW - NOT FOR CONSTRUCTION   {PAGE_NUMBER:02d} / {TOTAL:02d}', 6.3, house.MUTED)
 
 
 def cover(c):
-    base(c, 1, 'Complete house plans / full roof access', 'A3 COORDINATED DESIGN REVIEW SET / THREE BEDROOMS, THREE ENSUITES / R8 EXTERNAL WALLS 220 / 170 MM / R19 OPEN STAIR SIDE / R18 STORAGE / INTERNAL WALLS 150 MM INCLUDING PLASTER')
+    base(c, 1, 'Complete house plans / full roof access', 'A3 COORDINATED DESIGN REVIEW SET / THREE BEDROOMS, THREE ENSUITES / R8 EXTERNAL WALLS 220 / 170 MM / R20 FIT-OUT / R19 OPEN STAIR SIDE / R18 STORAGE / INTERNAL WALLS 150 MM INCLUDING PLASTER')
     c.drawImage(str(OUT/'exterior-concept.png'), 20*mm, 92*mm, width=226*mm, height=150*mm, preserveAspectRatio=True, anchor='c')
     house.tx(c, 262, 235, 'DRAWING INDEX', 11, house.TEAL, True)
     entries = [
@@ -56,7 +56,7 @@ def cover(c):
         house.tx(c, 262, 224-i*8, n, 8, house.TEAL, True)
         house.tx(c, 274, 224-i*8, label, 8, house.INK)
     house.para(c, 262, 126, 'Print on A3 at 100% / actual size. Each drawing states its scale. Do not scale the photographs or the developed stair diagram horizontally.', 134, 8, 4.5)
-    house.para(c, 262, 113, 'This set replaces the separate compact-v4 and integrated-roof review PDFs. The current design includes full stairs to the roof and one conceptual structural framing option. Internal walls are 150 mm total including plaster. Connected wall faces are flush; 400 mm wardrobe lofts and lift-up bed bases keep bedroom footprints. R19 opens the first-floor stair side below its retained overhead band with vertical guards and oak rails. The family/tailoring room opens to the stair base below its retained beam; a small side cabinet provides shared linen storage. Ivory fronts and oak accents replace solid timber blocks. Stair clearances and the 900 mm first-floor passage are retained. The R15 under-stair composition stands in the coordinated R10 wall opening - cut to +2.10 m, plastered header retained above; a full-height removal is not assumed.', 134, 8, 4.5)
+    house.para(c, 262, 113, 'This set replaces the separate compact-v4 and integrated-roof review PDFs. The current design includes full stairs to the roof and one conceptual structural framing option. Internal walls are 150 mm total including plaster. Connected wall faces are flush; 400 mm wardrobe lofts and lift-up bed bases keep bedroom footprints. R19 opens the first-floor stair side below its retained overhead band with vertical guards and oak rails. R20 coordinates the accepted interior images: oak wardrobe doors with ivory lofts, kitchen uppers and pantry, ensuite vanities, dining set, terrace pergola and honey-oak exterior timber. Stair clearances and the 900 mm first-floor passage are retained. The R15 under-stair composition stands in the coordinated R10 wall opening - cut to +2.10 m, plastered header retained above; a full-height removal is not assumed.', 134, 8, 4.5)
     house.block(c, 25, 82, 'COORDINATED DESIGN BASIS', 'External walls: 220 mm ground, 170 mm first. Internal walls: 150 mm finished including plaster. Ground floor: 59.30 m2 / 638.3 sq ft. First floor: 58.51 m2 / 629.8 sq ft. Roof enclosure: 9.02 m2 / 97.09 sq ft additional. Conservative total: 126.84 m2 / 1,365.3 sq ft. Roof landing +6.45 m; stair cover +9.00 m. Rear balcony entry is on the master-bedroom side wall, with two toilet vents facing the rear.', 218)
     house.block(c, 262, 68, 'FOR ARCHITECT / BUILDER REVIEW', 'Dimensioned vectors govern over the render. The stair is shown as a conceptual RCC waist-slab system only; its waist thickness, landing beams, supports, reinforcement and connections must be designed by a structural engineer. Measured site set-out, structural design, stair headroom, waterproofing, services and permit drawings remain to be coordinated by the project professionals.', 134)
 
@@ -74,7 +74,7 @@ def references(c):
 def exterior(c):
     base(c, 12, 'Current exterior / full roof access', 'PHOTOREALISTIC APPEARANCE STUDY / NOT TO SCALE / DIMENSIONED PLANS AND ELEVATIONS GOVERN')
     c.drawImage(str(OUT/'exterior-concept.png'), 32*mm, 43*mm, width=356*mm, height=198*mm, preserveAspectRatio=True, anchor='c')
-    house.para(c, 25, 32, 'The stair enclosure has matching timber end walls, warm-white sides and a white/charcoal cap. It rises 1.60 m above the existing screen. Two toilet vents replace the former upper rear door; the master balcony entrance remains on the side.', 370, 8, 4.4)
+    house.para(c, 25, 32, 'R20 front and rear: one honey-oak timber tone, oak front door, charcoal rear door, woven oak seating and an oak-tone louvre screen at the north end of the drying balcony. The stair enclosure rises 1.60 m above the existing screen; the master balcony entrance remains on the side.', 370, 8, 4.4)
 
 
 def main():
@@ -103,7 +103,7 @@ def main():
     c = canvas.Canvas(str(PDF), pagesize=house.PAGE, pageCompression=1)
     c.setTitle('Hensal - Complete House Plans with Full Roof Access')
     c.setAuthor('Hensal residence - design review set')
-    c.setSubject('R19 open first-floor stair passage with guards; R18 fitted storage; internal walls 150 mm including plaster. Coordinated site, floor plans, full roof access, elevations and exterior. Architect/builder review; not for construction.')
+    c.setSubject('R20 fit-out coordinated with the accepted interior images; R19 open first-floor stair passage with guards; R18 fitted storage; internal walls 150 mm including plaster. Coordinated site, floor plans, full roof access, elevations and exterior. Architect/builder review; not for construction.')
     for PAGE_NUMBER, (slug, title, draw) in enumerate(sheets, 1):
         c.bookmarkPage(slug)
         c.addOutlineEntry(f'{PAGE_NUMBER:02d} - {title}', slug, 0)
@@ -186,6 +186,8 @@ def main():
             'services': wash['servicesNote'],
         },
     })
+    # R20: the fit-out the drawings and model share, published as one block.
+    dimensions['fitout_layout'] = house.FITOUT
     (OUT/'dimensions.json').write_text(json.dumps(dimensions, indent=2)+'\n')
     print(PDF)
 
