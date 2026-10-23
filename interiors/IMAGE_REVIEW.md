@@ -1,5 +1,23 @@
 # Interior image register
 
+## Detail refinements and corrected consistency review · 23 October 2026
+
+Seven specifically named images are revised after the user identified remaining mismatches. The preceding wide-study photo still had its old chairs and angled thread rack; it now uses the storage view's curved-rail chairs and pegboard. The dining pendant and wider/lower artwork have a clear bare-wall gap. The living view now has two long-side chairs and one cushioned bench, without end chairs, while its pendant position is retained. The overview basin mirror has one uninterrupted glass sheet and a matte black tap. Three exterior views use moderated oak tones guided by the unchanged entrance and rear-utility references.
+
+Review checked the visible details rather than relying only on changed hashes. The first front recolour incorrectly turned rooftop boards horizontal and was corrected before canonical replacement. The living candidate initially left a far-end chair back and needed one targeted removal. Both attempts are retained in the prompt audit. Assistant visual comparison is complete; user acceptance remains pending. Generative images are illustrative rather than pixel-identical or dimensionally certified.
+
+Only these seven images change in this pass; the other 26 photographs, model and drawing files remain unchanged. Pre-edit photographs are recoverable from Git `8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff`. The [review board](STYLE_REFERENCE.html#library) now versions image URLs by hash to refresh changed PNGs. Exact user prompts, all generation/correction prompts, input roles/hashes and final hashes are under `house_detail_refinement_generation_history` and `house_detail_refinement_decision` in [the release manifest](.source/image-release.json). Earlier records below describe prior versions and are superseded for these details.
+
+| Updated image | Visible change checked |
+|---|---|
+| [20-exterior-rear-backyard-wide.png](images/20-exterior-rear-backyard-wide.png) | Timber recoloured to a softer, less orange warm oak using the rear-utility and entrance views; open railing, laundry and short-end louvres retained. |
+| [19-exterior-front-wide.png](images/19-exterior-front-wide.png) | Timber panels moderated toward the entrance/rear-utility oak references. Original vertical rooftop boarding restored after candidate review; source furniture and facade retained. |
+| [21-exterior-south-parking-wide.png](images/21-exterior-south-parking-wide.png) | Moderate warm oak coordinated across rooftop, parapet, balcony soffit, front panels and side strips while retaining existing board directions. |
+| [10-study-wide.png](images/10-study-wide.png) | Both visible chairs now match storage: curved continuous top rails, slender spindles, splayed legs and solid oak seats. Left wall now has the matching oak thread-spool pegboard. Other study elements retained. |
+| [16-dining-wide.png](images/16-dining-wide.png) | Wider, lower 100 × 50 cm landscape abstract and slightly raised drum pendant, with a visible bare-wall gap and no overlap. |
+| [02-living-wide.png](images/02-living-wide.png) | Near-end and far-end dining chairs removed; two left-long-side chairs and the cushioned window-side oak bench remain. Living-view pendant stays in place. |
+| [02-ground-floor-overview-wide.png](images/02-ground-floor-overview-wide.png) | Single uninterrupted mirror glass in one thin oak frame, centred charcoal sconce and matte black tap. Staircase and other overview details retained. |
+
 ## Consistency follow-up · 23 October 2026
 
 Twelve photographs are updated in the requested dependency order using built-in imagegen. The study storage photograph establishes the corrected chair, shelf and thread-rack design; the wide study, passage and distant master-bedroom view follow it. The rear balconies restore their open long railings from the supplied pre-edit originals, with louvres confined to the left short end. All four exterior views use warmer honey-oak/light-teak timber. The dining artwork is now landscape and fully inside the frame. The overview follows the corrected dining/living fixtures and two-chair-plus-bench arrangement. The optional living pendant correction is included; the wardrobe close-up now uses the shorter recessed pulls.

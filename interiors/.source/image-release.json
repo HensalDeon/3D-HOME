@@ -19,22 +19,23 @@
     },
     "02-living-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "c7f5c852e096493b3c995f64bc98feaeadbd01bc2b5419bcb3252f958b92c9b1",
-      "review": "Optional correction applied: existing linen drum pendant lowered and centred over the dining table. Other living furnishings and source composition retained. Assistant visual review; generated placement and geometry are not measured or pixel-identical.",
+      "sha256": "8c9b7f68efd92492b174c69df3315af54c27366743cb657a0a1e7bdb71bd53d3",
+      "review": "Near-end and far-end dining chairs removed; two left-long-side chairs and the cushioned window-side oak bench remain. Living-view pendant stays in place. Assistant visual comparison; generated dimensions, tones and unchanged geometry are not pixel-exact measurements.",
       "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-house-consistency-followup",
+      "revision": "2026-10-23-detail-refinements",
       "method": "built-in-imagegen-precise-object-edit",
-      "geometry_source": "Current pre-follow-up photograph, SHA-256 71cd7b3151f42d3f146211bb2c8f5228328444457a3d2b484b33b4dfcdde715d",
+      "geometry_source": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff:interiors/images/02-living-wide.png",
       "style_source": [
         "06-kitchen-wide.png",
-        "06-kitchen-detail.png"
+        "06-kitchen-detail.png",
+        "FIXED:16-dining-wide.png"
       ],
       "user_approval": "pending",
       "render_review": "Square-on wall/passage retained; user-selected overview governs photographed stair/support and six-seat dining appearance. Measured model/drawing geometry unchanged.",
       "source_camera": "02-living-wide / square-on R19 camera",
       "design_source": "images/02-ground-floor-overview-wide.png (stairs/support and six-seat dining only)",
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_consistency_followup_generation_history"
+      "prompt_key": "house_detail_refinement_generation_history"
     },
     "03-stair-tv-wide.png": {
       "status": "assistant-reviewed",
@@ -512,10 +513,10 @@
     },
     "10-study-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "5ea46cac791ac651c685a343d4b13aa501989da4340be1267fa933e142db1102",
-      "review": "Three-pane black-framed window with visible palms and half-raised Roman blind, waterfall left desk and exactly two oatmeal linen boxes per shelf. Existing chairs and right benches retained. Assistant visual review; generated placement and geometry are not measured or pixel-identical.",
+      "sha256": "5b20e2b8a024a096fcb874f6a178c23fa35305274a00776e3d1c8a739cfcc733",
+      "review": "Both visible chairs now match storage: curved continuous top rails, slender spindles, splayed legs and solid oak seats. Left wall now has the matching oak thread-spool pegboard. Other study elements retained. Assistant visual comparison; generated dimensions, tones and unchanged geometry are not pixel-exact measurements.",
       "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-house-consistency-followup",
+      "revision": "2026-10-23-detail-refinements",
       "method": "built-in-imagegen-precise-object-edit",
       "user_approval": "pending",
       "metadata_alignment": {
@@ -523,13 +524,14 @@
         "date": "2026-10-08",
         "reason": "Aligned stale release hash with preserved canonical file during cleanup; image pixels unchanged."
       },
-      "geometry_source": "Current pre-follow-up photograph, SHA-256 3acfeab5a9bc2cd180047eadf3293e872e0b116c88974ec247a2abee2ec67d1d",
+      "geometry_source": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff:interiors/images/10-study-wide.png",
       "style_source": [
         "06-kitchen-wide.png",
-        "06-kitchen-detail.png"
+        "06-kitchen-detail.png",
+        "10-study-storage.png"
       ],
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_consistency_followup_generation_history"
+      "prompt_key": "house_detail_refinement_generation_history"
     },
     "11-bathroom1-wide.png": {
       "status": "assistant-reviewed",
@@ -613,19 +615,19 @@
     },
     "16-dining-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "76a63ba94a227508a23870ca3e6470e242c9deaf53b6a02f6f323b26b22fe817",
-      "review": "Landscape 90 × 60 cm oatmeal/sage/clay abstract lowered fully inside the camera frame; pendant, table, two near-side chairs and tucked cushioned bench retained. Assistant visual review; generated placement and geometry are not measured or pixel-identical.",
+      "sha256": "c1086c2aa6102cf16a58743d95d073585907c5957e5f1a327db9ce073e4441fd",
+      "review": "Wider, lower 100 × 50 cm landscape abstract and slightly raised drum pendant, with a visible bare-wall gap and no overlap. Assistant visual comparison; generated dimensions, tones and unchanged geometry are not pixel-exact measurements.",
       "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-house-consistency-followup",
+      "revision": "2026-10-23-detail-refinements",
       "method": "built-in-imagegen-precise-object-edit",
-      "geometry_source": "Current pre-follow-up photograph, SHA-256 b4dfb1611a3ffc4d26c88774149e57ecc79c6870813404946e411b743cf97aa9",
+      "geometry_source": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff:interiors/images/16-dining-wide.png",
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png"
       ],
       "user_approval": "pending",
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_consistency_followup_generation_history"
+      "prompt_key": "house_detail_refinement_generation_history"
     },
     "17-front-gallery-wide.png": {
       "status": "assistant-reviewed",
@@ -645,20 +647,21 @@
     },
     "02-ground-floor-overview-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "8564ebaa0de01f6a75cdf75a20a47e7786d9ad62f598bc4c92f153f40ccf451e",
+      "sha256": "05c2d0183e498e1e6dcea69ae9b1f5023c28fa07b0dd22e0ad7e2cebba22e73c",
       "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-house-consistency-followup",
+      "revision": "2026-10-23-detail-refinements",
       "method": "built-in-imagegen-precise-object-edit",
       "user_approval": "pending",
-      "review": "Drum pendant and landscape abstract coordinated with dining, wider oak-framed basin mirror and under-counter basin; two room-side chairs and a cushioned window-side bench, with no end chairs. Source staircase retained. Assistant visual review; generated placement and geometry are not measured or pixel-identical.",
-      "geometry_source": "Current pre-follow-up photograph, SHA-256 bc5338b8ac4f5373c3da0eb43da3c960b091b4232d9fff5c6baccb7799950598",
+      "review": "Single uninterrupted mirror glass in one thin oak frame, centred charcoal sconce and matte black tap. Staircase and other overview details retained. Assistant visual comparison; generated dimensions, tones and unchanged geometry are not pixel-exact measurements.",
+      "geometry_source": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff:interiors/images/02-ground-floor-overview-wide.png",
       "style_source": [
         "06-kitchen-wide.png",
-        "06-kitchen-detail.png"
+        "06-kitchen-detail.png",
+        "03-stair-tv-wide.png"
       ],
       "render_review": "Current model/plan govern dimensions; only photographic wall shape corrected.",
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_consistency_followup_generation_history"
+      "prompt_key": "house_detail_refinement_generation_history"
     },
     "18-rear-gallery-wide.png": {
       "status": "assistant-reviewed",
@@ -678,57 +681,54 @@
     },
     "19-exterior-front-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "2d6baa754b40bed1e20f4669922ab24c54deb89bd838f5d0cac5b3ed2dd68722",
-      "review": "Consistent warm natural honey-oak/light-teak timber and two woven upper-balcony armchairs with a round charcoal table; source front architecture and sitout retained. Assistant visual review; generated placement and geometry are not measured or pixel-identical.",
+      "sha256": "569e8b08759672b1f226b74dd4e141a7fb3b212bdc58829641f0c64cccc6cf34",
+      "review": "Timber panels moderated toward the entrance/rear-utility oak references. Original vertical rooftop boarding restored after candidate review; source furniture and facade retained. Assistant visual comparison; generated dimensions, tones and unchanged geometry are not pixel-exact measurements.",
       "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-house-consistency-followup",
+      "revision": "2026-10-23-detail-refinements",
       "method": "built-in-imagegen-precise-object-edit",
       "user_approval": "pending",
-      "geometry_source": "Current pre-follow-up photograph, SHA-256 4a21fde8d41779365c12d2f37ab591d805e7a12736842e2881ac8e3892a4e695",
+      "geometry_source": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff:interiors/images/19-exterior-front-wide.png",
       "style_source": [
         "01-entrance-wide.png",
-        "14-balcony-wide.png",
-        "15-terrace-wide.png"
+        "22-exterior-rear-utility-wide.png"
       ],
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_consistency_followup_generation_history"
+      "prompt_key": "house_detail_refinement_generation_history"
     },
     "20-exterior-rear-backyard-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "80d6ea4a51975b09ac7903fff5623ac7c5bec946c1babc3ffb482ad96da20f5b",
-      "review": "Matching open long railing, narrow left short-end louvres and partly visible drying garments; consistent warm honey-oak cladding, soffit and rooftop boards. Assistant visual review; generated placement and geometry are not measured or pixel-identical.",
+      "sha256": "a3c206e1572ce704747e162c547f10251775d8537ed20b73c7e3855e412d945c",
+      "review": "Timber recoloured to a softer, less orange warm oak using the rear-utility and entrance views; open railing, laundry and short-end louvres retained. Assistant visual comparison; generated dimensions, tones and unchanged geometry are not pixel-exact measurements.",
       "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-house-consistency-followup",
+      "revision": "2026-10-23-detail-refinements",
       "method": "built-in-imagegen-precise-object-edit",
       "user_approval": "pending",
       "presentation_revision": "bedroom1-window-camera-2026-10-09",
       "prompt_id": "bedroom1-window-camera-2026-10-09-20-exterior-rear-backyard-wide",
       "style_source": [
-        "/private/tmp/claude-501/-Users-hensaldeon-Documents-personal-dream-home/420d3692-9656-4e92-8735-187309d84e92/scratchpad/20-exterior-rear-backyard-wide.PRE-EDIT.png",
-        "01-entrance-wide.png",
-        "18-rear-gallery-wide.png"
+        "22-exterior-rear-utility-wide.png",
+        "01-entrance-wide.png"
       ],
       "render_review": "Assistant comparison with actual geometry/elevation and retained photo/style sources; photographs are illustrative, not pixel-exact measured drawings.",
-      "geometry_source": "Current pre-follow-up photograph, SHA-256 7a7a9117f069b2d51ce490e0f43748e55a5027877af8881162b7984663422c4a",
+      "geometry_source": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff:interiors/images/20-exterior-rear-backyard-wide.png",
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_consistency_followup_generation_history"
+      "prompt_key": "house_detail_refinement_generation_history"
     },
     "21-exterior-south-parking-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "eff090427024f76eb7377eb11be26e00214b2e98f42ae06371696031a2b49548",
-      "review": "Parking angle coordinated with warm oak timber and woven upper-balcony chairs/charcoal table; source gate, numerals, car and paving retained. Assistant visual review; generated placement and geometry are not measured or pixel-identical.",
+      "sha256": "3f7fcc04c21f7fc4c7df2c838e6db8a016cce93d4d90893c71add0f5567999f1",
+      "review": "Moderate warm oak coordinated across rooftop, parapet, balcony soffit, front panels and side strips while retaining existing board directions. Assistant visual comparison; generated dimensions, tones and unchanged geometry are not pixel-exact measurements.",
       "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-house-consistency-followup",
+      "revision": "2026-10-23-detail-refinements",
       "method": "built-in-imagegen-precise-object-edit",
       "user_approval": "pending",
-      "geometry_source": "Current pre-follow-up photograph, SHA-256 d08545acc6a48345ddaecc1fcee336b465a981de8e10fc2210d1c0454b30b54a",
+      "geometry_source": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff:interiors/images/21-exterior-south-parking-wide.png",
       "style_source": [
         "01-entrance-wide.png",
-        "14-balcony-wide.png",
-        "15-terrace-wide.png"
+        "22-exterior-rear-utility-wide.png"
       ],
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_consistency_followup_generation_history"
+      "prompt_key": "house_detail_refinement_generation_history"
     },
     "22-exterior-rear-utility-wide.png": {
       "status": "assistant-reviewed",
@@ -779,7 +779,7 @@
       "prompt_key": "house_consistency_followup_generation_history"
     }
   },
-  "approval": "Latest 23 October consistency follow-up: assistant visual review complete; user acceptance pending. Historical approvals and finish decisions apply only to their recorded versions.",
+  "approval": "Latest 23 October detail refinements: assistant visual comparison complete; user acceptance pending. Prior completion statements do not establish acceptance of the earlier mismatched study chairs/rack or remaining end seating.",
   "style_reference": "STYLE_REFERENCE.md",
   "storage_generation_history": [
     {
@@ -8608,6 +8608,574 @@
     "optional_living_pendant": "applied because the existing pendant appeared high relative to the table",
     "review_status": "assistant visual review complete; user acceptance pending",
     "limitations": "Photographic generative edits are visually matched, not pixel-identical measured drawings. Dimensions, mounting heights and hardware scale are approximate. The small distant study view in the bedroom is illustrative.",
-    "source_retention": "The preceding generated photographs remain recoverable via house_finish_generation_history and its generated paths. Provided pre-edit rear originals and their hashes are recorded in each generation input. No bulky working folder added to the project."
+    "source_retention": "The preceding generated photographs remain recoverable via house_finish_generation_history and its generated paths. Provided pre-edit rear originals and their hashes are recorded in each generation input. No bulky working folder added to the project.",
+    "superseded_in_part_by": "house_detail_refinement_decision"
+  },
+  "house_detail_refinement_generation_history": [
+    {
+      "file": "20-exterior-rear-backyard-wide.png",
+      "date": "2026-10-23",
+      "revision": "2026-10-23-detail-refinements",
+      "user_prompt_verbatim": "Edit Image 1, a dusk photograph of a house rear façade. Make only one change:\n1. Recolour every timber surface — the large horizontal-board panel, the rooftop stair room, the parapet band, the balcony soffit and the narrow louvre screen at the balcony's left end — to exactly the same timber tone as the same façade in Image 2, which matches the cladding beside the front door in Image 3: a warm natural honey-oak with fine visible grain. The large panel currently reads too orange and saturated; make it slightly softer and less orange so it matches Image 2. Not grey, not taupe, not yellow, not orange, not glossy. All timber in the image is one consistent material.\nKeep everything not listed exactly as in Image 1: camera, framing, building massing, the open charcoal balcony railing, the hanging laundry, windows, doors, utility sink, pergola, boundary walls, landscaping, sky and dusk light. Photorealistic architectural photograph, straight verticals, fine texture. No added objects, no new text, no watermark.",
+      "source": {
+        "sha256": "80d6ea4a51975b09ac7903fff5623ac7c5bec946c1babc3ffb482ad96da20f5b",
+        "git_commit": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff",
+        "git_path": "interiors/images/20-exterior-rear-backyard-wide.png",
+        "role": "current pre-edit photograph; requested exact camera/framing/architecture authority"
+      },
+      "geometry_reference": "Current source photograph; model and drawings unchanged. References govern only the explicitly named colour, furniture, artwork or mirror details.",
+      "attempts": [
+        {
+          "run": 1,
+          "method": "built-in-imagegen",
+          "prompt": "Use case: precise-object-edit. Input roles: Image 1: current target and camera/architecture authority; Image 2: exact timber tone authority, same rear facade; Image 3: entrance cladding timber colour reference. Edit only Image 1. Preserve every unlisted feature of Image 1.\n\nEdit Image 1, a dusk photograph of a house rear façade. Make only one change:\n1. Recolour every timber surface — the large horizontal-board panel, the rooftop stair room, the parapet band, the balcony soffit and the narrow louvre screen at the balcony's left end — to exactly the same timber tone as the same façade in Image 2, which matches the cladding beside the front door in Image 3: a warm natural honey-oak with fine visible grain. The large panel currently reads too orange and saturated; make it slightly softer and less orange so it matches Image 2. Not grey, not taupe, not yellow, not orange, not glossy. All timber in the image is one consistent material.\nKeep everything not listed exactly as in Image 1: camera, framing, building massing, the open charcoal balcony railing, the hanging laundry, windows, doors, utility sink, pergola, boundary walls, landscaping, sky and dusk light. Photorealistic architectural photograph, straight verticals, fine texture. No added objects, no new text, no watermark.",
+          "inputs": [
+            {
+              "index": 1,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/20-exterior-rear-backyard-wide.png",
+              "file": "20-exterior-rear-backyard-wide.png",
+              "sha256": "80d6ea4a51975b09ac7903fff5623ac7c5bec946c1babc3ffb482ad96da20f5b",
+              "role": "edit target and source camera/architecture authority"
+            },
+            {
+              "index": 2,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/22-exterior-rear-utility-wide.png",
+              "file": "22-exterior-rear-utility-wide.png",
+              "sha256": "eb15ff7e150b60f6378494a54bc8850ba52f450a924371856364b8f04ac6b39c",
+              "role": "exact timber tone authority, same rear facade"
+            },
+            {
+              "index": 3,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/01-entrance-wide.png",
+              "file": "01-entrance-wide.png",
+              "sha256": "d23aaf24f0a0d2ebe4459813a0a34024911396dd1f5cc843e50f7945fb58ff3c",
+              "role": "entrance cladding timber colour reference"
+            }
+          ],
+          "transparent_background": false,
+          "generated_path": "/Users/hensaldeon/.codex/generated_images/01a167af-55b2-7652-a34a-367ee3569eea/exec-b96fc6bd-21c7-4d06-a71a-56c6e68e6302.png",
+          "output_sha256": "a3c206e1572ce704747e162c547f10251775d8537ed20b73c7e3855e412d945c",
+          "output_size": [
+            1676,
+            938
+          ],
+          "review": "Timber softened from the preceding orange/saturated candidate toward the entrance and rear-utility references. Open railing, laundry, short-end screen and source rear composition visually retained."
+        }
+      ],
+      "final_sha256": "a3c206e1572ce704747e162c547f10251775d8537ed20b73c7e3855e412d945c",
+      "final_size": [
+        1676,
+        938
+      ],
+      "review": "Timber softened from the preceding orange/saturated candidate toward the entrance and rear-utility references. Open railing, laundry, short-end screen and source rear composition visually retained.",
+      "review_status": "assistant-reviewed",
+      "user_approval": "pending"
+    },
+    {
+      "file": "19-exterior-front-wide.png",
+      "date": "2026-10-23",
+      "revision": "2026-10-23-detail-refinements",
+      "user_prompt_verbatim": "Edit Image 1, a dusk photograph of a two-storey house front. Make only one change:\n1. Recolour every timber surface — the rooftop stair room, the parapet band below it, the vertical cladding beside the upper balcony, the upper balcony's ceiling, the ground-floor panel beside the front door and any side-elevation timber strips — to one consistent warm natural honey-oak with fine visible grain, exactly matching the cladding beside the front door in Image 2 and the large panel in Image 3. Right now some panels read mustard-yellow / orange and too saturated while others read grey and dull; bring all of them to the same moderate, natural warm oak. Not grey, not taupe, not yellow, not orange, not glossy.\nKeep everything not listed exactly as in Image 1: camera, framing, building massing, curved charcoal frames, windows, oak front door, woven chairs on the sitout and balcony, railings, boundary walls, gate, house number, well, car, paving, landscaping, sky and dusk light. Photorealistic architectural photograph, straight verticals, fine texture. No added objects, no new text, no watermark.",
+      "source": {
+        "sha256": "2d6baa754b40bed1e20f4669922ab24c54deb89bd838f5d0cac5b3ed2dd68722",
+        "git_commit": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff",
+        "git_path": "interiors/images/19-exterior-front-wide.png",
+        "role": "current pre-edit photograph; requested exact camera/framing/architecture authority"
+      },
+      "geometry_reference": "Current source photograph; model and drawings unchanged. References govern only the explicitly named colour, furniture, artwork or mirror details.",
+      "attempts": [
+        {
+          "run": 1,
+          "method": "built-in-imagegen",
+          "prompt": "Use case: precise-object-edit. Input roles: Image 1: current target and camera/architecture authority; Image 2: entrance cladding timber tone reference; Image 3: rear timber tone authority. Edit only Image 1. Preserve every unlisted feature of Image 1.\n\nEdit Image 1, a dusk photograph of a two-storey house front. Make only one change:\n1. Recolour every timber surface — the rooftop stair room, the parapet band below it, the vertical cladding beside the upper balcony, the upper balcony's ceiling, the ground-floor panel beside the front door and any side-elevation timber strips — to one consistent warm natural honey-oak with fine visible grain, exactly matching the cladding beside the front door in Image 2 and the large panel in Image 3. Right now some panels read mustard-yellow / orange and too saturated while others read grey and dull; bring all of them to the same moderate, natural warm oak. Not grey, not taupe, not yellow, not orange, not glossy.\nKeep everything not listed exactly as in Image 1: camera, framing, building massing, curved charcoal frames, windows, oak front door, woven chairs on the sitout and balcony, railings, boundary walls, gate, house number, well, car, paving, landscaping, sky and dusk light. Photorealistic architectural photograph, straight verticals, fine texture. No added objects, no new text, no watermark.",
+          "inputs": [
+            {
+              "index": 1,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/19-exterior-front-wide.png",
+              "file": "19-exterior-front-wide.png",
+              "sha256": "2d6baa754b40bed1e20f4669922ab24c54deb89bd838f5d0cac5b3ed2dd68722",
+              "role": "edit target and source camera/architecture authority"
+            },
+            {
+              "index": 2,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/01-entrance-wide.png",
+              "file": "01-entrance-wide.png",
+              "sha256": "d23aaf24f0a0d2ebe4459813a0a34024911396dd1f5cc843e50f7945fb58ff3c",
+              "role": "entrance cladding timber tone reference"
+            },
+            {
+              "index": 3,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/22-exterior-rear-utility-wide.png",
+              "file": "22-exterior-rear-utility-wide.png",
+              "sha256": "eb15ff7e150b60f6378494a54bc8850ba52f450a924371856364b8f04ac6b39c",
+              "role": "rear timber tone authority"
+            }
+          ],
+          "transparent_background": false,
+          "generated_path": "/Users/hensaldeon/.codex/generated_images/01a167af-55b2-7652-a34a-367ee3569eea/exec-2b0189bd-cfe9-4b69-9209-7717fc528a3e.png",
+          "output_sha256": "2774a03e49f0ebebe015c35576f79102e305bf01f2802662d4f1180ffb13c654",
+          "output_size": [
+            1678,
+            937
+          ],
+          "review": "Colour softened, but generation changed rooftop board direction to horizontal; rejected pending board-direction restoration."
+        },
+        {
+          "run": 2,
+          "method": "built-in-imagegen",
+          "prompt": "Use case: precise-object-edit. Edit Image 1, the recoloured front exterior. Image 2 is the PRE-EDIT SAME CAMERA photograph and supplies ONLY original timber board/joint orientations. Make ONLY this correction: restore the rooftop stair room cladding to the original NARROW VERTICAL timber boards, preserving their exact spacing and width from Image 2. The timber parapet band immediately below the roof room must also retain its ORIGINAL board/joint direction and spacing as Image 2. Keep the current softened moderate warm natural honey-oak COLOUR from Image 1 on all timber; do not restore the more orange colour of Image 2. Do not change anything else: preserve the new timber colour on other panels and balcony soffit, all house masses, roof/window edges, railings, woven chairs, plants, charcoal facade frames, door, windows, lights, car, paving, boundary wall, gate, house number, well, sky, camera and framing exactly as Image 1. This is solely a board-direction repair, not a redesign. Photorealistic fine oak grain, matte, no added objects or text.",
+          "inputs": [
+            {
+              "index": 1,
+              "path_used": "/Users/hensaldeon/.codex/generated_images/01a167af-55b2-7652-a34a-367ee3569eea/exec-2b0189bd-cfe9-4b69-9209-7717fc528a3e.png",
+              "file": "19-exterior-front-wide.png",
+              "sha256": "2774a03e49f0ebebe015c35576f79102e305bf01f2802662d4f1180ffb13c654",
+              "role": "generated target for scoped correction"
+            },
+            {
+              "index": 2,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/19-exterior-front-wide.png",
+              "file": "19-exterior-front-wide.png",
+              "sha256": "2d6baa754b40bed1e20f4669922ab24c54deb89bd838f5d0cac5b3ed2dd68722",
+              "role": "pre-edit source geometry/board-direction reference only"
+            }
+          ],
+          "transparent_background": false,
+          "generated_path": "/Users/hensaldeon/.codex/generated_images/01a167af-55b2-7652-a34a-367ee3569eea/exec-447de88e-1a4b-4160-9258-a6c57043b617.png",
+          "output_sha256": "569e8b08759672b1f226b74dd4e141a7fb3b212bdc58829641f0c64cccc6cf34",
+          "output_size": [
+            1678,
+            937
+          ],
+          "review": "Moderated warm oak timber finish; rooftop room and parapet board directions restored from pre-edit photograph after the first candidate changed orientation. Front facade, furniture, gates/numerals, car, paving and sky visually retained."
+        }
+      ],
+      "final_sha256": "569e8b08759672b1f226b74dd4e141a7fb3b212bdc58829641f0c64cccc6cf34",
+      "final_size": [
+        1678,
+        937
+      ],
+      "review": "Moderated warm oak timber finish; rooftop room and parapet board directions restored from pre-edit photograph after the first candidate changed orientation. Front facade, furniture, gates/numerals, car, paving and sky visually retained.",
+      "review_status": "assistant-reviewed",
+      "user_approval": "pending"
+    },
+    {
+      "file": "21-exterior-south-parking-wide.png",
+      "date": "2026-10-23",
+      "revision": "2026-10-23-detail-refinements",
+      "user_prompt_verbatim": "Edit Image 1, a dusk photograph of a two-storey house front. Make only one change:\n1. Recolour every timber surface — the rooftop stair room, the parapet band below it, the vertical cladding beside the upper balcony, the upper balcony's ceiling, the ground-floor panel beside the front door and any side-elevation timber strips — to one consistent warm natural honey-oak with fine visible grain, exactly matching the cladding beside the front door in Image 2 and the large panel in Image 3. Right now some panels read mustard-yellow / orange and too saturated while others read grey and dull; bring all of them to the same moderate, natural warm oak. Not grey, not taupe, not yellow, not orange, not glossy.\nKeep everything not listed exactly as in Image 1: camera, framing, building massing, curved charcoal frames, windows, oak front door, woven chairs on the sitout and balcony, railings, boundary walls, gate, house number, well, car, paving, landscaping, sky and dusk light. Photorealistic architectural photograph, straight verticals, fine texture. No added objects, no new text, no watermark.",
+      "source": {
+        "sha256": "eff090427024f76eb7377eb11be26e00214b2e98f42ae06371696031a2b49548",
+        "git_commit": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff",
+        "git_path": "interiors/images/21-exterior-south-parking-wide.png",
+        "role": "current pre-edit photograph; requested exact camera/framing/architecture authority"
+      },
+      "geometry_reference": "Current source photograph; model and drawings unchanged. References govern only the explicitly named colour, furniture, artwork or mirror details.",
+      "attempts": [
+        {
+          "run": 1,
+          "method": "built-in-imagegen",
+          "prompt": "Use case: precise-object-edit. Input roles: Image 1: current target and camera/architecture authority; Image 2: entrance cladding timber tone reference; Image 3: rear timber tone authority. COLOUR ONLY: preserve every existing timber board's direction, width, seams, divisions and grain scale. The rooftop room's narrow VERTICAL boards stay vertical. Do not turn any vertical boarding horizontal. Preserve all unlisted features of Image 1.\n\nEdit Image 1, a dusk photograph of a two-storey house front. Make only one change:\n1. Recolour every timber surface — the rooftop stair room, the parapet band below it, the vertical cladding beside the upper balcony, the upper balcony's ceiling, the ground-floor panel beside the front door and any side-elevation timber strips — to one consistent warm natural honey-oak with fine visible grain, exactly matching the cladding beside the front door in Image 2 and the large panel in Image 3. Right now some panels read mustard-yellow / orange and too saturated while others read grey and dull; bring all of them to the same moderate, natural warm oak. Not grey, not taupe, not yellow, not orange, not glossy.\nKeep everything not listed exactly as in Image 1: camera, framing, building massing, curved charcoal frames, windows, oak front door, woven chairs on the sitout and balcony, railings, boundary walls, gate, house number, well, car, paving, landscaping, sky and dusk light. Photorealistic architectural photograph, straight verticals, fine texture. No added objects, no new text, no watermark.",
+          "inputs": [
+            {
+              "index": 1,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/21-exterior-south-parking-wide.png",
+              "file": "21-exterior-south-parking-wide.png",
+              "sha256": "eff090427024f76eb7377eb11be26e00214b2e98f42ae06371696031a2b49548",
+              "role": "edit target and source camera/architecture authority"
+            },
+            {
+              "index": 2,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/01-entrance-wide.png",
+              "file": "01-entrance-wide.png",
+              "sha256": "d23aaf24f0a0d2ebe4459813a0a34024911396dd1f5cc843e50f7945fb58ff3c",
+              "role": "entrance cladding timber tone reference"
+            },
+            {
+              "index": 3,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/22-exterior-rear-utility-wide.png",
+              "file": "22-exterior-rear-utility-wide.png",
+              "sha256": "eb15ff7e150b60f6378494a54bc8850ba52f450a924371856364b8f04ac6b39c",
+              "role": "rear timber tone authority"
+            }
+          ],
+          "transparent_background": false,
+          "generated_path": "/Users/hensaldeon/.codex/generated_images/01a167af-55b2-7652-a34a-367ee3569eea/exec-67b2d766-8432-40b3-9863-7e309e40f0a7.png",
+          "output_sha256": "3f7fcc04c21f7fc4c7df2c838e6db8a016cce93d4d90893c71add0f5567999f1",
+          "output_size": [
+            1678,
+            937
+          ],
+          "review": "Moderated warm oak applied across roof room, parapet, side strips and front panels with existing board directions retained. Source architecture, woven chairs, plants, car, paving and numerals visually retained."
+        }
+      ],
+      "final_sha256": "3f7fcc04c21f7fc4c7df2c838e6db8a016cce93d4d90893c71add0f5567999f1",
+      "final_size": [
+        1678,
+        937
+      ],
+      "review": "Moderated warm oak applied across roof room, parapet, side strips and front panels with existing board directions retained. Source architecture, woven chairs, plants, car, paving and numerals visually retained.",
+      "review_status": "assistant-reviewed",
+      "user_approval": "pending"
+    },
+    {
+      "file": "10-study-wide.png",
+      "date": "2026-10-23",
+      "revision": "2026-10-23-detail-refinements",
+      "user_prompt_verbatim": "Edit Image 1, a photograph of the same tailoring room shown from another angle in Image 4. Make only these changes so the furniture matches Image 4:\n1. Replace both chairs with the same chair design as Image 4: light muted-oak chairs with a curved, continuous top rail, slender spindles and slim splayed legs, solid oak seat, no upholstery. Same positions.\n2. Replace the slim angled thread rack on the left wall with the same thread-spool pegboard as Image 4: a square muted-oak board with rows of short pegs holding coloured thread spools. Same wall, same height.\nKeep the black-framed window and Roman blind, the left oak desk, the two right-hand benches and their sewing machines, task lamps, shelves with lidded boxes and the oak-cased doorway on the left exactly as they are.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, openings, floor, ceiling, joinery outlines and proportions. Match Images 2–3: muted natural oak (never orange), creamy ivory plaster, pale sandy stone, charcoal hardware, soft daylight, warm 2700–3000 K diffused light. Photorealistic, fine texture. No added objects beyond those listed, no neon glow, no gloss, no text or watermark.",
+      "source": {
+        "sha256": "5ea46cac791ac651c685a343d4b13aa501989da4340be1267fa933e142db1102",
+        "git_commit": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff",
+        "git_path": "interiors/images/10-study-wide.png",
+        "role": "current pre-edit photograph; requested exact camera/framing/architecture authority"
+      },
+      "geometry_reference": "Current source photograph; model and drawings unchanged. References govern only the explicitly named colour, furniture, artwork or mirror details.",
+      "attempts": [
+        {
+          "run": 1,
+          "method": "built-in-imagegen",
+          "prompt": "Use case: precise-object-edit. Input roles: Image 1: current target and camera/architecture authority; Image 2: material reference only; Image 3: material reference only; Image 4: exact chair and wall pegboard design authority. Edit only Image 1. Preserve every unlisted feature of Image 1.\n\nEdit Image 1, a photograph of the same tailoring room shown from another angle in Image 4. Make only these changes so the furniture matches Image 4:\n1. Replace both chairs with the same chair design as Image 4: light muted-oak chairs with a curved, continuous top rail, slender spindles and slim splayed legs, solid oak seat, no upholstery. Same positions.\n2. Replace the slim angled thread rack on the left wall with the same thread-spool pegboard as Image 4: a square muted-oak board with rows of short pegs holding coloured thread spools. Same wall, same height.\nKeep the black-framed window and Roman blind, the left oak desk, the two right-hand benches and their sewing machines, task lamps, shelves with lidded boxes and the oak-cased doorway on the left exactly as they are.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, openings, floor, ceiling, joinery outlines and proportions. Match Images 2–3: muted natural oak (never orange), creamy ivory plaster, pale sandy stone, charcoal hardware, soft daylight, warm 2700–3000 K diffused light. Photorealistic, fine texture. No added objects beyond those listed, no neon glow, no gloss, no text or watermark.",
+          "inputs": [
+            {
+              "index": 1,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/10-study-wide.png",
+              "file": "10-study-wide.png",
+              "sha256": "5ea46cac791ac651c685a343d4b13aa501989da4340be1267fa933e142db1102",
+              "role": "edit target and source camera/architecture authority"
+            },
+            {
+              "index": 2,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/06-kitchen-wide.png",
+              "file": "06-kitchen-wide.png",
+              "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+              "role": "material reference only"
+            },
+            {
+              "index": 3,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/06-kitchen-detail.png",
+              "file": "06-kitchen-detail.png",
+              "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba",
+              "role": "material reference only"
+            },
+            {
+              "index": 4,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/10-study-storage.png",
+              "file": "10-study-storage.png",
+              "sha256": "7f6f383518e4117c81b91842b346de874c1765fc98a6e443db3b23656eee99c7",
+              "role": "exact chair and wall pegboard design authority"
+            }
+          ],
+          "transparent_background": false,
+          "generated_path": "/Users/hensaldeon/.codex/generated_images/01a167af-55b2-7652-a34a-367ee3569eea/exec-5d0e1fef-fd57-46a4-b176-2ce681617091.png",
+          "output_sha256": "5b20e2b8a024a096fcb874f6a178c23fa35305274a00776e3d1c8a739cfcc733",
+          "output_size": [
+            1452,
+            1083
+          ],
+          "review": "Both visible chairs now have continuous curved top rails, slender spindles, splayed legs and solid oak seats; left wall rack is now the storage-view pegboard design. Window, blind, desk/benches, machines, lamps and two-box shelves visually retained."
+        }
+      ],
+      "final_sha256": "5b20e2b8a024a096fcb874f6a178c23fa35305274a00776e3d1c8a739cfcc733",
+      "final_size": [
+        1452,
+        1083
+      ],
+      "review": "Both visible chairs now have continuous curved top rails, slender spindles, splayed legs and solid oak seats; left wall rack is now the storage-view pegboard design. Window, blind, desk/benches, machines, lamps and two-box shelves visually retained.",
+      "review_status": "assistant-reviewed",
+      "user_approval": "pending"
+    },
+    {
+      "file": "16-dining-wide.png",
+      "date": "2026-10-23",
+      "revision": "2026-10-23-detail-refinements",
+      "user_prompt_verbatim": "Edit Image 1, a photograph of a dining area. The drum pendant currently sits on top of the artwork's frame. Make only these changes so they no longer overlap:\n1. Replace the artwork with a wider, lower landscape version of the same oatmeal/sage/clay abstract, about 100 × 50 cm in a thin muted-oak frame, centred on the table's long axis, its bottom edge about 25 cm above the height of the tabletop.\n2. Raise the drum pendant slightly so its bottom edge is about 80 cm above the tabletop, still centred over the table. From this camera the pendant's lower edge sits just above the top of the frame with a clear gap of bare wall between them; the pendant must not cover any part of the artwork.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, openings, floor, ceiling, joinery outlines and proportions. Match Images 2–3: muted natural oak (never orange), creamy ivory plaster, pale sandy stone, charcoal hardware, soft daylight, warm 2700–3000 K diffused light. Photorealistic, fine texture. No added objects beyond those listed, no neon glow, no gloss, no text or watermark.",
+      "source": {
+        "sha256": "76a63ba94a227508a23870ca3e6470e242c9deaf53b6a02f6f323b26b22fe817",
+        "git_commit": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff",
+        "git_path": "interiors/images/16-dining-wide.png",
+        "role": "current pre-edit photograph; requested exact camera/framing/architecture authority"
+      },
+      "geometry_reference": "Current source photograph; model and drawings unchanged. References govern only the explicitly named colour, furniture, artwork or mirror details.",
+      "attempts": [
+        {
+          "run": 1,
+          "method": "built-in-imagegen",
+          "prompt": "Use case: precise-object-edit. Input roles: Image 1: current target and camera/architecture authority; Image 2: material reference only; Image 3: material reference only. Edit only Image 1. Preserve every unlisted feature of Image 1.\n\nEdit Image 1, a photograph of a dining area. The drum pendant currently sits on top of the artwork's frame. Make only these changes so they no longer overlap:\n1. Replace the artwork with a wider, lower landscape version of the same oatmeal/sage/clay abstract, about 100 × 50 cm in a thin muted-oak frame, centred on the table's long axis, its bottom edge about 25 cm above the height of the tabletop.\n2. Raise the drum pendant slightly so its bottom edge is about 80 cm above the tabletop, still centred over the table. From this camera the pendant's lower edge sits just above the top of the frame with a clear gap of bare wall between them; the pendant must not cover any part of the artwork.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, openings, floor, ceiling, joinery outlines and proportions. Match Images 2–3: muted natural oak (never orange), creamy ivory plaster, pale sandy stone, charcoal hardware, soft daylight, warm 2700–3000 K diffused light. Photorealistic, fine texture. No added objects beyond those listed, no neon glow, no gloss, no text or watermark.",
+          "inputs": [
+            {
+              "index": 1,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/16-dining-wide.png",
+              "file": "16-dining-wide.png",
+              "sha256": "76a63ba94a227508a23870ca3e6470e242c9deaf53b6a02f6f323b26b22fe817",
+              "role": "edit target and source camera/architecture authority"
+            },
+            {
+              "index": 2,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/06-kitchen-wide.png",
+              "file": "06-kitchen-wide.png",
+              "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+              "role": "material reference only"
+            },
+            {
+              "index": 3,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/06-kitchen-detail.png",
+              "file": "06-kitchen-detail.png",
+              "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba",
+              "role": "material reference only"
+            }
+          ],
+          "transparent_background": false,
+          "generated_path": "/Users/hensaldeon/.codex/generated_images/01a167af-55b2-7652-a34a-367ee3569eea/exec-0b5a03b5-9710-4133-b4e2-97f341fd3a4d.png",
+          "output_sha256": "c1086c2aa6102cf16a58743d95d073585907c5957e5f1a327db9ce073e4441fd",
+          "output_size": [
+            1531,
+            1027
+          ],
+          "review": "Wider, lower landscape abstract and raised drum pendant now have a visible bare-wall gap with no overlap. Table, two chairs, cushioned bench, curtains and source camera visually retained."
+        }
+      ],
+      "final_sha256": "c1086c2aa6102cf16a58743d95d073585907c5957e5f1a327db9ce073e4441fd",
+      "final_size": [
+        1531,
+        1027
+      ],
+      "review": "Wider, lower landscape abstract and raised drum pendant now have a visible bare-wall gap with no overlap. Table, two chairs, cushioned bench, curtains and source camera visually retained.",
+      "review_status": "assistant-reviewed",
+      "user_approval": "pending"
+    },
+    {
+      "file": "02-living-wide.png",
+      "date": "2026-10-23",
+      "revision": "2026-10-23-detail-refinements",
+      "user_prompt_verbatim": "Edit Image 1, a photograph of a living/dining room. Make only one change:\n1. Dining table: remove the chair at the near end and the chair at the far end of the table. Keep the two chairs on the left long side and the oak bench with oatmeal cushion on the window side, so the seating matches Image 4: two chairs and one bench, no end chairs.\nKeep the drum pendant exactly where it is.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, openings, stair, floor, ceiling, joinery outlines and proportions. Match Images 2–3: muted natural oak (never orange), creamy ivory plaster, pale sandy stone, charcoal hardware, soft daylight, warm 2700–3000 K diffused light. Photorealistic, fine texture. No added objects beyond those listed, no neon glow, no gloss, no text or watermark.",
+      "source": {
+        "sha256": "c7f5c852e096493b3c995f64bc98feaeadbd01bc2b5419bcb3252f958b92c9b1",
+        "git_commit": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff",
+        "git_path": "interiors/images/02-living-wide.png",
+        "role": "current pre-edit photograph; requested exact camera/framing/architecture authority"
+      },
+      "geometry_reference": "Current source photograph; model and drawings unchanged. References govern only the explicitly named colour, furniture, artwork or mirror details.",
+      "attempts": [
+        {
+          "run": 1,
+          "method": "built-in-imagegen",
+          "prompt": "Use case: precise-object-edit. Input roles: Image 1: current target and camera/architecture authority; pendant locked; Image 2: material reference only; Image 3: material reference only; Image 4: two chairs and bench seating authority. Edit only Image 1. Preserve every unlisted feature of Image 1.\n\nEdit Image 1, a photograph of a living/dining room. Make only one change:\n1. Dining table: remove the chair at the near end and the chair at the far end of the table. Keep the two chairs on the left long side and the oak bench with oatmeal cushion on the window side, so the seating matches Image 4: two chairs and one bench, no end chairs.\nKeep the drum pendant exactly where it is.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, openings, stair, floor, ceiling, joinery outlines and proportions. Match Images 2–3: muted natural oak (never orange), creamy ivory plaster, pale sandy stone, charcoal hardware, soft daylight, warm 2700–3000 K diffused light. Photorealistic, fine texture. No added objects beyond those listed, no neon glow, no gloss, no text or watermark.",
+          "inputs": [
+            {
+              "index": 1,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/02-living-wide.png",
+              "file": "02-living-wide.png",
+              "sha256": "c7f5c852e096493b3c995f64bc98feaeadbd01bc2b5419bcb3252f958b92c9b1",
+              "role": "edit target and source camera/architecture authority"
+            },
+            {
+              "index": 2,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/06-kitchen-wide.png",
+              "file": "06-kitchen-wide.png",
+              "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+              "role": "material reference only"
+            },
+            {
+              "index": 3,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/06-kitchen-detail.png",
+              "file": "06-kitchen-detail.png",
+              "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba",
+              "role": "material reference only"
+            },
+            {
+              "index": 4,
+              "path_used": "/Users/hensaldeon/.codex/generated_images/01a167af-55b2-7652-a34a-367ee3569eea/exec-0b5a03b5-9710-4133-b4e2-97f341fd3a4d.png",
+              "file": "16-dining-wide.png",
+              "sha256": "c1086c2aa6102cf16a58743d95d073585907c5957e5f1a327db9ce073e4441fd",
+              "role": "corrected consistency reference: 16-dining-wide.png"
+            }
+          ],
+          "transparent_background": false,
+          "generated_path": "/Users/hensaldeon/.codex/generated_images/01a167af-55b2-7652-a34a-367ee3569eea/exec-01fbe983-4a7a-4b3f-800a-2a38f177107a.png",
+          "output_sha256": "2d89bf1ef2c7b64136a54117afc3686446c3c68f00d9b01b7cac7fb030aea31d",
+          "output_size": [
+            1536,
+            1024
+          ],
+          "review": "Near-end chair removed, but far-end chair back still visible; targeted removal pending."
+        },
+        {
+          "run": 2,
+          "method": "built-in-imagegen",
+          "prompt": "Use case: precise-object-edit. Edit this image with ONLY ONE removal. Remove the remaining FAR-END dining CHAIR: its short horizontal oak BACKREST is visible just above the FAR edge of the dining tabletop, behind the fruit bowl and to the LEFT of the small tabletop plant, below the pendant. In this 1536 × 1024 image, the unwanted chair back is approximately x=1005–1090, y=545–568. Remove that chair's back, seat and legs wherever visible, naturally restoring the existing wall/doorway/floor behind it. Do NOT remove either of the TWO chairs on the LEFT LONG SIDE of the table, and keep the cushioned bench on the WINDOW side. Near end is already empty: keep it empty. Final seating exactly TWO left-side chairs and ONE right-side bench, ZERO end chairs. Keep the pendant position, size, cord and light EXACTLY as this image. Keep table, bowl, small plant, rug, coffee table, sofas, lamps, window, curtains, stairs, TV, basin, walls, openings, camera and framing unchanged. No other changes or objects, no text or watermark.",
+          "inputs": [
+            {
+              "index": 1,
+              "path_used": "/Users/hensaldeon/.codex/generated_images/01a167af-55b2-7652-a34a-367ee3569eea/exec-01fbe983-4a7a-4b3f-800a-2a38f177107a.png",
+              "file": "02-living-wide.png",
+              "sha256": "2d89bf1ef2c7b64136a54117afc3686446c3c68f00d9b01b7cac7fb030aea31d",
+              "role": "generated target for scoped correction"
+            }
+          ],
+          "transparent_background": false,
+          "generated_path": "/Users/hensaldeon/.codex/generated_images/01a167af-55b2-7652-a34a-367ee3569eea/exec-3fdf080c-5d74-4258-adad-2af837bc2bd5.png",
+          "output_sha256": "8c9b7f68efd92492b174c69df3315af54c27366743cb657a0a1e7bdb71bd53d3",
+          "output_size": [
+            1536,
+            1024
+          ],
+          "review": "Both end chairs removed; exactly two left-long-side chairs and cushioned window-side oak bench remain. Pendant position/size/cable visually retained; source room framing and furnishings retained."
+        }
+      ],
+      "final_sha256": "8c9b7f68efd92492b174c69df3315af54c27366743cb657a0a1e7bdb71bd53d3",
+      "final_size": [
+        1536,
+        1024
+      ],
+      "review": "Both end chairs removed; exactly two left-long-side chairs and cushioned window-side oak bench remain. Pendant position/size/cable visually retained; source room framing and furnishings retained.",
+      "review_status": "assistant-reviewed",
+      "user_approval": "pending"
+    },
+    {
+      "file": "02-ground-floor-overview-wide.png",
+      "date": "2026-10-23",
+      "revision": "2026-10-23-detail-refinements",
+      "user_prompt_verbatim": "Edit Image 1, a photograph of a living/dining room with an under-stair TV unit and washbasin. Make only one change:\n1. The basin mirror currently shows two glass panes inside one oak frame. Replace it with a single plain rectangular mirror in one thin muted-oak frame, the same design as the basin mirror in Image 4, with the charcoal sconce centred above it. Use a matte black tap matching Image 4.\nDo not change the staircase treads, risers, support or handrail in any way.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, openings, stair, floor, ceiling, joinery outlines and proportions. Match Images 2–3: muted natural oak (never orange), creamy ivory plaster, pale sandy stone, charcoal hardware, soft daylight, warm 2700–3000 K diffused light. Photorealistic, fine texture. No added objects beyond those listed, no neon glow, no gloss, no text or watermark.",
+      "source": {
+        "sha256": "8564ebaa0de01f6a75cdf75a20a47e7786d9ad62f598bc4c92f153f40ccf451e",
+        "git_commit": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff",
+        "git_path": "interiors/images/02-ground-floor-overview-wide.png",
+        "role": "current pre-edit photograph; requested exact camera/framing/architecture authority"
+      },
+      "geometry_reference": "Current source photograph; model and drawings unchanged. References govern only the explicitly named colour, furniture, artwork or mirror details.",
+      "attempts": [
+        {
+          "run": 1,
+          "method": "built-in-imagegen",
+          "prompt": "Use case: precise-object-edit. Input roles: Image 1: current target and camera/architecture authority; staircase fully locked; Image 2: material reference only; Image 3: material reference only; Image 4: single-sheet mirror and matte black tap reference. Edit only Image 1. Preserve every unlisted feature of Image 1.\n\nEdit Image 1, a photograph of a living/dining room with an under-stair TV unit and washbasin. Make only one change:\n1. The basin mirror currently shows two glass panes inside one oak frame. Replace it with a single plain rectangular mirror in one thin muted-oak frame, the same design as the basin mirror in Image 4, with the charcoal sconce centred above it. Use a matte black tap matching Image 4.\nDo not change the staircase treads, risers, support or handrail in any way.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, openings, stair, floor, ceiling, joinery outlines and proportions. Match Images 2–3: muted natural oak (never orange), creamy ivory plaster, pale sandy stone, charcoal hardware, soft daylight, warm 2700–3000 K diffused light. Photorealistic, fine texture. No added objects beyond those listed, no neon glow, no gloss, no text or watermark.",
+          "inputs": [
+            {
+              "index": 1,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/02-ground-floor-overview-wide.png",
+              "file": "02-ground-floor-overview-wide.png",
+              "sha256": "8564ebaa0de01f6a75cdf75a20a47e7786d9ad62f598bc4c92f153f40ccf451e",
+              "role": "edit target and source camera/architecture authority"
+            },
+            {
+              "index": 2,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/06-kitchen-wide.png",
+              "file": "06-kitchen-wide.png",
+              "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+              "role": "material reference only"
+            },
+            {
+              "index": 3,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/06-kitchen-detail.png",
+              "file": "06-kitchen-detail.png",
+              "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba",
+              "role": "material reference only"
+            },
+            {
+              "index": 4,
+              "path_used": "/private/tmp/dream-home-refinements-2026-10-23/03-stair-tv-wide.png",
+              "file": "03-stair-tv-wide.png",
+              "sha256": "d4082c0b8798a91ecb2c399fbc6724741beb2a59cdfc8ce218b69c021465cd94",
+              "role": "single-sheet mirror and matte black tap reference"
+            }
+          ],
+          "transparent_background": false,
+          "generated_path": "/Users/hensaldeon/.codex/generated_images/01a167af-55b2-7652-a34a-367ee3569eea/exec-4331a929-ac64-4f1e-991e-4d3f222d6899.png",
+          "output_sha256": "05c2d0183e498e1e6dcea69ae9b1f5023c28fa07b0dd22e0ad7e2cebba22e73c",
+          "output_size": [
+            1672,
+            941
+          ],
+          "review": "Single continuous mirror glass in thin oak frame, no internal divider; centred charcoal downlight and matte black tap. Source stair, dining and living composition visually retained."
+        }
+      ],
+      "final_sha256": "05c2d0183e498e1e6dcea69ae9b1f5023c28fa07b0dd22e0ad7e2cebba22e73c",
+      "final_size": [
+        1672,
+        941
+      ],
+      "review": "Single continuous mirror glass in thin oak frame, no internal divider; centred charcoal downlight and matte black tap. Source stair, dining and living composition visually retained.",
+      "review_status": "assistant-reviewed",
+      "user_approval": "pending"
+    }
+  ],
+  "house_detail_refinement_decision": {
+    "id": "2026-10-23-detail-refinements",
+    "date": "2026-10-23",
+    "user_request_verbatim": "1. 20-exterior-rear-backyard-wide.png\nAttach these images:\n- Image 1: the current image.\n- Image 2: 22-exterior-rear-utility-wide.png, the same façade with the correct tone.\n- Image 3: 01-entrance-wide.png.\n```\nEdit Image 1, a dusk photograph of a house rear façade. Make only one change:\n1. Recolour every timber surface — the large horizontal-board panel, the rooftop stair room, the parapet band, the balcony soffit and the narrow louvre screen at the balcony's left end — to exactly the same timber tone as the same façade in Image 2, which matches the cladding beside the front door in Image 3: a warm natural honey-oak with fine visible grain. The large panel currently reads too orange and saturated; make it slightly softer and less orange so it matches Image 2. Not grey, not taupe, not yellow, not orange, not glossy. All timber in the image is one consistent material.\nKeep everything not listed exactly as in Image 1: camera, framing, building massing, the open charcoal balcony railing, the hanging laundry, windows, doors, utility sink, pergola, boundary walls, landscaping, sky and dusk light. Photorealistic architectural photograph, straight verticals, fine texture. No added objects, no new text, no watermark.\n\n```\n2. 19-exterior-front-wide.png, then 21-exterior-south-parking-wide.png (one run each)\nAttach these images:\n- Image 1: the current image.\n- Image 2: 01-entrance-wide.png.\n- Image 3: 22-exterior-rear-utility-wide.png.\n```\nEdit Image 1, a dusk photograph of a two-storey house front. Make only one change:\n1. Recolour every timber surface — the rooftop stair room, the parapet band below it, the vertical cladding beside the upper balcony, the upper balcony's ceiling, the ground-floor panel beside the front door and any side-elevation timber strips — to one consistent warm natural honey-oak with fine visible grain, exactly matching the cladding beside the front door in Image 2 and the large panel in Image 3. Right now some panels read mustard-yellow / orange and too saturated while others read grey and dull; bring all of them to the same moderate, natural warm oak. Not grey, not taupe, not yellow, not orange, not glossy.\nKeep everything not listed exactly as in Image 1: camera, framing, building massing, curved charcoal frames, windows, oak front door, woven chairs on the sitout and balcony, railings, boundary walls, gate, house number, well, car, paving, landscaping, sky and dusk light. Photorealistic architectural photograph, straight verticals, fine texture. No added objects, no new text, no watermark.\n\n```\n3. 10-study-wide.png. Image 4 is 10-study-storage.png.\n```\nEdit Image 1, a photograph of the same tailoring room shown from another angle in Image 4. Make only these changes so the furniture matches Image 4:\n1. Replace both chairs with the same chair design as Image 4: light muted-oak chairs with a curved, continuous top rail, slender spindles and slim splayed legs, solid oak seat, no upholstery. Same positions.\n2. Replace the slim angled thread rack on the left wall with the same thread-spool pegboard as Image 4: a square muted-oak board with rows of short pegs holding coloured thread spools. Same wall, same height.\nKeep the black-framed window and Roman blind, the left oak desk, the two right-hand benches and their sewing machines, task lamps, shelves with lidded boxes and the oak-cased doorway on the left exactly as they are.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, openings, floor, ceiling, joinery outlines and proportions. Match Images 2–3: muted natural oak (never orange), creamy ivory plaster, pale sandy stone, charcoal hardware, soft daylight, warm 2700–3000 K diffused light. Photorealistic, fine texture. No added objects beyond those listed, no neon glow, no gloss, no text or watermark.\n\n```\n4. 16-dining-wide.png\n```\nEdit Image 1, a photograph of a dining area. The drum pendant currently sits on top of the artwork's frame. Make only these changes so they no longer overlap:\n1. Replace the artwork with a wider, lower landscape version of the same oatmeal/sage/clay abstract, about 100 × 50 cm in a thin muted-oak frame, centred on the table's long axis, its bottom edge about 25 cm above the height of the tabletop.\n2. Raise the drum pendant slightly so its bottom edge is about 80 cm above the tabletop, still centred over the table. From this camera the pendant's lower edge sits just above the top of the frame with a clear gap of bare wall between them; the pendant must not cover any part of the artwork.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, openings, floor, ceiling, joinery outlines and proportions. Match Images 2–3: muted natural oak (never orange), creamy ivory plaster, pale sandy stone, charcoal hardware, soft daylight, warm 2700–3000 K diffused light. Photorealistic, fine texture. No added objects beyond those listed, no neon glow, no gloss, no text or watermark.\n\n```\n5. 02-living-wide.png. Image 4 is 16-dining-wide.png.\n```\nEdit Image 1, a photograph of a living/dining room. Make only one change:\n1. Dining table: remove the chair at the near end and the chair at the far end of the table. Keep the two chairs on the left long side and the oak bench with oatmeal cushion on the window side, so the seating matches Image 4: two chairs and one bench, no end chairs.\nKeep the drum pendant exactly where it is.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, openings, stair, floor, ceiling, joinery outlines and proportions. Match Images 2–3: muted natural oak (never orange), creamy ivory plaster, pale sandy stone, charcoal hardware, soft daylight, warm 2700–3000 K diffused light. Photorealistic, fine texture. No added objects beyond those listed, no neon glow, no gloss, no text or watermark.\n\n```\n6. 02-ground-floor-overview-wide.png. Image 4 is 03-stair-tv-wide.png.\n```\nEdit Image 1, a photograph of a living/dining room with an under-stair TV unit and washbasin. Make only one change:\n1. The basin mirror currently shows two glass panes inside one oak frame. Replace it with a single plain rectangular mirror in one thin muted-oak frame, the same design as the basin mirror in Image 4, with the charcoal sconce centred above it. Use a matte black tap matching Image 4.\nDo not change the staircase treads, risers, support or handrail in any way.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, openings, stair, floor, ceiling, joinery outlines and proportions. Match Images 2–3: muted natural oak (never orange), creamy ivory plaster, pale sandy stone, charcoal hardware, soft daylight, warm 2700–3000 K diffused light. Photorealistic, fine texture. No added objects beyond those listed, no neon glow, no gloss, no text or watermark.\n\n```\n\n",
+    "edited_count": 7,
+    "generation_count": 9,
+    "source_git_commit": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff",
+    "baseline_image_hashes": {
+      "10-passage-wide.png": "280912471e6cf33e13894d7546cd15cd33d91e9212de5d9c4180a797de658fc4",
+      "08-bedroom2-wide.png": "59c2cdd95b856cbde6d9ccf9aa51d67595ebabed89bcc07ed14292fa8973da92",
+      "10-study-wide.png": "5ea46cac791ac651c685a343d4b13aa501989da4340be1267fa933e142db1102",
+      "15-terrace-wide.png": "30f065a3ffadf016d8bdf9db16255167396a670008547dcdd697f2499906c58b",
+      "09-bedroom3-wide.png": "8d638471fbbc06e35882af56151935279f76475a620ac013b3974eb5d4aba7bd",
+      "04-storage-wide.png": "05d51309262f4d7daa10e0d0168bddafc6e8f9d0b57bf71ff8889871f276d8d8",
+      "16-dining-wide.png": "76a63ba94a227508a23870ca3e6470e242c9deaf53b6a02f6f323b26b22fe817",
+      "05-wash-wide.png": "e25f4a47d6e0303b18e5f8973ad08b3b4b1c76842d2020a77b3646e52f181ecd",
+      "22-exterior-rear-utility-wide.png": "eb15ff7e150b60f6378494a54bc8850ba52f450a924371856364b8f04ac6b39c",
+      "07-bedroom1-wide.png": "6b6a8ac7ec968db0fd0dc3b09663c362bbe315332cca81233113275627dba864",
+      "08-bedroom2-opposite.png": "319757aa199f2cf33dd4db1d103339587fc8011429d225fae48dd0cf61feee93",
+      "17-front-gallery-wide.png": "964b1aa7eea9dc94a9e30ad887d90ae5a48fa4bebbf0d37340752cc8ece53310",
+      "01-entrance-wide.png": "d23aaf24f0a0d2ebe4459813a0a34024911396dd1f5cc843e50f7945fb58ff3c",
+      "14-balcony-wide.png": "bab45f545970db7ced250131c3d831fc686f94098e459f104d04ba2125dcd1ea",
+      "21-exterior-south-parking-wide.png": "eff090427024f76eb7377eb11be26e00214b2e98f42ae06371696031a2b49548",
+      "06-kitchen-opposite.png": "a1b28b7e66dc80011870d76237cbad1b335b76bf19203aa5ed0e542253614574",
+      "07-bedroom1-opposite.png": "94c2ffd18ab4c2e576b50e8b44b11fc1bf39eb623e882d1078edf534446e8547",
+      "12-bathroom2-wide.png": "4b4f0c10543f320487f5c131c21a336bd376afd951f8c82f51a7ee132a79a641",
+      "08-bedroom2-detail.png": "c62008e9bbef03a5284e440d0c8a474ca768d60c979e46062cc53fc4f494ae95",
+      "06-kitchen-wide.png": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+      "06-kitchen-detail.png": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba",
+      "13-bathroom3-wide.png": "a0067cb596218181e9b4179ae95ba5fcd873497c250751b306ae02a966b9f06f",
+      "19-exterior-front-wide.png": "2d6baa754b40bed1e20f4669922ab24c54deb89bd838f5d0cac5b3ed2dd68722",
+      "03-stair-tv-wide.png": "d4082c0b8798a91ecb2c399fbc6724741beb2a59cdfc8ce218b69c021465cd94",
+      "02-living-wide.png": "c7f5c852e096493b3c995f64bc98feaeadbd01bc2b5419bcb3252f958b92c9b1",
+      "02-ground-floor-overview-wide.png": "8564ebaa0de01f6a75cdf75a20a47e7786d9ad62f598bc4c92f153f40ccf451e",
+      "09-bedroom3-detail.png": "d5e77f8d5677543d46c1e88bf947941ad050b394f0171343f36d5fd1cbcd0f2f",
+      "18-rear-gallery-wide.png": "d13bf311fe30bc4dbd02ce15d5cb3c2dce428103d8e9043a90538d58ad14fab5",
+      "20-exterior-rear-backyard-wide.png": "80d6ea4a51975b09ac7903fff5623ac7c5bec946c1babc3ffb482ad96da20f5b",
+      "11-bathroom1-wide.png": "00dd5e32d3ca317d20fab3f89d88251bad4ce36234afdc252f1442953e3adbe5",
+      "10-study-storage.png": "7f6f383518e4117c81b91842b346de874c1765fc98a6e443db3b23656eee99c7",
+      "09-bedroom3-opposite.png": "905a99b73876ea99f0750d9ca111287ac039381dad1c60bbaf4a06d756806f5e",
+      "07-bedroom1-detail.png": "29a37c2005ae3235cd71e61ce884b5db37841d2502a63a35c63b6e4d19190be6"
+    },
+    "unchanged_images": {
+      "10-passage-wide.png": "280912471e6cf33e13894d7546cd15cd33d91e9212de5d9c4180a797de658fc4",
+      "08-bedroom2-wide.png": "59c2cdd95b856cbde6d9ccf9aa51d67595ebabed89bcc07ed14292fa8973da92",
+      "15-terrace-wide.png": "30f065a3ffadf016d8bdf9db16255167396a670008547dcdd697f2499906c58b",
+      "09-bedroom3-wide.png": "8d638471fbbc06e35882af56151935279f76475a620ac013b3974eb5d4aba7bd",
+      "04-storage-wide.png": "05d51309262f4d7daa10e0d0168bddafc6e8f9d0b57bf71ff8889871f276d8d8",
+      "05-wash-wide.png": "e25f4a47d6e0303b18e5f8973ad08b3b4b1c76842d2020a77b3646e52f181ecd",
+      "22-exterior-rear-utility-wide.png": "eb15ff7e150b60f6378494a54bc8850ba52f450a924371856364b8f04ac6b39c",
+      "07-bedroom1-wide.png": "6b6a8ac7ec968db0fd0dc3b09663c362bbe315332cca81233113275627dba864",
+      "08-bedroom2-opposite.png": "319757aa199f2cf33dd4db1d103339587fc8011429d225fae48dd0cf61feee93",
+      "17-front-gallery-wide.png": "964b1aa7eea9dc94a9e30ad887d90ae5a48fa4bebbf0d37340752cc8ece53310",
+      "01-entrance-wide.png": "d23aaf24f0a0d2ebe4459813a0a34024911396dd1f5cc843e50f7945fb58ff3c",
+      "14-balcony-wide.png": "bab45f545970db7ced250131c3d831fc686f94098e459f104d04ba2125dcd1ea",
+      "06-kitchen-opposite.png": "a1b28b7e66dc80011870d76237cbad1b335b76bf19203aa5ed0e542253614574",
+      "07-bedroom1-opposite.png": "94c2ffd18ab4c2e576b50e8b44b11fc1bf39eb623e882d1078edf534446e8547",
+      "12-bathroom2-wide.png": "4b4f0c10543f320487f5c131c21a336bd376afd951f8c82f51a7ee132a79a641",
+      "08-bedroom2-detail.png": "c62008e9bbef03a5284e440d0c8a474ca768d60c979e46062cc53fc4f494ae95",
+      "06-kitchen-wide.png": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+      "06-kitchen-detail.png": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba",
+      "13-bathroom3-wide.png": "a0067cb596218181e9b4179ae95ba5fcd873497c250751b306ae02a966b9f06f",
+      "03-stair-tv-wide.png": "d4082c0b8798a91ecb2c399fbc6724741beb2a59cdfc8ce218b69c021465cd94",
+      "09-bedroom3-detail.png": "d5e77f8d5677543d46c1e88bf947941ad050b394f0171343f36d5fd1cbcd0f2f",
+      "18-rear-gallery-wide.png": "d13bf311fe30bc4dbd02ce15d5cb3c2dce428103d8e9043a90538d58ad14fab5",
+      "11-bathroom1-wide.png": "00dd5e32d3ca317d20fab3f89d88251bad4ce36234afdc252f1442953e3adbe5",
+      "10-study-storage.png": "7f6f383518e4117c81b91842b346de874c1765fc98a6e443db3b23656eee99c7",
+      "09-bedroom3-opposite.png": "905a99b73876ea99f0750d9ca111287ac039381dad1c60bbaf4a06d756806f5e",
+      "07-bedroom1-detail.png": "29a37c2005ae3235cd71e61ce884b5db37841d2502a63a35c63b6e4d19190be6"
+    },
+    "scope": "Only seven named photographs: rear 20 and front 19/21 timber finish, wide-study chairs/pegboard, dining art/pendant spacing, living seating and overview mirror/tap. Front 19 initial recolour precedes parking 21; initial front candidate needed a board-direction repair, and living needed a remaining far-end-chair removal.",
+    "supersedes": "Earlier acceptance/completion wording for the specific details above. Wide-study chair/rack consistency had not been achieved in the preceding pass.",
+    "living_pendant": "Position/design held to current source; latest user request changes seating only.",
+    "dining_pendant": "Raised slightly per latest request, superseding the preceding instruction to leave it in place.",
+    "review_status": "assistant visual review complete; user acceptance pending",
+    "limitations": "Photographic generations are visually compared, not pixel-identical measured drawings. Dimensions, mounting heights and colour matching remain illustrative. No colour-calibration or exact geometry certification.",
+    "model_and_drawings": "unchanged",
+    "source_retention": "Pre-edit sources recoverable from the recorded Git commit. Exact input/output hashes and all candidate/correction prompts retained here. No working image folder added to the project.",
+    "review_board_image_urls": "Image links include a SHA-256 version token so changed PNGs receive fresh browser URLs."
   }
 }
