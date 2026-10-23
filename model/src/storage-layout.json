@@ -1,12 +1,12 @@
 {
-  "revision": "R18",
-  "date": "2026-10-08",
+  "revision": "R20",
+  "date": "2026-10-23",
   "mainHeight": 2.1,
   "loftTop": 2.5,
   "ceiling": 2.85,
   "panel": 0.018,
   "plinth": 0.08,
-  "finish": "Matte warm ivory fronts and exposed sides, muted oak accent bay, recessed charcoal edge pulls. Loft tops remain at 2500 mm; space above is open. No cosmetic ceiling band.",
+  "finish": "R20: muted natural oak main doors on every bay, creamy matte ivory loft doors and exposed ivory sides, short recessed charcoal edge pulls. Loft tops remain at 2500 mm; space above is open. No cosmetic ceiling band.",
   "doors": "Paired narrow hinged leaves: maximum 270 mm leaf width. Corner pair opens without a fixed face post. Supplier to coordinate hinges and access; model shows closed fronts.",
   "beamNote": "Loft carcasses stop at 2.50 m, 50 mm below the indicative 2.55 m beam soffit. The space above is open; no cosmetic infill panel, added bulkhead or structural member is introduced. Verify final beam, ceiling, fixing and service positions on site.",
   "units": [
@@ -24,8 +24,7 @@
             6.8
           ],
           "face": "y1",
-          "modules": 3,
-          "oakModule": 2
+          "modules": 3
         }
       ],
       "grossLoftM3": 0.33
@@ -44,8 +43,7 @@
             6.8
           ],
           "face": "y1",
-          "modules": 3,
-          "oakModule": 2
+          "modules": 3
         }
       ],
       "grossLoftM3": 0.33
@@ -64,8 +62,7 @@
             3.075
           ],
           "face": "y1",
-          "modules": 2,
-          "oakModule": 0
+          "modules": 2
         },
         {
           "box": [
@@ -76,7 +73,6 @@
           ],
           "face": "x0",
           "modules": 1,
-          "oakModule": -1,
           "doorRange": [
             3.075,
             3.33
@@ -108,12 +104,12 @@
             2.3
           ],
           "face": "x1",
-          "modules": 2,
-          "oakModule": -1
+          "modules": 2
         }
       ],
       "grossLoftM3": 0.135,
-      "interior": "Linen shelves in one bay; separate tall bay for slim household tools. Supplier to check equipment width in the reduced bays; keep cleaning products in a separate closed compartment."
+      "interior": "Linen shelves in one bay; separate tall bay for slim household tools. Supplier to check equipment width in the reduced bays; keep cleaning products in a separate closed compartment.",
+      "mainDoorFinish": "ivory"
     }
   ],
   "beds": {
@@ -198,6 +194,10 @@
         0.4
       ]
     ],
-    "clearStairConnectionM": 2.5
-  }
+    "clearStairConnectionM": 2.5,
+    "benchFinish": "muted oak tops on solid oak waterfall end panels; R20 replaces the dark legs",
+    "chairFinish": "solid muted oak chairs with a curved back rail and an oak seat"
+  },
+  "mainDoorFinish": "oak",
+  "loftDoorFinish": "ivory"
 }

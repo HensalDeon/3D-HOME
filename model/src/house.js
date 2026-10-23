@@ -3,7 +3,9 @@ import * as THREE from 'three';
 import {facadeBand} from './facade.js';
 import {revision} from './revision.js';
 import storage from './storage-layout.json' with {type:'json'};
+import fitout from './fitout-layout.json' with {type:'json'};
 import {addStorageJoinery,addStorageBed} from './storage-joinery.js';
+import {addKitchenJoinery,addDiningAndLiving,addRearScreen,addTerrace} from './fitout-joinery.js';
 import {plan,LEVELS,rooms,openingsFor,wallPieces,stairTreads,STAIR_STRUCTURE,stairBeamZones,stairFlights,stairLandingSlabs,FRAME,ENVELOPE} from './geometry.js';
 export function createHouse(){
  const root=new THREE.Group(),levels={},pickables=[],labels=[],wallMaterials=[],furnitureGroups=[],facades=[],dimensions=new THREE.Group();root.add(dimensions);const siteDimensions=new THREE.Group(),roofDimensions=new THREE.Group();dimensions.add(siteDimensions,roofDimensions);
@@ -12,6 +14,11 @@ export function createHouse(){
   // R12 reference palette: medium-tone oak for the panel/shelves/nook, warm beige fronts, near
   // black for the screen, balustrade and plumbing, and a warm emissive for the concealed strips.
   ivory:mat('#e7dece',{roughness:.85}),noir:mat('#1e2220',{roughness:.55}),glow:mat('#f7e3bd',{emissive:'#f0c07a',emissiveIntensity:.95,roughness:.6})};
+ // R20 exterior and fit-out finishes from fitout-layout.json, which the drawings read too.
+ Object.assign(materials,{wood:mat(fitout.exterior.timber),grain:mat(fitout.exterior.timberGrain),pave:mat(fitout.exterior.paving),
+  rearDoor:mat(fitout.exterior.rearDoor,{roughness:.6}),louvre:mat(fitout.exterior.timber,{metalness:.2,roughness:.6}),
+  bathFloor:mat(fitout.bathrooms.floor),bamboo:mat('#c9a46b',{transparent:true,opacity:.82,roughness:.9}),plant:mat('#5f7d58')});
+ materials.tile=materials.bathFloor;
  const V=(x,h,y)=>new THREE.Vector3(x-3,h,4.85-y);
  function box(g,x0,y0,x1,y1,bottom,top,m){if(x1-x0<.00001||y1-y0<.00001||top-bottom<.00001)return;const o=new THREE.Mesh(new THREE.BoxGeometry(x1-x0,top-bottom,y1-y0),m);o.position.copy(V((x0+x1)/2,(bottom+top)/2,(y0+y1)/2));o.castShadow=true;o.receiveShadow=true;g.add(o);return o;}
  // An inclined slab whose top face lies on the a-b segment given as (plan y, absolute height).
@@ -74,8 +81,10 @@ export function createHouse(){
     box(g,x-.035,y+w,x-.01,y+2*w,h,h+height-.035,materials.oak);
    }else{
     const hx=axis==='h'?(hinge==='lo'?x:x+w):(swing>0?x+t:x),hy=axis==='h'?(swing>0?y+t:y):(hinge==='lo'?y:y+w);
-    if(axis==='h')box(g,hx-.02,Math.min(hy,hy+swing*w),hx+.02,Math.max(hy,hy+swing*w),h,h+height-.035,materials.oak);
-    else box(g,Math.min(hx,hx+swing*w),hy-.02,Math.max(hx,hx+swing*w),hy+.02,h,h+height-.035,materials.oak);
+    // R20: the rear work-area door is charcoal; the front door and internal leaves stay oak.
+    const leaf=axis==='h'&&y>=8.2&&z<1?materials.rearDoor:materials.oak;
+    if(axis==='h')box(g,hx-.02,Math.min(hy,hy+swing*w),hx+.02,Math.max(hy,hy+swing*w),h,h+height-.035,leaf);
+    else box(g,Math.min(hx,hx+swing*w),hy-.02,Math.max(hx,hx+swing*w),hy+.02,h,h+height-.035,leaf);
     const pts=[];const start=axis==='h'?(hinge==='lo'?0:Math.PI):(hinge==='lo'?Math.PI/2:-Math.PI/2);
     const end=axis==='h'?(swing>0?Math.PI/2:-Math.PI/2):(swing>0?0:Math.PI);
     let delta=end-start;if(delta>Math.PI)delta-=2*Math.PI;if(delta< -Math.PI)delta+=2*Math.PI;
@@ -89,12 +98,30 @@ export function createHouse(){
  }
  function furniture(g,level,z){
   const f=new THREE.Group();g.add(f);furnitureGroups.push(f);
-  function chair(x,y,w=.45,face='y0'){const start=f.children.length;box(f,x-w/2,y-w/2,x+w/2,y+w/2,z+.34,z+.44,materials.fabric);box(f,x-w/2,y+w/2-.065,x+w/2,y+w/2,z+.40,z+.80,materials.oak);for(const a of [-1,1])for(const b of [-1,1])rod(f,[x+a*(w/2-.045),y+b*(w/2-.045),z],[x+a*(w/2-.045),y+b*(w/2-.045),z+.35],.025,materials.oak);if(face!=='y0'){const g=new THREE.Group();g.name='Tailoring chair';g.position.copy(V(x,z,y));f.add(g);for(const o of f.children.slice(start,-1))g.attach(o);g.rotation.y=face==='x0'?-Math.PI/2:Math.PI/2;}}
-  function basin(x,y,w,d,axis){let b=axis==='x1'?[x-d,y-w/2,x,y+w/2]:axis==='x0'?[x,y-w/2,x+d,y+w/2]:axis==='y1'?[x-w/2,y-d,x+w/2,y]:[x-w/2,y,x+w/2,y+d];box(f,...b,z+.77,z+.86,materials.white);box(f,b[0]+.04,b[1]+.04,b[2]-.04,b[3]-.04,z+.861,z+.87,materials.water);rod(f,[(b[0]+b[2])/2,b[3]-.03,z+.86],[(b[0]+b[2])/2,b[3]-.03,z+1.02],.015,materials.metal);}
+  function chair(x,y,w=.45,face='y0',seat=materials.fabric){const start=f.children.length;box(f,x-w/2,y-w/2,x+w/2,y+w/2,z+.34,z+.44,seat);box(f,x-w/2,y+w/2-.065,x+w/2,y+w/2,z+.40,z+.80,materials.oak);for(const a of [-1,1])for(const b of [-1,1])rod(f,[x+a*(w/2-.045),y+b*(w/2-.045),z],[x+a*(w/2-.045),y+b*(w/2-.045),z+.35],.025,materials.oak);if(face!=='y0'){const g=new THREE.Group();g.name='Tailoring chair';g.position.copy(V(x,z,y));f.add(g);for(const o of f.children.slice(start,-1))g.attach(o);g.rotation.y=face==='x0'?-Math.PI/2:Math.PI/2;}}
+  // R20 ensuite basin: wall-hung oak vanity, stone counter, under-counter bowl and a mirror cabinet,
+  // all inside the published basin footprint. Kitchen and work-area sinks keep the plain basin.
+  function vanity(x,y,w,d,axis){
+   const b=axis==='x0'?[x,y-w/2,x+d,y+w/2]:[x-w/2,y,x+w/2,y+d],g=new THREE.Group();g.name='R20 ensuite vanity and mirror cabinet';f.add(g);
+   box(g,...b,z+.45,z+.82,materials.oak);box(g,...b,z+.82,z+.86,materials.stone);
+   box(g,b[0]+.05,b[1]+.06,b[2]-.05,b[3]-.04,z+.86,z+.862,materials.white);box(g,b[0]+.07,b[1]+.08,b[2]-.07,b[3]-.06,z+.862,z+.864,materials.water);
+   const cab=axis==='x0'?[x,y-w/2,x+.12,y+w/2]:[x-w/2,y,x+w/2,y+.12];
+   box(g,...cab,z+1.15,z+1.85,materials.mirror);box(g,...cab,z+1.13,z+1.15,materials.glow);
+   const tap=axis==='x0'?[x+.04,y]:[x,y+.04];rod(g,[...tap,z+.86],[...tap,z+1.02],.012,materials.noir);
+  }
+  function basin(x,y,w,d,axis){if(d<.3)return vanity(x,y,w,d,axis);let b=axis==='x1'?[x-d,y-w/2,x,y+w/2]:axis==='x0'?[x,y-w/2,x+d,y+w/2]:axis==='y1'?[x-w/2,y-d,x+w/2,y]:[x-w/2,y,x+w/2,y+d];box(f,...b,z+.77,z+.86,materials.white);box(f,b[0]+.04,b[1]+.04,b[2]-.04,b[3]-.04,z+.861,z+.87,materials.water);rod(f,[(b[0]+b[2])/2,b[3]-.03,z+.86],[(b[0]+b[2])/2,b[3]-.03,z+1.02],.015,materials.metal);}
   for(const c of plan.levels[level]){const a=c.args;
    if(c.op==='bed'){const [x0,y0,x1,y1]=a;addStorageBed({parent:f,b:a.slice(0,4),z,box,materials});box(f,x0+.025,y0+.025,x1-.025,y1-.025,z+.3,z+.51,materials.linen);box(f,x0,y0,x0+.07,y1,z+.13,z+.98,materials.oak);box(f,x0+.6,y0+.01,x1-.01,y1-.01,z+.51,z+.55,materials.green);for(let i=0;i<2;i++)box(f,x0+.1,y0+.1+i*(y1-y0)/2,x0+.48,y0+(i+1)*(y1-y0)/2-.1,z+.51,z+.63,materials.linen);}
-   if(c.op==='chair'){const workSeat=level==='first'&&storage.study.chairs.some(s=>s[0]===a[0]&&s[1]===a[1]);chair(...a.slice(0,3),workSeat?(a[0]<1.5?'x0':'x1'):'y0');}
-   if(c.op==='shower'){const[x0,y0,x1,y1]=a;box(f,x0,y0,x1,y1,z+.006,z+.04,materials.tile);box(f,x0+.6,y0-.015,x1,y0,z+.04,z+1.95,materials.glass);rod(f,[x0+.2,y1-.06,z+1],[x0+.2,y1-.06,z+2.05],.018,materials.metal);rod(f,[x0+.2,y1-.06,z+2.05],[x0+.2,y1-.26,z+2.05],.025,materials.metal);cylinder(f,x0+.2,y1-.26,z+2.01,z+2.05,.075,materials.metal);}
+   if(c.op==='chair'){
+    const at=s=>s[0]===a[0]&&s[1]===a[1],workSeat=level==='first'&&storage.study.chairs.some(at);
+    // R20: dining and terrace chairs face their tables across +x; tailoring chairs have oak seats.
+    const facesX=(level==='ground'&&fitout.dining.chairs.some(at))||(level==='roof'&&fitout.terrace.chairs.some(at));
+    chair(...a.slice(0,3),workSeat?(a[0]<1.5?'x0':'x1'):facesX?'x1':'y0',workSeat?materials.oak:materials.fabric);
+   }
+   if(c.op==='shower'){const[x0,y0,x1,y1]=a;box(f,x0,y0,x1,y1,z+.006,z+.04,materials.tile);
+    // R20 recessed tiled niche on the back wall and a slim linear drain along the entry edge.
+    const n=fitout.bathrooms.niche;box(f,x0+.3,y1-.006,x0+.3+n.width,y1,z+n.bottom,z+n.bottom+n.height,materials.beige);
+    box(f,x0+.05,y0+.03,x1-.05,y0+.07,z+.04,z+.044,materials.metal);box(f,x0+.6,y0-.015,x1,y0,z+.04,z+1.95,materials.glass);rod(f,[x0+.2,y1-.06,z+1],[x0+.2,y1-.06,z+2.05],.018,materials.metal);rod(f,[x0+.2,y1-.06,z+2.05],[x0+.2,y1-.26,z+2.05],.025,materials.metal);cylinder(f,x0+.2,y1-.26,z+2.01,z+2.05,.075,materials.metal);}
    if(c.op==='wc'){
     const[x,y,,projection,width]=a;
     if(projection){
@@ -115,7 +142,8 @@ export function createHouse(){
   if(level==='ground'){
    for(const b of [[.15,.22,3.1,.82],[2.5,.82,3.1,1.3],[3.25,8.5,4.4,8.95]]){box(f,...b,z,z+.84,materials.oak);box(f,...b,z+.84,z+.9,materials.stone);}
    box(f,.7,.29,1.32,.72,z+.905,z+.93,materials.dark);for(const x of [.86,1.16])cylinder(f,x,.49,z+.93,z+.94,.09,materials.metal);
-   box(f,.15,1.5,.8,2.15,z,z+1.8,materials.metal);box(f,.77,1.54,.8,1.57,z+.9,z+1.38,materials.dark);
+   // R20: oak uppers, ivory loft bridge, end-wall pantry, housed fridge and inclined hood.
+   addKitchenJoinery({parent:f,z,box,materials});
    box(f,3.25,8.95,3.85,9.55,z,z+.86,materials.white);const drum=new THREE.Mesh(new THREE.CylinderGeometry(.20,.20,.02,24),materials.dark);drum.rotation.z=Math.PI/2;drum.position.copy(V(3.86,z+.43,9.25));f.add(drum);
    box(f,5.12,2,5.78,3.8,z+.12,z+.47,materials.fabric);box(f,5.62,2,5.78,3.8,z+.4,z+.95,materials.fabric);for(let y=2.05;y<3.7;y+=.58)box(f,5.12,y,5.62,y+.52,z+.47,z+.57,materials.linen);for(const y of [2,3.65])box(f,5.12,y,5.78,y+.15,z+.4,z+.72,materials.fabric);
    // R14 joinery, under the lower flight. Geometry comes from under-stair-layout.json, which the
@@ -132,27 +160,29 @@ export function createHouse(){
    box(wash,fin.divider.box[0],fin.divider.box[1],fin.divider.box[2],fin.divider.box[3],z,z+fin.divider.top,materials.oak);
    // The TV unit's own 30 mm oak backing, carried on behind the vanity to the bedroom wall.
    box(wash,fin.panelling.box[0],fin.panelling.box[1],fin.panelling.box[2],fin.panelling.box[3],z,z+fin.panelling.top,materials.oak);
-   // Warm integrated backlight, 40 mm proud of the vertical mirror on all four sides.
-   box(wash,fin.mirrorHalo.box[0],fin.mirrorHalo.box[1],fin.mirrorHalo.box[2],fin.mirrorHalo.box[3],z+fin.mirrorHalo.z[0],z+fin.mirrorHalo.z[1],materials.glow);
+   // R20: plain mirror in a thin oak frame on the backing; the backlit halo is gone.
+   box(wash,fin.mirrorFrame.box[0],fin.mirrorFrame.box[1],fin.mirrorFrame.box[2],fin.mirrorFrame.box[3],z+fin.mirrorFrame.z[0],z+fin.mirrorFrame.z[1],materials.oak);
    box(wash,fin.mirror.box[0],fin.mirror.box[1],fin.mirror.box[2],fin.mirror.box[3],z+fin.mirror.z[0],z+fin.mirror.z[1],materials.mirror);
    // Floating oak vanity, 0.50 m clear under it, stone counter oversailing the front face by 12 mm.
    box(wash,b[0],b[1],b[2],b[3],z+fin.vanity.carcass[0],z+fin.vanity.carcass[1],materials.oak);
    box(wash,b[0],b[1],b[2]+.012,b[3],z+fin.vanity.counter[0],z+fin.vanity.counter[1],materials.stone);
    line(wash,[[b[2]+.014,b[1],z+.66],[b[2]+.014,b[3],z+.66]],'#8d704e');
-   // White rectangular vessel basin standing on the counter.
+   // R20: white under-counter basin below the stone counter; only its opening shows on top.
    box(wash,fin.bowl.box[0],fin.bowl.box[1],fin.bowl.box[2],fin.bowl.box[3],z+fin.bowl.z[0],z+fin.bowl.z[1],materials.white);
-   box(wash,fin.bowl.box[0]+.035,fin.bowl.box[1]+.035,fin.bowl.box[2]-.035,fin.bowl.box[3]-.035,z+fin.bowl.z[1]-.035,z+fin.bowl.z[1]-.027,materials.water);
+   box(wash,fin.bowl.box[0],fin.bowl.box[1],fin.bowl.box[2],fin.bowl.box[3],z+fin.vanity.counter[1],z+fin.vanity.counter[1]+.002,materials.white);
+   box(wash,fin.bowl.box[0]+.02,fin.bowl.box[1]+.02,fin.bowl.box[2]-.02,fin.bowl.box[3]-.02,z+fin.vanity.counter[1]+.002,z+fin.vanity.counter[1]+.004,materials.water);
    // Simple black deck mixer behind the bowl; the spout now reaches out along x, over the bowl.
    rod(wash,[fin.tap.riser[0],fin.tap.riser[1],z+fin.tap.z[0]],[fin.tap.riser[0],fin.tap.riser[1],z+fin.tap.z[1]],.012,materials.noir);
    rod(wash,[fin.tap.riser[0],fin.tap.riser[1],z+fin.tap.z[1]],[fin.tap.spoutTo,fin.tap.riser[1],z+fin.tap.z[1]],.012,materials.noir);
-   // Black towel ring on the bedroom wall at the end of the run, half let into it exactly as the
-   // R9 ring was. It sits past the mirror rather than in front of it, so nothing reads as floating.
-   const ring=new THREE.Mesh(new THREE.TorusGeometry(fin.towelRing.radius,.008,8,28),materials.noir);
-   ring.position.copy(V(fin.towelRing.at[0],z+fin.towelRing.z,fin.towelRing.at[1]));ring.rotation.y=Math.PI/2;wash.add(ring);
-   cylinder(wash,fin.downlight.at[0],fin.downlight.at[1],z+fin.downlight.z,z+fin.downlight.z+.012,fin.downlight.radius,materials.glow);
+   // R20: one charcoal wall sconce above the mirror replaces the soffit downlight, and a towel hook
+   // on the basin side of the fin replaces the ring that was visible from the sofa.
+   const sc=fin.sconce;cylinder(wash,sc.at[0],sc.at[1],z+sc.z[0],z+sc.z[1],sc.radius,materials.noir,16);
+   cylinder(wash,sc.at[0],sc.at[1],z+sc.z[0]-.004,z+sc.z[0],sc.radius*.8,materials.glow,16);
+   const hook=fin.towelHook;box(wash,hook.at[0]-.012,hook.at[1],hook.at[0]+.012,hook.at[1]+.04,z+hook.z-.012,z+hook.z+.012,materials.noir);
    // One soap dispenser, set between the fin and the bowl rather than inside the bowl footprint.
    box(wash,b[2]-.11,b[1]+.04,b[2]-.05,b[1]+.10,z+fin.vanity.counter[1],z+fin.vanity.counter[1]+.14,materials.linen);
-   cylinder(f,4.88,4.65,z+.7,z+.77,.45,materials.oak);cylinder(f,4.88,4.65,z,z+.7,.08,materials.dark);
+   // R20: rectangular table with two chairs and a window-side bench, drum pendant, coffee table.
+   addDiningAndLiving({parent:f,z,box,cylinder,rod,materials});
    box(f,5.28,1.35,5.78,1.72,z+.62,z+.73,materials.oak);box(f,5.38,1.37,5.68,1.43,z+.73,z+1.24,materials.wood);
    
   }else if(level==='first'){
@@ -160,7 +190,8 @@ export function createHouse(){
    for(const shelf of storage.study.shelves)for(const height of [1.35,1.65])box(work,...shelf,z+height,z+height+.025,materials.oak);
    for(const bench of storage.study.tables){
     const [x0,y0,x1,y1]=bench.box;box(work,x0,y0,x1,y1,z+.73,z+.77,materials.oak);
-    for(const x of [x0+.04,x1-.09])for(const y of [y0+.04,y1-.09])box(work,x,y,x+.05,y+.05,z,z+.73,materials.dark);
+    // R20: solid oak waterfall end panels replace the dark legs.
+    for(const y of [y0,y1-.025])box(work,x0,y,x1,y+.025,z,z+.73,materials.oak).name='oak waterfall end panel';
     for(let i=0;i<bench.stations;i++){
      const cy=y0+(i+.5)*(y1-y0)/bench.stations,cx=(x0+x1)/2;
      const machine=new THREE.Group();machine.name='Sewing machine';work.add(machine);
@@ -172,10 +203,11 @@ export function createHouse(){
    }
    for(const y of [9.07,9.32])rod(f,[3.4,y,z+1.65],[5.6,y,z+1.65],.006,materials.metal);
   }else{
-   cylinder(f,4.4,7.4,z+.68,z+.74,.38,materials.oak);cylinder(f,4.4,7.4,z,z+.68,.06,materials.dark);
+   // R20 terrace: pergola over B4/B5/C4/C5, masonry bench with its raised guard, table and planters.
+   addTerrace({parent:g,z,box,cylinder,rail,materials});
   }
  }
- function cladding(g,x0,y0,x1,y1,z0,z1,vertical=false){box(g,x0,y0,x1,y1,z0,z1,materials.wood);if(vertical){for(let x=x0+.12;x<x1;x+=.12)box(g,x,y0-.001,x+.005,y1+.001,z0,z1,materials.oak);}else{for(let h=z0+.13;h<z1;h+=.13)box(g,x0,y0-.001,x1,y1+.001,h,h+.004,materials.oak);}}
+ function cladding(g,x0,y0,x1,y1,z0,z1,vertical=false){box(g,x0,y0,x1,y1,z0,z1,materials.wood);if(vertical){for(let x=x0+.12;x<x1;x+=.12)box(g,x,y0-.001,x+.005,y1+.001,z0,z1,materials.grain);}else{for(let h=z0+.13;h<z1;h+=.13)box(g,x0,y0-.001,x1,y1+.001,h,h+.004,materials.grain);}}
  for(const level of Object.keys(LEVELS)){
   const z=LEVELS[level],g=new THREE.Group();g.name=level;root.add(g);levels[level]=g;const walls=new THREE.Group();g.add(walls);
   const wm=materials.wall.clone();wallMaterials.push({material:wm,level});
@@ -193,7 +225,7 @@ export function createHouse(){
   // Associate every aperture material with the same horizontal cut plane as the walls.
   apertureGroup.traverse(o=>{if(o.isMesh){o.material=o.material.clone();wallMaterials.push({material:o.material,level});}});
   for(const room of rooms.filter(r=>r.level===level)){
-   const m=mat(room.id.includes('bath')?'#dce9e2':room.id.includes('bed')||room.id.includes('master')||room.id.includes('child')?'#e4d9c8':room.id.includes('kitchen')||room.id.includes('study')?'#e4deca':'#e8e9de');
+   const m=mat(room.id.includes('bath')?fitout.bathrooms.floor:room.id.includes('bed')||room.id.includes('master')||room.id.includes('child')?'#e4d9c8':room.id.includes('kitchen')||room.id.includes('study')?'#e4deca':'#e8e9de');
    // Stair zones must preserve the stair opening; only use an invisible picking plane there.
    const isStair=room.id.includes('stair')||room.id==='r-head'||room.id==='g-wash'||room.id==='g-media';
    if(isStair){m.transparent=true;m.opacity=0;m.depthWrite=false;}
@@ -340,6 +372,8 @@ export function createHouse(){
     arc(.44,5.94,.30,Math.PI,Math.PI/2);arc(4.76,5.94,.30,Math.PI/2,0);
     cladding(facade,.22,9.70,3.05,9.703,3.52,6.12);
     cladding(facade,3.05,9.48,4.97,9.65,5.88,6.12);
+    // R20: the north end of the drying balcony is a ventilated louvre screen, not a solid wall.
+    addRearScreen({parent:facade,z,box,materials});
    }
    // Exterior stairs reach the stated +0.45 m in three equal rises.
    if(level==='ground')for(let i=0;i<3;i++){box(g,3.25,-.84+i*.28,5.65,0,i*.15,(i+1)*.15,materials.stone);box(g,4.6,9.7,5.7,10.54-i*.28,i*.15,(i+1)*.15,materials.stone);}

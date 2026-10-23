@@ -1,0 +1,131 @@
+{
+  "revision": "R20",
+  "date": "2026-10-23",
+  "basis": "R20 coordinates the accepted 23 October 2026 interior and exterior presentation images into the drawings and the 3D model. Built-in joinery, fixtures, finishes and fixed exterior elements are carried here and drawn from this file by both. Loose decor shown in the photographs - artwork, rugs, lamps, curtains, plants, cushions, peg rails, shelves and accessories - remains photographic staging and is not scheduled. Room footprints, walls, openings, stairs, frame and gross areas are unchanged.",
+  "exterior": {
+    "timber": "#AB7D52",
+    "timberGrain": "#8A6440",
+    "timberNote": "One warm natural honey-oak / light teak tone for every exterior timber surface: cladding, soffits, parapet bands and the roof stair enclosure. Measured from the accepted entrance photograph (saturation about 0.35). Not grey or taupe, not orange or glossy. Supplier sample to be approved against the photograph.",
+    "frontDoor": "#AB7D52",
+    "frontDoorNote": "Front door in the same muted natural oak as the cladding, with a black handle.",
+    "rearDoor": "#3B3D3A",
+    "rearDoorNote": "Rear work-area door in charcoal.",
+    "paving": "#D6CBB8",
+    "pavingNote": "Warm grey-beige pavers to the drive, paths and front yard, harmonising with the sandy entrance steps.",
+    "seating": "Woven-cane muted-oak armchairs with oatmeal cushions at the front sit-out and the front balcony."
+  },
+  "rearScreen": {
+    "level": "first",
+    "box": [5.83, 8.5, 6.0, 9.72],
+    "top": 2.43,
+    "blade": [0.1, 0.03],
+    "pitch": 0.08,
+    "finish": "vertical aluminium louvres, oak-tone wood-grain powder coat",
+    "note": "R20 replaces the solid first-floor north privacy screen at the end of the rear drying balcony with ventilated vertical louvres from floor to the timber soffit. It screens the drying zone from the north side while keeping airflow. The long rear railing stays open. Fixings to the C5/C6 column zones and the slab edge TO BE DESIGNED."
+  },
+  "kitchen": {
+    "level": "ground",
+    "uppers": {
+      "depth": 0.35,
+      "bottom": 1.45,
+      "top": 2.15,
+      "finish": "muted natural oak flat doors matching the base units, recessed charcoal pulls",
+      "boxes": [
+        [0.15, 0.22, 0.5, 0.82],
+        [2.3, 0.22, 2.75, 0.57],
+        [2.75, 0.22, 3.1, 1.3]
+      ],
+      "light": "warm concealed strip under the north uppers"
+    },
+    "lofts": {
+      "bottom": 2.15,
+      "top": 2.5,
+      "finish": "creamy matte ivory solid doors",
+      "boxes": [
+        [0.15, 0.22, 0.5, 1.5],
+        [0.15, 1.5, 0.8, 2.15],
+        [0.5, 0.22, 2.75, 0.57],
+        [2.75, 0.22, 3.1, 1.3]
+      ],
+      "note": "Continuous loft row around the upper perimeter, bridging the east window above its +2.15 m head and continuing over the fridge housing. Tops at +2.50 m, 50 mm under the indicative beam soffit."
+    },
+    "pantry": {
+      "box": [0.15, 0.82, 0.5, 1.5],
+      "top": 2.15,
+      "doors": 2,
+      "finish": "muted oak tall doors, recessed charcoal pulls, plinth matching the base units",
+      "note": "Shallow 350 mm full-height pantry on the south end wall between the counter return and the fridge housing. Its face at x = 0.50 stays 0.20 m short of the hob."
+    },
+    "fridgeHousing": {
+      "box": [0.15, 1.5, 0.8, 2.15],
+      "top": 2.15,
+      "panel": 0.018,
+      "finish": "flush muted oak side panels to the loft above",
+      "note": "Freestanding fridge enclosed in oak side panels. Clear niche about 0.61 m wide; select a fridge no wider than 0.60 m and keep the manufacturer's ventilation gaps."
+    },
+    "hood": {
+      "type": "slim inclined chimney hood",
+      "finish": "matte charcoal body, stainless underside",
+      "canopy": [0.71, 0.24, 1.31, 0.68],
+      "canopyZ": [1.58, 1.66],
+      "body": [0.73, 0.24, 1.29, 0.46],
+      "bodyZ": [1.66, 1.95],
+      "duct": [0.93, 0.24, 1.09, 0.4],
+      "ductZ": [1.95, 2.15],
+      "note": "Over the existing two-burner hob in front of the east window, rising into the loft bridge above the window head. Extract duct route through the external wall above the lintel TO BE COORDINATED."
+    },
+    "aisleM": 1.33,
+    "excluded": "The washable cotton runner, plants and accessories are staging."
+  },
+  "dining": {
+    "level": "ground",
+    "table": [4.6, 4.05, 5.35, 5.25],
+    "tableTop": 0.75,
+    "bench": [5.3, 4.15, 5.65, 5.15],
+    "benchSeat": 0.45,
+    "chairs": [[4.3, 4.35, 0.38], [4.3, 4.95, 0.38]],
+    "pendant": {"at": [4.975, 4.65], "diameter": 0.55, "bottomAboveTable": 0.8},
+    "finish": "muted oak 1.20 x 0.75 m table; two oak chairs with oatmeal seats on the room side; oak bench with oatmeal cushion tucked under the window side; oatmeal linen drum pendant centred over the table",
+    "clearToRearRouteM": 0.85,
+    "note": "Replaces the round table and three chairs. The table ends at y = 5.25, leaving 0.85 m clear to the rear service route at y = 6.10, and the room-side chairs keep x = 3.25-4.11 open for the front-door route."
+  },
+  "living": {
+    "level": "ground",
+    "coffeeTable": {"centre": [4.35, 2.9], "radius": 0.375, "top": 0.4, "finish": "round muted oak pedestal table"},
+    "note": "Coffee table 0.40 m in front of the sofa; 0.72 m walkway kept beside it."
+  },
+  "bathrooms": {
+    "vanity": "wall-hung oak vanity with two drawers, pale stone counter and slim rectangular under-counter basin, within the published basin footprint",
+    "mirror": "mirror-fronted wall cabinet over the basin with a concealed warm light beneath",
+    "niche": {"width": 0.6, "height": 0.3, "bottom": 0.8, "note": "Top at +1.10 m, below the +1.20 m sill of the Ensuite 1 rear window; the first-floor vents sit higher."},
+    "drain": "slim linear drain along the shower",
+    "floor": "#DCD2C1",
+    "floorNote": "Matte large-format pale sandy stone floor tiles replace the small mosaic.",
+    "excluded": "Waffle bath mats, towels and refillable dispensers are staging."
+  },
+  "terrace": {
+    "level": "roof",
+    "pergola": {
+      "box": [3.1, 6.15, 5.85, 8.55],
+      "height": 2.6,
+      "post": 0.1,
+      "postsOver": ["B4", "B5", "C4", "C5"],
+      "beam": [0.15, 0.05],
+      "purlinPitch": 0.4,
+      "finish": "matte charcoal steel frame with rolled natural bamboo chick blinds over the purlins",
+      "note": "Open shade structure on four posts set over the B4, B5, C4 and C5 column zones. It is not a roof or an enclosed room, and is not added to the floor area; confirm whether local rules count it as covered area. Post bases, wind uplift anchorage and waterproofing at the slab fixings TO BE DESIGNED / VERIFIED BY STRUCTURAL ENGINEER."
+    },
+    "bench": {
+      "box": [5.4, 6.35, 5.85, 8.35],
+      "seat": 0.45,
+      "finish": "rendered masonry bench in ivory with outdoor seat cushions",
+      "guardAboveSeat": 1.1,
+      "note": "Built against the north parapet. A seat is a foothold, so the guard is raised to 1.10 m above the seat (+1.55 m above the roof finish) for the bench length plus 0.10 m each end. Bench load on the roof slab beside the C-line edge beam to be verified."
+    },
+    "table": {"centre": [4.6, 7.35], "radius": 0.38},
+    "chairs": [[3.95, 7.05, 0.4], [3.95, 7.65, 0.4]],
+    "planters": [[3.45, 6.55, 0.25], [3.45, 8.15, 0.25], [5.55, 8.85, 0.25]],
+    "floor": "matte warm pale sand tiles",
+    "excluded": "The outdoor rug and festoon lights are staging; any lighting is an outdoor-rated electrical installation."
+  }
+}

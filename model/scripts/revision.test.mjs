@@ -10,6 +10,7 @@ import {MeshBasicMaterial,Raycaster,Vector3,Box3} from 'three';
 import {createHouse} from '../src/house.js';
 import {LEVELS} from '../src/geometry.js';
 import storage from '../src/storage-layout.json' with {type:'json'};
+import fitout from '../src/fitout-layout.json' with {type:'json'};
 const eps=1e-8,near=(a,b)=>assert.ok(Math.abs(a-b)<eps,`${a} != ${b}`);
 const overlaps=(a,b)=>Math.min(a[2],b[2])-Math.max(a[0],b[0])>eps&&Math.min(a[3],b[3])-Math.max(a[1],b[1])>eps;
 const R=3/17,WALL=revision.bedroomWallFace;
@@ -664,3 +665,55 @@ test('R19 opens the upper stair side, retains structure and guards the actual dr
  near(cfg.passage.clearBox[2]-cfg.passage.clearBox[0],.9);near(plan.dimensions.total_including_roof_sqft,1365.28);
  assert.deepEqual(plan.dimensions.first_stair_passage_opening,cfg);
 });
+
+
+test('R20 fit-out is published once and shared by drawings and model',()=>{
+ assert.deepEqual(plan.dimensions.fitout_layout,fitout);assert.equal(fitout.revision,'R20');
+ near(plan.dimensions.total_including_roof_sqft,1365.28);
+ // Images may not change the architecture: walls, openings and rooms are unchanged on every level.
+ for(const level of ['ground','first','roof'])assert.ok(openingsFor(level).length>0);
+ const kitchen=rooms.find(r=>r.id==='g-kitchen').box,k=fitout.kitchen;
+ for(const b of [...k.uppers.boxes,...k.lofts.boxes,k.pantry.box,k.fridgeHousing.box])
+  assert.ok(b[0]>=kitchen[0]-eps&&b[1]>=kitchen[1]-eps&&b[2]<=kitchen[2]+eps&&b[3]<=kitchen[3]+eps,'kitchen joinery stays in the room');
+ assert.ok(k.lofts.top<=2.85-FRAME.indicativeBeam+eps,'lofts stay below the indicative beam soffit');
+ const window=openingsFor('ground').find(o=>o.axis==='h'&&o.y===0);near(window.sill+window.height,k.lofts.bottom);
+ near(.70-k.pantry.box[2],.2);near(2.15-.82,k.aisleM);
+});
+
+test('R20 dining, living and terrace layouts keep their routes and supports',()=>{
+ const d=fitout.dining,living=plan.dimensions.room_boxes_m['g-living'];
+ for(const b of [d.table,d.bench])assert.ok(b[0]>=living[0]&&b[2]<=living[2]&&b[3]<=6.1,'dining set inside living');
+ near(6.1-d.table[3],d.clearToRearRouteM);
+ for(const [x,,s] of d.chairs)assert.ok(x-s/2>=4.11-1e-6&&x+s/2<=d.table[0],'room-side chairs keep the front-door route');
+ const chairs=plan.levels.ground.filter(c=>c.op==='chair').map(c=>c.args.slice(0,2));
+ for(const [x,y] of d.chairs)assert.ok(chairs.some(c=>c[0]===x&&c[1]===y),'dining chairs are drawn');
+ const t=fitout.terrace,p=t.pergola.box,s=t.pergola.post;
+ for(const [x,y] of [[p[0],p[1]],[p[0],p[3]-s],[p[2]-s,p[1]],[p[2]-s,p[3]-s]])
+  assert.ok(frameColumns().some(c=>overlaps([x,y,x+s,y+s],c.box)),'pergola post stands over a column zone');
+ assert.ok(t.planters.every(([x,y,r])=>![[p[0],p[1]],[p[0],p[3]-s],[p[2]-s,p[1]],[p[2]-s,p[3]-s]].some(([a,b])=>overlaps([x-r,y-r,x+r,y+r],[a,b,a+s,b+s]))),'planters clear the posts');
+ const h=createHouse();h.root.updateMatrixWorld(true,true);
+ const terrace=h.levels.roof.getObjectByName('R20 terrace pergola, bench and planters');assert.ok(terrace);
+ const top=new Box3().setFromObject(terrace).max.y;
+ assert.ok(top>=LEVELS.roof+t.bench.seat+t.bench.guardAboveSeat-1e-6,'guard rises 1.10 m above the bench seat');
+});
+
+test('R20 drying-balcony screen, under-stair basin and joinery lighting',()=>{
+ // The span between the C5 cross-wall line and the C6 corner pier; the pier itself stays solid.
+ const s=fitout.rearScreen.box,span=[s[0],8.6,s[2],9.5];
+ assert.ok(wallPieces('ground').some(w=>overlaps(w.box,span)),'ground privacy wall retained');
+ assert.ok(!wallPieces('first').some(w=>overlaps(w.box,span)),'first-floor solid wall replaced by louvres');
+ const h=createHouse();h.root.updateMatrixWorld(true,true);
+ const screen=h.levels.first.getObjectByName('R20 north drying-balcony louvre screen');assert.ok(screen);
+ assert.ok(screen.children.filter(o=>o.name==='vertical louvre blade').length>10);
+ const fin=revision.wash.finish;
+ assert.ok(!fin.mirrorHalo&&!fin.downlight&&!fin.towelRing,'backlit mirror, downlight and ring removed');
+ assert.ok(fin.sconce.z[1]<12*R-STAIR_STRUCTURE.landingSlab-STAIR_STRUCTURE.finish,'sconce stays under the landing soffit');
+ near(fin.mirrorFrame.z[0],revision.wash.mirror.z[0]);near(fin.mirrorFrame.z[1],revision.wash.mirror.z[1]);
+ assert.ok(fin.bowl.z[1]<=fin.vanity.counter[0]+eps,'basin sits under the counter');
+ assert.equal(revision.tv.lighting.panelTop,undefined);
+ const niche=fitout.bathrooms.niche,vent=openingsFor('ground').find(o=>o.kind==='obscured'&&o.axis==='h'&&o.y>=8.2);
+ assert.ok(niche.bottom+niche.height<vent.sill,'shower niche stays below the ensuite window');
+ let glow=0;h.levels.ground.getObjectByName('R14 fitted TV joinery under the lower flight').traverse(o=>{if(o.isMesh&&o.material===h.materials.glow)glow++});
+ assert.equal(glow,1,'only the plinth strip remains lit');
+});
+

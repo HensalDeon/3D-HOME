@@ -1,5 +1,5 @@
 {
- "revision": "R19",
+ "revision": "R20",
  "structure": {
   "revision": "R14",
   "system": "conventional cast-in-situ RCC staircase: continuous waist slab under each flight, monolithic with the landing slabs at the turns (folded plate)",
@@ -347,22 +347,11 @@
     "colorTemp_K": 2700,
     "note": "concealed warm strip in the recessed plinth, washing the floor"
    },
-   "panelTop": {
-    "x": [
-     0.862,
-     0.87
-    ],
-    "y": [
-     3.23,
-     5.45
-    ],
-    "colorTemp_K": 2700,
-    "note": "concealed warm strip in the top lining, following the raking soffit and washing it"
-   },
    "screenBacklight": {
     "colorTemp_K": 3000,
     "note": "concealed warm strip behind the screen"
-   }
+   },
+   "r20Note": "R20 removes the concealed strip that followed the stair soffit along the top lining. The plinth strip under the cabinet is the only joinery light."
   },
   "projection": {
    "intoPassage": 0,
@@ -445,7 +434,7 @@
   ],
   "height": 0.86,
   "under": "lower/west flight bay, continuing the TV run",
-  "concept": "R15 moves the washbasin out of the corner against the bedroom (west) wall and into the SAME BAND AS THE TV JOINERY, continuing that run past its end bay to the bedroom wall. The vanity is 0.62 x 0.35 m at x = 0.69-1.04, y = 5.48-6.10, on the same 0.35 m depth and the same face plane (x = 1.04) as the TV cabinet, and it FACES THE SAME WAY - east across the stairwell, out through the 0.90 m archway. A 30 mm oak backing at x = 0.72-0.75 continues the TV unit's backing behind it, carrying the backlit mirror. A full-height oak divider at y = 5.45-5.48 separates the wet zone from the joinery. The under-stair run now reads as one continuous 2.90 m fitted composition at a single depth instead of a 2.25 m run plus a separate corner fitting.",
+  "concept": "R15 moves the washbasin out of the corner against the bedroom (west) wall and into the SAME BAND AS THE TV JOINERY, continuing that run past its end bay to the bedroom wall. The vanity is 0.62 x 0.35 m at x = 0.69-1.04, y = 5.48-6.10, on the same 0.35 m depth and the same face plane (x = 1.04) as the TV cabinet, and it FACES THE SAME WAY - east across the stairwell, out through the 0.90 m archway. A 30 mm oak backing at x = 0.72-0.75 continues the TV unit's backing behind it, carrying the oak-framed mirror. A full-height oak divider at y = 5.45-5.48 separates the wet zone from the joinery. The under-stair run now reads as one continuous 2.90 m fitted composition at a single depth instead of a 2.25 m run plus a separate corner fitting.",
   "supersedes": "R9/R12 basin against the bedroom (west) wall at x = 1.55-2.05, y = 5.75-6.10, facing east along -y with the user facing the wall. Withdrawn; none of its coordinates are carried forward. The archway, the landing, the stair and every clear height are unchanged - only the fitting moves within the same room.",
   "face": "E",
   "faceX": 1.04,
@@ -550,22 +539,22 @@
      0.86
     ],
     "float": 0.5,
-    "material": "oak carcass, light stone counter, single push-open drawer",
+    "material": "oak carcass with two push-open doors around the trap, light stone counter with an under-counter basin",
     "note": "floating wooden vanity, 0.62 x 0.35 m, 0.50 m clear under it, face at x = 1.04 flush with the TV cabinet front; 0.12 m longer than the R9 unit because the bay runs to the wall"
    },
    "bowl": {
     "box": [
-     0.77,
-     5.61,
+     0.8,
+     5.64,
      0.99,
-     5.97
+     5.94
     ],
     "z": [
-     0.86,
-     0.99
+     0.72,
+     0.82
     ],
-    "type": "white rectangular vessel basin standing on the counter",
-    "note": "unchanged 0.36 x 0.22 m vessel, rotated with the unit and centred on the bay at y = 5.79"
+    "type": "slim rectangular white under-counter basin set into the stone counter",
+    "note": "R20 replaces the R12 vessel basin. The counter top is now the rim at +0.86 m; the 0.30 x 0.19 m bowl is centred on the bay at y = 5.79."
    },
    "tap": {
     "riser": [
@@ -578,57 +567,61 @@
     ],
     "spoutTo": 0.885,
     "finish": "matt black",
-    "note": "black deck-mounted mixer behind the vessel, spout reaching out over the bowl toward the user"
+    "note": "black deck-mounted mixer behind the under-counter basin, spout reaching out over the bowl toward the user"
    },
    "mirror": {
     "box": [
-     0.758,
+     0.765,
+     5.61,
+     0.772,
+     5.97
+    ],
+    "z": [
+     1.02,
+     1.78
+    ],
+    "note": "glass inside a 20 mm oak frame; the framed mirror keeps the published 0.40 x 0.80 m outline at z = 1.00-1.80"
+   },
+   "accessories": "minimal: one soap dispenser on the counter, nothing else",
+   "mirrorFrame": {
+    "box": [
+     0.75,
      5.59,
-     0.766,
+     0.765,
      5.99
     ],
     "z": [
      1.0,
      1.8
     ],
-    "note": "unchanged 0.40 x 0.80 m vertical mirror, now on the oak backing panel and seen face-on from the archway"
+    "finish": "thin muted oak frame",
+    "note": "R20 replaces the backlit mirror and its glowing halo with a plain oak-framed mirror"
    },
-   "mirrorHalo": {
-    "box": [
-     0.75,
-     5.55,
-     0.758,
-     6.03
-    ],
-    "z": [
-     0.96,
-     1.84
-    ],
-    "colorTemp_K": 2700,
-    "note": "warm integrated backlight, 40 mm proud of the mirror on all four sides, washing the oak backing behind it"
-   },
-   "downlight": {
+   "sconce": {
     "at": [
-     0.88,
+     0.79,
      5.79
     ],
-    "z": 1.9376,
-    "radius": 0.045,
-    "colorTemp_K": 2700,
-    "note": "single subtle warm downlight in the landing soffit over the bowl"
-   },
-   "towelRing": {
-    "at": [
-     0.88,
-     6.09
+    "z": [
+     1.83,
+     1.93
     ],
-    "z": 1.15,
-    "radius": 0.09,
-    "finish": "matt black",
-    "on": "the bedroom wall at the end of the run, clear of the mirror"
+    "radius": 0.035,
+    "colorTemp_K": 2700,
+    "finish": "matte charcoal cylinder wall sconce on the oak backing, warm downward light",
+    "note": "R20 replaces both the soffit downlight and the mirror backlight. Its top stays 17 mm under the +1.9476 m landing soffit."
    },
-   "accessories": "minimal: one soap dispenser on the counter, nothing else"
-  }
+   "towelHook": {
+    "at": [
+     1.0,
+     5.48
+    ],
+    "z": 1.2,
+    "finish": "matt black",
+    "on": "basin-side face of the oak fin, out of the living-room sightline; replaces the towel ring beside the run"
+   }
+  },
+  "r20Note": "R20 changes finishes only: under-counter basin, oak-framed mirror, one charcoal wall sconce and a towel hook on the fin. Box, rim, mirror outline, fin, standing zone, clear height and services are unchanged."
  },
  "oldSlopedStorageFootprint": [
   0.2,

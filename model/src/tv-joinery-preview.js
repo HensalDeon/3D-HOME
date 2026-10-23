@@ -78,13 +78,12 @@ export function addTvJoineryPreview({parent,stairs,z,box,profilePrism,cylinder,m
  assertPublishedProfile(profile);
  g.userData.preview={...t,profile,clearanceSource:'upward raycast against unchanged stair meshes'};
  profilePrism(g,t.panel[0],t.panel[2]-t.panel[0],[[t.panel[1],t.panelBottom],[t.panel[3],t.panelBottom],...profile.slice().reverse()],z,materials.oak);
- // Slim top lining and its concealed light use the same actual-soffit profile as the backing.
- // Neither fills the well nor becomes a deep triangular storage wedge.
+ // Slim top lining uses the same actual-soffit profile as the backing. It neither fills the well
+ // nor becomes a deep triangular storage wedge. R20 removed the concealed strip along it.
  for(let i=1;i<profile.length;i++){
   const a=profile[i-1],b=profile[i];
   if(b[0]-a[0]<.00001)continue;
   profilePrism(g,t.panel[2],.12,[[a[0],a[1]-.018],[b[0],b[1]-.018],b,a],z,materials.oak);
-  profilePrism(g,.862,.008,[[a[0],a[1]-.030],[b[0],b[1]-.030],[b[0],b[1]-.021],[a[0],a[1]-.021]],z,materials.glow);
  }
  const [x0,y0,x1,y1]=t.cabinet;
  box(g,x0+.045,y0+.045,x1-.065,y1-.045,z+.01,z+.095,materials.noir);

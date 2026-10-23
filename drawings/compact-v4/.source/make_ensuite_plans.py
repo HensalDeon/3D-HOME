@@ -14,10 +14,13 @@ from make_plans import Plan
 ROOT = Path(__file__).resolve().parent
 STORAGE = json.loads((ROOT.parents[2] / 'model/src/storage-layout.json').read_text())
 STAIR_PASSAGE = json.loads((ROOT.parents[2] / 'model/src/stair-passage-layout.json').read_text())
+# R20 fit-out and exterior finishes, shared with the 3D model.
+FITOUT = json.loads((ROOT.parents[2] / 'model/src/fitout-layout.json').read_text())
 OUT = ROOT / 'compact-v4'
 PAGE = landscape(A3)
 INK=HexColor('#25343b'); MUTED=HexColor('#60747c'); TEAL=HexColor('#197a77')
-PALE=HexColor('#eaf3ef'); SAND=HexColor('#f0e7d9'); WOOD=HexColor('#986544')
+PALE=HexColor('#eaf3ef'); SAND=HexColor('#f0e7d9'); WOOD=HexColor(FITOUT['exterior']['timber'])
+GRAIN=HexColor(FITOUT['exterior']['timberGrain'])
 DARK=HexColor('#42494d'); WALL=HexColor('#f1eeE8'); GLASS=HexColor('#b1c7c9')
 BLUE=HexColor('#457b9d'); ROSE=HexColor('#f3e6df'); LINE=HexColor('#bdcbc9')
 W,D=6.0,9.7
@@ -196,7 +199,11 @@ def outer(p,floor):
   if kind=='door':continue
   yy=9.55 if x<3.05 else 8.35
   p.window(x,yy,w,(.15+g) if x<3.05 else INTERNAL,'h')
- p.fill_rect(n,8.50,6,D+g,DARK)
+ if floor=='FF':
+  # R20: ventilated oak-tone louvre screen at the north end of the drying balcony.
+  p.fill_rect(n,8.50,6,D+g,WOOD)
+  for i in range(1,int((D+g-8.50)/.08)):p.line(n,8.50+i*.08,6,8.50+i*.08,GRAIN,.25)
+ else:p.fill_rect(n,8.50,6,D+g,DARK)
  for x,y in [(SPINE[0],0),(5.85,0),(SPINE[0],9.55),(5.85,9.55)]:p.wall(x-g if x>5 else x,y,x+.15,y+.15+g)
  if floor=='FF':
   p.railing(3.25,0,5.85,0);p.railing(5.93,0,5.93,1.2);p.railing(3.25,9.63,5.85,9.63)
@@ -286,7 +293,7 @@ def ground(p):
  p.polyline([(1.01,1.20),(1.01,.80)],TEAL,.5,True)
  p.text(1.07,1.35,'FACE EAST',5,col=TEAL)
  p.basin(3.075,1.06,.40,.45,'x1')
- p.rect(.15,1.5,.80,2.15);p.text(.47,1.8,'FR',6)
+ kitchen_fitout(p)
  # Door moved off the living-facing wall onto the passage wall, so cooking odours
  # vent through the service corridor rather than straight into the sitting/dining room.
  p.door(2.10,2.15,.80,INTERNAL,'h',-1,'lo')
@@ -300,9 +307,11 @@ def ground(p):
  p.rect(5.12,2.0,5.78,3.8)
  for y in [2.6,3.2]:p.line(5.12,y,5.78,y,MUTED,.3)
  p.rect(3.2,3.4,3.43,4.4);p.text(3.32,3.9,'TV',5,rot=90)
- label(p,4.40,2.85,'LIVING / NE')
- p.circle(4.88,4.65,.45)
- for x,y in [(4.88,4.0),(4.88,5.30),(5.5,4.65)]:p.chair(x,y,.38)
+ label(p,4.45,2.2,'LIVING / NE')
+ # R20: round coffee table; rectangular dining table, two room-side chairs and a window bench.
+ ct=FITOUT['living']['coffeeTable'];p.circle(*ct['centre'],ct['radius'])
+ dn=FITOUT['dining'];p.rect(*dn['table']);p.rect(*dn['bench'])
+ for seat in dn['chairs']:p.chair(*seat)
  label(p,4.62,5.70,'DINING','OPEN WITH LIVING')
  p.text(5.20,7.3,'REAR ROUTE 1.165',5.5,rot=90,col=MUTED)
  # NE prayer niche in living, clear of bathroom/stair on both floors.
@@ -324,6 +333,20 @@ def ground(p):
  # Side windows aligned to the rooms, away from parked-car doors.
  p.window(5.78,3.45,1.10,.22,'v')
  dimensions(p,'GF')
+
+
+def kitchen_fitout(p):
+ # R20 kitchen joinery. Solid: floor-standing pantry and fridge housing. Dashed: wall uppers,
+ # the loft bridge and the hood, all overhead at the plan cut.
+ k=FITOUT['kitchen'];pb=k['pantry']['box'];mid=(pb[1]+pb[3])/2
+ p.rect(*pb);p.line(pb[0],mid,pb[2],mid,MUTED,.3)
+ p.text(.33,1.16,'PANTRY 350',3.6,rot=90,col=TEAL)
+ f=k['fridgeHousing']['box'];t=k['fridgeHousing']['panel']
+ p.rect(*f);p.rect(f[0],f[1]+t,f[2]-.02,f[3]-t,MUTED,.3);p.text(.47,1.8,'FR',6)
+ for b in k['uppers']['boxes']:p.rect(*b,MUTED,.35,dash=[1.5,1.5])
+ bridge=k['lofts']['boxes'][2];p.rect(*bridge,MUTED,.3,dash=[1,2])
+ p.rect(*k['hood']['canopy'],DARK,.45,dash=[1.5,1])
+ p.text(1.95,1.0,'HOOD, UPPERS + LOFT OVER',3.4,col=MUTED)
 
 
 def first(p):
@@ -441,14 +464,14 @@ def ground_sheet(c):
 
 
 def first_sheet(c):
- base(c,3,'First floor / open stair passage and fitted storage','R19 / 08 OCT 2026 / OPEN STAIR SIDE WITH GUARDS / PLAN 1:55 AT A3 / PASSAGE 900 MM DESIGN CLEAR')
+ base(c,3,'First floor / open stair passage and fitted storage','R20 / 23 OCT 2026 / OPEN STAIR SIDE WITH GUARDS / PLAN 1:55 AT A3 / PASSAGE 900 MM DESIGN CLEAR')
  p=Plan(c,44,45,1000/55);first(p)
  compass(Plan(c,0,0,10),23.4,22.1)
  y=231
- y=block(c,246,y,'R18 / FITTED WARDROBES AND LINEN STORAGE','All wardrobes keep their footprints and gain 400 mm lofts above the 2100 mm main units. Ivory fronts, narrow paired doors and muted oak accent bays create a fitted finish. Cabinet tops at 2500 mm leave 50 mm below the indicative beam soffit; the space above is left open. Bedroom 3 has a continuous 90-degree L carcass with no solid filler. The study opens to the stairs below the retained beam. A 750 x 450 mm shared linen cabinet sits beside the tailoring benches. All beds gain lift-up storage bases.',149)
+ y=block(c,246,y,'R18 / FITTED WARDROBES AND LINEN STORAGE','All wardrobes keep their footprints and gain 400 mm lofts above the 2100 mm main units. R20: muted oak main doors, ivory lofts and sides, narrow paired leaves and short recessed pulls. Cabinet tops at 2500 mm leave 50 mm below the indicative beam soffit; the space above is left open. Bedroom 3 has a continuous 90-degree L carcass with no solid filler. The study opens to the stairs below the retained beam. A 750 x 450 mm ivory linen cabinet sits beside the tailoring benches, which now have oak waterfall ends. All beds gain lift-up storage bases.',149)
  y=block(c,246,y,'BEDROOMS IN SW AND NORTH','R17 aligns the central wall faces through both floors. The southwest master is 2.950 x 3.300 m; Bedroom 3 is 2.580 x 3.575 m. The passage stays 900 mm clear. Both ensuites are rebalanced to 1.215 x 2.100 m, with a 900 mm deep shower zone and compact WC. Ensuite 3 uses a surface-sliding door to avoid the bed and fixtures.',149)
  y=block(c,246,y,'NO BEDROOM IN THE SOUTHEAST','The southeast room remains a study above the kitchen. Bed heads retain their southward orientation. The master keeps 625 mm at each side of the double bed and 865 mm at its foot with the sliding leaf parked (900 mm to the wall). Bedroom 3 keeps 625 mm to its wardrobe, 600 mm behind the bed and 580 mm at the foot: compact, with a sliding ensuite door.',149)
- y=block(c,246,y,'REAR DRYING TERRACE','The covered rear balcony remains above the work area, now 2.580 x 1.220 m clear. Its 850 mm side door is moved to y = 8.60, clear of the deeper bathroom wall. Access stays private to the master; the front balcony remains common.',149)
+ y=block(c,246,y,'REAR DRYING TERRACE','The covered rear balcony remains above the work area, now 2.580 x 1.220 m clear. Its 850 mm side door is at y = 8.60. R20 makes the north end a ventilated oak-tone louvre screen; the long rear railing stays open. Access stays private to the master.',149)
  y=block(c,246,y,'OPEN STAIR SIDE / GUARDED PASSAGE','The first-floor stair-side partition opens below +2.55 m; the overhead beam/soffit band to +2.85 m remains. Slim charcoal vertical guards with oak rails protect the passage drop and upper return flight. Proposed guards are 1100 mm high with 100 mm maximum baluster centre pitch. The former wall band is reserved for edge/guard details; the passage keeps its 900 mm design clear width. Level stair entry remains open. The gallery boundary, bedrooms and private ensuites are retained. Verify support, rail connections and fixings.',149)
  y=block(c,246,y,'WALL THICKNESS, AREA AND STRUCTURE','Gross floor envelope remains 58.51 m2 / 629.84 sq ft, including stairs and covered balconies. Walls are 150 mm total including plaster. Bathroom WC projection is limited to 550 mm installed, giving 665 mm clear in front; it is a compact layout. Coordinate carrier/cistern, tiles, services and structural pier sizes without consuming the published clearances.',149)
 
@@ -460,15 +483,15 @@ def rr(p,x,y,w,h,r,fillcol,stroke=None,lw=1):
 def timber(p,x0,z0,x1,z1,vertical=False):
  p.fill_rect(x0,z0,x1,z1,WOOD)
  if vertical:
-  for i in range(int((x1-x0)/.13)+1):p.line(x0+i*.13,z0,x0+i*.13,z1,HexColor('#714b36'),.3)
+  for i in range(int((x1-x0)/.13)+1):p.line(x0+i*.13,z0,x0+i*.13,z1,GRAIN,.3)
  else:
-  for i in range(int((z1-z0)/.16)+1):p.line(x0,z0+i*.16,x1,z0+i*.16,HexColor('#714b36'),.3)
+  for i in range(int((z1-z0)/.16)+1):p.line(x0,z0+i*.16,x1,z0+i*.16,GRAIN,.3)
 
-def glazing(p,x,z,w,h,kind):
+def glazing(p,x,z,w,h,kind,door=None):
  p.fill_rect(x-.045,z-.045,x+w+.045,z+h+.045,HexColor('#473e35'))
  p.fill_rect(x,z,x+w,z+h,GLASS if kind!='obscured' else HexColor('#d0d8d5'))
  if kind=='door':
-  p.fill_rect(x,z,x+w,z+h,HexColor('#605140'))
+  p.fill_rect(x,z,x+w,z+h,door or HexColor(FITOUT['exterior']['frontDoor']))
   p.line(x+w-.1,z+.95,x+w-.1,z+1.15,GLASS,1)
  else:
   n=3 if w>1.3 else 2
@@ -510,8 +533,9 @@ def elevation(p,rear=False,labels=True):
   for x in [3.2,4.4,5.58]:p.line(x,3.72,x,4.55,MUTED,.6)
   # Entry steps and seat silhouettes.
   for i in range(3):p.fill_rect(3.23-i*.08,.15*i,5.68+i*.08,.15*(i+1),HexColor('#c8c5bd'))
-  for x in [4.67,5.28]:rr(p,x-.16,.62,.32,.40,.05,HexColor('#665d52'))
-  for x in [3.8,5.0]:rr(p,x,3.72,.35,.45,.06,HexColor('#727a76'))
+  # R20 woven-cane oak armchairs at the sit-out and on the front balcony.
+  for x in [4.67,5.28]:rr(p,x-.16,.62,.32,.40,.05,HexColor('#9c7a55'))
+  for x in [3.8,5.0]:rr(p,x,3.72,.35,.45,.06,HexColor('#9c7a55'))
   p.line(.5,5.97,5.45,5.97,HexColor('#ead1a1'),1)
  else:
   # Rear reference: open left balcony, short canopy downturn and tall right jamb.
@@ -543,7 +567,7 @@ def elevation(p,rear=False,labels=True):
   for x in [3.15,5.20]:p.line(x,7.10,x+.07,7.10,HexColor('#ffe2a1'),1.8)
   # Work canopy below, north screen left.
   p.fill_rect(.15,.45,2.85,3.15,HexColor('#ddd8ce'))
-  for x,w,sill,h,kind in REAR_GF:glazing(p,6-x-w,.45+sill,w,h,kind)
+  for x,w,sill,h,kind in REAR_GF:glazing(p,6-x-w,.45+sill,w,h,kind,HexColor(FITOUT['exterior']['rearDoor']))
   for x,w,sill,h,kind in REAR_FF:glazing(p,6-x-w,3.45+sill,w,h,kind)
   p.fill_rect(.10,3.12,3.05,3.30,DARK)
   for x in [.15,2.80]:p.fill_rect(x,.45,x+.10,3.15,DARK)
@@ -552,11 +576,12 @@ def elevation(p,rear=False,labels=True):
   p.fill_rect(1.87,.88,2.47,1.26,HexColor('#c4c7be'))
   p.line(2.17,1.26,2.17,1.5,DARK,1);p.line(2.17,1.5,2.27,1.5,DARK,1)
   p.fill_rect(.02,.45,.15,3.0,HexColor('#777874'))
-  # Balcony rail and hanging lines, no opaque panel across its left opening.
-  p.fill_rect(.02,3.45,.22,4.55,WALL)
+  # Balcony rail and hanging lines, no opaque panel across its left opening. R20: the north end
+  # is a full-height oak-tone louvre screen, seen edge-on; the long railing is charcoal and open.
+  timber(p,.02,3.45,.19,3.45+FITOUT['rearScreen']['top'],True)
   p.fill_rect(.12,3.45,2.85,3.61,WALL)
-  p.line(.16,4.55,2.83,4.55,WOOD,1)
-  for i in range(18):p.line(.17+i*.15,3.6,.17+i*.15,4.55,WOOD,.5)
+  p.line(.16,4.55,2.83,4.55,DARK,1)
+  for i in range(18):p.line(.17+i*.15,3.6,.17+i*.15,4.55,DARK,.5)
   for z in [4.85,5.0]:p.line(.27,z,2.4,z,MUTED,.4)
   for i in range(4):p.fill_rect(.35+i*.43,4.44,.63+i*.43,4.93,HexColor(['#d8e2e1','#8faeba','#e5d7ce','#d3d9d1'][i]))
   p.fill_rect(2.84,3.24,6,3.44,WALL)

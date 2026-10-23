@@ -58,7 +58,8 @@ def plan_sheet(c):
     roof.roof_plan(Plan(c, 37, 43, 1000/55))
     y = 230
     for title, body in [
-        ('MATERIALS CONNECT THE TWO ROOF LEVELS', 'Use vertical timber-look cladding on the enclosure\'s east and west end walls to match the existing screen. Warm-white side walls and a shallow white fascia with a thin charcoal edge keep the upper enclosure visually light.'),
+        ('MATERIALS CONNECT THE TWO ROOF LEVELS', 'R20: every exterior timber surface uses one warm honey-oak tone. Vertical cladding on the enclosure end walls matches the existing screen; warm-white side walls and a white fascia with a thin charcoal edge keep it light.'),
+        ('R20 TERRACE PERGOLA AND BENCH', 'An open charcoal steel pergola with bamboo shade stands on four posts over the B4, B5, C4 and C5 column zones; it is not a roof or added floor area. A masonry bench lines the north parapet, where the guard rises to 1.10 m above the seat (+1.55 m). Post anchors, uplift and waterproofing to be designed; confirm local covered-area rules.'),
         ('SAME STAIR, SAME FOOTPRINT', 'The roof enclosure remains 2.20 x 4.10 m outside, adding 9.02 m2 / 97.1 sq ft. Its front face is set back 2.15 m; the rear face is set back 3.45 m. Ground remains 638.34 sq ft; first remains 629.84 sq ft. Internal alignment changes do not enlarge either footprint.'),
         ('KEEP THE OPEN ROOF USABLE', 'The 900 mm exit door opens onto the north-side roof landing. Keep its swing and approach clear. The perimeter guard is shown continuously at 1.10 m concept height; final infill and fixings need detailed design.'),
         ('THE SILHOUETTE IS TALLER', 'The cap is +9.00 m, 1.60 m above the existing +7.40 m timber screen. The enclosure is narrower and set back, but remains visible. This option retains the approved first-floor rear canopy and toilet-vent arrangement.'),
@@ -73,8 +74,8 @@ def elevation_sheet(c):
     v4.tx(c, 231, 238, 'REAR / WEST', 10, v4.TEAL, True)
     integrated_elevation(Plan(c, 28, 60, 1000/55))
     integrated_elevation(Plan(c, 231, 60, 1000/55), True)
-    v4.para(c, 28, 40, 'The narrow timber-clad enclosure rises behind the existing front-left screen. Repeat its white cap and dark edge; retain the front balcony, windows and entrance below.', 170, 8, 4.4)
-    v4.para(c, 231, 40, 'At the rear the enclosure sits behind the right timber screen. The open left drying balcony, short curved canopy return, two toilet vents and concealed master side entry remain.', 172, 8, 4.4)
+    v4.para(c, 28, 40, 'The narrow timber-clad enclosure rises behind the existing front-left screen. R20: honey-oak timber throughout, oak front door and woven oak seating; retain the front balcony, windows and entrance below.', 170, 8, 4.4)
+    v4.para(c, 231, 40, 'At the rear the enclosure sits behind the right timber screen. The open left drying balcony gains an oak-tone louvre screen at its north end; the canopy return, toilet vents, charcoal rear door and master side entry remain.', 172, 8, 4.4)
 
 
 def profile_sheet(c):
