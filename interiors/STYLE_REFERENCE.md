@@ -32,7 +32,7 @@ The 12 October kitchen correction follows PDF page 3 for the fridge, door and L-
 
 1. [Kitchen wide](images/06-kitchen-wide.png) governs overall daylight, exposure, muted oak, creamy paint, pale stone, and black accents.
 2. [Kitchen detail](images/06-kitchen-detail.png) governs wood-grain scale, stone texture, ceramic and metal response, and concealed task lighting.
-3. [Dining](images/16-dining-wide.png) governs the wider living-area atmosphere, upholstery, timber furniture, and gentle floor reflections.
+3. [Dining](images/16-dining-wide.png) governs the wider living-area atmosphere, upholstery and timber furniture. Its floor sheen predates the 24 October matte-floor decision; common-area floors now follow the matte rule in the palette table.
 4. The bedroom, bathroom, study, and gallery originals demonstrate how the same palette carries between rooms. Their image roles are recorded in [the source manifest](.source/house-style.json).
 5. For the living photograph, the user's explicit 8 October selection makes [ground-floor overview](images/02-ground-floor-overview-wide.png) the reference for staircase tread/support/handrail appearance and the rectangular six-seater dining set. The accepted square-on living wall and rear passage remain the framing/layout reference. This is a photographic presentation preference; the measured model and drawings still govern construction geometry.
 6. For bedroom flooring, the user's explicit 8 October selection makes [Bedroom 1 wide](images/07-bedroom1-wide.png) the finish reference: light oak wood-look planks, fine grain, narrow joints and staggered ends. Apply this appearance inside the bedroom; retain pale stone beyond its doorway. This visual reference does not establish a tile manufacturer or whether the photographed material is timber or ceramic.
@@ -47,7 +47,8 @@ The hexadecimal values below are approximate visual communication swatches, chos
 | Element | Visual swatch | Required appearance |
 |---|---|---|
 | Walls / ceiling | Warm ivory `#E7DECE` | Creamy off-white plaster; light, subtly textured, with neutral highlights |
-| Common-area floors / stairs / counters | Sandy stone `#CEC0A8` | Pale beige mineral variation, fine joints, restrained satin reflections |
+| Common-area floors / stairs | Sandy stone `#CEC0A8` | Fully matte porcelain stone-look tile (user decision, 24 October 2026): pale beige, low mineral variation, no marble veining, large format about 600 x 1200 mm with fine colour-matched joints. Soft diffuse light only; no gloss, mirror reflections or glare. The kitchen uses the same tile in a soft-matte, stain-resistant surface with at most a faint diffuse sheen. Stone treads carry fine anti-slip grooves at the nosing. Bathrooms R10-R11 matte; outdoor areas textured R11 matte |
+| Counters | Sandy stone `#CEC0A8` | Honed pale stone, fine mineral variation, restrained satin sheen |
 | Bedroom floor | Bedroom 1 wide photograph | Fully matte porcelain wood-look plank intent matching Bedroom 1 wide: light natural oak/pale honey-beige, fine grain, narrow joints and one-third stagger; cream skirting retained |
 | Cabinet fronts | Warm greige `#C4B69F` | Quiet matte finish with clean reveals |
 | Timber | Muted oak `#AE916B` | Natural light-to-medium oak, fine grain and modest board variation |
@@ -57,7 +58,7 @@ The hexadecimal values below are approximate visual communication swatches, chos
 | Master bedroom accents | Olive `#79765A` | Restrained cushions, throws, and artwork |
 | Bedroom 3 accents | Clay `#B07D60` | Small terracotta textile accents |
 
-Wood must not become orange, glossy, heavily knotted, or dominated by repeated oversized grain. Stone must not become blank plastic, glittery marble, or heavily veined luxury cladding. Keep the difference between matte plaster, satin stone, timber, glass, metal, and ceramic visible.
+Wood must not become orange, glossy, heavily knotted, or dominated by repeated oversized grain. Stone must not become blank plastic, glittery marble, or heavily veined luxury cladding. Keep the difference between matte plaster, matte stone floors, honed stone counters, timber, glass, metal, and ceramic visible.
 
 Fluting is a local joinery treatment visible in the user's earlier stair/TV references, not a pattern to apply to every timber surface. Preserve the selected joinery design. The current R14 geometry references have flat oak backing and four greige cabinet fronts; this finish pass retains those profiles.
 

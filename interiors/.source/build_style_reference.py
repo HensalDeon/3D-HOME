@@ -6,7 +6,7 @@ import hashlib, json
 ROOT = Path(__file__).resolve().parent.parent
 swatches = [
     ('Warm ivory', '#E7DECE', 'Plaster and ceiling'),
-    ('Sandy stone', '#CEC0A8', 'Common floors, stairs and counters'),
+    ('Sandy stone', '#CEC0A8', 'Matte common floors and stairs; honed counters'),
     ('Warm greige', '#C4B69F', 'Matte cabinet fronts'),
     ('Muted oak', '#AE916B', 'Natural fine-grained timber'),
     ('Oatmeal', '#D9CDB9', 'Linen and upholstery'),
@@ -48,7 +48,7 @@ def figure(name, title, caption):
 palette=''.join(f'<div class="swatch"><div style="background:{c}"></div><strong>{n}</strong><small>{c}</small><span>{r}</span></div>' for n,c,r in swatches)
 primary = figure('06-kitchen-wide','01 / The daylight reference','Muted natural oak, creamy walls, sandy stone and restrained black accents.') + figure('06-kitchen-detail','02 / The material reference','Fine wood grain, subtle mineral texture, ceramic detail and diffused task lighting.')
 examples=''.join(figure(*item) for item in [
-    ('16-dining-wide','Living-area atmosphere','Oak furniture, cream fabric and soft reflections across the pale floor.'),
+    ('16-dining-wide','Living-area atmosphere','Oak furniture, cream fabric and a pale matte stone floor.'),
     ('07-bedroom1-detail','Texture and sage','Linen weave, small folds, matte oak and a muted green accent.'),
     ('08-bedroom2-wide','Olive and oatmeal','The same house palette with olive textiles and a woven runner.'),
     ('09-bedroom3-wide','A restrained clay accent','Terracotta stays in small textile accents; the oak and ivory base continues.'),
