@@ -19,73 +19,178 @@
     },
     "02-living-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "8c9b7f68efd92492b174c69df3315af54c27366743cb657a0a1e7bdb71bd53d3",
-      "review": "Near-end and far-end dining chairs removed; two left-long-side chairs and the cushioned window-side oak bench remain. Living-view pendant stays in place. Assistant visual comparison; generated dimensions, tones and unchanged geometry are not pixel-exact measurements.",
-      "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-detail-refinements",
-      "method": "built-in-imagegen-precise-object-edit",
-      "geometry_source": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff:interiors/images/02-living-wide.png",
+      "sha256": "29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066",
+      "review": "Selected first: pale warm beige matte stone-look floor with fine joints, reduced veining and diffuse sunlight; furniture/window reflections and glossy glare removed. Fine paired grooves added on visible stone tread tops. Stair geometry/guards/handrail, TV/basin joinery, dining set, sofa, rug and bedroom doorway visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "reviewed_at": "2026-10-24",
+      "revision": "2026-10-24-common-stone-matte-floor",
+      "method": "built-in-imagegen-floor-finish-edit",
+      "geometry_source": "Pre-edit canonical photograph at 2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04, SHA-256 8c9b7f68efd92492b174c69df3315af54c27366743cb657a0a1e7bdb71bd53d3",
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png",
         "FIXED:16-dining-wide.png"
       ],
       "user_approval": "pending",
-      "render_review": "Square-on wall/passage retained; user-selected overview governs photographed stair/support and six-seat dining appearance. Measured model/drawing geometry unchanged.",
+      "render_review": "Compared against original target, selected living floor reference where applicable and frozen kitchen wide/detail palette references. Non-floor room elements visually retained; not certified pixel-identical geometry.",
       "source_camera": "02-living-wide / square-on R19 camera",
       "design_source": "images/02-ground-floor-overview-wide.png (stairs/support and six-seat dining only)",
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_detail_refinement_generation_history"
+      "prompt_key": "common_stone_matte_floor_generation_history",
+      "prompt_id": "common-stone-matte-floor-2026-10-24-02-living-wide",
+      "presentation_revision": "common-stone-matte-floor-2026-10-24",
+      "finish_revision": "common-stone-matte-floor-2026-10-24",
+      "floor_reference": "images/02-living-wide.png",
+      "floor_scope": "Existing stone floor material only; any visible bedroom wood-look flooring retained. Fine paired grooves only on existing stone tread tops; oak treads unchanged.",
+      "floor_finish": "Pale warm beige porcelain stone-look concept, low mineral variation, no marble-style veining, fine colour-matched joints and existing layout. Fully matte appearance without mirror reflections or glare; soft diffuse light.",
+      "superseded": {
+        "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+        "path_at_commit": "interiors/images/02-living-wide.png",
+        "sha256": "8c9b7f68efd92492b174c69df3315af54c27366743cb657a0a1e7bdb71bd53d3",
+        "size": [
+          1536,
+          1024
+        ]
+      },
+      "dimension_review": {
+        "source": [
+          1536,
+          1024
+        ],
+        "output": [
+          1536,
+          1024
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+      }
     },
     "03-stair-tv-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "d4082c0b8798a91ecb2c399fbc6724741beb2a59cdfc8ce218b69c021465cd94",
-      "review": "Plain oak-framed mirror, charcoal downlight, under-counter basin, closed lower left cubby and single vase above; stair LED and towel ring removed. Assistant visual review only; no pixel-exact geometry or measured placement certification.",
-      "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-house-finish-edit",
-      "method": "built-in-imagegen-precise-object-edit",
-      "geometry_source": "pre-edit photograph at Git 7f2136ec45715d62b453b395612474c332264c2d",
+      "sha256": "288d0dc8e89a93a18215378c0eb84a60d04a93bbf2e0863711d28b298395b435",
+      "review": "Under-cabinet light now falls diffusely on matte stone-look floor, without a mirrored LED band. Fine paired grooves on lower stone steps; upper oak tread caps retained. TV, cabinets, basin/mirror, sofa crop and bedroom wood-look floor visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "reviewed_at": "2026-10-24",
+      "revision": "2026-10-24-common-stone-matte-floor",
+      "method": "built-in-imagegen-floor-finish-edit",
+      "geometry_source": "Pre-edit canonical photograph at 2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04, SHA-256 d4082c0b8798a91ecb2c399fbc6724741beb2a59cdfc8ce218b69c021465cd94",
       "style_source": [
         "06-kitchen-wide.png at pre-edit Git 7f2136ec45715d62b453b395612474c332264c2d",
         "06-kitchen-detail.png (unchanged)"
       ],
       "user_approval": "pending",
-      "render_review": "Assistant visual comparison; generated image is not certified pixel-exact geometry.",
+      "render_review": "Compared against original target, selected living floor reference where applicable and frozen kitchen wide/detail palette references. Non-floor room elements visually retained; not certified pixel-identical geometry.",
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_finish_generation_history"
+      "prompt_key": "common_stone_matte_floor_generation_history",
+      "prompt_id": "common-stone-matte-floor-2026-10-24-03-stair-tv-wide",
+      "presentation_revision": "common-stone-matte-floor-2026-10-24",
+      "finish_revision": "common-stone-matte-floor-2026-10-24",
+      "floor_reference": "images/02-living-wide.png",
+      "floor_scope": "Existing stone floor material only; any visible bedroom wood-look flooring retained. Fine paired grooves only on existing stone tread tops; oak treads unchanged.",
+      "floor_finish": "Pale warm beige porcelain stone-look concept, low mineral variation, no marble-style veining, fine colour-matched joints and existing layout. Fully matte appearance without mirror reflections or glare; soft diffuse light.",
+      "superseded": {
+        "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+        "path_at_commit": "interiors/images/03-stair-tv-wide.png",
+        "sha256": "d4082c0b8798a91ecb2c399fbc6724741beb2a59cdfc8ce218b69c021465cd94",
+        "size": [
+          1531,
+          1027
+        ]
+      },
+      "dimension_review": {
+        "source": [
+          1531,
+          1027
+        ],
+        "output": [
+          1531,
+          1027
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+      }
     },
     "04-storage-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "05d51309262f4d7daa10e0d0168bddafc6e8f9d0b57bf71ff8889871f276d8d8",
-      "review": "Coordinated TV/basin joinery close-up with closed lower cubby, framed mirror and downlight; under-cabinet glow retained. Assistant visual review only; no pixel-exact geometry or measured placement certification.",
-      "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-house-finish-edit",
-      "method": "built-in-imagegen-precise-object-edit",
-      "geometry_source": "pre-edit photograph at Git 7f2136ec45715d62b453b395612474c332264c2d",
+      "sha256": "27c80026a05baefb4fa2059c444a55cbffee4da8c74726a7340612989aa91f0d",
+      "review": "Foreground floor matched to living matte stone, reducing marble-like veining and reflected cabinet glow. Fine grooves on cropped stone steps; oak treads retained. TV, joinery, vase, basin/mirror, lighting and bedroom doorway visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "reviewed_at": "2026-10-24",
+      "revision": "2026-10-24-common-stone-matte-floor",
+      "method": "built-in-imagegen-floor-finish-edit",
+      "geometry_source": "Pre-edit canonical photograph at 2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04, SHA-256 05d51309262f4d7daa10e0d0168bddafc6e8f9d0b57bf71ff8889871f276d8d8",
       "style_source": [
         "06-kitchen-wide.png at pre-edit Git 7f2136ec45715d62b453b395612474c332264c2d",
         "06-kitchen-detail.png (unchanged)"
       ],
       "user_approval": "pending",
-      "render_review": "Assistant visual comparison; generated image is not certified pixel-exact geometry.",
+      "render_review": "Compared against original target, selected living floor reference where applicable and frozen kitchen wide/detail palette references. Non-floor room elements visually retained; not certified pixel-identical geometry.",
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_finish_generation_history"
+      "prompt_key": "common_stone_matte_floor_generation_history",
+      "prompt_id": "common-stone-matte-floor-2026-10-24-04-storage-wide",
+      "presentation_revision": "common-stone-matte-floor-2026-10-24",
+      "finish_revision": "common-stone-matte-floor-2026-10-24",
+      "floor_reference": "images/02-living-wide.png",
+      "floor_scope": "Existing stone floor material only; any visible bedroom wood-look flooring retained. Fine paired grooves only on existing stone tread tops; oak treads unchanged.",
+      "floor_finish": "Pale warm beige porcelain stone-look concept, low mineral variation, no marble-style veining, fine colour-matched joints and existing layout. Fully matte appearance without mirror reflections or glare; soft diffuse light.",
+      "superseded": {
+        "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+        "path_at_commit": "interiors/images/04-storage-wide.png",
+        "sha256": "05d51309262f4d7daa10e0d0168bddafc6e8f9d0b57bf71ff8889871f276d8d8",
+        "size": [
+          1531,
+          1027
+        ]
+      },
+      "dimension_review": {
+        "source": [
+          1531,
+          1027
+        ],
+        "output": [
+          1531,
+          1027
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+      }
     },
     "05-wash-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "e25f4a47d6e0303b18e5f8973ad08b3b4b1c76842d2020a77b3646e52f181ecd",
-      "review": "Framed mirror and charcoal downlight, clean slab counter and under-counter basin; towel ring and stair LED removed. Assistant visual review only; no pixel-exact geometry or measured placement certification.",
-      "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-house-finish-edit",
-      "method": "built-in-imagegen-precise-object-edit",
+      "sha256": "4cd1bac7847b1c843b35406d914d06d1dff1271c6c0eace82a35b35d0a024e2b",
+      "review": "Small visible common-area floor changed to low-variation matte stone, with diffuse light. Bedroom planks remain beyond their threshold. Honed basin counter, vanity, mirror/sconce, TV crop, door and bed view visually retained; tiny oak stair crop left unchanged. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "reviewed_at": "2026-10-24",
+      "revision": "2026-10-24-common-stone-matte-floor",
+      "method": "built-in-imagegen-floor-finish-edit",
       "user_approval": "pending",
-      "geometry_source": "pre-edit photograph at Git 7f2136ec45715d62b453b395612474c332264c2d",
+      "geometry_source": "Pre-edit canonical photograph at 2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04, SHA-256 e25f4a47d6e0303b18e5f8973ad08b3b4b1c76842d2020a77b3646e52f181ecd",
       "style_source": [
         "06-kitchen-wide.png at pre-edit Git 7f2136ec45715d62b453b395612474c332264c2d",
         "06-kitchen-detail.png (unchanged)"
       ],
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_finish_generation_history"
+      "prompt_key": "common_stone_matte_floor_generation_history",
+      "prompt_id": "common-stone-matte-floor-2026-10-24-05-wash-wide",
+      "presentation_revision": "common-stone-matte-floor-2026-10-24",
+      "finish_revision": "common-stone-matte-floor-2026-10-24",
+      "floor_reference": "images/02-living-wide.png",
+      "floor_scope": "Existing stone floor material only; any visible bedroom wood-look flooring retained. Fine paired grooves only on existing stone tread tops; oak treads unchanged.",
+      "floor_finish": "Pale warm beige porcelain stone-look concept, low mineral variation, no marble-style veining, fine colour-matched joints and existing layout. Fully matte appearance without mirror reflections or glare; soft diffuse light.",
+      "superseded": {
+        "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+        "path_at_commit": "interiors/images/05-wash-wide.png",
+        "sha256": "e25f4a47d6e0303b18e5f8973ad08b3b4b1c76842d2020a77b3646e52f181ecd",
+        "size": [
+          1531,
+          1027
+        ]
+      },
+      "render_review": "Compared against original target, selected living floor reference where applicable and frozen kitchen wide/detail palette references. Non-floor room elements visually retained; not certified pixel-identical geometry.",
+      "dimension_review": {
+        "source": [
+          1531,
+          1027
+        ],
+        "output": [
+          1531,
+          1027
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+      }
     },
     "06-kitchen-detail.png": {
       "status": "assistant-reviewed",
@@ -137,25 +242,25 @@
     },
     "06-kitchen-opposite.png": {
       "status": "assistant-reviewed",
-      "sha256": "a1b28b7e66dc80011870d76237cbad1b335b76bf19203aa5ed0e542253614574",
-      "review": "Matching inclined hood and runner, oak fridge enclosure, shallow full-height end-wall storage and clear central aisle; fridge-top plant removed. Assistant visual review only; no pixel-exact geometry or measured placement certification.",
-      "reviewed_at": "2026-10-23",
-      "presentation_revision": "oak-main-ivory-loft-2026-10-17",
-      "method": "built-in-imagegen-precise-object-edit",
+      "sha256": "99d390e0940125120179c541ec3e2b22d689e329bf4bb9c1dc64dde1db462d2d",
+      "review": "Reverse kitchen floor matched to pale sandy soft-matte stone, reducing veining and reflected fridge/window glare while keeping diffuse sunlight. Honed counters, hob/hood, oak storage/ivory lofts, open bay, fridge/housing, straight wall and runner visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "reviewed_at": "2026-10-24",
+      "presentation_revision": "common-stone-matte-floor-2026-10-24",
+      "method": "built-in-imagegen-floor-finish-edit",
       "user_approval": "pending",
-      "geometry_source": "pre-edit photograph at Git 7f2136ec45715d62b453b395612474c332264c2d",
-      "prompt_id": "oak-main-ivory-loft-2026-10-17-opposite",
+      "geometry_source": "Pre-edit canonical photograph at 2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04, SHA-256 a1b28b7e66dc80011870d76237cbad1b335b76bf19203aa5ed0e542253614574",
+      "prompt_id": "common-stone-matte-floor-2026-10-24-06-kitchen-opposite",
       "prompt_file": ".source/image-release.json",
       "superseded": {
-        "source_commit": "93a0161bebf167e76c9af4e5224eac8f4e3d5ad2",
+        "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
         "path_at_commit": "interiors/images/06-kitchen-opposite.png",
-        "sha256": "153b537969102c6c9eda3dd7b187c4abdeaab8a17a24699302ee0086911ee987",
+        "sha256": "a1b28b7e66dc80011870d76237cbad1b335b76bf19203aa5ed0e542253614574",
         "size": [
           1536,
           1024
         ]
       },
-      "render_review": "Assistant visual comparison across all three room views and original target cameras/fixtures; illustrative photographic concept, not pixel-exact measured geometry.",
+      "render_review": "Compared against original target, selected living floor reference where applicable and frozen kitchen wide/detail palette references. Non-floor room elements visually retained; not certified pixel-identical geometry.",
       "camera": {
         "id": "06-kitchen-opposite",
         "level": "ground",
@@ -178,41 +283,71 @@
       "cabinet_design_source": "images/06-kitchen-wide.png",
       "cabinet_placement": "Existing large south-end two-tier unit retained with continuous loft extension across to above fridge and back round window wall; straight west wall remains.",
       "upper_storage_concept": "Muted natural oak main upper fronts matching base cupboards; topmost continuous loft/window bridge remains creamy ivory; existing chimney and geometry retained.",
-      "revision": "2026-10-23-house-finish-edit",
+      "revision": "2026-10-24-common-stone-matte-floor",
       "style_source": [
         "06-kitchen-wide.png at pre-edit Git 7f2136ec45715d62b453b395612474c332264c2d",
         "06-kitchen-detail.png (unchanged)"
       ],
-      "prompt_key": "house_finish_generation_history"
+      "prompt_key": "common_stone_matte_floor_generation_history",
+      "finish_revision": "common-stone-matte-floor-2026-10-24",
+      "floor_reference": "images/02-living-wide.png",
+      "floor_scope": "Existing stone floor material only; any visible bedroom wood-look flooring retained. Fine paired grooves only on existing stone tread tops; oak treads unchanged.",
+      "floor_finish": "Pale warm beige porcelain stone-look concept, low mineral variation, no marble-style veining, fine colour-matched joints and existing layout. Kitchen soft-matte appearance, at most a faint diffuse sheen; honed counters retained.",
+      "dimension_review": {
+        "source": [
+          1536,
+          1024
+        ],
+        "output": [
+          1536,
+          1024
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+      }
     },
     "06-kitchen-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
-      "review": "Slim inclined charcoal hood and oatmeal cotton runner with fine charcoal edge stripe. Assistant visual review only; no pixel-exact geometry or measured placement certification.",
-      "reviewed_at": "2026-10-23",
-      "presentation_revision": "oak-main-ivory-loft-2026-10-17",
-      "method": "built-in-imagegen-precise-object-edit",
+      "sha256": "8ad7ca7aa521c8929c932fb78d5c806d3c52a392af2eff65bb96c2a4cdd4e3f0",
+      "review": "Kitchen floor now has pale sandy soft-matte stone-look tiles, low mineral variation and diffuse sun patches without cabinet/window reflections or glare streaks. Honed counters/backsplash, cabinetry, lofts, slanted hood, hob, sink, door/window and cotton runner visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "reviewed_at": "2026-10-24",
+      "presentation_revision": "common-stone-matte-floor-2026-10-24",
+      "method": "built-in-imagegen-floor-finish-edit",
       "user_approval": "pending",
-      "geometry_source": "pre-edit photograph at Git 7f2136ec45715d62b453b395612474c332264c2d",
-      "prompt_id": "oak-main-ivory-loft-2026-10-17-wide",
+      "geometry_source": "Pre-edit canonical photograph at 2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04, SHA-256 9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+      "prompt_id": "common-stone-matte-floor-2026-10-24-06-kitchen-wide",
       "prompt_file": ".source/image-release.json",
       "superseded": {
-        "source_commit": "93a0161bebf167e76c9af4e5224eac8f4e3d5ad2",
+        "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
         "path_at_commit": "interiors/images/06-kitchen-wide.png",
-        "sha256": "c35b433f4dd0b038fee1aeef9b0a97dbf9acb13d79a65ccc52324f729c11055c",
+        "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
         "size": [
           1495,
           1052
         ]
       },
-      "render_review": "Assistant visual comparison across all three room views and original target cameras/fixtures; illustrative photographic concept, not pixel-exact measured geometry.",
+      "render_review": "Compared against original target, selected living floor reference where applicable and frozen kitchen wide/detail palette references. Non-floor room elements visually retained; not certified pixel-identical geometry.",
       "upper_storage_concept": "Muted natural oak main upper fronts matching base cupboards; topmost continuous loft/window bridge remains creamy ivory; existing chimney and geometry retained.",
-      "revision": "2026-10-23-house-finish-edit",
+      "revision": "2026-10-24-common-stone-matte-floor",
       "style_source": [
         "06-kitchen-wide.png at pre-edit Git 7f2136ec45715d62b453b395612474c332264c2d",
         "06-kitchen-detail.png (unchanged)"
       ],
-      "prompt_key": "house_finish_generation_history"
+      "prompt_key": "common_stone_matte_floor_generation_history",
+      "finish_revision": "common-stone-matte-floor-2026-10-24",
+      "floor_reference": "images/02-living-wide.png",
+      "floor_scope": "Existing stone floor material only; any visible bedroom wood-look flooring retained. Fine paired grooves only on existing stone tread tops; oak treads unchanged.",
+      "floor_finish": "Pale warm beige porcelain stone-look concept, low mineral variation, no marble-style veining, fine colour-matched joints and existing layout. Kitchen soft-matte appearance, at most a faint diffuse sheen; honed counters retained.",
+      "dimension_review": {
+        "source": [
+          1495,
+          1052
+        ],
+        "output": [
+          1495,
+          1052
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+      }
     },
     "07-bedroom1-detail.png": {
       "status": "accepted",
@@ -527,21 +662,46 @@
     },
     "10-passage-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "280912471e6cf33e13894d7546cd15cd33d91e9212de5d9c4180a797de658fc4",
-      "review": "Only the distant tailoring room updated to waterfall oak benches, curved-back oak chairs, linen boxes and task lamps; foreground passage and stair retained. Assistant visual review; generated placement and geometry are not measured or pixel-identical.",
-      "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-house-consistency-followup",
-      "method": "built-in-imagegen-precise-object-edit",
+      "sha256": "5278c2ccdfe07157826e33fef12fcfcf94afd578df14baed5aa044c5d5fe3afc",
+      "review": "Passage stone floor matched to the living matte appearance, without the prior bright reflective band. Fine paired grooves added to visible stone treads. Stair/guard geometry, oak rails, picture/light and distant study benches/chairs/machines/window visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "reviewed_at": "2026-10-24",
+      "revision": "2026-10-24-common-stone-matte-floor",
+      "method": "built-in-imagegen-floor-finish-edit",
       "user_approval": "pending",
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png"
       ],
-      "render_review": "Assistant comparison with actual model camera and kitchen finishes; generated presentation is illustrative, not certified pixel-exact geometry.",
-      "geometry_source": "Current pre-follow-up photograph, SHA-256 c3f81459c80e42b9c6ef8f6e45f90a6a1bc58bb05535e9f2c276055581f7e0c6",
-      "prompt_id": "R19-passage_candidate",
+      "render_review": "Compared against original target, selected living floor reference where applicable and frozen kitchen wide/detail palette references. Non-floor room elements visually retained; not certified pixel-identical geometry.",
+      "geometry_source": "Pre-edit canonical photograph at 2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04, SHA-256 280912471e6cf33e13894d7546cd15cd33d91e9212de5d9c4180a797de658fc4",
+      "prompt_id": "common-stone-matte-floor-2026-10-24-10-passage-wide",
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_consistency_followup_generation_history"
+      "prompt_key": "common_stone_matte_floor_generation_history",
+      "presentation_revision": "common-stone-matte-floor-2026-10-24",
+      "finish_revision": "common-stone-matte-floor-2026-10-24",
+      "floor_reference": "images/02-living-wide.png",
+      "floor_scope": "Existing stone floor material only; any visible bedroom wood-look flooring retained. Fine paired grooves only on existing stone tread tops; oak treads unchanged.",
+      "floor_finish": "Pale warm beige porcelain stone-look concept, low mineral variation, no marble-style veining, fine colour-matched joints and existing layout. Fully matte appearance without mirror reflections or glare; soft diffuse light.",
+      "superseded": {
+        "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+        "path_at_commit": "interiors/images/10-passage-wide.png",
+        "sha256": "280912471e6cf33e13894d7546cd15cd33d91e9212de5d9c4180a797de658fc4",
+        "size": [
+          1451,
+          1084
+        ]
+      },
+      "dimension_review": {
+        "source": [
+          1451,
+          1084
+        ],
+        "output": [
+          1451,
+          1084
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+      }
     },
     "10-study-wide.png": {
       "status": "assistant-reviewed",
@@ -648,19 +808,47 @@
     },
     "16-dining-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "c1086c2aa6102cf16a58743d95d073585907c5957e5f1a327db9ce073e4441fd",
-      "review": "Wider, lower 100 \u00d7 50 cm landscape abstract and slightly raised drum pendant, with a visible bare-wall gap and no overlap. Assistant visual comparison; generated dimensions, tones and unchanged geometry are not pixel-exact measurements.",
-      "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-detail-refinements",
-      "method": "built-in-imagegen-precise-object-edit",
-      "geometry_source": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff:interiors/images/16-dining-wide.png",
+      "sha256": "b35266924f5b9eabc92279c55f458a88ea1c8ea066757371edc907d47c953017",
+      "review": "Dining floor now reads matte without the previous bright window/furniture reflections, matching the living material. Two near-side chairs, cushioned bench, table, artwork, linen pendant, window and door visually retained. Native imagegen export is 1532 x 1026 rather than source 1531 x 1027; no external resize or crop was applied. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "reviewed_at": "2026-10-24",
+      "revision": "2026-10-24-common-stone-matte-floor",
+      "method": "built-in-imagegen-floor-finish-edit",
+      "geometry_source": "Pre-edit canonical photograph at 2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04, SHA-256 c1086c2aa6102cf16a58743d95d073585907c5957e5f1a327db9ce073e4441fd",
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png"
       ],
       "user_approval": "pending",
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_detail_refinement_generation_history"
+      "prompt_key": "common_stone_matte_floor_generation_history",
+      "prompt_id": "common-stone-matte-floor-2026-10-24-16-dining-wide",
+      "presentation_revision": "common-stone-matte-floor-2026-10-24",
+      "finish_revision": "common-stone-matte-floor-2026-10-24",
+      "floor_reference": "images/02-living-wide.png",
+      "floor_scope": "Existing stone floor material only; any visible bedroom wood-look flooring retained. Fine paired grooves only on existing stone tread tops; oak treads unchanged.",
+      "floor_finish": "Pale warm beige porcelain stone-look concept, low mineral variation, no marble-style veining, fine colour-matched joints and existing layout. Fully matte appearance without mirror reflections or glare; soft diffuse light.",
+      "superseded": {
+        "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+        "path_at_commit": "interiors/images/16-dining-wide.png",
+        "sha256": "c1086c2aa6102cf16a58743d95d073585907c5957e5f1a327db9ce073e4441fd",
+        "size": [
+          1531,
+          1027
+        ]
+      },
+      "render_review": "Compared against original target, selected living floor reference where applicable and frozen kitchen wide/detail palette references. Non-floor room elements visually retained; not certified pixel-identical geometry.",
+      "dimension_review": {
+        "source": [
+          1531,
+          1027
+        ],
+        "output": [
+          1532,
+          1026
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping.",
+        "note": "One-pixel export rounding: width +1, height -1; framing visually retained. Does not claim pixel-identical preservation."
+      }
     },
     "17-front-gallery-wide.png": {
       "status": "assistant-reviewed",
@@ -680,21 +868,47 @@
     },
     "02-ground-floor-overview-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "05c2d0183e498e1e6dcea69ae9b1f5023c28fa07b0dd22e0ad7e2cebba22e73c",
-      "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-detail-refinements",
-      "method": "built-in-imagegen-precise-object-edit",
+      "sha256": "3dafa504bac444fb473a744d8d0be883a1b3181404884d7ca853de2d5c35f494",
+      "reviewed_at": "2026-10-24",
+      "revision": "2026-10-24-common-stone-matte-floor",
+      "method": "built-in-imagegen-floor-finish-edit",
       "user_approval": "pending",
-      "review": "Single uninterrupted mirror glass in one thin oak frame, centred charcoal sconce and matte black tap. Staircase and other overview details retained. Assistant visual comparison; generated dimensions, tones and unchanged geometry are not pixel-exact measurements.",
-      "geometry_source": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff:interiors/images/02-ground-floor-overview-wide.png",
+      "review": "Floor matched to the selected living matte finish. Fine grooves visible at stone stair nosings; upper oak treads retained. Existing stair silhouette, railings, TV/basin/mirror, dining set, sofas and bedroom planks through doorway visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "geometry_source": "Pre-edit canonical photograph at 2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04, SHA-256 05c2d0183e498e1e6dcea69ae9b1f5023c28fa07b0dd22e0ad7e2cebba22e73c",
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png",
         "03-stair-tv-wide.png"
       ],
-      "render_review": "Current model/plan govern dimensions; only photographic wall shape corrected.",
+      "render_review": "Compared against original target, selected living floor reference where applicable and frozen kitchen wide/detail palette references. Non-floor room elements visually retained; not certified pixel-identical geometry.",
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_detail_refinement_generation_history"
+      "prompt_key": "common_stone_matte_floor_generation_history",
+      "prompt_id": "common-stone-matte-floor-2026-10-24-02-ground-floor-overview-wide",
+      "presentation_revision": "common-stone-matte-floor-2026-10-24",
+      "finish_revision": "common-stone-matte-floor-2026-10-24",
+      "floor_reference": "images/02-living-wide.png",
+      "floor_scope": "Existing stone floor material only; any visible bedroom wood-look flooring retained. Fine paired grooves only on existing stone tread tops; oak treads unchanged.",
+      "floor_finish": "Pale warm beige porcelain stone-look concept, low mineral variation, no marble-style veining, fine colour-matched joints and existing layout. Fully matte appearance without mirror reflections or glare; soft diffuse light.",
+      "superseded": {
+        "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+        "path_at_commit": "interiors/images/02-ground-floor-overview-wide.png",
+        "sha256": "05c2d0183e498e1e6dcea69ae9b1f5023c28fa07b0dd22e0ad7e2cebba22e73c",
+        "size": [
+          1672,
+          941
+        ]
+      },
+      "dimension_review": {
+        "source": [
+          1672,
+          941
+        ],
+        "output": [
+          1672,
+          941
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+      }
     },
     "18-rear-gallery-wide.png": {
       "status": "assistant-reviewed",
@@ -9751,5 +9965,903 @@
     "scope_limits": "Only the five named canonical photos and their review/reference metadata change. Reference photos, all other room images and all model/drawing files unchanged. No project working-image folder added.",
     "retention": "Pre-edit photos recoverable from Git be81f684cedb0eeca83906b6707e6122b0386bdf; final files retain canonical names. Generated originals remain outside the project in the built-in imagegen output directory.",
     "approval": "Assistant visual comparison complete; user acceptance of these final generated photographs pending."
+  },
+  "common_stone_matte_floor_generation_history": [
+    {
+      "id": "common-stone-matte-floor-2026-10-24-02-living-wide",
+      "date": "2026-10-24",
+      "image": "02-living-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen",
+      "kind": "living-reference",
+      "user_prompt": "Edit Image 1, a photograph of a living/dining room. Change only the floor finish:\n1. Make the pale sandy stone floor fully matte porcelain stone-look tile: pale warm beige, low mineral variation, no marble veining, large format about 600 x 1200 mm with fine colour-matched joints. Keep the existing tile layout, joint lines and colour family.\n2. Soft diffuse light only: no gloss, no mirror-like reflections of furniture, walls or windows, and no glare. Sunlight patches stay soft-edged and diffuse, as on a honed limestone floor.\n3. On the stone stair treads, add two fine anti-slip grooves along the front edge of each tread. Do not change the stair geometry, risers, balusters or handrail.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, stair, joinery, furniture, rug, curtains, lighting and time of day. Match Images 3-4 for palette and photographic realism: muted natural oak (never orange), creamy ivory plaster, pale sandy stone. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "prompt": "Use case: precise-object-edit.\nInput roles: FIRST attached file is Image 1, 02-living-wide.png, the edit target and sole camera/geometry/non-floor content authority. It shows the diagonal stone stair on the left, TV and washbasin under it, central bedroom door, dining table at right and foreground sofa/round coffee table. SECOND attached file is logically Image 3, 06-kitchen-wide.png, the palette/photographic realism reference only. THIRD attached file is logically Image 4, 06-kitchen-detail.png, the material/photographic realism reference only. There is no Image 2 in this first run. Do not copy either kitchen's camera or furniture. Keep the target's exact original 1536x1024 pixel dimensions, framing and room layout. Limit the changes to the requested floor finish and two fine shallow grooves on existing stone tread tops, with all structural and furniture details retained.\n\nEdit Image 1, a photograph of a living/dining room. Change only the floor finish:\n1. Make the pale sandy stone floor fully matte porcelain stone-look tile: pale warm beige, low mineral variation, no marble veining, large format about 600 x 1200 mm with fine colour-matched joints. Keep the existing tile layout, joint lines and colour family.\n2. Soft diffuse light only: no gloss, no mirror-like reflections of furniture, walls or windows, and no glare. Sunlight patches stay soft-edged and diffuse, as on a honed limestone floor.\n3. On the stone stair treads, add two fine anti-slip grooves along the front edge of each tread. Do not change the stair geometry, risers, balusters or handrail.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, stair, joinery, furniture, rug, curtains, lighting and time of day. Match Images 3-4 for palette and photographic realism: muted natural oak (never orange), creamy ivory plaster, pale sandy stone. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Edit target; sole camera, framing, layout and non-floor contents authority",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/02-living-wide.png",
+            "sha256": "8c9b7f68efd92492b174c69df3315af54c27366743cb657a0a1e7bdb71bd53d3",
+            "size": [
+              1536,
+              1024
+            ]
+          }
+        },
+        {
+          "logical_image": 3,
+          "role": "Frozen pre-batch kitchen-wide palette and photographic realism reference; same original used throughout, including after kitchen editing",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 4,
+          "role": "Unchanged kitchen-detail material/photographic realism reference",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        }
+      ],
+      "generation_count": 1,
+      "geometry_reference": {
+        "camera": "Retained pre-edit canonical photograph/crop and room layout",
+        "source_image": {
+          "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+          "path_at_commit": "interiors/images/02-living-wide.png",
+          "sha256": "8c9b7f68efd92492b174c69df3315af54c27366743cb657a0a1e7bdb71bd53d3",
+          "size": [
+            1536,
+            1024
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "model_sources": {
+          "model/src/storage-layout.json": "05f89cd02e682864377fc1009a7585c080e5ec7390d3a816cced4db310422211",
+          "model/src/fitout-layout.json": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+          "model/src/under-stair-layout.json": "c8401ccf55f328f258cc0a4bea2cd609978e0ea5458f27a4719df32992840195"
+        },
+        "scope": "Photographic floor-surface edit and fine grooves on existing stone tread tops only; measured plans/model and stair geometry unchanged."
+      },
+      "review": "Selected first: pale warm beige matte stone-look floor with fine joints, reduced veining and diffuse sunlight; furniture/window reflections and glossy glare removed. Fine paired grooves added on visible stone tread tops. Stair geometry/guards/handrail, TV/basin joinery, dining set, sofa, rug and bedroom doorway visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "user_approval": "pending",
+      "dimension_review": {
+        "source": [
+          1536,
+          1024
+        ],
+        "output": [
+          1536,
+          1024
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+      },
+      "output": {
+        "path": "images/02-living-wide.png",
+        "sha256": "29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066",
+        "size": [
+          1536,
+          1024
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-fdc16ec1-3ca6-40dd-baa6-e0e71d0f9782.png"
+      }
+    },
+    {
+      "id": "common-stone-matte-floor-2026-10-24-02-ground-floor-overview-wide",
+      "date": "2026-10-24",
+      "image": "02-ground-floor-overview-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen",
+      "kind": "common-stone-matte",
+      "user_prompt": "Edit Image 1, a photograph in the same house as Image 2. Change only the stone floor finish so it matches the floor in Image 2:\n1. Fully matte porcelain stone-look tile: pale warm beige, low mineral variation, no marble veining, fine colour-matched joints. Keep the existing tile layout, joint lines and colour family.\n2. Soft diffuse light only: no gloss, no mirror-like reflections of furniture, joinery, walls, windows or the glow under the cabinet, and no glare. Sunlight and lamp patches stay soft-edged and diffuse.\n3. On any stone stair treads, add two fine anti-slip grooves along the front edge of each tread. Leave any oak treads exactly as they are. Do not change stair geometry, balusters or handrail.\n4. Any bedroom wood-look planks visible through a doorway stay exactly as they are.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, joinery, furniture, rugs, artwork, lighting and time of day. Match Images 3-4 for palette and photographic realism. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "prompt": "Use case: precise-object-edit.\nFIRST ATTACHED FILE = Image 1, 02-ground-floor-overview-wide.png, the only EDIT TARGET and sole authority for camera, framing, geometry, all furniture and non-floor content. TARGET IDENTITY: Wide overview with lower stone stair flight at LEFT, upper oak-topped diagonal flight, under-stair TV/basin/mirror, central open bedroom door, dining table at right and foreground sofa/coffee table.\nSECOND FILE = Image 2, the assistant-reviewed matte-floor 02-living-wide.png, FLOOR MATERIAL/FINISH REFERENCE ONLY. Do not copy its camera, architecture, furniture, door or stair shape.\nTHIRD FILE = Image 3, frozen pre-batch 06-kitchen-wide.png, HOUSE PALETTE/REALISM REFERENCE ONLY.\nFOURTH FILE = Image 4, 06-kitchen-detail.png, MATERIAL TEXTURE/PHOTOGRAPHIC REALISM REFERENCE ONLY.\nKeep the FIRST IMAGE's exact 1672x941 pixel dimensions, crop and perspective. Edit its floor surface and only the specified fine grooves on any existing stone tread tops. Do not alter stone stair riser geometry or finish, or oak tread material. Preserve existing joints; no floor material changes beyond those requested. \n\nEdit Image 1, a photograph in the same house as Image 2. Change only the stone floor finish so it matches the floor in Image 2:\n1. Fully matte porcelain stone-look tile: pale warm beige, low mineral variation, no marble veining, fine colour-matched joints. Keep the existing tile layout, joint lines and colour family.\n2. Soft diffuse light only: no gloss, no mirror-like reflections of furniture, joinery, walls, windows or the glow under the cabinet, and no glare. Sunlight and lamp patches stay soft-edged and diffuse.\n3. On any stone stair treads, add two fine anti-slip grooves along the front edge of each tread. Leave any oak treads exactly as they are. Do not change stair geometry, balusters or handrail.\n4. Any bedroom wood-look planks visible through a doorway stay exactly as they are.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, joinery, furniture, rugs, artwork, lighting and time of day. Match Images 3-4 for palette and photographic realism. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Edit target; sole camera, framing, layout and non-floor contents authority",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/02-ground-floor-overview-wide.png",
+            "sha256": "05c2d0183e498e1e6dcea69ae9b1f5023c28fa07b0dd22e0ad7e2cebba22e73c",
+            "size": [
+              1672,
+              941
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Same-batch living floor finish selected after assistant review; material reference only, not a camera or furniture override",
+          "path": "images/02-living-wide.png",
+          "sha256": "29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066",
+          "selection": "Assistant visually reviewed and selected before subsequent generation; user acceptance of final images pending."
+        },
+        {
+          "logical_image": 3,
+          "role": "Frozen pre-batch kitchen-wide palette and photographic realism reference; same original used throughout, including after kitchen editing",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 4,
+          "role": "Unchanged kitchen-detail material/photographic realism reference",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        }
+      ],
+      "generation_count": 1,
+      "geometry_reference": {
+        "camera": "Retained pre-edit canonical photograph/crop and room layout",
+        "source_image": {
+          "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+          "path_at_commit": "interiors/images/02-ground-floor-overview-wide.png",
+          "sha256": "05c2d0183e498e1e6dcea69ae9b1f5023c28fa07b0dd22e0ad7e2cebba22e73c",
+          "size": [
+            1672,
+            941
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "model_sources": {
+          "model/src/storage-layout.json": "05f89cd02e682864377fc1009a7585c080e5ec7390d3a816cced4db310422211",
+          "model/src/fitout-layout.json": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+          "model/src/under-stair-layout.json": "c8401ccf55f328f258cc0a4bea2cd609978e0ea5458f27a4719df32992840195"
+        },
+        "scope": "Photographic floor-surface edit and fine grooves on existing stone tread tops only; measured plans/model and stair geometry unchanged."
+      },
+      "review": "Floor matched to the selected living matte finish. Fine grooves visible at stone stair nosings; upper oak treads retained. Existing stair silhouette, railings, TV/basin/mirror, dining set, sofas and bedroom planks through doorway visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "user_approval": "pending",
+      "dimension_review": {
+        "source": [
+          1672,
+          941
+        ],
+        "output": [
+          1672,
+          941
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+      },
+      "output": {
+        "path": "images/02-ground-floor-overview-wide.png",
+        "sha256": "3dafa504bac444fb473a744d8d0be883a1b3181404884d7ca853de2d5c35f494",
+        "size": [
+          1672,
+          941
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-a75ff821-01c0-4299-8561-3f6497e49ee8.png"
+      }
+    },
+    {
+      "id": "common-stone-matte-floor-2026-10-24-16-dining-wide",
+      "date": "2026-10-24",
+      "image": "16-dining-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen",
+      "kind": "common-stone-matte",
+      "user_prompt": "Edit Image 1, a photograph in the same house as Image 2. Change only the stone floor finish so it matches the floor in Image 2:\n1. Fully matte porcelain stone-look tile: pale warm beige, low mineral variation, no marble veining, fine colour-matched joints. Keep the existing tile layout, joint lines and colour family.\n2. Soft diffuse light only: no gloss, no mirror-like reflections of furniture, joinery, walls, windows or the glow under the cabinet, and no glare. Sunlight and lamp patches stay soft-edged and diffuse.\n3. On any stone stair treads, add two fine anti-slip grooves along the front edge of each tread. Leave any oak treads exactly as they are. Do not change stair geometry, balusters or handrail.\n4. Any bedroom wood-look planks visible through a doorway stay exactly as they are.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, joinery, furniture, rugs, artwork, lighting and time of day. Match Images 3-4 for palette and photographic realism. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "prompt": "Use case: precise-object-edit.\nFIRST ATTACHED FILE = Image 1, 16-dining-wide.png, the only EDIT TARGET and sole authority for camera, framing, geometry, all furniture and non-floor content. TARGET IDENTITY: Close dining view, large table and exactly two near-side oak chairs plus cushioned window-side bench, horizontal artwork beneath linen pendant, window at right and open doorway at left; no staircase visible.\nSECOND FILE = Image 2, the assistant-reviewed matte-floor 02-living-wide.png, FLOOR MATERIAL/FINISH REFERENCE ONLY. Do not copy its camera, architecture, furniture, door or stair shape.\nTHIRD FILE = Image 3, frozen pre-batch 06-kitchen-wide.png, HOUSE PALETTE/REALISM REFERENCE ONLY.\nFOURTH FILE = Image 4, 06-kitchen-detail.png, MATERIAL TEXTURE/PHOTOGRAPHIC REALISM REFERENCE ONLY.\nKeep the FIRST IMAGE's exact 1531x1027 pixel dimensions, crop and perspective. Edit its floor surface and only the specified fine grooves on any existing stone tread tops. Do not alter stone stair riser geometry or finish, or oak tread material. Preserve existing joints; no floor material changes beyond those requested. \n\nEdit Image 1, a photograph in the same house as Image 2. Change only the stone floor finish so it matches the floor in Image 2:\n1. Fully matte porcelain stone-look tile: pale warm beige, low mineral variation, no marble veining, fine colour-matched joints. Keep the existing tile layout, joint lines and colour family.\n2. Soft diffuse light only: no gloss, no mirror-like reflections of furniture, joinery, walls, windows or the glow under the cabinet, and no glare. Sunlight and lamp patches stay soft-edged and diffuse.\n3. On any stone stair treads, add two fine anti-slip grooves along the front edge of each tread. Leave any oak treads exactly as they are. Do not change stair geometry, balusters or handrail.\n4. Any bedroom wood-look planks visible through a doorway stay exactly as they are.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, joinery, furniture, rugs, artwork, lighting and time of day. Match Images 3-4 for palette and photographic realism. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Edit target; sole camera, framing, layout and non-floor contents authority",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/16-dining-wide.png",
+            "sha256": "c1086c2aa6102cf16a58743d95d073585907c5957e5f1a327db9ce073e4441fd",
+            "size": [
+              1531,
+              1027
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Same-batch living floor finish selected after assistant review; material reference only, not a camera or furniture override",
+          "path": "images/02-living-wide.png",
+          "sha256": "29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066",
+          "selection": "Assistant visually reviewed and selected before subsequent generation; user acceptance of final images pending."
+        },
+        {
+          "logical_image": 3,
+          "role": "Frozen pre-batch kitchen-wide palette and photographic realism reference; same original used throughout, including after kitchen editing",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 4,
+          "role": "Unchanged kitchen-detail material/photographic realism reference",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        }
+      ],
+      "generation_count": 1,
+      "geometry_reference": {
+        "camera": "Retained pre-edit canonical photograph/crop and room layout",
+        "source_image": {
+          "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+          "path_at_commit": "interiors/images/16-dining-wide.png",
+          "sha256": "c1086c2aa6102cf16a58743d95d073585907c5957e5f1a327db9ce073e4441fd",
+          "size": [
+            1531,
+            1027
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "model_sources": {
+          "model/src/storage-layout.json": "05f89cd02e682864377fc1009a7585c080e5ec7390d3a816cced4db310422211",
+          "model/src/fitout-layout.json": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+          "model/src/under-stair-layout.json": "c8401ccf55f328f258cc0a4bea2cd609978e0ea5458f27a4719df32992840195"
+        },
+        "scope": "Photographic floor-surface edit and fine grooves on existing stone tread tops only; measured plans/model and stair geometry unchanged."
+      },
+      "review": "Dining floor now reads matte without the previous bright window/furniture reflections, matching the living material. Two near-side chairs, cushioned bench, table, artwork, linen pendant, window and door visually retained. Native imagegen export is 1532 x 1026 rather than source 1531 x 1027; no external resize or crop was applied. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "user_approval": "pending",
+      "dimension_review": {
+        "source": [
+          1531,
+          1027
+        ],
+        "output": [
+          1532,
+          1026
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping.",
+        "note": "One-pixel export rounding: width +1, height -1; framing visually retained. Does not claim pixel-identical preservation."
+      },
+      "output": {
+        "path": "images/16-dining-wide.png",
+        "sha256": "b35266924f5b9eabc92279c55f458a88ea1c8ea066757371edc907d47c953017",
+        "size": [
+          1532,
+          1026
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-1c047857-99ef-49c7-91f6-29218a37843a.png"
+      }
+    },
+    {
+      "id": "common-stone-matte-floor-2026-10-24-03-stair-tv-wide",
+      "date": "2026-10-24",
+      "image": "03-stair-tv-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen",
+      "kind": "common-stone-matte",
+      "user_prompt": "Edit Image 1, a photograph in the same house as Image 2. Change only the stone floor finish so it matches the floor in Image 2:\n1. Fully matte porcelain stone-look tile: pale warm beige, low mineral variation, no marble veining, fine colour-matched joints. Keep the existing tile layout, joint lines and colour family.\n2. Soft diffuse light only: no gloss, no mirror-like reflections of furniture, joinery, walls, windows or the glow under the cabinet, and no glare. Sunlight and lamp patches stay soft-edged and diffuse.\n3. On any stone stair treads, add two fine anti-slip grooves along the front edge of each tread. Leave any oak treads exactly as they are. Do not change stair geometry, balusters or handrail.\n4. Any bedroom wood-look planks visible through a doorway stay exactly as they are.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, joinery, furniture, rugs, artwork, lighting and time of day. Match Images 3-4 for palette and photographic realism. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "prompt": "Use case: precise-object-edit.\nFIRST ATTACHED FILE = Image 1, 03-stair-tv-wide.png, the only EDIT TARGET and sole authority for camera, framing, geometry, all furniture and non-floor content. TARGET IDENTITY: Under-stair TV view, diagonal stair across top with oak treads on upper flight and visible stone steps at left bottom, oak TV wall/greige cabinets, basin/mirror at right and narrow bedroom doorway far right.\nSECOND FILE = Image 2, the assistant-reviewed matte-floor 02-living-wide.png, FLOOR MATERIAL/FINISH REFERENCE ONLY. Do not copy its camera, architecture, furniture, door or stair shape.\nTHIRD FILE = Image 3, frozen pre-batch 06-kitchen-wide.png, HOUSE PALETTE/REALISM REFERENCE ONLY.\nFOURTH FILE = Image 4, 06-kitchen-detail.png, MATERIAL TEXTURE/PHOTOGRAPHIC REALISM REFERENCE ONLY.\nKeep the FIRST IMAGE's exact 1531x1027 pixel dimensions, crop and perspective. Edit its floor surface and only the specified fine grooves on any existing stone tread tops. Do not alter stone stair riser geometry or finish, or oak tread material. Preserve existing joints; no floor material changes beyond those requested. \n\nEdit Image 1, a photograph in the same house as Image 2. Change only the stone floor finish so it matches the floor in Image 2:\n1. Fully matte porcelain stone-look tile: pale warm beige, low mineral variation, no marble veining, fine colour-matched joints. Keep the existing tile layout, joint lines and colour family.\n2. Soft diffuse light only: no gloss, no mirror-like reflections of furniture, joinery, walls, windows or the glow under the cabinet, and no glare. Sunlight and lamp patches stay soft-edged and diffuse.\n3. On any stone stair treads, add two fine anti-slip grooves along the front edge of each tread. Leave any oak treads exactly as they are. Do not change stair geometry, balusters or handrail.\n4. Any bedroom wood-look planks visible through a doorway stay exactly as they are.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, joinery, furniture, rugs, artwork, lighting and time of day. Match Images 3-4 for palette and photographic realism. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Edit target; sole camera, framing, layout and non-floor contents authority",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/03-stair-tv-wide.png",
+            "sha256": "d4082c0b8798a91ecb2c399fbc6724741beb2a59cdfc8ce218b69c021465cd94",
+            "size": [
+              1531,
+              1027
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Same-batch living floor finish selected after assistant review; material reference only, not a camera or furniture override",
+          "path": "images/02-living-wide.png",
+          "sha256": "29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066",
+          "selection": "Assistant visually reviewed and selected before subsequent generation; user acceptance of final images pending."
+        },
+        {
+          "logical_image": 3,
+          "role": "Frozen pre-batch kitchen-wide palette and photographic realism reference; same original used throughout, including after kitchen editing",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 4,
+          "role": "Unchanged kitchen-detail material/photographic realism reference",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        }
+      ],
+      "generation_count": 1,
+      "geometry_reference": {
+        "camera": "Retained pre-edit canonical photograph/crop and room layout",
+        "source_image": {
+          "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+          "path_at_commit": "interiors/images/03-stair-tv-wide.png",
+          "sha256": "d4082c0b8798a91ecb2c399fbc6724741beb2a59cdfc8ce218b69c021465cd94",
+          "size": [
+            1531,
+            1027
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "model_sources": {
+          "model/src/storage-layout.json": "05f89cd02e682864377fc1009a7585c080e5ec7390d3a816cced4db310422211",
+          "model/src/fitout-layout.json": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+          "model/src/under-stair-layout.json": "c8401ccf55f328f258cc0a4bea2cd609978e0ea5458f27a4719df32992840195"
+        },
+        "scope": "Photographic floor-surface edit and fine grooves on existing stone tread tops only; measured plans/model and stair geometry unchanged."
+      },
+      "review": "Under-cabinet light now falls diffusely on matte stone-look floor, without a mirrored LED band. Fine paired grooves on lower stone steps; upper oak tread caps retained. TV, cabinets, basin/mirror, sofa crop and bedroom wood-look floor visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "user_approval": "pending",
+      "dimension_review": {
+        "source": [
+          1531,
+          1027
+        ],
+        "output": [
+          1531,
+          1027
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+      },
+      "output": {
+        "path": "images/03-stair-tv-wide.png",
+        "sha256": "288d0dc8e89a93a18215378c0eb84a60d04a93bbf2e0863711d28b298395b435",
+        "size": [
+          1531,
+          1027
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-7188722c-85aa-49ec-b2a0-fdd16e8cc8ee.png"
+      }
+    },
+    {
+      "id": "common-stone-matte-floor-2026-10-24-04-storage-wide",
+      "date": "2026-10-24",
+      "image": "04-storage-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen",
+      "kind": "common-stone-matte",
+      "user_prompt": "Edit Image 1, a photograph in the same house as Image 2. Change only the stone floor finish so it matches the floor in Image 2:\n1. Fully matte porcelain stone-look tile: pale warm beige, low mineral variation, no marble veining, fine colour-matched joints. Keep the existing tile layout, joint lines and colour family.\n2. Soft diffuse light only: no gloss, no mirror-like reflections of furniture, joinery, walls, windows or the glow under the cabinet, and no glare. Sunlight and lamp patches stay soft-edged and diffuse.\n3. On any stone stair treads, add two fine anti-slip grooves along the front edge of each tread. Leave any oak treads exactly as they are. Do not change stair geometry, balusters or handrail.\n4. Any bedroom wood-look planks visible through a doorway stay exactly as they are.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, joinery, furniture, rugs, artwork, lighting and time of day. Match Images 3-4 for palette and photographic realism. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "prompt": "Use case: precise-object-edit.\nFIRST ATTACHED FILE = Image 1, 04-storage-wide.png, the only EDIT TARGET and sole authority for camera, framing, geometry, all furniture and non-floor content. TARGET IDENTITY: Tighter under-stair TV/cabinet view, TV left-centre, basin and oak framed mirror at right, stone lower steps cropped at far LEFT, oak-topped upper diagonal flight at top; bedroom doorway at right edge.\nSECOND FILE = Image 2, the assistant-reviewed matte-floor 02-living-wide.png, FLOOR MATERIAL/FINISH REFERENCE ONLY. Do not copy its camera, architecture, furniture, door or stair shape.\nTHIRD FILE = Image 3, frozen pre-batch 06-kitchen-wide.png, HOUSE PALETTE/REALISM REFERENCE ONLY.\nFOURTH FILE = Image 4, 06-kitchen-detail.png, MATERIAL TEXTURE/PHOTOGRAPHIC REALISM REFERENCE ONLY.\nKeep the FIRST IMAGE's exact 1531x1027 pixel dimensions, crop and perspective. Edit its floor surface and only the specified fine grooves on any existing stone tread tops. Do not alter stone stair riser geometry or finish, or oak tread material. Preserve existing joints; no floor material changes beyond those requested. \n\nEdit Image 1, a photograph in the same house as Image 2. Change only the stone floor finish so it matches the floor in Image 2:\n1. Fully matte porcelain stone-look tile: pale warm beige, low mineral variation, no marble veining, fine colour-matched joints. Keep the existing tile layout, joint lines and colour family.\n2. Soft diffuse light only: no gloss, no mirror-like reflections of furniture, joinery, walls, windows or the glow under the cabinet, and no glare. Sunlight and lamp patches stay soft-edged and diffuse.\n3. On any stone stair treads, add two fine anti-slip grooves along the front edge of each tread. Leave any oak treads exactly as they are. Do not change stair geometry, balusters or handrail.\n4. Any bedroom wood-look planks visible through a doorway stay exactly as they are.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, joinery, furniture, rugs, artwork, lighting and time of day. Match Images 3-4 for palette and photographic realism. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Edit target; sole camera, framing, layout and non-floor contents authority",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/04-storage-wide.png",
+            "sha256": "05d51309262f4d7daa10e0d0168bddafc6e8f9d0b57bf71ff8889871f276d8d8",
+            "size": [
+              1531,
+              1027
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Same-batch living floor finish selected after assistant review; material reference only, not a camera or furniture override",
+          "path": "images/02-living-wide.png",
+          "sha256": "29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066",
+          "selection": "Assistant visually reviewed and selected before subsequent generation; user acceptance of final images pending."
+        },
+        {
+          "logical_image": 3,
+          "role": "Frozen pre-batch kitchen-wide palette and photographic realism reference; same original used throughout, including after kitchen editing",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 4,
+          "role": "Unchanged kitchen-detail material/photographic realism reference",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        }
+      ],
+      "generation_count": 1,
+      "geometry_reference": {
+        "camera": "Retained pre-edit canonical photograph/crop and room layout",
+        "source_image": {
+          "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+          "path_at_commit": "interiors/images/04-storage-wide.png",
+          "sha256": "05d51309262f4d7daa10e0d0168bddafc6e8f9d0b57bf71ff8889871f276d8d8",
+          "size": [
+            1531,
+            1027
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "model_sources": {
+          "model/src/storage-layout.json": "05f89cd02e682864377fc1009a7585c080e5ec7390d3a816cced4db310422211",
+          "model/src/fitout-layout.json": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+          "model/src/under-stair-layout.json": "c8401ccf55f328f258cc0a4bea2cd609978e0ea5458f27a4719df32992840195"
+        },
+        "scope": "Photographic floor-surface edit and fine grooves on existing stone tread tops only; measured plans/model and stair geometry unchanged."
+      },
+      "review": "Foreground floor matched to living matte stone, reducing marble-like veining and reflected cabinet glow. Fine grooves on cropped stone steps; oak treads retained. TV, joinery, vase, basin/mirror, lighting and bedroom doorway visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "user_approval": "pending",
+      "dimension_review": {
+        "source": [
+          1531,
+          1027
+        ],
+        "output": [
+          1531,
+          1027
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+      },
+      "output": {
+        "path": "images/04-storage-wide.png",
+        "sha256": "27c80026a05baefb4fa2059c444a55cbffee4da8c74726a7340612989aa91f0d",
+        "size": [
+          1531,
+          1027
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-e6c81a06-a90f-48d4-8c93-2c757b0fdd3a.png"
+      }
+    },
+    {
+      "id": "common-stone-matte-floor-2026-10-24-05-wash-wide",
+      "date": "2026-10-24",
+      "image": "05-wash-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen",
+      "kind": "common-stone-matte",
+      "user_prompt": "Edit Image 1, a photograph in the same house as Image 2. Change only the stone floor finish so it matches the floor in Image 2:\n1. Fully matte porcelain stone-look tile: pale warm beige, low mineral variation, no marble veining, fine colour-matched joints. Keep the existing tile layout, joint lines and colour family.\n2. Soft diffuse light only: no gloss, no mirror-like reflections of furniture, joinery, walls, windows or the glow under the cabinet, and no glare. Sunlight and lamp patches stay soft-edged and diffuse.\n3. On any stone stair treads, add two fine anti-slip grooves along the front edge of each tread. Leave any oak treads exactly as they are. Do not change stair geometry, balusters or handrail.\n4. Any bedroom wood-look planks visible through a doorway stay exactly as they are.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, joinery, furniture, rugs, artwork, lighting and time of day. Match Images 3-4 for palette and photographic realism. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "prompt": "Use case: precise-object-edit.\nFIRST ATTACHED FILE = Image 1, 05-wash-wide.png, the only EDIT TARGET and sole authority for camera, framing, geometry, all furniture and non-floor content. TARGET IDENTITY: Close under-stair washbasin view: TV crop left, central oak vanity and oak framed mirror/sconce, open bedroom doorway right revealing existing wood-look planks. Only a tiny upper stair crop is visible at top left.\nSECOND FILE = Image 2, the assistant-reviewed matte-floor 02-living-wide.png, FLOOR MATERIAL/FINISH REFERENCE ONLY. Do not copy its camera, architecture, furniture, door or stair shape.\nTHIRD FILE = Image 3, frozen pre-batch 06-kitchen-wide.png, HOUSE PALETTE/REALISM REFERENCE ONLY.\nFOURTH FILE = Image 4, 06-kitchen-detail.png, MATERIAL TEXTURE/PHOTOGRAPHIC REALISM REFERENCE ONLY.\nKeep the FIRST IMAGE's exact 1531x1027 pixel dimensions, crop and perspective. Edit its floor surface and only the specified fine grooves on any existing stone tread tops. Do not alter stone stair riser geometry or finish, or oak tread material. Preserve existing joints; no floor material changes beyond those requested. \n\nEdit Image 1, a photograph in the same house as Image 2. Change only the stone floor finish so it matches the floor in Image 2:\n1. Fully matte porcelain stone-look tile: pale warm beige, low mineral variation, no marble veining, fine colour-matched joints. Keep the existing tile layout, joint lines and colour family.\n2. Soft diffuse light only: no gloss, no mirror-like reflections of furniture, joinery, walls, windows or the glow under the cabinet, and no glare. Sunlight and lamp patches stay soft-edged and diffuse.\n3. On any stone stair treads, add two fine anti-slip grooves along the front edge of each tread. Leave any oak treads exactly as they are. Do not change stair geometry, balusters or handrail.\n4. Any bedroom wood-look planks visible through a doorway stay exactly as they are.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, joinery, furniture, rugs, artwork, lighting and time of day. Match Images 3-4 for palette and photographic realism. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Edit target; sole camera, framing, layout and non-floor contents authority",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/05-wash-wide.png",
+            "sha256": "e25f4a47d6e0303b18e5f8973ad08b3b4b1c76842d2020a77b3646e52f181ecd",
+            "size": [
+              1531,
+              1027
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Same-batch living floor finish selected after assistant review; material reference only, not a camera or furniture override",
+          "path": "images/02-living-wide.png",
+          "sha256": "29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066",
+          "selection": "Assistant visually reviewed and selected before subsequent generation; user acceptance of final images pending."
+        },
+        {
+          "logical_image": 3,
+          "role": "Frozen pre-batch kitchen-wide palette and photographic realism reference; same original used throughout, including after kitchen editing",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 4,
+          "role": "Unchanged kitchen-detail material/photographic realism reference",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        }
+      ],
+      "generation_count": 1,
+      "geometry_reference": {
+        "camera": "Retained pre-edit canonical photograph/crop and room layout",
+        "source_image": {
+          "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+          "path_at_commit": "interiors/images/05-wash-wide.png",
+          "sha256": "e25f4a47d6e0303b18e5f8973ad08b3b4b1c76842d2020a77b3646e52f181ecd",
+          "size": [
+            1531,
+            1027
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "model_sources": {
+          "model/src/storage-layout.json": "05f89cd02e682864377fc1009a7585c080e5ec7390d3a816cced4db310422211",
+          "model/src/fitout-layout.json": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+          "model/src/under-stair-layout.json": "c8401ccf55f328f258cc0a4bea2cd609978e0ea5458f27a4719df32992840195"
+        },
+        "scope": "Photographic floor-surface edit and fine grooves on existing stone tread tops only; measured plans/model and stair geometry unchanged."
+      },
+      "review": "Small visible common-area floor changed to low-variation matte stone, with diffuse light. Bedroom planks remain beyond their threshold. Honed basin counter, vanity, mirror/sconce, TV crop, door and bed view visually retained; tiny oak stair crop left unchanged. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "user_approval": "pending",
+      "dimension_review": {
+        "source": [
+          1531,
+          1027
+        ],
+        "output": [
+          1531,
+          1027
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+      },
+      "output": {
+        "path": "images/05-wash-wide.png",
+        "sha256": "4cd1bac7847b1c843b35406d914d06d1dff1271c6c0eace82a35b35d0a024e2b",
+        "size": [
+          1531,
+          1027
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-8dea01b1-b77c-42c8-bcf9-4f7e7cf5d99d.png"
+      }
+    },
+    {
+      "id": "common-stone-matte-floor-2026-10-24-10-passage-wide",
+      "date": "2026-10-24",
+      "image": "10-passage-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen",
+      "kind": "common-stone-matte",
+      "user_prompt": "Edit Image 1, a photograph in the same house as Image 2. Change only the stone floor finish so it matches the floor in Image 2:\n1. Fully matte porcelain stone-look tile: pale warm beige, low mineral variation, no marble veining, fine colour-matched joints. Keep the existing tile layout, joint lines and colour family.\n2. Soft diffuse light only: no gloss, no mirror-like reflections of furniture, joinery, walls, windows or the glow under the cabinet, and no glare. Sunlight and lamp patches stay soft-edged and diffuse.\n3. On any stone stair treads, add two fine anti-slip grooves along the front edge of each tread. Leave any oak treads exactly as they are. Do not change stair geometry, balusters or handrail.\n4. Any bedroom wood-look planks visible through a doorway stay exactly as they are.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, joinery, furniture, rugs, artwork, lighting and time of day. Match Images 3-4 for palette and photographic realism. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "prompt": "Use case: precise-object-edit.\nFIRST ATTACHED FILE = Image 1, 10-passage-wide.png, the only EDIT TARGET and sole authority for camera, framing, geometry, all furniture and non-floor content. TARGET IDENTITY: Long narrow first-floor passage: large framed art and picture light left, charcoal stair guards and oak handrail right with stone stair flight, distant tailoring study ahead with window/Roman blind/sewing benches and chairs.\nSECOND FILE = Image 2, the assistant-reviewed matte-floor 02-living-wide.png, FLOOR MATERIAL/FINISH REFERENCE ONLY. Do not copy its camera, architecture, furniture, door or stair shape.\nTHIRD FILE = Image 3, frozen pre-batch 06-kitchen-wide.png, HOUSE PALETTE/REALISM REFERENCE ONLY.\nFOURTH FILE = Image 4, 06-kitchen-detail.png, MATERIAL TEXTURE/PHOTOGRAPHIC REALISM REFERENCE ONLY.\nKeep the FIRST IMAGE's exact 1451x1084 pixel dimensions, crop and perspective. Edit its floor surface and only the specified fine grooves on any existing stone tread tops. Do not alter stone stair riser geometry or finish, or oak tread material. Preserve existing joints; no floor material changes beyond those requested. \n\nEdit Image 1, a photograph in the same house as Image 2. Change only the stone floor finish so it matches the floor in Image 2:\n1. Fully matte porcelain stone-look tile: pale warm beige, low mineral variation, no marble veining, fine colour-matched joints. Keep the existing tile layout, joint lines and colour family.\n2. Soft diffuse light only: no gloss, no mirror-like reflections of furniture, joinery, walls, windows or the glow under the cabinet, and no glare. Sunlight and lamp patches stay soft-edged and diffuse.\n3. On any stone stair treads, add two fine anti-slip grooves along the front edge of each tread. Leave any oak treads exactly as they are. Do not change stair geometry, balusters or handrail.\n4. Any bedroom wood-look planks visible through a doorway stay exactly as they are.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, joinery, furniture, rugs, artwork, lighting and time of day. Match Images 3-4 for palette and photographic realism. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Edit target; sole camera, framing, layout and non-floor contents authority",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/10-passage-wide.png",
+            "sha256": "280912471e6cf33e13894d7546cd15cd33d91e9212de5d9c4180a797de658fc4",
+            "size": [
+              1451,
+              1084
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Same-batch living floor finish selected after assistant review; material reference only, not a camera or furniture override",
+          "path": "images/02-living-wide.png",
+          "sha256": "29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066",
+          "selection": "Assistant visually reviewed and selected before subsequent generation; user acceptance of final images pending."
+        },
+        {
+          "logical_image": 3,
+          "role": "Frozen pre-batch kitchen-wide palette and photographic realism reference; same original used throughout, including after kitchen editing",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 4,
+          "role": "Unchanged kitchen-detail material/photographic realism reference",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        }
+      ],
+      "generation_count": 1,
+      "geometry_reference": {
+        "camera": "Retained pre-edit canonical photograph/crop and room layout",
+        "source_image": {
+          "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+          "path_at_commit": "interiors/images/10-passage-wide.png",
+          "sha256": "280912471e6cf33e13894d7546cd15cd33d91e9212de5d9c4180a797de658fc4",
+          "size": [
+            1451,
+            1084
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "model_sources": {
+          "model/src/storage-layout.json": "05f89cd02e682864377fc1009a7585c080e5ec7390d3a816cced4db310422211",
+          "model/src/fitout-layout.json": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+          "model/src/under-stair-layout.json": "c8401ccf55f328f258cc0a4bea2cd609978e0ea5458f27a4719df32992840195"
+        },
+        "scope": "Photographic floor-surface edit and fine grooves on existing stone tread tops only; measured plans/model and stair geometry unchanged."
+      },
+      "review": "Passage stone floor matched to the living matte appearance, without the prior bright reflective band. Fine paired grooves added to visible stone treads. Stair/guard geometry, oak rails, picture/light and distant study benches/chairs/machines/window visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "user_approval": "pending",
+      "dimension_review": {
+        "source": [
+          1451,
+          1084
+        ],
+        "output": [
+          1451,
+          1084
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+      },
+      "output": {
+        "path": "images/10-passage-wide.png",
+        "sha256": "5278c2ccdfe07157826e33fef12fcfcf94afd578df14baed5aa044c5d5fe3afc",
+        "size": [
+          1451,
+          1084
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-0e512a81-42a5-432f-855e-2fbfdf7c7ffb.png"
+      }
+    },
+    {
+      "id": "common-stone-matte-floor-2026-10-24-06-kitchen-wide",
+      "date": "2026-10-24",
+      "image": "06-kitchen-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen",
+      "kind": "kitchen-soft-matte",
+      "user_prompt": "Edit Image 1, a photograph of a kitchen in the same house as Image 2. Change only the floor finish:\n1. Use the same pale sandy stone-look porcelain tile as Image 2, in a soft-matte, stain-resistant finish: at most a faint, diffuse sheen, with no mirror-like reflections of the cabinets, fridge or window and no glare streaks. Low mineral variation, no marble veining. Keep the existing tile layout and joint lines.\n2. Sunlight patches on the floor stay soft-edged and diffuse.\nDo not change the stone countertops, which keep their honed finish. Keep everything not listed exactly as in Image 1: camera, framing, perspective, cabinets, uppers, lofts, hood, hob, sink, fridge housing, runner, window, door, lighting and time of day. Match Images 3-4 for palette and photographic realism. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "prompt": "Use case: precise-object-edit.\nFIRST ATTACHED FILE = Image 1, 06-kitchen-wide.png, the only EDIT TARGET and sole authority for camera, framing, geometry, all furniture and non-floor content. TARGET IDENTITY: Kitchen sink-return wide view: open oak door left, sink on rear counter, continuous oak upper doors and ivory lofts, black slanted hood/hob beside right window, cotton runner on floor.\nSECOND FILE = Image 2, the assistant-reviewed matte-floor 02-living-wide.png, FLOOR MATERIAL/FINISH REFERENCE ONLY. Do not copy its camera, architecture, furniture, door or stair shape.\nTHIRD FILE = Image 3, frozen pre-batch 06-kitchen-wide.png, HOUSE PALETTE/REALISM REFERENCE ONLY.\nFOURTH FILE = Image 4, 06-kitchen-detail.png, MATERIAL TEXTURE/PHOTOGRAPHIC REALISM REFERENCE ONLY.\nKeep the FIRST IMAGE's exact 1495x1052 pixel dimensions, crop and perspective. Edit its floor surface and only the specified fine grooves on any existing stone tread tops. Do not alter stone stair riser geometry or finish, or oak tread material. Preserve existing joints; no floor material changes beyond those requested. Countertops/backsplash and appliances are untouched.\n\nEdit Image 1, a photograph of a kitchen in the same house as Image 2. Change only the floor finish:\n1. Use the same pale sandy stone-look porcelain tile as Image 2, in a soft-matte, stain-resistant finish: at most a faint, diffuse sheen, with no mirror-like reflections of the cabinets, fridge or window and no glare streaks. Low mineral variation, no marble veining. Keep the existing tile layout and joint lines.\n2. Sunlight patches on the floor stay soft-edged and diffuse.\nDo not change the stone countertops, which keep their honed finish. Keep everything not listed exactly as in Image 1: camera, framing, perspective, cabinets, uppers, lofts, hood, hob, sink, fridge housing, runner, window, door, lighting and time of day. Match Images 3-4 for palette and photographic realism. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Edit target; sole camera, framing, layout and non-floor contents authority",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Same-batch living floor finish selected after assistant review; material reference only, not a camera or furniture override",
+          "path": "images/02-living-wide.png",
+          "sha256": "29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066",
+          "selection": "Assistant visually reviewed and selected before subsequent generation; user acceptance of final images pending."
+        },
+        {
+          "logical_image": 3,
+          "role": "Frozen pre-batch kitchen-wide palette and photographic realism reference; same original used throughout, including after kitchen editing",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 4,
+          "role": "Unchanged kitchen-detail material/photographic realism reference",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        }
+      ],
+      "generation_count": 1,
+      "geometry_reference": {
+        "camera": "Retained pre-edit canonical photograph/crop and room layout",
+        "source_image": {
+          "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+          "path_at_commit": "interiors/images/06-kitchen-wide.png",
+          "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+          "size": [
+            1495,
+            1052
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "model_sources": {
+          "model/src/storage-layout.json": "05f89cd02e682864377fc1009a7585c080e5ec7390d3a816cced4db310422211",
+          "model/src/fitout-layout.json": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+          "model/src/under-stair-layout.json": "c8401ccf55f328f258cc0a4bea2cd609978e0ea5458f27a4719df32992840195"
+        },
+        "scope": "Photographic floor-surface edit and fine grooves on existing stone tread tops only; measured plans/model and stair geometry unchanged."
+      },
+      "review": "Kitchen floor now has pale sandy soft-matte stone-look tiles, low mineral variation and diffuse sun patches without cabinet/window reflections or glare streaks. Honed counters/backsplash, cabinetry, lofts, slanted hood, hob, sink, door/window and cotton runner visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "user_approval": "pending",
+      "dimension_review": {
+        "source": [
+          1495,
+          1052
+        ],
+        "output": [
+          1495,
+          1052
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+      },
+      "output": {
+        "path": "images/06-kitchen-wide.png",
+        "sha256": "8ad7ca7aa521c8929c932fb78d5c806d3c52a392af2eff65bb96c2a4cdd4e3f0",
+        "size": [
+          1495,
+          1052
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-0e19dc8a-1bc7-4cd4-baff-e24edc4be094.png"
+      }
+    },
+    {
+      "id": "common-stone-matte-floor-2026-10-24-06-kitchen-opposite",
+      "date": "2026-10-24",
+      "image": "06-kitchen-opposite.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen",
+      "kind": "kitchen-soft-matte",
+      "user_prompt": "Edit Image 1, a photograph of a kitchen in the same house as Image 2. Change only the floor finish:\n1. Use the same pale sandy stone-look porcelain tile as Image 2, in a soft-matte, stain-resistant finish: at most a faint, diffuse sheen, with no mirror-like reflections of the cabinets, fridge or window and no glare streaks. Low mineral variation, no marble veining. Keep the existing tile layout and joint lines.\n2. Sunlight patches on the floor stay soft-edged and diffuse.\nDo not change the stone countertops, which keep their honed finish. Keep everything not listed exactly as in Image 1: camera, framing, perspective, cabinets, uppers, lofts, hood, hob, sink, fridge housing, runner, window, door, lighting and time of day. Match Images 3-4 for palette and photographic realism. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "prompt": "Use case: precise-object-edit.\nFIRST ATTACHED FILE = Image 1, 06-kitchen-opposite.png, the only EDIT TARGET and sole authority for camera, framing, geometry, all furniture and non-floor content. TARGET IDENTITY: Reverse kitchen view: counter/hob/window and slanted hood at LEFT, full oak storage wall with ivory lofts ahead, open shelf bay and tall cupboard/fridge at RIGHT, cotton runner on floor.\nSECOND FILE = Image 2, the assistant-reviewed matte-floor 02-living-wide.png, FLOOR MATERIAL/FINISH REFERENCE ONLY. Do not copy its camera, architecture, furniture, door or stair shape.\nTHIRD FILE = Image 3, frozen pre-batch 06-kitchen-wide.png, HOUSE PALETTE/REALISM REFERENCE ONLY.\nFOURTH FILE = Image 4, 06-kitchen-detail.png, MATERIAL TEXTURE/PHOTOGRAPHIC REALISM REFERENCE ONLY.\nKeep the FIRST IMAGE's exact 1536x1024 pixel dimensions, crop and perspective. Edit its floor surface and only the specified fine grooves on any existing stone tread tops. Do not alter stone stair riser geometry or finish, or oak tread material. Preserve existing joints; no floor material changes beyond those requested. Countertops/backsplash and appliances are untouched.\n\nEdit Image 1, a photograph of a kitchen in the same house as Image 2. Change only the floor finish:\n1. Use the same pale sandy stone-look porcelain tile as Image 2, in a soft-matte, stain-resistant finish: at most a faint, diffuse sheen, with no mirror-like reflections of the cabinets, fridge or window and no glare streaks. Low mineral variation, no marble veining. Keep the existing tile layout and joint lines.\n2. Sunlight patches on the floor stay soft-edged and diffuse.\nDo not change the stone countertops, which keep their honed finish. Keep everything not listed exactly as in Image 1: camera, framing, perspective, cabinets, uppers, lofts, hood, hob, sink, fridge housing, runner, window, door, lighting and time of day. Match Images 3-4 for palette and photographic realism. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Edit target; sole camera, framing, layout and non-floor contents authority",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/06-kitchen-opposite.png",
+            "sha256": "a1b28b7e66dc80011870d76237cbad1b335b76bf19203aa5ed0e542253614574",
+            "size": [
+              1536,
+              1024
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Same-batch living floor finish selected after assistant review; material reference only, not a camera or furniture override",
+          "path": "images/02-living-wide.png",
+          "sha256": "29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066",
+          "selection": "Assistant visually reviewed and selected before subsequent generation; user acceptance of final images pending."
+        },
+        {
+          "logical_image": 3,
+          "role": "Frozen pre-batch kitchen-wide palette and photographic realism reference; same original used throughout, including after kitchen editing",
+          "historical_source": {
+            "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 4,
+          "role": "Unchanged kitchen-detail material/photographic realism reference",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        }
+      ],
+      "generation_count": 1,
+      "geometry_reference": {
+        "camera": "Retained pre-edit canonical photograph/crop and room layout",
+        "source_image": {
+          "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+          "path_at_commit": "interiors/images/06-kitchen-opposite.png",
+          "sha256": "a1b28b7e66dc80011870d76237cbad1b335b76bf19203aa5ed0e542253614574",
+          "size": [
+            1536,
+            1024
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "model_sources": {
+          "model/src/storage-layout.json": "05f89cd02e682864377fc1009a7585c080e5ec7390d3a816cced4db310422211",
+          "model/src/fitout-layout.json": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+          "model/src/under-stair-layout.json": "c8401ccf55f328f258cc0a4bea2cd609978e0ea5458f27a4719df32992840195"
+        },
+        "scope": "Photographic floor-surface edit and fine grooves on existing stone tread tops only; measured plans/model and stair geometry unchanged."
+      },
+      "review": "Reverse kitchen floor matched to pale sandy soft-matte stone, reducing veining and reflected fridge/window glare while keeping diffuse sunlight. Honed counters, hob/hood, oak storage/ivory lofts, open bay, fridge/housing, straight wall and runner visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "user_approval": "pending",
+      "dimension_review": {
+        "source": [
+          1536,
+          1024
+        ],
+        "output": [
+          1536,
+          1024
+        ],
+        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+      },
+      "output": {
+        "path": "images/06-kitchen-opposite.png",
+        "sha256": "99d390e0940125120179c541ec3e2b22d689e329bf4bb9c1dc64dde1db462d2d",
+        "size": [
+          1536,
+          1024
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-284bfff0-165f-4baf-9918-dde740c974c1.png"
+      }
+    }
+  ],
+  "common_stone_matte_floor_decision": {
+    "date": "2026-10-24",
+    "scope": [
+      "02-living-wide.png",
+      "02-ground-floor-overview-wide.png",
+      "16-dining-wide.png",
+      "03-stair-tv-wide.png",
+      "04-storage-wide.png",
+      "05-wash-wide.png",
+      "10-passage-wide.png",
+      "06-kitchen-wide.png",
+      "06-kitchen-opposite.png"
+    ],
+    "user_request": "Generate living first, review it, then use it as Image 2 for six other common-area and two kitchen floor-only edits; one generation per target. Use original kitchen wide/detail as Images 3/4 throughout.",
+    "execution_order": [
+      "02-living-wide.png",
+      "02-ground-floor-overview-wide.png",
+      "16-dining-wide.png",
+      "03-stair-tv-wide.png",
+      "04-storage-wide.png",
+      "05-wash-wide.png",
+      "10-passage-wide.png",
+      "06-kitchen-wide.png",
+      "06-kitchen-opposite.png"
+    ],
+    "selected_floor_reference": {
+      "path": "images/02-living-wide.png",
+      "sha256": "29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066",
+      "selection": "Assistant visually reviewed and selected before subsequent generation; user acceptance of final images pending."
+    },
+    "frozen_palette_reference": {
+      "role": "Image 3 throughout all nine runs; recover original from Git rather than adding a revision folder",
+      "historical_source": {
+        "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+        "path_at_commit": "interiors/images/06-kitchen-wide.png",
+        "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+        "size": [
+          1495,
+          1052
+        ]
+      }
+    },
+    "unchanged_material_reference": {
+      "role": "Image 4 throughout; explicitly excluded from editing",
+      "path": "images/06-kitchen-detail.png",
+      "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+    },
+    "finish": "Fully matte pale warm beige porcelain stone-look tile, low mineral variation and fine colour-matched joints; living nominal 600 x 1200 mm design intent, existing layout/joint lines retained. Sunlight and practical light diffuse without mirror reflections or glare. Kitchen uses a soft-matte stain-resistant design intent with at most faint diffuse sheen; actual stain resistance is a product specification, not verified by these photos.",
+    "stairs": "Two fine anti-slip grooves along front edges of existing stone tread tops. Oak treads, riser finishes, stair geometry, balusters and handrails retained. Photos do not establish measured groove dimensions or certified slip performance.",
+    "protected_surfaces": "Kitchen counters remain honed; bedroom wood-look flooring through doorways retained. Kitchen detail and all no-change rooms/images untouched.",
+    "generation": "Nine independent built-in imagegen calls, one per photo, in requested dependency order. Living selected after assistant visual review before any dependent image was generated.",
+    "resolution_note": "Eight images retain source pixel dimensions. Dining native output is 1532 x 1026 versus 1531 x 1027 source; framing visually retained. No external raster editing/cropping/resizing.",
+    "scope_limits": "Other 24 canonical images and all model/drawing files unchanged. No working revision folder or duplicate final image files added.",
+    "retention": "Pre-edit images recoverable from Git 2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04. Exact prompts and roles/hashes consolidated here; generated originals remain in the built-in imagegen output directory.",
+    "approval": "Assistant visual comparison complete; user acceptance of final photographs pending."
   }
 }

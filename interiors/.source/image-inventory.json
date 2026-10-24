@@ -13,7 +13,7 @@
       1672,
       941
     ],
-    "sha256": "05c2d0183e498e1e6dcea69ae9b1f5023c28fa07b0dd22e0ad7e2cebba22e73c"
+    "sha256": "3dafa504bac444fb473a744d8d0be883a1b3181404884d7ca853de2d5c35f494"
   },
   {
     "file": "02-living-wide.png",
@@ -21,7 +21,7 @@
       1536,
       1024
     ],
-    "sha256": "8c9b7f68efd92492b174c69df3315af54c27366743cb657a0a1e7bdb71bd53d3"
+    "sha256": "29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066"
   },
   {
     "file": "03-stair-tv-wide.png",
@@ -29,7 +29,7 @@
       1531,
       1027
     ],
-    "sha256": "d4082c0b8798a91ecb2c399fbc6724741beb2a59cdfc8ce218b69c021465cd94"
+    "sha256": "288d0dc8e89a93a18215378c0eb84a60d04a93bbf2e0863711d28b298395b435"
   },
   {
     "file": "04-storage-wide.png",
@@ -37,7 +37,7 @@
       1531,
       1027
     ],
-    "sha256": "05d51309262f4d7daa10e0d0168bddafc6e8f9d0b57bf71ff8889871f276d8d8"
+    "sha256": "27c80026a05baefb4fa2059c444a55cbffee4da8c74726a7340612989aa91f0d"
   },
   {
     "file": "05-wash-wide.png",
@@ -45,7 +45,7 @@
       1531,
       1027
     ],
-    "sha256": "e25f4a47d6e0303b18e5f8973ad08b3b4b1c76842d2020a77b3646e52f181ecd"
+    "sha256": "4cd1bac7847b1c843b35406d914d06d1dff1271c6c0eace82a35b35d0a024e2b"
   },
   {
     "file": "06-kitchen-detail.png",
@@ -61,7 +61,7 @@
       1536,
       1024
     ],
-    "sha256": "a1b28b7e66dc80011870d76237cbad1b335b76bf19203aa5ed0e542253614574"
+    "sha256": "99d390e0940125120179c541ec3e2b22d689e329bf4bb9c1dc64dde1db462d2d"
   },
   {
     "file": "06-kitchen-wide.png",
@@ -69,7 +69,7 @@
       1495,
       1052
     ],
-    "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89"
+    "sha256": "8ad7ca7aa521c8929c932fb78d5c806d3c52a392af2eff65bb96c2a4cdd4e3f0"
   },
   {
     "file": "07-bedroom1-detail.png",
@@ -149,7 +149,7 @@
       1451,
       1084
     ],
-    "sha256": "280912471e6cf33e13894d7546cd15cd33d91e9212de5d9c4180a797de658fc4"
+    "sha256": "5278c2ccdfe07157826e33fef12fcfcf94afd578df14baed5aa044c5d5fe3afc"
   },
   {
     "file": "10-study-storage.png",
@@ -210,10 +210,10 @@
   {
     "file": "16-dining-wide.png",
     "size": [
-      1531,
-      1027
+      1532,
+      1026
     ],
-    "sha256": "c1086c2aa6102cf16a58743d95d073585907c5957e5f1a327db9ce073e4441fd"
+    "sha256": "b35266924f5b9eabc92279c55f458a88ea1c8ea066757371edc907d47c953017"
   },
   {
     "file": "17-front-gallery-wide.png",
