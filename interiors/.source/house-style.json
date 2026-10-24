@@ -55,7 +55,7 @@
       "file": "images/06-kitchen-wide.png",
       "group": "Kitchen",
       "role": "17 October finish: muted oak main upper doors match the base cupboards; continuous top lofts and window bridge remain creamy ivory. Existing charcoal chimney, room layout, fixtures and straight fridge-side wall retained.",
-      "sha256": "20945ad2ed111569f3daf8b6f853146bb37507fa7efd77bc9c8cea218af41a6c"
+      "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89"
     },
     {
       "file": "images/06-kitchen-detail.png",
@@ -79,7 +79,7 @@
       "file": "images/07-bedroom1-wide.png",
       "group": "Bedroom 1",
       "role": "Sage accents, ivory linen and natural oak; warm oatmeal ceiling-level ripple curtains and one compact oak tree-style dress stand by the entry/wardrobe, visible in the opposite view. The wide view governs light oak wood-look bedroom flooring. R19 revised finish example; original kitchen images remain the primary style authority.",
-      "sha256": "18409ff91b776c6e29e2bdc538e6892dd0df74dd92c0f9b338dbd06e34142696",
+      "sha256": "6b6a8ac7ec968db0fd0dc3b09663c362bbe315332cca81233113275627dba864",
       "revision": "R19"
     },
     {
@@ -92,8 +92,10 @@
       "file": "images/07-bedroom1-opposite.png",
       "group": "Bedroom 1",
       "role": "Sage accents, ivory linen and natural oak; warm oatmeal ceiling-level ripple curtains and one compact oak tree-style dress stand by the entry/wardrobe, visible in the opposite view. The wide view governs light oak wood-look bedroom flooring. R18 revised finish example; original kitchen images remain the primary style authority.",
-      "sha256": "c89f8a0a196055b7cd67787a2755ec7d94be481dd47ee1d3e74c630ec5a9c623",
-      "revision": "R18"
+      "sha256": "3afffb7c1ed0298db2a338490772c1914522947414cf3a6549e3fdb5058a355a",
+      "revision": "R18",
+      "floor_revision": "2026-10-24-bedroom-matte-floor",
+      "floor_role": "Bedroom floor matched to the light natural-oak matte reference, with soft diffuse sunlight. A slim flush transition separates bedroom planks from large pale sandy stone tiles in the passage and distant rooms. Wardrobe, wall peg rail/shirt, bed, curtains, doors and original camera visually retained."
     },
     {
       "file": "images/08-bedroom2-wide.png",
@@ -105,14 +107,18 @@
       "file": "images/08-bedroom2-detail.png",
       "group": "Master bedroom",
       "role": "Olive textiles, oatmeal upholstery, woven runner and oak, with matching ceiling-level ripple-fold curtains and one compact oak dress stand by the entry/wardrobe in the opposite view. Existing furniture remains; bedroom desks are withdrawn.",
-      "sha256": "c62008e9bbef03a5284e440d0c8a474ca768d60c979e46062cc53fc4f494ae95"
+      "sha256": "d16034a3f23e43b5369b73249842c9b333852394aaf0773faf6aa488dde89718",
+      "floor_revision": "2026-10-24-bedroom-matte-floor",
+      "floor_role": "Only the small visible floor area receives light natural-oak matte wood-look planks; bed/headboard, olive throw, white linen, rug, bedside cabinet/books/plant, black lamp and artwork visually retained."
     },
     {
       "file": "images/08-bedroom2-opposite.png",
       "group": "Master bedroom",
       "role": "Olive textiles, oatmeal upholstery, woven runner and oak, with matching ceiling-level ripple-fold curtains and one compact oak dress stand by the entry/wardrobe in the opposite view. Existing furniture remains; bedroom desks are withdrawn. R19 revised finish example; original kitchen images remain the primary style authority.",
-      "sha256": "638d2283a8deae2db8c77da4dd40e015c6b3495a4bda987ac08770a41df888bb",
-      "revision": "R19"
+      "sha256": "57b9d12050b554baf1771a7be878bc14d5057996c031cdc3cb2410f6a7521723",
+      "revision": "R19",
+      "floor_revision": "2026-10-24-bedroom-matte-floor",
+      "floor_role": "Existing bedroom plank direction retained, with a paler, less saturated matte oak finish and reduced reflective glare. Planks stop at the bedroom threshold; passage retains sandy stone. Wardrobe, peg rail/shirt, bed, curtains, open entry door and distant tailoring view visually retained."
     },
     {
       "file": "images/09-bedroom3-wide.png",
@@ -125,15 +131,19 @@
       "file": "images/09-bedroom3-detail.png",
       "group": "Bedroom 3",
       "role": "Clay accent and ivory/oak L wardrobe with paired charcoal pulls; ceiling-level oatmeal ripple-fold curtains and a slimmer oak tree-style dress stand beside the open entry leaf in the wide view. Existing bedside furniture, L wardrobe and floor finishes retained; bedroom desks are withdrawn. R18 revised finish example; original kitchen images remain the primary style authority.",
-      "sha256": "dcd171ea1723913a0042d4ac0a77b4a98d46c3351d24410c39273025b7c9a149",
-      "revision": "R18"
+      "sha256": "287b8df715b9199efbf710875782c596d90fa17865ce4e9223276ea5c59cd15e",
+      "revision": "R18",
+      "floor_revision": "2026-10-24-bedroom-matte-floor",
+      "floor_role": "Small bedroom floor area below the L wardrobe converted from stone to light natural-oak wood-look planks with a matte fine-grained finish. Narrow doorway beyond retains sandy stone. Original wardrobe close-up camera, oak main doors, ivory lofts, recessed pulls, right-angle corner and curtain retained. Initial wrong-camera output was rejected and never installed."
     },
     {
       "file": "images/09-bedroom3-opposite.png",
       "group": "Bedroom 3",
       "role": "Clay accent and ivory/oak L wardrobe with paired charcoal pulls; ceiling-level oatmeal ripple-fold curtains and a slimmer oak tree-style dress stand beside the open entry leaf in the wide view. Existing bedside furniture, L wardrobe and floor finishes retained; bedroom desks are withdrawn. R18 revised finish example; original kitchen images remain the primary style authority.",
-      "sha256": "3907700334fd448a5e7cacf29d8386689e54882c31effa3d5b720a2f265b52a8",
-      "revision": "R18"
+      "sha256": "2e1ec73dcedc49efb9a0b5c81842fb0a6a114c5f3867685b4899474b8982fe0d",
+      "revision": "R18",
+      "floor_revision": "2026-10-24-bedroom-matte-floor",
+      "floor_role": "Bedroom floor now has pale honey-beige natural-oak wood-look planks with fine grain, narrow joints and a matte surface without glossy glare. Clay/cream bed, rug, floating shelf/vase/books, door, window, curtains and wardrobe edge visually retained."
     },
     {
       "file": "images/10-study-wide.png",

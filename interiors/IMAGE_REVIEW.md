@@ -1,5 +1,21 @@
 # Interior image register
 
+## Matte bedroom plank floors and doorway transitions · 24 October 2026
+
+Five named bedroom photographs now follow the user-supplied floor-only prompts, using unchanged Bedroom 1 wide as Image 2 and kitchen wide/detail as Images 3/4. The finish is pale natural oak/honey-beige matte porcelain wood-look planks with fine grain, narrow joints and a one-third stagger; nominal 200 × 1200 mm is design intent rather than a measured image claim. Glossy floor glare is reduced while soft daylight remains. Cream skirting, original camera/framing, cupboards and recessed pulls, peg rails, beds, curtains, furniture and other room contents are visually retained.
+
+| Updated photograph | Floor/continuity review |
+|---|---|
+| [09-bedroom3-opposite.png](images/09-bedroom3-opposite.png) | Bedroom floor now has pale honey-beige natural-oak wood-look planks with fine grain, narrow joints and a matte surface without glossy glare. Clay/cream bed, rug, floating shelf/vase/books, door, window, curtains and wardrobe edge visually retained. |
+| [09-bedroom3-detail.png](images/09-bedroom3-detail.png) | Small bedroom floor area below the L wardrobe converted from stone to light natural-oak wood-look planks with a matte fine-grained finish. Narrow doorway beyond retains sandy stone. Original wardrobe close-up camera, oak main doors, ivory lofts, recessed pulls, right-angle corner and curtain retained. Initial wrong-camera output was rejected and never installed. |
+| [08-bedroom2-opposite.png](images/08-bedroom2-opposite.png) | Existing bedroom plank direction retained, with a paler, less saturated matte oak finish and reduced reflective glare. Planks stop at the bedroom threshold; passage retains sandy stone. Wardrobe, peg rail/shirt, bed, curtains, open entry door and distant tailoring view visually retained. |
+| [07-bedroom1-opposite.png](images/07-bedroom1-opposite.png) | Bedroom floor matched to the light natural-oak matte reference, with soft diffuse sunlight. A slim flush transition separates bedroom planks from large pale sandy stone tiles in the passage and distant rooms. Wardrobe, wall peg rail/shirt, bed, curtains, doors and original camera visually retained. |
+| [08-bedroom2-detail.png](images/08-bedroom2-detail.png) | Only the small visible floor area receives light natural-oak matte wood-look planks; bed/headboard, olive throw, white linen, rug, bedside cabinet/books/plant, black lamp and artwork visually retained. |
+
+Each target was generated separately. Four needed one run; Bedroom 3 detail's first candidate incorrectly copied the floor-reference camera and was rejected. One target-identity correction restored the wardrobe close-up before saving. No rejected output was installed. Assistant visual review is complete; user acceptance is pending. Generative editing does not guarantee pixel-identical preservation.
+
+Only the five named photos change; the other 28 canonical images, three input references and all model/drawing files remain unchanged. The existing review board is updated in place with hash-versioned links. No working revision directory or extra project image copies were added. Exact user/generation prompts, all four ordered input roles/hashes, both detail attempts and final hashes are under `bedroom_matte_floor_generation_history` and `bedroom_matte_floor_decision` in [the release manifest](.source/image-release.json). Pre-edit photographs are recoverable from Git `be81f684cedb0eeca83906b6707e6122b0386bdf`.
+
 ## Drawings and model coordinated to these images · R20 · 23 October 2026
 
 The built-in joinery, fixtures, finishes and fixed exterior elements in the accepted 23 October photographs are now carried into [the complete house plans](../drawings/compact-v4/Hensal_Complete_House_Plans.pdf) and the 3D model. They come from one shared source, [fitout-layout.json](../model/src/fitout-layout.json), plus the existing storage and under-stair layouts:
