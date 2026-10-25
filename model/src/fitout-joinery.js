@@ -38,11 +38,12 @@ export function addDiningAndLiving({parent,z,box,cylinder,rod,materials}){
  box(g,...b,z+d.benchSeat-.09,z+d.benchSeat-.04,materials.oak).name='dining bench';
  box(g,b[0]+.01,b[1]+.01,b[2]-.01,b[3]-.01,z+d.benchSeat-.04,z+d.benchSeat,materials.fabric);
  for(const y of [b[1],b[3]-.04])box(g,b[0]+.03,y,b[2]-.03,y+.04,z,z+d.benchSeat-.09,materials.oak);
- // Oatmeal linen drum pendant, centred over the table; cord to the 2.85 m ceiling.
- const pd=d.pendant,bottom=d.tableTop+pd.bottomAboveTable;
- cylinder(g,...pd.at,z+bottom,z+bottom+.25,pd.diameter/2,materials.linen,32).name='drum pendant';
- cylinder(g,...pd.at,z+bottom+.01,z+bottom+.012,pd.diameter/2-.03,materials.glow,32);
- rod(g,[...pd.at,z+bottom+.25],[...pd.at,z+2.85],.004,materials.noir);
+ // Woven cane globe pendant, centred over the table; cord to the 2.85 m ceiling.
+ const pd=d.pendant,bottom=d.tableTop+pd.bottomAboveTable,r=pd.diameter/2;
+ const globe=cylinder(g,...pd.at,z+bottom,z+bottom+pd.diameter,r,materials.cane,32);
+ globe.geometry.dispose();globe.geometry=new THREE.SphereGeometry(r,32,20);globe.name='cane globe pendant';
+ cylinder(g,...pd.at,z+bottom+.02,z+bottom+.022,r*.45,materials.glow,24);
+ rod(g,[...pd.at,z+bottom+pd.diameter],[...pd.at,z+2.85],.004,materials.noir);
  const c=layout.living.coffeeTable,l=group(parent,'R20 round coffee table');
  cylinder(l,...c.centre,z+c.top-.04,z+c.top,c.radius,materials.oak,32);
  cylinder(l,...c.centre,z,z+c.top-.04,c.radius*.55,materials.oak,32);

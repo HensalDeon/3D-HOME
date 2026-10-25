@@ -687,6 +687,12 @@ test('R20 dining, living and terrace layouts keep their routes and supports',()=
  for(const [x,,s] of d.chairs)assert.ok(x-s/2>=4.11-1e-6&&x+s/2<=d.table[0],'room-side chairs keep the front-door route');
  const chairs=plan.levels.ground.filter(c=>c.op==='chair').map(c=>c.args.slice(0,2));
  for(const [x,y] of d.chairs)assert.ok(chairs.some(c=>c[0]===x&&c[1]===y),'dining chairs are drawn');
+ const h0=createHouse();h0.root.updateMatrixWorld(true,true);
+ const globe=h0.levels.ground.getObjectByName('cane globe pendant');assert.ok(globe,'cane globe pendant modelled');
+ const gb=new Box3().setFromObject(globe);
+ near(Math.round((gb.min.y-LEVELS.ground-d.tableTop)*1000)/1000,d.pendant.bottomAboveTable);
+ near(Math.round((gb.max.x-gb.min.x)*1000)/1000,d.pendant.diameter);
+ assert.ok(gb.max.y<LEVELS.ground+2.85,'pendant hangs below the ceiling');
  const t=fitout.terrace,p=t.pergola.box,s=t.pergola.post;
  for(const [x,y] of [[p[0],p[1]],[p[0],p[3]-s],[p[2]-s,p[1]],[p[2]-s,p[3]-s]])
   assert.ok(frameColumns().some(c=>overlaps([x,y,x+s,y+s],c.box)),'pergola post stands over a column zone');

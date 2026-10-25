@@ -19,33 +19,33 @@
     },
     "02-living-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066",
-      "review": "Selected first: pale warm beige matte stone-look floor with fine joints, reduced veining and diffuse sunlight; furniture/window reflections and glossy glare removed. Fine paired grooves added on visible stone tread tops. Stair geometry/guards/handrail, TV/basin joinery, dining set, sofa, rug and bedroom doorway visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
-      "reviewed_at": "2026-10-24",
-      "revision": "2026-10-24-common-stone-matte-floor",
-      "method": "built-in-imagegen-floor-finish-edit",
-      "geometry_source": "Pre-edit canonical photograph at 2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04, SHA-256 8c9b7f68efd92492b174c69df3315af54c27366743cb657a0a1e7bdb71bd53d3",
+      "sha256": "342271d2ed5d1e05ef86fec0ecb454874760d3be412599836d6b35c09ee5405a",
+      "review": "Dining chairs/centre-piece/cane globe follow the reviewed dining output. Caramel boucle cushion and tan fringed throw added beside existing sage textile; dark walnut three-leg stool with books beside sofa; softly glowing alabaster-look mushroom lamp at TV cabinet/cubby. Source stair/guards/TV joinery/basin, sofa, coffee table, rug, floor lamp, curtains and matte floor visually retained. Assistant visual review only; generated presentations do not establish pixel-identical preservation or measured furniture dimensions.",
+      "reviewed_at": "2026-10-25",
+      "revision": "2026-10-25-video-inspired-styling",
+      "method": "built-in-imagegen-object-styling-edit",
+      "geometry_source": "Pre-edit canonical photograph at 98eb109a5ea257fd7843f212dd3cc9cd8b2e5593, SHA-256 29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066",
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png",
         "FIXED:16-dining-wide.png"
       ],
       "user_approval": "pending",
-      "render_review": "Compared against original target, selected living floor reference where applicable and frozen kitchen wide/detail palette references. Non-floor room elements visually retained; not certified pixel-identical geometry.",
+      "render_review": "Compared with original target, frozen kitchen wide/detail palette and the supplied object/mood video frame. Dining reference reviewed before both living runs. Selected generated PNG saved without further raster editing.",
       "source_camera": "02-living-wide / square-on R19 camera",
       "design_source": "images/02-ground-floor-overview-wide.png (stairs/support and six-seat dining only)",
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "common_stone_matte_floor_generation_history",
-      "prompt_id": "common-stone-matte-floor-2026-10-24-02-living-wide",
-      "presentation_revision": "common-stone-matte-floor-2026-10-24",
+      "prompt_key": "video_inspired_styling_generation_history",
+      "prompt_id": "video-inspired-styling-2026-10-25-02-living-wide",
+      "presentation_revision": "video-inspired-styling-2026-10-25",
       "finish_revision": "common-stone-matte-floor-2026-10-24",
       "floor_reference": "images/02-living-wide.png",
       "floor_scope": "Existing stone floor material only; any visible bedroom wood-look flooring retained. Fine paired grooves only on existing stone tread tops; oak treads unchanged.",
       "floor_finish": "Pale warm beige porcelain stone-look concept, low mineral variation, no marble-style veining, fine colour-matched joints and existing layout. Fully matte appearance without mirror reflections or glare; soft diffuse light.",
       "superseded": {
-        "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+        "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
         "path_at_commit": "interiors/images/02-living-wide.png",
-        "sha256": "8c9b7f68efd92492b174c69df3315af54c27366743cb657a0a1e7bdb71bd53d3",
+        "sha256": "29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066",
         "size": [
           1536,
           1024
@@ -60,7 +60,7 @@
           1536,
           1024
         ],
-        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+        "processing": "Native selected built-in imagegen PNG copied byte-for-byte; no local compositing, pixel edits, crop or resize."
       }
     },
     "03-stair-tv-wide.png": {
@@ -303,32 +303,32 @@
     },
     "06-kitchen-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "009d2c96324f0f522962341d4ff1a23907a920dd239de8c51fb6b0afbf340f09",
-      "review": "Thin hood replaced with a solid matte-charcoal inclined canopy and rectangular chimney, horizontal brushed-stainless underside, two baffle-filter panels and two small warm round lights. Source hob retained with only subtle local LED illumination. Original framing/pixel dimensions preserved; every pixel outside the hood/light masks is identical to the source. Close-up visual inspection completed. Appliance dimensions/clearances remain design intent, not a measured product installation.",
-      "reviewed_at": "2026-10-24",
-      "presentation_revision": "kitchen-solid-hood-fridge-2026-10-24",
-      "method": "built-in-imagegen-plus-authorized-local-composite",
+      "sha256": "f0898260a44745f086e5b272ce846bf83274bf472483830bfc9642e8df20fd5b",
+      "review": "Two-tier light-oak counter shelf right of sink holds exactly four matching matte ivory canisters with light wood lids, two per tier. Round oak serving board added behind existing cutting board. Current solid hood/filter underside, cupboards/lofts, counters, sink/tap/hob, window/door, runner, plants and matte floor visually retained. Assistant visual review only; generated presentations do not establish pixel-identical preservation or measured furniture dimensions.",
+      "reviewed_at": "2026-10-25",
+      "presentation_revision": "video-inspired-styling-2026-10-25",
+      "method": "built-in-imagegen-object-styling-edit",
       "user_approval": "pending",
-      "geometry_source": "Original canonical photo at bc265a53b66ff7328d581f0dc65ec7525ae5b6c5 with unedited pixels preserved outside masks",
-      "prompt_id": "kitchen-solid-hood-fridge-2026-10-24-06-kitchen-wide",
+      "geometry_source": "Pre-edit canonical photograph at 98eb109a5ea257fd7843f212dd3cc9cd8b2e5593, SHA-256 009d2c96324f0f522962341d4ff1a23907a920dd239de8c51fb6b0afbf340f09",
+      "prompt_id": "video-inspired-styling-2026-10-25-06-kitchen-wide",
       "prompt_file": ".source/image-release.json",
       "superseded": {
-        "source_commit": "bc265a53b66ff7328d581f0dc65ec7525ae5b6c5",
+        "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
         "path_at_commit": "interiors/images/06-kitchen-wide.png",
-        "sha256": "8ad7ca7aa521c8929c932fb78d5c806d3c52a392af2eff65bb96c2a4cdd4e3f0",
+        "sha256": "009d2c96324f0f522962341d4ff1a23907a920dd239de8c51fb6b0afbf340f09",
         "size": [
           1495,
           1052
         ]
       },
-      "render_review": "Composite viewed full size and appliance regions inspected enlarged. Both original canvas dimensions preserved; local masks tested for exact preservation of surrounding pixels.",
+      "render_review": "Compared with original target, frozen kitchen wide/detail palette and the supplied object/mood video frame. Dining reference reviewed before both living runs. Selected generated PNG saved without further raster editing.",
       "upper_storage_concept": "Muted natural oak main upper fronts matching base cupboards; topmost continuous loft/window bridge remains creamy ivory; existing chimney and geometry retained.",
-      "revision": "2026-10-24-kitchen-solid-hood-fridge",
+      "revision": "2026-10-25-video-inspired-styling",
       "style_source": [
         "06-kitchen-wide.png at pre-edit Git 7f2136ec45715d62b453b395612474c332264c2d",
         "06-kitchen-detail.png (unchanged)"
       ],
-      "prompt_key": "kitchen_appliance_detail_generation_history",
+      "prompt_key": "video_inspired_styling_generation_history",
       "finish_revision": "common-stone-matte-floor-2026-10-24",
       "floor_reference": "images/02-living-wide.png",
       "floor_scope": "Existing stone floor material only; any visible bedroom wood-look flooring retained. Fine paired grooves only on existing stone tread tops; oak treads unchanged.",
@@ -342,25 +342,7 @@
           1495,
           1052
         ],
-        "processing": "Appliance donor regions aligned/composited locally; original full frame retained."
-      },
-      "pixel_verification": {
-        "outside_mask_pixels_identical": true,
-        "mask_sha256": "d275b95f09ada146d5c0092fac686e50ca3a3b5ed8dcd6c8371fc5210a7e5171",
-        "changed_bbox": [
-          1047,
-          0,
-          1333,
-          675
-        ],
-        "source_size": [
-          1495,
-          1052
-        ],
-        "output_size": [
-          1495,
-          1052
-        ]
+        "processing": "Native selected built-in imagegen PNG copied byte-for-byte; no local compositing, pixel edits, crop or resize."
       }
     },
     "07-bedroom1-detail.png": {
@@ -604,25 +586,25 @@
     },
     "09-bedroom3-opposite.png": {
       "status": "assistant-reviewed",
-      "revision": "2026-10-24-bedroom-matte-floor",
-      "sha256": "2e1ec73dcedc49efb9a0b5c81842fb0a6a114c5f3867685b4899474b8982fe0d",
-      "review": "Bedroom floor now has pale honey-beige natural-oak wood-look planks with fine grain, narrow joints and a matte surface without glossy glare. Clay/cream bed, rug, floating shelf/vase/books, door, window, curtains and wardrobe edge visually retained. Assistant visual review only; generative output does not establish pixel-identical preservation or measured tile size.",
-      "reviewed_at": "2026-10-24",
-      "method": "built-in-imagegen-floor-finish-edit",
-      "geometry_source": "Pre-edit canonical photograph at be81f684cedb0eeca83906b6707e6122b0386bdf, SHA-256 905a99b73876ea99f0750d9ca111287ac039381dad1c60bbaf4a06d756806f5e",
+      "revision": "2026-10-25-video-inspired-styling",
+      "sha256": "972a0f3972bda577cb53490016300ba21cd7e1c4857493425a6e2afc8035162d",
+      "review": "Thin black-framed rounded organic mirror added above original floating shelf, reflecting window/ripple curtains; small warm alabaster-look mushroom lamp fits between original vase and books. Corrected candidate retains source shelf extent, vase/dried stems and book positions. Bed/textiles, rug, door, artwork/reading light, wardrobe edge and matte plank floor visually retained. Assistant visual review only; generated presentations do not establish pixel-identical preservation or measured furniture dimensions.",
+      "reviewed_at": "2026-10-25",
+      "method": "built-in-imagegen-object-styling-edit",
+      "geometry_source": "Pre-edit canonical photograph at 98eb109a5ea257fd7843f212dd3cc9cd8b2e5593, SHA-256 2e1ec73dcedc49efb9a0b5c81842fb0a6a114c5f3867685b4899474b8982fe0d",
       "style_source": [
         "06-kitchen-wide.png at pre-edit Git 7f2136ec45715d62b453b395612474c332264c2d",
         "06-kitchen-detail.png (unchanged)"
       ],
       "user_approval": "pending",
-      "render_review": "Compared candidate against its original target and all three ordered user references. Reviewed floor hue/matte response, doorway material transitions and retained room contents. No certification of pixel-exact geometry.",
-      "prompt_id": "bedroom-matte-floor-2026-10-24-09-bedroom3-opposite",
-      "presentation_revision": "bedroom-matte-floor-2026-10-24",
+      "render_review": "Compared with original target, frozen kitchen wide/detail palette and the supplied object/mood video frame. Dining reference reviewed before both living runs. Selected generated PNG saved without further raster editing.",
+      "prompt_id": "video-inspired-styling-2026-10-25-09-bedroom3-opposite",
+      "presentation_revision": "video-inspired-styling-2026-10-25",
       "prompt_file": ".source/image-release.json",
       "superseded": {
-        "source_commit": "be81f684cedb0eeca83906b6707e6122b0386bdf",
+        "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
         "path_at_commit": "interiors/images/09-bedroom3-opposite.png",
-        "sha256": "905a99b73876ea99f0750d9ca111287ac039381dad1c60bbaf4a06d756806f5e",
+        "sha256": "2e1ec73dcedc49efb9a0b5c81842fb0a6a114c5f3867685b4899474b8982fe0d",
         "size": [
           1536,
           1024
@@ -630,11 +612,22 @@
       },
       "window_treatment": "Warm light oatmeal/greige linen-look privacy fabric, continuous S-shaped ripple folds, slim ceiling track, open stacks, hems just above floor.",
       "valet_stand": "Historical freestanding stand superseded by the 23 October wall peg rail; current floor edit retains the peg rail/shirt exactly in its existing location.",
-      "prompt_key": "bedroom_matte_floor_generation_history",
+      "prompt_key": "video_inspired_styling_generation_history",
       "finish_revision": "bedroom-matte-porcelain-oak-2026-10-24",
       "floor_reference": "images/07-bedroom1-wide.png",
       "floor_scope": "Bedroom floor only; pale sandy stone retained/restored beyond doorway thresholds",
-      "floor_finish": "Fully matte porcelain wood-look plank concept, light natural oak/pale honey-beige, low colour variation, fine straight grain, narrow colour-matched joints and staggered one-third offset. Nominal 200 x 1200 mm design intent; image is illustrative."
+      "floor_finish": "Fully matte porcelain wood-look plank concept, light natural oak/pale honey-beige, low colour variation, fine straight grain, narrow colour-matched joints and staggered one-third offset. Nominal 200 x 1200 mm design intent; image is illustrative.",
+      "dimension_review": {
+        "source": [
+          1536,
+          1024
+        ],
+        "output": [
+          1536,
+          1024
+        ],
+        "processing": "Native selected built-in imagegen PNG copied byte-for-byte; no local compositing, pixel edits, crop or resize."
+      }
     },
     "09-bedroom3-wide.png": {
       "status": "assistant-reviewed",
@@ -822,91 +815,114 @@
     },
     "16-dining-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "b35266924f5b9eabc92279c55f458a88ea1c8ea066757371edc907d47c953017",
-      "review": "Dining floor now reads matte without the previous bright window/furniture reflections, matching the living material. Two near-side chairs, cushioned bench, table, artwork, linen pendant, window and door visually retained. Native imagegen export is 1532 x 1026 rather than source 1531 x 1027; no external resize or crop was applied. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
-      "reviewed_at": "2026-10-24",
-      "revision": "2026-10-24-common-stone-matte-floor",
-      "method": "built-in-imagegen-floor-finish-edit",
-      "geometry_source": "Pre-edit canonical photograph at 2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04, SHA-256 c1086c2aa6102cf16a58743d95d073585907c5957e5f1a327db9ce073e4441fd",
+      "sha256": "bd65d5a1bc2d4f57fc76cee88f7d7d36659e05eee5190d5a0134678c1aa9f6cb",
+      "review": "Two light muted-oak wishbone chairs with woven paper-cord seats replace upholstered chairs, with cushioned oak bench retained. Tall charcoal vase/dried seed-head branches and low smoked-glass bowl replace fruit bowl. Woven cane globe replaces linen drum. Table, artwork, window/door, matte floor and source camera visually retained. Selected first for living-view consistency. Assistant visual review only; generated presentations do not establish pixel-identical preservation or measured furniture dimensions.",
+      "reviewed_at": "2026-10-25",
+      "revision": "2026-10-25-video-inspired-styling",
+      "method": "built-in-imagegen-object-styling-edit",
+      "geometry_source": "Pre-edit canonical photograph at 98eb109a5ea257fd7843f212dd3cc9cd8b2e5593, SHA-256 b35266924f5b9eabc92279c55f458a88ea1c8ea066757371edc907d47c953017",
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png"
       ],
       "user_approval": "pending",
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "common_stone_matte_floor_generation_history",
-      "prompt_id": "common-stone-matte-floor-2026-10-24-16-dining-wide",
-      "presentation_revision": "common-stone-matte-floor-2026-10-24",
+      "prompt_key": "video_inspired_styling_generation_history",
+      "prompt_id": "video-inspired-styling-2026-10-25-16-dining-wide",
+      "presentation_revision": "video-inspired-styling-2026-10-25",
       "finish_revision": "common-stone-matte-floor-2026-10-24",
       "floor_reference": "images/02-living-wide.png",
       "floor_scope": "Existing stone floor material only; any visible bedroom wood-look flooring retained. Fine paired grooves only on existing stone tread tops; oak treads unchanged.",
       "floor_finish": "Pale warm beige porcelain stone-look concept, low mineral variation, no marble-style veining, fine colour-matched joints and existing layout. Fully matte appearance without mirror reflections or glare; soft diffuse light.",
       "superseded": {
-        "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+        "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
         "path_at_commit": "interiors/images/16-dining-wide.png",
-        "sha256": "c1086c2aa6102cf16a58743d95d073585907c5957e5f1a327db9ce073e4441fd",
+        "sha256": "b35266924f5b9eabc92279c55f458a88ea1c8ea066757371edc907d47c953017",
         "size": [
-          1531,
-          1027
+          1532,
+          1026
         ]
       },
-      "render_review": "Compared against original target, selected living floor reference where applicable and frozen kitchen wide/detail palette references. Non-floor room elements visually retained; not certified pixel-identical geometry.",
+      "render_review": "Compared with original target, frozen kitchen wide/detail palette and the supplied object/mood video frame. Dining reference reviewed before both living runs. Selected generated PNG saved without further raster editing.",
       "dimension_review": {
         "source": [
-          1531,
-          1027
-        ],
-        "output": [
           1532,
           1026
         ],
-        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping.",
-        "note": "One-pixel export rounding: width +1, height -1; framing visually retained. Does not claim pixel-identical preservation."
+        "output": [
+          1532,
+          1027
+        ],
+        "processing": "Native selected built-in imagegen PNG copied byte-for-byte; no local compositing, pixel edits, crop or resize.",
+        "note": "Dining native export is one pixel taller than original (1532 x 1027 versus 1532 x 1026); framing visually retained."
       }
     },
     "17-front-gallery-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "964b1aa7eea9dc94a9e30ad887d90ae5a48fa4bebbf0d37340752cc8ece53310",
-      "review": "Two larger oak-framed oatmeal/sage botanical and abstract prints above the existing bench. Assistant visual review only; no pixel-exact geometry or measured placement certification.",
-      "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-house-finish-edit",
-      "method": "built-in-imagegen-precise-object-edit",
-      "geometry_source": "pre-edit photograph at Git 7f2136ec45715d62b453b395612474c332264c2d",
+      "sha256": "66dbe15e7e48b7215b403d95141c23ee1aecec4d93ce748df684b9a0ac8ee92a",
+      "review": "Two framed bench prints replaced by one softly asymmetric thin dark-bronze-framed pebble mirror reflecting the gallery slider/light/greenery. Clay-brown earthenware vase with sparse tall branches added beside existing brass lamp. Bench/textiles, desk, oak door, runner, curtain, slider, balcony chair and source camera visually retained. Assistant visual review only; generated presentations do not establish pixel-identical preservation or measured furniture dimensions.",
+      "reviewed_at": "2026-10-25",
+      "revision": "2026-10-25-video-inspired-styling",
+      "method": "built-in-imagegen-object-styling-edit",
+      "geometry_source": "Pre-edit canonical photograph at 98eb109a5ea257fd7843f212dd3cc9cd8b2e5593, SHA-256 964b1aa7eea9dc94a9e30ad887d90ae5a48fa4bebbf0d37340752cc8ece53310",
       "style_source": [
         "06-kitchen-wide.png at pre-edit Git 7f2136ec45715d62b453b395612474c332264c2d",
         "06-kitchen-detail.png (unchanged)"
       ],
       "user_approval": "pending",
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_finish_generation_history"
+      "prompt_key": "video_inspired_styling_generation_history",
+      "prompt_id": "video-inspired-styling-2026-10-25-17-front-gallery-wide",
+      "presentation_revision": "video-inspired-styling-2026-10-25",
+      "dimension_review": {
+        "source": [
+          1678,
+          937
+        ],
+        "output": [
+          1678,
+          937
+        ],
+        "processing": "Native selected built-in imagegen PNG copied byte-for-byte; no local compositing, pixel edits, crop or resize."
+      },
+      "render_review": "Compared with original target, frozen kitchen wide/detail palette and the supplied object/mood video frame. Dining reference reviewed before both living runs. Selected generated PNG saved without further raster editing.",
+      "superseded": {
+        "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+        "path_at_commit": "interiors/images/17-front-gallery-wide.png",
+        "sha256": "964b1aa7eea9dc94a9e30ad887d90ae5a48fa4bebbf0d37340752cc8ece53310",
+        "size": [
+          1678,
+          937
+        ]
+      }
     },
     "02-ground-floor-overview-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "3dafa504bac444fb473a744d8d0be883a1b3181404884d7ca853de2d5c35f494",
-      "reviewed_at": "2026-10-24",
-      "revision": "2026-10-24-common-stone-matte-floor",
-      "method": "built-in-imagegen-floor-finish-edit",
+      "sha256": "8d24e5db0ad10eb6d00f0d9afd0be8e371ffa07a7379c263108b142db87d3011",
+      "reviewed_at": "2026-10-25",
+      "revision": "2026-10-25-video-inspired-styling",
+      "method": "built-in-imagegen-object-styling-edit",
       "user_approval": "pending",
-      "review": "Floor matched to the selected living matte finish. Fine grooves visible at stone stair nosings; upper oak treads retained. Existing stair silhouette, railings, TV/basin/mirror, dining set, sofas and bedroom planks through doorway visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
-      "geometry_source": "Pre-edit canonical photograph at 2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04, SHA-256 05c2d0183e498e1e6dcea69ae9b1f5023c28fa07b0dd22e0ad7e2cebba22e73c",
+      "review": "Same wishbone dining set/centre-piece/cane globe and requested sofa textiles, walnut stool/books and mushroom lamp carried into the source overview. Original stair silhouette, TV/basin joinery/mirror, bedroom opening, sofas, coffee table, rug and matte floor visually retained. Assistant visual review only; generated presentations do not establish pixel-identical preservation or measured furniture dimensions.",
+      "geometry_source": "Pre-edit canonical photograph at 98eb109a5ea257fd7843f212dd3cc9cd8b2e5593, SHA-256 3dafa504bac444fb473a744d8d0be883a1b3181404884d7ca853de2d5c35f494",
       "style_source": [
         "06-kitchen-wide.png",
         "06-kitchen-detail.png",
         "03-stair-tv-wide.png"
       ],
-      "render_review": "Compared against original target, selected living floor reference where applicable and frozen kitchen wide/detail palette references. Non-floor room elements visually retained; not certified pixel-identical geometry.",
+      "render_review": "Compared with original target, frozen kitchen wide/detail palette and the supplied object/mood video frame. Dining reference reviewed before both living runs. Selected generated PNG saved without further raster editing.",
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "common_stone_matte_floor_generation_history",
-      "prompt_id": "common-stone-matte-floor-2026-10-24-02-ground-floor-overview-wide",
-      "presentation_revision": "common-stone-matte-floor-2026-10-24",
+      "prompt_key": "video_inspired_styling_generation_history",
+      "prompt_id": "video-inspired-styling-2026-10-25-02-ground-floor-overview-wide",
+      "presentation_revision": "video-inspired-styling-2026-10-25",
       "finish_revision": "common-stone-matte-floor-2026-10-24",
       "floor_reference": "images/02-living-wide.png",
       "floor_scope": "Existing stone floor material only; any visible bedroom wood-look flooring retained. Fine paired grooves only on existing stone tread tops; oak treads unchanged.",
       "floor_finish": "Pale warm beige porcelain stone-look concept, low mineral variation, no marble-style veining, fine colour-matched joints and existing layout. Fully matte appearance without mirror reflections or glare; soft diffuse light.",
       "superseded": {
-        "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+        "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
         "path_at_commit": "interiors/images/02-ground-floor-overview-wide.png",
-        "sha256": "05c2d0183e498e1e6dcea69ae9b1f5023c28fa07b0dd22e0ad7e2cebba22e73c",
+        "sha256": "3dafa504bac444fb473a744d8d0be883a1b3181404884d7ca853de2d5c35f494",
         "size": [
           1672,
           941
@@ -921,7 +937,7 @@
           1672,
           941
         ],
-        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+        "processing": "Native selected built-in imagegen PNG copied byte-for-byte; no local compositing, pixel edits, crop or resize."
       }
     },
     "18-rear-gallery-wide.png": {
@@ -1038,6 +1054,34 @@
       "geometry_source": "Current pre-follow-up photograph, SHA-256 ebc7527e56e187c7a8b73fd0e7eff2fdf7f1da8073a193773028f4fffdf9304c",
       "prompt_file": ".source/image-release.json",
       "prompt_key": "house_consistency_followup_generation_history"
+    },
+    "02-living-evening.png": {
+      "status": "assistant-reviewed",
+      "revision": "2026-10-25-video-inspired-styling",
+      "sha256": "d3595f8f39a497a2585abd84d19ea61c34fc03508456e8a0abd7e7628df09c2c",
+      "review": "Separate early-evening variant of updated living wide. Existing staged objects and composition retained; window turns blue dusk, ceiling downlights off, warm practical light from cane pendant, floor/mushroom lamps, TV-cabinet glow and basin wall light. Daylight default remains separate. Assistant visual review only; generated presentations do not establish pixel-identical preservation or measured furniture dimensions.",
+      "reviewed_at": "2026-10-25",
+      "method": "built-in-imagegen-lighting-variant",
+      "user_approval": "pending",
+      "prompt_id": "video-inspired-styling-2026-10-25-02-living-evening",
+      "prompt_file": ".source/image-release.json",
+      "prompt_key": "video_inspired_styling_generation_history",
+      "presentation_revision": "video-inspired-styling-2026-10-25",
+      "dimension_review": {
+        "source": [
+          1536,
+          1024
+        ],
+        "output": [
+          1536,
+          1024
+        ],
+        "processing": "Native selected built-in imagegen PNG copied byte-for-byte; no local compositing, pixel edits, crop or resize."
+      },
+      "geometry_source": "Updated day living source with SHA-256 342271d2ed5d1e05ef86fec0ecb454874760d3be412599836d6b35c09ee5405a",
+      "render_review": "Compared with original target, frozen kitchen wide/detail palette and the supplied object/mood video frame. Dining reference reviewed before both living runs. Selected generated PNG saved without further raster editing.",
+      "variant_of": "02-living-wide.png",
+      "default_view": false
     }
   },
   "approval": "Latest 23 October detail refinements: assistant visual comparison complete; user acceptance pending. Prior completion statements do not establish acceptance of the earlier mismatched study chairs/rack or remaining end seating.",
@@ -11505,5 +11549,897 @@
     },
     "verification": "Canonical file equals selected generated file byte-for-byte. All other current photographs and model/drawing files unchanged in this follow-up.",
     "user_approval": "explicitly accepted selected original generated image"
+  },
+  "video_inspired_styling_generation_history": [
+    {
+      "id": "video-inspired-styling-2026-10-25-16-dining-wide",
+      "date": "2026-10-25",
+      "image": "16-dining-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen; direct selected output",
+      "kind": "dining-reference",
+      "user_prompt": "Edit Image 1, a photograph of a dining area. Make only these changes:\n1. Replace the two upholstered chairs with two light muted-oak wishbone chairs (curved Y-back, woven natural paper-cord seat), the same chair type as Image 4 but in light oak, not dark wood. Same positions. Keep the oak bench with its oatmeal cushion.\n2. Replace the fruit bowl with a centrepiece: one tall slim matte dark-charcoal ceramic vase holding a few dried branches with small dark seed heads, beside a low shallow sculptural smoked-glass bowl, as on the table in Image 4.\n3. Replace the linen drum pendant with an oversized woven natural-cane globe pendant about 55 cm across, warm glow inside, same position centred over the table, bottom about 80 cm above the tabletop.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, matte stone floor, table, bench, artwork, curtains, window, door, sofa and lighting. Image 4 is inspiration for the objects only; do not copy its walls, colours, rug or layout. Match Images 2-3: muted natural oak (never orange or walnut), creamy ivory plaster, pale sandy matte stone, charcoal accents, soft daylight. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+      "prompt": "Use case: precise-object-edit. Edit the FIRST photo only.\nImage 1: 16-dining-wide.png, the edit target and sole camera/framing/architecture authority. This is the existing bright oak dining table, two near-side chairs and cushioned window-side bench, horizontal framed art, right window and left doorway.\nImage 2: frozen 06-kitchen-wide.png, house palette/realism only.\nImage 3: 06-kitchen-detail.png, house materials/realism only.\nImage 4: ref-dining-wishbone.jpg, video frame for the wishbone chair design and tall dark vase/smoked-glass bowl only. Its portrait crop, dark timber, walls, carpet, furniture layout and overlay text are NOT part of the edit.\nPreserve the original target composition, 1532x1026 canvas, matte floor, original oak table/bench and the source's soft daylight. Use the exact requested new objects only.\n\nEdit Image 1, a photograph of a dining area. Make only these changes:\n1. Replace the two upholstered chairs with two light muted-oak wishbone chairs (curved Y-back, woven natural paper-cord seat), the same chair type as Image 4 but in light oak, not dark wood. Same positions. Keep the oak bench with its oatmeal cushion.\n2. Replace the fruit bowl with a centrepiece: one tall slim matte dark-charcoal ceramic vase holding a few dried branches with small dark seed heads, beside a low shallow sculptural smoked-glass bowl, as on the table in Image 4.\n3. Replace the linen drum pendant with an oversized woven natural-cane globe pendant about 55 cm across, warm glow inside, same position centred over the table, bottom about 80 cm above the tabletop.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, matte stone floor, table, bench, artwork, curtains, window, door, sofa and lighting. Image 4 is inspiration for the objects only; do not copy its walls, colours, rug or layout. Match Images 2-3: muted natural oak (never orange or walnut), creamy ivory plaster, pale sandy matte stone, charcoal accents, soft daylight. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Original edit target; sole source camera/layout and non-requested contents authority",
+          "historical_source": {
+            "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+            "path_at_commit": "interiors/images/16-dining-wide.png",
+            "sha256": "b35266924f5b9eabc92279c55f458a88ea1c8ea066757371edc907d47c953017",
+            "size": [
+              1532,
+              1026
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Frozen pre-batch kitchen-wide palette/photographic realism reference; same original used for every run",
+          "historical_source": {
+            "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "009d2c96324f0f522962341d4ff1a23907a920dd239de8c51fb6b0afbf340f09",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 3,
+          "role": "Unchanged kitchen-detail material texture and photographic realism authority",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        },
+        {
+          "logical_image": 4,
+          "role": "User-supplied video frame: requested objects/mood only; no copied architecture, dark palette, portrait framing or overlay text",
+          "path": ".source/materials/video-references/ref-dining-wishbone.jpg",
+          "sha256": "463957c2f5d1ca477b90ea8c50e8f5ad0f687ee2d9e9bf3abc471bf70dfd42c9"
+        }
+      ],
+      "generation_attempts": [
+        {
+          "status": "selected",
+          "prompt": "Use case: precise-object-edit. Edit the FIRST photo only.\nImage 1: 16-dining-wide.png, the edit target and sole camera/framing/architecture authority. This is the existing bright oak dining table, two near-side chairs and cushioned window-side bench, horizontal framed art, right window and left doorway.\nImage 2: frozen 06-kitchen-wide.png, house palette/realism only.\nImage 3: 06-kitchen-detail.png, house materials/realism only.\nImage 4: ref-dining-wishbone.jpg, video frame for the wishbone chair design and tall dark vase/smoked-glass bowl only. Its portrait crop, dark timber, walls, carpet, furniture layout and overlay text are NOT part of the edit.\nPreserve the original target composition, 1532x1026 canvas, matte floor, original oak table/bench and the source's soft daylight. Use the exact requested new objects only.\n\nEdit Image 1, a photograph of a dining area. Make only these changes:\n1. Replace the two upholstered chairs with two light muted-oak wishbone chairs (curved Y-back, woven natural paper-cord seat), the same chair type as Image 4 but in light oak, not dark wood. Same positions. Keep the oak bench with its oatmeal cushion.\n2. Replace the fruit bowl with a centrepiece: one tall slim matte dark-charcoal ceramic vase holding a few dried branches with small dark seed heads, beside a low shallow sculptural smoked-glass bowl, as on the table in Image 4.\n3. Replace the linen drum pendant with an oversized woven natural-cane globe pendant about 55 cm across, warm glow inside, same position centred over the table, bottom about 80 cm above the tabletop.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, matte stone floor, table, bench, artwork, curtains, window, door, sofa and lighting. Image 4 is inspiration for the objects only; do not copy its walls, colours, rug or layout. Match Images 2-3: muted natural oak (never orange or walnut), creamy ivory plaster, pale sandy matte stone, charcoal accents, soft daylight. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+          "refs": [
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/16-dining-wide.png",
+            "/tmp/video-styling-kitchen-wide-reference.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-detail.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/materials/video-references/ref-dining-wishbone.jpg"
+          ],
+          "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-dfbfbcbc-7a6d-4b33-8865-326d8065c187.png",
+          "sha256": "bd65d5a1bc2d4f57fc76cee88f7d7d36659e05eee5190d5a0134678c1aa9f6cb",
+          "size": [
+            1532,
+            1027
+          ]
+        }
+      ],
+      "geometry_reference": {
+        "camera": "Pre-edit canonical photo at 98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+        "source_image": {
+          "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+          "path_at_commit": "interiors/images/16-dining-wide.png",
+          "sha256": "b35266924f5b9eabc92279c55f458a88ea1c8ea066757371edc907d47c953017",
+          "size": [
+            1532,
+            1026
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "fitout_layout": "../model/src/fitout-layout.json",
+        "fitout_sha256": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+        "scope": "Photographic furnishings/accessories and optional relighting only; measured model/drawing files unchanged."
+      },
+      "review": "Two light muted-oak wishbone chairs with woven paper-cord seats replace upholstered chairs, with cushioned oak bench retained. Tall charcoal vase/dried seed-head branches and low smoked-glass bowl replace fruit bowl. Woven cane globe replaces linen drum. Table, artwork, window/door, matte floor and source camera visually retained. Selected first for living-view consistency. Assistant visual review only; generated presentations do not establish pixel-identical preservation or measured furniture dimensions.",
+      "dimension_review": {
+        "source": [
+          1532,
+          1026
+        ],
+        "output": [
+          1532,
+          1027
+        ],
+        "processing": "Native selected built-in imagegen PNG copied byte-for-byte; no local compositing, pixel edits, crop or resize.",
+        "note": "Dining native export is one pixel taller than original (1532 x 1027 versus 1532 x 1026); framing visually retained."
+      },
+      "user_approval": "pending",
+      "output": {
+        "path": "images/16-dining-wide.png",
+        "sha256": "bd65d5a1bc2d4f57fc76cee88f7d7d36659e05eee5190d5a0134678c1aa9f6cb",
+        "size": [
+          1532,
+          1027
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-dfbfbcbc-7a6d-4b33-8865-326d8065c187.png"
+      }
+    },
+    {
+      "id": "video-inspired-styling-2026-10-25-02-living-wide",
+      "date": "2026-10-25",
+      "image": "02-living-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen; direct selected output",
+      "kind": "living-consistency",
+      "user_prompt": "Edit Image 1, a photograph of a living/dining room. Make only these changes:\n1. Dining: make the chairs, table centrepiece and woven cane globe pendant exactly match Image 4 (light oak wishbone chairs with paper-cord seats, tall dark ceramic vase with dried branches and a smoked-glass bowl, cane globe pendant). Keep the bench.\n2. Sofa: add one textured caramel-brown boucle cushion beside the existing sage cushion, and a warm tan fringed wool throw draped over the sofa arm, as in Image 5.\n3. Beside the sofa, add one chunky round solid-wood stool in a dark walnut tone (about 35 cm across, three splayed legs) as a side table holding a small stack of books.\n4. On top of the TV cabinet, beside the open cubby, add a small cordless mushroom table lamp with a white alabaster-look shade, softly glowing warm.\nDo not change the staircase, TV joinery, basin, floor lamp, coffee table, rug, curtains or floor. Keep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, matte stone floor and lighting. Image 5 is inspiration for the objects only; do not copy its walls, carpet, dark floor or furniture. Match Images 2-3: muted natural oak, creamy ivory plaster, pale sandy matte stone, charcoal accents, soft daylight. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+      "prompt": "Use case: precise-object-edit. Edit FIRST PHOTO only.\nImage 1: 02-living-wide.png, exact existing living-room camera/layout authority: diagonal stair and TV/basin at left, central bedroom doorway, dining table in the rear right, sofa and round oak coffee table foreground right.\nImage 2: frozen kitchen wide, house palette only.\nImage 3: kitchen detail, house material realism only.\nImage 4: the reviewed updated dining photo, exact chair/centre-piece/cane pendant consistency reference ONLY. Keep the living camera, table position and bench.\nImage 5: ref-living-globe-pendant.jpg, object styling inspiration ONLY. Do not copy its portrait framing, walls, layout, dark floor or overlay words.\nRetain Image 1's composition and 1536x1024 canvas, fixed architecture, stair/guards and all furniture except the explicitly requested substitutions/additions. The sofa and TV cabinet stay exactly where they are; newly added pieces fit existing space without shifting them.\n\nEdit Image 1, a photograph of a living/dining room. Make only these changes:\n1. Dining: make the chairs, table centrepiece and woven cane globe pendant exactly match Image 4 (light oak wishbone chairs with paper-cord seats, tall dark ceramic vase with dried branches and a smoked-glass bowl, cane globe pendant). Keep the bench.\n2. Sofa: add one textured caramel-brown boucle cushion beside the existing sage cushion, and a warm tan fringed wool throw draped over the sofa arm, as in Image 5.\n3. Beside the sofa, add one chunky round solid-wood stool in a dark walnut tone (about 35 cm across, three splayed legs) as a side table holding a small stack of books.\n4. On top of the TV cabinet, beside the open cubby, add a small cordless mushroom table lamp with a white alabaster-look shade, softly glowing warm.\nDo not change the staircase, TV joinery, basin, floor lamp, coffee table, rug, curtains or floor. Keep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, matte stone floor and lighting. Image 5 is inspiration for the objects only; do not copy its walls, carpet, dark floor or furniture. Match Images 2-3: muted natural oak, creamy ivory plaster, pale sandy matte stone, charcoal accents, soft daylight. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Original edit target; sole source camera/layout and non-requested contents authority",
+          "historical_source": {
+            "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+            "path_at_commit": "interiors/images/02-living-wide.png",
+            "sha256": "29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066",
+            "size": [
+              1536,
+              1024
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Frozen pre-batch kitchen-wide palette/photographic realism reference; same original used for every run",
+          "historical_source": {
+            "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "009d2c96324f0f522962341d4ff1a23907a920dd239de8c51fb6b0afbf340f09",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 3,
+          "role": "Unchanged kitchen-detail material texture and photographic realism authority",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        },
+        {
+          "logical_image": 4,
+          "role": "Reviewed dining chair/centre-piece/cane pendant consistency reference; not camera/architecture authority",
+          "path": "images/16-dining-wide.png",
+          "sha256": "bd65d5a1bc2d4f57fc76cee88f7d7d36659e05eee5190d5a0134678c1aa9f6cb"
+        },
+        {
+          "logical_image": 5,
+          "role": "User-supplied video frame: requested objects/mood only; no copied architecture, dark palette, portrait framing or overlay text",
+          "path": ".source/materials/video-references/ref-living-globe-pendant.jpg",
+          "sha256": "f761adbb0e3bfd4740fc551eb8d5606e8d9c68f1b1d8c96206e101ed39059796"
+        }
+      ],
+      "generation_attempts": [
+        {
+          "status": "selected",
+          "prompt": "Use case: precise-object-edit. Edit FIRST PHOTO only.\nImage 1: 02-living-wide.png, exact existing living-room camera/layout authority: diagonal stair and TV/basin at left, central bedroom doorway, dining table in the rear right, sofa and round oak coffee table foreground right.\nImage 2: frozen kitchen wide, house palette only.\nImage 3: kitchen detail, house material realism only.\nImage 4: the reviewed updated dining photo, exact chair/centre-piece/cane pendant consistency reference ONLY. Keep the living camera, table position and bench.\nImage 5: ref-living-globe-pendant.jpg, object styling inspiration ONLY. Do not copy its portrait framing, walls, layout, dark floor or overlay words.\nRetain Image 1's composition and 1536x1024 canvas, fixed architecture, stair/guards and all furniture except the explicitly requested substitutions/additions. The sofa and TV cabinet stay exactly where they are; newly added pieces fit existing space without shifting them.\n\nEdit Image 1, a photograph of a living/dining room. Make only these changes:\n1. Dining: make the chairs, table centrepiece and woven cane globe pendant exactly match Image 4 (light oak wishbone chairs with paper-cord seats, tall dark ceramic vase with dried branches and a smoked-glass bowl, cane globe pendant). Keep the bench.\n2. Sofa: add one textured caramel-brown boucle cushion beside the existing sage cushion, and a warm tan fringed wool throw draped over the sofa arm, as in Image 5.\n3. Beside the sofa, add one chunky round solid-wood stool in a dark walnut tone (about 35 cm across, three splayed legs) as a side table holding a small stack of books.\n4. On top of the TV cabinet, beside the open cubby, add a small cordless mushroom table lamp with a white alabaster-look shade, softly glowing warm.\nDo not change the staircase, TV joinery, basin, floor lamp, coffee table, rug, curtains or floor. Keep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, matte stone floor and lighting. Image 5 is inspiration for the objects only; do not copy its walls, carpet, dark floor or furniture. Match Images 2-3: muted natural oak, creamy ivory plaster, pale sandy matte stone, charcoal accents, soft daylight. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+          "refs": [
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/02-living-wide.png",
+            "/tmp/video-styling-kitchen-wide-reference.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-detail.png",
+            "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-dfbfbcbc-7a6d-4b33-8865-326d8065c187.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/materials/video-references/ref-living-globe-pendant.jpg"
+          ],
+          "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-b3f86742-ec9a-4f17-86e2-4292de63eb9d.png",
+          "sha256": "342271d2ed5d1e05ef86fec0ecb454874760d3be412599836d6b35c09ee5405a",
+          "size": [
+            1536,
+            1024
+          ]
+        }
+      ],
+      "geometry_reference": {
+        "camera": "Pre-edit canonical photo at 98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+        "source_image": {
+          "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+          "path_at_commit": "interiors/images/02-living-wide.png",
+          "sha256": "29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066",
+          "size": [
+            1536,
+            1024
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "fitout_layout": "../model/src/fitout-layout.json",
+        "fitout_sha256": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+        "scope": "Photographic furnishings/accessories and optional relighting only; measured model/drawing files unchanged."
+      },
+      "review": "Dining chairs/centre-piece/cane globe follow the reviewed dining output. Caramel boucle cushion and tan fringed throw added beside existing sage textile; dark walnut three-leg stool with books beside sofa; softly glowing alabaster-look mushroom lamp at TV cabinet/cubby. Source stair/guards/TV joinery/basin, sofa, coffee table, rug, floor lamp, curtains and matte floor visually retained. Assistant visual review only; generated presentations do not establish pixel-identical preservation or measured furniture dimensions.",
+      "dimension_review": {
+        "source": [
+          1536,
+          1024
+        ],
+        "output": [
+          1536,
+          1024
+        ],
+        "processing": "Native selected built-in imagegen PNG copied byte-for-byte; no local compositing, pixel edits, crop or resize."
+      },
+      "user_approval": "pending",
+      "output": {
+        "path": "images/02-living-wide.png",
+        "sha256": "342271d2ed5d1e05ef86fec0ecb454874760d3be412599836d6b35c09ee5405a",
+        "size": [
+          1536,
+          1024
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-b3f86742-ec9a-4f17-86e2-4292de63eb9d.png"
+      }
+    },
+    {
+      "id": "video-inspired-styling-2026-10-25-02-ground-floor-overview-wide",
+      "date": "2026-10-25",
+      "image": "02-ground-floor-overview-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen; direct selected output",
+      "kind": "living-consistency",
+      "user_prompt": "Edit Image 1, a photograph of a living/dining room. Make only these changes:\n1. Dining: make the chairs, table centrepiece and woven cane globe pendant exactly match Image 4 (light oak wishbone chairs with paper-cord seats, tall dark ceramic vase with dried branches and a smoked-glass bowl, cane globe pendant). Keep the bench.\n2. Sofa: add one textured caramel-brown boucle cushion beside the existing sage cushion, and a warm tan fringed wool throw draped over the sofa arm, as in Image 5.\n3. Beside the sofa, add one chunky round solid-wood stool in a dark walnut tone (about 35 cm across, three splayed legs) as a side table holding a small stack of books.\n4. On top of the TV cabinet, beside the open cubby, add a small cordless mushroom table lamp with a white alabaster-look shade, softly glowing warm.\nDo not change the staircase, TV joinery, basin, floor lamp, coffee table, rug, curtains or floor. Keep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, matte stone floor and lighting. Image 5 is inspiration for the objects only; do not copy its walls, carpet, dark floor or furniture. Match Images 2-3: muted natural oak, creamy ivory plaster, pale sandy matte stone, charcoal accents, soft daylight. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+      "prompt": "Use case: precise-object-edit. Edit the FIRST photo only.\nImage 1: 02-ground-floor-overview-wide.png, the original WIDE OVERVIEW camera authority, with lower stone stairs at far LEFT, diagonal upper flight, TV/basin/bedroom opening centre-left, dining at right and cream sofas/round oak coffee table in foreground. Preserve this exact overview and source 1672x941 canvas; do not adopt the closer living or dining camera.\nImage 2: frozen kitchen wide, house palette only.\nImage 3: kitchen detail, materials/realism only.\nImage 4: reviewed updated dining photo, exact wishbone chairs/charcoal vase/branches/smoked bowl/cane globe pendant reference ONLY.\nImage 5: ref-living-globe-pendant.jpg, object styling inspiration ONLY; no copied portrait crop, architecture, words, carpet or dark floors.\nAdd the requested textiles/stool/books and little alabaster-look mushroom lamp in physically plausible available space. Keep stair geometry, TV joinery, existing sofas, coffee table, rug and all routes in the exact original arrangement.\n\nEdit Image 1, a photograph of a living/dining room. Make only these changes:\n1. Dining: make the chairs, table centrepiece and woven cane globe pendant exactly match Image 4 (light oak wishbone chairs with paper-cord seats, tall dark ceramic vase with dried branches and a smoked-glass bowl, cane globe pendant). Keep the bench.\n2. Sofa: add one textured caramel-brown boucle cushion beside the existing sage cushion, and a warm tan fringed wool throw draped over the sofa arm, as in Image 5.\n3. Beside the sofa, add one chunky round solid-wood stool in a dark walnut tone (about 35 cm across, three splayed legs) as a side table holding a small stack of books.\n4. On top of the TV cabinet, beside the open cubby, add a small cordless mushroom table lamp with a white alabaster-look shade, softly glowing warm.\nDo not change the staircase, TV joinery, basin, floor lamp, coffee table, rug, curtains or floor. Keep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, matte stone floor and lighting. Image 5 is inspiration for the objects only; do not copy its walls, carpet, dark floor or furniture. Match Images 2-3: muted natural oak, creamy ivory plaster, pale sandy matte stone, charcoal accents, soft daylight. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Original edit target; sole source camera/layout and non-requested contents authority",
+          "historical_source": {
+            "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+            "path_at_commit": "interiors/images/02-ground-floor-overview-wide.png",
+            "sha256": "3dafa504bac444fb473a744d8d0be883a1b3181404884d7ca853de2d5c35f494",
+            "size": [
+              1672,
+              941
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Frozen pre-batch kitchen-wide palette/photographic realism reference; same original used for every run",
+          "historical_source": {
+            "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "009d2c96324f0f522962341d4ff1a23907a920dd239de8c51fb6b0afbf340f09",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 3,
+          "role": "Unchanged kitchen-detail material texture and photographic realism authority",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        },
+        {
+          "logical_image": 4,
+          "role": "Reviewed dining chair/centre-piece/cane pendant consistency reference; not camera/architecture authority",
+          "path": "images/16-dining-wide.png",
+          "sha256": "bd65d5a1bc2d4f57fc76cee88f7d7d36659e05eee5190d5a0134678c1aa9f6cb"
+        },
+        {
+          "logical_image": 5,
+          "role": "User-supplied video frame: requested objects/mood only; no copied architecture, dark palette, portrait framing or overlay text",
+          "path": ".source/materials/video-references/ref-living-globe-pendant.jpg",
+          "sha256": "f761adbb0e3bfd4740fc551eb8d5606e8d9c68f1b1d8c96206e101ed39059796"
+        }
+      ],
+      "generation_attempts": [
+        {
+          "status": "selected",
+          "prompt": "Use case: precise-object-edit. Edit the FIRST photo only.\nImage 1: 02-ground-floor-overview-wide.png, the original WIDE OVERVIEW camera authority, with lower stone stairs at far LEFT, diagonal upper flight, TV/basin/bedroom opening centre-left, dining at right and cream sofas/round oak coffee table in foreground. Preserve this exact overview and source 1672x941 canvas; do not adopt the closer living or dining camera.\nImage 2: frozen kitchen wide, house palette only.\nImage 3: kitchen detail, materials/realism only.\nImage 4: reviewed updated dining photo, exact wishbone chairs/charcoal vase/branches/smoked bowl/cane globe pendant reference ONLY.\nImage 5: ref-living-globe-pendant.jpg, object styling inspiration ONLY; no copied portrait crop, architecture, words, carpet or dark floors.\nAdd the requested textiles/stool/books and little alabaster-look mushroom lamp in physically plausible available space. Keep stair geometry, TV joinery, existing sofas, coffee table, rug and all routes in the exact original arrangement.\n\nEdit Image 1, a photograph of a living/dining room. Make only these changes:\n1. Dining: make the chairs, table centrepiece and woven cane globe pendant exactly match Image 4 (light oak wishbone chairs with paper-cord seats, tall dark ceramic vase with dried branches and a smoked-glass bowl, cane globe pendant). Keep the bench.\n2. Sofa: add one textured caramel-brown boucle cushion beside the existing sage cushion, and a warm tan fringed wool throw draped over the sofa arm, as in Image 5.\n3. Beside the sofa, add one chunky round solid-wood stool in a dark walnut tone (about 35 cm across, three splayed legs) as a side table holding a small stack of books.\n4. On top of the TV cabinet, beside the open cubby, add a small cordless mushroom table lamp with a white alabaster-look shade, softly glowing warm.\nDo not change the staircase, TV joinery, basin, floor lamp, coffee table, rug, curtains or floor. Keep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, matte stone floor and lighting. Image 5 is inspiration for the objects only; do not copy its walls, carpet, dark floor or furniture. Match Images 2-3: muted natural oak, creamy ivory plaster, pale sandy matte stone, charcoal accents, soft daylight. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+          "refs": [
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/02-ground-floor-overview-wide.png",
+            "/tmp/video-styling-kitchen-wide-reference.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-detail.png",
+            "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-dfbfbcbc-7a6d-4b33-8865-326d8065c187.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/materials/video-references/ref-living-globe-pendant.jpg"
+          ],
+          "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-39fe1139-c316-45a9-96dd-e1860da33ce1.png",
+          "sha256": "8d24e5db0ad10eb6d00f0d9afd0be8e371ffa07a7379c263108b142db87d3011",
+          "size": [
+            1672,
+            941
+          ]
+        }
+      ],
+      "geometry_reference": {
+        "camera": "Pre-edit canonical photo at 98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+        "source_image": {
+          "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+          "path_at_commit": "interiors/images/02-ground-floor-overview-wide.png",
+          "sha256": "3dafa504bac444fb473a744d8d0be883a1b3181404884d7ca853de2d5c35f494",
+          "size": [
+            1672,
+            941
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "fitout_layout": "../model/src/fitout-layout.json",
+        "fitout_sha256": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+        "scope": "Photographic furnishings/accessories and optional relighting only; measured model/drawing files unchanged."
+      },
+      "review": "Same wishbone dining set/centre-piece/cane globe and requested sofa textiles, walnut stool/books and mushroom lamp carried into the source overview. Original stair silhouette, TV/basin joinery/mirror, bedroom opening, sofas, coffee table, rug and matte floor visually retained. Assistant visual review only; generated presentations do not establish pixel-identical preservation or measured furniture dimensions.",
+      "dimension_review": {
+        "source": [
+          1672,
+          941
+        ],
+        "output": [
+          1672,
+          941
+        ],
+        "processing": "Native selected built-in imagegen PNG copied byte-for-byte; no local compositing, pixel edits, crop or resize."
+      },
+      "user_approval": "pending",
+      "output": {
+        "path": "images/02-ground-floor-overview-wide.png",
+        "sha256": "8d24e5db0ad10eb6d00f0d9afd0be8e371ffa07a7379c263108b142db87d3011",
+        "size": [
+          1672,
+          941
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-39fe1139-c316-45a9-96dd-e1860da33ce1.png"
+      }
+    },
+    {
+      "id": "video-inspired-styling-2026-10-25-17-front-gallery-wide",
+      "date": "2026-10-25",
+      "image": "17-front-gallery-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen; direct selected output",
+      "kind": "gallery",
+      "user_prompt": "Edit Image 1, a photograph of a gallery nook with a built-in oak bench and wall desk beside a sliding door to the balcony. Make only these changes:\n1. Replace the two framed prints above the bench with one organic, softly asymmetric pebble-shaped wall mirror about 70 x 100 cm with a very thin matte dark-bronze frame, the same shape idea as the mirror in Image 4, centred above the bench. It reflects the soft light and greenery from the balcony.\n2. On the wall desk beside the existing lamp, add one rounded earthenware vase in warm clay-brown holding a few tall dried branches.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, bench, cushions, throw, desk, brass lamp, door, curtain, jute runner, sliding door, balcony, chair and lighting. Image 4 is inspiration for the objects only. Match Images 2-3: muted natural oak, creamy ivory plaster, pale sandy matte stone, charcoal accents, soft daylight. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+      "prompt": "Use case: precise-object-edit. FIRST PHOTO is the only edit target.\nImage 1: 17-front-gallery-wide.png, original gallery nook and camera/layout authority: long ivory wall and oak door left, built-in oak bench and small wall desk at the far end, black balcony slider and palm view right. Keep the existing source composition and straight verticals.\nImage 2: frozen kitchen wide, palette/realism only.\nImage 3: kitchen detail, material realism only.\nImage 4: ref-entry-mirror-mushroom-lamp.jpg, reference ONLY for a thin-framed asymmetric pebble mirror and rounded clay vase with sparse branches. The gallery request does NOT add a mushroom lamp or a dresser: retain its existing brass desk lamp.\nMake only the two explicitly listed object changes. Mirror reflection must belong to this actual balcony/gallery, not the reference's entry door or overlay words.\n\nEdit Image 1, a photograph of a gallery nook with a built-in oak bench and wall desk beside a sliding door to the balcony. Make only these changes:\n1. Replace the two framed prints above the bench with one organic, softly asymmetric pebble-shaped wall mirror about 70 x 100 cm with a very thin matte dark-bronze frame, the same shape idea as the mirror in Image 4, centred above the bench. It reflects the soft light and greenery from the balcony.\n2. On the wall desk beside the existing lamp, add one rounded earthenware vase in warm clay-brown holding a few tall dried branches.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, bench, cushions, throw, desk, brass lamp, door, curtain, jute runner, sliding door, balcony, chair and lighting. Image 4 is inspiration for the objects only. Match Images 2-3: muted natural oak, creamy ivory plaster, pale sandy matte stone, charcoal accents, soft daylight. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Original edit target; sole source camera/layout and non-requested contents authority",
+          "historical_source": {
+            "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+            "path_at_commit": "interiors/images/17-front-gallery-wide.png",
+            "sha256": "964b1aa7eea9dc94a9e30ad887d90ae5a48fa4bebbf0d37340752cc8ece53310",
+            "size": [
+              1678,
+              937
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Frozen pre-batch kitchen-wide palette/photographic realism reference; same original used for every run",
+          "historical_source": {
+            "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "009d2c96324f0f522962341d4ff1a23907a920dd239de8c51fb6b0afbf340f09",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 3,
+          "role": "Unchanged kitchen-detail material texture and photographic realism authority",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        },
+        {
+          "logical_image": 4,
+          "role": "User-supplied video frame: requested objects/mood only; no copied architecture, dark palette, portrait framing or overlay text",
+          "path": ".source/materials/video-references/ref-entry-mirror-mushroom-lamp.jpg",
+          "sha256": "edc88e1db32d3e492189677d943cbb3e5a756d761ff198fcb94c689c16c3b2b0"
+        }
+      ],
+      "generation_attempts": [
+        {
+          "status": "selected",
+          "prompt": "Use case: precise-object-edit. FIRST PHOTO is the only edit target.\nImage 1: 17-front-gallery-wide.png, original gallery nook and camera/layout authority: long ivory wall and oak door left, built-in oak bench and small wall desk at the far end, black balcony slider and palm view right. Keep the existing source composition and straight verticals.\nImage 2: frozen kitchen wide, palette/realism only.\nImage 3: kitchen detail, material realism only.\nImage 4: ref-entry-mirror-mushroom-lamp.jpg, reference ONLY for a thin-framed asymmetric pebble mirror and rounded clay vase with sparse branches. The gallery request does NOT add a mushroom lamp or a dresser: retain its existing brass desk lamp.\nMake only the two explicitly listed object changes. Mirror reflection must belong to this actual balcony/gallery, not the reference's entry door or overlay words.\n\nEdit Image 1, a photograph of a gallery nook with a built-in oak bench and wall desk beside a sliding door to the balcony. Make only these changes:\n1. Replace the two framed prints above the bench with one organic, softly asymmetric pebble-shaped wall mirror about 70 x 100 cm with a very thin matte dark-bronze frame, the same shape idea as the mirror in Image 4, centred above the bench. It reflects the soft light and greenery from the balcony.\n2. On the wall desk beside the existing lamp, add one rounded earthenware vase in warm clay-brown holding a few tall dried branches.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, bench, cushions, throw, desk, brass lamp, door, curtain, jute runner, sliding door, balcony, chair and lighting. Image 4 is inspiration for the objects only. Match Images 2-3: muted natural oak, creamy ivory plaster, pale sandy matte stone, charcoal accents, soft daylight. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+          "refs": [
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/17-front-gallery-wide.png",
+            "/tmp/video-styling-kitchen-wide-reference.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-detail.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/materials/video-references/ref-entry-mirror-mushroom-lamp.jpg"
+          ],
+          "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-bcb59a31-82e3-407a-9035-492958bbe7aa.png",
+          "sha256": "66dbe15e7e48b7215b403d95141c23ee1aecec4d93ce748df684b9a0ac8ee92a",
+          "size": [
+            1678,
+            937
+          ]
+        }
+      ],
+      "geometry_reference": {
+        "camera": "Pre-edit canonical photo at 98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+        "source_image": {
+          "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+          "path_at_commit": "interiors/images/17-front-gallery-wide.png",
+          "sha256": "964b1aa7eea9dc94a9e30ad887d90ae5a48fa4bebbf0d37340752cc8ece53310",
+          "size": [
+            1678,
+            937
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "fitout_layout": "../model/src/fitout-layout.json",
+        "fitout_sha256": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+        "scope": "Photographic furnishings/accessories and optional relighting only; measured model/drawing files unchanged."
+      },
+      "review": "Two framed bench prints replaced by one softly asymmetric thin dark-bronze-framed pebble mirror reflecting the gallery slider/light/greenery. Clay-brown earthenware vase with sparse tall branches added beside existing brass lamp. Bench/textiles, desk, oak door, runner, curtain, slider, balcony chair and source camera visually retained. Assistant visual review only; generated presentations do not establish pixel-identical preservation or measured furniture dimensions.",
+      "dimension_review": {
+        "source": [
+          1678,
+          937
+        ],
+        "output": [
+          1678,
+          937
+        ],
+        "processing": "Native selected built-in imagegen PNG copied byte-for-byte; no local compositing, pixel edits, crop or resize."
+      },
+      "user_approval": "pending",
+      "output": {
+        "path": "images/17-front-gallery-wide.png",
+        "sha256": "66dbe15e7e48b7215b403d95141c23ee1aecec4d93ce748df684b9a0ac8ee92a",
+        "size": [
+          1678,
+          937
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-bcb59a31-82e3-407a-9035-492958bbe7aa.png"
+      }
+    },
+    {
+      "id": "video-inspired-styling-2026-10-25-09-bedroom3-opposite",
+      "date": "2026-10-25",
+      "image": "09-bedroom3-opposite.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen; direct selected output",
+      "kind": "bedroom-mirror",
+      "user_prompt": "Edit Image 1, a photograph of a bedroom with a floating oak shelf on the wall between the bed and the door. Make only these changes:\n1. Above the floating shelf, hang one organic, softly asymmetric rounded wall mirror about 90 x 60 cm with a very thin matte black frame, the same shape idea as Image 4, its bottom edge about 15 cm above the shelf. It reflects the window light and curtains.\n2. On the shelf, keep the vase with dried stems and the books, and add one small cordless mushroom lamp with a white alabaster-look shade, softly glowing warm.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, matte wood-look floor, bed, bedding, rug, wall light, artwork, door, curtains, window and lighting. Image 4 is inspiration for the objects only; do not add a dresser. Match Images 2-3: muted natural oak, creamy ivory plaster, charcoal accents, soft daylight. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+      "prompt": "Use case: precise-object-edit. Preserve the FIRST ORIGINAL PHOTO exactly except two additions.\nImage 1 is the original 09-bedroom3-opposite.png, ONLY camera/layout/fixture authority. Image 2 kitchen wide and Image 3 kitchen detail are palette references. Image 4 is the organic mirror shape reference. Image 5 is a previous MIRROR AND MUSHROOM LAMP DESIGN reference ONLY: it incorrectly widened the shelf and moved its vase/books. Do not copy those unwanted shifts.\nKeep the ORIGINAL floating shelf EXACTLY the same width, depth, height and position as Image 1 (its ends remain around x442 and x761 in the original1536x1024 image). Keep the original vase with dried stems at its existing shelf position (centre around x530) and original books at the existing right-hand position (around x680). Do not shift, replace or resize either prop.\nAdd ONE thin-black-framed rounded asymmetric landscape mirror, about90x60cm, above the shelf, bottom roughly15cm above it, reflecting the actual window/curtains. Match the mirror design of Image5 but preserve source wall.\nAdd ONE small white alabaster-look cordless mushroom lamp in the EXISTING FREE GAP BETWEEN the vase and the books, centred around x590 on the unchanged shelf; keep it compact, softly warm. Natural overlap of existing stems with the mirror is acceptable; do not move the vase to avoid that overlap.\nEverything else remains as original Image1: bed/linen/clay throw/rug, wardrobe edge, art, reading lamp, bathroom door, window/ripple curtains, matte plank flooring, ceiling/walls/lighting, camera/crop. No dresser, new shelf or shelf extension. Photorealistic muted oak/ivory palette, no words/watermark.\n\nOriginal user brief:\nEdit Image 1, a photograph of a bedroom with a floating oak shelf on the wall between the bed and the door. Make only these changes:\n1. Above the floating shelf, hang one organic, softly asymmetric rounded wall mirror about 90 x 60 cm with a very thin matte black frame, the same shape idea as Image 4, its bottom edge about 15 cm above the shelf. It reflects the window light and curtains.\n2. On the shelf, keep the vase with dried stems and the books, and add one small cordless mushroom lamp with a white alabaster-look shade, softly glowing warm.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, matte wood-look floor, bed, bedding, rug, wall light, artwork, door, curtains, window and lighting. Image 4 is inspiration for the objects only; do not add a dresser. Match Images 2-3: muted natural oak, creamy ivory plaster, charcoal accents, soft daylight. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Original edit target; sole source camera/layout and non-requested contents authority",
+          "historical_source": {
+            "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+            "path_at_commit": "interiors/images/09-bedroom3-opposite.png",
+            "sha256": "2e1ec73dcedc49efb9a0b5c81842fb0a6a114c5f3867685b4899474b8982fe0d",
+            "size": [
+              1536,
+              1024
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Frozen pre-batch kitchen-wide palette/photographic realism reference; same original used for every run",
+          "historical_source": {
+            "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "009d2c96324f0f522962341d4ff1a23907a920dd239de8c51fb6b0afbf340f09",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 3,
+          "role": "Unchanged kitchen-detail material texture and photographic realism authority",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        },
+        {
+          "logical_image": 4,
+          "role": "User-supplied video frame: requested objects/mood only; no copied architecture, dark palette, portrait framing or overlay text",
+          "path": ".source/materials/video-references/ref-organic-mirror.jpg",
+          "sha256": "7aace0e3cb2b009b8a5ba92c9af5a3df21d9b2d98748046d6ee93e12cd405e08"
+        },
+        {
+          "logical_image": 5,
+          "role": "Rejected bedroom candidate used only for new mirror/lamp design; shifted shelf/props explicitly excluded",
+          "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-4bb872e8-4e02-4d83-9dca-b4f1bccdc6bd.png",
+          "sha256": "49359d420207f7f29d4adda20a66c527f7f5506c590a3efa4d172d3cae10c8c9"
+        }
+      ],
+      "generation_attempts": [
+        {
+          "prompt": "Use case: precise-object-edit. FIRST PHOTO is the only edit target.\nImage 1: 09-bedroom3-opposite.png, original clay/cream bedroom looking toward its closed oak bathroom door, floating oak shelf with vase/branches/books at centre-left and existing window/ceiling-level ripple curtains at right. Original camera, matte wood-look floor, bed and room geometry govern.\nImage 2: frozen kitchen wide, house palette only.\nImage 3: kitchen detail, fine materials/realism only.\nImage 4: ref-organic-mirror.jpg, ONLY the thin-framed asymmetric rounded mirror shape idea. Do not import its dresser, dark timber, lamps, rug, portrait crop or overlay text.\nAdd the mirror above the EXISTING shelf and one small softly glowing white alabaster-look mushroom lamp ON that shelf. Keep its original vase/dried stems and books. Reflection belongs to this actual bedroom's curtains/window, not the reference's room. Preserve the original full 1536x1024 composition.\n\nEdit Image 1, a photograph of a bedroom with a floating oak shelf on the wall between the bed and the door. Make only these changes:\n1. Above the floating shelf, hang one organic, softly asymmetric rounded wall mirror about 90 x 60 cm with a very thin matte black frame, the same shape idea as Image 4, its bottom edge about 15 cm above the shelf. It reflects the window light and curtains.\n2. On the shelf, keep the vase with dried stems and the books, and add one small cordless mushroom lamp with a white alabaster-look shade, softly glowing warm.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, matte wood-look floor, bed, bedding, rug, wall light, artwork, door, curtains, window and lighting. Image 4 is inspiration for the objects only; do not add a dresser. Match Images 2-3: muted natural oak, creamy ivory plaster, charcoal accents, soft daylight. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+          "refs": [
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/09-bedroom3-opposite.png",
+            "/tmp/video-styling-kitchen-wide-reference.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-detail.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/materials/video-references/ref-organic-mirror.jpg"
+          ],
+          "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-4bb872e8-4e02-4d83-9dca-b4f1bccdc6bd.png",
+          "reason": "Mirror/lamp design suitable, but shelf extended left and existing vase/books moved; rejected as final.",
+          "status": "rejected; never installed",
+          "sha256": "49359d420207f7f29d4adda20a66c527f7f5506c590a3efa4d172d3cae10c8c9",
+          "size": [
+            1536,
+            1024
+          ]
+        },
+        {
+          "status": "selected",
+          "prompt": "Use case: precise-object-edit. Preserve the FIRST ORIGINAL PHOTO exactly except two additions.\nImage 1 is the original 09-bedroom3-opposite.png, ONLY camera/layout/fixture authority. Image 2 kitchen wide and Image 3 kitchen detail are palette references. Image 4 is the organic mirror shape reference. Image 5 is a previous MIRROR AND MUSHROOM LAMP DESIGN reference ONLY: it incorrectly widened the shelf and moved its vase/books. Do not copy those unwanted shifts.\nKeep the ORIGINAL floating shelf EXACTLY the same width, depth, height and position as Image 1 (its ends remain around x442 and x761 in the original1536x1024 image). Keep the original vase with dried stems at its existing shelf position (centre around x530) and original books at the existing right-hand position (around x680). Do not shift, replace or resize either prop.\nAdd ONE thin-black-framed rounded asymmetric landscape mirror, about90x60cm, above the shelf, bottom roughly15cm above it, reflecting the actual window/curtains. Match the mirror design of Image5 but preserve source wall.\nAdd ONE small white alabaster-look cordless mushroom lamp in the EXISTING FREE GAP BETWEEN the vase and the books, centred around x590 on the unchanged shelf; keep it compact, softly warm. Natural overlap of existing stems with the mirror is acceptable; do not move the vase to avoid that overlap.\nEverything else remains as original Image1: bed/linen/clay throw/rug, wardrobe edge, art, reading lamp, bathroom door, window/ripple curtains, matte plank flooring, ceiling/walls/lighting, camera/crop. No dresser, new shelf or shelf extension. Photorealistic muted oak/ivory palette, no words/watermark.\n\nOriginal user brief:\nEdit Image 1, a photograph of a bedroom with a floating oak shelf on the wall between the bed and the door. Make only these changes:\n1. Above the floating shelf, hang one organic, softly asymmetric rounded wall mirror about 90 x 60 cm with a very thin matte black frame, the same shape idea as Image 4, its bottom edge about 15 cm above the shelf. It reflects the window light and curtains.\n2. On the shelf, keep the vase with dried stems and the books, and add one small cordless mushroom lamp with a white alabaster-look shade, softly glowing warm.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, walls, matte wood-look floor, bed, bedding, rug, wall light, artwork, door, curtains, window and lighting. Image 4 is inspiration for the objects only; do not add a dresser. Match Images 2-3: muted natural oak, creamy ivory plaster, charcoal accents, soft daylight. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+          "refs": [
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/09-bedroom3-opposite.png",
+            "/tmp/video-styling-kitchen-wide-reference.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-detail.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/materials/video-references/ref-organic-mirror.jpg",
+            "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-4bb872e8-4e02-4d83-9dca-b4f1bccdc6bd.png"
+          ],
+          "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-391b7046-3e21-45a1-9d4a-4def3ff750c6.png",
+          "sha256": "972a0f3972bda577cb53490016300ba21cd7e1c4857493425a6e2afc8035162d",
+          "size": [
+            1536,
+            1024
+          ]
+        }
+      ],
+      "geometry_reference": {
+        "camera": "Pre-edit canonical photo at 98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+        "source_image": {
+          "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+          "path_at_commit": "interiors/images/09-bedroom3-opposite.png",
+          "sha256": "2e1ec73dcedc49efb9a0b5c81842fb0a6a114c5f3867685b4899474b8982fe0d",
+          "size": [
+            1536,
+            1024
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "fitout_layout": "../model/src/fitout-layout.json",
+        "fitout_sha256": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+        "scope": "Photographic furnishings/accessories and optional relighting only; measured model/drawing files unchanged."
+      },
+      "review": "Thin black-framed rounded organic mirror added above original floating shelf, reflecting window/ripple curtains; small warm alabaster-look mushroom lamp fits between original vase and books. Corrected candidate retains source shelf extent, vase/dried stems and book positions. Bed/textiles, rug, door, artwork/reading light, wardrobe edge and matte plank floor visually retained. Assistant visual review only; generated presentations do not establish pixel-identical preservation or measured furniture dimensions.",
+      "dimension_review": {
+        "source": [
+          1536,
+          1024
+        ],
+        "output": [
+          1536,
+          1024
+        ],
+        "processing": "Native selected built-in imagegen PNG copied byte-for-byte; no local compositing, pixel edits, crop or resize."
+      },
+      "user_approval": "pending",
+      "output": {
+        "path": "images/09-bedroom3-opposite.png",
+        "sha256": "972a0f3972bda577cb53490016300ba21cd7e1c4857493425a6e2afc8035162d",
+        "size": [
+          1536,
+          1024
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-391b7046-3e21-45a1-9d4a-4def3ff750c6.png"
+      }
+    },
+    {
+      "id": "video-inspired-styling-2026-10-25-06-kitchen-wide",
+      "date": "2026-10-25",
+      "image": "06-kitchen-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen; direct selected output",
+      "kind": "kitchen-counter",
+      "user_prompt": "Edit Image 1, a photograph of a kitchen. Make only these changes, in the counter corner to the right of the sink:\n1. Add a small two-tier light-oak countertop shelf (about 40 cm wide, 35 cm tall) holding four matching matte ivory ceramic canisters with light wooden lids, the same idea as Image 4 but in light oak.\n2. Behind the existing cutting board, add one round light-oak serving board leaning against the backsplash.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, cabinets, lofts, under-cabinet light, hood, hob, sink, tap, window, door, matte stone floor, runner and plants. Image 4 is inspiration for the objects only; do not copy its cabinets, tiles or handles. Match Images 2-3. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+      "prompt": "Use case: precise-object-edit. Edit FIRST PHOTO only; countertop styling additions.\nImage 1: 06-kitchen-wide.png, original wide camera/geometry authority. Keep its current solid inclined charcoal hood with visible stainless filter underside/round lights, sink/tap, oak/ivory cupboards, exact door/window/counter outlines, matte stone floor and cotton runner.\nImage 2: frozen copy of the same kitchen-wide source, original house palette reference only.\nImage 3: kitchen detail, original material texture/realism only.\nImage 4: ref-kitchen-corner.jpg, reference ONLY for a small countertop shelf/canisters and layered serving boards. Do not copy its dark wood, tiles, handles, cabinetry, new appliances or overlaid words.\nThe new shelf stands on the EXISTING counter immediately to the RIGHT of the sink, sized about40cm wide x35cm tall without modifying the corner/cabinet. Exactly FOUR new matching matte ivory canisters with light wooden lids, arranged two on each shelf tier. Keep the original cutting board and existing props; add one round light-oak board behind that existing board. No extra reference bottles, signs or utensils.\nRetain the source's full1495x1052 composition and all other elements.\n\nEdit Image 1, a photograph of a kitchen. Make only these changes, in the counter corner to the right of the sink:\n1. Add a small two-tier light-oak countertop shelf (about 40 cm wide, 35 cm tall) holding four matching matte ivory ceramic canisters with light wooden lids, the same idea as Image 4 but in light oak.\n2. Behind the existing cutting board, add one round light-oak serving board leaning against the backsplash.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, cabinets, lofts, under-cabinet light, hood, hob, sink, tap, window, door, matte stone floor, runner and plants. Image 4 is inspiration for the objects only; do not copy its cabinets, tiles or handles. Match Images 2-3. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Original edit target; sole source camera/layout and non-requested contents authority",
+          "historical_source": {
+            "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "009d2c96324f0f522962341d4ff1a23907a920dd239de8c51fb6b0afbf340f09",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Frozen pre-batch kitchen-wide palette/photographic realism reference; same original used for every run",
+          "historical_source": {
+            "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "009d2c96324f0f522962341d4ff1a23907a920dd239de8c51fb6b0afbf340f09",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 3,
+          "role": "Unchanged kitchen-detail material texture and photographic realism authority",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        },
+        {
+          "logical_image": 4,
+          "role": "User-supplied video frame: requested objects/mood only; no copied architecture, dark palette, portrait framing or overlay text",
+          "path": ".source/materials/video-references/ref-kitchen-corner.jpg",
+          "sha256": "b2e7156ce7f419353e5ee24cbb770a0cbbe3ba917d5162b1bd7b3fd0bee41a14"
+        }
+      ],
+      "generation_attempts": [
+        {
+          "status": "selected",
+          "prompt": "Use case: precise-object-edit. Edit FIRST PHOTO only; countertop styling additions.\nImage 1: 06-kitchen-wide.png, original wide camera/geometry authority. Keep its current solid inclined charcoal hood with visible stainless filter underside/round lights, sink/tap, oak/ivory cupboards, exact door/window/counter outlines, matte stone floor and cotton runner.\nImage 2: frozen copy of the same kitchen-wide source, original house palette reference only.\nImage 3: kitchen detail, original material texture/realism only.\nImage 4: ref-kitchen-corner.jpg, reference ONLY for a small countertop shelf/canisters and layered serving boards. Do not copy its dark wood, tiles, handles, cabinetry, new appliances or overlaid words.\nThe new shelf stands on the EXISTING counter immediately to the RIGHT of the sink, sized about40cm wide x35cm tall without modifying the corner/cabinet. Exactly FOUR new matching matte ivory canisters with light wooden lids, arranged two on each shelf tier. Keep the original cutting board and existing props; add one round light-oak board behind that existing board. No extra reference bottles, signs or utensils.\nRetain the source's full1495x1052 composition and all other elements.\n\nEdit Image 1, a photograph of a kitchen. Make only these changes, in the counter corner to the right of the sink:\n1. Add a small two-tier light-oak countertop shelf (about 40 cm wide, 35 cm tall) holding four matching matte ivory ceramic canisters with light wooden lids, the same idea as Image 4 but in light oak.\n2. Behind the existing cutting board, add one round light-oak serving board leaning against the backsplash.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, cabinets, lofts, under-cabinet light, hood, hob, sink, tap, window, door, matte stone floor, runner and plants. Image 4 is inspiration for the objects only; do not copy its cabinets, tiles or handles. Match Images 2-3. Photorealistic, fine texture. No added objects beyond those listed, no text or watermark.\n",
+          "refs": [
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-wide.png",
+            "/tmp/video-styling-kitchen-wide-reference.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-detail.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/materials/video-references/ref-kitchen-corner.jpg"
+          ],
+          "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-7db4af09-8756-4902-9f71-bd62575cbfd4.png",
+          "sha256": "f0898260a44745f086e5b272ce846bf83274bf472483830bfc9642e8df20fd5b",
+          "size": [
+            1495,
+            1052
+          ]
+        }
+      ],
+      "geometry_reference": {
+        "camera": "Pre-edit canonical photo at 98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+        "source_image": {
+          "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+          "path_at_commit": "interiors/images/06-kitchen-wide.png",
+          "sha256": "009d2c96324f0f522962341d4ff1a23907a920dd239de8c51fb6b0afbf340f09",
+          "size": [
+            1495,
+            1052
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "fitout_layout": "../model/src/fitout-layout.json",
+        "fitout_sha256": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+        "scope": "Photographic furnishings/accessories and optional relighting only; measured model/drawing files unchanged."
+      },
+      "review": "Two-tier light-oak counter shelf right of sink holds exactly four matching matte ivory canisters with light wood lids, two per tier. Round oak serving board added behind existing cutting board. Current solid hood/filter underside, cupboards/lofts, counters, sink/tap/hob, window/door, runner, plants and matte floor visually retained. Assistant visual review only; generated presentations do not establish pixel-identical preservation or measured furniture dimensions.",
+      "dimension_review": {
+        "source": [
+          1495,
+          1052
+        ],
+        "output": [
+          1495,
+          1052
+        ],
+        "processing": "Native selected built-in imagegen PNG copied byte-for-byte; no local compositing, pixel edits, crop or resize."
+      },
+      "user_approval": "pending",
+      "output": {
+        "path": "images/06-kitchen-wide.png",
+        "sha256": "f0898260a44745f086e5b272ce846bf83274bf472483830bfc9642e8df20fd5b",
+        "size": [
+          1495,
+          1052
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-7db4af09-8756-4902-9f71-bd62575cbfd4.png"
+      }
+    },
+    {
+      "id": "video-inspired-styling-2026-10-25-02-living-evening",
+      "date": "2026-10-25",
+      "image": "02-living-evening.png",
+      "use_case": "lighting-weather",
+      "method": "built-in image_gen; direct selected output",
+      "kind": "evening-variant",
+      "user_prompt": "Re-light Image 1, a photograph of a living/dining room, as an early-evening view of the same room. Change only the light: blue dusk outside the window, sheer curtains glowing softly; the ceiling downlights off; the warm light comes from the floor lamp, the mushroom lamp on the TV cabinet, the glow under the TV cabinet, the cane globe pendant over the dining table and the wall light at the basin, creating soft pools of warm 2700 K light and gentle shadows, as in Image 4. Keep every object, material, position, camera and framing exactly as in Image 1. Photorealistic, no added objects, no text or watermark.\n",
+      "prompt": "Use case: lighting-weather. Create a SEPARATE evening variant of the FIRST PHOTO only.\nImage 1: the reviewed UPDATED 02-living-wide photograph, with wishbone dining chairs/cane globe/vase+bowl, caramel cushion/tan throw, walnut stool/books and small mushroom lamp. It is the exact object/camera/layout authority.\nImage 2: frozen original kitchen wide, house material palette only; do not copy daylight or its camera.\nImage 3: kitchen detail, house material texture only.\nImage 4: ref-living-lamps.jpg, soft warm practical-lamp mood inspiration only. Do not copy its room, TV wall, dark cupboards, extra lamps or words.\nPreserve every single source object and its position, perspective and complete original1536x1024 crop. Only relight. Keep the TV off and dark; all existing ceiling downlights off. Existing lamps/pendant/basin sconce/under-cabinet LED provide warm2700K pools, balanced against gentle blue dusk through the existing window and sheer curtains. Natural soft shadows and readable material textures, not a black room or orange filter.\n\nRe-light Image 1, a photograph of a living/dining room, as an early-evening view of the same room. Change only the light: blue dusk outside the window, sheer curtains glowing softly; the ceiling downlights off; the warm light comes from the floor lamp, the mushroom lamp on the TV cabinet, the glow under the TV cabinet, the cane globe pendant over the dining table and the wall light at the basin, creating soft pools of warm 2700 K light and gentle shadows, as in Image 4. Keep every object, material, position, camera and framing exactly as in Image 1. Photorealistic, no added objects, no text or watermark.\n",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Updated daylight living camera/layout/object authority for separate dusk variant",
+          "path": "images/02-living-wide.png",
+          "sha256": "342271d2ed5d1e05ef86fec0ecb454874760d3be412599836d6b35c09ee5405a"
+        },
+        {
+          "logical_image": 2,
+          "role": "Frozen pre-batch kitchen-wide palette/photographic realism reference; same original used for every run",
+          "historical_source": {
+            "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "009d2c96324f0f522962341d4ff1a23907a920dd239de8c51fb6b0afbf340f09",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 3,
+          "role": "Unchanged kitchen-detail material texture and photographic realism authority",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        },
+        {
+          "logical_image": 4,
+          "role": "User-supplied video frame: requested objects/mood only; no copied architecture, dark palette, portrait framing or overlay text",
+          "path": ".source/materials/video-references/ref-living-lamps.jpg",
+          "sha256": "ed01a12f2bb84e7b3a14108bd3e200af529fb624facfda5f1d148db70ed8a261"
+        }
+      ],
+      "generation_attempts": [
+        {
+          "status": "selected",
+          "prompt": "Use case: lighting-weather. Create a SEPARATE evening variant of the FIRST PHOTO only.\nImage 1: the reviewed UPDATED 02-living-wide photograph, with wishbone dining chairs/cane globe/vase+bowl, caramel cushion/tan throw, walnut stool/books and small mushroom lamp. It is the exact object/camera/layout authority.\nImage 2: frozen original kitchen wide, house material palette only; do not copy daylight or its camera.\nImage 3: kitchen detail, house material texture only.\nImage 4: ref-living-lamps.jpg, soft warm practical-lamp mood inspiration only. Do not copy its room, TV wall, dark cupboards, extra lamps or words.\nPreserve every single source object and its position, perspective and complete original1536x1024 crop. Only relight. Keep the TV off and dark; all existing ceiling downlights off. Existing lamps/pendant/basin sconce/under-cabinet LED provide warm2700K pools, balanced against gentle blue dusk through the existing window and sheer curtains. Natural soft shadows and readable material textures, not a black room or orange filter.\n\nRe-light Image 1, a photograph of a living/dining room, as an early-evening view of the same room. Change only the light: blue dusk outside the window, sheer curtains glowing softly; the ceiling downlights off; the warm light comes from the floor lamp, the mushroom lamp on the TV cabinet, the glow under the TV cabinet, the cane globe pendant over the dining table and the wall light at the basin, creating soft pools of warm 2700 K light and gentle shadows, as in Image 4. Keep every object, material, position, camera and framing exactly as in Image 1. Photorealistic, no added objects, no text or watermark.\n",
+          "refs": [
+            "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-b3f86742-ec9a-4f17-86e2-4292de63eb9d.png",
+            "/tmp/video-styling-kitchen-wide-reference.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-detail.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/.source/materials/video-references/ref-living-lamps.jpg"
+          ],
+          "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-767891c7-31fc-4005-abfe-961dffc3b7bf.png",
+          "sha256": "d3595f8f39a497a2585abd84d19ea61c34fc03508456e8a0abd7e7628df09c2c",
+          "size": [
+            1536,
+            1024
+          ]
+        }
+      ],
+      "geometry_reference": {
+        "camera": "Reviewed updated daylight living view for evening variant",
+        "source_image": {
+          "path": "images/02-living-wide.png",
+          "sha256": "342271d2ed5d1e05ef86fec0ecb454874760d3be412599836d6b35c09ee5405a"
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "fitout_layout": "../model/src/fitout-layout.json",
+        "fitout_sha256": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+        "scope": "Photographic furnishings/accessories and optional relighting only; measured model/drawing files unchanged."
+      },
+      "review": "Separate early-evening variant of updated living wide. Existing staged objects and composition retained; window turns blue dusk, ceiling downlights off, warm practical light from cane pendant, floor/mushroom lamps, TV-cabinet glow and basin wall light. Daylight default remains separate. Assistant visual review only; generated presentations do not establish pixel-identical preservation or measured furniture dimensions.",
+      "dimension_review": {
+        "source": [
+          1536,
+          1024
+        ],
+        "output": [
+          1536,
+          1024
+        ],
+        "processing": "Native selected built-in imagegen PNG copied byte-for-byte; no local compositing, pixel edits, crop or resize."
+      },
+      "user_approval": "pending",
+      "output": {
+        "path": "images/02-living-evening.png",
+        "sha256": "d3595f8f39a497a2585abd84d19ea61c34fc03508456e8a0abd7e7628df09c2c",
+        "size": [
+          1536,
+          1024
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-767891c7-31fc-4005-abfe-961dffc3b7bf.png"
+      },
+      "variant_of": "images/02-living-wide.png"
+    }
+  ],
+  "video_inspired_styling_decision": {
+    "date": "2026-10-25",
+    "request_attachment": {
+      "path": "/Users/hensaldeon/.codex/attachments/df36f363-eddb-4add-95e8-56b67ae89221/Pasted text.txt",
+      "sha256": "614a0779c938e9e25a254229af549916a118df7ded381d0eb79c312c91d720b0",
+      "retention": "Exact prompt blocks are preserved in the generation history."
+    },
+    "modified_images": [
+      "16-dining-wide.png",
+      "02-living-wide.png",
+      "02-ground-floor-overview-wide.png",
+      "17-front-gallery-wide.png",
+      "09-bedroom3-opposite.png",
+      "06-kitchen-wide.png"
+    ],
+    "added_variant": "02-living-evening.png",
+    "order": [
+      "16-dining-wide.png",
+      "02-living-wide.png",
+      "02-ground-floor-overview-wide.png",
+      "17-front-gallery-wide.png",
+      "09-bedroom3-opposite.png",
+      "06-kitchen-wide.png",
+      "02-living-evening.png"
+    ],
+    "dining_reference": {
+      "path": "images/16-dining-wide.png",
+      "sha256": "bd65d5a1bc2d4f57fc76cee88f7d7d36659e05eee5190d5a0134678c1aa9f6cb",
+      "selection": "Assistant visually reviewed before use as Image 4 in both living prompts; user acceptance pending."
+    },
+    "palette_reference": {
+      "historical_source": {
+        "source_commit": "98eb109a5ea257fd7843f212dd3cc9cd8b2e5593",
+        "path_at_commit": "interiors/images/06-kitchen-wide.png",
+        "sha256": "009d2c96324f0f522962341d4ff1a23907a920dd239de8c51fb6b0afbf340f09",
+        "size": [
+          1495,
+          1052
+        ]
+      },
+      "role": "Frozen pre-batch kitchen-wide used as Image 2 throughout, including its own styling edit. Kitchen detail remains unchanged as Image 3."
+    },
+    "video_frame_sources": [
+      {
+        "path": ".source/materials/video-references/ref-dining-wishbone.jpg",
+        "original_path": "/private/tmp/claude-501/-Users-hensaldeon-Documents-personal-dream-home/420d3692-9656-4e92-8735-187309d84e92/scratchpad/video-refs/ref-dining-wishbone.jpg",
+        "sha256": "463957c2f5d1ca477b90ea8c50e8f5ad0f687ee2d9e9bf3abc471bf70dfd42c9",
+        "size": [
+          720,
+          1280
+        ],
+        "role": "User-supplied extracted video frame, retained as an object/mood reference only; not a house layout/material authority."
+      },
+      {
+        "path": ".source/materials/video-references/ref-entry-mirror-mushroom-lamp.jpg",
+        "original_path": "/private/tmp/claude-501/-Users-hensaldeon-Documents-personal-dream-home/420d3692-9656-4e92-8735-187309d84e92/scratchpad/video-refs/ref-entry-mirror-mushroom-lamp.jpg",
+        "sha256": "edc88e1db32d3e492189677d943cbb3e5a756d761ff198fcb94c689c16c3b2b0",
+        "size": [
+          720,
+          1280
+        ],
+        "role": "User-supplied extracted video frame, retained as an object/mood reference only; not a house layout/material authority."
+      },
+      {
+        "path": ".source/materials/video-references/ref-kitchen-corner.jpg",
+        "original_path": "/private/tmp/claude-501/-Users-hensaldeon-Documents-personal-dream-home/420d3692-9656-4e92-8735-187309d84e92/scratchpad/video-refs/ref-kitchen-corner.jpg",
+        "sha256": "b2e7156ce7f419353e5ee24cbb770a0cbbe3ba917d5162b1bd7b3fd0bee41a14",
+        "size": [
+          720,
+          1280
+        ],
+        "role": "User-supplied extracted video frame, retained as an object/mood reference only; not a house layout/material authority."
+      },
+      {
+        "path": ".source/materials/video-references/ref-living-globe-pendant.jpg",
+        "original_path": "/private/tmp/claude-501/-Users-hensaldeon-Documents-personal-dream-home/420d3692-9656-4e92-8735-187309d84e92/scratchpad/video-refs/ref-living-globe-pendant.jpg",
+        "sha256": "f761adbb0e3bfd4740fc551eb8d5606e8d9c68f1b1d8c96206e101ed39059796",
+        "size": [
+          720,
+          1280
+        ],
+        "role": "User-supplied extracted video frame, retained as an object/mood reference only; not a house layout/material authority."
+      },
+      {
+        "path": ".source/materials/video-references/ref-living-lamps.jpg",
+        "original_path": "/private/tmp/claude-501/-Users-hensaldeon-Documents-personal-dream-home/420d3692-9656-4e92-8735-187309d84e92/scratchpad/video-refs/ref-living-lamps.jpg",
+        "sha256": "ed01a12f2bb84e7b3a14108bd3e200af529fb624facfda5f1d148db70ed8a261",
+        "size": [
+          720,
+          1280
+        ],
+        "role": "User-supplied extracted video frame, retained as an object/mood reference only; not a house layout/material authority."
+      },
+      {
+        "path": ".source/materials/video-references/ref-organic-mirror.jpg",
+        "original_path": "/private/tmp/claude-501/-Users-hensaldeon-Documents-personal-dream-home/420d3692-9656-4e92-8735-187309d84e92/scratchpad/video-refs/ref-organic-mirror.jpg",
+        "sha256": "7aace0e3cb2b009b8a5ba92c9af5a3df21d9b2d98748046d6ee93e12cd405e08",
+        "size": [
+          720,
+          1280
+        ],
+        "role": "User-supplied extracted video frame, retained as an object/mood reference only; not a house layout/material authority."
+      }
+    ],
+    "edits": "Wishbone chairs/cane pendant/dark vase and smoked bowl; living caramel/tan textiles, walnut stool/books and alabaster-look mushroom lamp; gallery organic mirror/clay vase; Bedroom 3 organic mirror/mushroom lamp; kitchen two-tier oak shelf/four canisters and round board.",
+    "evening": "Optional supplied relight prompt included as a separate named variant; daylight default and selected-wide mapping retained.",
+    "rejected_attempt": "First Bedroom 3 candidate widened its shelf and moved existing vase/books. Rejected; a targeted correction restored original shelf/prop positions before saving. All other outputs needed one run.",
+    "output_handling": "Every final file is byte-for-byte the selected imagegen output. No local compositing or post-generation raster modifications.",
+    "dimensions": "Five modified images retain source dimensions. Dining is one pixel taller; separate dusk variant matches updated living canvas. Furniture/mirror/pendant sizes and kelvin values are design intent, not measured product specifications.",
+    "scope_limits": "Six existing images modified, one evening variant added, other 27 original images unchanged. Protected user-selected kitchen-opposite and kitchen-detail photos remain byte-identical. All model/drawing files and default selected-wide mapping unchanged. No video file recreated.",
+    "source_retention": "Six requested reference JPGs copied unchanged from temporary source into .source/materials/video-references/. Pre-edit canonical photos recoverable from Git 98eb109a5ea257fd7843f212dd3cc9cd8b2e5593. Generated originals stay at built-in tool output paths; no project working-image directory added.",
+    "approval": "Assistant visual comparison complete; user acceptance of finished new photographs pending."
   }
 }

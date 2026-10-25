@@ -1,6 +1,6 @@
 {
   "source": "Hensal_Complete_House_Plans.pdf",
-  "source_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+  "source_sha256": "6be2b23e11846e4a0775f028595481157c70168d3332da71d5acfdc1e1ffeceb",
   "coordinates": "x increases north; y increases west; metres; house east/south corner is origin",
   "levels": {
     "ground": [
@@ -6011,9 +6011,11 @@
             4.65
           ],
           "diameter": 0.55,
-          "bottomAboveTable": 0.8
+          "bottomAboveTable": 0.8,
+          "type": "woven natural-cane globe pendant, warm 2700 K lamp",
+          "control": "own switch on a dimmer"
         },
-        "finish": "muted oak 1.20 x 0.75 m table; two oak chairs with oatmeal seats on the room side; oak bench with oatmeal cushion tucked under the window side; oatmeal linen drum pendant centred over the table",
+        "finish": "muted oak 1.20 x 0.75 m table; two light-oak wishbone chairs with woven paper-cord seats on the room side; oak bench with oatmeal cushion tucked under the window side; woven cane globe pendant centred over the table (25 Oct 2026, from the accepted dining photograph)",
         "clearToRearRouteM": 0.85,
         "note": "Replaces the round table and three chairs. The table ends at y = 5.25, leaving 0.85 m clear to the rear service route at y = 6.10, and the room-side chairs keep x = 3.25-4.11 open for the front-door route."
       },
@@ -6028,6 +6030,8 @@
           "top": 0.4,
           "finish": "round muted oak pedestal table"
         },
+        "lighting": "Evening scheme from the accepted 02-living-evening image: dimmable dining pendant, the TV-plinth strip and basin wall light on their own switches, and a switched socket in the window corner for the floor lamp. Ceiling downlights are a separate circuit so they can stay off. The mushroom lamps are cordless and rechargeable; no wiring. Electrical layout to be coordinated.",
+        "staging": "Cushions, throw, walnut stool, mushroom lamps, vases, mirrors and the kitchen canister shelf in the 25 Oct images are loose decor and are not scheduled.",
         "note": "Coffee table 0.40 m in front of the sofa; 0.72 m walkway kept beside it."
       },
       "bathrooms": {

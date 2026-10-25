@@ -17,7 +17,7 @@ export function createHouse(){
  // R20 exterior and fit-out finishes from fitout-layout.json, which the drawings read too.
  Object.assign(materials,{wood:mat(fitout.exterior.timber),grain:mat(fitout.exterior.timberGrain),pave:mat(fitout.exterior.paving),
   rearDoor:mat(fitout.exterior.rearDoor,{roughness:.6}),louvre:mat(fitout.exterior.timber,{metalness:.2,roughness:.6}),
-  bathFloor:mat(fitout.bathrooms.floor),bamboo:mat('#c9a46b',{transparent:true,opacity:.82,roughness:.9}),plant:mat('#5f7d58')});
+  bathFloor:mat(fitout.bathrooms.floor),bamboo:mat('#c9a46b',{transparent:true,opacity:.82,roughness:.9}),cane:mat('#c9a46b',{roughness:.95}),cord:mat('#d8c8a6',{roughness:.95}),plant:mat('#5f7d58')});
  materials.tile=materials.bathFloor;
  const V=(x,h,y)=>new THREE.Vector3(x-3,h,4.85-y);
  function box(g,x0,y0,x1,y1,bottom,top,m){if(x1-x0<.00001||y1-y0<.00001||top-bottom<.00001)return;const o=new THREE.Mesh(new THREE.BoxGeometry(x1-x0,top-bottom,y1-y0),m);o.position.copy(V((x0+x1)/2,(bottom+top)/2,(y0+y1)/2));o.castShadow=true;o.receiveShadow=true;g.add(o);return o;}
@@ -116,7 +116,8 @@ export function createHouse(){
     const at=s=>s[0]===a[0]&&s[1]===a[1],workSeat=level==='first'&&storage.study.chairs.some(at);
     // R20: dining and terrace chairs face their tables across +x; tailoring chairs have oak seats.
     const facesX=(level==='ground'&&fitout.dining.chairs.some(at))||(level==='roof'&&fitout.terrace.chairs.some(at));
-    chair(...a.slice(0,3),workSeat?(a[0]<1.5?'x0':'x1'):facesX?'x1':'y0',workSeat?materials.oak:materials.fabric);
+    const dining=level==='ground'&&fitout.dining.chairs.some(at);
+    chair(...a.slice(0,3),workSeat?(a[0]<1.5?'x0':'x1'):facesX?'x1':'y0',workSeat?materials.oak:dining?materials.cord:materials.fabric);
    }
    if(c.op==='shower'){const[x0,y0,x1,y1]=a;box(f,x0,y0,x1,y1,z+.006,z+.04,materials.tile);
     // R20 recessed tiled niche on the back wall and a slim linear drain along the entry edge.

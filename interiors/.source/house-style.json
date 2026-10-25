@@ -54,12 +54,13 @@
     {
       "file": "images/06-kitchen-wide.png",
       "group": "Kitchen",
-      "role": "17 October finish: muted oak main upper doors match the base cupboards; continuous top lofts and window bridge remain creamy ivory. Existing charcoal chimney, room layout, fixtures and straight fridge-side wall retained.",
-      "sha256": "009d2c96324f0f522962341d4ff1a23907a920dd239de8c51fb6b0afbf340f09",
+      "role": "Two-tier light-oak counter shelf right of sink holds exactly four matching matte ivory canisters with light wood lids, two per tier. Round oak serving board added behind existing cutting board. Current solid hood/filter underside, cupboards/lofts, counters, sink/tap/hob, window/door, runner, plants and matte floor visually retained.",
+      "sha256": "f0898260a44745f086e5b272ce846bf83274bf472483830bfc9642e8df20fd5b",
       "floor_revision": "2026-10-24-common-stone-matte-floor",
       "floor_role": "Kitchen floor now has pale sandy soft-matte stone-look tiles, low mineral variation and diffuse sun patches without cabinet/window reflections or glare streaks. Honed counters/backsplash, cabinetry, lofts, slanted hood, hob, sink, door/window and cotton runner visually retained.",
       "appliance_revision": "2026-10-24-kitchen-solid-hood-fridge",
-      "appliance_role": "Thin hood replaced with a solid matte-charcoal inclined canopy and rectangular chimney, horizontal brushed-stainless underside, two baffle-filter panels and two small warm round lights. Source hob retained with only subtle local LED illumination. Original framing/pixel dimensions preserved; every pixel outside the hood/light masks is identical to the source."
+      "appliance_role": "Thin hood replaced with a solid matte-charcoal inclined canopy and rectangular chimney, horizontal brushed-stainless underside, two baffle-filter panels and two small warm round lights. Source hob retained with only subtle local LED illumination. Original framing/pixel dimensions preserved; every pixel outside the hood/light masks is identical to the source.",
+      "styling_revision": "2026-10-25-video-inspired-styling"
     },
     {
       "file": "images/06-kitchen-detail.png",
@@ -80,10 +81,11 @@
     {
       "file": "images/16-dining-wide.png",
       "group": "Dining",
-      "role": "Oak furniture, cream upholstery, pale floor and gentle daylight.",
-      "sha256": "b35266924f5b9eabc92279c55f458a88ea1c8ea066757371edc907d47c953017",
+      "role": "Two light muted-oak wishbone chairs with woven paper-cord seats replace upholstered chairs, with cushioned oak bench retained. Tall charcoal vase/dried seed-head branches and low smoked-glass bowl replace fruit bowl. Woven cane globe replaces linen drum. Table, artwork, window/door, matte floor and source camera visually retained. Selected first for living-view consistency.",
+      "sha256": "bd65d5a1bc2d4f57fc76cee88f7d7d36659e05eee5190d5a0134678c1aa9f6cb",
       "floor_revision": "2026-10-24-common-stone-matte-floor",
-      "floor_role": "Dining floor now reads matte without the previous bright window/furniture reflections, matching the living material. Two near-side chairs, cushioned bench, table, artwork, linen pendant, window and door visually retained. Native imagegen export is 1532 x 1026 rather than source 1531 x 1027; no external resize or crop was applied."
+      "floor_role": "Dining floor now reads matte without the previous bright window/furniture reflections, matching the living material. Two near-side chairs, cushioned bench, table, artwork, linen pendant, window and door visually retained. Native imagegen export is 1532 x 1026 rather than source 1531 x 1027; no external resize or crop was applied.",
+      "styling_revision": "2026-10-25-video-inspired-styling"
     },
     {
       "file": "images/07-bedroom1-wide.png",
@@ -149,11 +151,12 @@
     {
       "file": "images/09-bedroom3-opposite.png",
       "group": "Bedroom 3",
-      "role": "Clay accent and ivory/oak L wardrobe with paired charcoal pulls; ceiling-level oatmeal ripple-fold curtains and a slimmer oak tree-style dress stand beside the open entry leaf in the wide view. Existing bedside furniture, L wardrobe and floor finishes retained; bedroom desks are withdrawn. R18 revised finish example; original kitchen images remain the primary style authority.",
-      "sha256": "2e1ec73dcedc49efb9a0b5c81842fb0a6a114c5f3867685b4899474b8982fe0d",
+      "role": "Thin black-framed rounded organic mirror added above original floating shelf, reflecting window/ripple curtains; small warm alabaster-look mushroom lamp fits between original vase and books. Corrected candidate retains source shelf extent, vase/dried stems and book positions. Bed/textiles, rug, door, artwork/reading light, wardrobe edge and matte plank floor visually retained.",
+      "sha256": "972a0f3972bda577cb53490016300ba21cd7e1c4857493425a6e2afc8035162d",
       "revision": "R18",
       "floor_revision": "2026-10-24-bedroom-matte-floor",
-      "floor_role": "Bedroom floor now has pale honey-beige natural-oak wood-look planks with fine grain, narrow joints and a matte surface without glossy glare. Clay/cream bed, rug, floating shelf/vase/books, door, window, curtains and wardrobe edge visually retained."
+      "floor_role": "Bedroom floor now has pale honey-beige natural-oak wood-look planks with fine grain, narrow joints and a matte surface without glossy glare. Clay/cream bed, rug, floating shelf/vase/books, door, window, curtains and wardrobe edge visually retained.",
+      "styling_revision": "2026-10-25-video-inspired-styling"
     },
     {
       "file": "images/10-study-wide.png",
@@ -180,8 +183,9 @@
     {
       "file": "images/17-front-gallery-wide.png",
       "group": "Passage and gallery",
-      "role": "Ivory and stone continuity, oak and charcoal edges, greenery.",
-      "sha256": "06bf3211867e2e0327a60fa4335c66e012adf0b53cc02a89fd8470c7c86ef6b8"
+      "role": "Two framed bench prints replaced by one softly asymmetric thin dark-bronze-framed pebble mirror reflecting the gallery slider/light/greenery. Clay-brown earthenware vase with sparse tall branches added beside existing brass lamp. Bench/textiles, desk, oak door, runner, curtain, slider, balcony chair and source camera visually retained.",
+      "sha256": "66dbe15e7e48b7215b403d95141c23ee1aecec4d93ce748df684b9a0ac8ee92a",
+      "styling_revision": "2026-10-25-video-inspired-styling"
     },
     {
       "file": "images/11-bathroom1-wide.png",
@@ -218,11 +222,34 @@
       "group": "Entrance and outdoor rooms",
       "role": "Timber, woven seating, pale stone and tropical context; natural daylight variations.",
       "sha256": "1b6235b2876556aa33006abf8dfdc7f3400848bc9f61ad450957877495a768c8"
+    },
+    {
+      "file": "images/02-living-wide.png",
+      "group": "Living",
+      "sha256": "342271d2ed5d1e05ef86fec0ecb454874760d3be412599836d6b35c09ee5405a",
+      "role": "Dining chairs/centre-piece/cane globe follow the reviewed dining output. Caramel boucle cushion and tan fringed throw added beside existing sage textile; dark walnut three-leg stool with books beside sofa; softly glowing alabaster-look mushroom lamp at TV cabinet/cubby. Source stair/guards/TV joinery/basin, sofa, coffee table, rug, floor lamp, curtains and matte floor visually retained.",
+      "styling_revision": "2026-10-25-video-inspired-styling"
+    },
+    {
+      "file": "images/02-ground-floor-overview-wide.png",
+      "group": "Living",
+      "sha256": "8d24e5db0ad10eb6d00f0d9afd0be8e371ffa07a7379c263108b142db87d3011",
+      "role": "Same wishbone dining set/centre-piece/cane globe and requested sofa textiles, walnut stool/books and mushroom lamp carried into the source overview. Original stair silhouette, TV/basin joinery/mirror, bedroom opening, sofas, coffee table, rug and matte floor visually retained.",
+      "styling_revision": "2026-10-25-video-inspired-styling"
+    },
+    {
+      "file": "images/02-living-evening.png",
+      "group": "Living",
+      "sha256": "d3595f8f39a497a2585abd84d19ea61c34fc03508456e8a0abd7e7628df09c2c",
+      "role": "Separate early-evening variant of updated living wide. Existing staged objects and composition retained; window turns blue dusk, ceiling downlights off, warm practical light from cane pendant, floor/mushroom lamps, TV-cabinet glow and basin wall light. Daylight default remains separate.",
+      "styling_revision": "2026-10-25-video-inspired-styling",
+      "variant_of": "images/02-living-wide.png",
+      "role_scope": "Evening lighting example; daytime kitchen/detail remain house material authorities."
     }
   ],
   "common_floor_reference": {
     "path": "images/02-living-wide.png",
-    "sha256": "29251c079fe02bff8aa7cde275345cb540479c4b7f1998eed8aa9bac1d8be066",
-    "selection": "Assistant visually reviewed and selected before subsequent generation; user acceptance of final images pending."
+    "sha256": "342271d2ed5d1e05ef86fec0ecb454874760d3be412599836d6b35c09ee5405a",
+    "selection": "Current living photograph retains the selected matte floor appearance after the 25 October object styling. Earlier exact floor-generation input hashes remain historical release records."
   }
 }
