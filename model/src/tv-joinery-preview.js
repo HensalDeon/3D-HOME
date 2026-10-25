@@ -11,6 +11,7 @@ export const TV_PREVIEW={
  lowShelf:[L.shelves[0].y[0],L.shelves[0].y[1],L.shelves[0].top],
  endShelves:[L.shelves[1].top,L.shelves[2].top],endBay:L.endBay,
  shelfFaceX:L.shelfDepthX[1],
+ screenPanelDepth:L.screen.panelDepth??(L.screen.box[2]-L.screen.box[0]),
 };
 // The published profile is the canonical one: the flight underside less the clearance, which is
 // exactly what the drawn sections set out from. The model measures the built meshes and compares,
@@ -92,7 +93,10 @@ export function addTvJoineryPreview({parent,stairs,z,box,profilePrism,cylinder,m
  const bay=(y1-y0)/4;
  for(let i=0;i<4;i++)box(g,x1-.016,y0+i*bay+.004,x1+.001,y0+(i+1)*bay-.004,z+.105,z+.426,materials.beige);
  box(g,x1-.06,y0+.03,x1-.035,y1-.03,z+.084,z+.093,materials.glow);
- box(g,...t.screen,z+t.screenBottom,z+t.screenTop,materials.noir);
+ // R20: the screen is stowed flat on a full-motion arm; the arm plate sits on the backing.
+ const [sx0,sy0,sx1,sy1]=t.screen,sc=(sy0+sy1)/2,sm=(t.screenBottom+t.screenTop)/2;
+ box(g,sx1-t.screenPanelDepth,sy0,sx1,sy1,z+t.screenBottom,z+t.screenTop,materials.noir).name='TV screen';
+ box(g,sx0,sc-.12,sx1-t.screenPanelDepth,sc+.12,z+sm-.12,z+sm+.12,materials.dark).name='full-motion TV mount';
  // One continuous backing and cabinet. Shelf boards share it instead of individual box backs.
  const shelf=(a,b,h)=>box(g,t.panel[2],a,t.shelfFaceX,b,z+h-.018,z+h,materials.oak);
  shelf(...t.lowShelf);
@@ -101,8 +105,8 @@ export function addTvJoineryPreview({parent,stairs,z,box,profilePrism,cylinder,m
  box(g,t.panel[2],t.endBay[0],t.shelfFaceX,t.endBay[0]+.018,z+t.cabinetTop,z+t.endShelves.at(-1),materials.oak);
  // Finish the shared backing at the nook; this end is only a thin furniture edge.
  box(g,t.panel[2],y1-.018,t.shelfFaceX,y1,z+t.cabinetTop,z+t.endShelves.at(-1),materials.oak);
- cylinder(g,.89,3.87,z+.46,z+.62,.055,materials.noir);
- box(g,.78,3.81,.98,4.00,z+.795,z+.82,materials.linen);
+ cylinder(g,.89,3.75,z+.46,z+.62,.055,materials.noir);
+ box(g,.78,3.62,.98,3.80,z+.795,z+.82,materials.linen);
  cylinder(g,.89,5.28,z+.81,z+.95,.045,materials.stone);
  return g;
 }

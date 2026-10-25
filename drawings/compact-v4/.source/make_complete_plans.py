@@ -163,6 +163,8 @@ def main():
             'screen_diagonal_in': tv['screen']['diagonalInches'],
             'screen_centreline_y_m': tv['screen']['center'],
             'screen_centre_height_m': tv['screen']['centerHeight'],
+            'screen_mount': tv['screen']['mount'],
+            'viewing_from_sofa': tv['viewing']['fromSofa'],
             'projection_into_passage_m': tv['projection']['intoPassage'],
             'enclosed_storage_m3': tv['storage']['volume_m3'],
             'open_display_m3': tv['storage']['openDisplay_m3'],

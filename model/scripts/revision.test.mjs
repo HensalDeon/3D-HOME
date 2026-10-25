@@ -731,3 +731,19 @@ test('R20 drying-balcony screen, under-stair basin and joinery lighting',()=>{
  assert.equal(glow,1,'only the plinth strip remains lit');
 });
 
+test('R20 cubby clears the screen and every sofa seat sees the whole picture',()=>{
+ const t=revision.tv,s=t.screen,fit=fitout.living.sofa;
+ near(s.diagonalInches,43);assert.ok(t.endBay,'end-bay shelves retained');
+ assert.ok(s.mount.stowedFace_x<=t.faceX,'stowed screen stays inside the joinery face');
+ assert.ok(s.box[1]-t.shelves[0].y[1]>=.15,'cubby sits clear of the screen');
+ const h=createHouse();h.root.updateMatrixWorld(true,true);
+ const meshes=[];h.levels.ground.traverse(o=>{if(o.isMesh&&o.visible&&!o.material?.transparent)meshes.push(o)});
+ const z=LEVELS.ground,headX=fit.back[0]-.17,eye=1.10;
+ const seats=[fit.arm[1]-.25,(fit.main[1]+fit.arm[1])/2,fit.main[1]+.25,(fit.chaise[1]+fit.chaise[3])/2];
+ for(const y of seats)for(const [cy,cz] of [[s.box[1],s.bottom],[s.box[3],s.bottom],[s.box[1],s.top],[s.box[3],s.top]]){
+  const from=h.V(headX,z+eye,y),to=h.V(s.box[2]+.002,z+cz,cy),dir=to.clone().sub(from),L=dir.length();
+  const hit=new Raycaster(from,dir.normalize(),0,L-.01).intersectObjects(meshes,false);
+  assert.equal(hit.length,0,`seat y=${y} cannot see screen corner ${cy},${cz}: ${hit[0]?.object.name||hit[0]?.object.parent?.name}`);
+ }
+});
+

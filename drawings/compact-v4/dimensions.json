@@ -985,6 +985,32 @@
     "screen_diagonal_in": 43,
     "screen_centreline_y_m": 4.64,
     "screen_centre_height_m": 0.87,
+    "screen_mount": {
+      "type": "full-motion articulating wall mount (extend, swivel, tilt)",
+      "vesa": "to suit the selected 43-inch TV, typically 200 x 200",
+      "stowedFace_x": 0.86,
+      "extendMax_m": 0.4,
+      "swivelMax_deg": 30,
+      "tilt_deg": [
+        -12,
+        3
+      ],
+      "fixing": "Do not hang it from the 30 mm oak backing alone. Bolt a steel or 18 mm plywood mounting plate behind the backing to the floor slab and the west external wall (or the RCC waist above). TO BE DESIGNED with the joiner for the TV weight plus arm leverage.",
+      "use": "Stowed flat, the screen sits inside the joinery face at x = 1.04. Pull it out at least 0.25 m, clear of the end-bay shelf fronts at x = 1.02, before swivelling up to about 25 degrees toward the sofa; it already faces the dining table when flat. Tilt down for the chaise. Set the swivel stops so it cannot swing into the end-bay shelves, and push it back flat after viewing so it never stands in the basin standing zone or the stair entry. Run power and HDMI through a flexible cable sleeve behind the backing."
+    },
+    "viewing_from_sofa": {
+      "distance_m": [
+        4.75,
+        5.42
+      ],
+      "offAxis_deg": {
+        "seatNearestTV": 15,
+        "middleSeat": 21,
+        "seatByChaise": 26,
+        "chaise": 32
+      },
+      "note": "Measured in the model from a 1.10 m seated eye height to all four screen corners: every seat, including the chaise, sees the whole screen now that the cubby sits at the stair end (tested on every build). Choose an IPS or OLED panel for the side seats; pull the mount out and swivel it about 20-25 degrees toward the sofa for films."
+    },
     "projection_into_passage_m": 0,
     "enclosed_storage_m3": 0.265,
     "open_display_m3": 0.05,
