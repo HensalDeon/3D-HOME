@@ -958,19 +958,45 @@
     },
     "19-exterior-front-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "569e8b08759672b1f226b74dd4e141a7fb3b212bdc58829641f0c64cccc6cf34",
-      "review": "Timber panels moderated toward the entrance/rear-utility oak references. Original vertical rooftop boarding restored after candidate review; source furniture and facade retained. Assistant visual comparison; generated dimensions, tones and unchanged geometry are not pixel-exact measurements.",
-      "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-detail-refinements",
-      "method": "built-in-imagegen-precise-object-edit",
+      "sha256": "3a74b72d8d6036d6c19e57dbe3b6b01f78a24704d81b1b9c1803013ab2f13e29",
+      "review": "Restored only the upper front-right narrow timber strip outside the curved balcony frame, with horizontal boards, original narrow extent and mounted wall light. Roof-level band below stair room remains warm-white with its charcoal cap/downlights. Existing entrance panel, balcony ceiling, vertical rooftop boards and honey-oak appearance visually retained; source building/camera, windows, furniture, car, gates/number, well, paving, vegetation and dusk scene retained. Assistant visual review only; generated photographs do not guarantee pixel-identical preservation of unchanged content/colour.",
+      "reviewed_at": "2026-10-25",
+      "revision": "2026-10-25-upper-right-timber-strip-restored",
+      "method": "built-in-imagegen-single-cladding-strip-edit",
       "user_approval": "pending",
-      "geometry_source": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff:interiors/images/19-exterior-front-wide.png",
+      "geometry_source": "Current reduced-cladding source recorded in exterior_timber_reduction_generation_history / exterior-timber-coverage-2026-10-25-19-exterior-front-wide",
       "style_source": [
         "01-entrance-wide.png",
         "22-exterior-rear-utility-wide.png"
       ],
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_detail_refinement_generation_history"
+      "prompt_key": "exterior_strip_restoration_generation_history",
+      "prompt_id": "exterior-upper-right-strip-2026-10-25-19-exterior-front-wide",
+      "presentation_revision": "exterior-upper-right-strip-restored-2026-10-25",
+      "superseded": {
+        "sha256": "2e49a17f738ac5d42278a8529b41c7a5c06f24c5d0fe00ad6320f3179bb8f391",
+        "size": [
+          1678,
+          937
+        ],
+        "path": "images/19-exterior-front-wide.png",
+        "source_record": "exterior-timber-coverage-2026-10-25-19-exterior-front-wide",
+        "source_history": "exterior_timber_reduction_generation_history",
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-d831b93c-2f70-46ef-a7b9-ad3c954b0359.png"
+      },
+      "render_review": "Compared with current target, matching BEFORE strip reference and unchanged entrance colour authority. Checked horizontal boards/extent, white roof band and white south wall, retained oak and source scene. Direct generated PNG retained without raster modifications.",
+      "dimension_review": {
+        "source": [
+          1678,
+          937
+        ],
+        "output": [
+          1678,
+          937
+        ],
+        "processing": "Native generated PNG copied byte-for-byte; no crop/resize/composite/recolour."
+      },
+      "cladding_revision": "exterior-upper-right-strip-restored-2026-10-25"
     },
     "20-exterior-rear-backyard-wide.png": {
       "status": "assistant-reviewed",
@@ -993,19 +1019,45 @@
     },
     "21-exterior-south-parking-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "3f7fcc04c21f7fc4c7df2c838e6db8a016cce93d4d90893c71add0f5567999f1",
-      "review": "Moderate warm oak coordinated across rooftop, parapet, balcony soffit, front panels and side strips while retaining existing board directions. Assistant visual comparison; generated dimensions, tones and unchanged geometry are not pixel-exact measurements.",
-      "reviewed_at": "2026-10-23",
-      "revision": "2026-10-23-detail-refinements",
-      "method": "built-in-imagegen-precise-object-edit",
+      "sha256": "7cdfe13e8b6bb254f92c3b114d67a3a20fdf0037391ffbf40d2b5218ce9b8989",
+      "review": "Restored the narrow front-right upper-floor strip outside the curved balcony frame, with horizontal boards and wall light. Long south wall remains plain white without timber strips; roof-level lit band remains white. Charcoal hoods/frames, retained oak areas and current honey-oak appearance, oblique parking composition, house/site objects and dusk scene visually retained. Assistant visual review only; generated photographs do not guarantee pixel-identical preservation of unchanged content/colour.",
+      "reviewed_at": "2026-10-25",
+      "revision": "2026-10-25-upper-right-timber-strip-restored",
+      "method": "built-in-imagegen-single-cladding-strip-edit",
       "user_approval": "pending",
-      "geometry_source": "8750ad3eabc89ab882fb1164d1a6a4e3d49e80ff:interiors/images/21-exterior-south-parking-wide.png",
+      "geometry_source": "Current reduced-cladding source recorded in exterior_timber_reduction_generation_history / exterior-timber-coverage-2026-10-25-21-exterior-south-parking-wide",
       "style_source": [
         "01-entrance-wide.png",
         "22-exterior-rear-utility-wide.png"
       ],
       "prompt_file": ".source/image-release.json",
-      "prompt_key": "house_detail_refinement_generation_history"
+      "prompt_key": "exterior_strip_restoration_generation_history",
+      "prompt_id": "exterior-upper-right-strip-2026-10-25-21-exterior-south-parking-wide",
+      "presentation_revision": "exterior-upper-right-strip-restored-2026-10-25",
+      "superseded": {
+        "sha256": "88799449a8c30af52e6a1512d808fdc20f16c1e005382d88d3ba9ca153900df2",
+        "size": [
+          1678,
+          937
+        ],
+        "path": "images/21-exterior-south-parking-wide.png",
+        "source_record": "exterior-timber-coverage-2026-10-25-21-exterior-south-parking-wide",
+        "source_history": "exterior_timber_reduction_generation_history",
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-d7671bff-634b-4014-bafd-7daa83142d6f.png"
+      },
+      "render_review": "Compared with current target, matching BEFORE strip reference and unchanged entrance colour authority. Checked horizontal boards/extent, white roof band and white south wall, retained oak and source scene. Direct generated PNG retained without raster modifications.",
+      "dimension_review": {
+        "source": [
+          1678,
+          937
+        ],
+        "output": [
+          1678,
+          937
+        ],
+        "processing": "Native generated PNG copied byte-for-byte; no crop/resize/composite/recolour."
+      },
+      "cladding_revision": "exterior-upper-right-strip-restored-2026-10-25"
     },
     "22-exterior-rear-utility-wide.png": {
       "status": "assistant-reviewed",
@@ -12441,5 +12493,487 @@
     "scope_limits": "Six existing images modified, one evening variant added, other 27 original images unchanged. Protected user-selected kitchen-opposite and kitchen-detail photos remain byte-identical. All model/drawing files and default selected-wide mapping unchanged. No video file recreated.",
     "source_retention": "Six requested reference JPGs copied unchanged from temporary source into .source/materials/video-references/. Pre-edit canonical photos recoverable from Git 98eb109a5ea257fd7843f212dd3cc9cd8b2e5593. Generated originals stay at built-in tool output paths; no project working-image directory added.",
     "approval": "Assistant visual comparison complete; user acceptance of finished new photographs pending."
+  },
+  "exterior_timber_reduction_generation_history": [
+    {
+      "id": "exterior-timber-coverage-2026-10-25-19-exterior-front-wide",
+      "date": "2026-10-25",
+      "image": "19-exterior-front-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen; direct output",
+      "user_prompt": "Edit Image 1, a dusk photograph of a two-storey house front. Reduce the timber cladding so oak appears in only three places. Make only these changes:\n1. The narrow vertical timber-clad strip on the right side of the upper floor, just outside the curved charcoal balcony frame, becomes smooth warm-white render matching the adjacent white walls. Keep its wall light if one is there.\n2. The horizontal timber band with small downlights directly below the rooftop stair room, at roof level, becomes warm-white render with the same thin charcoal top edge and the same downlights.\nKeep exactly as they are, in the same honey-oak colour as Image 2: the timber panel around the front door and ground-floor window, the timber ceiling of the upper balcony, and the vertical-board cladding of the rooftop stair room. Do not re-tone any timber.\nKeep everything not listed exactly as in Image 1: camera, framing, building massing, curved charcoal frames, charcoal blocks, windows, oak front door, woven chairs, railings, boundary walls, gates, house number, well, car, paving, landscaping, sky and dusk light. Photorealistic architectural photograph, straight verticals, fine texture. No added objects, no new text, no watermark.",
+      "prompt": "Use case: precise-object-edit.\nImage 1 (FIRST file) is 19-exterior-front-wide.png, the ONLY edit target and authority for this full front camera, geometry, framing, existing materials/colours and dusk light.\nImage 2 (SECOND file) is 01-entrance-wide.png, reference for the ALREADY CORRECT honey-oak colour only; do not copy its close-up camera or change any retained timber hue.\nLocal cladding-coverage correction only: replace the specified upper-right narrow strip and roof-level illuminated horizontal band with adjacent warm-white render. Keep those exact lights, cap edges and building geometry. All retained honey-oak remains the original colour, saturation, grain and board direction; rooftop boards remain VERTICAL. No global recolouring or added facade patches. Keep native source canvas/framing.\n\nEdit Image 1, a dusk photograph of a two-storey house front. Reduce the timber cladding so oak appears in only three places. Make only these changes:\n1. The narrow vertical timber-clad strip on the right side of the upper floor, just outside the curved charcoal balcony frame, becomes smooth warm-white render matching the adjacent white walls. Keep its wall light if one is there.\n2. The horizontal timber band with small downlights directly below the rooftop stair room, at roof level, becomes warm-white render with the same thin charcoal top edge and the same downlights.\nKeep exactly as they are, in the same honey-oak colour as Image 2: the timber panel around the front door and ground-floor window, the timber ceiling of the upper balcony, and the vertical-board cladding of the rooftop stair room. Do not re-tone any timber.\nKeep everything not listed exactly as in Image 1: camera, framing, building massing, curved charcoal frames, charcoal blocks, windows, oak front door, woven chairs, railings, boundary walls, gates, house number, well, car, paving, landscaping, sky and dusk light. Photorealistic architectural photograph, straight verticals, fine texture. No added objects, no new text, no watermark.",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Original edit target; sole camera/framing/geometry and retained-material-colour authority",
+          "historical_source": {
+            "source_commit": "3b151e8962e04d1df4e4c5d1563260546ad7f10e",
+            "path_at_commit": "interiors/images/19-exterior-front-wide.png",
+            "sha256": "569e8b08759672b1f226b74dd4e141a7fb3b212bdc58829641f0c64cccc6cf34",
+            "size": [
+              1678,
+              937
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "User-selected existing honey-oak colour reference only; no new recolouring or camera/layout override",
+          "path": "images/01-entrance-wide.png",
+          "sha256": "d23aaf24f0a0d2ebe4459813a0a34024911396dd1f5cc843e50f7945fb58ff3c"
+        }
+      ],
+      "geometry_reference": {
+        "camera": "Original target composition and building geometry",
+        "source_image": {
+          "source_commit": "3b151e8962e04d1df4e4c5d1563260546ad7f10e",
+          "path_at_commit": "interiors/images/19-exterior-front-wide.png",
+          "sha256": "569e8b08759672b1f226b74dd4e141a7fb3b212bdc58829641f0c64cccc6cf34",
+          "size": [
+            1678,
+            937
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1a1beed8df7abfd89028f86d510444965ab9d505a4d472c6db6176a0f8888529",
+        "fitout_layout": "../model/src/fitout-layout.json",
+        "fitout_sha256": "5577aeac5ad902f281c2f15aa33a6a9f2f4aa3066a04568c85d60d0d2cefc432",
+        "scope": "Photographic cladding-coverage correction only; measured model/drawing files unchanged."
+      },
+      "review": "Upper-right narrow facade timber strip replaced by warm-white render, with its wall light retained. Roof-level illuminated timber band below stair room replaced by render, keeping charcoal top edge and both downlights. Entrance/window panel, balcony ceiling and vertically boarded rooftop stair room retain the source honey-oak appearance. Source massing, curved frames, windows, seating, railings, gate/number, car, well, paving, landscaping and dusk composition visually retained. Assistant visual review only; generated photographs do not guarantee pixel-identical colour/content preservation.",
+      "retained_timber_colour_samples": {
+        "roof_vertical_oak": {
+          "box": [
+            640,
+            83,
+            678,
+            141
+          ],
+          "source_mean_rgb": [
+            169.69,
+            114.44,
+            71.08
+          ],
+          "output_mean_rgb": [
+            164.73,
+            107.9,
+            64.45
+          ],
+          "delta_rgb": [
+            -4.96,
+            -6.54,
+            -6.63
+          ]
+        },
+        "balcony_ceiling_oak": {
+          "box": [
+            840,
+            248,
+            866,
+            276
+          ],
+          "source_mean_rgb": [
+            124.37,
+            73.9,
+            33.04
+          ],
+          "output_mean_rgb": [
+            123.68,
+            70.99,
+            29.55
+          ],
+          "delta_rgb": [
+            -0.69,
+            -2.91,
+            -3.49
+          ]
+        },
+        "entrance_panel_oak": {
+          "box": [
+            749,
+            551,
+            804,
+            571
+          ],
+          "source_mean_rgb": [
+            179.46,
+            108.39,
+            47.49
+          ],
+          "output_mean_rgb": [
+            182.2,
+            108.77,
+            47.83
+          ],
+          "delta_rgb": [
+            2.74,
+            0.37,
+            0.34
+          ]
+        }
+      },
+      "sample_note": "RGB crop means are an image diagnostic, not material swatches or product colour measurements; slight generated pixel differences remain. No retone or other raster post-processing applied.",
+      "generation_count": 1,
+      "user_approval": "pending",
+      "output": {
+        "path": "images/19-exterior-front-wide.png",
+        "sha256": "2e49a17f738ac5d42278a8529b41c7a5c06f24c5d0fe00ad6320f3179bb8f391",
+        "size": [
+          1678,
+          937
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-d831b93c-2f70-46ef-a7b9-ad3c954b0359.png"
+      }
+    },
+    {
+      "id": "exterior-timber-coverage-2026-10-25-21-exterior-south-parking-wide",
+      "date": "2026-10-25",
+      "image": "21-exterior-south-parking-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen; direct output",
+      "user_prompt": "Edit Image 1, a dusk photograph of a two-storey house seen from the south-east corner beside the parking strip. Reduce the timber cladding so oak appears in only three places. Make only these changes:\n1. The narrow vertical timber strips on the long south side wall, between and beside the side windows, become smooth warm-white render matching the side wall. Keep the charcoal window hoods.\n2. The narrow vertical timber-clad strip on the front, just right of the curved charcoal balcony frame, becomes warm-white render.\n3. The horizontal timber band with small downlights directly below the rooftop stair room becomes warm-white render with the same thin charcoal top edge and the same downlights.\nKeep exactly as they are, in the same honey-oak colour as Image 2: the timber panel around the front door and ground-floor window, the timber ceiling of the upper balcony, and the vertical-board cladding of the rooftop stair room. Do not re-tone any timber.\nKeep everything not listed exactly as in Image 1: camera, framing, building massing, curved charcoal frames, charcoal blocks, windows, front door, woven chairs, railings, boundary walls, gates, house number, well, car, paving, landscaping, sky and dusk light. Photorealistic architectural photograph, straight verticals, fine texture. No added objects, no new text, no watermark.",
+      "prompt": "Use case: precise-object-edit.\nImage 1 (FIRST file) is 21-exterior-south-parking-wide.png, the ONLY edit target and source camera/geometry/material-colour authority. Retain this oblique corner view with the parking strip and car along the long wall at LEFT and front balcony at RIGHT.\nImage 2 (SECOND file) is 01-entrance-wide.png, the already-correct honey-oak colour reference ONLY. Do not copy its close-up crop or re-tone the target timber.\nReplace only the specified extra cladding with adjacent smooth warm-white render: long SOUTH-SIDE narrow wood strips, FRONT upper-right narrow strip outside the curved charcoal frame, and roof-level lit horizontal band below the stair room. Preserve the side windows' charcoal hoods, each existing light and thin roof cap. Keep honey-oak on the ground-floor entrance/window panel, upper balcony ceiling and rooftop stair-room vertical boards EXACTLY in the current colour and board directions. Do not paint the front door, chairs or timber railing accents white. Do not alter the building/camera, globally recolour or add other patches.\n\nEdit Image 1, a dusk photograph of a two-storey house seen from the south-east corner beside the parking strip. Reduce the timber cladding so oak appears in only three places. Make only these changes:\n1. The narrow vertical timber strips on the long south side wall, between and beside the side windows, become smooth warm-white render matching the side wall. Keep the charcoal window hoods.\n2. The narrow vertical timber-clad strip on the front, just right of the curved charcoal balcony frame, becomes warm-white render.\n3. The horizontal timber band with small downlights directly below the rooftop stair room becomes warm-white render with the same thin charcoal top edge and the same downlights.\nKeep exactly as they are, in the same honey-oak colour as Image 2: the timber panel around the front door and ground-floor window, the timber ceiling of the upper balcony, and the vertical-board cladding of the rooftop stair room. Do not re-tone any timber.\nKeep everything not listed exactly as in Image 1: camera, framing, building massing, curved charcoal frames, charcoal blocks, windows, front door, woven chairs, railings, boundary walls, gates, house number, well, car, paving, landscaping, sky and dusk light. Photorealistic architectural photograph, straight verticals, fine texture. No added objects, no new text, no watermark.",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Original edit target; sole camera/framing/geometry and retained-material-colour authority",
+          "historical_source": {
+            "source_commit": "3b151e8962e04d1df4e4c5d1563260546ad7f10e",
+            "path_at_commit": "interiors/images/21-exterior-south-parking-wide.png",
+            "sha256": "3f7fcc04c21f7fc4c7df2c838e6db8a016cce93d4d90893c71add0f5567999f1",
+            "size": [
+              1678,
+              937
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "User-selected existing honey-oak colour reference only; no new recolouring or camera/layout override",
+          "path": "images/01-entrance-wide.png",
+          "sha256": "d23aaf24f0a0d2ebe4459813a0a34024911396dd1f5cc843e50f7945fb58ff3c"
+        }
+      ],
+      "geometry_reference": {
+        "camera": "Original target composition and building geometry",
+        "source_image": {
+          "source_commit": "3b151e8962e04d1df4e4c5d1563260546ad7f10e",
+          "path_at_commit": "interiors/images/21-exterior-south-parking-wide.png",
+          "sha256": "3f7fcc04c21f7fc4c7df2c838e6db8a016cce93d4d90893c71add0f5567999f1",
+          "size": [
+            1678,
+            937
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1a1beed8df7abfd89028f86d510444965ab9d505a4d472c6db6176a0f8888529",
+        "fitout_layout": "../model/src/fitout-layout.json",
+        "fitout_sha256": "5577aeac5ad902f281c2f15aa33a6a9f2f4aa3066a04568c85d60d0d2cefc432",
+        "scope": "Photographic cladding-coverage correction only; measured model/drawing files unchanged."
+      },
+      "review": "Narrow south-side timber strips, front upper-right strip and lit roof-level horizontal band replaced by adjacent warm-white render. Charcoal window hoods, cap edges and existing lights retained. Entrance/window panel, balcony ceiling and rooftop vertical boards retain their source honey-oak appearance. Oblique parking camera, massing, curved frames, windows, furniture, gates/number, car, well, paving, landscaping and dusk light visually retained. Assistant visual review only; generated photographs do not guarantee pixel-identical colour/content preservation.",
+      "retained_timber_colour_samples": {
+        "roof_vertical_oak": {
+          "box": [
+            766,
+            77,
+            800,
+            130
+          ],
+          "source_mean_rgb": [
+            171.4,
+            122.16,
+            75.75
+          ],
+          "output_mean_rgb": [
+            172.4,
+            121.5,
+            74.66
+          ],
+          "delta_rgb": [
+            1.0,
+            -0.66,
+            -1.09
+          ]
+        },
+        "balcony_ceiling_oak": {
+          "box": [
+            1040,
+            260,
+            1090,
+            280
+          ],
+          "source_mean_rgb": [
+            133.34,
+            77.27,
+            29.65
+          ],
+          "output_mean_rgb": [
+            134.2,
+            76.04,
+            28.5
+          ],
+          "delta_rgb": [
+            0.85,
+            -1.22,
+            -1.15
+          ]
+        },
+        "entrance_panel_oak": {
+          "box": [
+            934,
+            535,
+            965,
+            557
+          ],
+          "source_mean_rgb": [
+            151.99,
+            96.26,
+            46.87
+          ],
+          "output_mean_rgb": [
+            152.93,
+            95.02,
+            46.3
+          ],
+          "delta_rgb": [
+            0.95,
+            -1.24,
+            -0.57
+          ]
+        }
+      },
+      "sample_note": "RGB crop means are an image diagnostic, not material swatches or product colour measurements; slight generated pixel differences remain. No retone or other raster post-processing applied.",
+      "generation_count": 1,
+      "user_approval": "pending",
+      "output": {
+        "path": "images/21-exterior-south-parking-wide.png",
+        "sha256": "88799449a8c30af52e6a1512d808fdc20f16c1e005382d88d3ba9ca153900df2",
+        "size": [
+          1678,
+          937
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-d7671bff-634b-4014-bafd-7daa83142d6f.png"
+      }
+    }
+  ],
+  "exterior_timber_reduction_decision": {
+    "date": "2026-10-25",
+    "scope": [
+      "19-exterior-front-wide.png",
+      "21-exterior-south-parking-wide.png"
+    ],
+    "request": "Reduce exterior cladding only where specified. Retain current honey-oak colour; no retone.",
+    "retained_cladding": [
+      "Ground-floor entrance/window panel",
+      "Upper-balcony ceiling",
+      "Rooftop stair-room vertical-board cladding"
+    ],
+    "removed_cladding": "Upper front-right narrow strip and illuminated roof-level horizontal band in both views; narrow south-side strips additionally removed in parking view. Replace with adjacent smooth warm-white render, retain lights/charcoal top edges/window hoods.",
+    "colour_reference": {
+      "path": "images/01-entrance-wide.png",
+      "sha256": "d23aaf24f0a0d2ebe4459813a0a34024911396dd1f5cc843e50f7945fb58ff3c",
+      "role": "Existing colour only; image unchanged."
+    },
+    "protected_elements": "Current oak hue/grain/board directions on retained zones, front door and furnishings; building massing/curved charcoal frames, windows/railings, car/gates/house number/well, paving/landscaping/sky and dusk light.",
+    "colour_review": "Retained timber compared visually and by recorded crop means with original photos. Same honey-oak appearance requested; no global recolour/post-process. Generative outputs are not guaranteed pixel-identical. Physical shade remains a later sample-selection decision.",
+    "output_handling": "One built-in imagegen run per target. Both source canvas sizes retained. Every final file byte-identical to selected generated PNG; no local raster edits.",
+    "scope_limits": "Only two named photos and consuming metadata/review documents change. Other 32 photos, including entrance01 and rear20/22, and all model/drawing files unchanged.",
+    "retention": "Pre-edit sources recoverable from Git 3b151e8962e04d1df4e4c5d1563260546ad7f10e. Exact prompts/roles/hashes/reviews consolidated here; generated originals remain in built-in tool output directory. No project working-image folder added.",
+    "approval": "Assistant visual comparison complete; user acceptance pending.",
+    "follow_up": "Latest exterior_strip_restoration_decision restores the narrow upper front-right strip only. Earlier roof-band and south-side strip removals remain current; the earlier three-cladding-elements-only rule is superseded by this specific restoration."
+  },
+  "exterior_strip_restoration_generation_history": [
+    {
+      "id": "exterior-upper-right-strip-2026-10-25-19-exterior-front-wide",
+      "date": "2026-10-25",
+      "image": "19-exterior-front-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen; direct selected output",
+      "user_prompt": "Edit Image 1, a dusk photograph of a two-storey house. Make only one change:\n1. Restore the narrow vertical timber-clad strip on the upper floor just outside the right side of the curved charcoal balcony frame, exactly as it appears in Image 2: same position, width, height and horizontal board pattern, running from the roof-level parapet down to the top of the ground-floor charcoal frame, with the existing wall light mounted on it. Use the same honey-oak colour as the entrance cladding in Image 3 and the other timber in Image 1.\nDo not restore any other timber from Image 2: the band with downlights below the rooftop stair room stays warm-white render, and the south side wall (if visible) stays plain white with no timber strips. Do not re-tone any existing timber.\nKeep everything not listed exactly as in Image 1: camera, framing, building massing, curved charcoal frames, charcoal blocks, windows, front door, woven chairs, railings, boundary walls, gates, house number, well, car, paving, landscaping, sky and dusk light. Photorealistic architectural photograph, straight verticals, fine texture. No added objects, no new text, no watermark.",
+      "prompt": "Use case: precise-object-edit. Edit FIRST PHOTO only.\nImage 1 = current 19-exterior-front-wide.png: the full front dusk view with the roof-level downlight band already WHITE and the upper-right narrow facade strip currently WHITE. This current photo is the camera/framing/geometry and all non-requested-content authority.\nImage 2 = matching 19-exterior-front-wide.BEFORE.png: reference ONLY for the single narrow right-hand upper-floor TIMBER STRIP, its original extent/horizontal boards and mounted wall sconce. Do not copy back its timber roof band.\nImage 3 = 01-entrance-wide.png: existing honey-oak colour reference only. No existing timber recolour.\nRestore that ONE strip outside the RIGHT edge of the upper curved charcoal frame; keep its original narrow dimensions and sconce. Keep the current WHITE band directly below the rooftop stair room with its charcoal edge and downlights. All remaining objects/materials/current dusk light and the original1678x937 composition stay as in Image1.\n\nEdit Image 1, a dusk photograph of a two-storey house. Make only one change:\n1. Restore the narrow vertical timber-clad strip on the upper floor just outside the right side of the curved charcoal balcony frame, exactly as it appears in Image 2: same position, width, height and horizontal board pattern, running from the roof-level parapet down to the top of the ground-floor charcoal frame, with the existing wall light mounted on it. Use the same honey-oak colour as the entrance cladding in Image 3 and the other timber in Image 1.\nDo not restore any other timber from Image 2: the band with downlights below the rooftop stair room stays warm-white render, and the south side wall (if visible) stays plain white with no timber strips. Do not re-tone any existing timber.\nKeep everything not listed exactly as in Image 1: camera, framing, building massing, curved charcoal frames, charcoal blocks, windows, front door, woven chairs, railings, boundary walls, gates, house number, well, car, paving, landscaping, sky and dusk light. Photorealistic architectural photograph, straight verticals, fine texture. No added objects, no new text, no watermark.",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Current reduced-cladding photograph; sole camera/geometry and all unchanged-content authority",
+          "source_generation": {
+            "sha256": "2e49a17f738ac5d42278a8529b41c7a5c06f24c5d0fe00ad6320f3179bb8f391",
+            "size": [
+              1678,
+              937
+            ],
+            "path": "images/19-exterior-front-wide.png",
+            "source_record": "exterior-timber-coverage-2026-10-25-19-exterior-front-wide",
+            "source_history": "exterior_timber_reduction_generation_history",
+            "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-d831b93c-2f70-46ef-a7b9-ad3c954b0359.png"
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Matching user-supplied BEFORE photograph; only narrow front-right strip geometry, horizontal board pattern and fixture reference",
+          "historical_source": {
+            "supplied_path": "/private/tmp/claude-501/-Users-hensaldeon-Documents-personal-dream-home/420d3692-9656-4e92-8735-187309d84e92/scratchpad/ext/19-exterior-front-wide.BEFORE.png",
+            "source_commit": "3b151e8962e04d1df4e4c5d1563260546ad7f10e",
+            "path_at_commit": "interiors/images/19-exterior-front-wide.png",
+            "sha256": "569e8b08759672b1f226b74dd4e141a7fb3b212bdc58829641f0c64cccc6cf34",
+            "size": [
+              1678,
+              937
+            ]
+          }
+        },
+        {
+          "logical_image": 3,
+          "role": "Unchanged entrance photograph; current honey-oak colour reference only",
+          "path": "images/01-entrance-wide.png",
+          "sha256": "d23aaf24f0a0d2ebe4459813a0a34024911396dd1f5cc843e50f7945fb58ff3c"
+        }
+      ],
+      "geometry_reference": {
+        "camera": "Current target photograph from exterior-timber-coverage-2026-10-25-19-exterior-front-wide",
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1a1beed8df7abfd89028f86d510444965ab9d505a4d472c6db6176a0f8888529",
+        "scope": "Photographic restoration of one cladding strip only; no measured model/drawing changes."
+      },
+      "review": "Restored only the upper front-right narrow timber strip outside the curved balcony frame, with horizontal boards, original narrow extent and mounted wall light. Roof-level band below stair room remains warm-white with its charcoal cap/downlights. Existing entrance panel, balcony ceiling, vertical rooftop boards and honey-oak appearance visually retained; source building/camera, windows, furniture, car, gates/number, well, paving, vegetation and dusk scene retained. Assistant visual review only; generated photographs do not guarantee pixel-identical preservation of unchanged content/colour.",
+      "failed_requests": [],
+      "successful_outputs": 1,
+      "user_approval": "pending",
+      "output": {
+        "path": "images/19-exterior-front-wide.png",
+        "sha256": "3a74b72d8d6036d6c19e57dbe3b6b01f78a24704d81b1b9c1803013ab2f13e29",
+        "size": [
+          1678,
+          937
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-1f8a8943-0ebd-43e9-9e0a-934d1d7ee0e3.png"
+      }
+    },
+    {
+      "id": "exterior-upper-right-strip-2026-10-25-21-exterior-south-parking-wide",
+      "date": "2026-10-25",
+      "image": "21-exterior-south-parking-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "built-in image_gen; direct selected output",
+      "user_prompt": "Edit Image 1, a dusk photograph of a two-storey house. Make only one change:\n1. Restore the narrow vertical timber-clad strip on the upper floor just outside the right side of the curved charcoal balcony frame, exactly as it appears in Image 2: same position, width, height and horizontal board pattern, running from the roof-level parapet down to the top of the ground-floor charcoal frame, with the existing wall light mounted on it. Use the same honey-oak colour as the entrance cladding in Image 3 and the other timber in Image 1.\nDo not restore any other timber from Image 2: the band with downlights below the rooftop stair room stays warm-white render, and the south side wall (if visible) stays plain white with no timber strips. Do not re-tone any existing timber.\nKeep everything not listed exactly as in Image 1: camera, framing, building massing, curved charcoal frames, charcoal blocks, windows, front door, woven chairs, railings, boundary walls, gates, house number, well, car, paving, landscaping, sky and dusk light. Photorealistic architectural photograph, straight verticals, fine texture. No added objects, no new text, no watermark.",
+      "prompt": "Use case: precise-object-edit. Edit FIRST PHOTO only.\nImage 1 = current 21-exterior-south-parking-wide.png: the oblique dusk parking-side view, with a plain WHITE south wall on the LEFT, WHITE roof-level lit band, and currently WHITE narrow front strip just OUTSIDE THE RIGHT EDGE of the curved upper-balcony charcoal frame. This CURRENT photo is the camera/geometry/all-other-content authority.\nImage 2 = matching 21-exterior-south-parking-wide.BEFORE.png: reference ONLY for that narrow FRONT upper-right strip's exact original extent, horizontal timber boards and fixture visibility. Do not copy the old wood strips on the long left/south wall or old wood roof band.\nImage 3 = 01-entrance-wide.png: existing honey-oak colour reference only; do not re-tone any existing timber.\nRestore only the narrow vertical FRONT strip at the far RIGHT of the balcony frame, from rooftop-parapet level down to the ground-floor frame. Keep existing wall-light position/visibility as in the matching BEFORE view, without inventing an extra light. South wall stays entirely white, with charcoal window hoods unchanged; roof-level band with downlights stays white. Current1678x937 composition, building, objects and dusk light stay fixed.\n\nEdit Image 1, a dusk photograph of a two-storey house. Make only one change:\n1. Restore the narrow vertical timber-clad strip on the upper floor just outside the right side of the curved charcoal balcony frame, exactly as it appears in Image 2: same position, width, height and horizontal board pattern, running from the roof-level parapet down to the top of the ground-floor charcoal frame, with the existing wall light mounted on it. Use the same honey-oak colour as the entrance cladding in Image 3 and the other timber in Image 1.\nDo not restore any other timber from Image 2: the band with downlights below the rooftop stair room stays warm-white render, and the south side wall (if visible) stays plain white with no timber strips. Do not re-tone any existing timber.\nKeep everything not listed exactly as in Image 1: camera, framing, building massing, curved charcoal frames, charcoal blocks, windows, front door, woven chairs, railings, boundary walls, gates, house number, well, car, paving, landscaping, sky and dusk light. Photorealistic architectural photograph, straight verticals, fine texture. No added objects, no new text, no watermark.",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Current reduced-cladding photograph; sole camera/geometry and all unchanged-content authority",
+          "source_generation": {
+            "sha256": "88799449a8c30af52e6a1512d808fdc20f16c1e005382d88d3ba9ca153900df2",
+            "size": [
+              1678,
+              937
+            ],
+            "path": "images/21-exterior-south-parking-wide.png",
+            "source_record": "exterior-timber-coverage-2026-10-25-21-exterior-south-parking-wide",
+            "source_history": "exterior_timber_reduction_generation_history",
+            "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-d7671bff-634b-4014-bafd-7daa83142d6f.png"
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Matching user-supplied BEFORE photograph; only narrow front-right strip geometry, horizontal board pattern and fixture reference",
+          "historical_source": {
+            "supplied_path": "/private/tmp/claude-501/-Users-hensaldeon-Documents-personal-dream-home/420d3692-9656-4e92-8735-187309d84e92/scratchpad/ext/21-exterior-south-parking-wide.BEFORE.png",
+            "source_commit": "3b151e8962e04d1df4e4c5d1563260546ad7f10e",
+            "path_at_commit": "interiors/images/21-exterior-south-parking-wide.png",
+            "sha256": "3f7fcc04c21f7fc4c7df2c838e6db8a016cce93d4d90893c71add0f5567999f1",
+            "size": [
+              1678,
+              937
+            ]
+          }
+        },
+        {
+          "logical_image": 3,
+          "role": "Unchanged entrance photograph; current honey-oak colour reference only",
+          "path": "images/01-entrance-wide.png",
+          "sha256": "d23aaf24f0a0d2ebe4459813a0a34024911396dd1f5cc843e50f7945fb58ff3c"
+        }
+      ],
+      "geometry_reference": {
+        "camera": "Current target photograph from exterior-timber-coverage-2026-10-25-21-exterior-south-parking-wide",
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1a1beed8df7abfd89028f86d510444965ab9d505a4d472c6db6176a0f8888529",
+        "scope": "Photographic restoration of one cladding strip only; no measured model/drawing changes."
+      },
+      "review": "Restored the narrow front-right upper-floor strip outside the curved balcony frame, with horizontal boards and wall light. Long south wall remains plain white without timber strips; roof-level lit band remains white. Charcoal hoods/frames, retained oak areas and current honey-oak appearance, oblique parking composition, house/site objects and dusk scene visually retained. Assistant visual review only; generated photographs do not guarantee pixel-identical preservation of unchanged content/colour.",
+      "failed_requests": [
+        {
+          "method": "built-in image_gen",
+          "prompt": "Use case: precise-object-edit. Edit FIRST PHOTO only.\nImage 1 = current 21-exterior-south-parking-wide.png: the oblique dusk parking-side view, with a plain WHITE south wall on the LEFT, WHITE roof-level lit band, and currently WHITE narrow front strip just OUTSIDE THE RIGHT EDGE of the curved upper-balcony charcoal frame. This CURRENT photo is the camera/geometry/all-other-content authority.\nImage 2 = matching 21-exterior-south-parking-wide.BEFORE.png: reference ONLY for that narrow FRONT upper-right strip's exact original extent, horizontal timber boards and fixture visibility. Do not copy the old wood strips on the long left/south wall or old wood roof band.\nImage 3 = 01-entrance-wide.png: existing honey-oak colour reference only; do not re-tone any existing timber.\nRestore only the narrow vertical FRONT strip at the far RIGHT of the balcony frame, from rooftop-parapet level down to the ground-floor frame. Keep existing wall-light position/visibility as in the matching BEFORE view, without inventing an extra light. South wall stays entirely white, with charcoal window hoods unchanged; roof-level band with downlights stays white. Current1678x937 composition, building, objects and dusk light stay fixed.\n\nEdit Image 1, a dusk photograph of a two-storey house. Make only one change:\n1. Restore the narrow vertical timber-clad strip on the upper floor just outside the right side of the curved charcoal balcony frame, exactly as it appears in Image 2: same position, width, height and horizontal board pattern, running from the roof-level parapet down to the top of the ground-floor charcoal frame, with the existing wall light mounted on it. Use the same honey-oak colour as the entrance cladding in Image 3 and the other timber in Image 1.\nDo not restore any other timber from Image 2: the band with downlights below the rooftop stair room stays warm-white render, and the south side wall (if visible) stays plain white with no timber strips. Do not re-tone any existing timber.\nKeep everything not listed exactly as in Image 1: camera, framing, building massing, curved charcoal frames, charcoal blocks, windows, front door, woven chairs, railings, boundary walls, gates, house number, well, car, paving, landscaping, sky and dusk light. Photorealistic architectural photograph, straight verticals, fine texture. No added objects, no new text, no watermark.",
+          "refs": [
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/21-exterior-south-parking-wide.png",
+            "/private/tmp/claude-501/-Users-hensaldeon-Documents-personal-dream-home/420d3692-9656-4e92-8735-187309d84e92/scratchpad/ext/21-exterior-south-parking-wide.BEFORE.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/01-entrance-wide.png"
+          ],
+          "error": "Connection failed: error sending request; no generated output returned."
+        }
+      ],
+      "successful_outputs": 1,
+      "user_approval": "pending",
+      "output": {
+        "path": "images/21-exterior-south-parking-wide.png",
+        "sha256": "7cdfe13e8b6bb254f92c3b114d67a3a20fdf0037391ffbf40d2b5218ce9b8989",
+        "size": [
+          1678,
+          937
+        ],
+        "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-825bf590-e8fc-4703-b234-0b71daab3fa5.png"
+      }
+    }
+  ],
+  "exterior_strip_restoration_decision": {
+    "date": "2026-10-25",
+    "scope": [
+      "19-exterior-front-wide.png",
+      "21-exterior-south-parking-wide.png"
+    ],
+    "request": "Sequentially restore only the upper front-right timber strip from each matching BEFORE image. Keep roof band and long south wall white; do not re-tone retained timber.",
+    "run_order": [
+      "19-exterior-front-wide.png",
+      "21-exterior-south-parking-wide.png"
+    ],
+    "restored": "Narrow vertical strip just outside right edge of curved balcony frame, original width/height/position from parapet to ground-floor frame, horizontal boards and mounted wall light.",
+    "retained_current_changes": "Warm-white lit roof band with existing charcoal cap/downlights, plain white south wall and charcoal window hoods remain. No other BEFORE timber restored.",
+    "colour_reference": {
+      "path": "images/01-entrance-wide.png",
+      "sha256": "d23aaf24f0a0d2ebe4459813a0a34024911396dd1f5cc843e50f7945fb58ff3c",
+      "role": "Current colour only; no retone requested or post-processed."
+    },
+    "before_source_retention": {
+      "references": [
+        {
+          "supplied_path": "/private/tmp/claude-501/-Users-hensaldeon-Documents-personal-dream-home/420d3692-9656-4e92-8735-187309d84e92/scratchpad/ext/19-exterior-front-wide.BEFORE.png",
+          "source_commit": "3b151e8962e04d1df4e4c5d1563260546ad7f10e",
+          "path_at_commit": "interiors/images/19-exterior-front-wide.png",
+          "sha256": "569e8b08759672b1f226b74dd4e141a7fb3b212bdc58829641f0c64cccc6cf34",
+          "size": [
+            1678,
+            937
+          ]
+        },
+        {
+          "supplied_path": "/private/tmp/claude-501/-Users-hensaldeon-Documents-personal-dream-home/420d3692-9656-4e92-8735-187309d84e92/scratchpad/ext/21-exterior-south-parking-wide.BEFORE.png",
+          "source_commit": "3b151e8962e04d1df4e4c5d1563260546ad7f10e",
+          "path_at_commit": "interiors/images/21-exterior-south-parking-wide.png",
+          "sha256": "3f7fcc04c21f7fc4c7df2c838e6db8a016cce93d4d90893c71add0f5567999f1",
+          "size": [
+            1678,
+            937
+          ]
+        }
+      ],
+      "reason": "Both supplied temporary BEFORE PNGs are byte-identical to originals in Git 3b151e8962e04d1df4e4c5d1563260546ad7f10e. Exact recovery paths/hashes retained here; no duplicate project image copies necessary."
+    },
+    "current_source_retention": "Current pre-restoration files were uncommitted outputs of the preceding reduction. Their exact hashes/generated paths and prior history IDs are recorded as source_generation, rather than incorrectly attributing them to Git HEAD.",
+    "generation": "Front generated/reviewed first, then parking. First parking request failed with a connection error and returned no image; identical request retried successfully.",
+    "output_handling": "Both final files equal selected generated PNGs byte-for-byte and retain source 1678x937 canvases. No compositing, local raster edits, resizing or recolouring.",
+    "scope_limits": "Only two named photos and consuming review metadata change. Other 32 images, entrance/rear references and all model/drawing files unchanged. No working revision folder or new duplicate assets.",
+    "approval": "Assistant visual comparison complete; user acceptance pending."
   }
 }

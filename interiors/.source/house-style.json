@@ -245,11 +245,30 @@
       "styling_revision": "2026-10-25-video-inspired-styling",
       "variant_of": "images/02-living-wide.png",
       "role_scope": "Evening lighting example; daytime kitchen/detail remain house material authorities."
+    },
+    {
+      "file": "images/19-exterior-front-wide.png",
+      "group": "Exterior",
+      "sha256": "3a74b72d8d6036d6c19e57dbe3b6b01f78a24704d81b1b9c1803013ab2f13e29",
+      "role": "Restored only the upper front-right narrow timber strip outside the curved balcony frame, with horizontal boards, original narrow extent and mounted wall light. Roof-level band below stair room remains warm-white with its charcoal cap/downlights. Existing entrance panel, balcony ceiling, vertical rooftop boards and honey-oak appearance visually retained; source building/camera, windows, furniture, car, gates/number, well, paving, vegetation and dusk scene retained.",
+      "cladding_revision": "2026-10-25-upper-right-strip-restored"
+    },
+    {
+      "file": "images/21-exterior-south-parking-wide.png",
+      "group": "Exterior",
+      "sha256": "7cdfe13e8b6bb254f92c3b114d67a3a20fdf0037391ffbf40d2b5218ce9b8989",
+      "role": "Restored the narrow front-right upper-floor strip outside the curved balcony frame, with horizontal boards and wall light. Long south wall remains plain white without timber strips; roof-level lit band remains white. Charcoal hoods/frames, retained oak areas and current honey-oak appearance, oblique parking composition, house/site objects and dusk scene visually retained.",
+      "cladding_revision": "2026-10-25-upper-right-strip-restored"
     }
   ],
   "common_floor_reference": {
     "path": "images/02-living-wide.png",
     "sha256": "342271d2ed5d1e05ef86fec0ecb454874760d3be412599836d6b35c09ee5405a",
     "selection": "Current living photograph retains the selected matte floor appearance after the 25 October object styling. Earlier exact floor-generation input hashes remain historical release records."
+  },
+  "exterior_retained_oak_reference": {
+    "path": "images/01-entrance-wide.png",
+    "sha256": "d23aaf24f0a0d2ebe4459813a0a34024911396dd1f5cc843e50f7945fb58ff3c",
+    "role": "Retained current honey-oak colour; latest exterior changes coverage only."
   }
 }

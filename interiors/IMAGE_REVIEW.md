@@ -1,5 +1,23 @@
 # Interior image register
 
+## Upper front-right timber strip restored · 25 October 2026
+
+[Front exterior](images/19-exterior-front-wide.png) and then [parking exterior](images/21-exterior-south-parking-wide.png) restore only the narrow upper-floor timber strip outside the right side of the curved charcoal balcony frame. Matching BEFORE photographs govern its original extent and horizontal boards; unchanged entrance 01 governs the current honey-oak colour. The strip has its mounted wall light. The roof-level band with downlights remains warm-white, and the parking view’s long south wall remains plain white without timber strips. Existing charcoal hoods/caps, retained oak areas, architecture, site contents and dusk scene are visually retained.
+
+The first parking request lost its connection and returned no generated image; the same request was retried successfully. Both selected native 1678 × 937 PNGs are saved directly without compositing, cropping, resizing or recolouring. Assistant visual comparison is complete; user acceptance is pending. Generated images are illustrative rather than pixel-identical preservation guarantees. Other 32 photographs and all model/drawing files are unchanged.
+
+The supplied temporary BEFORE files match originals already stored in Git `3b151e8962e04d1df4e4c5d1563260546ad7f10e`. Recovery paths and hashes are recorded without adding duplicate images. Current pre-restoration photos are recoverable from the preceding reduction-generation history; they were uncommitted, so their provenance is recorded by generated-file hash/history ID rather than Git HEAD. Exact prompts, three ordered input roles/hashes per run, failed-request record and output hashes are under `exterior_strip_restoration_generation_history` and `exterior_strip_restoration_decision` in [the release manifest](.source/image-release.json). This restoration supersedes the earlier instruction to remove this particular front strip; the white roof band and south wall remain current.
+
+## Reduced front/side timber coverage · 25 October 2026
+
+[Front exterior](images/19-exterior-front-wide.png) replaces the narrow timber strip to the right of the upper curved balcony frame and the lit horizontal band below the rooftop stair room with warm-white render. [South parking exterior](images/21-exterior-south-parking-wide.png) makes the same changes and removes the extra narrow strips along the south wall. Existing wall lights, roof-band downlights, thin charcoal cap and charcoal window hoods are retained.
+
+Oak cladding remains on the entrance/ground-floor-window panel, upper-balcony ceiling and rooftop stair room only; rooftop boards stay vertical. Existing front door/furnishings retain their timber finish. This is a coverage edit, with the source honey-oak appearance retained and unchanged entrance 01 supplied as the colour reference. No global re-tone or post-generation raster adjustment was made. Both selected generated PNGs are copied directly at their original 1678 × 937 canvas sizes.
+
+Assistant review compared source/output geometry, coverage, existing lights and retained timber appearance. Crop-mean RGB diagnostics are recorded for retained timber; small generated pixel differences remain, so this is not pixel-identical colour preservation or a physical material colour specification. User acceptance is pending. Entrance 01, rear 20/rear 22, all other 32 photographs and all model/drawing files are unchanged. No working revision folder or duplicate final image was added.
+
+Exact supplied/generation prompts, two ordered input roles/hashes per run, colour diagnostics and output hashes are under `exterior_timber_reduction_generation_history` and `exterior_timber_reduction_decision` in [the release manifest](.source/image-release.json). Pre-edit photographs are recoverable from Git `3b151e8962e04d1df4e4c5d1563260546ad7f10e`.
+
 ## Video-reference furnishings and evening variant · 25 October 2026
 
 **Drawings and model coordinated (25 October 2026).** Only the dining fit-out is scheduled: [fitout-layout.json](../model/src/fitout-layout.json) now specifies light-oak wishbone chairs with paper-cord seats and a dimmable 0.55 m woven cane globe pendant, and records the evening lighting scheme from [02-living-evening.png](images/02-living-evening.png) as a note for the electrical layout. Sheet 03, `dimensions.json` and the 3D model are rebuilt to match. The cushions, throw, walnut stool, mushroom lamps, vases, mirrors and kitchen canister shelf are loose decor and remain photographic staging.
