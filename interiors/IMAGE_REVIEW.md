@@ -1,5 +1,22 @@
 # Interior image register
 
+## Rectangular oak slatted screen · 25 October 2026
+
+The four committed living/dining photographs receive one straight rectangular muted-oak divider between the sofa far arm and the near end of the dining table. The user's attached portrait governs the perimeter frame and thin evenly spaced slats. The selected daylight living edit was reviewed first and supplied for all three other views. The central walkway remains open, the dining set is visible through the slats, and the screen stops before the window-side curtain. The wider views show clearance below the ceiling; the dining close-up naturally crops the screen's top. Evening retains blue dusk and warm practical lighting with downlights off.
+
+| Saved image | Screen review |
+|---|---|
+| [02-living-wide.png](images/02-living-wide.png) | Straight rectangular muted-oak perimeter frame with thin evenly spaced vertical slats added beyond the sofa far arm, between sofa and dining table. Clear gap below ceiling; window curtain remains to the right, dining visible through slats and centre walkway open. Reviewed first as the screen consistency reference. Source stair, TV/basin joinery, furniture, accessories, matte floor and daylight composition visually retained. |
+| [02-living-evening.png](images/02-living-evening.png) | Matching rectangular framed oak slatted screen added between sofa and dining table using the reviewed daylight living reference. Warm cane-pendant glow shows through the slats. Blue dusk window, ceiling downlights off, practical lamps, furniture, textiles, decor and evening camera visually retained. |
+| [02-ground-floor-overview-wide.png](images/02-ground-floor-overview-wide.png) | Matching rectangular framed oak screen added between the right sofa far arm and near dining-table end, shown from the overview camera. Clear gap below ceiling and open circulation beside the dining chairs. Both sofas, coffee table, stool/books, stair, TV/basin joinery, openings, dining/artwork, curtains and matte floor visually retained. |
+| [16-dining-wide.png](images/16-dining-wide.png) | Same rectangular slatted oak screen shown obliquely at the right near end of the table, between table and cropped sofa arm; top naturally falls outside this close framing. Original two wishbone chairs, cushioned bench, vase/branches, smoked bowl, cane pendant, artwork, door/window/curtains and matte floor visually retained. |
+
+The initial daylight candidate was too broad/high and was refined before use. The first overview candidate lacked the ceiling gap and was replaced. The abandoned curved-screen concept was never saved into the project. All four targets were taken from Git `242a0bfd8eee9951a6b15a3d56ab3d515fb926ff`, rather than earlier generated attempts.
+
+Selected native built-in imagegen PNGs are saved directly without local compositing, recolouring, resizing or cropping. Living day/evening and overview retain their source canvas sizes; dining's native output is 1531 × 1027 rather than 1532 × 1027. Source camera and unrelated contents were compared visually. Generated presentations do not guarantee pixel-identical preservation or establish measured joinery dimensions. Assistant review is complete; user acceptance is pending.
+
+The other 30 photographs, both kitchen references, user-selected kitchen opposite, model and drawing files remain unchanged. Exact user/generation prompts, input roles/local hashes, reference handling, rejected attempts and output hashes are under `rectangular_slatted_screen_generation_history` and `rectangular_slatted_screen_decision` in [the release manifest](.source/image-release.json). The original user upload has no exposed filesystem path/hash; its screen style is carried in the reviewed daylight reference.
+
 ## Upper front-right timber strip restored · 25 October 2026
 
 [Front exterior](images/19-exterior-front-wide.png) and then [parking exterior](images/21-exterior-south-parking-wide.png) restore only the narrow upper-floor timber strip outside the right side of the curved charcoal balcony frame. Matching BEFORE photographs govern its original extent and horizontal boards; unchanged entrance 01 governs the current honey-oak colour. The strip has its mounted wall light. The roof-level band with downlights remains warm-white, and the parking view’s long south wall remains plain white without timber strips. Existing charcoal hoods/caps, retained oak areas, architecture, site contents and dusk scene are visually retained.

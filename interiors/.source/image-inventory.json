@@ -13,11 +13,11 @@
       1672,
       941
     ],
-    "sha256": "8d24e5db0ad10eb6d00f0d9afd0be8e371ffa07a7379c263108b142db87d3011"
+    "sha256": "f83c708e46126a2f5a1a94c42996e692a92a3d9f504c142336304ae87bfab6b0"
   },
   {
     "file": "02-living-evening.png",
-    "sha256": "d3595f8f39a497a2585abd84d19ea61c34fc03508456e8a0abd7e7628df09c2c",
+    "sha256": "18dddd2d05a5763848e9587bf4de2dba340fe7dd4d8b9500dea197b4c442e7bf",
     "size": [
       1536,
       1024
@@ -29,7 +29,7 @@
       1536,
       1024
     ],
-    "sha256": "342271d2ed5d1e05ef86fec0ecb454874760d3be412599836d6b35c09ee5405a"
+    "sha256": "a3c62e9d061ac6aa2a1595d979e213457a67f3a117a462a66405e3b71e784d0c"
   },
   {
     "file": "03-stair-tv-wide.png",
@@ -218,10 +218,10 @@
   {
     "file": "16-dining-wide.png",
     "size": [
-      1532,
+      1531,
       1027
     ],
-    "sha256": "bd65d5a1bc2d4f57fc76cee88f7d7d36659e05eee5190d5a0134678c1aa9f6cb"
+    "sha256": "40e21f0d6c02518d55248cbb97d27225c98fd5c3ad24d45c1680d7258988d9b3"
   },
   {
     "file": "17-front-gallery-wide.png",

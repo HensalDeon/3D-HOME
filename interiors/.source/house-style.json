@@ -81,11 +81,12 @@
     {
       "file": "images/16-dining-wide.png",
       "group": "Dining",
-      "role": "Two light muted-oak wishbone chairs with woven paper-cord seats replace upholstered chairs, with cushioned oak bench retained. Tall charcoal vase/dried seed-head branches and low smoked-glass bowl replace fruit bowl. Woven cane globe replaces linen drum. Table, artwork, window/door, matte floor and source camera visually retained. Selected first for living-view consistency.",
-      "sha256": "bd65d5a1bc2d4f57fc76cee88f7d7d36659e05eee5190d5a0134678c1aa9f6cb",
+      "role": "Same rectangular slatted oak screen shown obliquely at the right near end of the table, between table and cropped sofa arm; top naturally falls outside this close framing. Original two wishbone chairs, cushioned bench, vase/branches, smoked bowl, cane pendant, artwork, door/window/curtains and matte floor visually retained.",
+      "sha256": "40e21f0d6c02518d55248cbb97d27225c98fd5c3ad24d45c1680d7258988d9b3",
       "floor_revision": "2026-10-24-common-stone-matte-floor",
       "floor_role": "Dining floor now reads matte without the previous bright window/furniture reflections, matching the living material. Two near-side chairs, cushioned bench, table, artwork, linen pendant, window and door visually retained. Native imagegen export is 1532 x 1026 rather than source 1531 x 1027; no external resize or crop was applied.",
-      "styling_revision": "2026-10-25-video-inspired-styling"
+      "styling_revision": "2026-10-25-video-inspired-styling",
+      "presentation_revision": "2026-10-25-rectangular-slatted-screen"
     },
     {
       "file": "images/07-bedroom1-wide.png",
@@ -226,25 +227,28 @@
     {
       "file": "images/02-living-wide.png",
       "group": "Living",
-      "sha256": "342271d2ed5d1e05ef86fec0ecb454874760d3be412599836d6b35c09ee5405a",
-      "role": "Dining chairs/centre-piece/cane globe follow the reviewed dining output. Caramel boucle cushion and tan fringed throw added beside existing sage textile; dark walnut three-leg stool with books beside sofa; softly glowing alabaster-look mushroom lamp at TV cabinet/cubby. Source stair/guards/TV joinery/basin, sofa, coffee table, rug, floor lamp, curtains and matte floor visually retained.",
-      "styling_revision": "2026-10-25-video-inspired-styling"
+      "sha256": "a3c62e9d061ac6aa2a1595d979e213457a67f3a117a462a66405e3b71e784d0c",
+      "role": "Straight rectangular muted-oak perimeter frame with thin evenly spaced vertical slats added beyond the sofa far arm, between sofa and dining table. Clear gap below ceiling; window curtain remains to the right, dining visible through slats and centre walkway open. Reviewed first as the screen consistency reference. Source stair, TV/basin joinery, furniture, accessories, matte floor and daylight composition visually retained.",
+      "styling_revision": "2026-10-25-video-inspired-styling",
+      "presentation_revision": "2026-10-25-rectangular-slatted-screen"
     },
     {
       "file": "images/02-ground-floor-overview-wide.png",
       "group": "Living",
-      "sha256": "8d24e5db0ad10eb6d00f0d9afd0be8e371ffa07a7379c263108b142db87d3011",
-      "role": "Same wishbone dining set/centre-piece/cane globe and requested sofa textiles, walnut stool/books and mushroom lamp carried into the source overview. Original stair silhouette, TV/basin joinery/mirror, bedroom opening, sofas, coffee table, rug and matte floor visually retained.",
-      "styling_revision": "2026-10-25-video-inspired-styling"
+      "sha256": "f83c708e46126a2f5a1a94c42996e692a92a3d9f504c142336304ae87bfab6b0",
+      "role": "Matching rectangular framed oak screen added between the right sofa far arm and near dining-table end, shown from the overview camera. Clear gap below ceiling and open circulation beside the dining chairs. Both sofas, coffee table, stool/books, stair, TV/basin joinery, openings, dining/artwork, curtains and matte floor visually retained.",
+      "styling_revision": "2026-10-25-video-inspired-styling",
+      "presentation_revision": "2026-10-25-rectangular-slatted-screen"
     },
     {
       "file": "images/02-living-evening.png",
       "group": "Living",
-      "sha256": "d3595f8f39a497a2585abd84d19ea61c34fc03508456e8a0abd7e7628df09c2c",
-      "role": "Separate early-evening variant of updated living wide. Existing staged objects and composition retained; window turns blue dusk, ceiling downlights off, warm practical light from cane pendant, floor/mushroom lamps, TV-cabinet glow and basin wall light. Daylight default remains separate.",
+      "sha256": "18dddd2d05a5763848e9587bf4de2dba340fe7dd4d8b9500dea197b4c442e7bf",
+      "role": "Matching rectangular framed oak slatted screen added between sofa and dining table using the reviewed daylight living reference. Warm cane-pendant glow shows through the slats. Blue dusk window, ceiling downlights off, practical lamps, furniture, textiles, decor and evening camera visually retained.",
       "styling_revision": "2026-10-25-video-inspired-styling",
       "variant_of": "images/02-living-wide.png",
-      "role_scope": "Evening lighting example; daytime kitchen/detail remain house material authorities."
+      "role_scope": "Evening lighting example; daytime kitchen/detail remain house material authorities.",
+      "presentation_revision": "2026-10-25-rectangular-slatted-screen"
     },
     {
       "file": "images/19-exterior-front-wide.png",
@@ -263,12 +267,21 @@
   ],
   "common_floor_reference": {
     "path": "images/02-living-wide.png",
-    "sha256": "342271d2ed5d1e05ef86fec0ecb454874760d3be412599836d6b35c09ee5405a",
-    "selection": "Current living photograph retains the selected matte floor appearance after the 25 October object styling. Earlier exact floor-generation input hashes remain historical release records."
+    "sha256": "a3c62e9d061ac6aa2a1595d979e213457a67f3a117a462a66405e3b71e784d0c",
+    "selection": "Current daylight living retains the matte floor appearance after the rectangular screen addition. Exact earlier floor-generation reference hashes remain historical records."
   },
   "exterior_retained_oak_reference": {
     "path": "images/01-entrance-wide.png",
     "sha256": "d23aaf24f0a0d2ebe4459813a0a34024911396dd1f5cc843e50f7945fb58ff3c",
     "role": "Retained current honey-oak colour; latest exterior changes coverage only."
+  },
+  "living_slatted_screen_reference": {
+    "path": "images/02-living-wide.png",
+    "sha256": "a3c62e9d061ac6aa2a1595d979e213457a67f3a117a462a66405e3b71e784d0c",
+    "size": [
+      1536,
+      1024
+    ],
+    "scope": "Rectangular frame, thin slats and placement in four living/dining photographs only. Assistant-reviewed; user acceptance pending."
   }
 }
