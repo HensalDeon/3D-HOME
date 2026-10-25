@@ -512,8 +512,10 @@ def elevation(p,rear=False,labels=True):
   p.fill_rect(0.05,3.48,3.05,6.24,DARK)
   p.fill_rect(.55,3.65,2.38,4.27,WALL)
   timber(p,5.5,3.5,5.95,6.3)
-  # Elevated screen sits along the south wing, visible left at front and right at rear.
-  timber(p,.05,6.35,3.25,7.20,True)
+  # Elevated screen sits along the south wing, visible left at front and right at rear. At the front
+  # it is warm-white render with downlights (25 Oct 2026); the rear screen stays oak.
+  p.fill_rect(.05,6.35,3.25,7.20,WALL)
+  for x in [.9,2.3]:p.line(x,7.13,x+.07,7.13,HexColor('#ffe2a1'),1.8)
   p.fill_rect(0,7.2,3.4,7.40,DARK);p.fill_rect(.04,7.20,3.35,7.28,WALL)
   # Full-width rounded GF frame; its opening leaves the same window/door order as photo.
   rr(p,.02,.42,5.96,2.82,.35,DARK)

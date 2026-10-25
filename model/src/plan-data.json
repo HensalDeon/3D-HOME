@@ -1,6 +1,6 @@
 {
   "source": "Hensal_Complete_House_Plans.pdf",
-  "source_sha256": "1a1beed8df7abfd89028f86d510444965ab9d505a4d472c6db6176a0f8888529",
+  "source_sha256": "e4e86eb6dd76b7f4cf6727a28473123bb1009b1906fd226e1f441dab5db5228a",
   "coordinates": "x increases north; y increases west; metres; house east/south corner is origin",
   "levels": {
     "ground": [
@@ -5917,6 +5917,18 @@
         "timber": "#AB7D52",
         "timberGrain": "#8A6440",
         "timberNote": "One warm natural honey-oak / light teak tone for every exterior timber surface: cladding, soffits, parapet bands and the roof stair enclosure. Measured from the accepted entrance photograph (saturation about 0.35). Not grey or taupe, not orange or glossy. Supplier sample to be approved against the photograph.",
+        "timberZones": [
+          "front ground panel around the front door and ground-floor window",
+          "upper balcony ceiling",
+          "narrow upper-floor strip right of the curved balcony frame, with its wall light",
+          "rooftop stair room",
+          "rear upper panel, rear roof-level band and the drying-balcony louvre screen"
+        ],
+        "renderZones": [
+          "front roof-level band below the rooftop stair room (warm-white render with downlights, thin charcoal cap)",
+          "long south side wall (plain warm-white, charcoal window hoods)"
+        ],
+        "timberZonesNote": "25 Oct 2026: exterior oak is concentrated in a few deliberate places, matching the accepted 19/21 photographs; the front roof-level band and the south-wall strips are warm-white render.",
         "frontDoor": "#AB7D52",
         "frontDoorNote": "Front door in the same muted natural oak as the cladding, with a black handle.",
         "rearDoor": "#3B3D3A",

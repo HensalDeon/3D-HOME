@@ -362,6 +362,8 @@ export function createHouse(){
    }else{
     facade.add(facadeBand('first',materials.dark));
     cladding(facade,3.13,.13,5.56,.30,5.87,6.1);
+    // Narrow oak strip right of the curved balcony frame, as in the accepted front photographs.
+    cladding(facade,5.86,-.006,6,-.003,3.5,6.3);
     box(facade,.55,-.005,2.94,0,3.75,4.20,materials.wall);
     // Rear canopy is an open-bottom return; the drying balcony remains open.
     const pts=[[.44,6.14],[.24,5.94],[.24,3.52]];
@@ -384,7 +386,8 @@ export function createHouse(){
    const cover=new THREE.Group();g.add(cover);cover.name='cover';box(cover,0,2.15,2.2,6.25,8.85,9,materials.wall);box(cover,0,2.15,2.2,6.25,8.955,9,materials.dark);
    const roofFinish=new THREE.Group();g.add(roofFinish);facades.push({group:roofFinish,level});
    for(const y of [2.147,6.25])for(const b of [[0,.55,6.45,8.85],[1.45,2.2,6.45,8.85],[.55,1.45,6.45,7.95],[.55,1.45,8.4,8.85]])cladding(roofFinish,b[0],y,b[1],y+.003,b[2],b[3],true);
-   for(const [y,x1] of [[.025,3.4],[9.525,3.6]]){cladding(g,.05,y,x1-.05,y+.15,6.45,7.2,true);box(g,0,y,x1,y+.15,7.2,7.4,materials.dark);box(g,.04,y-.003,x1-.04,y+.154,7.2,7.28,materials.wall);}
+   // 25 Oct 2026: the front roof-level band is warm-white render; the rear band stays oak.
+   for(const [y,x1] of [[.025,3.4],[9.525,3.6]]){if(y<1)box(g,.05,y,x1-.05,y+.15,6.45,7.2,materials.wall).name='front roof-level render band';else cladding(g,.05,y,x1-.05,y+.15,6.45,7.2,true);box(g,0,y,x1,y+.15,7.2,7.4,materials.dark);box(g,.04,y-.003,x1-.04,y+.154,7.2,7.28,materials.wall);}
    for(const pts of [[[1,7.2,6.47],[2.8,6.55,6.47]],[[3.45,8.9,6.47],[4.9,4.5,6.47]],[[3.5,4.7,6.47],[5.65,.55,6.47]],[[.8,1.7,6.47],[4.7,.55,6.47]]]){line(roofDimensions,pts,'#6799a0');const a=V(pts[0][0],pts[0][2],pts[0][1]),b=V(pts[1][0],pts[1][2],pts[1][1]);roofDimensions.add(new THREE.ArrowHelper(b.clone().sub(a).normalize(),a,a.distanceTo(b),'#6799a0',.17,.1));}
    line(g,[[.35,7.5,z+.02],[1.8,7.5,z+.02],[1.8,9.05,z+.02],[.35,9.05,z+.02],[.35,7.5,z+.02]],'#8e9d80',true);
    line(g,[[2.2,2.3,z+.02],[3.3,2.3,z+.02],[3.3,3.45,z+.02],[2.2,3.45,z+.02]],'#819e7c',true);

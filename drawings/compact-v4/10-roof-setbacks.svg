@@ -407,9 +407,7 @@
 <path transform="matrix(1,0,0,-1,0,841.8898)" d="M201.2598 507.4016H433.70069V643.4646H201.2598Z" fill="#f1eee8" fill-rule="evenodd"/>
 <path transform="matrix(1,0,0,-1,0,841.8898)" d="M201.2598 643.4646H433.70069V651.9685H201.2598Z" fill="#f1eee8" fill-rule="evenodd"/>
 <path transform="matrix(1,0,0,-1,0,841.8898)" d="M201.2598 649.4173H433.70069V651.9685H201.2598Z" fill="#42494d" fill-rule="evenodd"/>
-<path transform="matrix(1,0,0,-1,0,841.8898)" d="M79.37008 507.4016H87.874019V549.9213H79.37008Z" fill="#ab7d52" fill-rule="evenodd"/>
-<path transform="matrix(1,0,0,-1,0,841.8898)" stroke-width=".3" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#8a6440" d="M79.37008 507.4016V549.9213"/>
-<path transform="matrix(1,0,0,-1,0,841.8898)" stroke-width=".3" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#8a6440" d="M86.74016 507.4016V549.9213"/>
+<path transform="matrix(1,0,0,-1,0,841.8898)" d="M79.37008 507.4016H87.874019V549.9213H79.37008Z" fill="#f1eee8" fill-rule="evenodd"/>
 <path transform="matrix(1,0,0,-1,0,841.8898)" d="M79.37008 549.9213H87.874019V561.2599H79.37008Z" fill="#42494d" fill-rule="evenodd"/>
 <path transform="matrix(1,0,0,-1,0,841.8898)" d="M620.7874 507.4016H629.2914V549.9213H620.7874Z" fill="#ab7d52" fill-rule="evenodd"/>
 <path transform="matrix(1,0,0,-1,0,841.8898)" stroke-width=".3" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#8a6440" d="M620.7874 507.4016V549.9213"/>
