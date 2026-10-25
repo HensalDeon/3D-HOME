@@ -304,18 +304,22 @@ def ground(p):
  p.rect(.15,4.50,1.05,5.10,TEAL,.7,dash=[2,2])
  p.text(.60,4.80,'STORE/WASH - VERIFY HEADROOM',4,True,rot=90,col=TEAL)
  # NE living and dining share the north bay; central walking route stays open.
- p.rect(5.12,2.0,5.78,3.8)
- for y in [2.6,3.2]:p.line(5.12,y,5.78,y,MUTED,.3)
+ # Corner sofa with chaise (25 Oct 2026), shared with the 3D model; the NE prayer niche is removed.
+ sf=FITOUT['living']['sofa'];c0,c1=sf['chaise'],sf['main']
+ outline=[(c0[2],c0[1]),(c1[2],c1[3]),(c1[0],c1[3]),(c1[0],c0[3]),(c0[0],c0[3]),(c0[0],c0[1])]
+ for a,b in zip(outline,outline[1:]+outline[:1]):p.line(*a,*b,INK,.35)
+ p.line(sf['back'][0],sf['back'][1],sf['back'][0],sf['back'][3],MUTED,.3)
+ p.line(c1[0],sf['arm'][1],c1[2],sf['arm'][1],MUTED,.3)
+ p.line(c1[0],c0[3],sf['back'][0],c0[3],MUTED,.3)
+ for y in [2.9]:p.line(c1[0],y,sf['back'][0],y,MUTED,.3)
  p.rect(3.2,3.4,3.43,4.4);p.text(3.32,3.9,'TV',5,rot=90)
- label(p,4.45,2.2,'LIVING / NE')
+ label(p,3.75,2.25,'LIVING / NE')
  # R20: round coffee table; rectangular dining table, two room-side chairs and a window bench.
  ct=FITOUT['living']['coffeeTable'];p.circle(*ct['centre'],ct['radius'])
  dn=FITOUT['dining'];p.rect(*dn['table']);p.rect(*dn['bench'])
  for seat in dn['chairs']:p.chair(*seat)
  label(p,4.62,5.70,'DINING','OPEN WITH LIVING')
  p.text(5.20,7.3,'REAR ROUTE 1.165',5.5,rot=90,col=MUTED)
- # NE prayer niche in living, clear of bathroom/stair on both floors.
- p.rect(5.28,1.35,5.78,1.72,TEAL,.6);p.text(5.6,1.80,'PRAYER',4.8,col=TEAL)
  p.chair(4.65,.65,.45);p.chair(5.32,.65,.45)
  label(p,4.23,.23,'SIT-OUT / 2.530 x 1.200')
  p.steps(3.25,5.65,0,3,tread=.28)
@@ -456,7 +460,7 @@ def ground_sheet(c):
  compass(Plan(c,0,0,10),23.4,22.1)
  y=231
  y=block(c,246,y,'638.3 AND 629.8 SQ FT, INCLUDING THE WORK AREA','R8: the 220 mm ground walls make that floor 6.07 x 9.77 m / 638.3 sq ft; the 170 mm first-floor walls make that one 6.02 x 9.72 m / 629.8 sq ft. Both include the front sit-out and the rear work area. Neither is added beyond the floor-area limit.',149)
- y=block(c,246,y,'SOUTH STAIR / NE KEPT LIGHT','The stair is in the south band. The main entrance and living room occupy the east/northeast. A small prayer niche is placed in the northeast of the living room.',149)
+ y=block(c,246,y,'SOUTH STAIR / NE KEPT LIGHT','The stair is in the south band. The main entrance and living room occupy the east/northeast. A corner sofa fills the northeast corner of the living room.',149)
  y=block(c,246,y,'SE KITCHEN / SW BEDROOM','The hob faces east. The ground bedroom occupies the southwest, with the bed head to the south. Cooking remains in the kitchen; the rear work area has a sink and washing machine, with no second stove.',149)
  y=block(c,246,y,'A CONTINUOUS REAR ROUTE','The 1.30 m north-side internal passage leads from dining to the rear work area. It does not pass through the bedroom or its bathroom. The bedroom entrance is separately reached from the level passage beside the stair.',149)
  y=block(c,246,y,'PRIVATE ATTACHED BATHROOM','Ensuite 1 opens directly from Bedroom 1 through a sliding door. Its clear size is 1.215 x 2.100 m, with WC, basin and shower. There is no shared-bathroom entrance. All three bedrooms in this house have their own bathroom.',149)
@@ -619,7 +623,7 @@ def detail_sheet(c):
  para(c,25,66,'Count is the designed number of risers, including the top-floor rise. Equal risers govern; do not change them on site to alter the traditional step count.',140,8,4.5)
  para(c,25,43,'The south stair continues from first floor to roof. Keep the upward flight accessible and verify clear headroom along both storeys, including stair thickness and beams. See sheet 08 for the developed profile.',140,8,4.5)
  y=235
- y=block(c,181,y,'VASTU PRINCIPLES APPLIED','East/northeast entrance and living; northeast prayer niche; southeast kitchen with east-facing cook; south stair rising clockwise; southwest principal bedrooms with heads south; north child\'s bedroom; three private bathrooms in the northwest/west band, with no toilet over a bedroom, kitchen or prayer niche.',215)
+ y=block(c,181,y,'VASTU PRINCIPLES APPLIED','East/northeast entrance and living, kept open and light; southeast kitchen with east-facing cook; south stair rising clockwise; southwest principal bedrooms with heads south; north child\'s bedroom; three private bathrooms in the northwest/west band, with no toilet over a bedroom or the kitchen.',215)
  y=block(c,181,y,'WHY THE REAR WORK AREA HAS NO STOVE','Its northwest location is used for washing, laundry and preparation. Keeping the principal cooking fire southeast avoids adding another fire zone at the rear merely to reproduce the reference\'s outdoor hearth.',215)
  y=block(c,181,y,'WHAT IS NOT CLAIMED','This is a layout following the stated directional Vastu preferences, not a certificate of universal Vastu compliance. Exact compass bearing, entrance pada, site slope, well/septic locations and the chosen Kerala Vastu tradition remain to be checked. The plot sketch supports east-facing access but not an accurate surveyed azimuth.',215)
  y=block(c,181,y,'STRUCTURE AND PERMIT REVIEW','The old load-bearing scheme is not carried over. Allow for an engineered RCC frame, particularly the front recesses and balcony frames. Verify current local rules, room dimensions, daylight, setbacks, parking access and fire/escape requirements with the local architect. No current permit compliance is asserted.',215)

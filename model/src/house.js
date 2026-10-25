@@ -146,7 +146,7 @@ export function createHouse(){
    // R20: oak uppers, ivory loft bridge, end-wall pantry, housed fridge and inclined hood.
    addKitchenJoinery({parent:f,z,box,materials});
    box(f,3.25,8.95,3.85,9.55,z,z+.86,materials.white);const drum=new THREE.Mesh(new THREE.CylinderGeometry(.20,.20,.02,24),materials.dark);drum.rotation.z=Math.PI/2;drum.position.copy(V(3.86,z+.43,9.25));f.add(drum);
-   box(f,5.12,2,5.78,3.8,z+.12,z+.47,materials.fabric);box(f,5.62,2,5.78,3.8,z+.4,z+.95,materials.fabric);for(let y=2.05;y<3.7;y+=.58)box(f,5.12,y,5.62,y+.52,z+.47,z+.57,materials.linen);for(const y of [2,3.65])box(f,5.12,y,5.78,y+.15,z+.4,z+.72,materials.fabric);
+   // Sofa: corner sofa with chaise, built in fitout-joinery.js from fitout-layout.json.
    // R14 joinery, under the lower flight. Geometry comes from under-stair-layout.json, which the
    // drawing scripts read too, and is checked against the real stair meshes as it is built.
    addTvJoineryPreview({parent:f,stairs:g.getObjectByName('stairs'),z,box,profilePrism,cylinder,materials,V});
@@ -184,7 +184,6 @@ export function createHouse(){
    box(wash,b[2]-.11,b[1]+.04,b[2]-.05,b[1]+.10,z+fin.vanity.counter[1],z+fin.vanity.counter[1]+.14,materials.linen);
    // R20: rectangular table with two chairs and a window-side bench, drum pendant, coffee table.
    addDiningAndLiving({parent:f,z,box,cylinder,rod,materials});
-   box(f,5.28,1.35,5.78,1.72,z+.62,z+.73,materials.oak);box(f,5.38,1.37,5.68,1.43,z+.73,z+1.24,materials.wood);
    
   }else if(level==='first'){
    const work=new THREE.Group();work.name='Tailoring workbenches';f.add(work);

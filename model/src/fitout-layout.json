@@ -92,6 +92,7 @@
   "living": {
     "level": "ground",
     "coffeeTable": {"centre": [4.35, 2.9], "radius": 0.375, "top": 0.4, "finish": "round muted oak pedestal table"},
+    "sofa": {"back": [5.62, 1.35, 5.78, 3.8], "main": [5.12, 2.15, 5.78, 3.8], "chaise": [4.3, 1.35, 5.78, 2.15], "arm": [5.12, 3.65, 5.78, 3.8], "base": 0.12, "seat": 0.47, "cushionTop": 0.57, "backTop": 0.95, "armTop": 0.72, "finish": "oatmeal textured-linen L-shaped corner sofa: three-seat run against the north wall and a backless chaise along the front wall into the northeast corner", "note": "Added 25 Oct 2026 at the user's request; replaces the straight sofa and the northeast prayer niche, which is removed. Chaise cushions top out at +0.57 m, below the +0.75 m front-window sill, and the back stays clear of the window at x >= 5.62. The chaise starts at x = 4.30, 0.12 m beyond the front-door opening, and leaves 0.375 m to the coffee table."},
     "lighting": "Evening scheme from the accepted 02-living-evening image: dimmable dining pendant, the TV-plinth strip and basin wall light on their own switches, and a switched socket in the window corner for the floor lamp. Ceiling downlights are a separate circuit so they can stay off. The mushroom lamps are cordless and rechargeable; no wiring. Electrical layout to be coordinated.",
     "staging": "Cushions, throw, walnut stool, mushroom lamps, vases, mirrors and the kitchen canister shelf in the 25 Oct images are loose decor and are not scheduled.",
     "note": "Coffee table 0.40 m in front of the sofa; 0.72 m walkway kept beside it."

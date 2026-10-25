@@ -44,6 +44,13 @@ export function addDiningAndLiving({parent,z,box,cylinder,rod,materials}){
  globe.geometry.dispose();globe.geometry=new THREE.SphereGeometry(r,32,20);globe.name='cane globe pendant';
  cylinder(g,...pd.at,z+bottom+.02,z+bottom+.022,r*.45,materials.glow,24);
  rod(g,[...pd.at,z+bottom+pd.diameter],[...pd.at,z+2.85],.004,materials.noir);
+ // L-shaped corner sofa: back along the north wall, backless chaise along the front wall.
+ const s=layout.living.sofa,sf=group(parent,'Corner sofa with chaise');
+ for(const b of [s.main,s.chaise])box(sf,...b,z+s.base,z+s.seat,materials.fabric);
+ box(sf,...s.back,z+s.seat-.07,z+s.backTop,materials.fabric).name='sofa back';
+ box(sf,...s.arm,z+s.seat-.07,z+s.armTop,materials.fabric).name='sofa arm';
+ for(let y=s.main[1]+.02;y<s.arm[1]-.1;y+=(s.arm[1]-s.main[1])/2)box(sf,s.main[0]+.02,y,s.back[0],y+(s.arm[1]-s.main[1])/2-.04,z+s.seat,z+s.cushionTop,materials.linen);
+ box(sf,s.chaise[0]+.02,s.chaise[1]+.02,s.back[0],s.chaise[3]-.02,z+s.seat,z+s.cushionTop,materials.linen).name='chaise cushion';
  const c=layout.living.coffeeTable,l=group(parent,'R20 round coffee table');
  cylinder(l,...c.centre,z+c.top-.04,z+c.top,c.radius,materials.oak,32);
  cylinder(l,...c.centre,z,z+c.top-.04,c.radius*.55,materials.oak,32);

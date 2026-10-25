@@ -693,6 +693,14 @@ test('R20 dining, living and terrace layouts keep their routes and supports',()=
  near(Math.round((gb.min.y-LEVELS.ground-d.tableTop)*1000)/1000,d.pendant.bottomAboveTable);
  near(Math.round((gb.max.x-gb.min.x)*1000)/1000,d.pendant.diameter);
  assert.ok(gb.max.y<LEVELS.ground+2.85,'pendant hangs below the ceiling');
+ // Corner sofa replaces the straight sofa and the NE prayer niche.
+ const sofa=fitout.living.sofa,front=openingsFor('ground').find(o=>o.kind==='window'&&o.axis==='h'&&o.y<=1.2&&o.x>4),door=openingsFor('ground').find(o=>o.kind==='door'&&o.y===1.2);
+ for(const b of [sofa.main,sofa.chaise,sofa.back])assert.ok(b[0]>=living[0]-1e-9&&b[1]>=living[1]-1e-9&&b[2]<=living[2]+1e-9,'sofa inside living');
+ assert.ok(sofa.cushionTop<front.sill,'chaise stays below the front window sill');
+ assert.ok(sofa.back[0]>=front.x+front.w,'sofa back clears the front window');
+ assert.ok(sofa.chaise[0]>door.x+door.w,'chaise clears the front-door opening');
+ const ct=fitout.living.coffeeTable;assert.ok(ct.centre[1]-ct.radius-sofa.chaise[3]>=.3,'coffee table clear of chaise');
+ assert.ok(!plan.levels.ground.some(c=>c.op==='text'&&/PRAYER/.test(c.args[2])),'prayer niche removed from plan');
  const t=fitout.terrace,p=t.pergola.box,s=t.pergola.post;
  for(const [x,y] of [[p[0],p[1]],[p[0],p[3]-s],[p[2]-s,p[1]],[p[2]-s,p[3]-s]])
   assert.ok(frameColumns().some(c=>overlaps([x,y,x+s,y+s],c.box)),'pergola post stands over a column zone');
