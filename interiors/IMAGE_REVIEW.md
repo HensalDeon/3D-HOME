@@ -1,5 +1,21 @@
 # Interior image register
 
+## User-selected original kitchen opposite · 24 October 2026
+
+The user explicitly identified the original generated [kitchen opposite](images/06-kitchen-opposite.png) as the correct image. That exact file is restored byte-for-byte. The later assistant composite, including its fridge door-proportion remapping, is superseded. No new generation, compositing, crop or resize was performed. The current wide-view file and all other photographs/model/drawing files are unchanged in this follow-up.
+
+User acceptance applies to this selected opposite image. Its SHA-256 is `2774bc6e6f0c26f9b96a4ad8890cc55d37180e876a637f4b659c2ab720107864`; provenance and restoration verification are under `kitchen_appliance_user_selection` in [the release manifest](.source/image-release.json). The composite checks in the older section below describe the superseded file and do not apply to the current opposite photo.
+
+## Earlier kitchen appliance composites · 24 October 2026
+
+[Kitchen wide](images/06-kitchen-wide.png) now has a solid matte-charcoal inclined hood in place of the thin sheet-like form. Its rectangular chimney meets the loft; the flat stainless underside shows two baffle-filter panels and two warm round lights. This reviewed composite was the hood reference for [kitchen opposite](images/06-kitchen-opposite.png). The opposite fridge now has brushed-stainless two-door surfaces, a roughly two-thirds upper door, a continuous front/side gap, vertical left-edge bar handles, right-side hinge details, thin gaskets, rounded edges, bottom grille and the retained narrow top ventilation gap. Its size, position and oak housing remain unchanged.
+
+Initial wide imagegen candidates shifted the framing and were not installed. After the assistant explicitly proposed local compositing and the user instructed “continue”, generated appliance parts were composited onto the original photographs. The third wide candidate supplies the hood only; the opposite candidate supplies the hood and frontal fridge details. Door textures were remapped to the existing fridge outline and its front/side split aligned. Tiny local warm-light pools affect only the hob area. Original cameras, canvas dimensions and all pixels outside the appliance/light masks are preserved exactly; these preservation checks apply to the actual final composites, not the rejected full frames.
+
+Both composites were reviewed full size and in enlarged appliance crops. Assistant visual/pixel review passed; final user acceptance is pending. Appliance dimensions/clearances remain the user’s design intent, not measured installation certification. Kitchen detail, matte floors, the other 31 canonical images and all measured model/drawing files are unchanged. No project working-image folder or duplicate final assets were added.
+
+Exact user/generation prompts, the rejected attempts, donor hashes, original-source recovery, complete local compositing script/coordinates and pixel-preservation checks are under `kitchen_appliance_detail_generation_history` and `kitchen_appliance_detail_decision` in [the release manifest](.source/image-release.json). Pre-edit canonical photos are recoverable from Git `bc265a53b66ff7328d581f0dc65ec7525ae5b6c5`.
+
 ## Matte stone floors and fine tread grooves · 24 October 2026
 
 The living photograph was edited first and selected after assistant visual review. Its new matte pale warm beige stone-look floor is Image 2 for every subsequent run. The same pre-batch kitchen-wide photograph remains the palette input throughout; unchanged kitchen detail is Image 4. Six other common-area photos follow the living matte floor, and both kitchen photos use a matching soft-matte finish while retaining honed counters. Fine paired grooves are added only to existing stone tread tops. Oak treads, staircase geometry and visible bedroom wood-look flooring are retained.

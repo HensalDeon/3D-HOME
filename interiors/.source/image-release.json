@@ -241,26 +241,22 @@
       "upper_storage_concept": "Muted natural oak main upper fronts matching base cupboards; topmost continuous loft/window bridge remains creamy ivory; existing chimney and geometry retained."
     },
     "06-kitchen-opposite.png": {
-      "status": "assistant-reviewed",
-      "sha256": "99d390e0940125120179c541ec3e2b22d689e329bf4bb9c1dc64dde1db462d2d",
-      "review": "Reverse kitchen floor matched to pale sandy soft-matte stone, reducing veining and reflected fridge/window glare while keeping diffuse sunlight. Honed counters, hob/hood, oak storage/ivory lofts, open bay, fridge/housing, straight wall and runner visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "status": "accepted",
+      "sha256": "2774bc6e6f0c26f9b96a4ad8890cc55d37180e876a637f4b659c2ab720107864",
+      "review": "Exact original built-in imagegen output explicitly selected by the user in the attached image. Copied byte-for-byte, with no local compositing, door-proportion remapping, crop, resize or further generation. Supersedes the assistant-composited opposite view.",
       "reviewed_at": "2026-10-24",
-      "presentation_revision": "common-stone-matte-floor-2026-10-24",
-      "method": "built-in-imagegen-floor-finish-edit",
-      "user_approval": "pending",
-      "geometry_source": "Pre-edit canonical photograph at 2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04, SHA-256 a1b28b7e66dc80011870d76237cbad1b335b76bf19203aa5ed0e542253614574",
-      "prompt_id": "common-stone-matte-floor-2026-10-24-06-kitchen-opposite",
+      "presentation_revision": "kitchen-opposite-user-selection-2026-10-24",
+      "method": "restore-exact-user-selected-built-in-imagegen-output",
+      "user_approval": "explicitly accepted by user: attached original generated image",
+      "geometry_source": "Exact user-selected generated photograph; existing generated framing/content copied without modification.",
+      "prompt_id": "kitchen-solid-hood-fridge-2026-10-24-06-kitchen-opposite",
       "prompt_file": ".source/image-release.json",
       "superseded": {
-        "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
-        "path_at_commit": "interiors/images/06-kitchen-opposite.png",
-        "sha256": "a1b28b7e66dc80011870d76237cbad1b335b76bf19203aa5ed0e542253614574",
-        "size": [
-          1536,
-          1024
-        ]
+        "record": "kitchen-solid-hood-fridge-2026-10-24-06-kitchen-opposite",
+        "sha256": "dc5a729a3a66afcb3f30a473c4640df66bd396524937af8f8fc9058e6e096895",
+        "disposition": "Assistant composite rejected in favour of original generated image."
       },
-      "render_review": "Compared against original target, selected living floor reference where applicable and frozen kitchen wide/detail palette references. Non-floor room elements visually retained; not certified pixel-identical geometry.",
+      "render_review": "Visually matched the user attachment to the recorded built-in generated file. Canonical PNG is byte-for-byte identical to that file.",
       "camera": {
         "id": "06-kitchen-opposite",
         "level": "ground",
@@ -283,12 +279,12 @@
       "cabinet_design_source": "images/06-kitchen-wide.png",
       "cabinet_placement": "Existing large south-end two-tier unit retained with continuous loft extension across to above fridge and back round window wall; straight west wall remains.",
       "upper_storage_concept": "Muted natural oak main upper fronts matching base cupboards; topmost continuous loft/window bridge remains creamy ivory; existing chimney and geometry retained.",
-      "revision": "2026-10-24-common-stone-matte-floor",
+      "revision": "2026-10-24-user-selected-kitchen-opposite",
       "style_source": [
         "06-kitchen-wide.png at pre-edit Git 7f2136ec45715d62b453b395612474c332264c2d",
         "06-kitchen-detail.png (unchanged)"
       ],
-      "prompt_key": "common_stone_matte_floor_generation_history",
+      "prompt_key": "kitchen_appliance_detail_generation_history",
       "finish_revision": "common-stone-matte-floor-2026-10-24",
       "floor_reference": "images/02-living-wide.png",
       "floor_scope": "Existing stone floor material only; any visible bedroom wood-look flooring retained. Fine paired grooves only on existing stone tread tops; oak treads unchanged.",
@@ -302,37 +298,37 @@
           1536,
           1024
         ],
-        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+        "processing": "Exact byte copy of user-selected original generated image."
       }
     },
     "06-kitchen-wide.png": {
       "status": "assistant-reviewed",
-      "sha256": "8ad7ca7aa521c8929c932fb78d5c806d3c52a392af2eff65bb96c2a4cdd4e3f0",
-      "review": "Kitchen floor now has pale sandy soft-matte stone-look tiles, low mineral variation and diffuse sun patches without cabinet/window reflections or glare streaks. Honed counters/backsplash, cabinetry, lofts, slanted hood, hob, sink, door/window and cotton runner visually retained. Assistant visual review only; generated photographs are illustrative rather than pixel-identical or measured surface specifications.",
+      "sha256": "009d2c96324f0f522962341d4ff1a23907a920dd239de8c51fb6b0afbf340f09",
+      "review": "Thin hood replaced with a solid matte-charcoal inclined canopy and rectangular chimney, horizontal brushed-stainless underside, two baffle-filter panels and two small warm round lights. Source hob retained with only subtle local LED illumination. Original framing/pixel dimensions preserved; every pixel outside the hood/light masks is identical to the source. Close-up visual inspection completed. Appliance dimensions/clearances remain design intent, not a measured product installation.",
       "reviewed_at": "2026-10-24",
-      "presentation_revision": "common-stone-matte-floor-2026-10-24",
-      "method": "built-in-imagegen-floor-finish-edit",
+      "presentation_revision": "kitchen-solid-hood-fridge-2026-10-24",
+      "method": "built-in-imagegen-plus-authorized-local-composite",
       "user_approval": "pending",
-      "geometry_source": "Pre-edit canonical photograph at 2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04, SHA-256 9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
-      "prompt_id": "common-stone-matte-floor-2026-10-24-06-kitchen-wide",
+      "geometry_source": "Original canonical photo at bc265a53b66ff7328d581f0dc65ec7525ae5b6c5 with unedited pixels preserved outside masks",
+      "prompt_id": "kitchen-solid-hood-fridge-2026-10-24-06-kitchen-wide",
       "prompt_file": ".source/image-release.json",
       "superseded": {
-        "source_commit": "2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04",
+        "source_commit": "bc265a53b66ff7328d581f0dc65ec7525ae5b6c5",
         "path_at_commit": "interiors/images/06-kitchen-wide.png",
-        "sha256": "9600eebfb883984a2a4d52c12a7b00ea7caecda062ce25e58fb0a8036360fd89",
+        "sha256": "8ad7ca7aa521c8929c932fb78d5c806d3c52a392af2eff65bb96c2a4cdd4e3f0",
         "size": [
           1495,
           1052
         ]
       },
-      "render_review": "Compared against original target, selected living floor reference where applicable and frozen kitchen wide/detail palette references. Non-floor room elements visually retained; not certified pixel-identical geometry.",
+      "render_review": "Composite viewed full size and appliance regions inspected enlarged. Both original canvas dimensions preserved; local masks tested for exact preservation of surrounding pixels.",
       "upper_storage_concept": "Muted natural oak main upper fronts matching base cupboards; topmost continuous loft/window bridge remains creamy ivory; existing chimney and geometry retained.",
-      "revision": "2026-10-24-common-stone-matte-floor",
+      "revision": "2026-10-24-kitchen-solid-hood-fridge",
       "style_source": [
         "06-kitchen-wide.png at pre-edit Git 7f2136ec45715d62b453b395612474c332264c2d",
         "06-kitchen-detail.png (unchanged)"
       ],
-      "prompt_key": "common_stone_matte_floor_generation_history",
+      "prompt_key": "kitchen_appliance_detail_generation_history",
       "finish_revision": "common-stone-matte-floor-2026-10-24",
       "floor_reference": "images/02-living-wide.png",
       "floor_scope": "Existing stone floor material only; any visible bedroom wood-look flooring retained. Fine paired grooves only on existing stone tread tops; oak treads unchanged.",
@@ -346,7 +342,25 @@
           1495,
           1052
         ],
-        "processing": "Native built-in imagegen output copied without external raster editing/resizing/cropping."
+        "processing": "Appliance donor regions aligned/composited locally; original full frame retained."
+      },
+      "pixel_verification": {
+        "outside_mask_pixels_identical": true,
+        "mask_sha256": "d275b95f09ada146d5c0092fac686e50ca3a3b5ed8dcd6c8371fc5210a7e5171",
+        "changed_bbox": [
+          1047,
+          0,
+          1333,
+          675
+        ],
+        "source_size": [
+          1495,
+          1052
+        ],
+        "output_size": [
+          1495,
+          1052
+        ]
       }
     },
     "07-bedroom1-detail.png": {
@@ -10863,5 +10877,633 @@
     "scope_limits": "Other 24 canonical images and all model/drawing files unchanged. No working revision folder or duplicate final image files added.",
     "retention": "Pre-edit images recoverable from Git 2ff86b6c42e8a8a0d527b9bcec18c0e9a81abe04. Exact prompts and roles/hashes consolidated here; generated originals remain in the built-in imagegen output directory.",
     "approval": "Assistant visual comparison complete; user acceptance of final photographs pending."
+  },
+  "kitchen_appliance_detail_generation_history": [
+    {
+      "id": "kitchen-solid-hood-fridge-2026-10-24-06-kitchen-wide",
+      "date": "2026-10-24",
+      "image": "06-kitchen-wide.png",
+      "use_case": "precise-object-edit",
+      "method": "Built-in imagegen appliance generation plus user-authorized local Pillow compositing",
+      "user_prompt": "Edit Image 1, a photograph of a kitchen. Change only the chimney hood over the hob in front of the window:\n1. Replace the thin folded-sheet hood with a real slim inclined chimney hood in matte charcoal: a vertical rectangular chimney duct rising into the ivory loft cupboard above the window, and below it a canopy about 75 cm wide and 45 cm deep with a sloped front face and visible solid thickness of about 6-8 cm at its front edge and sides.\n2. The underside (the mouth) is a flat brushed-stainless base panel, parallel to the countertop, containing two rectangular stainless baffle filters side by side and two small round warm LED spot lights that cast soft pools of light onto the hob below. The mouth is clearly visible as a flat underside, not an open edge or a glowing slit.\n3. Centre the hood exactly over the two-burner gas hob, its underside about 65-75 cm above the hob.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, cabinets, lofts, window, countertop, hob, sink, door, floor, runner, plants and lighting. Image 2 is the same kitchen from the opposite side; Image 3 governs material realism. Muted natural oak (never orange), creamy ivory, pale sandy stone, charcoal accents. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "prompt": "LOCAL EDIT OF THE FIRST PHOTO ONLY. Keep its original image canvas, aspect ratio and framing: 1495 pixels wide by 1052 pixels high, ratio 1.4211:1. Change just the small hood area at the upper right. Preserve the rest of the source photograph.\nImage 1 = first attached file, 06-kitchen-wide.png (edit target).\nImage 2 = second attached file, 06-kitchen-opposite.png (same room from reverse side; reference only).\nImage 3 = third attached file, 06-kitchen-detail.png (material realism only).\nThe two reference photographs must not alter the target's camera, crop, hob scale, window scale, sink, door position or kitchen layout.\n\nEdit Image 1, a photograph of a kitchen. Change only the chimney hood over the hob in front of the window:\n1. Replace the thin folded-sheet hood with a real slim inclined chimney hood in matte charcoal: a vertical rectangular chimney duct rising into the ivory loft cupboard above the window, and below it a canopy about 75 cm wide and 45 cm deep with a sloped front face and visible solid thickness of about 6-8 cm at its front edge and sides.\n2. The underside (the mouth) is a flat brushed-stainless base panel, parallel to the countertop, containing two rectangular stainless baffle filters side by side and two small round warm LED spot lights that cast soft pools of light onto the hob below. The mouth is clearly visible as a flat underside, not an open edge or a glowing slit.\n3. Centre the hood exactly over the two-burner gas hob, its underside about 65-75 cm above the hob.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, cabinets, lofts, window, countertop, hob, sink, door, floor, runner, plants and lighting. Image 2 is the same kitchen from the opposite side; Image 3 governs material realism. Muted natural oak (never orange), creamy ivory, pale sandy stone, charcoal accents. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Original target; exact camera/framing and all surrounding pixels authority",
+          "historical_source": {
+            "source_commit": "bc265a53b66ff7328d581f0dc65ec7525ae5b6c5",
+            "path_at_commit": "interiors/images/06-kitchen-wide.png",
+            "sha256": "8ad7ca7aa521c8929c932fb78d5c806d3c52a392af2eff65bb96c2a4cdd4e3f0",
+            "size": [
+              1495,
+              1052
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Original opposite-side same-kitchen placement/finish reference",
+          "historical_source": {
+            "source_commit": "bc265a53b66ff7328d581f0dc65ec7525ae5b6c5",
+            "path_at_commit": "interiors/images/06-kitchen-opposite.png",
+            "sha256": "99d390e0940125120179c541ec3e2b22d689e329bf4bb9c1dc64dde1db462d2d",
+            "size": [
+              1536,
+              1024
+            ]
+          }
+        },
+        {
+          "logical_image": 3,
+          "role": "Unchanged kitchen-detail material realism authority",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        }
+      ],
+      "generation_attempts": [
+        {
+          "prompt": "Use case: precise-object-edit.\nInput roles: Image 1 / FIRST FILE is 06-kitchen-wide.png, the ONLY EDIT TARGET and exact camera/framing/room authority. It shows an open oak door at LEFT, sink at the rear and hob/window/hood at RIGHT. Image 2 / SECOND FILE is the pre-edit 06-kitchen-opposite.png, same-kitchen position and finish consistency reference ONLY; its thin hood is being superseded, do not copy that thin hood or this reference's camera. Image 3 / THIRD FILE is 06-kitchen-detail.png, material texture and photographic realism reference ONLY.\nMake a LOCAL APPLIANCE REPLACEMENT. Preserve the FIRST photo's exact 1495x1052 pixel dimensions and composition. The new hood is a plausible solid appliance: inclined charcoal front above a clearly horizontal stainless underside, with two distinct side-by-side slatted baffle-filter rectangles and two small circular warm light fittings. These are parts of the ONE hood, not additional appliances. Keep the current two-burner hob fixed; align the hood with that hob. Do not redesign the cupboards, glazing or room to accommodate it.\n\nEdit Image 1, a photograph of a kitchen. Change only the chimney hood over the hob in front of the window:\n1. Replace the thin folded-sheet hood with a real slim inclined chimney hood in matte charcoal: a vertical rectangular chimney duct rising into the ivory loft cupboard above the window, and below it a canopy about 75 cm wide and 45 cm deep with a sloped front face and visible solid thickness of about 6-8 cm at its front edge and sides.\n2. The underside (the mouth) is a flat brushed-stainless base panel, parallel to the countertop, containing two rectangular stainless baffle filters side by side and two small round warm LED spot lights that cast soft pools of light onto the hob below. The mouth is clearly visible as a flat underside, not an open edge or a glowing slit.\n3. Centre the hood exactly over the two-burner gas hob, its underside about 65-75 cm above the hob.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, cabinets, lofts, window, countertop, hob, sink, door, floor, runner, plants and lighting. Image 2 is the same kitchen from the opposite side; Image 3 governs material realism. Muted natural oak (never orange), creamy ivory, pale sandy stone, charcoal accents. Photorealistic, fine texture. No added objects, no text or watermark.",
+          "refs": [
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-wide.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-opposite.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-detail.png"
+          ],
+          "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-336a6c38-cee1-42cd-8383-8c8f27aadafc.png",
+          "reason": "Hood had requested solid canopy/underside but output drifted camera/framing/hob scale and changed raster from 1495x1052 to 1516x1038. Rejected; never installed.",
+          "status": "rejected-full-frame",
+          "sha256": "521e4382622d3fb0303fbd3de7daaa16de925243b3ba750828cc5f289e4ce37f",
+          "size": [
+            1516,
+            1038
+          ]
+        },
+        {
+          "prompt": "Use case: precise-object-edit. LOCAL HOOD REPLACEMENT, with a strict camera and non-hood content lock.\nIMAGE 1 (FIRST file) is the ORIGINAL 06-kitchen-wide.png and the ONLY editable base photograph. Keep its exact original 1495 pixel WIDTH by 1052 pixel HEIGHT and its aspect ratio. Retain EVERY scene coordinate and the original crop/field of view. Do not zoom, pan, reframe, straighten, expand or regenerate a wider view.\nIMAGE 2 (SECOND file) is an earlier HOOD DESIGN candidate ONLY. Borrow ONLY its solid charcoal inclined canopy, horizontal stainless baffle-filter underside and two round lights. Its camera/hob scaling drifted: DO NOT borrow its crop, viewpoint, object proportions or any non-hood pixels.\nIMAGE 3 (THIRD file) is the original opposite-side kitchen view; kitchen positioning/finish reference only.\nIMAGE 4 (FOURTH file) is kitchen detail; material realism only.\n\nChange ONLY the existing thin hood region at the TOP RIGHT of IMAGE 1. Replace with one real slim matte-charcoal inclined chimney appliance: rectangular vertical duct disappearing into the existing ivory loft, approximately 75cm-wide x45cm-deep canopy with sloped front, solid 6-8cm-thick edge/sides. Its mouth is a horizontal brushed-stainless base parallel to the countertop, clearly showing TWO separate rectangular slatted stainless baffle filters side by side and TWO small round warm LEDs softly illuminating the hob. Canopy front slopes while mouth stays flat/horizontal. Hood centred above the original fixed two-burner hob, design clearance about65-75cm.\n\nCRITICAL UNCHANGED LANDMARKS in IMAGE 1: the hob stays the SAME size, exact location and perspective; both burners/control knobs unchanged. Keep the sink/tap, cupboard door divisions/edges, open door/handle/angle, loft/window mullions/sill, countertop outline, runner location/size, floor joints, plants/pots, sunlight and original exposure/color exactly at their existing positions. Do not enlarge or shift any non-hood object to align with the new hood. The request does not authorize a new camera, a larger hob, a new countertop or cabinets.\nMatch muted natural oak, ivory plaster, sandy stone and matte charcoal from the supplied originals. Photorealistic fine texture. No text, labels, logos, watermark or extra objects. Return the original full composition with only the hood replaced; keep native output1495x1052.",
+          "refs": [
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-wide.png",
+            "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-336a6c38-cee1-42cd-8383-8c8f27aadafc.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-opposite.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-detail.png"
+          ],
+          "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-d3e455ce-48f4-4f84-8950-8e767cf2ce6e.png",
+          "reason": "Second candidate again shifted source framing/hob and door coordinates; rejected, never installed.",
+          "status": "rejected-full-frame",
+          "sha256": "df572dacd3cc27278a1fd6f24dd8cab2bcc3dcd3e32a3e269da0a14e1c2ace0b",
+          "size": [
+            1515,
+            1038
+          ]
+        },
+        {
+          "status": "selected-appliance-donor-only; full generated frame never installed",
+          "prompt": "LOCAL EDIT OF THE FIRST PHOTO ONLY. Keep its original image canvas, aspect ratio and framing: 1495 pixels wide by 1052 pixels high, ratio 1.4211:1. Change just the small hood area at the upper right. Preserve the rest of the source photograph.\nImage 1 = first attached file, 06-kitchen-wide.png (edit target).\nImage 2 = second attached file, 06-kitchen-opposite.png (same room from reverse side; reference only).\nImage 3 = third attached file, 06-kitchen-detail.png (material realism only).\nThe two reference photographs must not alter the target's camera, crop, hob scale, window scale, sink, door position or kitchen layout.\n\nEdit Image 1, a photograph of a kitchen. Change only the chimney hood over the hob in front of the window:\n1. Replace the thin folded-sheet hood with a real slim inclined chimney hood in matte charcoal: a vertical rectangular chimney duct rising into the ivory loft cupboard above the window, and below it a canopy about 75 cm wide and 45 cm deep with a sloped front face and visible solid thickness of about 6-8 cm at its front edge and sides.\n2. The underside (the mouth) is a flat brushed-stainless base panel, parallel to the countertop, containing two rectangular stainless baffle filters side by side and two small round warm LED spot lights that cast soft pools of light onto the hob below. The mouth is clearly visible as a flat underside, not an open edge or a glowing slit.\n3. Centre the hood exactly over the two-burner gas hob, its underside about 65-75 cm above the hob.\nKeep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, cabinets, lofts, window, countertop, hob, sink, door, floor, runner, plants and lighting. Image 2 is the same kitchen from the opposite side; Image 3 governs material realism. Muted natural oak (never orange), creamy ivory, pale sandy stone, charcoal accents. Photorealistic, fine texture. No added objects, no text or watermark.",
+          "refs": [
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-wide.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-opposite.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-detail.png"
+          ],
+          "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-00119346-b216-429a-bfae-7f6d8408f0c2.png",
+          "sha256": "970db24bb5bb81fc1978ee37518b9b4fe20f01a1d1747abbc49294a44a582244",
+          "size": [
+            1516,
+            1038
+          ]
+        }
+      ],
+      "geometry_reference": {
+        "camera": "Original canonical target; source pixels preserved outside local masks",
+        "source_image": {
+          "source_commit": "bc265a53b66ff7328d581f0dc65ec7525ae5b6c5",
+          "path_at_commit": "interiors/images/06-kitchen-wide.png",
+          "sha256": "8ad7ca7aa521c8929c932fb78d5c806d3c52a392af2eff65bb96c2a4cdd4e3f0",
+          "size": [
+            1495,
+            1052
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "fitout_layout": "../model/src/fitout-layout.json",
+        "fitout_sha256": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+        "scope": "Photographic appliance detail only. Source room geometry, cupboards, floor and model/drawing files unchanged."
+      },
+      "composite_recipe": {
+        "image": "06-kitchen-wide.png",
+        "method": "User-authorized local Pillow compositing of generated hood onto original, plus subtle local LED illumination",
+        "donor": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-00119346-b216-429a-bfae-7f6d8408f0c2.png",
+        "source_size": [
+          1495,
+          1052
+        ],
+        "donor_size": [
+          1516,
+          1038
+        ],
+        "donor_polygon": [
+          [
+            1197,
+            0
+          ],
+          [
+            1310,
+            0
+          ],
+          [
+            1310,
+            172
+          ],
+          [
+            1350,
+            178
+          ],
+          [
+            1350,
+            291
+          ],
+          [
+            1176,
+            331
+          ],
+          [
+            1062,
+            321
+          ],
+          [
+            1197,
+            213
+          ]
+        ],
+        "inverse_affine_coefficients": [
+          1.0140468227424748,
+          0,
+          0,
+          0,
+          1.0140468227424748,
+          0
+        ],
+        "feather_radius_px": 0.6,
+        "light_pools": {
+          "ellipses": [
+            [
+              1090,
+              602,
+              1174,
+              638
+            ],
+            [
+              1190,
+              623,
+              1274,
+              659
+            ]
+          ],
+          "alpha_levels": [
+            9,
+            8
+          ],
+          "blur_px": 13,
+          "scope": "Hob illumination only; source hob geometry and texture retained"
+        },
+        "changed_bbox": [
+          1047,
+          0,
+          1333,
+          675
+        ],
+        "allowed_mask_bbox": [
+          1047,
+          0,
+          1334,
+          676
+        ],
+        "outside_mask_pixels_identical": true
+      },
+      "pixel_verification": {
+        "outside_mask_pixels_identical": true,
+        "mask_sha256": "d275b95f09ada146d5c0092fac686e50ca3a3b5ed8dcd6c8371fc5210a7e5171",
+        "changed_bbox": [
+          1047,
+          0,
+          1333,
+          675
+        ],
+        "source_size": [
+          1495,
+          1052
+        ],
+        "output_size": [
+          1495,
+          1052
+        ]
+      },
+      "review": "Thin hood replaced with a solid matte-charcoal inclined canopy and rectangular chimney, horizontal brushed-stainless underside, two baffle-filter panels and two small warm round lights. Source hob retained with only subtle local LED illumination. Original framing/pixel dimensions preserved; every pixel outside the hood/light masks is identical to the source. Close-up visual inspection completed. Appliance dimensions/clearances remain design intent, not a measured product installation.",
+      "user_approval": "pending",
+      "output": {
+        "path": "images/06-kitchen-wide.png",
+        "sha256": "009d2c96324f0f522962341d4ff1a23907a920dd239de8c51fb6b0afbf340f09",
+        "size": [
+          1495,
+          1052
+        ]
+      }
+    },
+    {
+      "id": "kitchen-solid-hood-fridge-2026-10-24-06-kitchen-opposite",
+      "date": "2026-10-24",
+      "image": "06-kitchen-opposite.png",
+      "use_case": "precise-object-edit",
+      "method": "Built-in imagegen appliance generation plus user-authorized local Pillow compositing",
+      "user_prompt": "Edit Image 1, a photograph of a kitchen looking toward its end wall, with the fridge in a tall oak housing on the right. Make only these changes:\n1. Hood: replace the thin folded-sheet hood with exactly the same slim inclined matte charcoal chimney hood as in Image 2, seen from this side: vertical chimney duct rising into the loft above the window, canopy with visible 6-8 cm solid front edge and sides, flat brushed-stainless underside with two baffle filters and two small warm LED spots lighting the hob. Centred over the hob.\n2. Fridge: make it read clearly as a real modern 60 cm wide bottom-freezer two-door refrigerator in brushed stainless steel, sitting in the existing oak housing. Upper fridge door about two-thirds of the height, lower freezer door below, with one clean straight horizontal gap between them at the same height on the front and the side. Slim vertical brushed-steel bar handles on the left edge of both doors, hinges on the right (wall) side. Thin dark rubber door-seal lines around each door, rounded door edges, a small dark ventilation grille at the bottom, and a narrow ventilation gap between the top of the fridge and the oak panel above.\nKeep the fridge's position, size and the oak housing exactly as they are. Keep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, cabinets, open display niche, lofts, countertop, hob, window, floor, runner, plants and lighting. Image 3 governs material realism. Muted natural oak (never orange), creamy ivory, pale sandy stone, charcoal accents. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "prompt": "Use case: precise-object-edit. Appliance detail donor for a precise local composite.\nImage 1 / FIRST FILE is the EDIT TARGET 06-kitchen-opposite.png: hob/counter/window/hood at LEFT, oak end-wall cupboards and open niche ahead, stainless fridge inside its existing oak housing at RIGHT.\nImage 2 / SECOND FILE is the corrected 06-kitchen-wide photograph, selected after assistant review: SAME HOOD DESIGN from the other side only. Do not copy its camera or room arrangement.\nImage 3 / THIRD FILE is 06-kitchen-detail.png, material realism reference only.\nRetain source1536x1024 framing and architecture. Replace the hood and refine ONLY the refrigerator's visible metal/door surfaces inside its CURRENT external silhouette. The brushed-steel refrigerator must remain exactly the original width, height, position and perspective; do not expand or reshape its oak surround.\nCritical refrigerator details: upper door occupies about TWO THIRDS of body height and lower freezer about ONE THIRD; ONE aligned horizontal separation wraps continuously across the front and visible side at a common physical height. Both bar handles are VERTICAL and at the LEFT edge of their respective doors, with visible right-side hinge details. No horizontal handle, extra door or mismatched side split. Include dark narrow gasket lines, gently rounded metal edges, a discreet bottom vent grille and a narrow top air gap beneath the existing fixed oak header.\nHood must match image2's solid inclined charcoal canopy, horizontal stainless underside with TWO rectangular baffle-filter panels and TWO small round warm lights. Keep existing hob fixed. Preserve floor/runner, cupboards/niche/lofts/window/countertops/plants and all non-appliance content.\n\nEdit Image 1, a photograph of a kitchen looking toward its end wall, with the fridge in a tall oak housing on the right. Make only these changes:\n1. Hood: replace the thin folded-sheet hood with exactly the same slim inclined matte charcoal chimney hood as in Image 2, seen from this side: vertical chimney duct rising into the loft above the window, canopy with visible 6-8 cm solid front edge and sides, flat brushed-stainless underside with two baffle filters and two small warm LED spots lighting the hob. Centred over the hob.\n2. Fridge: make it read clearly as a real modern 60 cm wide bottom-freezer two-door refrigerator in brushed stainless steel, sitting in the existing oak housing. Upper fridge door about two-thirds of the height, lower freezer door below, with one clean straight horizontal gap between them at the same height on the front and the side. Slim vertical brushed-steel bar handles on the left edge of both doors, hinges on the right (wall) side. Thin dark rubber door-seal lines around each door, rounded door edges, a small dark ventilation grille at the bottom, and a narrow ventilation gap between the top of the fridge and the oak panel above.\nKeep the fridge's position, size and the oak housing exactly as they are. Keep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, cabinets, open display niche, lofts, countertop, hob, window, floor, runner, plants and lighting. Image 3 governs material realism. Muted natural oak (never orange), creamy ivory, pale sandy stone, charcoal accents. Photorealistic, fine texture. No added objects, no text or watermark.",
+      "inputs": [
+        {
+          "logical_image": 1,
+          "role": "Original target; exact camera/framing and all surrounding pixels authority",
+          "historical_source": {
+            "source_commit": "bc265a53b66ff7328d581f0dc65ec7525ae5b6c5",
+            "path_at_commit": "interiors/images/06-kitchen-opposite.png",
+            "sha256": "99d390e0940125120179c541ec3e2b22d689e329bf4bb9c1dc64dde1db462d2d",
+            "size": [
+              1536,
+              1024
+            ]
+          }
+        },
+        {
+          "logical_image": 2,
+          "role": "Assistant-reviewed finished wide composite; same hood design consistency reference",
+          "path": "images/06-kitchen-wide.png",
+          "sha256": "009d2c96324f0f522962341d4ff1a23907a920dd239de8c51fb6b0afbf340f09"
+        },
+        {
+          "logical_image": 3,
+          "role": "Unchanged kitchen-detail material realism authority",
+          "path": "images/06-kitchen-detail.png",
+          "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+        }
+      ],
+      "generation_attempts": [
+        {
+          "status": "selected-appliance-donor-only; full generated frame never installed",
+          "prompt": "Use case: precise-object-edit. Appliance detail donor for a precise local composite.\nImage 1 / FIRST FILE is the EDIT TARGET 06-kitchen-opposite.png: hob/counter/window/hood at LEFT, oak end-wall cupboards and open niche ahead, stainless fridge inside its existing oak housing at RIGHT.\nImage 2 / SECOND FILE is the corrected 06-kitchen-wide photograph, selected after assistant review: SAME HOOD DESIGN from the other side only. Do not copy its camera or room arrangement.\nImage 3 / THIRD FILE is 06-kitchen-detail.png, material realism reference only.\nRetain source1536x1024 framing and architecture. Replace the hood and refine ONLY the refrigerator's visible metal/door surfaces inside its CURRENT external silhouette. The brushed-steel refrigerator must remain exactly the original width, height, position and perspective; do not expand or reshape its oak surround.\nCritical refrigerator details: upper door occupies about TWO THIRDS of body height and lower freezer about ONE THIRD; ONE aligned horizontal separation wraps continuously across the front and visible side at a common physical height. Both bar handles are VERTICAL and at the LEFT edge of their respective doors, with visible right-side hinge details. No horizontal handle, extra door or mismatched side split. Include dark narrow gasket lines, gently rounded metal edges, a discreet bottom vent grille and a narrow top air gap beneath the existing fixed oak header.\nHood must match image2's solid inclined charcoal canopy, horizontal stainless underside with TWO rectangular baffle-filter panels and TWO small round warm lights. Keep existing hob fixed. Preserve floor/runner, cupboards/niche/lofts/window/countertops/plants and all non-appliance content.\n\nEdit Image 1, a photograph of a kitchen looking toward its end wall, with the fridge in a tall oak housing on the right. Make only these changes:\n1. Hood: replace the thin folded-sheet hood with exactly the same slim inclined matte charcoal chimney hood as in Image 2, seen from this side: vertical chimney duct rising into the loft above the window, canopy with visible 6-8 cm solid front edge and sides, flat brushed-stainless underside with two baffle filters and two small warm LED spots lighting the hob. Centred over the hob.\n2. Fridge: make it read clearly as a real modern 60 cm wide bottom-freezer two-door refrigerator in brushed stainless steel, sitting in the existing oak housing. Upper fridge door about two-thirds of the height, lower freezer door below, with one clean straight horizontal gap between them at the same height on the front and the side. Slim vertical brushed-steel bar handles on the left edge of both doors, hinges on the right (wall) side. Thin dark rubber door-seal lines around each door, rounded door edges, a small dark ventilation grille at the bottom, and a narrow ventilation gap between the top of the fridge and the oak panel above.\nKeep the fridge's position, size and the oak housing exactly as they are. Keep everything not listed exactly as in Image 1: camera, framing, perspective, straight verticals, cabinets, open display niche, lofts, countertop, hob, window, floor, runner, plants and lighting. Image 3 governs material realism. Muted natural oak (never orange), creamy ivory, pale sandy stone, charcoal accents. Photorealistic, fine texture. No added objects, no text or watermark.",
+          "refs": [
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-opposite.png",
+            "/tmp/06-kitchen-wide-appliance-composite.png",
+            "/Users/hensaldeon/Documents/personal/dream-home/interiors/images/06-kitchen-detail.png"
+          ],
+          "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-68236b31-742b-493d-a10b-18fecf5bbdde.png",
+          "sha256": "2774bc6e6f0c26f9b96a4ad8890cc55d37180e876a637f4b659c2ab720107864",
+          "size": [
+            1536,
+            1024
+          ]
+        }
+      ],
+      "geometry_reference": {
+        "camera": "Original canonical target; source pixels preserved outside local masks",
+        "source_image": {
+          "source_commit": "bc265a53b66ff7328d581f0dc65ec7525ae5b6c5",
+          "path_at_commit": "interiors/images/06-kitchen-opposite.png",
+          "sha256": "99d390e0940125120179c541ec3e2b22d689e329bf4bb9c1dc64dde1db462d2d",
+          "size": [
+            1536,
+            1024
+          ]
+        },
+        "drawing": "../drawings/compact-v4/Hensal_Complete_House_Plans.pdf",
+        "drawing_sha256": "1b6d7b537a36e2a0ad7a60d7ec50ee3e5ee14179774f6f2dd9a1ee09987da290",
+        "fitout_layout": "../model/src/fitout-layout.json",
+        "fitout_sha256": "bbccad56c129c04bc61143941eef96db3fb5ad07a33b8f4f3f130a8acb8a2352",
+        "scope": "Photographic appliance detail only. Source room geometry, cupboards, floor and model/drawing files unchanged."
+      },
+      "composite_recipe": {
+        "image": "06-kitchen-opposite.png",
+        "method": "User-authorized local Pillow compositing; generated hood and real fridge front mapped to original appliance regions",
+        "donor": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-68236b31-742b-493d-a10b-18fecf5bbdde.png",
+        "source_size": [
+          1536,
+          1024
+        ],
+        "donor_size": [
+          1536,
+          1024
+        ],
+        "hood_polygon": [
+          [
+            99,
+            0
+          ],
+          [
+            222,
+            0
+          ],
+          [
+            222,
+            170
+          ],
+          [
+            362,
+            301
+          ],
+          [
+            255,
+            314
+          ],
+          [
+            61,
+            269
+          ],
+          [
+            60,
+            142
+          ],
+          [
+            99,
+            136
+          ]
+        ],
+        "fridge_polygon": [
+          [
+            1217,
+            213
+          ],
+          [
+            1386,
+            213
+          ],
+          [
+            1386,
+            790
+          ],
+          [
+            1355,
+            791
+          ],
+          [
+            1217,
+            791
+          ]
+        ],
+        "fridge_pieces": [
+          {
+            "source": "generated donor",
+            "source_box": [
+              1216,
+              211,
+              1385,
+              533
+            ],
+            "destination_box": [
+              1217,
+              213,
+              1355,
+              590
+            ]
+          },
+          {
+            "source": "generated donor",
+            "source_box": [
+              1216,
+              533,
+              1385,
+              538
+            ],
+            "destination_box": [
+              1217,
+              590,
+              1355,
+              594
+            ]
+          },
+          {
+            "source": "generated donor",
+            "source_box": [
+              1216,
+              538,
+              1385,
+              776
+            ],
+            "destination_box": [
+              1217,
+              594,
+              1355,
+              777
+            ]
+          },
+          {
+            "source": "generated donor",
+            "source_box": [
+              1216,
+              776,
+              1385,
+              791
+            ],
+            "destination_box": [
+              1217,
+              777,
+              1355,
+              791
+            ]
+          },
+          {
+            "source": "original side texture",
+            "source_box": [
+              1355,
+              213,
+              1386,
+              499
+            ],
+            "destination_box": [
+              1355,
+              213,
+              1386,
+              590
+            ]
+          },
+          {
+            "source": "original side texture",
+            "source_box": [
+              1355,
+              499,
+              1386,
+              507
+            ],
+            "destination_box": [
+              1355,
+              590,
+              1386,
+              594
+            ]
+          },
+          {
+            "source": "original side texture",
+            "source_box": [
+              1355,
+              507,
+              1386,
+              790
+            ],
+            "destination_box": [
+              1355,
+              594,
+              1386,
+              790
+            ]
+          },
+          {
+            "source": "generated donor",
+            "source_box": [
+              1380,
+              235,
+              1386,
+              253
+            ],
+            "destination_box": [
+              1380,
+              236,
+              1386,
+              254
+            ]
+          },
+          {
+            "source": "generated donor",
+            "source_box": [
+              1380,
+              738,
+              1386,
+              756
+            ],
+            "destination_box": [
+              1380,
+              739,
+              1386,
+              757
+            ]
+          }
+        ],
+        "front_side_gap_y": [
+          590,
+          594
+        ],
+        "nominal_upper_door_fraction": 0.6684,
+        "light_pools": {
+          "ellipses": [
+            [
+              66,
+              662,
+              150,
+              706
+            ],
+            [
+              219,
+              691,
+              303,
+              735
+            ]
+          ],
+          "alpha_levels": [
+            9,
+            8
+          ],
+          "blur_px": 13,
+          "scope": "Hob illumination only"
+        },
+        "changed_bbox": [
+          47,
+          0,
+          1386,
+          791
+        ],
+        "allowed_mask_bbox": [
+          47,
+          0,
+          1388,
+          793
+        ],
+        "outside_mask_pixels_identical": true
+      },
+      "pixel_verification": {
+        "outside_mask_pixels_identical": true,
+        "mask_sha256": "eb292133d7774809cf4c792c7cf1dd187b8438efe0ecf81cd395a0885772902e",
+        "changed_bbox": [
+          47,
+          0,
+          1386,
+          791
+        ],
+        "source_size": [
+          1536,
+          1024
+        ],
+        "output_size": [
+          1536,
+          1024
+        ]
+      },
+      "review": "Matching solid inclined hood with stainless baffles/two warm round lights. Refrigerator has brushed-steel doors, slim vertical left-edge handles, right-side hinge caps, dark seals, rounded edges, bottom grille and retained narrow top gap. Upper door is about two-thirds of height; front/side separation aligns at y590\u2013594. Original fridge envelope, position and oak housing retained; every pixel outside appliance/light masks is identical to source. Close-up visual inspection completed. Appliance dimensions/clearances remain design intent, not a measured product installation.",
+      "user_approval": "pending",
+      "output": {
+        "path": "images/06-kitchen-opposite.png",
+        "sha256": "dc5a729a3a66afcb3f30a473c4640df66bd396524937af8f8fc9058e6e096895",
+        "size": [
+          1536,
+          1024
+        ]
+      },
+      "superseded_by": "kitchen_appliance_user_selection; output/composite verification above remains a historical record, not the current opposite file."
+    }
+  ],
+  "kitchen_appliance_detail_decision": {
+    "date": "2026-10-24",
+    "scope": [
+      "06-kitchen-wide.png",
+      "06-kitchen-opposite.png"
+    ],
+    "request": "Wide hood first, reviewed as the reference for opposite hood; refine only opposite fridge doors/handles/seals/vent details. All other room contents retained.",
+    "method_authorization": {
+      "question": "May I use local image compositing to place the generated hood and fridge details onto the original photos, keeping all pixels outside those appliance regions unchanged?",
+      "user_reply": "continue",
+      "interpretation": "User instructed continuation after the explicit local-compositing proposal; assistant stated it would proceed with local compositing before doing so."
+    },
+    "hood": "Slim matte-charcoal inclined canopy, rectangular duct into existing loft, horizontal brushed-stainless underside with two baffle-filter panels and two warm round spots. Nominal 750 mm width, 450 mm depth, 60\u201380 mm visible edge thickness and 650\u2013750 mm hob clearance are user design intent, not certified image measurements.",
+    "fridge": "Existing envelope/housing retained. Generated stainless front compressed to original front face; original side texture kept and its split aligned. Front/side gap at y590\u2013594; upper-door fraction approximately 0.6684. Vertical left-edge handles, right-side hinge caps, gaskets, rounded edges, bottom vent and top air gap.",
+    "reference_order": "Wide composite reviewed first and explicitly supplied as Image 2 for the opposite view. Kitchen detail unchanged.",
+    "rejected_outputs": "Two initial wide full-frame candidates drifted the source composition and were rejected. The third wide candidate supplies hood pixels only; opposite candidate supplies hood/front-door pixels only. No full generated frame was promoted.",
+    "local_processing_script": {
+      "sha256": "135a4dad9dfc9e6e957c824e500c65876ed6d17082c4fbdcfbcd2b8797245b79",
+      "source_text": "from pathlib import Path\nfrom PIL import Image, ImageDraw, ImageFilter, ImageChops\nimport json,hashlib\n\nROOT=Path('/Users/hensaldeon/Documents/personal/dream-home')\nDONOR=Path('/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-00119346-b216-429a-bfae-7f6d8408f0c2.png')\ndef mask_polygon(size,points,feather=.6):\n m=Image.new('L',size);ImageDraw.Draw(m).polygon(points,fill=255)\n return m.filter(ImageFilter.GaussianBlur(feather)) if feather else m\ndef native_layer(base,donor,points):\n # Donor scene coordinates are uniformly larger by its canvas width ratio.\n scale=donor.width/base.width\n coeff=(scale,0,0,0,scale,0)\n warped=donor.transform(base.size,Image.Transform.AFFINE,coeff,Image.Resampling.BICUBIC)\n m=mask_polygon(donor.size,points).transform(base.size,Image.Transform.AFFINE,coeff,Image.Resampling.BICUBIC)\n return warped,m,coeff\ndef prove_outside(base,final,mask):\n outside=mask.point(lambda p:255 if p==0 else 0)\n diff=ImageChops.difference(base,final)\n assert ImageChops.multiply(diff,Image.merge('RGB',(outside,outside,outside))).getbbox() is None\n return {'changed_bbox':diff.getbbox(),'allowed_mask_bbox':mask.getbbox(),'outside_mask_pixels_identical':True}\ndef wide():\n base=Image.open(ROOT/'interiors/images/06-kitchen-wide.png').convert('RGB')\n donor=Image.open(DONOR).convert('RGB')\n points=[(1197,0),(1310,0),(1310,172),(1350,178),(1350,291),(1176,331),(1062,321),(1197,213)]\n layer,mask,coeff=native_layer(base,donor,points)\n final=Image.composite(layer,base,mask)\n # Keep all source hob geometry and texture; add only subtle warm illumination.\n pool=Image.new('L',base.size);d=ImageDraw.Draw(pool)\n d.ellipse((1090,602,1174,638),fill=9);d.ellipse((1190,623,1274,659),fill=8)\n pool=pool.filter(ImageFilter.GaussianBlur(13))\n # Strictly bound the tiny light adjustment to the hob area.\n limit=Image.new('L',base.size);ImageDraw.Draw(limit).polygon([(1004,592),(1182,588),(1340,666),(1133,681)],fill=255)\n pool=ImageChops.multiply(pool,limit)\n final=Image.composite(Image.new('RGB',base.size,(255,218,163)),final,pool)\n allowed=ImageChops.lighter(mask,pool)\n final.save('/tmp/06-kitchen-wide-appliance-composite.png')\n allowed.save('/tmp/06-kitchen-wide-appliance-mask.png')\n audit={'image':'06-kitchen-wide.png','method':'User-authorized local Pillow compositing of generated hood onto original, plus subtle local LED illumination',\n  'donor':str(DONOR),'source_size':list(base.size),'donor_size':list(donor.size),\n  'donor_polygon':points,'inverse_affine_coefficients':list(coeff),'feather_radius_px':.6,\n  'light_pools':{'ellipses':[[1090,602,1174,638],[1190,623,1274,659]],'alpha_levels':[9,8],'blur_px':13,'scope':'Hob illumination only; source hob geometry and texture retained'},\n  **prove_outside(base,final,allowed)}\n Path('/tmp/kitchen-wide-composite-audit.json').write_text(json.dumps(audit,indent=2))\n print(json.dumps(audit))\ndef opposite():\n base=Image.open(ROOT/'interiors/images/06-kitchen-opposite.png').convert('RGB')\n donor_path=Path('/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-68236b31-742b-493d-a10b-18fecf5bbdde.png')\n donor=Image.open(donor_path).convert('RGB')\n hood_points=[(99,0),(222,0),(222,170),(362,301),(255,314),(61,269),(60,142),(99,136)]\n hood_mask=mask_polygon(base.size,hood_points)\n final=Image.composite(donor,base,hood_mask)\n fridge_layer=base.copy()\n pieces=[]\n def piece(image,box,dst):\n  texture=image.crop(box).resize((dst[2]-dst[0],dst[3]-dst[1]),Image.Resampling.LANCZOS)\n  fridge_layer.paste(texture,(dst[0],dst[1]));pieces.append({'source':'generated donor' if image is donor else 'original side texture','source_box':list(box),'destination_box':list(dst)})\n # Map generated real appliance doors to the original front face, retaining the\n # original side face and total outer envelope. Upper door occupies ~2/3 height.\n piece(donor,(1216,211,1385,533),(1217,213,1355,590))\n piece(donor,(1216,533,1385,538),(1217,590,1355,594))\n piece(donor,(1216,538,1385,776),(1217,594,1355,777))\n piece(donor,(1216,776,1385,791),(1217,777,1355,791))\n # Move the original side split to meet the new front gap at the same height.\n piece(base,(1355,213,1386,499),(1355,213,1386,590))\n piece(base,(1355,499,1386,507),(1355,590,1386,594))\n piece(base,(1355,507,1386,790),(1355,594,1386,790))\n # Small right/wall-side hinge caps taken from the generated metal appliance.\n piece(donor,(1380,235,1386,253),(1380,236,1386,254))\n piece(donor,(1380,738,1386,756),(1380,739,1386,757))\n fridge_points=[(1217,213),(1386,213),(1386,790),(1355,791),(1217,791)]\n fridge_mask=mask_polygon(base.size,fridge_points,.35)\n final=Image.composite(fridge_layer,final,fridge_mask)\n pool=Image.new('L',base.size);d=ImageDraw.Draw(pool)\n d.ellipse((66,662,150,706),fill=9);d.ellipse((219,691,303,735),fill=8)\n pool=pool.filter(ImageFilter.GaussianBlur(13))\n limit=Image.new('L',base.size);ImageDraw.Draw(limit).polygon([(0,698),(230,642),(387,701),(144,810),(0,810)],fill=255)\n pool=ImageChops.multiply(pool,limit)\n final=Image.composite(Image.new('RGB',base.size,(255,218,163)),final,pool)\n allowed=ImageChops.lighter(ImageChops.lighter(hood_mask,fridge_mask),pool)\n final.save('/tmp/06-kitchen-opposite-appliance-composite.png')\n allowed.save('/tmp/06-kitchen-opposite-appliance-mask.png')\n audit={'image':'06-kitchen-opposite.png','method':'User-authorized local Pillow compositing; generated hood and real fridge front mapped to original appliance regions',\n  'donor':str(donor_path),'source_size':list(base.size),'donor_size':list(donor.size),\n  'hood_polygon':hood_points,'fridge_polygon':fridge_points,'fridge_pieces':pieces,\n  'front_side_gap_y':[590,594],'nominal_upper_door_fraction':round((590-213)/(777-213),4),\n  'light_pools':{'ellipses':[[66,662,150,706],[219,691,303,735]],'alpha_levels':[9,8],'blur_px':13,'scope':'Hob illumination only'},\n  **prove_outside(base,final,allowed)}\n Path('/tmp/kitchen-opposite-composite-audit.json').write_text(json.dumps(audit,indent=2))\n print(json.dumps(audit))\nif __name__=='__main__':\n wide()\n opposite()\n",
+      "retention": "Exact recipe embedded here to avoid a project working folder. Generated donor originals remain at recorded built-in tool output paths."
+    },
+    "preservation": "Both source canvas dimensions retained. Every pixel outside the explicit hood/fridge/local LED-illumination masks is identical. Other31 canonical images, measured plans and model files unchanged.",
+    "retention": "Pre-edit sources recoverable from Git bc265a53b66ff7328d581f0dc65ec7525ae5b6c5. Exact supplied/generation prompts, all donor hashes, compositing geometry and verification are recorded here. No extra project image folder added.",
+    "approval": "Assistant visual and pixel-preservation review complete; user acceptance of final photographs pending.",
+    "follow_up": "The user explicitly selected the original generated kitchen-opposite image. kitchen_appliance_user_selection supersedes compositing/proportion adjustments and outside-mask preservation claims for the current opposite file. Wide-view file is unchanged in this follow-up."
+  },
+  "kitchen_appliance_user_selection": {
+    "date": "2026-10-24",
+    "image": "06-kitchen-opposite.png",
+    "user_feedback": "WTF bro this was the correct image right? \u2014 user attached the original generated opposite view.",
+    "decision": "Restore that exact generated image and supersede the later assistant composite; no further edits.",
+    "selected_source": {
+      "generated_file": "/Users/hensaldeon/.codex/generated_images/01a12f5a-85d2-70d0-a24b-479e62a0abd9/exec-68236b31-742b-493d-a10b-18fecf5bbdde.png",
+      "sha256": "2774bc6e6f0c26f9b96a4ad8890cc55d37180e876a637f4b659c2ab720107864",
+      "size": [
+        1536,
+        1024
+      ],
+      "generation_record": "kitchen-solid-hood-fridge-2026-10-24-06-kitchen-opposite"
+    },
+    "superseded_composite_sha256": "dc5a729a3a66afcb3f30a473c4640df66bd396524937af8f8fc9058e6e096895",
+    "output": {
+      "path": "images/06-kitchen-opposite.png",
+      "sha256": "2774bc6e6f0c26f9b96a4ad8890cc55d37180e876a637f4b659c2ab720107864",
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    "verification": "Canonical file equals selected generated file byte-for-byte. All other current photographs and model/drawing files unchanged in this follow-up.",
+    "user_approval": "explicitly accepted selected original generated image"
   }
 }
