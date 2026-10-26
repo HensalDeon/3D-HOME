@@ -115,7 +115,7 @@
  "bedroomWallFace": 6.1,
  "tv": {
   "revision": "R14",
-  "concept": "R14 moves the fitted TV joinery out of the stair-side wall line and into the volume under the LOWER / WEST FLIGHT, where the raking soffit is and where the space was previously dead. The unit is 2.25 x 0.35 m at x = 0.69-1.04, y = 3.20-5.45, facing EAST across the stairwell and seen from the living room through the retained 2.00 m headed opening. A 30 mm oak backing at x = 0.72-0.75 follows the ACTUAL underside of the lower flight, held 60 mm clear the whole way: it rises with the flight from +0.569 m at y = 3.23 to +1.691 m at y = 4.82, then steps to the flat landing soffit line at +1.888 m and runs level to y = 5.45. A 43-inch screen sits in the taller portion; a low shelf sits beside it and a two-shelf end bay closes the run at the nook end. Nothing is built against the stair-side wall any more.",
+  "concept": "R14 moves the fitted TV joinery out of the stair-side wall line and into the volume under the LOWER / WEST FLIGHT, where the raking soffit is and where the space was previously dead. The unit is 2.25 x 0.35 m at x = 0.69-1.04, y = 3.20-5.45, facing EAST across the stairwell and seen from the living room through the retained 2.00 m headed opening. A 30 mm oak backing at x = 0.72-0.75 follows the ACTUAL underside of the lower flight, held 60 mm clear the whole way: it rises with the flight from +0.569 m at y = 3.23 to +1.691 m at y = 4.82, then steps to the flat landing soffit line at +1.888 m and runs level to y = 5.45. A 43-inch screen sits in the taller portion; an open cubby sits at the stair end (moved there in R20 to match the photographs) and a two-shelf end bay closes the run at the nook end. Nothing is built against the stair-side wall any more.",
   "supersedes": "R13 (and R12) joinery on the stair-side wall line at x = 1.80-2.15. Withdrawn; none of its coordinates are carried forward. All R12 architecture - stair, landings, trimmer, supports, the headed wall opening and the complete washbasin nook - is unchanged.",
   "under": "lower/west flight",
   "zone": [
@@ -200,14 +200,14 @@
   "box": [
    0.75,
    4.16,
-   0.8,
+   0.86,
    5.12
   ],
   "screen": {
    "box": [
     0.75,
     4.16,
-    0.8,
+    0.86,
     5.12
    ],
    "diagonalInches": 43,
@@ -217,8 +217,21 @@
    "top": 1.14,
    "center": 4.64,
    "centerHeight": 0.87,
-   "mount": "surface-mounted on the oak backing, face at x = 0.80",
-   "note": "43-inch face, 0.96 x 0.54 m, in the taller portion of the raking bay. Centreline y = 4.64 m, centre +0.87 m. The tight point is its low end: 85 mm clear between the screen top and the backing edge at y = 4.16."
+   "mount": {
+    "type": "full-motion articulating wall mount (extend, swivel, tilt)",
+    "vesa": "to suit the selected 43-inch TV, typically 200 x 200",
+    "stowedFace_x": 0.86,
+    "extendMax_m": 0.4,
+    "swivelMax_deg": 30,
+    "tilt_deg": [
+     -12,
+     3
+    ],
+    "fixing": "Do not hang it from the 30 mm oak backing alone. Bolt a steel or 18 mm plywood mounting plate behind the backing to the floor slab and the west external wall (or the RCC waist above). TO BE DESIGNED with the joiner for the TV weight plus arm leverage.",
+    "use": "Stowed flat, the screen sits inside the joinery face at x = 1.04. Pull it out at least 0.25 m, clear of the end-bay shelf fronts at x = 1.02, before swivelling up to about 25 degrees toward the sofa; it already faces the dining table when flat. Tilt down for the chaise. Set the swivel stops so it cannot swing into the end-bay shelves, and push it back flat after viewing so it never stands in the basin standing zone or the stair entry. Run power and HDMI through a flexible cable sleeve behind the backing."
+   },
+   "note": "43-inch face, 0.96 x 0.54 m, in the taller portion of the raking bay. Centreline y = 4.64 m, centre +0.87 m. The tight point is its low end: 85 mm clear between the screen top and the backing edge at y = 4.16. R20 (25 Oct 2026): same 43-inch screen, now on a full-motion mount; stowed, its face is at x = 0.86.",
+   "panelDepth": 0.04
   },
   "screenBottom": 0.6,
   "screenTop": 1.14,
@@ -227,8 +240,8 @@
    {
     "id": "shelf-low",
     "y": [
-     3.66,
-     4.06
+     3.48,
+     3.95
     ],
     "x": [
      0.75,
@@ -236,7 +249,7 @@
     ],
     "top": 0.78,
     "thickness": 0.018,
-    "name": "low oak shelf beside the screen, on the shallow end of the rake"
+    "name": "open oak cubby at the stair end, matching the accepted photographs; 0.21 m clear of the screen so it no longer hides its corner from the sofa or chaise"
    },
    {
     "id": "shelf-end-low",
@@ -271,8 +284,8 @@
    {
     "id": "divider-low-shelf",
     "y": [
-     4.042,
-     4.06
+     3.932,
+     3.95
     ],
     "x": [
      0.75,
@@ -379,7 +392,20 @@
    "from": "living room, through the 2.00 m headed opening at x = 2.05-2.20",
    "screenToOpening_m": 1.25,
    "screenToLivingFace_m": 1.4,
-   "note": "The screen faces east across the stairwell. The upper flight (x = 1.15-2.05, y = 4.20-5.20) passes overhead at a soffit of 1.91-2.62 m, well clear of the 1.14 m screen top, and both balustrades start above 1.6 m, so the sightline from the living floor is open."
+   "note": "The screen faces east across the stairwell. The upper flight (x = 1.15-2.05, y = 4.20-5.20) passes overhead at a soffit of 1.91-2.62 m, well clear of the 1.14 m screen top, and both balustrades start above 1.6 m, so the sightline from the living floor is open.",
+   "fromSofa": {
+    "distance_m": [
+     4.75,
+     5.42
+    ],
+    "offAxis_deg": {
+     "seatNearestTV": 15,
+     "middleSeat": 21,
+     "seatByChaise": 26,
+     "chaise": 32
+    },
+    "note": "Measured in the model from a 1.10 m seated eye height to all four screen corners: every seat, including the chaise, sees the whole screen now that the cubby sits at the stair end (tested on every build). Choose an IPS or OLED panel for the side seats; pull the mount out and swivel it about 20-25 degrees toward the sofa for films."
+   }
   },
   "referenceDeviations": [
    "The reference shows one long flight running floor to ceiling, so its under-stair triangle reaches the floor. This is a dog-leg stair. R14 uses the flight that actually gives that triangle - the lower/west flight, y = 3.20-4.70 - instead of the 4-riser upper return, so the composition now sits under a real 1.5 m rake rather than a short high one.",

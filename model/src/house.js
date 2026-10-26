@@ -17,7 +17,7 @@ export function createHouse(){
  // R20 exterior and fit-out finishes from fitout-layout.json, which the drawings read too.
  Object.assign(materials,{wood:mat(fitout.exterior.timber),grain:mat(fitout.exterior.timberGrain),pave:mat(fitout.exterior.paving),
   rearDoor:mat(fitout.exterior.rearDoor,{roughness:.6}),louvre:mat(fitout.exterior.timber,{metalness:.2,roughness:.6}),
-  bathFloor:mat(fitout.bathrooms.floor),bamboo:mat('#c9a46b',{transparent:true,opacity:.82,roughness:.9}),plant:mat('#5f7d58')});
+  bathFloor:mat(fitout.bathrooms.floor),bamboo:mat('#c9a46b',{transparent:true,opacity:.82,roughness:.9}),cane:mat('#c9a46b',{roughness:.95}),cord:mat('#d8c8a6',{roughness:.95}),plant:mat('#5f7d58')});
  materials.tile=materials.bathFloor;
  const V=(x,h,y)=>new THREE.Vector3(x-3,h,4.85-y);
  function box(g,x0,y0,x1,y1,bottom,top,m){if(x1-x0<.00001||y1-y0<.00001||top-bottom<.00001)return;const o=new THREE.Mesh(new THREE.BoxGeometry(x1-x0,top-bottom,y1-y0),m);o.position.copy(V((x0+x1)/2,(bottom+top)/2,(y0+y1)/2));o.castShadow=true;o.receiveShadow=true;g.add(o);return o;}
@@ -116,7 +116,8 @@ export function createHouse(){
     const at=s=>s[0]===a[0]&&s[1]===a[1],workSeat=level==='first'&&storage.study.chairs.some(at);
     // R20: dining and terrace chairs face their tables across +x; tailoring chairs have oak seats.
     const facesX=(level==='ground'&&fitout.dining.chairs.some(at))||(level==='roof'&&fitout.terrace.chairs.some(at));
-    chair(...a.slice(0,3),workSeat?(a[0]<1.5?'x0':'x1'):facesX?'x1':'y0',workSeat?materials.oak:materials.fabric);
+    const dining=level==='ground'&&fitout.dining.chairs.some(at);
+    chair(...a.slice(0,3),workSeat?(a[0]<1.5?'x0':'x1'):facesX?'x1':'y0',workSeat?materials.oak:dining?materials.cord:materials.fabric);
    }
    if(c.op==='shower'){const[x0,y0,x1,y1]=a;box(f,x0,y0,x1,y1,z+.006,z+.04,materials.tile);
     // R20 recessed tiled niche on the back wall and a slim linear drain along the entry edge.
@@ -145,7 +146,7 @@ export function createHouse(){
    // R20: oak uppers, ivory loft bridge, end-wall pantry, housed fridge and inclined hood.
    addKitchenJoinery({parent:f,z,box,materials});
    box(f,3.25,8.95,3.85,9.55,z,z+.86,materials.white);const drum=new THREE.Mesh(new THREE.CylinderGeometry(.20,.20,.02,24),materials.dark);drum.rotation.z=Math.PI/2;drum.position.copy(V(3.86,z+.43,9.25));f.add(drum);
-   box(f,5.12,2,5.78,3.8,z+.12,z+.47,materials.fabric);box(f,5.62,2,5.78,3.8,z+.4,z+.95,materials.fabric);for(let y=2.05;y<3.7;y+=.58)box(f,5.12,y,5.62,y+.52,z+.47,z+.57,materials.linen);for(const y of [2,3.65])box(f,5.12,y,5.78,y+.15,z+.4,z+.72,materials.fabric);
+   // Sofa: corner sofa with chaise, built in fitout-joinery.js from fitout-layout.json.
    // R14 joinery, under the lower flight. Geometry comes from under-stair-layout.json, which the
    // drawing scripts read too, and is checked against the real stair meshes as it is built.
    addTvJoineryPreview({parent:f,stairs:g.getObjectByName('stairs'),z,box,profilePrism,cylinder,materials,V});
@@ -183,7 +184,6 @@ export function createHouse(){
    box(wash,b[2]-.11,b[1]+.04,b[2]-.05,b[1]+.10,z+fin.vanity.counter[1],z+fin.vanity.counter[1]+.14,materials.linen);
    // R20: rectangular table with two chairs and a window-side bench, drum pendant, coffee table.
    addDiningAndLiving({parent:f,z,box,cylinder,rod,materials});
-   box(f,5.28,1.35,5.78,1.72,z+.62,z+.73,materials.oak);box(f,5.38,1.37,5.68,1.43,z+.73,z+1.24,materials.wood);
    
   }else if(level==='first'){
    const work=new THREE.Group();work.name='Tailoring workbenches';f.add(work);
@@ -362,6 +362,8 @@ export function createHouse(){
    }else{
     facade.add(facadeBand('first',materials.dark));
     cladding(facade,3.13,.13,5.56,.30,5.87,6.1);
+    // Narrow oak strip right of the curved balcony frame, as in the accepted front photographs.
+    cladding(facade,5.86,-.006,6,-.003,3.5,6.3);
     box(facade,.55,-.005,2.94,0,3.75,4.20,materials.wall);
     // Rear canopy is an open-bottom return; the drying balcony remains open.
     const pts=[[.44,6.14],[.24,5.94],[.24,3.52]];
@@ -384,7 +386,8 @@ export function createHouse(){
    const cover=new THREE.Group();g.add(cover);cover.name='cover';box(cover,0,2.15,2.2,6.25,8.85,9,materials.wall);box(cover,0,2.15,2.2,6.25,8.955,9,materials.dark);
    const roofFinish=new THREE.Group();g.add(roofFinish);facades.push({group:roofFinish,level});
    for(const y of [2.147,6.25])for(const b of [[0,.55,6.45,8.85],[1.45,2.2,6.45,8.85],[.55,1.45,6.45,7.95],[.55,1.45,8.4,8.85]])cladding(roofFinish,b[0],y,b[1],y+.003,b[2],b[3],true);
-   for(const [y,x1] of [[.025,3.4],[9.525,3.6]]){cladding(g,.05,y,x1-.05,y+.15,6.45,7.2,true);box(g,0,y,x1,y+.15,7.2,7.4,materials.dark);box(g,.04,y-.003,x1-.04,y+.154,7.2,7.28,materials.wall);}
+   // 25 Oct 2026: the front roof-level band is warm-white render; the rear band stays oak.
+   for(const [y,x1] of [[.025,3.4],[9.525,3.6]]){if(y<1)box(g,.05,y,x1-.05,y+.15,6.45,7.2,materials.wall).name='front roof-level render band';else cladding(g,.05,y,x1-.05,y+.15,6.45,7.2,true);box(g,0,y,x1,y+.15,7.2,7.4,materials.dark);box(g,.04,y-.003,x1-.04,y+.154,7.2,7.28,materials.wall);}
    for(const pts of [[[1,7.2,6.47],[2.8,6.55,6.47]],[[3.45,8.9,6.47],[4.9,4.5,6.47]],[[3.5,4.7,6.47],[5.65,.55,6.47]],[[.8,1.7,6.47],[4.7,.55,6.47]]]){line(roofDimensions,pts,'#6799a0');const a=V(pts[0][0],pts[0][2],pts[0][1]),b=V(pts[1][0],pts[1][2],pts[1][1]);roofDimensions.add(new THREE.ArrowHelper(b.clone().sub(a).normalize(),a,a.distanceTo(b),'#6799a0',.17,.1));}
    line(g,[[.35,7.5,z+.02],[1.8,7.5,z+.02],[1.8,9.05,z+.02],[.35,9.05,z+.02],[.35,7.5,z+.02]],'#8e9d80',true);
    line(g,[[2.2,2.3,z+.02],[3.3,2.3,z+.02],[3.3,3.45,z+.02],[2.2,3.45,z+.02]],'#819e7c',true);

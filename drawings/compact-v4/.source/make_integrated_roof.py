@@ -58,11 +58,11 @@ def plan_sheet(c):
     roof.roof_plan(Plan(c, 37, 43, 1000/55))
     y = 230
     for title, body in [
-        ('MATERIALS CONNECT THE TWO ROOF LEVELS', 'R20: every exterior timber surface uses one warm honey-oak tone. Vertical cladding on the enclosure end walls matches the existing screen; warm-white side walls and a white fascia with a thin charcoal edge keep it light.'),
+        ('MATERIALS CONNECT THE TWO ROOF LEVELS', 'R20: every exterior timber surface uses one warm honey-oak tone. Oak is kept to the entrance panel, balcony ceiling and adjacent strip, the enclosure end walls and the rear; the front roof-level screen is warm-white render with downlights. A white fascia with a thin charcoal edge keeps it light.'),
         ('R20 TERRACE PERGOLA AND BENCH', 'An open charcoal steel pergola with bamboo shade stands on four posts over the B4, B5, C4 and C5 column zones; it is not a roof or added floor area. A masonry bench lines the north parapet, where the guard rises to 1.10 m above the seat (+1.55 m). Post anchors, uplift and waterproofing to be designed; confirm local covered-area rules.'),
         ('SAME STAIR, SAME FOOTPRINT', 'The roof enclosure remains 2.20 x 4.10 m outside, adding 9.02 m2 / 97.1 sq ft. Its front face is set back 2.15 m; the rear face is set back 3.45 m. Ground remains 638.34 sq ft; first remains 629.84 sq ft. Internal alignment changes do not enlarge either footprint.'),
         ('KEEP THE OPEN ROOF USABLE', 'The 900 mm exit door opens onto the north-side roof landing. Keep its swing and approach clear. The perimeter guard is shown continuously at 1.10 m concept height; final infill and fixings need detailed design.'),
-        ('THE SILHOUETTE IS TALLER', 'The cap is +9.00 m, 1.60 m above the existing +7.40 m timber screen. The enclosure is narrower and set back, but remains visible. This option retains the approved first-floor rear canopy and toilet-vent arrangement.'),
+        ('THE SILHOUETTE IS TALLER', 'The cap is +9.00 m, 1.60 m above the existing +7.40 m roof screen. The enclosure is narrower and set back, but remains visible. This option retains the approved first-floor rear canopy and toilet-vent arrangement.'),
         ('DETAILING STILL TO COORDINATE', 'Cladding build-up must fit the stated envelope. Coordinate weathering, cap flashings, waterproofing, guard anchors, stair structure and clear headroom. Drainage arrows and the services reserve are inherited concept indications, not installation details.'),
     ]:
         y = v4.block(c, 225, y, title, body, 173)
@@ -88,7 +88,9 @@ def profile_sheet(c):
     p.fill_rect(2.15, UNDER, 6.25, TOP, v4.WALL)
     p.fill_rect(2.15, TOP-.045, 6.25, TOP, v4.DARK)
     for x in [0, 9.55]:
-        v4.timber(p, x, RF, x+.15, 7.20, True)
+        # Front screen is warm-white render; the rear screen stays oak.
+        if x: v4.timber(p, x, RF, x+.15, 7.20, True)
+        else: p.fill_rect(x, RF, x+.15, 7.20, v4.WALL)
         p.fill_rect(x, 7.20, x+.15, SCREEN, v4.DARK)
     p.line(0, GUARD, 9.70, GUARD, v4.MUTED, .6, dash=[2, 2])
     p.dims('x', 5.90, 0, [2.15, 4.10, 3.45], size=7)

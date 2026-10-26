@@ -985,6 +985,32 @@
     "screen_diagonal_in": 43,
     "screen_centreline_y_m": 4.64,
     "screen_centre_height_m": 0.87,
+    "screen_mount": {
+      "type": "full-motion articulating wall mount (extend, swivel, tilt)",
+      "vesa": "to suit the selected 43-inch TV, typically 200 x 200",
+      "stowedFace_x": 0.86,
+      "extendMax_m": 0.4,
+      "swivelMax_deg": 30,
+      "tilt_deg": [
+        -12,
+        3
+      ],
+      "fixing": "Do not hang it from the 30 mm oak backing alone. Bolt a steel or 18 mm plywood mounting plate behind the backing to the floor slab and the west external wall (or the RCC waist above). TO BE DESIGNED with the joiner for the TV weight plus arm leverage.",
+      "use": "Stowed flat, the screen sits inside the joinery face at x = 1.04. Pull it out at least 0.25 m, clear of the end-bay shelf fronts at x = 1.02, before swivelling up to about 25 degrees toward the sofa; it already faces the dining table when flat. Tilt down for the chaise. Set the swivel stops so it cannot swing into the end-bay shelves, and push it back flat after viewing so it never stands in the basin standing zone or the stair entry. Run power and HDMI through a flexible cable sleeve behind the backing."
+    },
+    "viewing_from_sofa": {
+      "distance_m": [
+        4.75,
+        5.42
+      ],
+      "offAxis_deg": {
+        "seatNearestTV": 15,
+        "middleSeat": 21,
+        "seatByChaise": 26,
+        "chaise": 32
+      },
+      "note": "Measured in the model from a 1.10 m seated eye height to all four screen corners: every seat, including the chaise, sees the whole screen now that the cubby sits at the stair end (tested on every build). Choose an IPS or OLED panel for the side seats; pull the mount out and swivel it about 20-25 degrees toward the sofa for films."
+    },
     "projection_into_passage_m": 0,
     "enclosed_storage_m3": 0.265,
     "open_display_m3": 0.05,
@@ -1037,6 +1063,18 @@
       "timber": "#AB7D52",
       "timberGrain": "#8A6440",
       "timberNote": "One warm natural honey-oak / light teak tone for every exterior timber surface: cladding, soffits, parapet bands and the roof stair enclosure. Measured from the accepted entrance photograph (saturation about 0.35). Not grey or taupe, not orange or glossy. Supplier sample to be approved against the photograph.",
+      "timberZones": [
+        "front ground panel around the front door and ground-floor window",
+        "upper balcony ceiling",
+        "narrow upper-floor strip right of the curved balcony frame, with its wall light",
+        "rooftop stair room",
+        "rear upper panel, rear roof-level band and the drying-balcony louvre screen"
+      ],
+      "renderZones": [
+        "front roof-level band below the rooftop stair room (warm-white render with downlights, thin charcoal cap)",
+        "long south side wall (plain warm-white, charcoal window hoods)"
+      ],
+      "timberZonesNote": "25 Oct 2026: exterior oak is concentrated in a few deliberate places, matching the accepted 19/21 photographs; the front roof-level band and the south-wall strips are warm-white render.",
       "frontDoor": "#AB7D52",
       "frontDoorNote": "Front door in the same muted natural oak as the cladding, with a black handle.",
       "rearDoor": "#3B3D3A",
@@ -1219,9 +1257,11 @@
           4.65
         ],
         "diameter": 0.55,
-        "bottomAboveTable": 0.8
+        "bottomAboveTable": 0.8,
+        "type": "woven natural-cane globe pendant, warm 2700 K lamp",
+        "control": "own switch on a dimmer"
       },
-      "finish": "muted oak 1.20 x 0.75 m table; two oak chairs with oatmeal seats on the room side; oak bench with oatmeal cushion tucked under the window side; oatmeal linen drum pendant centred over the table",
+      "finish": "muted oak 1.20 x 0.75 m table; two light-oak wishbone chairs with woven paper-cord seats on the room side; oak bench with oatmeal cushion tucked under the window side; woven cane globe pendant centred over the table (25 Oct 2026, from the accepted dining photograph)",
       "clearToRearRouteM": 0.85,
       "note": "Replaces the round table and three chairs. The table ends at y = 5.25, leaving 0.85 m clear to the rear service route at y = 6.10, and the room-side chairs keep x = 3.25-4.11 open for the front-door route."
     },
@@ -1236,6 +1276,41 @@
         "top": 0.4,
         "finish": "round muted oak pedestal table"
       },
+      "sofa": {
+        "back": [
+          5.62,
+          1.35,
+          5.78,
+          3.8
+        ],
+        "main": [
+          5.12,
+          2.15,
+          5.78,
+          3.8
+        ],
+        "chaise": [
+          4.3,
+          1.35,
+          5.78,
+          2.15
+        ],
+        "arm": [
+          5.12,
+          3.65,
+          5.78,
+          3.8
+        ],
+        "base": 0.12,
+        "seat": 0.47,
+        "cushionTop": 0.57,
+        "backTop": 0.95,
+        "armTop": 0.72,
+        "finish": "oatmeal textured-linen L-shaped corner sofa: three-seat run against the north wall and a backless chaise along the front wall into the northeast corner",
+        "note": "Added 25 Oct 2026 at the user's request; replaces the straight sofa and the northeast prayer niche, which is removed. Chaise cushions top out at +0.57 m, below the +0.75 m front-window sill, and the back stays clear of the window at x >= 5.62. The chaise starts at x = 4.30, 0.12 m beyond the front-door opening, and leaves 0.375 m to the coffee table."
+      },
+      "lighting": "Evening scheme from the accepted 02-living-evening image: dimmable dining pendant, the TV-plinth strip and basin wall light on their own switches, and a switched socket in the window corner for the floor lamp. Ceiling downlights are a separate circuit so they can stay off. The mushroom lamps are cordless and rechargeable; no wiring. Electrical layout to be coordinated.",
+      "staging": "Cushions, throw, walnut stool, mushroom lamps, vases, mirrors and the kitchen canister shelf in the 25 Oct images are loose decor and are not scheduled.",
       "note": "Coffee table 0.40 m in front of the sofa; 0.72 m walkway kept beside it."
     },
     "bathrooms": {
