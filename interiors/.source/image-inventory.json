@@ -5,19 +5,19 @@
       1490,
       1055
     ],
-    "sha256": "d23aaf24f0a0d2ebe4459813a0a34024911396dd1f5cc843e50f7945fb58ff3c"
+    "sha256": "87ecf84d0c38c0da8e6468be3c1415c01308138b8fc94abac8e2a9ac66116283"
   },
   {
     "file": "02-ground-floor-overview-wide.png",
     "size": [
-      1672,
+      1671,
       941
     ],
-    "sha256": "f83c708e46126a2f5a1a94c42996e692a92a3d9f504c142336304ae87bfab6b0"
+    "sha256": "231b11e8c4d656260eb6e7b9e4931145a802f2d03e5cddeb6705defd98405e14"
   },
   {
     "file": "02-living-evening.png",
-    "sha256": "18dddd2d05a5763848e9587bf4de2dba340fe7dd4d8b9500dea197b4c442e7bf",
+    "sha256": "7bf679fffd75a279946d43ecb06e23b488540a6c32804b0612d5fed52d40f898",
     "size": [
       1536,
       1024
@@ -29,7 +29,7 @@
       1536,
       1024
     ],
-    "sha256": "a3c62e9d061ac6aa2a1595d979e213457a67f3a117a462a66405e3b71e784d0c"
+    "sha256": "02255c057a60a8de649347c1a5cce4c4c9e18ef763b807cfa9ad81a0583c0c37"
   },
   {
     "file": "03-stair-tv-wide.png",
@@ -58,10 +58,10 @@
   {
     "file": "06-kitchen-detail.png",
     "size": [
-      1495,
-      1052
+      1494,
+      1053
     ],
-    "sha256": "2598a4fad275b6b27d76c1d5046691abe74f01516d567cbad29de460b5b262ba"
+    "sha256": "6dee75b763c21c4fdffc882bcbdc9d7946af6790ac8072fb4472bab495d37a21"
   },
   {
     "file": "06-kitchen-opposite.png",
@@ -69,7 +69,7 @@
       1536,
       1024
     ],
-    "sha256": "2774bc6e6f0c26f9b96a4ad8890cc55d37180e876a637f4b659c2ab720107864"
+    "sha256": "38a665d3d9aae5901e5d5e8aa4dc2f23cac36126dff2c87ea9cce979b2599b99"
   },
   {
     "file": "06-kitchen-wide.png",
@@ -77,7 +77,7 @@
       1495,
       1052
     ],
-    "sha256": "f0898260a44745f086e5b272ce846bf83274bf472483830bfc9642e8df20fd5b"
+    "sha256": "d5354d35a86199c342343041670949da5e48e9dbc814a7bdfd5a8f299e2dfde1"
   },
   {
     "file": "07-bedroom1-detail.png",
@@ -93,7 +93,7 @@
       1536,
       1024
     ],
-    "sha256": "3afffb7c1ed0298db2a338490772c1914522947414cf3a6549e3fdb5058a355a"
+    "sha256": "9d0a72d5aa7af0d3ec0ea1d1bf25b64b08d1eefad23d808a9446d64e9f366775"
   },
   {
     "file": "07-bedroom1-wide.png",
@@ -101,7 +101,7 @@
       1536,
       1024
     ],
-    "sha256": "6b6a8ac7ec968db0fd0dc3b09663c362bbe315332cca81233113275627dba864"
+    "sha256": "13554faf8ad1e09448780c5a2fadca278040c6b6acb8ed5a7f90f0e8cdb24757"
   },
   {
     "file": "08-bedroom2-detail.png",
@@ -109,7 +109,7 @@
       1490,
       1055
     ],
-    "sha256": "d16034a3f23e43b5369b73249842c9b333852394aaf0773faf6aa488dde89718"
+    "sha256": "efd0a67d6ded1e81b8d207602843bb9f2ff017f712ccc7a4057dfa646b51c074"
   },
   {
     "file": "08-bedroom2-opposite.png",
@@ -117,7 +117,7 @@
       1536,
       1024
     ],
-    "sha256": "57b9d12050b554baf1771a7be878bc14d5057996c031cdc3cb2410f6a7521723"
+    "sha256": "3950a7f0039b6b1d1a5297edd78ba094b607aa653031653f58b35710f619bfda"
   },
   {
     "file": "08-bedroom2-wide.png",
@@ -125,7 +125,7 @@
       1490,
       1055
     ],
-    "sha256": "59c2cdd95b856cbde6d9ccf9aa51d67595ebabed89bcc07ed14292fa8973da92"
+    "sha256": "e0f5db8a3d9a52b9e8936f98d5233751770b6a977b8dd0b139fa5114365465a3"
   },
   {
     "file": "09-bedroom3-detail.png",
@@ -133,7 +133,7 @@
       1536,
       1024
     ],
-    "sha256": "287b8df715b9199efbf710875782c596d90fa17865ce4e9223276ea5c59cd15e"
+    "sha256": "8f0f20ada31f37fd9ffc3cced46ad4968e68ed2e9a1e358312e34fa4dc925b46"
   },
   {
     "file": "09-bedroom3-opposite.png",
@@ -141,7 +141,7 @@
       1536,
       1024
     ],
-    "sha256": "972a0f3972bda577cb53490016300ba21cd7e1c4857493425a6e2afc8035162d"
+    "sha256": "fb6e5bf86e01ce0d62501178396464990f6bc30b10566828be4f7331c897e93c"
   },
   {
     "file": "09-bedroom3-wide.png",
@@ -149,7 +149,7 @@
       1536,
       1024
     ],
-    "sha256": "8d638471fbbc06e35882af56151935279f76475a620ac013b3974eb5d4aba7bd"
+    "sha256": "947b6d6fecb1d74e716fa2d1f4bbb150f4fe470715efdd37cb9862bb362ae73f"
   },
   {
     "file": "10-passage-wide.png",
@@ -157,7 +157,7 @@
       1451,
       1084
     ],
-    "sha256": "5278c2ccdfe07157826e33fef12fcfcf94afd578df14baed5aa044c5d5fe3afc"
+    "sha256": "6bc031e90e6e48e7978a2cdd445c13a1da0dea383bb8ee24f4a6ae73ebc6ce88"
   },
   {
     "file": "10-study-storage.png",
@@ -165,7 +165,7 @@
       1536,
       1024
     ],
-    "sha256": "7f6f383518e4117c81b91842b346de874c1765fc98a6e443db3b23656eee99c7"
+    "sha256": "7b990e2113d70aab59256fcd9f4849b950a031269863f0655d713da667747d06"
   },
   {
     "file": "10-study-wide.png",
@@ -173,7 +173,7 @@
       1452,
       1083
     ],
-    "sha256": "e7b082b0e8adef24afc96d986b11015c487722359900fa7658ab457a4b96e938"
+    "sha256": "7b4491944c930c32ae79d9b84fc27a9bc0c017b05e161975f6eb5f29bfefc1ac"
   },
   {
     "file": "11-bathroom1-wide.png",
@@ -218,10 +218,10 @@
   {
     "file": "16-dining-wide.png",
     "size": [
-      1531,
+      1532,
       1027
     ],
-    "sha256": "40e21f0d6c02518d55248cbb97d27225c98fd5c3ad24d45c1680d7258988d9b3"
+    "sha256": "746db79819f301c8bf2accb5c29c6b5e98cd015e2b73dac967d7194376dbf6d2"
   },
   {
     "file": "17-front-gallery-wide.png",
@@ -237,7 +237,7 @@
       1678,
       937
     ],
-    "sha256": "d13bf311fe30bc4dbd02ce15d5cb3c2dce428103d8e9043a90538d58ad14fab5"
+    "sha256": "14fba000cf841ccd5ead3f240b5b6070a09a02baad7e2d78ba3beced835c9f63"
   },
   {
     "file": "19-exterior-front-wide.png",
@@ -245,15 +245,15 @@
       1678,
       937
     ],
-    "sha256": "3a74b72d8d6036d6c19e57dbe3b6b01f78a24704d81b1b9c1803013ab2f13e29"
+    "sha256": "959254d2fbb961ce592c094c92e7a510abc28c278ed75bcdc9fa5952402d764a"
   },
   {
     "file": "20-exterior-rear-backyard-wide.png",
     "size": [
-      1676,
+      1677,
       938
     ],
-    "sha256": "a3c206e1572ce704747e162c547f10251775d8537ed20b73c7e3855e412d945c"
+    "sha256": "2cf83bac4cec3f86d317e366db34d0914d6092f8e6578134f3f2dc2af264ce9c"
   },
   {
     "file": "21-exterior-south-parking-wide.png",
@@ -261,7 +261,7 @@
       1678,
       937
     ],
-    "sha256": "7cdfe13e8b6bb254f92c3b114d67a3a20fdf0037391ffbf40d2b5218ce9b8989"
+    "sha256": "b08a6a73177ec1ac6497353139f4ec67ff68d6125b9dea2f0d5eea0fad58ad28"
   },
   {
     "file": "22-exterior-rear-utility-wide.png",
@@ -269,6 +269,6 @@
       1678,
       937
     ],
-    "sha256": "eb15ff7e150b60f6378494a54bc8850ba52f450a924371856364b8f04ac6b39c"
+    "sha256": "ad91745206fad978f2dd80f0dfa6d0d9706cf9d1f0ab7f934bd4f37b7de74a6c"
   }
 ]

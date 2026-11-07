@@ -1,6 +1,6 @@
 {
   "source": "Hensal_Complete_House_Plans.pdf",
-  "source_sha256": "e4e86eb6dd76b7f4cf6727a28473123bb1009b1906fd226e1f441dab5db5228a",
+  "source_sha256": "ce88c3f841c505c1da90c41952b7336ec61b0ef7d95f653dd4ede6565837c803",
   "coordinates": "x increases north; y increases west; metres; house east/south corner is origin",
   "levels": {
     "ground": [
@@ -265,8 +265,8 @@
         "op": "window",
         "args": [
           -0.07,
-          6.3,
-          1.4,
+          4.1,
+          1.0,
           0.22,
           "v"
         ],
@@ -275,9 +275,9 @@
       {
         "op": "window",
         "args": [
-          -0.07,
-          4.1,
-          1.0,
+          5.779999999999999,
+          3.9,
+          1.5,
           0.22,
           "v"
         ],
@@ -334,7 +334,7 @@
         "args": [
           0.5,
           9.55,
-          1.2,
+          1.5,
           0.22,
           "h"
         ],
@@ -825,9 +825,9 @@
       {
         "op": "text",
         "args": [
-          1.1,
+          1.25,
           9.96,
-          "REAR W 1.20 x 1.20 / SILL 1.00",
+          "TALL W 1.50 x 1.90 / SILL 0.30",
           4.4
         ],
         "kwargs": {
@@ -1436,6 +1436,114 @@
         "kwargs": {}
       },
       {
+        "op": "rect",
+        "args": [
+          4.6,
+          3.86,
+          5.5,
+          3.94,
+          "#25343b",
+          0.4
+        ],
+        "kwargs": {}
+      },
+      {
+        "op": "line",
+        "args": [
+          4.699999999999999,
+          3.86,
+          4.699999999999999,
+          3.94,
+          "#60747c",
+          0.25
+        ],
+        "kwargs": {}
+      },
+      {
+        "op": "line",
+        "args": [
+          4.8,
+          3.86,
+          4.8,
+          3.94,
+          "#60747c",
+          0.25
+        ],
+        "kwargs": {}
+      },
+      {
+        "op": "line",
+        "args": [
+          4.8999999999999995,
+          3.86,
+          4.8999999999999995,
+          3.94,
+          "#60747c",
+          0.25
+        ],
+        "kwargs": {}
+      },
+      {
+        "op": "line",
+        "args": [
+          5.0,
+          3.86,
+          5.0,
+          3.94,
+          "#60747c",
+          0.25
+        ],
+        "kwargs": {}
+      },
+      {
+        "op": "line",
+        "args": [
+          5.1,
+          3.86,
+          5.1,
+          3.94,
+          "#60747c",
+          0.25
+        ],
+        "kwargs": {}
+      },
+      {
+        "op": "line",
+        "args": [
+          5.2,
+          3.86,
+          5.2,
+          3.94,
+          "#60747c",
+          0.25
+        ],
+        "kwargs": {}
+      },
+      {
+        "op": "line",
+        "args": [
+          5.3,
+          3.86,
+          5.3,
+          3.94,
+          "#60747c",
+          0.25
+        ],
+        "kwargs": {}
+      },
+      {
+        "op": "line",
+        "args": [
+          5.4,
+          3.86,
+          5.4,
+          3.94,
+          "#60747c",
+          0.25
+        ],
+        "kwargs": {}
+      },
+      {
         "op": "label",
         "args": [
           4.62,
@@ -1639,17 +1747,6 @@
         "kwargs": {
           "col": "#197a77"
         }
-      },
-      {
-        "op": "window",
-        "args": [
-          5.78,
-          3.45,
-          1.1,
-          0.22,
-          "v"
-        ],
-        "kwargs": {}
       },
       {
         "op": "dims",
@@ -2106,19 +2203,8 @@
           0.85,
           0.15,
           "v",
-          -1,
+          1,
           "hi"
-        ],
-        "kwargs": {}
-      },
-      {
-        "op": "window",
-        "args": [
-          -0.020000000000000018,
-          6.3,
-          1.4,
-          0.17,
-          "v"
         ],
         "kwargs": {}
       },
@@ -2128,6 +2214,28 @@
           -0.020000000000000018,
           4.1,
           1.0,
+          0.17,
+          "v"
+        ],
+        "kwargs": {}
+      },
+      {
+        "op": "window",
+        "args": [
+          5.83,
+          3.5,
+          1.5,
+          0.17,
+          "v"
+        ],
+        "kwargs": {}
+      },
+      {
+        "op": "window",
+        "args": [
+          5.83,
+          7.0,
+          0.55,
           0.17,
           "v"
         ],
@@ -2147,20 +2255,9 @@
       {
         "op": "window",
         "args": [
-          5.83,
-          7.0,
-          0.55,
-          0.17,
-          "v"
-        ],
-        "kwargs": {}
-      },
-      {
-        "op": "window",
-        "args": [
-          0.6,
+          0.75,
           0,
-          1.7,
+          1.5,
           0.17,
           "h"
         ],
@@ -2188,6 +2285,17 @@
         "kwargs": {
           "col": "#457b9d"
         }
+      },
+      {
+        "op": "window",
+        "args": [
+          0.5,
+          9.55,
+          1.5,
+          0.17,
+          "h"
+        ],
+        "kwargs": {}
       },
       {
         "op": "window",
@@ -2946,6 +3054,18 @@
       {
         "op": "text",
         "args": [
+          1.25,
+          9.91,
+          "TALL W 1.50 x 1.90 / SILL 0.30",
+          4.4
+        ],
+        "kwargs": {
+          "col": "#197a77"
+        }
+      },
+      {
+        "op": "text",
+        "args": [
           0.35,
           8.45,
           "HEAD SOUTH",
@@ -3168,7 +3288,7 @@
         "op": "chair",
         "args": [
           1.05,
-          0.6,
+          0.68,
           0.45
         ],
         "kwargs": {}
@@ -3258,17 +3378,6 @@
           "h",
           1,
           "lo"
-        ],
-        "kwargs": {}
-      },
-      {
-        "op": "window",
-        "args": [
-          5.83,
-          3.5,
-          1.3,
-          0.17,
-          "v"
         ],
         "kwargs": {}
       },
@@ -4798,10 +4907,10 @@
     ],
     "FRONT_FF": [
       [
-        0.6,
-        1.7,
-        0.8,
-        1.4,
+        0.75,
+        1.5,
+        0.3,
+        1.9,
         "window"
       ],
       [
@@ -4815,9 +4924,9 @@
     "REAR_GF": [
       [
         0.5,
-        1.2,
-        1.0,
-        1.2,
+        1.5,
+        0.3,
+        1.9,
         "window"
       ],
       [
@@ -4837,6 +4946,13 @@
     ],
     "REAR_FF": [
       [
+        0.5,
+        1.5,
+        0.3,
+        1.9,
+        "window"
+      ],
+      [
         3.5,
         0.65,
         1.65,
@@ -4850,9 +4966,206 @@
         0.5,
         "obscured"
       ]
+    ],
+    "SIDE_GF": [
+      [
+        "west",
+        4.1,
+        1.0,
+        1.0,
+        1.2,
+        "window",
+        "g-stair"
+      ],
+      [
+        "north",
+        3.9,
+        1.5,
+        0.45,
+        1.75,
+        "window",
+        "g-living"
+      ]
+    ],
+    "SIDE_FF": [
+      [
+        "west",
+        4.1,
+        1.0,
+        1.0,
+        1.2,
+        "window",
+        "f-stair"
+      ],
+      [
+        "north",
+        3.5,
+        1.5,
+        0.3,
+        1.9,
+        "window",
+        "f-child"
+      ],
+      [
+        "north",
+        7.0,
+        0.55,
+        1.65,
+        0.5,
+        "obscured",
+        "f-bath3"
+      ]
     ]
   },
   "dimensions": {
+    "window_schedule": [
+      {
+        "floor": "GF",
+        "wall": "front / east",
+        "position_m": 0.6,
+        "width_m": 1.7,
+        "height_m": 1.15,
+        "sill_m": 1.0,
+        "head_m": 2.15,
+        "kind": "window"
+      },
+      {
+        "floor": "GF",
+        "wall": "front / east",
+        "position_m": 4.55,
+        "width_m": 1.05,
+        "height_m": 1.45,
+        "sill_m": 0.75,
+        "head_m": 2.2,
+        "kind": "window"
+      },
+      {
+        "floor": "GF",
+        "wall": "rear / west",
+        "position_m": 0.5,
+        "width_m": 1.5,
+        "height_m": 1.9,
+        "sill_m": 0.3,
+        "head_m": 2.2,
+        "kind": "window"
+      },
+      {
+        "floor": "GF",
+        "wall": "rear / west",
+        "position_m": 3.3,
+        "width_m": 1.1,
+        "height_m": 1.0,
+        "sill_m": 1.2,
+        "head_m": 2.2,
+        "kind": "obscured"
+      },
+      {
+        "floor": "GF",
+        "wall": "south side",
+        "position_m": 4.1,
+        "width_m": 1.0,
+        "height_m": 1.2,
+        "sill_m": 1.0,
+        "head_m": 2.2,
+        "kind": "window",
+        "room": "g-stair"
+      },
+      {
+        "floor": "GF",
+        "wall": "north side",
+        "position_m": 3.9,
+        "width_m": 1.5,
+        "height_m": 1.75,
+        "sill_m": 0.45,
+        "head_m": 2.2,
+        "kind": "window",
+        "room": "g-living"
+      },
+      {
+        "floor": "FF",
+        "wall": "front / east",
+        "position_m": 0.75,
+        "width_m": 1.5,
+        "height_m": 1.9,
+        "sill_m": 0.3,
+        "head_m": 2.2,
+        "kind": "window"
+      },
+      {
+        "floor": "FF",
+        "wall": "front / east",
+        "position_m": 3.45,
+        "width_m": 2.05,
+        "height_m": 2.2,
+        "sill_m": 0,
+        "head_m": 2.2,
+        "kind": "slider"
+      },
+      {
+        "floor": "FF",
+        "wall": "rear / west",
+        "position_m": 0.5,
+        "width_m": 1.5,
+        "height_m": 1.9,
+        "sill_m": 0.3,
+        "head_m": 2.2,
+        "kind": "window"
+      },
+      {
+        "floor": "FF",
+        "wall": "rear / west",
+        "position_m": 3.5,
+        "width_m": 0.65,
+        "height_m": 0.5,
+        "sill_m": 1.65,
+        "head_m": 2.15,
+        "kind": "obscured"
+      },
+      {
+        "floor": "FF",
+        "wall": "rear / west",
+        "position_m": 4.9,
+        "width_m": 0.65,
+        "height_m": 0.5,
+        "sill_m": 1.65,
+        "head_m": 2.15,
+        "kind": "obscured"
+      },
+      {
+        "floor": "FF",
+        "wall": "south side",
+        "position_m": 4.1,
+        "width_m": 1.0,
+        "height_m": 1.2,
+        "sill_m": 1.0,
+        "head_m": 2.2,
+        "kind": "window",
+        "room": "f-stair"
+      },
+      {
+        "floor": "FF",
+        "wall": "north side",
+        "position_m": 3.5,
+        "width_m": 1.5,
+        "height_m": 1.9,
+        "sill_m": 0.3,
+        "head_m": 2.2,
+        "kind": "window",
+        "room": "f-child"
+      },
+      {
+        "floor": "FF",
+        "wall": "north side",
+        "position_m": 7.0,
+        "width_m": 0.55,
+        "height_m": 0.5,
+        "sill_m": 1.65,
+        "head_m": 2.15,
+        "kind": "obscured",
+        "room": "f-bath3"
+      }
+    ],
+    "window_clear_zone_m": 0.25,
     "width_m": 6.0,
     "depth_m": 9.7,
     "external_wall_mm": {
@@ -5033,7 +5346,7 @@
         "chairs": [
           [
             1.05,
-            0.6,
+            0.68,
             0.45
           ],
           [
@@ -5065,7 +5378,8 @@
         ],
         "clearStairConnectionM": 2.5,
         "benchFinish": "muted oak tops on solid oak waterfall end panels; R20 replaces the dark legs",
-        "chairFinish": "solid muted oak chairs with a curved back rail and an oak seat"
+        "chairFinish": "solid muted oak chairs with a curved back rail and an oak seat",
+        "chairNote": "7 Nov 2026: the first tailoring chair sits 80 mm further from the front wall so it stays out of the tall study window's clear zone."
       },
       "mainDoorFinish": "oak",
       "loftDoorFinish": "ivory"
@@ -5104,7 +5418,7 @@
       "chairs": [
         [
           1.05,
-          0.6,
+          0.68,
           0.45
         ],
         [
@@ -5136,7 +5450,8 @@
       ],
       "clearStairConnectionM": 2.5,
       "benchFinish": "muted oak tops on solid oak waterfall end panels; R20 replaces the dark legs",
-      "chairFinish": "solid muted oak chairs with a curved back rail and an oak seat"
+      "chairFinish": "solid muted oak chairs with a curved back rail and an oak seat",
+      "chairNote": "7 Nov 2026: the first tailoring chair sits 80 mm further from the front wall so it stays out of the tall study window's clear zone."
     },
     "first_stair_passage_opening": {
       "revision": "R19",
@@ -5502,7 +5817,7 @@
       "FF_Master": "FF_Ensuite2",
       "FF_Bed3": "FF_Ensuite3"
     },
-    "rear_balcony_access": "private side door from master",
+    "rear_balcony_access": "private side door from master, opening outward onto the balcony",
     "rear_work_access": "independent north passage",
     "room_clear_areas_m2": {
       "g-kitchen": 5.6935,
@@ -6119,8 +6434,75 @@
         "clearToRearRouteM": 0.85,
         "note": "Replaces the round table and three chairs. The table ends at y = 5.25, leaving 0.85 m clear to the rear service route at y = 6.10, and the room-side chairs keep x = 3.25-4.11 open for the front-door route."
       },
+      "windows": {
+        "date": "2026-11-07",
+        "basis": "User reference photographs (interiors/.source/materials/window-references/): timber-lined windows with horizontal black safety-grill bars, a timber pelmet box concealing the curtain track and floor-length curtains.",
+        "sash": "slim charcoal aluminium sliding sash, unchanged outside",
+        "lining": {
+          "depth": 0.03,
+          "finish": "muted natural oak jamb, head and sill lining on the room side of every window"
+        },
+        "grill": {
+          "bar": [
+            0.025,
+            0.006
+          ],
+          "pitch": 0.11,
+          "finish": "matte charcoal mild-steel flat bars, horizontal, fixed inside the frame behind the glass",
+          "note": "Security grill on every clear-glazed window; obscured bathroom vents and the sliding balcony doors have none."
+        },
+        "pelmet": {
+          "height": 0.25,
+          "depth": 0.15,
+          "gapAboveHead": 0.05,
+          "overhang": 0.15,
+          "rooms": [
+            "g-bed",
+            "f-master",
+            "f-child",
+            "g-living"
+          ],
+          "finish": "muted oak box pelmet concealing a ripple-fold curtain track",
+          "note": "Bedrooms and living/dining. The kitchen keeps its hood and loft bridge, the study keeps Roman blinds, and stair windows have grills only. Pelmets stop at any wardrobe beside the window."
+        },
+        "curtains": "warm oatmeal linen-look ripple-fold curtains, floor length, from the pelmet",
+        "clearZone": 0.25,
+        "clearZoneNote": "No furniture or fitted joinery may rise above a window sill within 0.25 m of that window's wall face. Enforced on every drawing build and model test run.",
+        "tall": {
+          "width": 1.5,
+          "sill": 0.3,
+          "head": 2.2,
+          "panels": 3,
+          "livingSill": 0.45,
+          "rooms": [
+            "g-bed (rear wall)",
+            "f-master (rear wall, relocated)",
+            "f-child (north wall)",
+            "f-study (front wall)",
+            "g-living (north wall, over the dining bench)"
+          ],
+          "note": "7 Nov 2026, user reference photographs: tall three-panel sliding windows. The full-height fixed grill (25 mm bars, 85 mm clear gaps) also serves as the guard for the low first-floor sills. The front living window over the chaise and the kitchen window keep their sizes."
+        }
+      },
       "living": {
         "level": "ground",
+        "screen": {
+          "box": [
+            4.6,
+            3.86,
+            5.5,
+            3.94
+          ],
+          "height": 2.4,
+          "frame": 0.05,
+          "slat": [
+            0.03,
+            0.03
+          ],
+          "gap": 0.035,
+          "finish": "muted oak rectangular slatted divider: solid perimeter frame, thin vertical slats, straight top with a gap below the ceiling",
+          "note": "Accepted 25 Oct 2026 photographs. Stands between the sofa's far arm and the dining table, ends 0.28 m short of the north window wall and leaves the walkway beside the dining chairs open. Fixed to the floor and to a ceiling bracket; TO BE DETAILED with the joiner."
+        },
         "coffeeTable": {
           "centre": [
             4.35,

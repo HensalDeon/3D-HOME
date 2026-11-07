@@ -164,7 +164,7 @@
     "chairs": [
       [
         1.05,
-        0.6,
+        0.68,
         0.45
       ],
       [
@@ -196,7 +196,8 @@
     ],
     "clearStairConnectionM": 2.5,
     "benchFinish": "muted oak tops on solid oak waterfall end panels; R20 replaces the dark legs",
-    "chairFinish": "solid muted oak chairs with a curved back rail and an oak seat"
+    "chairFinish": "solid muted oak chairs with a curved back rail and an oak seat",
+    "chairNote": "7 Nov 2026: the first tailoring chair sits 80 mm further from the front wall so it stays out of the tall study window's clear zone."
   },
   "mainDoorFinish": "oak",
   "loftDoorFinish": "ivory"

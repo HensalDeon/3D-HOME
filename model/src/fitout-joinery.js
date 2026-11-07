@@ -86,3 +86,41 @@ export function addTerrace({parent,z,box,cylinder,rail,materials}){
  }
  return g;
 }
+
+// Which side of a wall a window's room is on: +1 toward larger plan x/y, -1 toward smaller.
+export const windowRoomSide=o=>o.axis==='h'?(o.y<4.85?1:-1):(o.x<3?1:-1);
+
+// 7 Nov 2026 window style: an oak box pelmet over each bedroom and living/dining window, on the
+// room side, concealing the curtain track. It never runs into a wardrobe beside the window.
+export function addWindowDressing({parent,level,z,openings,rooms,storageBoxes,box,materials}){
+ const w=layout.windows,pl=w.pelmet,g=group(parent,'Window pelmets');
+ for(const o of openings.filter(o=>o.kind==='window')){
+  const side=windowRoomSide(o),face=o.axis==='h'?(side>0?o.y+o.t:o.y):(side>0?o.x+o.t:o.x);
+  const probe=face+side*.3,mid=(o.axis==='h'?o.x:o.y)+o.w/2;
+  const at=o.axis==='h'?[mid,probe]:[probe,mid];
+  const room=rooms.find(r=>(r.regions??[r.box]).some(b=>at[0]>=b[0]&&at[0]<=b[2]&&at[1]>=b[1]&&at[1]<=b[3]));
+  if(!room||!pl.rooms.includes(room.id))continue;
+  const start=o.axis==='h'?o.x:o.y;let a0=start-pl.overhang,a1=start+o.w+pl.overhang;
+  const n0=Math.min(face,face+side*pl.depth),n1=Math.max(face,face+side*pl.depth);
+  for(const b of storageBoxes){
+   const [b0,b1,bn0,bn1]=o.axis==='h'?[b[0],b[2],b[1],b[3]]:[b[1],b[3],b[0],b[2]];
+   if(Math.min(bn1,n1)-Math.max(bn0,n0)<=1e-6||Math.min(b1,a1)-Math.max(b0,a0)<=1e-6)continue;
+   if((b0+b1)/2<mid)a0=Math.max(a0,b1);else a1=Math.min(a1,b0);
+  }
+  const lo=z+o.sill+o.height+pl.gapAboveHead,hi=lo+pl.height;
+  box(g,...(o.axis==='h'?[a0,n0,a1,n1]:[n0,a0,n1,a1]),lo,hi,materials.oak).name=`pelmet ${room.id}`;
+ }
+ return g;
+}
+
+// Rectangular oak slatted divider between the sofa and the dining table (accepted 25 Oct 2026).
+export function addLivingScreen({parent,z,box,materials}){
+ const s=layout.living.screen,[x0,y0,x1,y1]=s.box,f=s.frame,g=group(parent,'Living/dining slatted screen');
+ const top=z+s.height;
+ for(const [a,b] of [[x0,x0+f],[x1-f,x1]])box(g,a,y0,b,y1,z,top,materials.oak).name='screen frame post';
+ for(const [lo,hi] of [[z,z+f],[top-f,top]])box(g,x0,y0,x1,y1,lo,hi,materials.oak).name='screen frame rail';
+ const [sw,sd]=s.slat,cy=(y0+y1)/2;
+ for(let x=x0+f+s.gap;x+sw<=x1-f-s.gap+1e-9;x+=sw+s.gap)box(g,x,cy-sd/2,x+sw,cy+sd/2,z+f,top-f,materials.oak).name='screen slat';
+ return g;
+}
+
