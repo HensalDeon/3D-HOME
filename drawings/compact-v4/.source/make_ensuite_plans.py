@@ -118,11 +118,26 @@ def clear_size(box):return f'{box[2]-box[0]:.3f} x {box[3]-box[1]:.3f}'
 # x increases north; y increases west. External envelope includes all covered utility/balconies.
 # Opening tuples: (x, width, sill above finished floor, height, kind).
 FRONT_GF=[(.60,1.70,1.00,1.15,'window'),(3.28,.90,0,2.20,'door'),(4.55,1.05,.75,1.45,'window')]
-FRONT_FF=[(.60,1.70,.80,1.40,'window'),(3.45,2.05,0,2.20,'slider')]
+# 7 Nov 2026 (user reference photos): tall three-panel windows, 1.50 m wide, sill +0.30 m, head +2.20 m,
+# for the bedrooms and the study; the living/dining feature window sits at the dining-bench height.
+TALL_W,TALL_SILL,TALL_H=1.50,.30,1.90
+FRONT_FF=[(.75,TALL_W,TALL_SILL,TALL_H,'window'),(3.45,2.05,0,2.20,'slider')]
 # Bedroom 1 rear opening enlarged at the user's request (9 October 2026).
 # Keep its left edge and the bedroom furniture footprint; head aligns with the primary side window.
-REAR_GF=[(.50,1.20,1.00,1.20,'window'),(4.70,.90,0,2.15,'door'),(3.30,1.10,1.20,1.00,'obscured')]
-REAR_FF=[(3.50,.65,1.65,.50,'obscured'),(4.90,.65,1.65,.50,'obscured')]
+REAR_GF=[(.50,TALL_W,TALL_SILL,TALL_H,'window'),(4.70,.90,0,2.15,'door'),(3.30,1.10,1.20,1.00,'obscured')]
+REAR_FF=[(.50,TALL_W,TALL_SILL,TALL_H,'window'),(3.50,.65,1.65,.50,'obscured'),(4.90,.65,1.65,.50,'obscured')]
+# Side-wall windows: (wall, y, width, sill above finished floor, height, kind, room).
+# 7 Nov 2026: the bedroom side windows beside the wardrobes are removed on both floors (they stood
+# partly behind the wardrobes). Bedroom 1 keeps its rear window, now tall; the master's window moves to
+# the rear wall. Bedroom 3's north window becomes tall. The living/dining north window becomes the
+# tall feature window, centred on the dining table with its sill at the 0.45 m bench seat.
+SIDE_GF=[('west',4.10,1.00,1.00,1.20,'window','g-stair'),
+         ('north',3.90,TALL_W,.45,1.75,'window','g-living')]
+SIDE_FF=[('west',4.10,1.00,1.00,1.20,'window','f-stair'),
+         ('north',3.50,TALL_W,TALL_SILL,TALL_H,'window','f-child'),('north',7.00,.55,1.65,.50,'obscured','f-bath3')]
+# Furniture and fitted storage may not stand within this distance of a window's wall face while
+# rising above its sill. Checked here for fitted joinery and in the model tests for every mesh.
+WINDOW_CLEAR_ZONE=.25
 SOURCES=[
  ('Stair placement / ascent','https://www.architectureideas.info/2008/11/vastu-shastra-guidelines-staircases/comment-page-1/'),
  ('Kitchen placement','https://www.architectureideas.info/2009/01/vastu-kitchen/'),
@@ -183,13 +198,14 @@ def outer(p,floor):
  else:
   p.door(5.00,6.10,.75,INTERNAL,'h',-1,'hi',leaf=False)
   p.rect(4.25,6.055,5.00,6.08,TEAL,.6);p.text(4.625,6.02,'SL / ENSUITE 3',3.8,col=TEAL)
-  p.door(3.1,8.60,.85,INTERNAL,'v',-1,'hi')
- p.window(west(floor),6.3,1.4,.15+g,'v')
- p.window(west(floor),4.1,1.0,.15+g,'v')
+  # 7 Nov 2026: the master's balcony door opens outward onto the covered drying balcony, parking
+  # beside the railing, so no leaf sweeps the bedroom floor.
+  p.door(3.1,8.60,.85,INTERNAL,'v',+1,'hi')
+ for wall,y,w,sill,h,kind,room in (SIDE_GF if floor=='GF' else SIDE_FF):
+  p.window(west(floor) if wall=='west' else n,y,w,.15+g,'v')
  if floor=='FF':
   b=STAIR_PASSAGE['opening']['box'];p.opening(b[0],b[1],b[3]-b[1],INTERNAL,'v')
  else:p.opening(2.05,2.35,.80,INTERNAL,'v')
- if floor=='FF':p.window(n,7.0,.55,.15+g,'v')
  for x,w,sill,h,kind in (FRONT_GF if floor=='GF' else FRONT_FF):
   yy=0 if x<3.05 else 1.2;t=(.15+g) if yy==0 else .15
   if kind=='door':p.door(x,yy,w,t,'h',+1,'lo')
@@ -280,7 +296,7 @@ def bedroom(p,floor):
  storage_plan(p,'bedroom1' if floor=='GF' else 'bedroom2')
  p.text(1.91,8.2,'LIFT-UP BASE',4.2,rot=90,col=TEAL)
  label(p,1.65,7.10,'BED 1 / SW' if floor=='GF' else 'MASTER / SW',clear_size(room_boxes(floor)['bedroom_sw']))
- if floor=='GF':p.text(1.10,9.96,'REAR W 1.20 x 1.20 / SILL 1.00',4.4,col=TEAL)
+ p.text(1.25,9.96 if floor=='GF' else 9.91,'TALL W 1.50 x 1.90 / SILL 0.30',4.4,col=TEAL)
  p.text(.35,8.45,'HEAD SOUTH',5,rot=90,col=TEAL)
 
 
@@ -318,6 +334,9 @@ def ground(p):
  ct=FITOUT['living']['coffeeTable'];p.circle(*ct['centre'],ct['radius'])
  dn=FITOUT['dining'];p.rect(*dn['table']);p.rect(*dn['bench'])
  for seat in dn['chairs']:p.chair(*seat)
+ # Slatted oak divider between sofa and dining (accepted 25 Oct 2026 photographs).
+ scr=FITOUT['living']['screen']['box'];p.rect(*scr,INK,.4)
+ for i in range(1,9):xx=scr[0]+i*(scr[2]-scr[0])/9;p.line(xx,scr[1],xx,scr[3],MUTED,.25)
  label(p,4.62,5.70,'DINING','OPEN WITH LIVING')
  p.text(5.20,7.3,'REAR ROUTE 1.165',5.5,rot=90,col=MUTED)
  p.chair(4.65,.65,.45);p.chair(5.32,.65,.45)
@@ -335,7 +354,6 @@ def ground(p):
  p.polyline([(5.15,10.65),(5.15,9.90)],TEAL,.6,True)
  p.text(4.55,10.50,'BACK YARD ACCESS',5.8,col=TEAL)
  # Side windows aligned to the rooms, away from parked-car doors.
- p.window(5.78,3.45,1.10,.22,'v')
  dimensions(p,'GF')
 
 
@@ -368,7 +386,6 @@ def first(p):
  label(p,1.65,1.90,'STUDY / FAMILY',clear_size(room_boxes('FF')['study']))
  # Removing the public rear lobby makes the north bedroom rectangular.
  p.door(3.35,2.375,.80,INTERNAL,'h',+1,'lo')
- p.window(5.83,3.5,1.3,.17,'v')
  p.bed(3.25,3.955,5.25,5.455,'x0')
  storage_plan(p,'bedroom3')
  p.text(4.97,4.7,'LIFT-UP BASE',4.2,rot=90,col=TEAL)
@@ -473,9 +490,9 @@ def first_sheet(c):
  compass(Plan(c,0,0,10),23.4,22.1)
  y=231
  y=block(c,246,y,'R18 / FITTED WARDROBES AND LINEN STORAGE','All wardrobes keep their footprints and gain 400 mm lofts above the 2100 mm main units. R20: muted oak main doors, ivory lofts and sides, narrow paired leaves and short recessed pulls. Cabinet tops at 2500 mm leave 50 mm below the indicative beam soffit; the space above is left open. Bedroom 3 has a continuous 90-degree L carcass with no solid filler. The study opens to the stairs below the retained beam. A 750 x 450 mm ivory linen cabinet sits beside the tailoring benches, which now have oak waterfall ends. All beds gain lift-up storage bases.',149)
- y=block(c,246,y,'BEDROOMS IN SW AND NORTH','R17 aligns the central wall faces through both floors. The southwest master is 2.950 x 3.300 m; Bedroom 3 is 2.580 x 3.575 m. The passage stays 900 mm clear. Both ensuites are rebalanced to 1.215 x 2.100 m, with a 900 mm deep shower zone and compact WC. Ensuite 3 uses a surface-sliding door to avoid the bed and fixtures.',149)
+ y=block(c,246,y,'BEDROOMS IN SW AND NORTH','R17 aligns the central wall faces through both floors. The southwest master is 2.950 x 3.300 m; Bedroom 3 is 2.580 x 3.575 m. The passage stays 900 mm clear. Both ensuites are rebalanced to 1.215 x 2.100 m, with a 900 mm deep shower zone and compact WC. Ensuite 3 uses a surface-sliding door. 7 Nov 2026: tall three-panel windows, 1500 x 1900 mm, sill +0.30 m: the master window moves to the rear wall, Bedroom 3 and the study windows become tall, with full-height grill bars.',149)
  y=block(c,246,y,'NO BEDROOM IN THE SOUTHEAST','The southeast room remains a study above the kitchen. Bed heads retain their southward orientation. The master keeps 625 mm at each side of the double bed and 865 mm at its foot with the sliding leaf parked (900 mm to the wall). Bedroom 3 keeps 625 mm to its wardrobe, 600 mm behind the bed and 580 mm at the foot: compact, with a sliding ensuite door.',149)
- y=block(c,246,y,'REAR DRYING TERRACE','The covered rear balcony remains above the work area, now 2.580 x 1.220 m clear. Its 850 mm side door is at y = 8.60. R20 makes the north end a ventilated oak-tone louvre screen; the long rear railing stays open. Access stays private to the master.',149)
+ y=block(c,246,y,'REAR DRYING TERRACE','The covered rear balcony remains above the work area, now 2.580 x 1.220 m clear. Its 850 mm side door at y = 8.60 now opens outward onto the balcony. R20 makes the north end a ventilated oak-tone louvre screen; the long rear railing stays open. Access stays private to the master.',149)
  y=block(c,246,y,'OPEN STAIR SIDE / GUARDED PASSAGE','The first-floor stair-side partition opens below +2.55 m; the overhead beam/soffit band to +2.85 m remains. Slim charcoal vertical guards with oak rails protect the passage drop and upper return flight. Proposed guards are 1100 mm high with 100 mm maximum baluster centre pitch. The former wall band is reserved for edge/guard details; the passage keeps its 900 mm design clear width. Level stair entry remains open. The gallery boundary, bedrooms and private ensuites are retained. Verify support, rail connections and fixings.',149)
  y=block(c,246,y,'WALL THICKNESS, AREA AND STRUCTURE','Gross floor envelope remains 58.51 m2 / 629.84 sq ft, including stairs and covered balconies. Walls are 150 mm total including plaster. Bathroom WC projection is limited to 550 mm installed, giving 665 mm clear in front; it is a compact layout. Coordinate carrier/cistern, tiles, services and structural pier sizes without consuming the published clearances.',149)
 
@@ -498,8 +515,12 @@ def glazing(p,x,z,w,h,kind,door=None):
   p.fill_rect(x,z,x+w,z+h,door or HexColor(FITOUT['exterior']['frontDoor']))
   p.line(x+w-.1,z+.95,x+w-.1,z+1.15,GLASS,1)
  else:
-  n=3 if w>1.3 else 2
+  n=3 if w>1.3 or h>1.6 else 2
   for i in range(1,n):p.line(x+w*i/n,z,x+w*i/n,z+h,HexColor('#473e35'),1.5)
+  # Horizontal charcoal safety-grill flat bars behind the glass (7 Nov 2026 window style).
+  if kind=='window':
+   pitch=FITOUT['windows']['grill']['pitch']
+   for i in range(1,int(h/pitch)+1):p.line(x+.02,z+i*pitch,x+w-.02,z+i*pitch,HexColor('#30302B'),.45)
   if kind=='obscured':
    for i in range(int(w/.08)):p.line(x+.04+i*.08,z,x+.04+i*.08,z+h,white,.2)
 
@@ -510,7 +531,8 @@ def elevation(p,rear=False,labels=True):
  if not rear:
   timber(p,0.05,.60,3.08,2.92)
   p.fill_rect(0.05,3.48,3.05,6.24,DARK)
-  p.fill_rect(.55,3.65,2.38,4.27,WALL)
+  ffw=FRONT_FF[0]
+  if 3.45+ffw[2]-.02>3.65:p.fill_rect(.55,3.65,2.38,3.45+ffw[2]+.02,WALL)
   timber(p,5.5,3.5,5.95,6.3)
   # Elevated screen sits along the south wing, visible left at front and right at rear. At the front
   # it is warm-white render with downlights (25 Oct 2026); the rear screen stays oak.
@@ -529,7 +551,7 @@ def elevation(p,rear=False,labels=True):
   rr(p,.50,3.50,5.10,2.64,.23,HexColor('#ddd5ca'))
   p.fill_rect(.30,3.48,2.99,5.95,DARK)
   p.fill_rect(.0,3.32,3.05,3.48,WALL)
-  p.fill_rect(.55,3.75,2.39,4.20,WALL)
+  if 3.45+ffw[2]-.05>3.75:p.fill_rect(.55,3.75,2.39,3.45+ffw[2]-.05,WALL)
   for x,w,sill,h,kind in FRONT_FF:glazing(p,x,3.45+sill,w,h,kind)
   timber(p,3.13,5.87,5.56,6.1)
   # Balcony opaque low frame and transparent rail, all within footprint in plan.
@@ -593,7 +615,8 @@ def elevation(p,rear=False,labels=True):
   p.fill_rect(2.84,3.24,6,3.44,WALL)
   for i in range(3):p.fill_rect(.3-i*.05,.15*i,1.4+i*.05,.15*(i+1),HexColor('#c8c5bd'))
   # Warm wall lights on opaque cladding.
-  p.fill_rect(4.3,4.75,4.40,4.95,DARK)
+  # On the oak beside the master's tall rear window (7 Nov 2026), not on its glass.
+  p.fill_rect(3.45,4.75,3.55,4.95,DARK)
  p.line(-.25,0,6.3,0,MUTED,.6)
  if labels:
   for z,s in [(0,'GROUND'),(.45,'GF +0.45'),(3.45,'FF +3.45'),(6.45,'ROOF +6.45'),(7.40,'SCREEN +7.40')]:
@@ -648,6 +671,19 @@ def references_sheet(c):
  para(c,231,65,'Upper reference revised: old door replaced by two toilet vents; balcony entry is on its side. The vector retains the short curved canopy return, open left balcony and timber screen. The photo keeps the original ground floor; the coordinated plan/vector governs the revised ground service openings and wash-only use.',173,8,4.5)
 
 
+def window_schedule():
+ """Every window and glazed door on both floors, with its size, sill, head and room."""
+ out=[]
+ for floor,front,rear,side in [('GF',FRONT_GF,REAR_GF,SIDE_GF),('FF',FRONT_FF,REAR_FF,SIDE_FF)]:
+  for wall,ops in [('front / east',front),('rear / west',rear)]:
+   for x,w,sill,h,kind in ops:
+    if kind=='door':continue
+    out.append({'floor':floor,'wall':wall,'position_m':x,'width_m':w,'height_m':h,'sill_m':sill,'head_m':round(sill+h,3),'kind':kind})
+  for wall,y,w,sill,h,kind,room in side:
+   out.append({'floor':floor,'wall':'south side' if wall=='west' else 'north side','position_m':y,'width_m':w,'height_m':h,'sill_m':sill,'head_m':round(sill+h,3),'kind':kind,'room':room})
+ return out
+
+
 def validate():
  assert FF_SQFT<=630       # first floor with its 170 mm walls
  assert GF_SQFT<=645       # ground floor with its 220 mm walls; see R8
@@ -674,6 +710,22 @@ def validate():
    assert fit['shower'][3]-fit['shower'][1]>=.9-1e-9
    assert area(fit['box'])>=2.5
  assert internal_walls('FF')['front_spine'][::2]==internal_walls('FF')['passage_spine'][::2]==internal_walls('FF')['rear_spine'][::2]
+ # No fitted joinery may stand in front of a window (7 Nov 2026, after the R18 wardrobes were found
+ # covering the first 0.50 m of both bedroom side windows). Full-height storage counts at any height.
+ for floor in ['GF','FF']:
+  level='ground' if floor=='GF' else 'first';gr=grow(floor);zones=[]
+  for wall,y,w,sill,h,kind,room in (SIDE_GF if floor=='GF' else SIDE_FF):
+   x0=west(floor) if wall=='west' else 5.85-gr
+   zones.append(((x0-WINDOW_CLEAR_ZONE,y,x0+.15+gr+WINDOW_CLEAR_ZONE,y+w),f'{room} side window at y = {y}'))
+  for yy,t,ops in [(0,.15+gr,FRONT_GF if floor=='GF' else FRONT_FF),(9.55,.15+gr,REAR_GF if floor=='GF' else REAR_FF)]:
+   for x,w,sill,h,kind in ops:
+    if kind in ('window','obscured'):
+     wy=yy if x<3.05 else (1.2 if yy==0 else 8.35)
+     zones.append(((x,wy-WINDOW_CLEAR_ZONE,x+w,wy+t+WINDOW_CLEAR_ZONE),f'{floor} window at x = {x}'))
+  for unit in [u for u in STORAGE['units'] if u['level']==level]:
+   for b in [seg['box'] for seg in unit['segments']]+([unit['corner']] if unit.get('corner') else []):
+    for zone,name in zones:
+     assert not(min(b[2],zone[2])-max(b[0],zone[0])>1e-6 and min(b[3],zone[3])-max(b[1],zone[1])>1e-6),f"{unit['id']} stands in front of the {name}"
  ids={'g-kitchen':g['kitchen'],'g-living':g['living'],'g-bed':g['bedroom_sw'],
       'g-bath':g['ensuite_main'],'g-sit':g['front_outdoor'],'g-work':g['rear_outdoor'],
       'g-route':g['service_passage'],'g-stair':g['stair'],
@@ -684,7 +736,7 @@ def validate():
  areas={k:area(b) for k,b in ids.items()}
  areas['g-living']=round(area(g['living'])+area(g['passage']),6)
  clear_totals={floor:round(sum(v for k,v in areas.items() if k.startswith(prefix)),6) for floor,prefix in [('ground','g-'),('first','f-')]}
- return {'width_m':W,'depth_m':D,'external_wall_mm':{k:round(v*1000) for k,v in EXT.items()},
+ return {'window_schedule':window_schedule(),'window_clear_zone_m':WINDOW_CLEAR_ZONE,'width_m':W,'depth_m':D,'external_wall_mm':{k:round(v*1000) for k,v in EXT.items()},
          'internal_wall_mm':150,'internal_wall_spec':WALL_SPEC,
          'storage_layout':STORAGE,
          'study_stair_opening':STORAGE['study'],
@@ -707,7 +759,7 @@ def validate():
          'ensuite_count':3,'ensuite_clear_m':[1.215,2.1],'ensuite_clear_m2_each':2.5515,
          'ensuite_clear_sizes_m':{'GF_Ensuite1':[1.215,2.1],'FF_Ensuite2':[1.215,2.1],'FF_Ensuite3':[1.215,2.1]},
          'bedroom_bathroom_pairs':{'GF_Bed1':'GF_Ensuite1','FF_Master':'FF_Ensuite2','FF_Bed3':'FF_Ensuite3'},
-         'rear_balcony_access':'private side door from master','rear_work_access':'independent north passage',
+         'rear_balcony_access':'private side door from master, opening outward onto the balcony','rear_work_access':'independent north passage',
          'room_clear_areas_m2':areas,
          'room_clear_areas_sqft':{k:round(v/.09290304,2) for k,v in areas.items()},
          'named_clear_zone_totals_m2':clear_totals,

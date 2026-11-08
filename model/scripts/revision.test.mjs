@@ -19,25 +19,31 @@ const sameBox=(a,b)=>a.length===b.length&&a.every((v,i)=>Math.abs(v-b[i])<eps);
 // flat 120 mm lid under each separate tread. Infinity when nothing is overhead.
 const clearance=box=>stairSoffit(box,'ground');
 const cm=box=>Math.round(clearance(box)*100)/100;
-test('retained exterior schedules allow only the requested Bedroom 1 rear enlargement',()=>{
+test('retained exterior schedules allow only the requested window changes',()=>{
  assert.deepEqual(stairTreads('first'),baseline.stairTreads());
  assert.deepEqual(wallPieces('roof'),baseline.wallPieces('roof'));
  assert.deepEqual(openingsFor('roof'),baseline.openingsFor('roof'));
+ // Every door and opening is unchanged; windows changed only as the user asked on 9 Oct and 7 Nov 2026.
  for(const level of ['ground','first']){
-  const now=plan.levels[level].filter(c=>['door','window','opening'].includes(c.op));
-  const was=baseline.plan.levels[level].filter(c=>['door','window','opening'].includes(c.op));
+  const now=plan.levels[level].filter(c=>['door','opening'].includes(c.op));
+  const was=baseline.plan.levels[level].filter(c=>['door','opening'].includes(c.op));
   assert.equal(now.filter(c=>c.op==='door').length,was.filter(c=>c.op==='door').length);
-  assert.equal(now.filter(c=>c.op==='window').length,was.filter(c=>c.op==='window').length);
-  for(const op of ['door','window','opening']){
-   assert.deepEqual(now.filter(c=>c.op===op).map(c=>c.args[2]).sort(),was.filter(c=>c.op===op&&!(level==='first'&&op==='opening'&&c.args[0]===.95&&c.args[1]===2.2)&&!(level==='ground'&&op==='opening'&&c.args[0]===3.05&&[2.45,5.2].includes(c.args[1]))).map(c=>level==='ground'&&op==='window'&&c.args[0]===.5&&c.args[1]===9.55?1.20:level==='ground'&&op==='window'&&c.args[0]===3.23?1.10:level==='first'&&op==='opening'&&c.args[0]===2.05&&c.args[1]===2.35?3.8:c.args[2]).sort(),`${level} ${op} widths`);
-  }
+  for(const op of ['door','opening'])
+   assert.deepEqual(now.filter(c=>c.op===op).map(c=>c.args[2]).sort(),was.filter(c=>c.op===op&&!(level==='first'&&op==='opening'&&c.args[0]===.95&&c.args[1]===2.2)&&!(level==='ground'&&op==='opening'&&c.args[0]===3.05&&[2.45,5.2].includes(c.args[1]))).map(c=>level==='first'&&op==='opening'&&c.args[0]===2.05&&c.args[1]===2.35?3.8:c.args[2]).sort(),`${level} ${op} widths`);
  }
- for(const name of ['FRONT_GF','FRONT_FF','REAR_FF'])assert.deepEqual(plan.openings[name],baseline.plan.openings[name]);
- // R17 already moved/reduced the ensuite vent to its aligned 150 mm wall faces.
- assert.deepEqual(plan.openings.REAR_GF.slice(1),baseline.plan.openings.REAR_GF.slice(1).map(o=>o[0]===3.23?[3.3,1.1,...o.slice(2)]:o));
- assert.deepEqual(plan.openings.REAR_GF[0],[.5,1.2,1,1.2,'window']);
+ const T=[1.5,.3,1.9,'window'];
+ assert.deepEqual(plan.openings.FRONT_GF,baseline.plan.openings.FRONT_GF);
+ assert.deepEqual(plan.openings.FRONT_FF,[[.75,...T],baseline.plan.openings.FRONT_FF[1]]);
+ assert.deepEqual(plan.openings.REAR_GF[0],[.5,...T]);
+ assert.deepEqual(plan.openings.REAR_FF,[[.5,...T],...baseline.plan.openings.REAR_FF]);
+ // Side walls: stair windows unchanged; bedroom side windows removed; north windows made tall.
+ const side=[...plan.openings.SIDE_GF,...plan.openings.SIDE_FF];
+ assert.equal(side.filter(o=>o[6]==='g-bed'||o[6]==='f-master').length,0);
+ for(const s of side.filter(o=>o[6].endsWith('stair'))){near(s[1],4.1);near(s[2],1);near(s[3],1);near(s[4],1.2);}
+ const child=side.find(o=>o[6]==='f-child');near(child[2],1.5);near(child[3],.3);near(child[3]+child[4],2.2);
+ const living=side.find(o=>o[6]==='g-living');near(living[3],fitout.dining.benchSeat);near(living[3]+living[4],2.2);
  const rear=openingsFor('ground').find(o=>o.kind==='window'&&o.x===.5&&o.y===9.55);
- near(rear.w,1.2);near(rear.sill,1);near(rear.height,1.2);near(rear.sill+rear.height,2.2);
+ near(rear.w,1.5);near(rear.sill,.3);near(rear.height,1.9);
 });
 test('passage partition removed only in the requested ground living/stair interval',()=>{
  const pieces=wallPieces('ground');assert.ok(!pieces.some(p=>overlaps(p.box,[3.05,2.3,3.15,6.1])));
@@ -745,5 +751,68 @@ test('R20 cubby clears the screen and every sofa seat sees the whole picture',()
   const hit=new Raycaster(from,dir.normalize(),0,L-.01).intersectObjects(meshes,false);
   assert.equal(hit.length,0,`seat y=${y} cannot see screen corner ${cy},${cz}: ${hit[0]?.object.name||hit[0]?.object.parent?.name}`);
  }
+});
+
+test('no furniture or fitted joinery stands in front of any window',()=>{
+ // 7 Nov 2026, after the R18 wardrobes were found covering the first 0.50 m of both bedroom side
+ // windows. Anything rising above a window's sill within the clear zone of its wall face fails.
+ const zone=fitout.windows.clearZone,h=createHouse();h.root.updateMatrixWorld(true,true);
+ // Deliberate, reviewed exceptions only. Each must name its reason.
+ const allowed=[{level:'ground',name:/^hood /,kind:'window',why:'chimney hood over the hob hangs in front of the kitchen window by design; the sliding sash beside it stays operable'},
+  {level:null,name:/^shower (riser|arm|head)$/,kind:'obscured',why:'shower fittings under a high obscured ensuite vent: a standard wet-room arrangement; frame and sill to be waterproofed'}];
+ const problems=[];
+ for(const level of Object.keys(LEVELS)){
+  const z=LEVELS[level],furniture=h.furnitureGroups.find(f=>f.parent===h.levels[level]);
+  for(const o of openingsFor(level).filter(o=>['window','obscured'].includes(o.kind))){
+   const b=o.box,area=o.axis==='h'?[b[0],b[1]-zone,b[2],b[3]+zone]:[b[0]-zone,b[1],b[2]+zone,b[3]];
+   furniture.traverse(m=>{
+    if(!m.isMesh||m.material?.transparent)return;
+    const bb=new Box3().setFromObject(m),fp=[bb.min.x+3,4.85-bb.max.z,bb.max.x+3,4.85-bb.min.z];
+    const plan=overlaps(fp,area),tall=Math.min(bb.max.y,z+o.sill+o.height)-Math.max(bb.min.y,z+o.sill)>.01;
+    if(!plan||!tall)return;
+    if(allowed.some(a=>(a.level===null||a.level===level)&&a.kind===o.kind&&a.name.test(m.name)))return;
+    problems.push(`${level} window at ${o.x},${o.y}: ${m.name||m.parent?.name||'mesh'}`);
+   });
+  }
+ }
+ assert.deepEqual(problems,[]);
+ // The bedroom side windows now start clear of their wardrobes.
+ for(const id of ['bedroom1','bedroom2']){
+  const ward=storage.units.find(u=>u.id===id).segments[0].box,level=storage.units.find(u=>u.id===id).level;
+  // 7 Nov 2026: no window on the wardrobe wall; the bedroom's tall window is on the rear wall.
+  assert.ok(!openingsFor(level).some(o=>o.kind==='window'&&o.axis==='v'&&o.x<0&&o.y<ward[3]+.3&&o.y+o.w>ward[1]),`${id} has no window beside its wardrobe`);
+  const tall=openingsFor(level).find(o=>o.kind==='window'&&o.axis==='h'&&o.y>9);near(tall.w,1.5);near(tall.sill,.3);
+ }
+ // The pelmets sit above the window heads and never run into a wardrobe.
+ const pelmets=[];for(const level of ['ground','first'])h.levels[level].traverse(m=>{if(/^pelmet /.test(m.name))pelmets.push(m.name.slice(7));});
+ assert.deepEqual(pelmets.sort(),['f-child','f-master','g-bed','g-living','g-living'],'one pelmet per bedroom window, two in living/dining');
+});
+
+test('every 1.50 m tall window is a three-panel slider in the model, as in the drawings',()=>{
+ const h=createHouse();h.root.updateMatrixWorld(true,true);
+ const tall=[];for(const level of ['ground','first'])for(const o of openingsFor(level).filter(o=>o.kind==='window'&&Math.abs(o.w-fitout.windows.tall.width)<eps))tall.push([level,o]);
+ assert.equal(tall.length,5,'bedroom 1, master, bedroom 3, study and living/dining');
+ for(const [level,o] of tall){
+  let n=0;h.levels[level].traverse(m=>{if(m.name!=='window mullion')return;const b=new Box3().setFromObject(m),fp=[b.min.x+3,4.85-b.max.z,b.max.x+3,4.85-b.min.z];if(overlaps(fp,o.box))n++;});
+  assert.equal(n,fitout.windows.tall.panels-1,`${level} window at ${o.x},${o.y} has ${n+1} panels`);
+ }
+});
+
+test('master balcony door opens outward and its leaf sweeps only the drying balcony',()=>{
+ const d=openingsFor('first').find(o=>o.kind==='door'&&o.axis==='v'&&o.x===3.1&&o.y===8.6);
+ assert.ok(d);assert.equal(d.swing,1);assert.equal(d.hinge,'hi');
+ const sweep=[d.x+d.t,d.y,d.x+d.t+d.w,d.y+d.w],balcony=plan.dimensions.room_boxes_m['f-drying'],master=plan.dimensions.room_boxes_m['f-master'];
+ assert.ok(sweep[0]>=balcony[0]-eps&&sweep[2]<=balcony[2]&&sweep[1]>=balcony[1]&&sweep[3]<=balcony[3],'swing stays on the balcony');
+ assert.ok(!overlaps(sweep,master),'no leaf sweeps the master bedroom floor');
+ assert.ok(sweep[2]<fitout.rearScreen.box[0],'clear of the louvre screen');
+});
+
+test('living/dining slatted screen keeps the walkway, the window and the TV view clear',()=>{
+ const sc=fitout.living.screen,d=fitout.dining;
+ assert.ok(sc.box[0]>d.chairs[0][0]+d.chairs[0][2]/2,'clear of the dining chairs and walkway');
+ assert.ok(sc.box[3]<d.table[1]&&sc.box[1]>fitout.living.sofa.arm[3],'between sofa arm and table');
+ const north=openingsFor('ground').find(o=>o.axis==='v'&&o.x>5&&o.kind==='window');
+ assert.ok(north.x-sc.box[2]>=fitout.windows.clearZone,'stops short of the window wall');
+ assert.ok(sc.height<2.85-.3,'gap below the ceiling');
 });
 

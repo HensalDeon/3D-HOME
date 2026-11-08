@@ -74,7 +74,7 @@ def elevation_sheet(c):
     v4.tx(c, 231, 238, 'REAR / WEST', 10, v4.TEAL, True)
     integrated_elevation(Plan(c, 28, 60, 1000/55))
     integrated_elevation(Plan(c, 231, 60, 1000/55), True)
-    v4.para(c, 28, 40, 'The narrow timber-clad enclosure rises behind the existing front-left screen. R20: honey-oak timber throughout, oak front door and woven oak seating; retain the front balcony, windows and entrance below.', 170, 8, 4.4)
+    v4.para(c, 28, 40, 'The narrow timber-clad enclosure rises behind the existing front-left screen. R20: honey-oak timber, oak front door, woven oak seating and horizontal charcoal grill bars behind clear glazing; retain the front balcony, windows and entrance below.', 170, 8, 4.4)
     v4.para(c, 231, 40, 'At the rear the enclosure sits behind the right timber screen. The open left drying balcony gains an oak-tone louvre screen at its north end; the canopy return, toilet vents, charcoal rear door and master side entry remain.', 172, 8, 4.4)
 
 

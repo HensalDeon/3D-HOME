@@ -19,6 +19,6 @@ levels={}
 for name,fn in [('ground',house.ground),('first',house.first),('roof',roof.roof_plan)]:
  p=Recorder();fn(p);levels[name]=p.commands
 source=ROOT/'drawings/compact-v4/Hensal_Complete_House_Plans.pdf'
-data={'source':source.name,'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'coordinates':'x increases north; y increases west; metres; house east/south corner is origin','levels':levels,'openings':{n:getattr(house,n) for n in ['FRONT_GF','FRONT_FF','REAR_GF','REAR_FF']},'dimensions':json.loads((source.parent/'dimensions.json').read_text())}
+data={'source':source.name,'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'coordinates':'x increases north; y increases west; metres; house east/south corner is origin','levels':levels,'openings':{n:getattr(house,n) for n in ['FRONT_GF','FRONT_FF','REAR_GF','REAR_FF','SIDE_GF','SIDE_FF']},'dimensions':json.loads((source.parent/'dimensions.json').read_text())}
 (ROOT/'model/src/plan-data.json').write_text(json.dumps(data,indent=2)+'\n')
 print({k:len(v) for k,v in levels.items()})

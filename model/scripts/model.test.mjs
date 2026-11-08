@@ -27,7 +27,9 @@ test('three private ensuites have correct size, stacking and door positions',()=
 });
 test('master rear balcony has side door, rear has exactly two high toilet vents',()=>{
  const doors=openingsFor('first');assert.ok(doors.some(o=>o.kind==='door'&&o.x===3.1&&o.y===8.6&&o.axis==='v'&&o.w===.85));
- const rear=doors.filter(o=>o.axis==='h'&&o.y>=8.2);assert.equal(rear.length,2);for(const o of rear){assert.equal(o.kind,'obscured');near(o.sill,1.65);near(o.height,.5);}
+ const rear=doors.filter(o=>o.axis==='h'&&o.y>=8.2&&o.kind==='obscured');assert.equal(rear.length,2);for(const o of rear){near(o.sill,1.65);near(o.height,.5);}
+ // 7 Nov 2026: the master's tall window moved to the rear wall, beside the two vents.
+ const tall=doors.filter(o=>o.axis==='h'&&o.y>=8.2&&o.kind==='window');assert.equal(tall.length,1);near(tall[0].x,.5);near(tall[0].sill,.3);
 });
 test('both flights produce 17 equal risers, 250 mm treads and 900 mm landing',()=>{
  const steps=stairTreads();assert.equal(steps.length,17);let last=0;for(const s of steps){near(s.height-last,3/17);last=s.height;if(!s.arrival&&!s.landing){near(Math.max(s.box[2]-s.box[0],s.box[3]-s.box[1]),.9);near(Math.min(s.box[2]-s.box[0],s.box[3]-s.box[1]),.25);}}

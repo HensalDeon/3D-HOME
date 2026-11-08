@@ -5,7 +5,7 @@ import {revision} from './revision.js';
 import storage from './storage-layout.json' with {type:'json'};
 import fitout from './fitout-layout.json' with {type:'json'};
 import {addStorageJoinery,addStorageBed} from './storage-joinery.js';
-import {addKitchenJoinery,addDiningAndLiving,addRearScreen,addTerrace} from './fitout-joinery.js';
+import {addKitchenJoinery,addDiningAndLiving,addRearScreen,addTerrace,addWindowDressing,addLivingScreen,windowRoomSide} from './fitout-joinery.js';
 import {plan,LEVELS,rooms,openingsFor,wallPieces,stairTreads,STAIR_STRUCTURE,stairBeamZones,stairFlights,stairLandingSlabs,FRAME,ENVELOPE} from './geometry.js';
 export function createHouse(){
  const root=new THREE.Group(),levels={},pickables=[],labels=[],wallMaterials=[],furnitureGroups=[],facades=[],dimensions=new THREE.Group();root.add(dimensions);const siteDimensions=new THREE.Group(),roofDimensions=new THREE.Group();dimensions.add(siteDimensions,roofDimensions);
@@ -93,8 +93,20 @@ export function createHouse(){
    return;
   }
   frame(0,w,h,h+.045);frame(0,w,h+height-.045,h+height);frame(0,.045,h,h+height);frame(w-.045,w,h,h+height);
-  for(let i=1;i<(w>1.5?3:2);i++)frame(w*i/(w>1.5?3:2)-.012,w*i/(w>1.5?3:2)+.012,h,h+height);
+  // Panel count matches the drawings' glazing(): the 1.50 m tall windows are three-panel sliders.
+  const panels=w>1.3||height>1.6?3:2;
+  for(let i=1;i<panels;i++)frame(w*i/panels-.012,w*i/panels+.012,h,h+height).name='window mullion';
   frame(.04,w-.04,h+.045,h+height-.045,m);
+  // 7 Nov 2026: clear windows get an oak lining on the room-side reveal and horizontal charcoal
+  // safety-grill flat bars between the glass and the room. Obscured vents keep the plain frame.
+  if(kind==='window'){
+   const side=windowRoomSide(o),[d0,d1]=side>0?[t*.65,t]:[0,t*.35],lt=fitout.windows.lining.depth;
+   const face=(a0,a1,n0,n1,low,high,mt)=>axis==='h'?box(g,x+a0,y+n0,x+a1,y+n1,low,high,mt):box(g,x+n0,y+a0,x+n1,y+a1,low,high,mt);
+   face(0,lt,d0,d1,h,h+height,materials.oak);face(w-lt,w,d0,d1,h,h+height,materials.oak);
+   face(0,w,d0,d1,h,h+lt,materials.oak);face(0,w,d0,d1,h+height-lt,h+height,materials.oak);
+   const gr=fitout.windows.grill,[g0,g1]=side>0?[t*.68,t*.68+gr.bar[1]]:[t*.32-gr.bar[1],t*.32];
+   for(let zz=h+gr.pitch;zz<h+height-.03;zz+=gr.pitch)face(lt,w-lt,g0,g1,zz-gr.bar[0]/2,zz+gr.bar[0]/2,materials.noir).name='window grill bar';
+  }
  }
  function furniture(g,level,z){
   const f=new THREE.Group();g.add(f);furnitureGroups.push(f);
@@ -122,7 +134,7 @@ export function createHouse(){
    if(c.op==='shower'){const[x0,y0,x1,y1]=a;box(f,x0,y0,x1,y1,z+.006,z+.04,materials.tile);
     // R20 recessed tiled niche on the back wall and a slim linear drain along the entry edge.
     const n=fitout.bathrooms.niche;box(f,x0+.3,y1-.006,x0+.3+n.width,y1,z+n.bottom,z+n.bottom+n.height,materials.beige);
-    box(f,x0+.05,y0+.03,x1-.05,y0+.07,z+.04,z+.044,materials.metal);box(f,x0+.6,y0-.015,x1,y0,z+.04,z+1.95,materials.glass);rod(f,[x0+.2,y1-.06,z+1],[x0+.2,y1-.06,z+2.05],.018,materials.metal);rod(f,[x0+.2,y1-.06,z+2.05],[x0+.2,y1-.26,z+2.05],.025,materials.metal);cylinder(f,x0+.2,y1-.26,z+2.01,z+2.05,.075,materials.metal);}
+    box(f,x0+.05,y0+.03,x1-.05,y0+.07,z+.04,z+.044,materials.metal);box(f,x0+.6,y0-.015,x1,y0,z+.04,z+1.95,materials.glass);rod(f,[x0+.2,y1-.06,z+1],[x0+.2,y1-.06,z+2.05],.018,materials.metal).name='shower riser';rod(f,[x0+.2,y1-.06,z+2.05],[x0+.2,y1-.26,z+2.05],.025,materials.metal).name='shower arm';cylinder(f,x0+.2,y1-.26,z+2.01,z+2.05,.075,materials.metal).name='shower head';}
    if(c.op==='wc'){
     const[x,y,,projection,width]=a;
     if(projection){
@@ -140,6 +152,10 @@ export function createHouse(){
    if(c.op==='basin')basin(...a.slice(0,5));
   }
   addStorageJoinery({parent:f,level,z,box,materials});
+  if(level!=='roof'){
+   const storageBoxes=storage.units.filter(u=>u.level===level).flatMap(u=>[...u.segments.map(s=>s.box),...(u.corner?[u.corner]:[])]);
+   addWindowDressing({parent:f,level,z,openings:openingsFor(level),rooms:rooms.filter(r=>r.level===level),storageBoxes,box,materials});
+  }
   if(level==='ground'){
    for(const b of [[.15,.22,3.1,.82],[2.5,.82,3.1,1.3],[3.25,8.5,4.4,8.95]]){box(f,...b,z,z+.84,materials.oak);box(f,...b,z+.84,z+.9,materials.stone);}
    box(f,.7,.29,1.32,.72,z+.905,z+.93,materials.dark);for(const x of [.86,1.16])cylinder(f,x,.49,z+.93,z+.94,.09,materials.metal);
@@ -184,6 +200,7 @@ export function createHouse(){
    box(wash,b[2]-.11,b[1]+.04,b[2]-.05,b[1]+.10,z+fin.vanity.counter[1],z+fin.vanity.counter[1]+.14,materials.linen);
    // R20: rectangular table with two chairs and a window-side bench, drum pendant, coffee table.
    addDiningAndLiving({parent:f,z,box,cylinder,rod,materials});
+   addLivingScreen({parent:f,z,box,materials});
    
   }else if(level==='first'){
    const work=new THREE.Group();work.name='Tailoring workbenches';f.add(work);
@@ -352,8 +369,8 @@ export function createHouse(){
    if(level==='first'){rail(g,3.25,0,5.85,0,z,1.1,true);rail(g,5.93,0,5.93,1.2,z,1.1,true);rail(g,3.25,9.63,5.85,9.63,z,1.1);}
    const facade=new THREE.Group();g.add(facade);facades.push({group:facade,level});
    // Front finishes are split around the scheduled window so they never seal its aperture.
-   const o=openingsFor(level).find(o=>o.x===.6&&o.axis==='h');
-   for(const b of [[.15,.60,0,2.85],[2.30,3.05,0,2.85],[.60,2.30,0,o.sill],[.60,2.30,o.sill+o.height,2.85]]){
+   const o=openingsFor(level).find(o=>o.axis==='h'&&o.y===0&&o.kind==='window');
+   for(const b of [[.15,o.x,0,2.85],[o.x+o.w,3.05,0,2.85],[o.x,o.x+o.w,0,o.sill],[o.x,o.x+o.w,o.sill+o.height,2.85]]){
     const [a,bx,low,high]=b;if(level==='ground')cladding(facade,a,-.003,bx,0,z+low,z+high);else box(facade,a,-.003,bx,0,z+low,z+high,materials.dark);
    }
    if(level==='ground'){
@@ -364,7 +381,8 @@ export function createHouse(){
     cladding(facade,3.13,.13,5.56,.30,5.87,6.1);
     // Narrow oak strip right of the curved balcony frame, as in the accepted front photographs.
     cladding(facade,5.86,-.006,6,-.003,3.5,6.3);
-    box(facade,.55,-.005,2.94,0,3.75,4.20,materials.wall);
+    // White band under the first-floor front window, only where its sill leaves room for one.
+    if(o.sill>.4)box(facade,.55,-.005,2.94,0,3.75,z+o.sill-.05,materials.wall);
     // Rear canopy is an open-bottom return; the drying balcony remains open.
     const pts=[[.44,6.14],[.24,5.94],[.24,3.52]];
     box(facade,.04,9.70,.24,9.80,3.52,5.94,materials.dark);
@@ -372,7 +390,10 @@ export function createHouse(){
     box(facade,4.87,9.70,5.06,9.80,5.60,5.94,materials.dark);
     const arc=(cx,cz,rr,start,end)=>{const ps=[];for(let i=0;i<=16;i++){const a=start+(end-start)*i/16;ps.push(new THREE.Vector3(cx-3+rr*Math.cos(a),cz+rr*Math.sin(a),4.85-9.75));}const curve=new THREE.CatmullRomCurve3(ps);const mesh=new THREE.Mesh(new THREE.TubeGeometry(curve,16,.11,8,false),materials.dark);facade.add(mesh);};
     arc(.44,5.94,.30,Math.PI,Math.PI/2);arc(4.76,5.94,.30,Math.PI/2,0);
-    cladding(facade,.22,9.70,3.05,9.703,3.52,6.12);
+    // Rear oak panel, split around the master's tall rear window (7 Nov 2026).
+    const r=openingsFor(level).find(o=>o.axis==='h'&&o.y>9&&o.kind==='window');
+    for(const [a,b,lo,hi] of [[.22,r.x,3.52,6.12],[r.x+r.w,3.05,3.52,6.12],[r.x,r.x+r.w,3.52,z+r.sill],[r.x,r.x+r.w,z+r.sill+r.height,6.12]])
+     if(hi-lo>.01)cladding(facade,a,9.70,b,9.703,lo,hi);
     cladding(facade,3.05,9.48,4.97,9.65,5.88,6.12);
     // R20: the north end of the drying balcony is a ventilated louvre screen, not a solid wall.
     addRearScreen({parent:facade,z,box,materials});
